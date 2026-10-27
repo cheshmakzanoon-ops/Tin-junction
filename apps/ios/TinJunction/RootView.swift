@@ -130,13 +130,20 @@ struct RootView: View {
                 // navigation bar can omit its toolbar action from the Duo
                 // accessibility tree after the List scrolls.
                 .safeAreaInset(edge: .bottom, spacing: 0) {
-                    Button("Done") { showingHelp = false }
+                    VStack(spacing: 0) {
+                        Button { showingHelp = false } label: {
+                            // The advertised accessibility frame must also be
+                            // interactive, including Duo's asymmetric safe area.
+                            Text("Done")
+                                .frame(maxWidth: .infinity, minHeight: 44)
+                                .contentShape(Rectangle())
+                        }
                         .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity, minHeight: 44)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 12)
-                        .background(paper)
                         .accessibilityIdentifier("host.help.done")
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 12)
+                    .background(paper)
                 }
             }
             .tint(ink)

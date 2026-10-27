@@ -115,6 +115,7 @@ final class HostSmokeTests: XCTestCase {
     }
 
     func testNativeHelpRemainsAccessible() throws {
+        continueAfterFailure = false
         let app = XCUIApplication()
         app.launch()
         XCTAssertTrue(app.buttons["host.help"].waitForExistence(timeout: 15))
@@ -122,6 +123,10 @@ final class HostSmokeTests: XCTestCase {
         XCTAssertTrue(app.navigationBars["Railway guide"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["Save status"].exists)
         app.buttons["host.help.done"].tap()
+        let dismissed = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "exists == false"), object: app.navigationBars["Railway guide"])
+        XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed,
+                       "Done must dismiss the guide, not merely leave the host visible behind it.")
         XCTAssertTrue(app.staticTexts["host.title"].exists)
     }
 

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T03:39:47.018Z",
+  "updated_at": "2026-10-27T03:45:05.745Z",
   "health": {
     "ci": {
-      "status": "running",
+      "status": "failed",
       "checked_commit": "02c0bc82746b8391fbf578cd0bed2b7bef8e1348",
       "run_urls": [
         "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40444287209",
