@@ -6,7 +6,7 @@ struct EngineWebView: UIViewRepresentable {
 
     func makeCoordinator() -> Coordinator { Coordinator(host: host) }
 
-    func makeUIView(context: Context) -> WKWebView {
+    func makeUIView(context: Context) -> EngineWebViewContainer {
         PlatformStartupTrace.record("webview.created")
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .nonPersistent()
@@ -30,38 +30,36 @@ struct EngineWebView: UIViewRepresentable {
         view.scrollView.isScrollEnabled = false
         view.scrollView.bounces = false
         view.accessibilityIdentifier = "host.webview"
-        updateAvailability(of: view)
+        let container = EngineWebViewContainer(webView: view)
         #if DEBUG
         view.isInspectable = true
         #endif
         guard host.attach(to: view) else {
             view.configuration.userContentController.removeScriptMessageHandler(forName: "tinJunction")
             view.navigationDelegate = nil
-            return view
+            return container
         }
+        container.observeAvailability(of: host)
+        updateAvailability(of: container)
         if assetRoot != nil {
             context.coordinator.beginInitialDocument(in: view)
         } else {
             host.fail("WebAssets missing. Run npm run bundle:ios before XcodeGen.")
         }
-        return view
+        return container
     }
 
-    func updateUIView(_ uiView: WKWebView, context: Context) {
+    func updateUIView(_ uiView: EngineWebViewContainer, context: Context) {
         updateAvailability(of: uiView)
     }
 
-    private func updateAvailability(of view: WKWebView) {
-        // The packaged UI failure showed that SwiftUI's accessibilityHidden
-        // alone left WebKit's remote accessibility container exposed. Hide the
-        // actual UIKit view and its descendants while native recovery owns the
-        // surface. Preserve this same renderer for the explicit Retry path.
-        let failed = host.phase == .failed
-        view.isHidden = failed
-        view.accessibilityElementsHidden = failed
+    private func updateAvailability(of container: EngineWebViewContainer) {
+        container.setRendererAvailable(host.isAttached(to: container.webView) && host.phase != .failed)
     }
 
-    static func dismantleUIView(_ uiView: WKWebView, coordinator: Coordinator) {
+    static func dismantleUIView(_ container: EngineWebViewContainer, coordinator: Coordinator) {
+        let uiView = container.webView
+        container.stopObservingAvailability()
         coordinator.cancelPreparation()
         #if DEBUG
         coordinator.cancelStartupHold()
@@ -71,6 +69,7 @@ struct EngineWebView: UIViewRepresentable {
         uiView.configuration.userContentController.removeScriptMessageHandler(forName: "tinJunction")
         uiView.navigationDelegate = nil
         coordinator.host.detach(from: uiView)
+        container.setRendererAvailable(false)
     }
 
     @MainActor

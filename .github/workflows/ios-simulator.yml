@@ -99,6 +99,30 @@ jobs:
         env:
           TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
         run: node tools/ios/test-clean-install.mjs
+      - name: Stage bounded native review evidence
+        if: always()
+        timeout-minutes: 5
+        env:
+          TIN_NATIVE_TEST_OUTCOME: ${{ steps.native_tests.outcome }}
+          TIN_INSTALLED_WEB_OUTCOME: ${{ steps.installed_web.outcome }}
+          TIN_CLEAN_INSTALL_OUTCOME: ${{ steps.clean_install_tests.outcome }}
+        run: node tools/ios/stage-evidence.mjs
+      - name: Preserve bounded native reports even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: duo-host-reports-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/ios-review/reports/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Preserve original native PNG captures even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: duo-host-captures-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/ios-review/captures/
+          if-no-files-found: error
+          retention-days: 14
       - name: Preserve test evidence even on failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

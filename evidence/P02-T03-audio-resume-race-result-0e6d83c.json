@@ -1,0 +1,185 @@
+{
+  "record_kind": "controlled-published-module-scheduling-reproduction-not-playback",
+  "result": "race_confirmed",
+  "tested_commit": "0e6d83c24bd4e0ed5413c095ebaee1cbbc09d406",
+  "source": {
+    "path": "web/src/audio.ts",
+    "sha256": "9df6cfbb47875ad491e76e5ef7725f463cf9a7153b7897c5e43732bedd21e2c1"
+  },
+  "transformation": {
+    "tool": "esbuild.transformSync",
+    "version": "0.28.2",
+    "loader": "ts",
+    "format": "esm",
+    "target": "es2022",
+    "javascript_sha256": "91d28dfadb717ea764447e32d154fca703a631d535d2702fd597c4e5b8b0381b"
+  },
+  "beforePause": {
+    "exposedState": "suspended",
+    "resumePending": true,
+    "startedVoices": 0
+  },
+  "afterPause": {
+    "exposedState": "suspended",
+    "resumePending": true,
+    "suspendCalls": 0,
+    "startedVoices": 0
+  },
+  "afterResume": {
+    "exposedState": "running",
+    "whistleResult": true,
+    "suspendCalls": 0,
+    "startedVoices": 3
+  },
+  "invariant": {
+    "statement": "A pause during pending resume must prevent that pending whistle from starting tones.",
+    "holds": false
+  },
+  "calls": [
+    {
+      "op": "construct",
+      "exposedState": "suspended"
+    },
+    {
+      "op": "request-resume",
+      "exposedState": "suspended"
+    },
+    {
+      "op": "invoke-real-pause"
+    },
+    {
+      "op": "complete-resume",
+      "exposedState": "running"
+    },
+    {
+      "op": "create-gain"
+    },
+    {
+      "op": "setValueAtTime",
+      "parameter": "gain",
+      "value": 0,
+      "time": 0
+    },
+    {
+      "op": "linearRampToValueAtTime",
+      "parameter": "gain",
+      "value": 0.075,
+      "time": 0.06
+    },
+    {
+      "op": "setValueAtTime",
+      "parameter": "gain",
+      "value": 0.065,
+      "time": 0.48
+    },
+    {
+      "op": "exponentialRampToValueAtTime",
+      "parameter": "gain",
+      "value": 0.0001,
+      "time": 0.85
+    },
+    {
+      "op": "connect",
+      "source": "envelope",
+      "destination": "destination"
+    },
+    {
+      "op": "create-oscillator",
+      "index": 1
+    },
+    {
+      "op": "setValueAtTime",
+      "parameter": "frequency-1",
+      "value": 585.6,
+      "time": 0
+    },
+    {
+      "op": "linearRampToValueAtTime",
+      "parameter": "frequency-1",
+      "value": 610,
+      "time": 0.08
+    },
+    {
+      "op": "connect",
+      "source": "tone-1",
+      "destination": "envelope"
+    },
+    {
+      "op": "start",
+      "source": "tone-1",
+      "time": 0
+    },
+    {
+      "op": "scheduled-stop",
+      "source": "tone-1",
+      "time": 0.9
+    },
+    {
+      "op": "create-oscillator",
+      "index": 2
+    },
+    {
+      "op": "setValueAtTime",
+      "parameter": "frequency-2",
+      "value": 878.4,
+      "time": 0
+    },
+    {
+      "op": "linearRampToValueAtTime",
+      "parameter": "frequency-2",
+      "value": 915,
+      "time": 0.08
+    },
+    {
+      "op": "connect",
+      "source": "tone-2",
+      "destination": "envelope"
+    },
+    {
+      "op": "start",
+      "source": "tone-2",
+      "time": 0
+    },
+    {
+      "op": "scheduled-stop",
+      "source": "tone-2",
+      "time": 0.9
+    },
+    {
+      "op": "create-oscillator",
+      "index": 3
+    },
+    {
+      "op": "setValueAtTime",
+      "parameter": "frequency-3",
+      "value": 1171.2,
+      "time": 0
+    },
+    {
+      "op": "linearRampToValueAtTime",
+      "parameter": "frequency-3",
+      "value": 1220,
+      "time": 0.08
+    },
+    {
+      "op": "connect",
+      "source": "tone-3",
+      "destination": "envelope"
+    },
+    {
+      "op": "start",
+      "source": "tone-3",
+      "time": 0
+    },
+    {
+      "op": "scheduled-stop",
+      "source": "tone-3",
+      "time": 0.9
+    }
+  ],
+  "limitations": [
+    "No actual AudioContext, speakers, native WKWebView, audio session or microphone was used.",
+    "This proves one controlled API scheduling interleaving in the exact published module, not audible playback or the frequency of the race on a device.",
+    "No application source, shared build output, repository test or preference was changed."
+  ]
+}

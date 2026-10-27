@@ -1,0 +1,83 @@
+Source: original xcodebuild.log from artifact 12717438505 at commit 0e6d83c24bd4e0ed5413c095ebaee1cbbc09d406
+Full log SHA256: b7bcb2be43e086ae9600a3cc2a2827ba36df5299241272abe72eb76b25a05868
+
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.029 (0.032) seconds
+	 Executed 84 tests, with 0 failures (0 unexpected) in 2.923 (3.548) seconds
+Test Suite 'All tests' passed at 2026-10-27 07:46:32.190.
+	 Executed 84 tests, with 0 failures (0 unexpected) in 2.923 (3.549) seconds
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' passed (70.478 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (15.268 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (21.124 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (13.668 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (56.596 seconds).
+Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (19.816 seconds).
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/HostStartupUITests.swift:23: error: -[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry] : XCTAssertFalse failed - Unavailable web controls must not remain in the recovery accessibility traversal.
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' failed (13.699 seconds).
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (53.667 seconds).
+	 Executed 8 tests, with 1 failure (0 unexpected) in 264.317 (264.343) seconds
+Test Suite 'All tests' failed at 2026-10-27 07:51:11.008.
+	 Executed 8 tests, with 1 failure (0 unexpected) in 264.317 (264.345) seconds
+
+Original target-app startup event substrings from xcresult console object:
+
+2026-10-27 07:46:56.138525+0000 TinJunction[9963:35939] [TinStartup] +0.000s webview.created
+2026-10-27 07:46:56.493920+0000 TinJunction[9963:35939] [TinStartup] +0.355s host.lifecycle=active
+2026-10-27 07:47:00.875851+0000 TinJunction[9963:35939] [TinStartup] +4.737s navigation.started.window=1
+2026-10-27 07:47:00.977535+0000 TinJunction[9963:35939] [TinStartup] +4.839s host.loading.lifecycle=active
+2026-10-27 07:47:01.006177+0000 TinJunction[9963:35939] [TinStartup] +4.868s resource.ready.type=html.bytes=884
+2026-10-27 07:47:01.040710+0000 TinJunction[9963:35939] [TinStartup] +4.902s navigation.committed.window=1
+2026-10-27 07:47:01.048647+0000 TinJunction[9963:35939] [TinStartup] +4.910s resource.ready.type=css.bytes=19022
+2026-10-27 07:47:01.050295+0000 TinJunction[9963:35939] [TinStartup] +4.912s resource.ready.type=js.bytes=801455
+2026-10-27 07:47:04.690882+0000 TinJunction[9963:35939] [TinStartup] +8.552s navigation.finished.window=1
+2026-10-27 07:47:11.444465+0000 TinJunction[9963:35939] [TinStartup] +15.306s bridge.webReady
+2026-10-27 07:47:11.499634+0000 TinJunction[9963:35939] [TinStartup] +15.361s host.restorePrepared
+2026-10-27 07:47:12.128662+0000 TinJunction[9963:35939] [TinStartup] +15.990s host.layoutAccepted
+2026-10-27 07:47:12.241545+0000 TinJunction[9963:35939] [TinStartup] +16.103s resource.ready.type=glb.bytes=29356
+2026-10-27 07:47:12.258015+0000 TinJunction[9963:35939] [TinStartup] +16.119s resource.ready.type=png.bytes=93
+2026-10-27 07:47:12.261224+0000 TinJunction[9963:35939] [TinStartup] +16.123s resource.ready.type=js.bytes=132
+2026-10-27 07:47:12.265068+0000 TinJunction[9963:35939] [TinStartup] +16.127s resource.ready.type=wasm.bytes=44
+2026-10-27 07:47:12.564141+0000 TinJunction[9963:35939] [TinStartup] +16.426s resource.ready.type=wav.bytes=11564
+
+2026-10-27 07:47:35.924976+0000 TinJunction[10864:38621] [TinStartup] +0.000s webview.created
+2026-10-27 07:47:37.073784+0000 TinJunction[10864:38621] [TinStartup] +1.149s host.lifecycle=active
+2026-10-27 07:47:40.226548+0000 TinJunction[10864:38621] [TinStartup] +4.302s navigation.started.window=1
+2026-10-27 07:47:40.264838+0000 TinJunction[10864:38621] [TinStartup] +4.340s host.loading.lifecycle=active
+2026-10-27 07:47:40.286030+0000 TinJunction[10864:38621] [TinStartup] +4.361s resource.ready.type=html.bytes=884
+2026-10-27 07:47:40.312133+0000 TinJunction[10864:38621] [TinStartup] +4.387s navigation.committed.window=1
+2026-10-27 07:47:40.340238+0000 TinJunction[10864:38621] [TinStartup] +4.415s resource.ready.type=css.bytes=19022
+2026-10-27 07:47:40.341452+0000 TinJunction[10864:38621] [TinStartup] +4.417s resource.ready.type=js.bytes=801455
+2026-10-27 07:47:40.988402+0000 TinJunction[10864:38621] [TinStartup] +5.063s navigation.finished.window=1
+2026-10-27 07:47:42.194302+0000 TinJunction[10864:38621] [TinStartup] +6.269s bridge.webReady
+2026-10-27 07:47:42.214830+0000 TinJunction[10864:38621] [TinStartup] +6.290s host.restorePrepared
+2026-10-27 07:47:42.337039+0000 TinJunction[10864:38621] [TinStartup] +6.412s host.layoutAccepted
+2026-10-27 07:47:42.527861+0000 TinJunction[10864:38621] [TinStartup] +6.603s resource.ready.type=glb.bytes=29356
+2026-10-27 07:47:42.529507+0000 TinJunction[10864:38621] [TinStartup] +6.605s resource.ready.type=png.bytes=93
+2026-10-27 07:47:42.530602+0000 TinJunction[10864:38621] [TinStartup] +6.606s resource.ready.type=js.bytes=132
+2026-10-27 07:47:42.531984+0000 TinJunction[10864:38621] [TinStartup] +6.607s resource.ready.type=wasm.bytes=44
+2026-10-27 07:47:42.660348+0000 TinJunction[10864:38621] [TinStartup] +6.735s resource.ready.type=wav.bytes=11564
+
+2026-10-27 07:49:48.682710+0000 TinJunction[15280:50341] [TinStartup] +0.000s webview.created
+2026-10-27 07:49:48.937076+0000 TinJunction[15280:50341] [TinStartup] +0.254s host.lifecycle=active
+2026-10-27 07:49:51.810819+0000 TinJunction[15280:50341] [TinStartup] +3.128s host.lifecycle=inactive
+2026-10-27 07:49:55.342143+0000 TinJunction[15280:50341] [TinStartup] +6.659s host.lifecycle=active
+2026-10-27 07:49:57.703264+0000 TinJunction[15280:50341] [TinStartup] +9.020s navigation.started.window=1
+2026-10-27 07:49:57.703554+0000 TinJunction[15280:50341] [TinStartup] +9.021s host.loading.lifecycle=active
+2026-10-27 07:49:57.709901+0000 TinJunction[15280:50341] [TinStartup] +9.027s resource.ready.type=html.bytes=884
+2026-10-27 07:49:57.722035+0000 TinJunction[15280:50341] [TinStartup] +9.039s navigation.committed.window=1
+2026-10-27 07:49:57.722850+0000 TinJunction[15280:50341] [TinStartup] +9.040s resource.ready.type=css.bytes=19022
+2026-10-27 07:49:57.724038+0000 TinJunction[15280:50341] [TinStartup] +9.041s resource.ready.type=js.bytes=801455
+2026-10-27 07:49:58.194522+0000 TinJunction[15280:50341] [TinStartup] +9.512s navigation.finished.window=1
+2026-10-27 07:49:59.441831+0000 TinJunction[15280:50341] [TinStartup] +10.759s bridge.webReady
+2026-10-27 07:49:59.489640+0000 TinJunction[15280:50341] [TinStartup] +10.807s host.restorePrepared
+2026-10-27 07:49:59.582564+0000 TinJunction[15280:50341] [TinStartup] +10.900s host.layoutAccepted
+
+2026-10-27 07:50:09.129046+0000 TinJunction[15944:52483] [TinStartup] +0.000s webview.created
+2026-10-27 07:50:09.456104+0000 TinJunction[15944:52483] [TinStartup] +0.327s host.lifecycle=active
+2026-10-27 07:50:12.704117+0000 TinJunction[15944:52483] [TinStartup] +3.575s navigation.started.window=1
+2026-10-27 07:50:12.704344+0000 TinJunction[15944:52483] [TinStartup] +3.575s host.loading.lifecycle=active
+2026-10-27 07:50:12.708013+0000 TinJunction[15944:52483] [TinStartup] +3.579s resource.ready.type=html.bytes=884
+2026-10-27 07:50:12.722718+0000 TinJunction[15944:52483] [TinStartup] +3.594s navigation.committed.window=1
+2026-10-27 07:50:12.723994+0000 TinJunction[15944:52483] [TinStartup] +3.595s resource.ready.type=css.bytes=19022
+2026-10-27 07:50:12.724689+0000 TinJunction[15944:52483] [TinStartup] +3.596s resource.ready.type=js.bytes=801455
+2026-10-27 07:50:12.963038+0000 TinJunction[15944:52483] [TinStartup] +3.834s host.failed.beforeBridge
+2026-10-27 07:50:13.012043+0000 TinJunction[15944:52483] [TinStartup] +3.883s navigation.finished.window=1

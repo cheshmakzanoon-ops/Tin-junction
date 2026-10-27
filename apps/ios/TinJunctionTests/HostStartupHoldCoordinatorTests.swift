@@ -25,6 +25,7 @@ final class HostStartupHoldCoordinatorTests: XCTestCase {
         let host: EngineHostModel
         let coordinator: EngineWebView.Coordinator
         let view: StartupHoldRecordingWebView
+        let container: EngineWebViewContainer
     }
 
     private func attachedFixture(arguments: [String] = ["--hold-native-startup"]) -> Fixture {
@@ -33,7 +34,9 @@ final class HostStartupHoldCoordinatorTests: XCTestCase {
         let view = StartupHoldRecordingWebView(frame: .zero, configuration: WKWebViewConfiguration())
         view.navigationDelegate = coordinator
         XCTAssertTrue(host.attach(to: view))
-        return Fixture(host: host, coordinator: coordinator, view: view)
+        let container = EngineWebViewContainer(webView: view)
+        container.setRendererAvailable(true)
+        return Fixture(host: host, coordinator: coordinator, view: view, container: container)
     }
 
     private func forbiddenLoad(_ fixture: Fixture, description: String) -> XCTestExpectation {
@@ -46,8 +49,8 @@ final class HostStartupHoldCoordinatorTests: XCTestCase {
     func testFailureAndDetachBeforeDeferredArmCannotStartNavigation() async {
         let failed = attachedFixture(), detached = attachedFixture()
         defer {
-            EngineWebView.dismantleUIView(failed.view, coordinator: failed.coordinator)
-            EngineWebView.dismantleUIView(detached.view, coordinator: detached.coordinator)
+            EngineWebView.dismantleUIView(failed.container, coordinator: failed.coordinator)
+            EngineWebView.dismantleUIView(detached.container, coordinator: detached.coordinator)
         }
         let forbidden = [
             forbiddenLoad(failed, description: "A failed owner must not start its deferred navigation"),
@@ -81,8 +84,8 @@ final class HostStartupHoldCoordinatorTests: XCTestCase {
     func testDismantlingAnArmedCoordinatorDiscardsItsNavigationCallback() async {
         let held = attachedFixture(), ordinary = attachedFixture(arguments: [])
         defer {
-            EngineWebView.dismantleUIView(held.view, coordinator: held.coordinator)
-            EngineWebView.dismantleUIView(ordinary.view, coordinator: ordinary.coordinator)
+            EngineWebView.dismantleUIView(held.container, coordinator: held.coordinator)
+            EngineWebView.dismantleUIView(ordinary.container, coordinator: ordinary.coordinator)
         }
 
         // Positive control: the same override observes an actual coordinator
@@ -103,7 +106,7 @@ final class HostStartupHoldCoordinatorTests: XCTestCase {
         XCTAssertEqual(held.host.startupHold.state, .holding)
         XCTAssertTrue(held.view.requests.isEmpty)
 
-        EngineWebView.dismantleUIView(held.view, coordinator: held.coordinator)
+        EngineWebView.dismantleUIView(held.container, coordinator: held.coordinator)
         XCTAssertEqual(held.host.startupHold.state, .cancelled)
         XCTAssertFalse(held.host.isAttached(to: held.view))
         let originalFailure = "Original failure after the renderer owner was dismantled"

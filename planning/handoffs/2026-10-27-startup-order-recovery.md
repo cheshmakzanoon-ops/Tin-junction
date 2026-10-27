@@ -2,7 +2,7 @@
 
 ## Current checkpoint
 
-P01-T02, P02-T01 and P04-T06 remain active; no task is accepted by this repair. The starting published revision is `2b630f16abf5cce75cc2e58efa9f99f8ab65d99f`. This checkpoint contains a narrowly scoped application repair, regression tests and historical evidence. Hosted verification of the new source is **PENDING**. The verification incident remains open.
+P01-T02, P02-T01 and P04-T06 remain active; no task is accepted by this repair. The repair is published at **`0e6d83c24bd4e0ed5413c095ebaee1cbbc09d406`**, following `2b630f16abf5cce75cc2e58efa9f99f8ab65d99f`. Its later completed results are **84 native units passed, seven of eight UI cases passed, both asset sessions completed, and all 34 browser cases passed without retries**. The sole remaining native recovery accessibility failure leads to [the next containment repair](2026-10-27-recovery-containment.md). The dated in-progress observations below remain historical. The verification incident remains open.
 
 The prior [integrity checkpoint](2026-10-27-checkpoint-integrity.md) preserves the storage-wrapper, camera-modifier and clean-install-runner changes. Their actual focused native result is now available: all **84 native units passed** at `02d2230947528fedc3129d1d4ca43c9749cfa1c6`. The [P04 unit record](../../evidence/P04-T06-native-unit-02d2230.json) and [P02 unit record](../../evidence/P02-T01-native-unit-02d2230.json) retain that tested source and its limitations. They are historical after the source changes below.
 
@@ -27,7 +27,7 @@ The actual diagnostic-bundle browser regression first failed against the unchang
 
 The pre-existing first-frame latency consumed **18.450 seconds of the 20-second budget** before bootstrap diagnostics could start. Deferral removes an observed optional-work ordering flaw; it does not establish the exclusive cause of the timeout or prove that first-frame latency is resolved. The native deadline, UI waits, CSP, bridge schema, loader outcomes and native success assertions are unchanged.
 
-`EngineWebView.swift` now sets both the actual UIKit view's `isHidden` and `accessibilityElementsHidden` while the host is failed, and clears them in every nonfailed phase. The same representable and WKWebView remain owned throughout Retry. The unchanged native UI test must verify failure isolation, accessible Help/Retry, return to ready and one host after foregrounding. This Swift change has source review only until the new native job executes.
+`EngineWebView.swift` now sets both the actual UIKit view's `isHidden` and `accessibilityElementsHidden` while the host is failed, and clears them in every nonfailed phase. The same representable and WKWebView remain owned throughout Retry. The unchanged native UI test must verify failure isolation, accessible Help/Retry, return to ready and one host after foregrounding. This Swift change compiled successfully in the current native model lane; its actual remote accessibility and Retry behavior still require the full native job.
 
 ## Browser resize result and correction
 
@@ -47,12 +47,24 @@ Both isolated and integrated ordinary builds retain exactly the four declared ru
 
 [INC-NATIVE-QUEUE-20261027](../../evidence/INC-NATIVE-QUEUE-20261027.md) retains the bounded concurrency recovery. The old f030 run ultimately reported cancelled, with no log/artifact and an unknown execution stage. Its recorded completion time and later observation time are kept separate. No cancellation command was sent by this session.
 
-At the latest observation before this checkpoint, the `2b630f1` [full native run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40464291855) and [web quality run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40464291804) remained active. Those runs contain the old application source. Preserve any result as its own observation; neither can verify this repair. Keep future native runs serialized in the existing group and do not repeat concurrency renaming if a run stalls.
+The older `2b630f1` [full native run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40464291855) completed failed at **07:39:29 UTC**, with exit 65: 84 units passed and five of eight UI cases failed. Besides the repeated first-launch and recovery accessibility failures, app termination, Xcode launch and layout-name hittability failures occurred. Their exclusive cause remains unclassified. The 764,996,816-byte archive exceeds the connector's explicit 536,870,912-byte download maximum, so only the independently recovered decoded log is inspected; no capture or asset-report claim is made. The incident retains exact timing, archive metadata and this access limit.
+
+The older [2b web run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40464291804) completed successfully at workflow level, but again contained **31 expected cases and one flaky resize case**, 33 attempts, one retry and `stats.ok: false`. Its failed attempt naturally returned width 600 after **5,239.639 ms**, after the old five-second poll. Browser artifact `12716838808` was independently downloaded: **7,949,864 bytes**, SHA-256 `addc4e8463fb74c11f8bfc1af621a4e7a6eae6172593b50733b4861525d3d075`. This is separate historical corroboration, not clean acceptance and not execution of the current ten-second, two-dimension assertion.
+
+For current `0e6d83c`, [model run 40467652937](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40467652937) completed successfully. The independently verified [P02 record](../../evidence/P02-T01-native-unit-0e6d83c.json) maps 24 scoped cases and 36 source inputs; the [P04 record](../../evidence/P04-T06-native-unit-0e6d83c.json) maps 46 scoped cases and 114 inputs. Both retain the actual archive/log digests, source fingerprints and compiled-source versus runtime distinctions. Strict current-source and Git validation passed with zero errors or warnings.
+
+The current [full native run 40467652957](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40467652957), job `122069396584`, started **07:39:31 UTC**; its test step started **07:39:48 UTC**. The current [web run 40467652936](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40467652936) passed check/build, ordinary packaging and asset export and was executing **34 browser cases** at the **07:46:57 UTC** observation. These are step observations, not completed full-run acceptance. Keep future native runs serialized in the existing group and do not repeat concurrency renaming if a run stalls.
 
 1. Inspect all required Actions runs for the exact newly published repair SHA. Require the complete native suite, unchanged recovery test, successful first/cold asset observations, installed-resource identity and the real app-data-deletion repeat.
 2. Require clean full browser execution with the new order/cancellation cases and strengthened resize assertion. Preserve any failed attempt instead of treating a retry as clean acceptance.
 3. If startup still fails, inspect actual target-process timing before changing behavior. In particular, separate first-frame latency from layout delivery and optional diagnostic work; do not infer native receipt from JavaScript event order.
 4. Resolve the incident and accept tasks only when their complete current evidence passes. Then run `npm run project:next`; asynchronous resource handling, accessible preferences and compressed-asset compatibility remain subsequent gated work.
+
+## Confirmed audio scheduling defect for the next eligible repair
+
+A read-only reproduction against the exact published `web/src/audio.ts` confirms that a pending whistle can create three tones after `pause()` arrives during `AudioContext.resume()`. The actual module checks the exposed context state before suspending and does not invalidate or recheck the pending request after awaiting resume. The controlled fixture recorded zero suspend calls, then a successful whistle and three oscillator starts after pause. It used inert API doubles and proves the scheduling interleaving, **not audible playback or device frequency**.
+
+The [reproduction record](../../evidence/P02-T03-audio-resume-race-0e6d83c.md) retains exact source/fixture/output hashes and the complete inert fixture/result. No application source, shared build or preference changed. Preserve this defect for the next eligible sound/lifecycle repair: explicit active/enabled intent, invalidation of pending requests, and voice cleanup need focused regression coverage before actual native audio validation. This observation does not accept or claim P02-T03 while its dependency remains open.
 
 ## Product quality and external gates
 

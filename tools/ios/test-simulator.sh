@@ -39,7 +39,7 @@ xcodebuild test \
   -resultBundlePath "$result_path" \
   -parallel-testing-enabled NO \
   CODE_SIGNING_ALLOWED=NO \
-  | tee artifacts/ios/xcodebuild.log
+  2>&1 | tee artifacts/ios/xcodebuild.log
 pipeline_status=("${PIPESTATUS[@]}")
 set -e
 

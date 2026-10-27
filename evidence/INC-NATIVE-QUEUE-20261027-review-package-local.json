@@ -1,0 +1,62 @@
+{
+  "kind": "local-original-native-evidence-packaging-validation",
+  "result": "passed",
+  "nativeInputCommit": "0e6d83c24bd4e0ed5413c095ebaee1cbbc09d406",
+  "nativeInputRun": 40467652957,
+  "nativeInputArtifact": 12717438505,
+  "nativeInputArtifactBytes": 297014053,
+  "nativeInputArtifactSHA256": "d3db5275efd6418f5fd054df29dfa6ddacde6de636c3e5ae640bf183e4858104",
+  "helperSourceState": "reviewed uncommitted source; no native execution or workflow upload",
+  "sourceFiles": [
+    {
+      "path": ".github/workflows/ios-simulator.yml",
+      "sha256": "d22ee7a9f8cf8441b5e9f1e348fee64d2b8a5281886895c6f4eabb1eee9ead91"
+    },
+    {
+      "path": "tools/ios/stage-evidence.mjs",
+      "sha256": "420559e4d79be020fe1cca4f9eaf85ed60d67f3e054cdff23152c3db568c3079"
+    },
+    {
+      "path": "tools/ios/stage-evidence.test.mjs",
+      "sha256": "20ecb163d6e43aea742757c7a1140840d7bbd6a0ca3851c2c8bd550fcf07d783"
+    },
+    {
+      "path": "tools/ios/test-simulator.sh",
+      "sha256": "6224f910afe2855def52ea7a50527621b23578c416dbb57c2fb57d0e5906089d"
+    }
+  ],
+  "command": "node --input-type=module -e <call stageEvidence with fresh exact archive extraction and observed native outcomes>",
+  "exitCode": 0,
+  "sourceFilesUnchanged": 1804,
+  "copiedFiles": 72,
+  "originalPngs": 15,
+  "originalOpaqueAttachments": 38,
+  "actualFailureSnapshotRetained": {
+    "path": "screenshots/41D76F55-A5B4-4DF5-B196-91733B6B3393",
+    "bytes": 24455,
+    "sha256": "10e64bfd47f020f9469b670ade6a6bf3ab72d980020e6ae2d9ca2813a578794a"
+  },
+  "packages": {
+    "reports": {
+      "files": 58,
+      "bytes": 788196,
+      "indexSha256": "a134f00641b4c7a2698baa26692c1fc2ebb52f164bb06563798dc17dee36df35"
+    },
+    "captures": {
+      "files": 16,
+      "bytes": 15726213,
+      "indexSha256": "a134f00641b4c7a2698baa26692c1fc2ebb52f164bb06563798dc17dee36df35"
+    }
+  },
+  "issues": [],
+  "stepOutcomes": {
+    "nativeTests": "failure",
+    "installedWeb": "skipped",
+    "cleanInstall": "skipped"
+  },
+  "limitations": [
+    "This verifies exact-byte local staging of the current native artifact; it does not execute Swift, XCTest, upload-artifact, installed-resource verification or clean reinstall.",
+    "The failed native outcome and skipped downstream steps remain unchanged.",
+    "Fresh native workflow execution is still required for the staging/upload steps."
+  ]
+}
