@@ -6,7 +6,7 @@ Action: **resume**
 
 Resume the claimed task with its current owner; do not duplicate its work.
 
-CI snapshot: **passed**. Always check GitHub Actions for the current remote main commit.
+CI snapshot: **running**. Always check GitHub Actions for the current remote main commit.
 
 ## P01-T02 — Prove bundled asset loading inside the actual WKWebView origin
 
