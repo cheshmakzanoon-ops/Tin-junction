@@ -146,6 +146,21 @@ export class RoutedConsist {
   get front(): RouteCursor { const last = this.occupied.at(-1)!; return { edgeId: last.edgeId, distance: last.to }; }
   get rear(): RouteCursor { const first = this.occupied[0]!; return { edgeId: first.edgeId, distance: first.from }; }
 
+  /** Read-only bounded braking horizon, including a wrongly set trailing turnout. */
+  clearanceAhead(horizon: number): { readonly distance: number; readonly blocked: boolean } {
+    if (!Number.isFinite(horizon) || horizon < 0 || horizon > CONSIST_ROUTE_LIMITS.maxMovement) throw new RangeError("Invalid braking horizon.");
+    let edge = turnoutEdge(this.routeState, this.front.edgeId), offset = this.front.distance, distance = 0, transitions = 0;
+    while (true) {
+      const available = edge.length - offset;
+      if (distance + available > horizon) return { distance: horizon, blocked: false };
+      distance += available;
+      if (!edge.nextEdgeId || !selectedRouteEdge(this.routeState, edge.nextEdgeId)) return { distance, blocked: true };
+      if (distance >= horizon) return { distance: horizon, blocked: false };
+      edge = turnoutEdge(this.routeState, edge.nextEdgeId); offset = 0;
+      if (++transitions > CONSIST_ROUTE_LIMITS.intervals) throw new RangeError("Braking horizon exceeds its bounded traversal capacity.");
+    }
+  }
+
   occupiedTurnouts(): readonly string[] {
     const ids = new Set<string>();
     const include = (edgeId: string | null) => { if (edgeId) { const id = turnoutOwner(this.routeState, edgeId); if (id) ids.add(id); } };
