@@ -1,0 +1,2036 @@
+{
+  "schema_version": 1,
+  "record_kind": "completed-web-workflow-with-flaky-browser-case-not-browser-acceptance",
+  "tested_commit": "02d2230947528fedc3129d1d4ca43c9749cfa1c6",
+  "recorded_at": "2026-10-27T07:16:41.617845+00:00",
+  "run_id": 40463712719,
+  "run_url": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40463712719",
+  "observed_jobs": [
+    {
+      "id": 122054022949,
+      "name": "Plan integrity, types, tests and bundled browser smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40463712719,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out exact revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Install pinned Node major",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install locked dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Validate repository, typecheck, test and build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Assemble and verify native asset bundle",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Install browser test runtime",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run packaged browser harness tests",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8
+        },
+        {
+          "name": "Capture actual modular track joint geometry",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Preserve browser diagnostics",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Install pinned Node major",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19
+        },
+        {
+          "name": "Post Check out exact revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    },
+    {
+      "id": 122054023283,
+      "name": "Reproducible Blender export and Khronos validation",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40463712719,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out exact revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Install pinned Node",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Re-export original fixture and reject malformed source",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Preserve asset validation evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Post Install pinned Node",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Check out exact revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        }
+      ]
+    }
+  ],
+  "check_summary": {
+    "projectTests": 108,
+    "iosToolTests": 42,
+    "webUnitTests": 304,
+    "webUnitFiles": 22,
+    "typecheck": "passed",
+    "projectValidation": "passed with recorded historical source-fingerprint warnings",
+    "ordinaryBuildAndVerification": "passed",
+    "iosOrdinaryBundleAssembly": "passed",
+    "allCountsFromThisActualJob": true
+  },
+  "browser_summary": {
+    "stats": {
+      "total": 32,
+      "expected": 31,
+      "unexpected": 0,
+      "flaky": 1,
+      "skipped": 0,
+      "ok": false
+    },
+    "errors": [],
+    "duration_ms": 1203034.143,
+    "actual_workers": 1,
+    "start_time_epoch_ms": 1793084023197,
+    "project_names": [
+      "chromium-harness-not-device-proof"
+    ],
+    "ci_identity": {
+      "commitHref": "https://github.com/cheshmakzanoon-ops/Tin-junction/commit/02d2230947528fedc3129d1d4ca43c9749cfa1c6",
+      "commitHash": "02d2230947528fedc3129d1d4ca43c9749cfa1c6",
+      "buildHref": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40463712719"
+    },
+    "attempt_count": 33,
+    "retry_count": 1
+  },
+  "cases": [
+    {
+      "testId": "4219922fea2e2bd3c691-cd5917f16a0a57588e24",
+      "file": "smoke.spec.ts",
+      "title": "offline bundle renders the operating miniature with no external requests",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "smoke.spec.ts",
+        "line": 2,
+        "column": 1
+      },
+      "durationMs": 28566,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 28566,
+          "startTime": "2026-10-27T07:12:05.962Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:12:16.597Z",
+          "duration": 12925,
+          "location": {
+            "file": "smoke.spec.ts",
+            "line": 18,
+            "column": 14
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "4219922fea2e2bd3c691-fe8ff2ea7aaee011fc8e",
+      "file": "smoke.spec.ts",
+      "title": "bridge validation, lifecycle pause/resume and resize are observable",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "smoke.spec.ts",
+        "line": 34,
+        "column": 1
+      },
+      "durationMs": 38363,
+      "outcome": "flaky",
+      "results": [
+        {
+          "duration": 23170,
+          "startTime": "2026-10-27T07:12:34.555Z",
+          "retry": 0,
+          "errors": [
+            {
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m600\u001b[39m\nReceived: \u001b[31m1280\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  34 |   await page.waitForFunction((frames) => window.__TIN_DIAGNOSTICS__!.frameCount > frames, paused.frameCount);\n  35 |   await page.setViewportSize({ width: 600, height: 500 });\n> 36 |   await expect.poll(() => page.evaluate(() => window.__TIN_DIAGNOSTICS__!.width)).toBe(600);\n     |   ^\n  37 | });\n  38 |\n  39 | test(\"WebGL context loss pauses and restoration resumes the same harness\", async ({ page }) => {\n    at /home/runner/work/Tin-junction/Tin-junction/tests/web/browser/smoke.spec.ts:36:3",
+              "codeframe": "   1 | import { expect, test } from \"@playwright/test\";\n   2 |\n   3 | test(\"offline bundle renders the operating miniature with no external requests\", async ({ page }) => {\n   4 |   const errors: string[] = [];\n   5 |   const external: string[] = [];\n   6 |   page.on(\"pageerror\", (error) => errors.push(error.message));\n   7 |   page.on(\"request\", (request) => { if (!request.url().startsWith(\"http://127.0.0.1:4173/\") && !request.url().startsWith(\"data:\")) external.push(request.url()); });\n   8 |   await page.goto(\"/?capture=1\");\n   9 |   await expect(page.getByRole(\"heading\", { name: \"Tin Junction.\", exact: true })).toBeVisible();\n  10 |   await expect(page.getByRole(\"button\", { name: \"Run train\", exact: true })).toBeVisible();\n  11 |   await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.initialized === true);\n  12 |   const info = await page.evaluate(() => window.__TIN_DIAGNOSTICS__!);\n  13 |   expect(info.renderer).toBe(\"webgl2\");\n  14 |   expect(info.frameCount).toBeGreaterThan(0);\n  15 |   expect(info.drawingBufferWidth * info.drawingBufferHeight).toBeLessThanOrEqual(2_000_000);\n  16 |   expect(errors).toEqual([]);\n  17 |   expect(external).toEqual([]);\n  18 |   await page.screenshot({ path: \"test-results/first-railway-overview.png\" });\n  19 | });\n  20 |\n  21 | test(\"bridge validation, lifecycle pause/resume and resize are observable\", async ({ page }) => {\n  22 |   await page.goto(\"/?capture=1\");\n  23 |   await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.initialized === true);\n  24 |   await page.evaluate(() => {\n  25 |     window.TinJunction?.receiveNative({ version: 999, id: \"bad\", type: \"eval\", payload: {} });\n  26 |     window.TinJunction?.receiveNative({ version: 1, id: \"pause\", type: \"native.lifecycle\", payload: { state: \"background\" } });\n  27 |   });\n  28 |   const paused = await page.evaluate(() => ({ ...window.__TIN_DIAGNOSTICS__! }));\n  29 |   expect(paused.rejectedMessages).toBe(1);\n  30 |   expect(paused.lifecycle).toBe(\"paused\");\n  31 |   await page.waitForTimeout(120);\n  32 |   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.frameCount)).toBe(paused.frameCount);\n  33 |   await page.evaluate(() => window.TinJunction?.receiveNative({ version: 1, id: \"resume\", type: \"native.lifecycle\", payload: { state: \"active\" } }));\n  34 |   await page.waitForFunction((frames) => window.__TIN_DIAGNOSTICS__!.frameCount > frames, paused.frameCount);\n  35 |   await page.setViewportSize({ width: 600, height: 500 });\n> 36 |   await expect.poll(() => page.evaluate(() => window.__TIN_DIAGNOSTICS__!.width)).toBe(600);\n     |   ^ Error: expect(received).toBe(expected) // Object.is equality\n  37 | });\n  38 |\n  39 | test(\"WebGL context loss pauses and restoration resumes the same harness\", async ({ page }) => {\n  40 |   await page.goto(\"/?capture=1\");\n  41 |   await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.initialized === true);\n  42 |   await page.evaluate(() => {\n  43 |     const canvas = document.querySelector<HTMLCanvasElement>(\"#world\")!;\n  44 |     const extension = canvas.getContext(\"webgl2\")?.getExtension(\"WEBGL_lose_context\");\n  45 |     if (!extension) throw new Error(\"The test renderer must support explicit context loss\");\n  46 |     Reflect.set(window, \"__testContextLoss\", extension);\n  47 |     extension.loseContext();\n  48 |   });\n  49 |   await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.contextLosses === 1 && window.__TIN_DIAGNOSTICS__?.lifecycle === \"paused\");\n  50 |   const frames = await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.frameCount);\n  51 |   await page.evaluate(() => Reflect.get(window, \"__testContextLoss\").restoreContext());\n  52 |   await page.waitForFunction((previous) => window.__TIN_DIAGNOSTICS__!.frameCount > previous && window.__TIN_DIAGNOSTICS__!.lifecycle === \"running\", frames);\n  53 | });\n  54 |\n  55 | //"
+            }
+          ],
+          "status": "failed"
+        },
+        {
+          "duration": 15193,
+          "startTime": "2026-10-27T07:13:01.902Z",
+          "retry": 1,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "4219922fea2e2bd3c691-aff8cfb98cdfcb786828",
+      "file": "smoke.spec.ts",
+      "title": "WebGL context loss pauses and restoration resumes the same harness",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "smoke.spec.ts",
+        "line": 84,
+        "column": 1
+      },
+      "durationMs": 23241,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 23241,
+          "startTime": "2026-10-27T07:13:17.190Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "12378f7625f6e1af87e5-2261ce42f25dc06f4fc3",
+      "file": "control-accessibility.spec.ts",
+      "title": "essential controls stay readable and hittable at 1100x760",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "control-accessibility.spec.ts",
+        "line": 33,
+        "column": 3
+      },
+      "durationMs": 49459,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 49459,
+          "startTime": "2026-10-27T06:53:44.652Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T06:53:49.143Z",
+          "duration": 12279,
+          "location": {
+            "file": "control-accessibility.spec.ts",
+            "line": 41,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        },
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T06:54:05.635Z",
+          "duration": 12614,
+          "location": {
+            "file": "control-accessibility.spec.ts",
+            "line": 56,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "12378f7625f6e1af87e5-0d45d82f964b52d05120",
+      "file": "control-accessibility.spec.ts",
+      "title": "essential controls stay readable and hittable at 390x844",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "control-accessibility.spec.ts",
+        "line": 33,
+        "column": 3
+      },
+      "durationMs": 36330,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 36330,
+          "startTime": "2026-10-27T06:54:34.350Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T06:54:43.519Z",
+          "duration": 8079,
+          "location": {
+            "file": "control-accessibility.spec.ts",
+            "line": 41,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        },
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T06:54:53.628Z",
+          "duration": 6200,
+          "location": {
+            "file": "control-accessibility.spec.ts",
+            "line": 56,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "12378f7625f6e1af87e5-cf976b6aa1034c8de3e2",
+      "file": "control-accessibility.spec.ts",
+      "title": "essential controls stay readable and hittable at 358x300",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "control-accessibility.spec.ts",
+        "line": 33,
+        "column": 3
+      },
+      "durationMs": 30515,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 30515,
+          "startTime": "2026-10-27T06:55:10.707Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T06:55:18.266Z",
+          "duration": 6761,
+          "location": {
+            "file": "control-accessibility.spec.ts",
+            "line": 41,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        },
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T06:55:26.356Z",
+          "duration": 4342,
+          "location": {
+            "file": "control-accessibility.spec.ts",
+            "line": 56,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "12378f7625f6e1af87e5-59ac9fd974b58a5a0e34",
+      "file": "control-accessibility.spec.ts",
+      "title": "essential controls stay readable and hittable at 844x390",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "control-accessibility.spec.ts",
+        "line": 33,
+        "column": 3
+      },
+      "durationMs": 35909,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 35909,
+          "startTime": "2026-10-27T06:55:41.244Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T06:55:47.398Z",
+          "duration": 8040,
+          "location": {
+            "file": "control-accessibility.spec.ts",
+            "line": 41,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        },
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T06:55:57.266Z",
+          "duration": 6580,
+          "location": {
+            "file": "control-accessibility.spec.ts",
+            "line": 56,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-27e4e96a3d307b7a7ba9",
+      "file": "interaction-quality.spec.ts",
+      "title": "an interrupted editor tap cannot place scenery after native viewport",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 25,
+        "column": 3
+      },
+      "durationMs": 28465,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 28465,
+          "startTime": "2026-10-27T06:56:17.222Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-246d7085d1e6381eccd9",
+      "file": "interaction-quality.spec.ts",
+      "title": "an interrupted editor tap cannot place scenery after native inactive",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 25,
+        "column": 3
+      },
+      "durationMs": 33036,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 33036,
+          "startTime": "2026-10-27T06:56:45.726Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-3355cbfc8c0a7be9d704",
+      "file": "interaction-quality.spec.ts",
+      "title": "an interrupted editor tap cannot place scenery after document hidden",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 25,
+        "column": 3
+      },
+      "durationMs": 33588,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 33588,
+          "startTime": "2026-10-27T06:57:18.802Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-62e5912dcc7ba42d93db",
+      "file": "interaction-quality.spec.ts",
+      "title": "an interrupted editor tap cannot place scenery after canvas resize",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 25,
+        "column": 3
+      },
+      "durationMs": 48661,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 48661,
+          "startTime": "2026-10-27T06:57:52.427Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-64691b43e191a2dd5710",
+      "file": "interaction-quality.spec.ts",
+      "title": "a fresh touch can place scenery after an interrupted touch is canceled",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 100,
+        "column": 1
+      },
+      "durationMs": 43190,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 43190,
+          "startTime": "2026-10-27T06:58:41.109Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-18ffc41ff2dbb1b57f56",
+      "file": "interaction-quality.spec.ts",
+      "title": "camera input cannot place scenery after drag away and return",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 162,
+        "column": 3
+      },
+      "durationMs": 40372,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 40372,
+          "startTime": "2026-10-27T06:59:24.323Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-ca94792bf8c83abf2a03",
+      "file": "interaction-quality.spec.ts",
+      "title": "camera input cannot place scenery after right click",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 162,
+        "column": 3
+      },
+      "durationMs": 27687,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 27687,
+          "startTime": "2026-10-27T07:00:04.732Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-2c2a369c011c8ebc1a9c",
+      "file": "interaction-quality.spec.ts",
+      "title": "camera input cannot place scenery after middle click",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 162,
+        "column": 3
+      },
+      "durationMs": 29132,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 29132,
+          "startTime": "2026-10-27T07:00:32.459Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-8c7faa7909a60cdb7c98",
+      "file": "interaction-quality.spec.ts",
+      "title": "camera input cannot place scenery after Control click",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 162,
+        "column": 3
+      },
+      "durationMs": 29503,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 29503,
+          "startTime": "2026-10-27T07:01:01.628Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-de69dc341233ea51d5a0",
+      "file": "interaction-quality.spec.ts",
+      "title": "camera input cannot place scenery after Meta click",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 162,
+        "column": 3
+      },
+      "durationMs": 29435,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 29435,
+          "startTime": "2026-10-27T07:01:31.183Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-4559f75b040773502e73",
+      "file": "interaction-quality.spec.ts",
+      "title": "camera input cannot place scenery after Shift click",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 162,
+        "column": 3
+      },
+      "durationMs": 28688,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 28688,
+          "startTime": "2026-10-27T07:02:00.660Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-b870e81bc4dcdc99c726",
+      "file": "interaction-quality.spec.ts",
+      "title": "pressing and releasing a camera modifier cancels an already held editor tap",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 209,
+        "column": 1
+      },
+      "durationMs": 30454,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 30454,
+          "startTime": "2026-10-27T07:02:29.375Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-3f7a121f1bbd26f1125c",
+      "file": "interaction-quality.spec.ts",
+      "title": "an 80-character railway name leaves controls clear at 1100x760",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 278,
+        "column": 3
+      },
+      "durationMs": 34665,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 34665,
+          "startTime": "2026-10-27T07:02:59.860Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:03:16.401Z",
+          "duration": 12555,
+          "location": {
+            "file": "interaction-quality.spec.ts",
+            "line": 186,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-a3001b2ccf918fab57be",
+      "file": "interaction-quality.spec.ts",
+      "title": "an 80-character railway name leaves controls clear at 382x575",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 278,
+        "column": 3
+      },
+      "durationMs": 26208,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 26208,
+          "startTime": "2026-10-27T07:03:34.557Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:03:48.878Z",
+          "duration": 6464,
+          "location": {
+            "file": "interaction-quality.spec.ts",
+            "line": 186,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-b0974e8278445a2233d0",
+      "file": "interaction-quality.spec.ts",
+      "title": "an 80-character railway name leaves controls clear at 358x300",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 278,
+        "column": 3
+      },
+      "durationMs": 22563,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 22563,
+          "startTime": "2026-10-27T07:04:00.795Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:04:12.613Z",
+          "duration": 5174,
+          "location": {
+            "file": "interaction-quality.spec.ts",
+            "line": 186,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-c0306ac55e175c4158c7",
+      "file": "interaction-quality.spec.ts",
+      "title": "an 80-character railway name leaves controls clear at 844x390",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 278,
+        "column": 3
+      },
+      "durationMs": 22754,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 22754,
+          "startTime": "2026-10-27T07:04:23.380Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:04:33.840Z",
+          "duration": 6873,
+          "location": {
+            "file": "interaction-quality.spec.ts",
+            "line": 186,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "d685afd6575d360d9d8b-6d4a74ef205362a15193",
+      "file": "interaction-quality.spec.ts",
+      "title": "Save remains readable against every canvas background",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "interaction-quality.spec.ts",
+        "line": 393,
+        "column": 1
+      },
+      "durationMs": 59955,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 59955,
+          "startTime": "2026-10-27T07:04:46.152Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:04:58.183Z",
+          "duration": 12428,
+          "location": {
+            "file": "interaction-quality.spec.ts",
+            "line": 224,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        },
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:05:13.606Z",
+          "duration": 12277,
+          "location": {
+            "file": "interaction-quality.spec.ts",
+            "line": 224,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        },
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:05:28.862Z",
+          "duration": 12217,
+          "location": {
+            "file": "interaction-quality.spec.ts",
+            "line": 224,
+            "column": 16
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "3faf72e0a8acb2075084-48c2fba72a0e6e97d316",
+      "file": "railway.spec.ts",
+      "title": "drive, brake and safely reverse the actual train controls",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "railway.spec.ts",
+        "line": 33,
+        "column": 1
+      },
+      "durationMs": 47405,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 47405,
+          "startTime": "2026-10-27T07:05:46.176Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "3faf72e0a8acb2075084-b41ef07f8d2654e8d2e0",
+      "file": "railway.spec.ts",
+      "title": "place scenery on the board and undo/redo one complete transaction",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "railway.spec.ts",
+        "line": 71,
+        "column": 1
+      },
+      "durationMs": 54806,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 54806,
+          "startTime": "2026-10-27T07:06:33.643Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:07:06.265Z",
+          "duration": 17164,
+          "location": {
+            "file": "railway.spec.ts",
+            "line": 51,
+            "column": 14
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "3faf72e0a8acb2075084-e49e657b32a57122d647",
+      "file": "railway.spec.ts",
+      "title": "name, light and reopen a saved layout with the train stopped",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "railway.spec.ts",
+        "line": 110,
+        "column": 1
+      },
+      "durationMs": 62714,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 62714,
+          "startTime": "2026-10-27T07:07:28.491Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:08:13.219Z",
+          "duration": 12986,
+          "location": {
+            "file": "railway.spec.ts",
+            "line": 72,
+            "column": 14
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "3faf72e0a8acb2075084-136989e3845ad7986661",
+      "file": "railway.spec.ts",
+      "title": "corrupt current generation restores an identified previous save",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "railway.spec.ts",
+        "line": 155,
+        "column": 1
+      },
+      "durationMs": 40761,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 40761,
+          "startTime": "2026-10-27T07:08:31.242Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "3faf72e0a8acb2075084-8f62c6af3847020413dc",
+      "file": "railway.spec.ts",
+      "title": "native bridge queues edits behind a durable acknowledgment and rejects stale sessions",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "railway.spec.ts",
+        "line": 216,
+        "column": 1
+      },
+      "durationMs": 30923,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 30923,
+          "startTime": "2026-10-27T07:09:12.033Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "3faf72e0a8acb2075084-8dc3e23939beb96f3fd1",
+      "file": "railway.spec.ts",
+      "title": "pinch gesture does not commit scenery and focused buttons keep keyboard activation",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "railway.spec.ts",
+        "line": 358,
+        "column": 1
+      },
+      "durationMs": 31979,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 31979,
+          "startTime": "2026-10-27T07:09:42.974Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": []
+    },
+    {
+      "testId": "3faf72e0a8acb2075084-d68de11c93a3b9d17f25",
+      "file": "railway.spec.ts",
+      "title": "portrait controls and name editing stay usable as the viewport shrinks",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "railway.spec.ts",
+        "line": 417,
+        "column": 1
+      },
+      "durationMs": 43820,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 43820,
+          "startTime": "2026-10-27T07:10:14.967Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:10:27.544Z",
+          "duration": 8817,
+          "location": {
+            "file": "railway.spec.ts",
+            "line": 213,
+            "column": 14
+          },
+          "skipped": false,
+          "retry": 0
+        },
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:10:38.923Z",
+          "duration": 6754,
+          "location": {
+            "file": "railway.spec.ts",
+            "line": 216,
+            "column": 14
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "testId": "913c434c1d8258dd1dc8-2b8867afb620a72d4bd1",
+      "file": "scene-recovery.spec.ts",
+      "title": "restoring a context also restores generated lighting, not just frame delivery",
+      "projectName": "chromium-harness-not-device-proof",
+      "reportedLocation": {
+        "file": "scene-recovery.spec.ts",
+        "line": 29,
+        "column": 1
+      },
+      "durationMs": 67115,
+      "outcome": "expected",
+      "results": [
+        {
+          "duration": 67115,
+          "startTime": "2026-10-27T07:10:58.814Z",
+          "retry": 0,
+          "errors": [],
+          "status": "passed"
+        }
+      ],
+      "captureSteps": [
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:11:15.777Z",
+          "duration": 7827,
+          "location": {
+            "file": "scene-recovery.spec.ts",
+            "line": 39,
+            "column": 14
+          },
+          "skipped": false,
+          "retry": 0
+        },
+        {
+          "title": "Screenshot",
+          "startTime": "2026-10-27T07:11:50.198Z",
+          "duration": 10719,
+          "location": {
+            "file": "scene-recovery.spec.ts",
+            "line": 60,
+            "column": 14
+          },
+          "skipped": false,
+          "retry": 0
+        }
+      ]
+    }
+  ],
+  "report_identity": {
+    "html_entry": "playwright-report/index.html",
+    "html_sha256": "143d1a71e0ce5d16e06d1b2512637ee498f7efa4f6e33aefc4244afe6e93784b",
+    "embedded_zip_sha256": "bd92c388a1fe06a65492e0b71b82cc312515dc8009359fe19c98f05cc3ea890a",
+    "report_json_sha256": "633592f5ac96ee630f131151b29c06b905892d028ade04a491240f4bf62bb0c0",
+    "detail_files": [
+      {
+        "entry": "4219922fea2e2bd3c691.json",
+        "fileName": "smoke.spec.ts",
+        "sha256": "870d622ae1b1e43ab8036afe861dedee5b8bbc2df4396d4aabed93591a64133e",
+        "stats": {
+          "total": 3,
+          "expected": 2,
+          "unexpected": 0,
+          "flaky": 1,
+          "skipped": 0,
+          "ok": false
+        }
+      },
+      {
+        "entry": "12378f7625f6e1af87e5.json",
+        "fileName": "control-accessibility.spec.ts",
+        "sha256": "2b46d8d7f1cf474260d87bc5f709889ffb70529e0e55f5ef842a389e88389e46",
+        "stats": {
+          "total": 4,
+          "expected": 4,
+          "unexpected": 0,
+          "flaky": 0,
+          "skipped": 0,
+          "ok": true
+        }
+      },
+      {
+        "entry": "d685afd6575d360d9d8b.json",
+        "fileName": "interaction-quality.spec.ts",
+        "sha256": "1b05699ddaee8146abd27b86fa3b8638caf454a02bdce29e743f05c67f022149",
+        "stats": {
+          "total": 17,
+          "expected": 17,
+          "unexpected": 0,
+          "flaky": 0,
+          "skipped": 0,
+          "ok": true
+        }
+      },
+      {
+        "entry": "3faf72e0a8acb2075084.json",
+        "fileName": "railway.spec.ts",
+        "sha256": "467ca13ff8779f65fc3e8a5648e48d493430dbffed8de9ffd76d9066e2263d01",
+        "stats": {
+          "total": 7,
+          "expected": 7,
+          "unexpected": 0,
+          "flaky": 0,
+          "skipped": 0,
+          "ok": true
+        }
+      },
+      {
+        "entry": "913c434c1d8258dd1dc8.json",
+        "fileName": "scene-recovery.spec.ts",
+        "sha256": "6227e01d40d0843c5c6c7490d4aeef731bdb54e906d11e5ac34a410a67a6046f",
+        "stats": {
+          "total": 1,
+          "expected": 1,
+          "unexpected": 0,
+          "flaky": 0,
+          "skipped": 0,
+          "ok": true
+        }
+      }
+    ],
+    "reported_locations_are_report_metadata_not_asserted_Git_line_numbers": true
+  },
+  "artifacts": [
+    {
+      "id": 12715728330,
+      "name": "browser-diagnostics-02d2230947528fedc3129d1d4ca43c9749cfa1c6",
+      "size_in_bytes": 7949573,
+      "url": "https://api.github.com/repos/cheshmakzanoon-ops/Tin-junction/actions/artifacts/12715728330",
+      "archive_download_url": "https://api.github.com/repos/cheshmakzanoon-ops/Tin-junction/actions/artifacts/12715728330/zip",
+      "expired": false,
+      "created_at": "2026-10-27T07:13:49Z",
+      "expires_at": "2026-11-10T07:13:48Z",
+      "updated_at": "2026-10-27T07:13:49Z",
+      "digest": "sha256:5f68d27f8b97f2a421a0ec2d4122d04e9425fa1ac191e7371e8863d98d2337c3",
+      "workflow_run": {
+        "id": 40463712719,
+        "repository_id": 1435054425,
+        "head_repository_id": 1435054425,
+        "head_branch": "main",
+        "head_sha": "02d2230947528fedc3129d1d4ca43c9749cfa1c6"
+      },
+      "downloaded_bytes": 7949573,
+      "downloaded_sha256": "5f68d27f8b97f2a421a0ec2d4122d04e9425fa1ac191e7371e8863d98d2337c3",
+      "digest_verified": true
+    },
+    {
+      "id": 12715467267,
+      "name": "asset-validation-02d2230947528fedc3129d1d4ca43c9749cfa1c6",
+      "size_in_bytes": 2740,
+      "url": "https://api.github.com/repos/cheshmakzanoon-ops/Tin-junction/actions/artifacts/12715467267",
+      "archive_download_url": "https://api.github.com/repos/cheshmakzanoon-ops/Tin-junction/actions/artifacts/12715467267/zip",
+      "expired": false,
+      "created_at": "2026-10-27T06:53:35Z",
+      "expires_at": "2026-11-10T06:53:35Z",
+      "updated_at": "2026-10-27T06:53:35Z",
+      "digest": "sha256:d9d653174ee2a2912e75a532ae0e5b44a0555ff26b81019e1d4639db85e65906",
+      "workflow_run": {
+        "id": 40463712719,
+        "repository_id": 1435054425,
+        "head_repository_id": 1435054425,
+        "head_branch": "main",
+        "head_sha": "02d2230947528fedc3129d1d4ca43c9749cfa1c6"
+      },
+      "downloaded_bytes": 2740,
+      "downloaded_sha256": "d9d653174ee2a2912e75a532ae0e5b44a0555ff26b81019e1d4639db85e65906",
+      "digest_verified": true
+    }
+  ],
+  "capture_files": [
+    {
+      "entry": "test-results/controls-1100x760.png",
+      "bytes": 433102,
+      "sha256": "d6486ca0b8f8c1b0c25d702537f72097c1b8f1d85985a5e228ee920097f46e38",
+      "width": 1100,
+      "height": 760,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/controls-358x300.png",
+      "bytes": 85173,
+      "sha256": "385439ebba43e94fcecb570018c2142c79ce266837868cb85756e3f47861aeaf",
+      "width": 358,
+      "height": 300,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/controls-390x844.png",
+      "bytes": 158787,
+      "sha256": "92b2cd4d17e78aee5f789adce1feede587be5ce67f7842d4da10831cd31b052e",
+      "width": 390,
+      "height": 844,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/controls-844x390.png",
+      "bytes": 151087,
+      "sha256": "5841238e7991fb31da476900bb18f3424001738d78b3b4286dc7295dbe960ad7",
+      "width": 844,
+      "height": 390,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/editor-1100x760.png",
+      "bytes": 590388,
+      "sha256": "54c950a8973038ec7ce744717b2fc4fb2b73cf81afe25c67e9e9e8e5084ef69d",
+      "width": 1100,
+      "height": 760,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/editor-358x300.png",
+      "bytes": 30230,
+      "sha256": "75e95d32fcebd84d30f6a134cca9e6d897e4ef488b804734ed779cf4ec6bc1cc",
+      "width": 358,
+      "height": 300,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/editor-390x844.png",
+      "bytes": 144534,
+      "sha256": "5212aa0f7a0e717cb33079d1772cb154634daad1bb72404e10ab42b765fb65bf",
+      "width": 390,
+      "height": 844,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/editor-844x390.png",
+      "bytes": 171667,
+      "sha256": "880feecf32d6d2d273c65597dbf3defe3e639a04903d9ae304a736566926a0af",
+      "width": 844,
+      "height": 390,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/first-railway-night-portrait.png",
+      "bytes": 168208,
+      "sha256": "fd2eb06895f8ba4b82b0358c4a93567d1f788591db88f8ca5e89ae7feea55947",
+      "width": 430,
+      "height": 900,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/first-railway-night-restored.png",
+      "bytes": 384537,
+      "sha256": "d2bd29e2204f982de116935f58644e50f8a2dfeeb18eab3e977c41919973cee7",
+      "width": 1280,
+      "height": 720,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/first-railway-overview.png",
+      "bytes": 404624,
+      "sha256": "0681c2c78b33f8603ad2a8560649d7461212c9b70e8d53e4fadb92b9118fa700",
+      "width": 1280,
+      "height": 720,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/first-railway-portrait.png",
+      "bytes": 179896,
+      "sha256": "ecd2fac6819b067870705096aef603e3deb69dc17f01d5edffd1d92f44e52b81",
+      "width": 430,
+      "height": 900,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/first-railway-scenery-workshop.png",
+      "bytes": 810795,
+      "sha256": "d1c82f14be79ab31d84b6d98666f7124edf8e15b0cab700fbb208f5a1dc2c5fd",
+      "width": 1280,
+      "height": 900,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/interaction-quality-Save-r-e5912-nst-every-canvas-background-chromium-harness-not-device-proof/save-daylight.png",
+      "bytes": 404624,
+      "sha256": "0681c2c78b33f8603ad2a8560649d7461212c9b70e8d53e4fadb92b9118fa700",
+      "width": 1280,
+      "height": 720,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/interaction-quality-Save-r-e5912-nst-every-canvas-background-chromium-harness-not-device-proof/save-evening.png",
+      "bytes": 405658,
+      "sha256": "31a7105c598e8eab0c74a73d44370137d40b933f63520f9298b750954fc4f2ae",
+      "width": 1280,
+      "height": 720,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/interaction-quality-Save-r-e5912-nst-every-canvas-background-chromium-harness-not-device-proof/save-night.png",
+      "bytes": 384426,
+      "sha256": "7c987ed5ea12f51a76d5b6952eff098c2ee571ce0c4b9eafb3c96fd1c4d91395",
+      "width": 1280,
+      "height": 720,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/interaction-quality-an-80--12ded-s-controls-clear-at-358x300-chromium-harness-not-device-proof/maximum-name.png",
+      "bytes": 102839,
+      "sha256": "399fc8c3fd8a161bbe33d720ad7bd42a609b811ccad75e7eadd49ff521b75a9b",
+      "width": 358,
+      "height": 300,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/interaction-quality-an-80--3ab0f-s-controls-clear-at-844x390-chromium-harness-not-device-proof/maximum-name.png",
+      "bytes": 203692,
+      "sha256": "9a2587c472d9b49869671dd3f1ba8ecb076b27b2143c08394c9cf1fdf3bc41b4",
+      "width": 844,
+      "height": 390,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/interaction-quality-an-80--77d57-s-controls-clear-at-382x575-chromium-harness-not-device-proof/maximum-name.png",
+      "bytes": 189213,
+      "sha256": "18d34f4d51891720a5342cec4818a9d53f25b1b4dd7a88c8da9ca4347ec764dd",
+      "width": 382,
+      "height": 575,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/interaction-quality-an-80--84bc8--controls-clear-at-1100x760-chromium-harness-not-device-proof/maximum-name.png",
+      "bytes": 617352,
+      "sha256": "1caec51d0b6c7b5f16429e7b6fd63e0e813e71bdcab43a8678957e112197b197",
+      "width": 1100,
+      "height": 760,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/lighting-after-restore.png",
+      "bytes": 403199,
+      "sha256": "4013bad8ced37e2ad7692b1da21a9bec48a499c4e42876620d43524d71f3a583",
+      "width": 1280,
+      "height": 720,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/lighting-before-loss.png",
+      "bytes": 404624,
+      "sha256": "0681c2c78b33f8603ad2a8560649d7461212c9b70e8d53e4fadb92b9118fa700",
+      "width": 1280,
+      "height": 720,
+      "scope": "packaged-browser-suite"
+    },
+    {
+      "entry": "test-results/track-joints/joints.png",
+      "bytes": 97232,
+      "sha256": "b51e89eeb0b993f66dbca6b1d9e9a0dd382cbc2c66c10b2c5f38e856cb910f0e",
+      "width": 1280,
+      "height": 1050,
+      "scope": "supplementary-joint-fixture"
+    }
+  ],
+  "joint_capture": {
+    "entry": "test-results/track-joints/results.json",
+    "sha256": "134aba1c1ae5fa5a6aecc2e4623afd474d22a09c06e9fcec8a07129be5fa91d6",
+    "result": {
+      "environment": "Desktop Chromium with SwiftShader; not physical device evidence",
+      "results": [
+        {
+          "title": "Straight \u2192 right curve \u00b7 overview",
+          "compatible": true,
+          "triangles": 9192
+        },
+        {
+          "title": "Straight \u2192 right curve \u00b7 rail-height close-up",
+          "compatible": true,
+          "triangles": 9156
+        },
+        {
+          "title": "Right \u2192 left curve \u00b7 overview",
+          "compatible": true,
+          "triangles": 17568
+        },
+        {
+          "title": "Right \u2192 left curve \u00b7 rail-height close-up",
+          "compatible": true,
+          "triangles": 17484
+        }
+      ],
+      "errors": []
+    },
+    "scope": "Supplementary actual CI fixture; not general-graph, production-seam or device acceptance."
+  },
+  "ordinary_bundle": {
+    "entry": "dist/web/bundle-manifest.json",
+    "sha256": "56a002d9a9554a9dd65b40f3cbeb653d71d33c3230f7b1b09bcfa7c078424d80",
+    "manifest": {
+      "formatVersion": 1,
+      "kind": "first-operating-workbench-not-production-art",
+      "bundler": "esbuild",
+      "scriptFormat": "iife",
+      "externalRuntimeDependencies": [],
+      "assetOriginProbe": false,
+      "artifacts": {
+        "index.html": {
+          "bytes": 884,
+          "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+        },
+        "bundle.js": {
+          "bytes": 716308,
+          "sha256": "cb73662ef54a78a8f0f980d95bbb4a41ee4f9b3b6729ae30059e9dabfccc93ec"
+        },
+        "bundle.css": {
+          "bytes": 18493,
+          "sha256": "2951fd778ea783268ebe5221297b6f5db39e33b75315636b756cbb57bd49a9b6"
+        },
+        "bundle.js.LEGAL.txt": {
+          "bytes": 188,
+          "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+        }
+      }
+    },
+    "scope": "Packaging manifest archived by the web job and compared with expected ordinary identity. The archive does not include bundle.js bytes or installed native resources."
+  },
+  "logs": {
+    "complete_decoded_quality_log_sha256": "bcd6cc143310ca1e46b265b11d0c50d46e28294da1c8e10c6b19f89f28445715",
+    "complete_decoded_export_log_sha256": "b21508601b883a39a3cbdbbf79eb1b2a50b7d830a5e9cf139f7d37b3df76f7bc",
+    "unit_excerpt": {
+      "path": "evidence/P04-T06-web-unit-tests-02d2230.txt",
+      "sha256": "7febe34d2da9d2280a39ec72fa431595547c97afbe5e53c19f0397022e6be89b",
+      "selection": "Exact contiguous original span from npm run check through ordinary bundle assembly, ending before browser runtime installation; no filtering.",
+      "source_lines_one_based_inclusive": [
+        166,
+        464
+      ]
+    },
+    "browser_excerpt": {
+      "path": "evidence/P04-T06-web-browser-tests-02d2230.txt",
+      "sha256": "e9a4d236dd9a1e8dd5b7193904fbe1d46f2a217d499bf5050984fac9980dedb1",
+      "selection": "Exact contiguous original span from npm run test:browser through finalized artifact URL, including joint capture; no filtering.",
+      "source_lines_one_based_inclusive": [
+        719,
+        834
+      ]
+    }
+  },
+  "whole_browser_acceptance": false,
+  "browser_source_files": [
+    {
+      "path": ".github/workflows/quality.yml",
+      "sha256": "55e2b02a28efc8ae9c5ce924006185e3ca51ccbcbdc07cd8d27eea25b78245bd"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "d9f318747a126ce2247661af67852b185def7789492eabfad7bba322be087c33"
+    },
+    {
+      "path": "assets/catalog.json",
+      "sha256": "8992916f2045163d5795de53e73fecb995f35f4eec2edc959af2bb19dd83ca7b"
+    },
+    {
+      "path": "docs/architecture/FIRST_WORKBENCH.md",
+      "sha256": "bb2cbcc900a6c0762d2b4397906ecdfd1b969e8e9271f25bb1e958e20008e428"
+    },
+    {
+      "path": "docs/decisions/ADR-0006-first-operating-workbench.md",
+      "sha256": "3941d00aa161fbae2430c31f36ea3870df782ba72770d7e33a6281d4def4687b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "562c3c57fcda59ed920bbc38d77594c6731f0cfa32be884796bf9b73ba52eb99"
+    },
+    {
+      "path": "tests/web/browser/control-accessibility.spec.ts",
+      "sha256": "8be4a8cf1a560f1a53783adc74fd6c14c2e0d7efe7348179a7a3741da1b376a1"
+    },
+    {
+      "path": "tests/web/browser/interaction-quality.spec.ts",
+      "sha256": "d45ba52d563f6bfa546cd65757f8b582a2746139069983d537067a0392b30e49"
+    },
+    {
+      "path": "tests/web/browser/railway.spec.ts",
+      "sha256": "bc3743b4dc014c62bd44144e306080f56054b9202582013d079c5da4a8b49c0f"
+    },
+    {
+      "path": "tests/web/browser/scene-recovery.spec.ts",
+      "sha256": "ce6fd25d3cf6c0a5eb401852bb25734ef92bd6fc21d5fb3c7ca9c44e5bedc79d"
+    },
+    {
+      "path": "tests/web/browser/smoke.spec.ts",
+      "sha256": "4a62ca1c0c78d25a2a03492162dde8b0ac5c71f2e3cc63bbbc50c5800afa0eb1"
+    },
+    {
+      "path": "tools/build-web.mjs",
+      "sha256": "324e2e817346bb5ef1c9b40d914b38ebdf57f1b539399d2fbec434eec168b0fe"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "d1a0617ef6cf705009f0cef55c9a7bc8f403c9ba1fed3beb91b7bfed62c746f3"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "6235e2576f6780c2c0b6c79f4ba8ab84a19a7158effe1d66773e7ca4b49b18b4"
+    },
+    {
+      "path": "web/packaged.html",
+      "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+    },
+    {
+      "path": "web/src/audio.ts",
+      "sha256": "9df6cfbb47875ad491e76e5ef7725f463cf9a7153b7897c5e43732bedd21e2c1"
+    },
+    {
+      "path": "web/src/bridge.ts",
+      "sha256": "214b40845cef5a50b0a3113fc587bfe39da3b52e49e8a79bf31d472bb55afe4e"
+    },
+    {
+      "path": "web/src/clock.ts",
+      "sha256": "77c37952ff76a84e88f1cb3e4cc7980e5b9ed48bb04840b366aec8a8e467c912"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.css",
+      "sha256": "1a5119708079edcdab981a024e80635f37038bfd3dd848c18930e32af17dcdc4"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.ts",
+      "sha256": "5e369571c8695f398d30a2a875fa80dba0b7d9081a92d72262226639680d47e0"
+    },
+    {
+      "path": "web/src/diagnostics/buildFlags.d.ts",
+      "sha256": "468fb269f5b46e8b60c1685eea93449d7e73d50e88e43571c579483440ea3f3e"
+    },
+    {
+      "path": "web/src/documents/FORMAT_V2.md",
+      "sha256": "6e84f77afd0fd7f408a5e6c97062540f88132510335a3a18012fe73fef685d00"
+    },
+    {
+      "path": "web/src/documents/layoutDesign.ts",
+      "sha256": "323af0857e72d3d73eea6a33d936cae34748918818e262dec7399aa9d26be1c9"
+    },
+    {
+      "path": "web/src/editor/placementValidation.ts",
+      "sha256": "48b63331cd23ab131d99f85f0251ab26f874e61128c0c7603250cf057b24ff5c"
+    },
+    {
+      "path": "web/src/main.ts",
+      "sha256": "6cffe3be63aefc70b1ecd44af9389dc4a4530c497999d00d033744ff9c6c8cdf"
+    },
+    {
+      "path": "web/src/model/geometry.ts",
+      "sha256": "e56fbe722f3e71cc06d70679af0eda98d32ed2ebe071bab86d37c2f403a1dae9"
+    },
+    {
+      "path": "web/src/model/index.ts",
+      "sha256": "853d7ec3b2a155b0935f5091399760fc0675baecfbcb3ccafb22485379f70161"
+    },
+    {
+      "path": "web/src/model/layout.ts",
+      "sha256": "c55a69e9803d9418ef3084bc65c5bf4c06cba0927021f4438af907aee1d27d50"
+    },
+    {
+      "path": "web/src/model/railway.ts",
+      "sha256": "c38cb8ecbea445583669db3dc79ed67574124b7e4c6370b551effc444149feb3"
+    },
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/model/validation.ts",
+      "sha256": "c5d4eb4f2fdc33f95bc227fad227e71c65a99cbc8f3df86dddfc7e50e7c0f42e"
+    },
+    {
+      "path": "web/src/persistence.ts",
+      "sha256": "aa7d2e9e033e8b5866a1a1a4799d0e4da64ce4366d3dea218612d09e81d0deed"
+    },
+    {
+      "path": "web/src/scene/MiniatureScene.ts",
+      "sha256": "af9b338172f349b73d623575e001acbbe42c74d7e848dc18536930f71227b6b7"
+    },
+    {
+      "path": "web/src/scene/architectureGeometry.ts",
+      "sha256": "fad629ebb0bf7a4cda5cfdee386255ee025d0b50009d6122a51530cd30ed04ea"
+    },
+    {
+      "path": "web/src/scene/canopyGeometry.ts",
+      "sha256": "411ff2d521ab1d80db1bafdab73f3eb10bff04fa081410eac937f951363df4ed"
+    },
+    {
+      "path": "web/src/scene/caseGeometry.ts",
+      "sha256": "d95104c4bac012f168235144fcdf1d14e776d86f5d21546721d9e1f43cc53e24"
+    },
+    {
+      "path": "web/src/scene/geometry.ts",
+      "sha256": "149271929c855fe9683488d0a6477e02fcc76b03373cf5b67d3d7d17d5720b4a"
+    },
+    {
+      "path": "web/src/scene/materials.ts",
+      "sha256": "627438adbe584860fe6947c06dd2ea574ebda8b8656ed2088c7b6ab7a11227da"
+    },
+    {
+      "path": "web/src/scene/pondGeometry.ts",
+      "sha256": "f8588c579dba55a69960b09d26fca0021bc46f009f8a8fbd4c8eb0e8efccb1aa"
+    },
+    {
+      "path": "web/src/scene/scenery.ts",
+      "sha256": "47930ede316599bbef971c8ad8951ee9d0cf9a573cc8db3b000d7cabc312beca"
+    },
+    {
+      "path": "web/src/scene/stationPlacement.ts",
+      "sha256": "56a8224150b0575998671bf17c7c7ef5fb72deed64b69fc2fd64c1bdeb182511"
+    },
+    {
+      "path": "web/src/scene/train.ts",
+      "sha256": "6f9f9ff667a4c2cf054a4cafcf62f053388bd65d3192e2165d069d7c3d311239"
+    },
+    {
+      "path": "web/src/scene/trainDetailGeometry.ts",
+      "sha256": "b64be9f90e242d2dac0cf091c2091811f33a7d1cbc20d59c125deae2fbfa477c"
+    },
+    {
+      "path": "web/src/scene/trainMechanics.ts",
+      "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320"
+    },
+    {
+      "path": "web/src/simulation/MOTION.md",
+      "sha256": "3074213c3c134d81ca596bdfd07ea4b47f70c68e45ec2efd24625c97a4df8e6c"
+    },
+    {
+      "path": "web/src/simulation/VEHICLES.md",
+      "sha256": "48ccd4ab5e7835e8774edf3b342e59a4260550597dad22c64c0fa19ecf0f94a8"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "b2d1a81d4e14b2ee7ef1c9fbe7293150e9d65cbf90d7317c6bc31f371f361ef0"
+    },
+    {
+      "path": "web/src/simulation/routedMotion.ts",
+      "sha256": "db0d5bc20d479552369f798a0b73e7bb0f60568b948f80d5435e55b34d6ee69e"
+    },
+    {
+      "path": "web/src/simulation/routedPoses.ts",
+      "sha256": "ffbaa7e7dca44a8556a75f98f983b907c8512d91e6d33a65940bfeff99081c01"
+    },
+    {
+      "path": "web/src/simulation/vehicleCatalog.ts",
+      "sha256": "8a48b82b331850acfe108a4f318c0c3414c750d83f1844336569bb4228efdb66"
+    },
+    {
+      "path": "web/src/simulation/vehicleStep.ts",
+      "sha256": "88e0d97f62f6235e01908fcb67573261a8f52b57ad00919a9058bbc56a6483c3"
+    },
+    {
+      "path": "web/src/style.css",
+      "sha256": "1467b8e32d093ac40693696564470f21313d971a0de9135dc13f7527a7307b98"
+    },
+    {
+      "path": "web/src/track/CLEARANCE.md",
+      "sha256": "fcf4ba1d11262f1c42e1b0beac77de470709ef5b6d9f044555ec8f402288f5c8"
+    },
+    {
+      "path": "web/src/track/README.md",
+      "sha256": "052dee4508151e0f2f3cc01326ee32218cd1f4c961550e2e867cfbe92e08eecd"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/clearance.ts",
+      "sha256": "b72d636c79ebb885df55786c737451e9aa9dd95f9aa4f93b38e810ebc9ee8b9a"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    },
+    {
+      "path": "web/src/ui.ts",
+      "sha256": "85cc386bb11eaffa4d71dc9dfb50a1743baba5117807163a9235659a337c293e"
+    }
+  ],
+  "source_scope_corrections": [
+    {
+      "scope": "web_unit",
+      "path": "apps/ios/TinJunctionTests/Fixtures/starter-layout.json",
+      "reason": "Direct JSON import by persistence.test.ts; unchanged Git bytes from f030; does not imply native execution."
+    },
+    {
+      "scope": "web_integration",
+      "path": "vite.config.ts",
+      "reason": "Actual npm preview configuration used by Playwright webServer; unchanged Git bytes from f030."
+    }
+  ],
+  "flaky_resize_diagnostics": {
+    "trace": {
+      "entry": "test-results/smoke-bridge-validation-li-955c7-e-and-resize-are-observable-chromium-harness-not-device-proof/trace.zip",
+      "bytes": 180733,
+      "sha256": "6e05f1cd6eb9918744b95d53c9e68a3f7e200edf4d6da0448781e92d52997e61"
+    },
+    "error_context": {
+      "entry": "test-results/smoke-bridge-validation-li-955c7-e-and-resize-are-observable-chromium-harness-not-device-proof/error-context.md",
+      "bytes": 2130,
+      "sha256": "6a29c888ef004d30a00be3c0fd9a057570ea77ece8ff460004e749477f519728"
+    },
+    "tested_git_source": {
+      "path": "tests/web/browser/smoke.spec.ts",
+      "test_declaration_line": 21,
+      "assertion_line": 36
+    },
+    "exact_selected_trace_calls": [
+      {
+        "trace_entry": "0-trace.trace",
+        "callId": "call@2647",
+        "before": {
+          "type": "before",
+          "callId": "call@2647",
+          "startTime": 1145498.473,
+          "class": "Page",
+          "method": "setViewportSize",
+          "params": {
+            "viewportSize": {
+              "width": 600,
+              "height": 500
+            }
+          },
+          "stepId": "pw:api@37",
+          "pageId": "page@2b2432988ea05814452f5da73809ceb9",
+          "beforeSnapshot": "before@call@2647"
+        },
+        "after": {
+          "type": "after",
+          "callId": "call@2647",
+          "endTime": 1145505.204,
+          "afterSnapshot": "after@call@2647"
+        }
+      },
+      {
+        "trace_entry": "test.trace",
+        "callId": "expect@38",
+        "before": {
+          "type": "before",
+          "callId": "expect@38",
+          "stepId": "expect@38",
+          "startTime": 1145507.45,
+          "class": "Test",
+          "method": "expect",
+          "title": "Expect \"poll toBe\"",
+          "params": {
+            "expected": "600"
+          },
+          "stack": [
+            {
+              "file": "/home/runner/work/Tin-junction/Tin-junction/tests/web/browser/smoke.spec.ts",
+              "line": 36,
+              "column": 83
+            }
+          ]
+        },
+        "after": {
+          "type": "after",
+          "callId": "expect@38",
+          "endTime": 1150507.949,
+          "annotations": [],
+          "error": {
+            "name": "",
+            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m600\u001b[39m\nReceived: \u001b[31m1280\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m600\u001b[39m\nReceived: \u001b[31m1280\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at /home/runner/work/Tin-junction/Tin-junction/tests/web/browser/smoke.spec.ts:36:3"
+          }
+        }
+      },
+      {
+        "trace_entry": "0-trace.trace",
+        "callId": "call@2659",
+        "before": {
+          "type": "before",
+          "callId": "call@2659",
+          "startTime": 1148412.2,
+          "class": "Frame",
+          "method": "evaluateExpression",
+          "params": {
+            "expression": "() => window.__TIN_DIAGNOSTICS__.width",
+            "isFunction": true,
+            "arg": {
+              "value": {
+                "v": "undefined"
+              },
+              "handles": []
+            }
+          },
+          "stepId": "pw:api@49",
+          "pageId": "page@2b2432988ea05814452f5da73809ceb9",
+          "beforeSnapshot": "before@call@2659"
+        },
+        "after": {
+          "type": "after",
+          "callId": "call@2659",
+          "endTime": 1150753.703,
+          "result": {
+            "value": {
+              "n": 600
+            }
+          },
+          "afterSnapshot": "after@call@2659"
+        }
+      },
+      {
+        "trace_entry": "test.trace",
+        "callId": "expect@51",
+        "before": {
+          "type": "before",
+          "callId": "expect@51",
+          "stepId": "expect@51",
+          "parentId": "expect@38",
+          "startTime": 1150766.901,
+          "class": "Test",
+          "method": "expect",
+          "title": "Expect \"toBe\"",
+          "params": {
+            "expected": "600"
+          },
+          "stack": []
+        },
+        "after": {
+          "type": "after",
+          "callId": "expect@51",
+          "endTime": 1150766.98,
+          "annotations": []
+        }
+      }
+    ],
+    "first_observed_target_width_after_viewport_completion_ms": 5248.499,
+    "target_width_observation_after_outer_poll_failure_ms": 245.754,
+    "interpretation": "The original failed attempt naturally returned width 600 after its outer five-second poll had already failed. The resize was not permanently lost in that attempt. The trace does not isolate ResizeObserver dispatch, rendering, browser scheduling or IPC cost, and this old test did not assert the height.",
+    "source_review": "main.ts resize synchronously assigns scene.resize() dimensions to diagnostics; the periodic two-second metrics update is not responsible for publishing width/height. No application resize change was made for this finding."
+  },
+  "independent_capture_review": {
+    "reviewer": "installed_bundle_evidence/web02d_review",
+    "viewed_entries": [
+      "test-results/first-railway-overview.png",
+      "test-results/first-railway-night-restored.png",
+      "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/lighting-before-loss.png",
+      "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/lighting-after-restore.png",
+      "test-results/track-joints/joints.png"
+    ],
+    "observations": [
+      "No concrete new control clipping, overlap, missing scene region or broad recovery-lighting darkening was visible in the five inspected captures.",
+      "Restored night visibly shows Cedar crossing, Saved on this device, Night selected and 0 mm/s.",
+      "Before/after recovery composition and lighting appear consistent; the restored status reads The railway is ready again.",
+      "All four joint panels and their labels render; visible central rail profiles appear continuous at this resolution.",
+      "Overview/recovery framing crops the upper case lid. Joint closeups crop rail ends; those excluded portions are not inspected."
+    ],
+    "scope": "Archived desktop captures only; not pixel-equivalence measurement, motion assessment, native/physical-device proof, production-art approval or a claim about the flaky resize case."
+  }
+}

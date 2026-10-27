@@ -1,0 +1,38 @@
+Actual run: 40463712735 / job 122056107043 / attempt 1
+Tested commit: 02d2230947528fedc3129d1d4ca43c9749cfa1c6
+Full xcodebuild.log SHA-256: 4fc1bff5ea22cd50b1b3bdace30d5c5e1512d358e104c3ba685fde7d2a71d27d
+
+Verbatim selected XCTest outcomes:
+	 Executed 84 tests, with 0 failures (0 unexpected) in 3.906 (4.555) seconds
+	 Executed 84 tests, with 0 failures (0 unexpected) in 3.906 (4.557) seconds
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift:30: error: -[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch] : XCTAssertTrue failed
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' failed (125.209 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (18.687 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (21.290 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (14.938 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (78.731 seconds).
+Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (20.443 seconds).
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/HostStartupUITests.swift:23: error: -[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry] : XCTAssertFalse failed - Unavailable web controls must not remain in the recovery accessibility traversal.
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' failed (14.268 seconds).
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (81.522 seconds).
+	 Executed 8 tests, with 2 failures (0 unexpected) in 375.089 (375.602) seconds
+	 Executed 8 tests, with 2 failures (0 unexpected) in 375.089 (375.609) seconds
+
+Verbatim target-app startup trace, recovered from actual xcresult object:
+2026-10-27 07:06:57.218376+0000 TinJunction[18942:57882] [TinStartup] +0.000s webview.created
+2026-10-27 07:06:58.203821+0000 TinJunction[18942:57882] [TinStartup] +0.985s host.lifecycle=active
+2026-10-27 07:07:02.423744+0000 TinJunction[18942:57882] [TinStartup] +5.205s navigation.started.window=1
+2026-10-27 07:07:02.443649+0000 TinJunction[18942:57882] [TinStartup] +5.225s host.loading.lifecycle=active
+2026-10-27 07:07:02.451908+0000 TinJunction[18942:57882] [TinStartup] +5.234s resource.ready.type=html.bytes=884
+2026-10-27 07:07:02.509426+0000 TinJunction[18942:57882] [TinStartup] +5.291s navigation.committed.window=1
+2026-10-27 07:07:02.537892+0000 TinJunction[18942:57882] [TinStartup] +5.320s resource.ready.type=css.bytes=19022
+2026-10-27 07:07:02.548742+0000 TinJunction[18942:57882] [TinStartup] +5.330s resource.ready.type=js.bytes=801235
+2026-10-27 07:07:08.939100+0000 TinJunction[18942:57882] [TinStartup] +11.719s navigation.finished.window=1
+2026-10-27 07:07:20.892975+0000 TinJunction[18942:57882] [TinStartup] +23.675s bridge.webReady
+2026-10-27 07:07:22.181267+0000 TinJunction[18942:57882] [TinStartup] +24.963s host.restorePrepared
+2026-10-27 07:07:23.127773+0000 TinJunction[18942:57882] [TinStartup] +25.909s host.failed.afterBridge
+2026-10-27 07:07:23.673034+0000 TinJunction[18942:57882] [TinStartup] +26.455s resource.ready.type=glb.bytes=29356
+2026-10-27 07:07:23.693892+0000 TinJunction[18942:57882] [TinStartup] +26.476s resource.ready.type=png.bytes=93
+2026-10-27 07:07:23.694893+0000 TinJunction[18942:57882] [TinStartup] +26.477s resource.ready.type=js.bytes=132
+2026-10-27 07:07:23.698838+0000 TinJunction[18942:57882] [TinStartup] +26.481s resource.ready.type=wasm.bytes=44
+2026-10-27 07:07:24.116209+0000 TinJunction[18942:57882] [TinStartup] +26.898s resource.ready.type=wav.bytes=11564

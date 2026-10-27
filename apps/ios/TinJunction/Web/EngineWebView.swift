@@ -30,6 +30,7 @@ struct EngineWebView: UIViewRepresentable {
         view.scrollView.isScrollEnabled = false
         view.scrollView.bounces = false
         view.accessibilityIdentifier = "host.webview"
+        updateAvailability(of: view)
         #if DEBUG
         view.isInspectable = true
         #endif
@@ -46,7 +47,19 @@ struct EngineWebView: UIViewRepresentable {
         return view
     }
 
-    func updateUIView(_ uiView: WKWebView, context: Context) {}
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        updateAvailability(of: uiView)
+    }
+
+    private func updateAvailability(of view: WKWebView) {
+        // The packaged UI failure showed that SwiftUI's accessibilityHidden
+        // alone left WebKit's remote accessibility container exposed. Hide the
+        // actual UIKit view and its descendants while native recovery owns the
+        // surface. Preserve this same renderer for the explicit Retry path.
+        let failed = host.phase == .failed
+        view.isHidden = failed
+        view.accessibilityElementsHidden = failed
+    }
 
     static func dismantleUIView(_ uiView: WKWebView, coordinator: Coordinator) {
         coordinator.cancelPreparation()

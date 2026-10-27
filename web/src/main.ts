@@ -74,6 +74,8 @@ function start(): void {
   let noticeTimer = 0;
   let assetProbe: { dispose(): void } | null = null;
   let assetProbeGeneration = 0;
+  let assetProbeRequested = false;
+  let assetProbeStartTimer = 0;
   const throttle = element<HTMLInputElement>("throttle");
   const help = element<HTMLDialogElement>("help-dialog");
 
@@ -204,23 +206,14 @@ function start(): void {
         if (message.payload.sessionId && message.payload.sessionId !== sessionId) {
           cancelEditorGesture();
           assetProbeGeneration += 1; assetProbe?.dispose(); assetProbe = null;
+          clearTimeout(assetProbeStartTimer); assetProbeStartTimer = 0; assetProbeRequested = false;
           sessionId = message.payload.sessionId; loaded = false; pending = null; saveQueued = false;
           clearTimeout(acknowledgmentTimer); clearTimeout(saveTimer); setSaveState("loading", "Opening your railway…");
           // The production build eliminates this branch and its fixture module.
           // A native DEBUG opt-in is still required in the diagnostic build.
           if (typeof __TIN_ASSET_PROBE__ !== "undefined" && __TIN_ASSET_PROBE__
             && native && message.payload.debug && message.payload.assetProbe === true) {
-            const generation = assetProbeGeneration, probeSession = sessionId;
-            void import("./diagnostics/assetProbe").then(({ startAssetOriginProbe }) => {
-              if (lifecycle.disposed || generation !== assetProbeGeneration || sessionId !== probeSession) return;
-              assetProbe = startAssetOriginProbe({ sessionId: probeSession, report(payload) {
-                if (!lifecycle.disposed && generation === assetProbeGeneration && sessionId === probeSession) post("engine.assetProbe", { ...payload });
-              } });
-            }).catch(() => {
-              if (!lifecycle.disposed && generation === assetProbeGeneration) post("engine.error", {
-                code: "asset_probe_initialization_failed", recoverable: false,
-              });
-            });
+            assetProbeRequested = true;
           }
         }
         break;
@@ -239,6 +232,27 @@ function start(): void {
         if (message.payload.recovered) notice("Your previous good save was restored. The most recent changes may be missing.", true);
         post("layout.loaded", { sessionId, documentId: model.state.documentId, revision: model.state.revision });
         if (!message.payload.document) saveNow();
+        if (typeof __TIN_ASSET_PROBE__ !== "undefined" && __TIN_ASSET_PROBE__ && assetProbeRequested) {
+          assetProbeRequested = false;
+          const generation = assetProbeGeneration, probeSession = message.payload.sessionId;
+          // Finish the actual layout callback before importing or creating a
+          // second renderer. A microtask could still hold up WebKit's ordered
+          // native.layout delivery. Native acceptance remains a separate check.
+          assetProbeStartTimer = window.setTimeout(() => {
+            assetProbeStartTimer = 0;
+            if (lifecycle.disposed || !loaded || generation !== assetProbeGeneration || sessionId !== probeSession) return;
+            void import("./diagnostics/assetProbe").then(({ startAssetOriginProbe }) => {
+              if (lifecycle.disposed || !loaded || generation !== assetProbeGeneration || sessionId !== probeSession) return;
+              assetProbe = startAssetOriginProbe({ sessionId: probeSession, report(payload) {
+                if (!lifecycle.disposed && generation === assetProbeGeneration && sessionId === probeSession) post("engine.assetProbe", { ...payload });
+              } });
+            }).catch(() => {
+              if (!lifecycle.disposed && generation === assetProbeGeneration && sessionId === probeSession) post("engine.error", {
+                code: "asset_probe_initialization_failed", recoverable: false,
+              });
+            });
+          }, 0);
+        }
         break;
       case "native.saved": {
         const ack = message.payload;
@@ -399,6 +413,7 @@ function start(): void {
     cancelEditorGesture();
     saveNow(); lifecycle.disposed = true; updateSchedule();
     assetProbeGeneration += 1; assetProbe?.dispose(); assetProbe = null;
+    clearTimeout(assetProbeStartTimer); assetProbeStartTimer = 0; assetProbeRequested = false;
     clearTimeout(saveTimer); clearTimeout(acknowledgmentTimer); clearTimeout(noticeTimer);
     observer.disconnect(); document.removeEventListener("keydown", keyboard); document.removeEventListener("visibilitychange", visibility);
     canvas.removeEventListener("webglcontextlost", lost); canvas.removeEventListener("webglcontextrestored", restored);

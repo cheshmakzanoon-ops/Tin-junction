@@ -33,7 +33,10 @@ test("bridge validation, lifecycle pause/resume and resize are observable", asyn
   await page.evaluate(() => window.TinJunction?.receiveNative({ version: 1, id: "resume", type: "native.lifecycle", payload: { state: "active" } }));
   await page.waitForFunction((frames) => window.__TIN_DIAGNOSTICS__!.frameCount > frames, paused.frameCount);
   await page.setViewportSize({ width: 600, height: 500 });
-  await expect.poll(() => page.evaluate(() => window.__TIN_DIAGNOSTICS__!.width)).toBe(600);
+  await expect.poll(() => page.evaluate(() => ({
+    width: window.__TIN_DIAGNOSTICS__!.width,
+    height: window.__TIN_DIAGNOSTICS__!.height,
+  })), { timeout: 10_000 }).toEqual({ width: 600, height: 500 });
 });
 
 test("WebGL context loss pauses and restoration resumes the same harness", async ({ page }) => {

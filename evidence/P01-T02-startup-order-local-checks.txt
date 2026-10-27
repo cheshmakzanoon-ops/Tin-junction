@@ -1,0 +1,257 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 check
+> npm run project:validate && npm run typecheck && npm test && npm run build && npm run build:verify
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 project:validate
+> node tools/project.mjs validate
+
+Validated 31 phases and 131 tasks; graph, state, evidence, generated views and local links are consistent.
+Historical evidence warnings:
+P00-T01 evidence evidence/P00-T01-foundation.json: source changed since evidence: docs/architecture/SYSTEM_ARCHITECTURE.md
+P00-T02 evidence evidence/P00-T02-foundation.json: source changed since evidence: tools/project.mjs
+P00-T02 evidence evidence/P00-T02-foundation.json: source changed since evidence: tests/project/project.test.mjs
+P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: package.json
+P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: package-lock.json
+P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: tools/build-web.mjs
+P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: .github/workflows/quality.yml
+P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: .github/workflows/ios-simulator.yml
+P00-T04 evidence evidence/P00-T04-foundation.json: source changed since evidence: planning/HANDOFF.md
+P00-T04 evidence evidence/P00-T04-foundation.json: source changed since evidence: tools/project.mjs
+P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/TinJunction/RootView.swift
+P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/TinJunction/Web/EngineWebView.swift
+P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/TinJunction/Web/EngineHostModel.swift
+P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/TinJunctionUITests/HostSmokeTests.swift
+P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/project.yml
+P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: .github/workflows/ios-simulator.yml
+P01-T01 evidence evidence/P01-T01-source-verification.json: source changed since evidence: apps/ios/TinJunction/RootView.swift
+P05-T01 evidence evidence/P05-T01-centerlines.json: source changed since evidence: web/src/track/README.md
+P05-T04 evidence evidence/P05-T04-turnout-routing-unit.json: source changed since evidence: web/src/simulation/routedConsist.ts
+P05-T05 evidence evidence/P05-T05-clearance-unit.json: source changed since evidence: web/src/simulation/routedConsist.ts
+P05-T05 evidence evidence/P05-T05-placement-integration.json: source changed since evidence: web/src/simulation/routedConsist.ts
+P06-T01 evidence evidence/P06-T01-routed-motion-unit.json: source changed since evidence: web/src/simulation/routedConsist.ts
+P10-T01 evidence evidence/P10-T01-references.json: source changed since evidence: assets/catalog.json
+This checks repository consistency, not gameplay, graphics quality or current remote CI.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 test
+> npm run test:project && npm run test:ios-tools && npm run test:web
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 test:project
+> node --test tests/project/*.test.mjs
+
+✔ explicit probe packages only finite original fixtures and the production CSP (266.827877ms)
+✔ ordinary rebuild removes prior manifest-owned probe files, code and CSS from both destinations (342.534748ms)
+✔ unknown prior outputs are preserved and block cleanup (10.330029ms)
+✔ corrupted manifest-owned bytes block cleanup before any deletion (9.833239ms)
+✔ root, manifest and child symlinks cannot redirect packaging or cleanup (14.65387ms)
+✔ minimal WASM and classic-worker fixtures execute their actual expected behavior (3.569623ms)
+✔ PNG quadrants and the low-level PCM tone contain real original sample data (3.195269ms)
+✔ Blender fixture has correct ruler, axle, sockets, normals, UVs and PBR factors (9.856946ms)
+✔ recorded export hashes identify exact source and GLB bytes (1.85031ms)
+✔ asset contract rejects root scale (0.831754ms)
+✔ asset contract rejects root rotation (0.453974ms)
+✔ asset contract rejects missing physical units (0.458432ms)
+✔ asset contract rejects wrong socket (2.116962ms)
+✔ asset contract rejects wrong socket direction (0.78852ms)
+✔ asset contract rejects lost material semantics (3.090622ms)
+✔ asset contract rejects external buffer (0.41119ms)
+✔ asset contract rejects unknown required extension (0.458481ms)
+✔ asset contract rejects duplicate node (0.318981ms)
+✔ asset contract rejects missing UVs (0.624472ms)
+✔ asset contract rejects missing material (0.485102ms)
+✔ asset contract rejects double sided material (2.169983ms)
+✔ asset contract rejects NaN vertex (0.653495ms)
+✔ asset contract rejects bad normal (2.51347ms)
+✔ asset contract rejects out of bounds accessor (4.69449ms)
+✔ asset contract rejects sparse accessor (0.348907ms)
+✔ asset contract rejects wrong ruler length (2.643697ms)
+✔ GLB parser rejects truncated bytes and malicious length (0.235745ms)
+✔ native and web consume byte-identical versioned layout conformance cases (8.543675ms)
+✔ task order and readiness are derived, not a mutable next-task field (1.819625ms)
+✔ failing CI and unresolved incidents outrank planned features (0.390188ms)
+✔ incident lifecycle preserves the observed problem and requires explicit resolution (2.593531ms)
+✔ incident CLI writes and resolves fixtures without hand editing the ledger (8.008027ms)
+✔ claim, stale-claim recovery, release and dependency checks (1.261573ms)
+✔ claim hours cannot be infinite, negative, zero or longer than one day (0.488507ms)
+✔ blocking completed work preserves history and evidence; explicit resolution reopens it (0.403559ms)
+✔ validator rejects cycles, orphan states and unfinished dependencies marked done (0.483008ms)
+✔ evidence needs real files, matching hashes, commands and criterion references (3.761753ms)
+✔ command output must also be a hashed local artifact or manifested HTTPS artifact (2.581854ms)
+✔ changed source fails completion but remains a historical warning (1.708186ms)
+✔ claim→submit→complete needs handoff and evidence; no self-certification from status alone (2.213248ms)
+✔ in-review can collect partial evidence but completion requires all criteria (1.932354ms)
+✔ failed CI and open incidents block completion but allow review submission (2.498498ms)
+✔ simulator cannot satisfy a hardware gate (2.241591ms)
+✔ owner gate requires a real identified decision reference (4.823674ms)
+✔ path traversal and absolute evidence paths are rejected (0.283548ms)
+✔ generated views are deterministic and do not invent product completion (0.517671ms)
+✔ sync registers only new todo tasks and preserves claims, blockers and owner gates (3.525317ms)
+✔ reference registry and required launch catalog have consistent identities, rights and dimensions (14.095798ms)
+✔ rights/design records exist and research contains no unlicensed reference binaries (5.644693ms)
+✔ museum metadata permission is not confused with a commercial photo licence (7.151645ms)
+✔ reference inventory rejects missing creator (5.721059ms)
+✔ reference inventory rejects missing rights evidence (3.300117ms)
+✔ reference inventory rejects insecure source (3.597264ms)
+✔ reference inventory rejects implicit image rights (13.618168ms)
+✔ reference inventory rejects unreviewed image rights (2.246708ms)
+✔ reference inventory rejects duplicate reference (7.593593ms)
+✔ reference inventory rejects missing required family (3.334269ms)
+✔ reference inventory rejects missing dimension qualification (1.545561ms)
+✔ reference inventory rejects unknown source reference (2.016801ms)
+✔ reference inventory rejects unassigned owner (1.609818ms)
+✔ reference inventory rejects unknown production task (2.406149ms)
+✔ reference inventory rejects duplicate launch asset (3.141328ms)
+✔ reference inventory rejects missing catalog entry (6.01063ms)
+✔ reference inventory rejects fabricated production files (3.300858ms)
+✔ reference inventory rejects fabricated art approval (1.934167ms)
+✔ reference inventory rejects unearned asset rights (1.914687ms)
+✔ reference inventory rejects wrong catalog source (1.677941ms)
+✔ complete temporary fixture passes without performing any release action (5.804263ms)
+✔ missing approval blocks release (0.993288ms)
+✔ false authorization blocks release (2.503065ms)
+✔ string authorization blocks release (0.921299ms)
+✔ agent approval blocks release (0.887008ms)
+✔ substitute owner blocks release (0.865976ms)
+✔ expired approval blocks release (0.750552ms)
+✔ invalid calendar expiry blocks release (0.792665ms)
+✔ future approval blocks release (1.087871ms)
+✔ wrong approval commit blocks release (1.489146ms)
+✔ candidate differs from HEAD blocks release (0.63667ms)
+✔ dirty checkout blocks release (1.079788ms)
+✔ placeholder reference blocks release (0.565773ms)
+✔ missing reference file blocks release (0.672634ms)
+✔ non-file decision reference blocks release (4.737184ms)
+✔ HTTP decision reference blocks release (0.774629ms)
+✔ incomplete task blocks release (0.765364ms)
+✔ truncated roadmap blocks release (5.021423ms)
+✔ empty phase blocks release (6.129494ms)
+✔ validator error blocks release (1.549998ms)
+✔ missing validator result blocks release (1.925153ms)
+✔ open incident blocks release (0.960148ms)
+✔ missing live CI blocks release (0.509108ms)
+✔ CI stale observation blocks release (0.525022ms)
+✔ CI future observation blocks release (0.545623ms)
+✔ CI wrong candidate blocks release (2.178114ms)
+✔ CI missing native workflow blocks release (0.933799ms)
+✔ CI skipped workflow blocks release (0.614827ms)
+✔ CI failure blocks release (0.586895ms)
+✔ CI running blocks release (0.730101ms)
+✔ CI forged run host blocks release (0.516279ms)
+✔ latest failed run wins over an older success for the same commit (9.54754ms)
+✔ fork, PR, and nonmain runs are not candidate release health (0.655268ms)
+✔ a newly failed rerun of an older run cannot hide behind a higher run ID (0.606755ms)
+✔ HTTPS decision reference accepted as a reference, not a legal/identity certification (0.620375ms)
+✔ generated reading links preserve external HTTPS URLs (3.178564ms)
+✔ an explicit claim cannot bypass the unresolved-incident repair gate (3.624417ms)
+✔ repository paths cannot traverse an existing symlink outside the repository (6.026399ms)
+✔ reopening a prerequisite cascades to active and completed descendants but not independent work (1.146669ms)
+✔ reopened acceptance cannot be completed by reusing pre-regression evidence (9.286496ms)
+✔ criterion coverage cannot use a disallowed evidence type (4.822203ms)
+ℹ tests 108
+ℹ suites 0
+ℹ pass 108
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 770.727911
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 test:ios-tools
+> node --test tools/ios/*.test.mjs
+
+✔ records exact ordinary and diagnostic installed bytes without container paths (422.121031ms)
+✔ altered, missing, unexpected and falsely relabeled installed resources remove stale passing evidence (148.705938ms)
+✔ symlinked resources, manifest or WebAssets root cannot produce a passing identity (19.230041ms)
+✔ recording fails closed for unusable output and never writes into installed resources (5.785266ms)
+✔ CLI verification failure exits nonzero without printing its private input path (74.845031ms)
+✔ a real child-process file-write limit cannot publish partial evidence as passed (77.829127ms)
+✔ a different internally valid installed build cannot pass this build's identity gate (51.801964ms)
+✔ selects measured Duo UDID and runtime, not a fabricated product identifier (2.062981ms)
+✔ refuses another phone as fallback (0.399012ms)
+✔ does not trust an editable simulator name to prove device model (0.157227ms)
+✔ accepts a renamed actual Duo only by observed device-type identity (0.160552ms)
+✔ refuses absent or ambiguous device-type metadata (0.21224ms)
+✔ refuses unavailable runtime or mismatched SDK (0.153982ms)
+✔ refuses ambiguous device selections (0.122255ms)
+✔ refuses malformed UDIDs and transitional states (0.383969ms)
+✔ fixed clean reinstall proves prior data, fresh empty storage, two sessions and installed byte identity (1095.868983ms)
+✔ arbitrary bundle identifiers and test filters are rejected before native commands (60.780465ms)
+✔ successful native help on stderr is retained and does not require stdout (1150.007802ms)
+✔ failed full suite, stale installed identity, wrong compiled app and absent prior save forbid app removal (1736.470655ms)
+✔ an unrelated service error or surviving mapping cannot masquerade as a removed data container (1546.245456ms)
+✔ a missing-container response is insufficient if the actual selected Simulator is no longer available (761.926575ms)
+✔ failed uninstall preserves its real exit code and prevents reinstall or tests (695.984441ms)
+✔ retained save data or changed installed resources stop before any post-reset test launch (1754.0038ms)
+✔ symlinks cannot redirect the compiled app or the fresh native storage inspection (1455.297262ms)
+✔ native exit65 has priority while attachment export and post-test identity are still attempted (1774.545138ms)
+✔ failed attachment export cannot turn a passing native test into a passing verification (850.295761ms)
+✔ missing final observations or a repeated native session reject an otherwise successful command (2077.513682ms)
+✔ post-test resource changes fail even when the fixed UI test and attachment export succeeded (962.260016ms)
+✔ repeated verification preserves each result directory and the original full-suite artifacts (1602.776448ms)
+✔ the separate model lane selects exactly the unit target and identifies its evidence scope (53.352377ms)
+✔ failed model test still exports attachments and preserves exit 65 (50.469735ms)
+✔ failed export cannot conceal failed model test (44.670288ms)
+✔ missing evidence fails an otherwise successful model test (48.12883ms)
+✔ arbitrary test filters are rejected before starting native tools (5.545052ms)
+✔ successful native test and evidence export pass (48.060021ms)
+✔ failed native test still exports attachments and preserves exit 65 (55.111936ms)
+✔ failed export cannot conceal failed native test (45.657468ms)
+✔ missing evidence fails an otherwise successful native test (48.297188ms)
+✔ ordinary assets pass Release while a leftover opt-in diagnostic bundle fails with a rebuild instruction (518.310041ms)
+✔ missing, unknown and falsely relabeled resources cannot enter a Release archive (214.326058ms)
+✔ Release verifies actual file bytes and rejects diagnostic JS/CSS even if someone updates its checksum (183.128743ms)
+✔ Release rejects symlinks and project wiring enforces the guard before resources are copied (70.70274ms)
+ℹ tests 42
+ℹ suites 0
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17614.227673
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 test:web
+> vitest run
+
+
+ RUN  v5.0.5 /workspace/scratch/64c8551df0cd/Tin-junction
+
+
+ Test Files  22 passed (22)
+      Tests  304 passed (304)
+   Start at  00:27:26
+   Duration  5.45s (tests 78%, transform 15%, import 7%, worker 1%)
+
+    Isolate  22 workers spawned · ~148ms startup each (spawn + environment, per file)
+             at least ~318ms faster with isolate: false — reuses workers across files instead of one per file
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 build
+> node tools/build-web.mjs
+
+Built the offline workbench with all asset-origin diagnostic code, controls and fixtures excluded.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 build:verify
+> node tools/build-web.mjs --check
+
+Verified bundle allowlist, byte counts, SHA-256 hashes and ordinary-build probe exclusion.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 bundle:ios
+> node tools/build-web.mjs --ios
+
+Built the offline workbench with all asset-origin diagnostic code, controls and fixtures excluded.

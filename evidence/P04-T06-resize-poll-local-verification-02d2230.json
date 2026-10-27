@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "record_kind": "targeted-local-resize-poll-correction-not-whole-browser-acceptance",
+  "recorded_at": "2026-10-27T07:24:08.545847+00:00",
+  "result": "passed",
+  "base_commit": "2b630f16abf5cce75cc2e58efa9f99f8ab65d99f",
+  "original_failed_ci_commit": "02d2230947528fedc3129d1d4ca43c9749cfa1c6",
+  "original_failed_ci_run": 40463712719,
+  "source_files": [
+    {
+      "path": "tests/web/browser/smoke.spec.ts",
+      "sha256": "0fbc5d119d8325170ac296077abf9436b555ac4719bcc10862a9f7c4d73be7ae"
+    }
+  ],
+  "change": "Only the resize poll changes: explicit 10000 ms deadline and exact {width:600,height:500} equality. The existing total test timeout remains 30000 ms and all other assertions remain unchanged.",
+  "reason": "The same failed CI attempt naturally returned target width 600 after 5248.499 ms; its in-flight evaluate completed 245.754 ms after the old outer five-second poll failure. This establishes the deadline overrun without attributing physical-device or renderer performance.",
+  "original_failure_evidence": {
+    "path": "evidence/P04-T06-web-ci-observations-02d2230.json",
+    "sha256": "d4632a72c3390911f78ab58211e5e0e1d5c9aafdd1a00254760c1ba99199a5fd",
+    "trace_sha256": "6e05f1cd6eb9918744b95d53c9e68a3f7e200edf4d6da0448781e92d52997e61"
+  },
+  "commands": [
+    {
+      "command": "PLAYWRIGHT_JSON_OUTPUT_FILE=/tmp/tin-resize-poll-02d2230-local/report.json node node_modules/playwright/cli.js test tests/web/browser/smoke.spec.ts --grep 'bridge validation, lifecycle pause/resume and resize are observable' --retries=0 --workers=1 --output=/tmp/tin-resize-poll-02d2230-local/test-results --reporter=list,json",
+      "exit_code": 0,
+      "output_path": "evidence/P04-T06-resize-poll-local-tests-02d2230.txt"
+    }
+  ],
+  "log_sha256": "d0c2cb1eed17b3ed7bd43124e7e993fc2fb919dccf3e273e0744396621aaa875",
+  "complete_original_playwright_report": {
+    "sha256": "2a50f5ca87acafc65cc6b9d8b123bcc1863b4572744510dee7d170e74e621963",
+    "utf8": "{\n  \"config\": {\n    \"configFile\": \"/workspace/scratch/64c8551df0cd/Tin-junction/playwright.config.ts\",\n    \"rootDir\": \"/workspace/scratch/64c8551df0cd/Tin-junction/tests/web/browser\",\n    \"forbidOnly\": false,\n    \"fullyParallel\": false,\n    \"globalSetup\": null,\n    \"globalTeardown\": null,\n    \"globalTimeout\": 0,\n    \"grep\": {},\n    \"grepInvert\": null,\n    \"maxFailures\": 0,\n    \"metadata\": {\n      \"actualWorkers\": 1\n    },\n    \"preserveOutput\": \"always\",\n    \"reporter\": [\n      [\n        \"list\"\n      ],\n      [\n        \"json\"\n      ]\n    ],\n    \"reportSlowTests\": {\n      \"max\": 5,\n      \"threshold\": 300000\n    },\n    \"quiet\": false,\n    \"projects\": [\n      {\n        \"outputDir\": \"/tmp/tin-resize-poll-02d2230-local/test-results\",\n        \"repeatEach\": 1,\n        \"retries\": 0,\n        \"metadata\": {\n          \"actualWorkers\": 1\n        },\n        \"id\": \"chromium-harness-not-device-proof\",\n        \"name\": \"chromium-harness-not-device-proof\",\n        \"testDir\": \"/workspace/scratch/64c8551df0cd/Tin-junction/tests/web/browser\",\n        \"testIgnore\": [],\n        \"testMatch\": [\n          \"**/*.@(spec|test).?(c|m)[jt]s?(x)\"\n        ],\n        \"timeout\": 30000\n      }\n    ],\n    \"shard\": null,\n    \"updateSnapshots\": \"missing\",\n    \"updateSourceMethod\": \"patch\",\n    \"version\": \"1.56.1\",\n    \"workers\": 1,\n    \"webServer\": {\n      \"command\": \"npm run preview\",\n      \"url\": \"http://127.0.0.1:4173\",\n      \"reuseExistingServer\": true,\n      \"timeout\": 30000\n    }\n  },\n  \"suites\": [\n    {\n      \"title\": \"smoke.spec.ts\",\n      \"file\": \"smoke.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [\n        {\n          \"title\": \"bridge validation, lifecycle pause/resume and resize are observable\",\n          \"ok\": true,\n          \"tags\": [],\n          \"tests\": [\n            {\n              \"timeout\": 30000,\n              \"annotations\": [],\n              \"expectedStatus\": \"passed\",\n              \"projectId\": \"chromium-harness-not-device-proof\",\n              \"projectName\": \"chromium-harness-not-device-proof\",\n              \"results\": [\n                {\n                  \"workerIndex\": 0,\n                  \"parallelIndex\": 0,\n                  \"status\": \"passed\",\n                  \"duration\": 9034,\n                  \"errors\": [],\n                  \"stdout\": [],\n                  \"stderr\": [],\n                  \"retry\": 0,\n                  \"startTime\": \"2026-10-27T07:20:16.839Z\",\n                  \"annotations\": [],\n                  \"attachments\": []\n                }\n              ],\n              \"status\": \"expected\"\n            }\n          ],\n          \"id\": \"4219922fea2e2bd3c691-fe8ff2ea7aaee011fc8e\",\n          \"file\": \"smoke.spec.ts\",\n          \"line\": 34,\n          \"column\": 1\n        }\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"stats\": {\n    \"startTime\": \"2026-10-27T07:20:16.060Z\",\n    \"duration\": 11271.409,\n    \"expected\": 1,\n    \"skipped\": 0,\n    \"unexpected\": 0,\n    \"flaky\": 0\n  }\n}"
+  },
+  "observed_result": {
+    "test_count": 1,
+    "attempt_count": 1,
+    "retry_count": 0,
+    "case_duration_ms": 9034,
+    "report_duration_ms": 11271.409,
+    "overall_test_timeout_ms": 30000,
+    "poll_timeout_ms": 10000,
+    "expected_dimensions": {
+      "width": 600,
+      "height": 500
+    }
+  },
+  "served_build_identity": {
+    "verification": "Existing ordinary dist/web/bundle.js was hashed before and after the targeted run; no build was executed.",
+    "bytes": 716308,
+    "sha256": "cb73662ef54a78a8f0f980d95bbb4a41ee4f9b3b6729ae30059e9dabfccc93ec"
+  },
+  "acceptance": [],
+  "limitations": [
+    "This is one targeted local Desktop Chromium case with retries disabled, not a full browser suite or hosted-CI repetition.",
+    "It does not erase the original 02d failed first attempt or establish native/physical-device resize timing.",
+    "No forced resize event, retry masking, skipped assertion, application resize modification or scene-quality reduction was used.",
+    "Fresh full CI and coordinator review remain required; no P04-T06-A1, P02 or release acceptance is granted."
+  ]
+}

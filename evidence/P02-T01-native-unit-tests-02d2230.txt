@@ -1,0 +1,218 @@
+Actual artifact xcodebuild.log excerpt; scoped P02-T01 suites and full target totals.
+Tested commit: 02d2230947528fedc3129d1d4ca43c9749cfa1c6
+Run: 40463712718; job: 122054022825; attempt: 1
+Full log SHA-256: 2b1d1959e7a1f4f41d6f976f96d37d17f4a24e6de64da3d355d0e996d8adace7
+No retained log lines edited; unscoped suites and build commands omitted.
+
+Test Suite 'ApplicationSessionTests' started at 2026-10-27 07:00:51.608.
+Test Case '-[TinJunctionTests.ApplicationSessionTests testPresentationRecreationAndLifecycleKeepTheApplicationAuthority]' started.
+2026-10-27 07:00:51.648786+0000 TinJunction[13402:46409] [TinStartup] +6.916s navigation.committed.window=1
+2026-10-27 07:00:51.657798+0000 TinJunction[13402:46409] [TinStartup] +6.926s host.loading.lifecycle=inactive
+2026-10-27 07:00:51.663354+0000 TinJunction[13402:46409] [TinStartup] +6.931s bridge.webReady
+2026-10-27 07:00:51.665169+0000 TinJunction[13402:46409] [TinStartup] +6.933s resource.ready.type=css.bytes=18493
+2026-10-27 07:00:51.666146+0000 TinJunction[13402:46409] [ResourceLoadStatistics] Failed to request allowed query parameters from WebPrivacy.
+2026-10-27 07:00:51.681009+0000 TinJunction[13402:46409] [TinStartup] +6.949s resource.ready.type=js.bytes=716308
+2026-10-27 07:00:51.687357+0000 TinJunction[13402:46409] [TinStartup] +6.955s host.restorePrepared
+2026-10-27 07:00:51.689084+0000 TinJunction[13402:46409] [TinStartup] +6.957s host.layoutAccepted
+2026-10-27 07:00:51.690563+0000 TinJunction[13402:46409] [TinStartup] +6.959s host.lifecycle=background
+2026-10-27 07:00:51.690835+0000 TinJunction[13402:46409] [TinStartup] +6.959s host.lifecycle=active
+2026-10-27 07:00:51.691175+0000 TinJunction[13402:46409] [TinStartup] +6.959s host.lifecycle=inactive
+2026-10-27 07:00:51.691286+0000 TinJunction[13402:46409] [TinStartup] +6.959s host.lifecycle=background
+2026-10-27 07:00:51.691399+0000 TinJunction[13402:46409] [TinStartup] +6.959s host.lifecycle=active
+2026-10-27 07:00:51.691506+0000 TinJunction[13402:46409] [TinStartup] +6.960s host.lifecycle=inactive
+2026-10-27 07:00:51.727858+0000 TinJunction[13402:46409] [TinStartup] +6.996s host.lifecycle=background
+2026-10-27 07:00:51.729284+0000 TinJunction[13402:46409] [TinStartup] +6.997s host.lifecycle=active
+2026-10-27 07:00:51.729786+0000 TinJunction[13402:46409] [TinStartup] +6.998s host.lifecycle=inactive
+2026-10-27 07:00:51.730039+0000 TinJunction[13402:46409] [TinStartup] +6.998s host.lifecycle=background
+2026-10-27 07:00:51.730401+0000 TinJunction[13402:46409] [TinStartup] +6.998s host.lifecycle=active
+2026-10-27 07:00:51.730890+0000 TinJunction[13402:46409] [TinStartup] +6.999s host.lifecycle=inactive
+2026-10-27 07:00:51.731367+0000 TinJunction[13402:46409] [TinStartup] +6.999s host.lifecycle=background
+2026-10-27 07:00:51.731675+0000 TinJunction[13402:46409] [TinStartup] +7.000s host.lifecycle=active
+Test Case '-[TinJunctionTests.ApplicationSessionTests testPresentationRecreationAndLifecycleKeepTheApplicationAuthority]' passed (0.127 seconds).
+Test Case '-[TinJunctionTests.ApplicationSessionTests testSecondRendererCannotReplaceOrTearDownTheActiveSession]' started.
+2026-10-27 07:00:52.401784+0000 TinJunction[13402:46409] [TinStartup] +7.669s host.loading.lifecycle=inactive
+2026-10-27 07:00:52.402705+0000 TinJunction[13402:46409] [TinStartup] +7.670s bridge.webReady
+2026-10-27 07:00:52.404745+0000 TinJunction[13402:46409] [TinStartup] +7.672s host.restorePrepared
+2026-10-27 07:00:52.405063+0000 TinJunction[13402:46409] [TinStartup] +7.673s host.layoutAccepted
+2026-10-27 07:00:52.405529+0000 TinJunction[13402:46409] [TinStartup] +7.673s host.loading.lifecycle=inactive
+2026-10-27 07:00:52.406210+0000 TinJunction[13402:46409] [TinStartup] +7.674s bridge.webReady
+2026-10-27 07:00:52.407890+0000 TinJunction[13402:46409] [TinStartup] +7.675s host.restorePrepared
+2026-10-27 07:00:52.409485+0000 TinJunction[13402:46409] [TinStartup] +7.677s host.layoutAccepted
+Test Case '-[TinJunctionTests.ApplicationSessionTests testSecondRendererCannotReplaceOrTearDownTheActiveSession]' passed (0.693 seconds).
+Test Suite 'ApplicationSessionTests' passed at 2026-10-27 07:00:53.689.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.820 (2.081) seconds
+Test Suite 'EngineHostModelTests' started at 2026-10-27 07:00:55.111.
+Test Case '-[TinJunctionTests.EngineHostModelTests testFailedSavePreservesOpenLayoutAndDoesNotClaimDurability]' started.
+2026-10-27 07:00:55.112585+0000 TinJunction[13402:46409] [Process] WebContent process (0x1160b0680) took 2.775296 seconds to launch
+2026-10-27 07:00:55.119753+0000 TinJunction[13402:46409] [Process] WebContent process (0x1160b0c40) took 2.720773 seconds to launch
+2026-10-27 07:00:55.121126+0000 TinJunction[13402:46409] [TinStartup] +10.387s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.167120+0000 TinJunction[13402:46409] [TinStartup] +10.433s bridge.webReady
+2026-10-27 07:00:55.170370+0000 TinJunction[13402:46409] [TinStartup] +10.437s host.restorePrepared
+2026-10-27 07:00:55.171322+0000 TinJunction[13402:46409] [TinStartup] +10.438s host.layoutAccepted
+Test Case '-[TinJunctionTests.EngineHostModelTests testFailedSavePreservesOpenLayoutAndDoesNotClaimDurability]' passed (0.069 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testOldSessionCannotWriteAfterReload]' started.
+2026-10-27 07:00:55.180736+0000 TinJunction[13402:46409] [TinStartup] +10.447s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.181449+0000 TinJunction[13402:46409] [TinStartup] +10.448s bridge.webReady
+2026-10-27 07:00:55.181786+0000 TinJunction[13402:46409] [TinStartup] +10.448s host.restorePrepared
+2026-10-27 07:00:55.182082+0000 TinJunction[13402:46409] [TinStartup] +10.448s host.layoutAccepted
+2026-10-27 07:00:55.517075+0000 TinJunction[13402:46409] [TinStartup] +10.783s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.517675+0000 TinJunction[13402:46409] [TinStartup] +10.784s bridge.webReady
+2026-10-27 07:00:55.518154+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/mobile/com.apple.Accessibility.plist due to No such file or directory
+2026-10-27 07:00:55.518350+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/com.apple.Accessibility.plist due to No such file or directory
+2026-10-27 07:00:55.651592+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/mobile/.GlobalPreferences.plist due to No such file or directory
+2026-10-27 07:00:55.651838+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/ByHost/com.apple.Accessibility..plist due to No such file or directory
+2026-10-27 07:00:55.651916+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/ByHost/.GlobalPreferences..plist due to No such file or directory
+2026-10-27 07:00:55.692956+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/mobile/com.apple.Accessibility.plist due to No such file or directory
+2026-10-27 07:00:55.693068+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/com.apple.Accessibility.plist due to No such file or directory
+2026-10-27 07:00:55.693132+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/mobile/.GlobalPreferences.plist due to No such file or directory
+2026-10-27 07:00:55.693806+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/ByHost/com.apple.Accessibility..plist due to No such file or directory
+2026-10-27 07:00:55.693868+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/ByHost/.GlobalPreferences..plist due to No such file or directory
+2026-10-27 07:00:55.693990+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/mobile/com.apple.WebKit.WebContent.plist due to No such file or directory
+2026-10-27 07:00:55.695517+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/com.apple.WebKit.WebContent.plist due to No such file or directory
+2026-10-27 07:00:55.695704+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/com.apple.WebKit.WebContent.plist due to No such file or directory
+2026-10-27 07:00:55.698830+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/com.apple.WebKit.WebContent.plist due to No such file or directory
+2026-10-27 07:00:55.699039+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/ByHost/com.apple.WebKit.WebContent..plist due to No such file or directory
+2026-10-27 07:00:55.699166+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/mobile/com.apple.WebKit.WebContent.plist due to No such file or directory
+2026-10-27 07:00:55.701339+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.94425.0.05zNVf/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.1.simruntime/Contents/Resources/RuntimeRoot/System/Library/ExtensionKit/Extensions/WebContentExtension.appex/Library/Managed Preferences/com.apple.WebKit.WebContent.plist due to No such file or directory
+2026-10-27 07:00:55.701446+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/com.apple.WebKit.WebContent.plist due to No such file or directory
+2026-10-27 07:00:55.701499+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/com.apple.WebKit.WebContent.plist due to No such file or directory
+2026-10-27 07:00:55.702227+0000 TinJunction[13402:46409] [cfprefsd] WebContent[0] Couldn't open /Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Library/Preferences/ByHost/com.apple.WebKit.WebContent..plist due to No such file or directory
+2026-10-27 07:00:55.702942+0000 TinJunction[13402:46409] [TinStartup] +10.969s host.restorePrepared
+2026-10-27 07:00:55.703247+0000 TinJunction[13402:46409] [TinStartup] +10.969s host.layoutAccepted
+Test Case '-[TinJunctionTests.EngineHostModelTests testOldSessionCannotWriteAfterReload]' passed (0.524 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testProcessRecoveryIsBoundedWithoutAWebView]' started.
+2026-10-27 07:00:55.705299+0000 TinJunction[13402:46409] [TinStartup] +10.971s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.705567+0000 TinJunction[13402:46409] [TinStartup] +10.972s host.failed.beforeBridge
+Test Case '-[TinJunctionTests.EngineHostModelTests testProcessRecoveryIsBoundedWithoutAWebView]' passed (0.038 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testProtectedSaveFailuresBlockFurtherWritesAndPreserveOpenEdits]' started.
+2026-10-27 07:00:55.751013+0000 TinJunction[13402:47620] [assertion] Error acquiring assertion: <Error Domain=RBSAssertionErrorDomain Code=2 "Specified target process 13947 does not exist" UserInfo={NSLocalizedFailureReason=Specified target process 13947 does not exist}>
+2026-10-27 07:00:55.751275+0000 TinJunction[13402:47620] [ProcessSuspension] 0x116118780 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=13947, error: (null)
+2026-10-27 07:00:55.752655+0000 TinJunction[13402:46409] [TinStartup] +11.019s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.753220+0000 TinJunction[13402:46409] [TinStartup] +11.019s bridge.webReady
+2026-10-27 07:00:55.812764+0000 TinJunction[13402:46409] [TinStartup] +11.079s host.restorePrepared
+2026-10-27 07:00:55.813162+0000 TinJunction[13402:46409] [TinStartup] +11.079s host.layoutAccepted
+2026-10-27 07:00:55.815549+0000 TinJunction[13402:46409] [TinStartup] +11.081s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.815978+0000 TinJunction[13402:46409] [TinStartup] +11.082s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.816281+0000 TinJunction[13402:46409] [TinStartup] +11.082s bridge.webReady
+2026-10-27 07:00:55.816616+0000 TinJunction[13402:46409] [TinStartup] +11.083s host.restorePrepared
+2026-10-27 07:00:55.816866+0000 TinJunction[13402:46409] [TinStartup] +11.083s host.layoutAccepted
+2026-10-27 07:00:55.818197+0000 TinJunction[13402:46409] [TinStartup] +11.084s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.818419+0000 TinJunction[13402:46409] [TinStartup] +11.084s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.818587+0000 TinJunction[13402:46409] [TinStartup] +11.085s bridge.webReady
+2026-10-27 07:00:55.823573+0000 TinJunction[13402:46409] [TinStartup] +11.090s host.restorePrepared
+2026-10-27 07:00:55.824127+0000 TinJunction[13402:46409] [TinStartup] +11.090s host.layoutAccepted
+2026-10-27 07:00:55.825873+0000 TinJunction[13402:46409] [TinStartup] +11.092s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.826390+0000 TinJunction[13402:46409] [TinStartup] +11.092s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.826701+0000 TinJunction[13402:46409] [TinStartup] +11.093s bridge.webReady
+2026-10-27 07:00:55.827022+0000 TinJunction[13402:46409] [TinStartup] +11.093s host.restorePrepared
+2026-10-27 07:00:55.827293+0000 TinJunction[13402:46409] [TinStartup] +11.093s host.layoutAccepted
+2026-10-27 07:00:55.828678+0000 TinJunction[13402:46409] [TinStartup] +11.095s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.829276+0000 TinJunction[13402:46409] [TinStartup] +11.095s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.829531+0000 TinJunction[13402:46409] [TinStartup] +11.096s bridge.webReady
+2026-10-27 07:00:55.854939+0000 TinJunction[13402:46409] [TinStartup] +11.121s host.restorePrepared
+2026-10-27 07:00:55.855719+0000 TinJunction[13402:46409] [TinStartup] +11.122s host.layoutAccepted
+2026-10-27 07:00:55.858197+0000 TinJunction[13402:46409] [TinStartup] +11.124s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.858471+0000 TinJunction[13402:46409] [TinStartup] +11.124s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.858660+0000 TinJunction[13402:46409] [TinStartup] +11.125s bridge.webReady
+2026-10-27 07:00:55.858919+0000 TinJunction[13402:46409] [TinStartup] +11.125s host.restorePrepared
+2026-10-27 07:00:55.859243+0000 TinJunction[13402:46409] [TinStartup] +11.125s host.layoutAccepted
+2026-10-27 07:00:55.861895+0000 TinJunction[13402:46409] [TinStartup] +11.128s host.loading.lifecycle=inactive
+Test Case '-[TinJunctionTests.EngineHostModelTests testProtectedSaveFailuresBlockFurtherWritesAndPreserveOpenEdits]' passed (0.120 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testReadyRequiresCurrentSessionLayoutAcknowledgement]' started.
+2026-10-27 07:00:55.865533+0000 TinJunction[13402:46409] [TinStartup] +11.131s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.865930+0000 TinJunction[13402:46409] [TinStartup] +11.132s bridge.webReady
+2026-10-27 07:00:55.866342+0000 TinJunction[13402:46409] [TinStartup] +11.132s host.restorePrepared
+2026-10-27 07:00:55.867036+0000 TinJunction[13402:46409] [TinStartup] +11.133s host.layoutAccepted
+Test Case '-[TinJunctionTests.EngineHostModelTests testReadyRequiresCurrentSessionLayoutAcknowledgement]' passed (0.004 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRecoverableContextLossKeepsTransportAlive]' started.
+2026-10-27 07:00:55.869092+0000 TinJunction[13402:46409] [TinStartup] +11.135s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.869433+0000 TinJunction[13402:46409] [TinStartup] +11.135s bridge.webReady
+2026-10-27 07:00:55.869683+0000 TinJunction[13402:46409] [TinStartup] +11.136s host.restorePrepared
+2026-10-27 07:00:55.869929+0000 TinJunction[13402:46409] [TinStartup] +11.136s host.layoutAccepted
+2026-10-27 07:00:55.873438+0000 TinJunction[13402:46409] [TinStartup] +11.139s host.lifecycle=background
+2026-10-27 07:00:55.873781+0000 TinJunction[13402:46409] [TinStartup] +11.140s host.lifecycle=active
+Test Case '-[TinJunctionTests.EngineHostModelTests testRecoverableContextLossKeepsTransportAlive]' passed (0.006 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRepeatedInFlightRequestIsCoalescedWithoutFillingSaveQueue]' started.
+2026-10-27 07:00:55.875463+0000 TinJunction[13402:46409] [TinStartup] +11.141s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.875728+0000 TinJunction[13402:46409] [TinStartup] +11.142s bridge.webReady
+2026-10-27 07:00:55.876289+0000 TinJunction[13402:46409] [TinStartup] +11.142s host.restorePrepared
+2026-10-27 07:00:55.876860+0000 TinJunction[13402:46409] [TinStartup] +11.143s host.layoutAccepted
+Test Case '-[TinJunctionTests.EngineHostModelTests testRepeatedInFlightRequestIsCoalescedWithoutFillingSaveQueue]' passed (0.023 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testReplacedSessionClearsPendingRequestIdentity]' started.
+2026-10-27 07:00:55.914999+0000 TinJunction[13402:46409] [TinStartup] +11.181s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.915679+0000 TinJunction[13402:46409] [TinStartup] +11.182s bridge.webReady
+2026-10-27 07:00:55.916056+0000 TinJunction[13402:46409] [TinStartup] +11.182s host.restorePrepared
+2026-10-27 07:00:55.916324+0000 TinJunction[13402:46409] [TinStartup] +11.182s host.layoutAccepted
+2026-10-27 07:00:55.916999+0000 TinJunction[13402:46409] [TinStartup] +11.183s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.917165+0000 TinJunction[13402:46409] [TinStartup] +11.183s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.917320+0000 TinJunction[13402:46409] [TinStartup] +11.183s bridge.webReady
+2026-10-27 07:00:55.917564+0000 TinJunction[13402:46409] [TinStartup] +11.184s host.restorePrepared
+2026-10-27 07:00:55.922753+0000 TinJunction[13402:46409] [TinStartup] +11.189s host.layoutAccepted
+Test Case '-[TinJunctionTests.EngineHostModelTests testReplacedSessionClearsPendingRequestIdentity]' passed (0.010 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRestoredIdentityAndRevisionMustMatch]' started.
+2026-10-27 07:00:55.925396+0000 TinJunction[13402:46409] [TinStartup] +11.191s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.926128+0000 TinJunction[13402:46409] [TinStartup] +11.192s bridge.webReady
+2026-10-27 07:00:55.927145+0000 TinJunction[13402:46409] [TinStartup] +11.193s host.restorePrepared
+2026-10-27 07:00:55.927635+0000 TinJunction[13402:46409] [TinStartup] +11.194s host.failed.afterBridge
+Test Case '-[TinJunctionTests.EngineHostModelTests testRestoredIdentityAndRevisionMustMatch]' passed (0.004 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testSuccessfulSaveChangesDurableStateOnlyAfterStoreCompletes]' started.
+2026-10-27 07:00:55.929162+0000 TinJunction[13402:46409] [TinStartup] +11.195s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.955342+0000 TinJunction[13402:46409] [TinStartup] +11.221s bridge.webReady
+2026-10-27 07:00:55.955948+0000 TinJunction[13402:46409] [TinStartup] +11.222s host.restorePrepared
+2026-10-27 07:00:55.956314+0000 TinJunction[13402:46409] [TinStartup] +11.222s host.layoutAccepted
+Test Case '-[TinJunctionTests.EngineHostModelTests testSuccessfulSaveChangesDurableStateOnlyAfterStoreCompletes]' passed (0.029 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalErrorCannotBeClearedByMetrics]' started.
+2026-10-27 07:00:55.958901+0000 TinJunction[13402:46409] [TinStartup] +11.225s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.959188+0000 TinJunction[13402:46409] [TinStartup] +11.225s bridge.webReady
+2026-10-27 07:00:55.959427+0000 TinJunction[13402:46409] [TinStartup] +11.225s host.restorePrepared
+2026-10-27 07:00:55.959650+0000 TinJunction[13402:46409] [TinStartup] +11.226s host.layoutAccepted
+2026-10-27 07:00:55.959837+0000 TinJunction[13402:46409] [TinStartup] +11.226s host.failed.afterBridge
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalErrorCannotBeClearedByMetrics]' passed (0.006 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload]' started.
+2026-10-27 07:00:55.964997+0000 TinJunction[13402:46409] [TinStartup] +11.231s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.965373+0000 TinJunction[13402:46409] [TinStartup] +11.231s bridge.webReady
+2026-10-27 07:00:55.965637+0000 TinJunction[13402:46409] [TinStartup] +11.232s host.restorePrepared
+2026-10-27 07:00:55.965906+0000 TinJunction[13402:46409] [TinStartup] +11.232s host.layoutAccepted
+2026-10-27 07:00:55.966086+0000 TinJunction[13402:46409] [TinStartup] +11.232s host.failed.afterBridge
+2026-10-27 07:00:55.966840+0000 TinJunction[13402:46409] [TinStartup] +11.233s host.loading.lifecycle=inactive
+2026-10-27 07:00:55.967047+0000 TinJunction[13402:46409] [TinStartup] +11.233s bridge.webReady
+2026-10-27 07:00:56.005956+0000 TinJunction[13402:46409] [TinStartup] +11.272s host.restorePrepared
+2026-10-27 07:00:56.006413+0000 TinJunction[13402:46409] [TinStartup] +11.272s host.layoutAccepted
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload]' passed (0.043 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testUnreadableSavedLayoutFailsWithoutFactoryReplacement]' started.
+2026-10-27 07:00:56.008539+0000 TinJunction[13402:46409] [TinStartup] +11.274s host.loading.lifecycle=inactive
+Test Case '-[TinJunctionTests.EngineHostModelTests testUnreadableSavedLayoutFailsWithoutFactoryReplacement]' passed (0.002 seconds).
+Test Suite 'EngineHostModelTests' passed at 2026-10-27 07:00:56.011.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.879 (0.900) seconds
+Test Suite 'HostStartupHoldCoordinatorTests' started at 2026-10-27 07:00:56.011.
+Test Case '-[TinJunctionTests.HostStartupHoldCoordinatorTests testDismantlingAnArmedCoordinatorDiscardsItsNavigationCallback]' started.
+Test Case '-[TinJunctionTests.HostStartupHoldCoordinatorTests testDismantlingAnArmedCoordinatorDiscardsItsNavigationCallback]' passed (0.288 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldCoordinatorTests testFailureAndDetachBeforeDeferredArmCannotStartNavigation]' started.
+Test Case '-[TinJunctionTests.HostStartupHoldCoordinatorTests testFailureAndDetachBeforeDeferredArmCannotStartNavigation]' passed (0.344 seconds).
+Test Suite 'HostStartupHoldCoordinatorTests' passed at 2026-10-27 07:00:56.710.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.632 (0.699) seconds
+Test Suite 'HostStartupHoldTests' started at 2026-10-27 07:00:56.711.
+Test Case '-[TinJunctionTests.HostStartupHoldTests testExpiryConsumesNavigationBeforePublishingItsFailure]' started.
+Test Case '-[TinJunctionTests.HostStartupHoldTests testExpiryConsumesNavigationBeforePublishingItsFailure]' passed (0.493 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testHoldRequiresItsExplicitLaunchArgument]' started.
+Test Case '-[TinJunctionTests.HostStartupHoldTests testHoldRequiresItsExplicitLaunchArgument]' passed (0.000 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testHostFailureCancelsBeforeAndAfterDeferredArming]' started.
+Test Case '-[TinJunctionTests.HostStartupHoldTests testHostFailureCancelsBeforeAndAfterDeferredArming]' passed (0.000 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testRealNavigationAndDetachDisarmAnyPendingHold]' started.
+Test Case '-[TinJunctionTests.HostStartupHoldTests testRealNavigationAndDetachDisarmAnyPendingHold]' passed (0.000 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testReleaseConsumesTheHoldBeforeInvokingNavigation]' started.
+Test Case '-[TinJunctionTests.HostStartupHoldTests testReleaseConsumesTheHoldBeforeInvokingNavigation]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testStaleCancellationCannotTakeAnotherOwnersHold]' started.
+Test Case '-[TinJunctionTests.HostStartupHoldTests testStaleCancellationCannotTakeAnotherOwnersHold]' passed (0.002 seconds).
+Test Suite 'HostStartupHoldTests' passed at 2026-10-27 07:00:57.330.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.498 (0.620) seconds
+Test Suite 'PlatformStartupTraceTests' started at 2026-10-27 07:00:59.912.
+Test Case '-[TinJunctionTests.PlatformStartupTraceTests testTraceBoundAndFieldValidation]' started.
+Test Case '-[TinJunctionTests.PlatformStartupTraceTests testTraceBoundAndFieldValidation]' passed (0.008 seconds).
+Test Suite 'PlatformStartupTraceTests' passed at 2026-10-27 07:00:59.920.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.008 (0.008) seconds
+Test Suite 'TinJunctionTests.xctest' passed at 2026-10-27 07:00:59.920.
+	 Executed 84 tests, with 0 failures (0 unexpected) in 6.079 (8.312) seconds
+Test Suite 'All tests' passed at 2026-10-27 07:00:59.958.
+	 Executed 84 tests, with 0 failures (0 unexpected) in 6.079 (8.362) seconds
+** TEST SUCCEEDED **
