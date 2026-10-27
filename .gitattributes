@@ -1,0 +1,18 @@
+* text=auto eol=lf
+*.swift text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.mjs text eol=lf
+*.ts text eol=lf
+*.sh text eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.glb binary
+*.ktx2 binary
+*.blend binary
+*.wav binary
+*.mp4 binary
+# LFS is NOT enabled by this file. Ratify the asset storage policy before adding
+# large source assets; paid storage/bandwidth requires an owner decision.
