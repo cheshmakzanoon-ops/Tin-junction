@@ -6,34 +6,35 @@ Action: **implement**
 
 First ordered task whose dependencies are complete and whose state is unclaimed.
 
-CI snapshot: **unknown**. Always check GitHub Actions for the current remote main commit.
+CI snapshot: **passed**. Always check GitHub Actions for the current remote main commit.
 
-## P00-T01 — Publish the product contract and engineering boundaries
+## P00-T04 — Verify and publish the initial repository handoff
 
 Phase: [planning/phases/P00-repository-foundation.md](phases/P00-repository-foundation.md)
 
-Dependencies: none
+Dependencies: P00-T03
 
 Manual gate: none
 
 ### Required reading
 
-- [docs/product/PRODUCT_SPEC.md](../docs/product/PRODUCT_SPEC.md)
-- [docs/architecture/SYSTEM_ARCHITECTURE.md](../docs/architecture/SYSTEM_ARCHITECTURE.md)
-- [docs/agents/CONTINUATION_PROTOCOL.md](../docs/agents/CONTINUATION_PROTOCOL.md)
+- [docs/agents/HANDOFF_PROTOCOL.md](../docs/agents/HANDOFF_PROTOCOL.md)
+- [docs/agents/TASK_EVIDENCE.md](../docs/agents/TASK_EVIDENCE.md)
+- [docs/operations/IOS_CI.md](../docs/operations/IOS_CI.md)
 
 ### First actions
 
-1. Translate the owner's accepted concept into one launch-kit scope.
-2. Separate Swift platform responsibilities from Three.js world responsibilities.
-3. List verified platform facts separately from proposed performance targets.
-4. Record unresolved naming and Duo-only distribution gates without declaring clearance.
-5. Cross-link the boot path, subsystem specifications and release constraints.
+1. Run every available setup check and preserve actual output summaries.
+2. Record any checks unavailable in the current environment rather than guessing outcomes.
+3. Associate evidence with the tested implementation commit and source digests.
+4. Publish the setup changes and confirm the intended remote main head.
+5. Regenerate status and identify the first uncompleted platform task.
+6. Record next actions, current CI state and owner-only release blockers.
 
 ### Acceptance
 
-- **P00-T01-A1**: Product and architecture documents state the accepted scope, subsystem ownership and unresolved release constraints. (repository_validation)
-- **P00-T01-A2**: A new reader can locate the roadmap, ledger and handoff from root instructions without relying on chat. (repository_validation)
+- **P00-T04-A1**: The setup evidence records actual commands/results and distinguishes local, browser, simulator and device validation. (repository_validation)
+- **P00-T04-A2**: Remote setup and a durable handoff are published; only satisfied setup tasks are marked done. (repository_validation)
 
 ## Blocked work
 

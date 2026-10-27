@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P00-T03-baseline-verification",
+  "task_id": "P00-T03",
+  "kind": "repository_validation",
+  "result": "passed",
+  "tested_commit": "90d8bc439be6c4f93c6c95344fae56582eca55d1",
+  "recorded_at": "2026-10-27T00:56:23.723115+00:00",
+  "source_files": [
+    {
+      "path": "package.json",
+      "sha256": "665e181d55ef4bb224d681bc6069f4d237b49bcd1b0a89495ce5db86512692e7"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "8dbb114fcd1e7b47a1b20dab67f97f38bf9ceb91ae84bc3fcf615116ddd9baa2"
+    },
+    {
+      "path": "tools/build-web.mjs",
+      "sha256": "a1e5d1f6125875b613b9b8eb9948e96d56da856e68f32d2fe6e7a4a5566deb62"
+    },
+    {
+      "path": ".github/workflows/quality.yml",
+      "sha256": "b8b1182902c4c64cdea628f095fea84daf0028e94343534ae2a5f37640066586"
+    },
+    {
+      "path": ".github/workflows/ios-simulator.yml",
+      "sha256": "ad97cbf99caa92b484422bf44abe6a52515288fce96485fcc654b05bc34d0f0d"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "output_path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40427491810"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40427491810",
+      "sha256": null
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P00-T03-A1",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion_id": "P00-T03-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Verification of existing baseline foundation only; no gameplay, final art, physical-device or distribution acceptance.",
+    "Native baseline independently passed Actions run 40427491834; no Swift compiler was available in local Linux."
+  ]
+}

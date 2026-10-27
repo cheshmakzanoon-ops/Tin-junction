@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P00-T02-baseline-verification",
+  "task_id": "P00-T02",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "90d8bc439be6c4f93c6c95344fae56582eca55d1",
+  "recorded_at": "2026-10-27T00:56:23.722906+00:00",
+  "source_files": [
+    {
+      "path": "tools/project.mjs",
+      "sha256": "bb3e5f31d4120bec361544ef26751ee854186e84845790b4a5919ffcd8aa8624"
+    },
+    {
+      "path": "tests/project/project.test.mjs",
+      "sha256": "83bd27045c59b67a5d89b9de68290f6bf9dde08618c983a766ff5b525c013e9b"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "output_path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40427491810"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40427491810",
+      "sha256": null
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P00-T02-A1",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion_id": "P00-T02-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Verification of existing baseline foundation only; no gameplay, final art, physical-device or distribution acceptance.",
+    "Native baseline independently passed Actions run 40427491834; no Swift compiler was available in local Linux."
+  ]
+}

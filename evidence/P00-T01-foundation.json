@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P00-T01-baseline-verification",
+  "task_id": "P00-T01",
+  "kind": "repository_validation",
+  "result": "passed",
+  "tested_commit": "90d8bc439be6c4f93c6c95344fae56582eca55d1",
+  "recorded_at": "2026-10-27T00:56:23.722595+00:00",
+  "source_files": [
+    {
+      "path": "START_HERE.md",
+      "sha256": "bc933e4e83f7feeea77ceb44c7a424fef75d6db88dfac4f6a0f0a8e5a9fbfa74"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "dce734c4f2aa759fefb78865ad38b539301467a770ea4a08adff80a4ac64e4eb"
+    },
+    {
+      "path": "docs/product/PRODUCT_SPEC.md",
+      "sha256": "0e48793a63c4fbaa55d36ce4a7a8d6ea32a9aa2f855c7bf9d72058ad24ccdec5"
+    },
+    {
+      "path": "docs/architecture/SYSTEM_ARCHITECTURE.md",
+      "sha256": "a34f484c51fb0298fb7d1c148f46c137c3d309f70cb23dbef954bb6d363db4a1"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "output_path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40427491810"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40427491810",
+      "sha256": null
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P00-T01-A1",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion_id": "P00-T01-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Verification of existing baseline foundation only; no gameplay, final art, physical-device or distribution acceptance.",
+    "Native baseline independently passed Actions run 40427491834; no Swift compiler was available in local Linux."
+  ]
+}
