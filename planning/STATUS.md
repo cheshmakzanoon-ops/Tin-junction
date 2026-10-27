@@ -2,11 +2,11 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T02:48:36.030Z
+Ledger updated: 2026-10-27T02:54:44.016Z
 
-Tasks: 131; done: 12; active: 4; review: 0; blocked: 1; todo: 114.
+Tasks: 131; done: 14; active: 3; review: 0; blocked: 1; todo: 113.
 
-CI snapshot: **running** for 0b2923061a2539d4dcb46545e728152b19f00a7d. This may be stale; inspect current remote checks.
+CI snapshot: **running** for 7e5541b7c4be7db8392f4eee4804048bf0986578. This may be stale; inspect current remote checks.
 
 [Next task](NEXT_TASK.md) · [Current handoff](HANDOFF.md) · [Agent rules](../AGENTS.md)
 
@@ -17,12 +17,12 @@ CI snapshot: **running** for 0b2923061a2539d4dcb46545e728152b19f00a7d. This may 
 | [P02](phases/P02-native-application-shell.md) | Swift native application shell | 0/4 | — |
 | [P03](phases/P03-native-web-contract.md) | Secure native-to-web contract | 0/5 | — |
 | [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 5/6 | P04-T06 in_progress |
-| [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 2/5 | P05-T03 in_progress |
+| [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 3/5 | P05-T04 in_progress |
 | [P06](phases/P06-first-operating-railway.md) | First operating railway | 0/4 | — |
 | [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 0/5 | — |
 | [P08](phases/P08-camera-selection-and-input.md) | Camera, picking and gesture arbitration | 0/4 | — |
 | [P09](phases/P09-track-editor.md) | Creative track-layout editor | 0/5 | — |
-| [P10](phases/P10-asset-production-pipeline.md) | Reproducible 3D asset pipeline | 1/4 | P10-T02 in_progress |
+| [P10](phases/P10-asset-production-pipeline.md) | Reproducible 3D asset pipeline | 2/4 | — |
 | [P11](phases/P11-renderer-and-material-calibration.md) | Renderer foundation and material calibration | 0/4 | — |
 | [P12](phases/P12-hero-locomotive.md) | Hero locomotive production | 0/4 | — |
 | [P13](phases/P13-railway-infrastructure.md) | Track and railway infrastructure art | 0/4 | — |

@@ -1,0 +1,25 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction-asset-validation@0.1.0 test:source
+> node --test source-validation.test.mjs
+
+✔ actual pinned Blender export reproduces committed GLB bytes and geometry without runtime scale (1508.269891ms)
+✔ actual Blender rejects invalid scale source before writing an export (1097.01119ms)
+✔ actual Blender rejects invalid uv source before writing an export (1150.944685ms)
+✔ actual Blender rejects invalid winding source before writing an export (1116.055369ms)
+✔ actual Blender rejects invalid socket source before writing an export (1123.979039ms)
+✔ actual Blender rejects invalid units source before writing an export (1140.126659ms)
+✔ actual Blender rejects invalid material source before writing an export (1193.76307ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8426.161405
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

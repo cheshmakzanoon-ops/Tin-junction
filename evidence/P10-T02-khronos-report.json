@@ -1,0 +1,381 @@
+{
+  "assetId": "fixture.calibration.001",
+  "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da",
+  "bytes": 29356,
+  "validatorVersion": "2.0.0-dev.3.10",
+  "contract": {
+    "assetId": "fixture.calibration.001",
+    "result": "passed",
+    "meshCount": 14,
+    "socketCount": 4,
+    "triangleCount": 280,
+    "materialCount": 3,
+    "bounds": {
+      "axle.x": {
+        "min": [
+          -0.008750000037252903,
+          -0.0060000005178153515,
+          -0.006000000052154064
+        ],
+        "max": [
+          0.008750000037252903,
+          0.0060000005178153515,
+          0.006000000052154064
+        ],
+        "size": [
+          0.017500000074505806,
+          0.012000001035630703,
+          0.012000000104308128
+        ]
+      },
+      "forward.marker": {
+        "min": [
+          -0.0020000000949949026,
+          -0.0020000000949949026,
+          -0.009999999776482582
+        ],
+        "max": [
+          0.0020000000949949026,
+          0.0020000000949949026,
+          0.009999999776482582
+        ],
+        "size": [
+          0.004000000189989805,
+          0.004000000189989805,
+          0.019999999552965164
+        ]
+      },
+      "ruler.100mm": {
+        "min": [
+          -0.004999999888241291,
+          -0.0020000000949949026,
+          -0.05000000074505806
+        ],
+        "max": [
+          0.004999999888241291,
+          0.0020000000949949026,
+          0.05000000074505806
+        ],
+        "size": [
+          0.009999999776482582,
+          0.004000000189989805,
+          0.10000000149011612
+        ]
+      },
+      "ruler.tick.00": {
+        "min": [
+          -0.0044999998062849045,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0044999998062849045,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.008999999612569809,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.01": {
+        "min": [
+          -0.0024999999441206455,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0024999999441206455,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.004999999888241291,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.02": {
+        "min": [
+          -0.0024999999441206455,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0024999999441206455,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.004999999888241291,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.03": {
+        "min": [
+          -0.0024999999441206455,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0024999999441206455,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.004999999888241291,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.04": {
+        "min": [
+          -0.0024999999441206455,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0024999999441206455,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.004999999888241291,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.05": {
+        "min": [
+          -0.0044999998062849045,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0044999998062849045,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.008999999612569809,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.06": {
+        "min": [
+          -0.0024999999441206455,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0024999999441206455,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.004999999888241291,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.07": {
+        "min": [
+          -0.0024999999441206455,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0024999999441206455,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.004999999888241291,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.08": {
+        "min": [
+          -0.0024999999441206455,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0024999999441206455,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.004999999888241291,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.09": {
+        "min": [
+          -0.0024999999441206455,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0024999999441206455,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.004999999888241291,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      },
+      "ruler.tick.10": {
+        "min": [
+          -0.0044999998062849045,
+          -0.00009999999747378752,
+          -0.00009999999747378752
+        ],
+        "max": [
+          0.0044999998062849045,
+          0.00009999999747378752,
+          0.00009999999747378752
+        ],
+        "size": [
+          0.008999999612569809,
+          0.00019999999494757503,
+          0.00019999999494757503
+        ]
+      }
+    }
+  },
+  "khronos": {
+    "uri": "calibration.glb",
+    "mimeType": "model/gltf-binary",
+    "validatorVersion": "2.0.0-dev.3.10",
+    "validatedAt": "2026-10-27T02:37:35.910Z",
+    "issues": {
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 14,
+      "numHints": 0,
+      "messages": [
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/0/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/1/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/2/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/3/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/4/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/5/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/6/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/7/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/8/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/9/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/10/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/11/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/12/primitives/0/attributes/TEXCOORD_0"
+        },
+        {
+          "code": "UNUSED_OBJECT",
+          "message": "This object may be unused.",
+          "severity": 2,
+          "pointer": "/meshes/13/primitives/0/attributes/TEXCOORD_0"
+        }
+      ],
+      "truncated": false
+    },
+    "info": {
+      "version": "2.0",
+      "generator": "Khronos glTF Blender I/O v4.3.47",
+      "resources": [
+        {
+          "pointer": "/buffers/0",
+          "mimeType": "application/gltf-buffer",
+          "storage": "glb",
+          "byteLength": 16944
+        }
+      ],
+      "animationCount": 0,
+      "materialCount": 3,
+      "hasMorphTargets": false,
+      "hasSkins": false,
+      "hasTextures": false,
+      "hasDefaultScene": true,
+      "drawCallCount": 14,
+      "totalVertexCount": 504,
+      "totalTriangleCount": 280,
+      "maxUVs": 1,
+      "maxInfluences": 0,
+      "maxAttributes": 3
+    }
+  },
+  "issueReview": {
+    "allowedInfo": "UNUSED_OBJECT only for intentionally present TEXCOORD_0 attributes; no texture is needed for UV roundtrip",
+    "unexpectedCount": 0
+  }
+}

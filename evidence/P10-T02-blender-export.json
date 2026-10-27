@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P10-T02-blender-export",
+  "task_id": "P10-T02",
+  "kind": "integration_test",
+  "result": "passed",
+  "tested_commit": "7e5541b7c4be7db8392f4eee4804048bf0986578",
+  "recorded_at": "2026-10-27T02:50:32Z",
+  "source_files": [
+    {
+      "path": "assets/source/calibration/export_fixture.py",
+      "sha256": "25cfceba2b491dc9a62722baf9cc4248906b6930aab51c34a719111ee2ed5ccc"
+    },
+    {
+      "path": "tools/assets/geometry-contract.mjs",
+      "sha256": "76cadf1fe2323cecb1a0d2974e5121466a8e7a1c5a3e21b6bd0bc741308bf66b"
+    },
+    {
+      "path": "tools/assets/source-validation.test.mjs",
+      "sha256": "9ba84821363059fb332be8c56c57fffbfba70dc46875572ae1196494dde6938c"
+    },
+    {
+      "path": "tools/assets/validate-fixture.mjs",
+      "sha256": "de8677a21fa45a1b2eeb50ca53c58c84b3870c1ff2b57cb53f973102fa91b5ca"
+    },
+    {
+      "path": "tests/project/assets.test.mjs",
+      "sha256": "290d032ac5a6d10136c0e6608808e149eeb1513f1dc9bab4a48192d98d066705"
+    },
+    {
+      "path": "tests/fixtures/assets/calibration.glb",
+      "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+    },
+    {
+      "path": "tests/fixtures/assets/calibration.source-report.json",
+      "sha256": "13677c7326721c1f2a8e88ca1b11e333618dfe8b681407690045789fd36e7b95"
+    },
+    {
+      "path": "tools/assets/package-lock.json",
+      "sha256": "05a7ca00afe04425aed30404c6f9e387d8bfe50444c2708ae9a9b9354074c4ad"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm --prefix tools/assets run test:source",
+      "exit_code": 0,
+      "output_path": "evidence/P10-T02-source-tests.txt"
+    },
+    {
+      "command": "node tools/assets/validate-fixture.mjs",
+      "exit_code": 0,
+      "output_path": "evidence/P10-T02-khronos-report.json"
+    },
+    {
+      "command": "GitHub Actions asset-export: install checksum-pinned Blender, archive tests, source export tests, Khronos validation",
+      "exit_code": 0,
+      "output_path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40440696126/job/121980076852"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P10-T02-source-tests.txt",
+      "sha256": "ab395bb7915e892908ecc18ec3e7973799d6a8320db39354bc3942ef7af8dd38"
+    },
+    {
+      "path": "evidence/P10-T02-khronos-report.json",
+      "sha256": "fdec4ef05312fe0a657436d084161c06ab1f21bc4d80b434c86b5c87d42fa492"
+    },
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40440696126/job/121980076852",
+      "sha256": null
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P10-T02-A1",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Actual Blender4.3.2 locally executed with7passing source tests; original GLB reproduced byte-identically.",
+    "Khronos2.0.0-dev.3.10 errors0 warnings0;14 unused-UV informational messages retained and explicitly reviewed.",
+    "No packaged WKWebView loader, compression or physical-device/final-art approval implied.",
+    "The exact7e5541b asset-export Actions job121980076852 was independently observed completed/success; the separate browser/native gates remain separate."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P05-T03-route-graph",
+  "task_id": "P05-T03",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "7e5541b7c4be7db8392f4eee4804048bf0986578",
+  "recorded_at": "2026-10-27T02:50:32Z",
+  "source_files": [
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "tests/web/unit/track-graph.test.ts",
+      "sha256": "a24d3d2cd103532466382bf48fe6069682d778b3934aed8cff95c9c6c9b0ae62"
+    },
+    {
+      "path": "tests/fixtures/track/graph-fixtures.ts",
+      "sha256": "7fc8ea553ddac19e4dcfb8fe050262defcf49b011681ad03178dc8e4a015323f"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm exec -- vitest run tests/web/unit/track-graph.test.ts",
+      "exit_code": 0,
+      "output_path": "evidence/P05-T03-graph-tests.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P05-T03-graph-tests.txt",
+      "sha256": "95734a00db3f354bb1756100d35ada85078aded256d3f5ecace0510674ebd4f3"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P05-T03-A1",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion_id": "P05-T03-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "19 focused tests; graph/atomic edit semantics only. General app editor and turnout occupancy are not accepted here.",
+    "Existing saved schema-v1 oval is unchanged. CI for exact current checkpoint is pending separately."
+  ]
+}

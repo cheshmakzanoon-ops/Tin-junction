@@ -1,0 +1,28 @@
+✔ Blender fixture has correct ruler, axle, sockets, normals, UVs and PBR factors (8.876564ms)
+✔ recorded export hashes identify exact source and GLB bytes (1.098918ms)
+✔ asset contract rejects root scale (0.929152ms)
+✔ asset contract rejects root rotation (0.392492ms)
+✔ asset contract rejects missing physical units (0.484771ms)
+✔ asset contract rejects wrong socket (0.520225ms)
+✔ asset contract rejects wrong socket direction (0.413745ms)
+✔ asset contract rejects lost material semantics (0.477901ms)
+✔ asset contract rejects external buffer (0.398541ms)
+✔ asset contract rejects unknown required extension (0.488627ms)
+✔ asset contract rejects duplicate node (0.399613ms)
+✔ asset contract rejects missing UVs (0.862361ms)
+✔ asset contract rejects missing material (0.896402ms)
+✔ asset contract rejects double sided material (0.396588ms)
+✔ asset contract rejects NaN vertex (0.899517ms)
+✔ asset contract rejects bad normal (0.569519ms)
+✔ asset contract rejects out of bounds accessor (0.412813ms)
+✔ asset contract rejects sparse accessor (0.369507ms)
+✔ asset contract rejects wrong ruler length (2.097235ms)
+✔ GLB parser rejects truncated bytes and malicious length (0.263538ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.135778
