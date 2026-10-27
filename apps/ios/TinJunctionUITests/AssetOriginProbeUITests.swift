@@ -16,8 +16,21 @@ final class AssetOriginProbeUITests: XCTestCase {
     }
 
     private func observe(_ app: XCUIApplication, name: String) throws -> String {
-        XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 40))
         let probe = app.staticTexts["host.assetProbe"]
+        // Preserve the real report even when readiness, a loader, the user
+        // gesture, or a later assertion fails. A failure must remain diagnosable.
+        defer {
+            let text = probe.exists ? (probe.value as? String ?? "Native probe value unavailable") : "Native probe row unavailable"
+            let data = XCTAttachment(string: text)
+            data.name = "asset-origin-observation-\(name)"
+            data.lifetime = .keepAlways
+            add(data)
+            let capture = XCTAttachment(screenshot: app.screenshot())
+            capture.name = "asset-origin-rendering-\(name)"
+            capture.lifetime = .keepAlways
+            add(capture)
+        }
+        XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 40))
         XCTAssertTrue(probe.waitForExistence(timeout: 10))
         let initialized = XCTNSPredicateExpectation(
             predicate: NSPredicate(format: "value CONTAINS %@ OR value CONTAINS %@", "\"stage\":\"ready\"", "\"stage\":\"complete\""), object: probe)
@@ -55,15 +68,6 @@ final class AssetOriginProbeUITests: XCTestCase {
         }
         XCTAssertEqual(results["ktx2"]?["status"] as? String, "blocked",
                        "An absent transcoder must remain disabled instead of borrowing a decoder result.")
-        let text = try XCTUnwrap(probe.value as? String)
-        let data = XCTAttachment(string: text)
-        data.name = "asset-origin-observation-\(name)"
-        data.lifetime = .keepAlways
-        add(data)
-        let capture = XCTAttachment(screenshot: app.screenshot())
-        capture.name = "asset-origin-rendering-\(name)"
-        capture.lifetime = .keepAlways
-        add(capture)
         return try XCTUnwrap(renderer["sessionId"] as? String)
     }
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T04:22:48.828Z",
+  "updated_at": "2026-10-27T04:30:00.471Z",
   "health": {
     "ci": {
       "status": "running",
@@ -12,7 +12,7 @@
     },
     "incidents": []
   },
-  "last_handoff": "evidence/P01-T01-native-review.md",
+  "last_handoff": "planning/handoffs/2026-10-27-routed-vehicles.md",
   "tasks": {
     "P00-T01": {
       "status": "done",
@@ -526,25 +526,24 @@
       ]
     },
     "P06-T02": {
-      "status": "in_progress",
-      "claim": {
-        "owner": "submission-track",
-        "started_at": "2026-10-27T03:54:49.234Z",
-        "expires_at": "2026-10-27T11:54:49.234Z",
-        "head_at_claim": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
-        "scope": [
-          "web/src/simulation/",
-          "web/src/rendering/"
-        ]
-      },
+      "status": "done",
+      "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
+      "evidence": [
+        "evidence/P06-T02-routed-vehicles-unit.json",
+        "evidence/P06-T02-routed-vehicles-visual.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-routed-vehicles.md",
       "history": [
         {
           "at": "2026-10-27T03:54:49.234Z",
           "action": "claim",
           "detail": "submission-track; 8 hours"
+        },
+        {
+          "at": "2026-10-27T04:30:00.471Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-routed-vehicles.md"
         }
       ]
     },

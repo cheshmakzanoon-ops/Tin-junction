@@ -56,7 +56,8 @@ function verifyJSONValues(input: unknown): void {
     if (Object.getOwnPropertySymbols(value).length) throw new TypeError("Symbol properties are not portable JSON.");
     const descriptors = Object.getOwnPropertyDescriptors(value);
     if (Array.isArray(value)) {
-      if (value.length > DESIGN_LIMITS.values || Object.keys(value).length !== value.length) throw new RangeError("Document arrays must be bounded and dense.");
+      if (value.length > DESIGN_LIMITS.values || Object.keys(value).length !== value.length
+        || Object.keys(descriptors).length !== value.length + 1) throw new RangeError("Document arrays must be bounded, dense and contain only indices and length.");
       for (let index = 0; index < value.length; index++) {
         const descriptor = descriptors[String(index)];
         if (!descriptor || !Object.hasOwn(descriptor, "value")) throw new TypeError("Document accessors are not supported.");

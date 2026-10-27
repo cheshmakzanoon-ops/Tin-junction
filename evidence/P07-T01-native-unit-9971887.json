@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P07-T01-native-document-conformance-9971887",
+  "task_id": "P07-T01",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "9971887835dedae6a5f870b3633acd6747c255b5",
+  "recorded_at": "2026-10-27T04:28:28Z",
+  "source_files": [
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutDesignDocument.swift",
+      "sha256": "e63be6ad77220033731af0f416b0cc0a29c42cb6fa34a37fefb073c6fdc3f6b1"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutDocument.swift",
+      "sha256": "c295162555a0d4f3acd96df484f9a6225448c6179b4e5ad6431f0829deef324e"
+    },
+    {
+      "path": "apps/ios/TinJunction/Bridge/BridgeEnvelope.swift",
+      "sha256": "c4d5163c54ddc4babafc8f593417ffdabdc5fba804d65ad62e433aeeb2e0991d"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/LayoutDesignDocumentTests.swift",
+      "sha256": "9ae8bbdd95c2e2ee91d5547133735de88c230d0cbf00906ac3e46baa5462c869"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/Fixtures/layout-design-v2-corpus.json",
+      "sha256": "735a863cc707e7340333d44b4d4db3699abe2a49bb6675dc5bd044fb4857af42"
+    },
+    {
+      "path": "tests/fixtures/documents/layout-design-v2-corpus.json",
+      "sha256": "735a863cc707e7340333d44b4d4db3699abe2a49bb6675dc5bd044fb4857af42"
+    },
+    {
+      "path": "tests/project/document-fixtures.test.mjs",
+      "sha256": "b852fce894873aaf19cdd0cc7790392077ddeecdf696025b00416116ae0bd7a2"
+    },
+    {
+      "path": "tools/documents/generate-fixtures.ts",
+      "sha256": "13b1d5e85d696997859bffc7897ae327b25941425daf3fc54ad4aaf8807c93f7"
+    },
+    {
+      "path": "web/src/documents/FORMAT_V2.md",
+      "sha256": "6e84f77afd0fd7f408a5e6c97062540f88132510335a3a18012fe73fef685d00"
+    },
+    {
+      "path": "tools/ios/test-models.sh",
+      "sha256": "67d43940793597144e3df307792374a3c8cf59ac13eee61943ce067ff9dae4d0"
+    },
+    {
+      "path": "tools/ios/test-models.test.mjs",
+      "sha256": "017f1908623dd94e981f85a06c745115a8d6dd9b6f4c0014fa1124619cf51120"
+    },
+    {
+      "path": "tools/ios/select-duo.mjs",
+      "sha256": "4c70db96370a42becbf28e75ffc6a84941e1ac9977af703077dae16fd808ce87"
+    },
+    {
+      "path": "tools/ios/install-xcodegen.sh",
+      "sha256": "be3de3bc63ac773439f0dc986b8efddb20ca691c77e8517e4f28f7849a05c2f5"
+    },
+    {
+      "path": "apps/ios/project.yml",
+      "sha256": "5804f74775dd61b0c1b9cb72298198935bf39cb40ced8a3a2e8ee2bf1f8169e4"
+    },
+    {
+      "path": ".github/workflows/native-models.yml",
+      "sha256": "4ba30d8ca617d4d7baef25b53130498080a058c246b088c3ffbce788ba670c1c"
+    },
+    {
+      "path": "tools/build-web.mjs",
+      "sha256": "2f03139db621c0963a195dfa4a4c72a6cdbae4a2e2d82a5649b4b10c8e53cd07"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "d9f318747a126ce2247661af67852b185def7789492eabfad7bba322be087c33"
+    }
+  ],
+  "commands": [
+    {
+      "command": "bash tools/ios/test-models.sh (GitHub Actions run 40448701737, job 122006045966; fixed TinJunctionTests target only)",
+      "exit_code": 0,
+      "output_path": "evidence/P07-T01-native-model-tests-9971887.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P07-T01-native-model-tests-9971887.txt",
+      "sha256": "eefb8dac392deb2d9244394c98db93fb75c3ea625c017d4d653eb80e1e729768"
+    },
+    {
+      "path": "evidence/P07-T01-native-review-9971887.md",
+      "sha256": "38b7101ffa453c9ecf7cfcb5132f409797e9d8f1a0ba00e7d45587d79b960c20"
+    },
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40448701737/artifacts/12710395042",
+      "sha256": "3f3601e67a85bd966eb0fa8487884d266009eb4049f73adae3c2a4ff1fd63524"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P07-T01-A1",
+      "evidence": [
+        0,
+        "evidence/P07-T01-native-review-9971887.md"
+      ]
+    },
+    {
+      "criterion_id": "P07-T01-A2",
+      "evidence": [
+        0,
+        "evidence/P07-T01-native-review-9971887.md"
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Successful historical unit evidence for 9971887 only. Current BridgeEnvelope.swift, project.yml and build-web.mjs differ; all tested fingerprints are retained and current strict acceptance awaits a new native run.",
+    "63 native unit tests passed, including 11 v2 document tests and the 46-case shared corpus. This focused lane does not execute UI tests or replace the mandatory full iOS Simulator workflow.",
+    "V2 is a detached document-design validator. Live v1 storage is preserved; v2 import, migration, stopped restoration and atomic persistence integration are separate tasks.",
+    "Editable design validity does not certify operating track/board clearance. P05 operating certification remains mandatory before train placement or motion.",
+    "No physical-device, final-art, signing, App Store distribution or owner-approval claim. Original Actions artifact retention ends 2026-11-10T04:25:19Z."
+  ]
+}

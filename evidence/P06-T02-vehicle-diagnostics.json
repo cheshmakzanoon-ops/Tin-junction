@@ -1,0 +1,395 @@
+{
+  "environment": "Desktop Chromium / software rendering; engineering body envelopes, not production art or device evidence",
+  "roadbedHeight": 0.0036999999999999997,
+  "switchBlocked": true,
+  "reversalError": 2.7755575615628914e-17,
+  "lighting": {
+    "hemisphere": {
+      "sky": "#f3f7fa",
+      "ground": "#4a3c2f",
+      "intensity": 3
+    },
+    "directional": {
+      "color": "#ffe8cd",
+      "intensity": 4,
+      "position": [
+        -0.25,
+        0.6,
+        -0.4
+      ]
+    },
+    "effects": "No shadows, depth of field, bloom, weather or post-processing"
+  },
+  "results": [
+    {
+      "id": "minimum-curve",
+      "tick": 120,
+      "direction": 1,
+      "vehicleIds": [
+        "engine-01",
+        "carriage-01",
+        "freight-01"
+      ],
+      "axleEdges": [
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-1/forward",
+        "curve-1/forward",
+        "curve-1/forward"
+      ],
+      "maximumWheelContactError": 1.236796411813179e-10,
+      "missedRailContacts": 0,
+      "maximumWheelbaseError": 7.323655570878884e-14,
+      "maximumCouplerGapError": 1.96787031114809e-14,
+      "maximumCouplerAngleDegrees": 45.39735411233988,
+      "calls": 79,
+      "triangles": 78242,
+      "camera": {
+        "position": [
+          0.31376077217312376,
+          0.316,
+          -0.3333074620854259
+        ],
+        "target": [
+          0.07376077217312377,
+          0.016,
+          -0.013307462085425874
+        ],
+        "quaternion": [
+          -0.09999999999999999,
+          0.9,
+          0.3,
+          0.3
+        ],
+        "left": -0.18440479624988415,
+        "right": 0.18440479624988415,
+        "top": 0.10409948175396687,
+        "bottom": -0.10409948175396687,
+        "near": 0.001,
+        "far": 3
+      },
+      "rendering": {
+        "width": 620,
+        "height": 350,
+        "pixelRatio": 1,
+        "antialias": true,
+        "colorSpace": "sRGB",
+        "toneMapping": "ACESFilmic",
+        "exposure": 1.3,
+        "shadows": false
+      }
+    },
+    {
+      "id": "wheel-contact",
+      "tick": 120,
+      "direction": 1,
+      "vehicleIds": [
+        "engine-01",
+        "carriage-01",
+        "freight-01"
+      ],
+      "axleEdges": [
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-1/forward",
+        "curve-1/forward",
+        "curve-1/forward"
+      ],
+      "maximumWheelContactError": 1.236796411813179e-10,
+      "missedRailContacts": 0,
+      "maximumWheelbaseError": 7.323655570878884e-14,
+      "maximumCouplerGapError": 1.96787031114809e-14,
+      "maximumCouplerAngleDegrees": 45.39735411233988,
+      "calls": 45,
+      "triangles": 74046,
+      "camera": {
+        "position": [
+          0.042978685785005764,
+          0.0412,
+          0.0016830235273894573
+        ],
+        "target": [
+          0.061263403680203936,
+          0.0132,
+          -0.07903667104272781
+        ],
+        "quaternion": [
+          -0.16138216173265962,
+          -0.10967544674387669,
+          -0.018049593203544007,
+          0.9806127199058818
+        ],
+        "left": -0.037200000000000004,
+        "right": 0.037200000000000004,
+        "top": 0.021,
+        "bottom": -0.021,
+        "near": 0.001,
+        "far": 3
+      },
+      "rendering": {
+        "width": 620,
+        "height": 350,
+        "pixelRatio": 1,
+        "antialias": true,
+        "colorSpace": "sRGB",
+        "toneMapping": "ACESFilmic",
+        "exposure": 1.3,
+        "shadows": false
+      }
+    },
+    {
+      "id": "s-transition",
+      "tick": 110,
+      "direction": 1,
+      "vehicleIds": [
+        "engine-01",
+        "carriage-01",
+        "freight-01"
+      ],
+      "axleEdges": [
+        "part-3/forward",
+        "part-2/forward",
+        "part-2/forward",
+        "part-2/forward",
+        "part-1/forward",
+        "part-1/forward",
+        "part-1/forward"
+      ],
+      "maximumWheelContactError": 1.236796411813179e-10,
+      "missedRailContacts": 0,
+      "maximumWheelbaseError": 1.08378583885127e-13,
+      "maximumCouplerGapError": 1.6279512460304346e-14,
+      "maximumCouplerAngleDegrees": 17.431722842998656,
+      "calls": 82,
+      "triangles": 28742,
+      "camera": {
+        "position": [
+          0.2913287201337713,
+          0.316,
+          -0.047167899316050255
+        ],
+        "target": [
+          0.05132872013377132,
+          0.016,
+          0.27283210068394975
+        ],
+        "quaternion": [
+          -0.09999999999999999,
+          0.9,
+          0.3,
+          0.3
+        ],
+        "left": -0.1701812977423479,
+        "right": 0.1701812977423479,
+        "top": 0.09607008743519638,
+        "bottom": -0.09607008743519638,
+        "near": 0.001,
+        "far": 3
+      },
+      "rendering": {
+        "width": 620,
+        "height": 350,
+        "pixelRatio": 1,
+        "antialias": true,
+        "colorSpace": "sRGB",
+        "toneMapping": "ACESFilmic",
+        "exposure": 1.3,
+        "shadows": false
+      }
+    },
+    {
+      "id": "turnout-passage",
+      "tick": 132,
+      "direction": 1,
+      "vehicleIds": [
+        "engine-01",
+        "carriage-01",
+        "freight-01"
+      ],
+      "axleEdges": [
+        "branch/forward",
+        "branch/forward",
+        "branch/forward",
+        "points:route:diverging/forward",
+        "points:route:diverging/forward",
+        "approach/forward",
+        "approach/forward"
+      ],
+      "maximumWheelContactError": 1.236796411813179e-10,
+      "missedRailContacts": 0,
+      "maximumWheelbaseError": 1.3097856133015284e-13,
+      "maximumCouplerGapError": 1.1131720545343171e-14,
+      "maximumCouplerAngleDegrees": 25.80029039031569,
+      "calls": 81,
+      "triangles": 23426,
+      "camera": {
+        "position": [
+          0.2740699421347974,
+          0.316,
+          -0.29000458444144755
+        ],
+        "target": [
+          0.034069942134797415,
+          0.016,
+          0.029995415558552462
+        ],
+        "quaternion": [
+          -0.09999999999999999,
+          0.9,
+          0.3,
+          0.3
+        ],
+        "left": -0.1840460430519883,
+        "right": 0.1840460430519883,
+        "top": 0.10389695978741274,
+        "bottom": -0.10389695978741274,
+        "near": 0.001,
+        "far": 3
+      },
+      "rendering": {
+        "width": 620,
+        "height": 350,
+        "pixelRatio": 1,
+        "antialias": true,
+        "colorSpace": "sRGB",
+        "toneMapping": "ACESFilmic",
+        "exposure": 1.3,
+        "shadows": false
+      }
+    },
+    {
+      "id": "before-reversal",
+      "tick": 240,
+      "direction": 1,
+      "vehicleIds": [
+        "engine-01",
+        "carriage-01",
+        "freight-01"
+      ],
+      "axleEdges": [
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-1/forward",
+        "curve-1/forward"
+      ],
+      "maximumWheelContactError": 1.236796411813179e-10,
+      "missedRailContacts": 0,
+      "maximumWheelbaseError": 7.327818907221229e-14,
+      "maximumCouplerGapError": 1.9702121878406587e-14,
+      "maximumCouplerAngleDegrees": 45.39735411233995,
+      "calls": 79,
+      "triangles": 78242,
+      "camera": {
+        "position": [
+          0.30100898201447956,
+          0.316,
+          -0.34947407470067815
+        ],
+        "target": [
+          0.06100898201447957,
+          0.016,
+          -0.029474074700678116
+        ],
+        "quaternion": [
+          -0.09999999999999998,
+          0.9000000000000001,
+          0.3,
+          0.3
+        ],
+        "left": -0.1710683463514713,
+        "right": 0.1710683463514713,
+        "top": 0.09657084068228218,
+        "bottom": -0.09657084068228218,
+        "near": 0.001,
+        "far": 3
+      },
+      "rendering": {
+        "width": 620,
+        "height": 350,
+        "pixelRatio": 1,
+        "antialias": true,
+        "colorSpace": "sRGB",
+        "toneMapping": "ACESFilmic",
+        "exposure": 1.3,
+        "shadows": false
+      }
+    },
+    {
+      "id": "after-reversal",
+      "tick": 240,
+      "direction": -1,
+      "vehicleIds": [
+        "engine-01",
+        "carriage-01",
+        "freight-01"
+      ],
+      "axleEdges": [
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-2/forward",
+        "curve-1/forward",
+        "curve-1/forward"
+      ],
+      "maximumWheelContactError": 1.236796411813179e-10,
+      "missedRailContacts": 0,
+      "maximumWheelbaseError": 7.327471962526033e-14,
+      "maximumCouplerGapError": 1.9702121878406587e-14,
+      "maximumCouplerAngleDegrees": 45.39735411233995,
+      "calls": 79,
+      "triangles": 78242,
+      "camera": {
+        "position": [
+          0.30100898201447956,
+          0.316,
+          -0.34947407470067815
+        ],
+        "target": [
+          0.06100898201447957,
+          0.016,
+          -0.029474074700678116
+        ],
+        "quaternion": [
+          -0.09999999999999998,
+          0.9000000000000001,
+          0.3,
+          0.3
+        ],
+        "left": -0.1710683463514713,
+        "right": 0.1710683463514713,
+        "top": 0.09657084068228218,
+        "bottom": -0.09657084068228218,
+        "near": 0.001,
+        "far": 3
+      },
+      "rendering": {
+        "width": 620,
+        "height": 350,
+        "pixelRatio": 1,
+        "antialias": true,
+        "colorSpace": "sRGB",
+        "toneMapping": "ACESFilmic",
+        "exposure": 1.3,
+        "shadows": false
+      }
+    }
+  ],
+  "runtime": {
+    "browserVersion": "141.0.7390.37",
+    "nodeVersion": "v24.22.1",
+    "platform": "linux",
+    "launchArguments": [
+      "--use-angle=swiftshader",
+      "--enable-unsafe-swiftshader"
+    ]
+  },
+  "errors": []
+}

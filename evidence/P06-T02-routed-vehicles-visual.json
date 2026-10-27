@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P06-T02-routed-vehicles-visual",
+  "task_id": "P06-T02",
+  "kind": "visual_review",
+  "result": "passed",
+  "tested_commit": "6f14cc5bfa03bfa9e522880e8365ed6e1a2cdc31",
+  "recorded_at": "2026-10-27T04:29:03.071822+00:00",
+  "source_files": [
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "tests/fixtures/track/capture-vehicles.mjs",
+      "sha256": "fe3960055edad5f2c24c46c80113e2d4544647e59d6eb5248d3e6e4fe91524a5"
+    },
+    {
+      "path": "tests/fixtures/track/turnout-fixtures.ts",
+      "sha256": "02011b0638e216face36e13d65a462e6d05ab3fae6984798ded42cea08e34230"
+    },
+    {
+      "path": "tests/fixtures/track/vehicle-fixtures.ts",
+      "sha256": "87579bb17e00b2a9a23f75489db83aabf34da6aae3189f50093cc4c2cc6bdb5e"
+    },
+    {
+      "path": "tests/fixtures/track/vehicles.html",
+      "sha256": "d1a4ba61559be2c2aba43c367d6b8070fd78a64b7ae1178fe8bce8502fad364a"
+    },
+    {
+      "path": "tests/fixtures/track/vehicles.ts",
+      "sha256": "7a08b06c65c22fd4eaf5278685c514883230acaa6cb09a97acb7b71115d2b8f2"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "web/src/model/geometry.ts",
+      "sha256": "e56fbe722f3e71cc06d70679af0eda98d32ed2ebe071bab86d37c2f403a1dae9"
+    },
+    {
+      "path": "web/src/model/index.ts",
+      "sha256": "853d7ec3b2a155b0935f5091399760fc0675baecfbcb3ccafb22485379f70161"
+    },
+    {
+      "path": "web/src/model/layout.ts",
+      "sha256": "c55a69e9803d9418ef3084bc65c5bf4c06cba0927021f4438af907aee1d27d50"
+    },
+    {
+      "path": "web/src/model/railway.ts",
+      "sha256": "c38cb8ecbea445583669db3dc79ed67574124b7e4c6370b551effc444149feb3"
+    },
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/model/validation.ts",
+      "sha256": "c5d4eb4f2fdc33f95bc227fad227e71c65a99cbc8f3df86dddfc7e50e7c0f42e"
+    },
+    {
+      "path": "web/src/scene/geometry.ts",
+      "sha256": "149271929c855fe9683488d0a6477e02fcc76b03373cf5b67d3d7d17d5720b4a"
+    },
+    {
+      "path": "web/src/scene/materials.ts",
+      "sha256": "627438adbe584860fe6947c06dd2ea574ebda8b8656ed2088c7b6ab7a11227da"
+    },
+    {
+      "path": "web/src/scene/train.ts",
+      "sha256": "6f9f9ff667a4c2cf054a4cafcf62f053388bd65d3192e2165d069d7c3d311239"
+    },
+    {
+      "path": "web/src/scene/trainDetailGeometry.ts",
+      "sha256": "b64be9f90e242d2dac0cf091c2091811f33a7d1cbc20d59c125deae2fbfa477c"
+    },
+    {
+      "path": "web/src/scene/trainMechanics.ts",
+      "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320"
+    },
+    {
+      "path": "web/src/simulation/VEHICLES.md",
+      "sha256": "48ccd4ab5e7835e8774edf3b342e59a4260550597dad22c64c0fa19ecf0f94a8"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "b2d1a81d4e14b2ee7ef1c9fbe7293150e9d65cbf90d7317c6bc31f371f361ef0"
+    },
+    {
+      "path": "web/src/simulation/routedMotion.ts",
+      "sha256": "db0d5bc20d479552369f798a0b73e7bb0f60568b948f80d5435e55b34d6ee69e"
+    },
+    {
+      "path": "web/src/simulation/routedPoses.ts",
+      "sha256": "ffbaa7e7dca44a8556a75f98f983b907c8512d91e6d33a65940bfeff99081c01"
+    },
+    {
+      "path": "web/src/simulation/vehicleCatalog.ts",
+      "sha256": "8a48b82b331850acfe108a4f318c0c3414c750d83f1844336569bb4228efdb66"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    }
+  ],
+  "commands": [
+    {
+      "command": "node tests/fixtures/track/capture-vehicles.mjs",
+      "exit_code": 0,
+      "output_path": "evidence/P06-T02-vehicle-capture.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P06-T02-vehicle-capture.txt",
+      "sha256": "b0701bbc1f57cd98a704fc81fd1fc81c362a8a1d0e41120bdf06cfcb8423d977"
+    },
+    {
+      "path": "evidence/P06-T02-vehicle-inspection.png",
+      "sha256": "e0f3303d6a020b428a0859f4cfafe2395c13e86d44c26a638c5c20f6df15880a"
+    },
+    {
+      "path": "evidence/P06-T02-vehicle-diagnostics.json",
+      "sha256": "650b94cc74177cd27ee618a6cf6f0dec1f1fe807dd887741699b31f9f7e70bda"
+    },
+    {
+      "path": "evidence/P06-T02-vehicle-review.md",
+      "sha256": "c0914a5268c86a653e2cd7dd00f32e7bd514183194f2766c396d4e7cd1eefd74"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P06-T02-A1",
+      "evidence": [
+        0,
+        "evidence/P06-T02-vehicle-inspection.png",
+        "evidence/P06-T02-vehicle-diagnostics.json",
+        "evidence/P06-T02-vehicle-review.md"
+      ]
+    }
+  ],
+  "reviewed_by": "track_runtime — AI engineering wheel/rail contact inspection; not owner or final-art approval",
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Actual desktop Chromium/SwiftShader Three.js output from 28 source-verified inputs. Six inspected views include minimum-radius circle, wheel-contact macro, supported S transition, trailing turnout passage and stopped reversal. Full actual camera/render/runtime metadata is retained.",
+    "Original procedural rail and hollow-wheel meshes are rendered, with explicit neutral catalog body envelopes. This is a component mechanical diagnostic, not the completed app, production locomotive/turnout art, native UI or a physical-device capture.",
+    "All 84 wheel contact rays hit active rendered rails; reported subnanometre numerical agreement describes software geometry only. Draw calls/triangles are fixture counts, not measured Duo GPU performance.",
+    "Static views do not by themselves prove continuous wheel motion. Separate exact-source unit evidence compares each axle phase change with independent route-cursor stations and verifies latched trailing vehicle passage over time.",
+    "Immediate reverse S curves exceeding 60 degree coupler articulation and graph-tolerated imperfect joins are explicitly unsupported. Minimum radius alone does not certify arbitrary compound track.",
+    "Middle-axle lateral accommodation, complete running gear, final asset clearance, inner/outer rolling radii, full-app/native integration, hardware performance and release approval remain separate work."
+  ]
+}

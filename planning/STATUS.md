@@ -2,9 +2,9 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T04:22:48.828Z
+Ledger updated: 2026-10-27T04:30:00.471Z
 
-Tasks: 131; done: 18; active: 5; review: 0; blocked: 1; todo: 107.
+Tasks: 131; done: 19; active: 4; review: 0; blocked: 1; todo: 107.
 
 CI snapshot: **running** for 13ecc51674e629cad78ee6d7251f74278e7edc9e. This may be stale; inspect current remote checks.
 
@@ -18,7 +18,7 @@ CI snapshot: **running** for 13ecc51674e629cad78ee6d7251f74278e7edc9e. This may 
 | [P03](phases/P03-native-web-contract.md) | Secure native-to-web contract | 0/5 | — |
 | [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 5/6 | P04-T06 in_progress |
 | [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 5/5 | — |
-| [P06](phases/P06-first-operating-railway.md) | First operating railway | 1/4 | P06-T02 in_progress |
+| [P06](phases/P06-first-operating-railway.md) | First operating railway | 2/4 | — |
 | [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 0/5 | P07-T01 in_progress |
 | [P08](phases/P08-camera-selection-and-input.md) | Camera, picking and gesture arbitration | 0/4 | — |
 | [P09](phases/P09-track-editor.md) | Creative track-layout editor | 0/5 | — |

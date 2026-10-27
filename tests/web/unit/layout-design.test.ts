@@ -60,4 +60,16 @@ describe("shared native/web layout design contract P07-T01", () => {
     for (const input of [cyclic, accessor, { ...source, seed: NaN }, { ...source, seed: Infinity }, { ...source, extra: undefined }, { ...source, extra: () => 1 }, { ...source, extra: new Date() }, { ...source, name: "\ud800" }]) expect(parseLayoutDesign(input).ok).toBe(false);
     expect(getterCalled).toBe(false);
   });
+
+  it("rejects hidden array metadata without invoking a custom serialization hook", () => {
+    const source = corpus.cases.find(item => item.id === "empty-editable-design")!.input;
+    let called = false;
+    const scenery: unknown[] = [];
+    Object.defineProperty(scenery, "toJSON", { get() { called = true; return () => []; } });
+    expect(parseLayoutDesign({ ...source, scenery }).ok).toBe(false);
+    expect(called).toBe(false);
+    const hidden: unknown[] = [];
+    Object.defineProperty(hidden, "nativeHandle", { value: { pointer: 42 } });
+    expect(parseLayoutDesign({ ...source, scenery: hidden }).ok).toBe(false);
+  });
 });
