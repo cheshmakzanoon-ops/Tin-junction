@@ -2,7 +2,16 @@
 
 Reference material guides original modelling and objective visual review. It is not a licence to copy a model, photograph, livery, trademark, recording, or another game's art.
 
-The setup contains no downloaded reference images. Add sources deliberately, with rights records and relevance.
+The repository contains no downloaded reference images. Add sources deliberately, with rights records and relevance.
+
+## Current research and launch inventory
+
+- [Reference registry](registry.json): seven primary-source, link-only records inspected on 2026-10-27, with rights distinctions and known limitations.
+- [Rights record](RIGHTS.md): exact admission policy; no commercial image or mesh permissions implied.
+- [Required launch kit](launch-kit.json): stable production IDs, responsible roles, priorities, variant counts and dimension status.
+- [Design brief](DESIGN_BRIEF.md): coherent original direction, missing reference views and the required capture/critique sequence.
+
+These are P10-T01 research and planning records, not an approved image board or finished production assets. Manufacturer names identify sources only. All required production entries remain planned; existing procedural entries remain prototypes. Further multi-view research belongs to each production task and cannot be skipped because a reference URL exists.
 
 ## For every reference item
 

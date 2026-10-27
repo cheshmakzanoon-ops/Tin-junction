@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T02:13:17.965Z",
+  "updated_at": "2026-10-27T02:21:56.841Z",
   "health": {
     "ci": {
       "status": "running",
@@ -12,7 +12,7 @@
     },
     "incidents": []
   },
-  "last_handoff": "planning/handoffs/2026-10-27-first-railway.md",
+  "last_handoff": "planning/handoffs/2026-10-27-quality-continuation.md",
   "tasks": {
     "P00-T01": {
       "status": "done",
@@ -334,12 +334,33 @@
       ]
     },
     "P05-T01": {
+      "status": "done",
+      "claim": null,
+      "blockers": [],
+      "evidence": [
+        "evidence/P05-T01-centerlines.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-quality-continuation.md",
+      "history": [
+        {
+          "at": "2026-10-27T02:13:17.788Z",
+          "action": "claim",
+          "detail": "pew-pew-track; 8 hours"
+        },
+        {
+          "at": "2026-10-27T02:21:56.742Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-quality-continuation.md"
+        }
+      ]
+    },
+    "P05-T02": {
       "status": "in_progress",
       "claim": {
         "owner": "pew-pew-track",
-        "started_at": "2026-10-27T02:13:17.788Z",
-        "expires_at": "2026-10-27T10:13:17.788Z",
-        "head_at_claim": "c59f7acbdaf591552de718d19bc7418d16fd8cd7",
+        "started_at": "2026-10-27T02:21:56.841Z",
+        "expires_at": "2026-10-27T10:21:56.841Z",
+        "head_at_claim": "3585955aa2c5c92e7867922bd9b09a04e0dfd0b9",
         "scope": [
           "web/src/track/",
           "tests/fixtures/track/"
@@ -350,19 +371,11 @@
       "last_handoff": null,
       "history": [
         {
-          "at": "2026-10-27T02:13:17.788Z",
+          "at": "2026-10-27T02:21:56.841Z",
           "action": "claim",
           "detail": "pew-pew-track; 8 hours"
         }
       ]
-    },
-    "P05-T02": {
-      "status": "todo",
-      "claim": null,
-      "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
     },
     "P05-T03": {
       "status": "todo",

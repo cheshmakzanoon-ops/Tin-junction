@@ -1,7 +1,7 @@
 {
   "$schema": "./catalog.schema.json",
   "schemaVersion": 1,
-  "catalogVersion": "0.1.0",
+  "catalogVersion": "0.2.0",
   "assets": [
     {
       "id": "workbench.case",
@@ -345,6 +345,785 @@
       },
       "approvals": [],
       "notes": "Runtime geometry/materials are constructed from bundled source, not a separately exported asset file. Permission flags remain false pending the recorded owner rights review; this is not a statement about copyright ownership."
+    },
+    {
+      "id": "case.cabinet.001",
+      "label": "Original walnut display case, lid, hinges and latches",
+      "kind": "case",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P14-T01",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: case and environment artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://files.hafele.co.uk/catalogfiles/www/16a3-62.pdf"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.hafele.brass-hinge."
+    },
+    {
+      "id": "locomotive.steam.001",
+      "label": "Original unbranded six-coupled tank locomotive",
+      "kind": "locomotive",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P12-T01",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: rolling-stock artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://collection.sciencemuseumgroup.org.uk/objects/co27965/model-of-the-planet-locomotive-model-locomotive",
+          "https://www.railwaymuseum.org.uk/sites/default/files/2023-10/Pages%20from%20LOCOMOTION%20report%20part%202.pdf"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.smg.planet-model, ref.nrm.locomotion-mechanics."
+    },
+    {
+      "id": "rolling-stock.coach.001",
+      "label": "Original compact passenger coach",
+      "kind": "rolling-stock",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P06-T02",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: rolling-stock artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://collection.sciencemuseumgroup.org.uk/objects/co27965/model-of-the-planet-locomotive-model-locomotive"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.smg.planet-model."
+    },
+    {
+      "id": "rolling-stock.freight.001",
+      "label": "Original compact open freight wagon",
+      "kind": "rolling-stock",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P06-T02",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: rolling-stock artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://collection.sciencemuseumgroup.org.uk/objects/co27965/model-of-the-planet-locomotive-model-locomotive"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.smg.planet-model."
+    },
+    {
+      "id": "track.straight.001",
+      "label": "Timber-sleeper straight track kit",
+      "kind": "track",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P13-T01",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: railway infrastructure artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://peco-uk.com/products/sl102f-peco-streamline-oo-ho-flex-track-c75-con-sleeper-tie"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.peco.flat-bottom-track."
+    },
+    {
+      "id": "track.curve.001",
+      "label": "Supported-radius timber-sleeper curve kit",
+      "kind": "track",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P13-T01",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: railway infrastructure artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://peco-uk.com/products/sl102f-peco-streamline-oo-ho-flex-track-c75-con-sleeper-tie"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.peco.flat-bottom-track."
+    },
+    {
+      "id": "track.turnout.001",
+      "label": "Functional turnout blade, stock rail and frog kit",
+      "kind": "track",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P13-T02",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: railway infrastructure artist and simulation engineer",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://peco-uk.com/products/sl102f-peco-streamline-oo-ho-flex-track-c75-con-sleeper-tie"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 2. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.peco.flat-bottom-track."
+    },
+    {
+      "id": "track.buffer.001",
+      "label": "Physical end-of-track buffer",
+      "kind": "track",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P13-T03",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: railway infrastructure artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://peco-uk.com/products/sl102f-peco-streamline-oo-ho-flex-track-c75-con-sleeper-tie"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.peco.flat-bottom-track."
+    },
+    {
+      "id": "scenery.signal.001",
+      "label": "Original working railway signal",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P13-T03",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: railway infrastructure artist and simulation engineer",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: none yet; original design/research required."
+    },
+    {
+      "id": "scenery.station.001",
+      "label": "Fictional Alpine station and platform kit",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P14-T02",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: architecture artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://medien.faller.de/xs_db/DOKUMENT_DB/www/_blaetterkatalog/epaper-FALLER_Modellbau_2022_EN/index.html"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.faller.wayside-station."
+    },
+    {
+      "id": "scenery.cottage.001",
+      "label": "Original Alpine cottage family",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P14-T02",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: architecture artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://medien.faller.de/xs_db/DOKUMENT_DB/www/_blaetterkatalog/epaper-FALLER_Modellbau_2022_EN/index.html"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 2. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.faller.wayside-station."
+    },
+    {
+      "id": "scenery.terrain.001",
+      "label": "Miniature terrain, paths and pond banks",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P14-T01",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: environment artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://www.noch.com/silvretta-large-layout/80100/"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.noch.silvretta-composition."
+    },
+    {
+      "id": "scenery.bridge.001",
+      "label": "Original short model-railway bridge",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P13-T03",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: railway infrastructure artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://www.noch.com/silvretta-large-layout/80100/"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.noch.silvretta-composition."
+    },
+    {
+      "id": "scenery.tunnel.001",
+      "label": "Original short tunnel and portals",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P13-T03",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: railway infrastructure artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://www.noch.com/silvretta-large-layout/80100/"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 1. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.noch.silvretta-composition."
+    },
+    {
+      "id": "scenery.fir.001",
+      "label": "Original flocked miniature fir family",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P14-T03",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: foliage artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://www.noch.com/fir-trees/25086/"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 3. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.noch.fir-flocking."
+    },
+    {
+      "id": "scenery.deciduous.001",
+      "label": "Original deciduous miniature tree family",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P14-T03",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: foliage artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://www.noch.com/fir-trees/25086/"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 2. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.noch.fir-flocking."
+    },
+    {
+      "id": "scenery.props.001",
+      "label": "Original lamps, benches, fences, crates and rocks",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P14-T03",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: environment artist",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://medien.faller.de/xs_db/DOKUMENT_DB/www/_blaetterkatalog/epaper-FALLER_Modellbau_2022_EN/index.html"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 2; minimum variants 5. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.faller.wayside-station."
+    },
+    {
+      "id": "material.launch-library.001",
+      "label": "Calibrated original paint, metals, wood, stone, cloth and glazing",
+      "kind": "material",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P11-T03",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: material artist and rendering engineer",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://collection.sciencemuseumgroup.org.uk/objects/co27965/model-of-the-planet-locomotive-model-locomotive",
+          "https://files.hafele.co.uk/catalogfiles/www/16a3-62.pdf",
+          "https://www.noch.com/fir-trees/25086/"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 0; minimum variants 8. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.smg.planet-model, ref.hafele.brass-hinge, ref.noch.fir-flocking."
+    },
+    {
+      "id": "environment.display-light.001",
+      "label": "Original coherent day and night display lighting",
+      "kind": "environment",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P15-T01",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: lighting artist and rendering engineer",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [
+          "https://www.noch.com/silvretta-large-layout/80100/"
+        ],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 2. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: ref.noch.silvretta-composition."
+    },
+    {
+      "id": "audio.railway.001",
+      "label": "Original train, whistle, case and interaction sound set",
+      "kind": "audio",
+      "version": "0.1.0",
+      "stage": "planned",
+      "taskId": "P17-T01",
+      "provenance": {
+        "author": "Planned original Tin Junction work; responsible role: audio designer",
+        "origin": "original",
+        "license": "Unproduced original work; no licence or ownership approval asserted",
+        "rightsRecord": "assets/references/RIGHTS.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Source URLs are research-only references, not licensed source assets.",
+          "Original master, rights review and production approvals are required before release."
+        ]
+      },
+      "sourceFiles": [],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "not_run",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [],
+        "openDefects": [
+          "Not produced. Dimensions, source files, export, runtime and visual/device evidence are pending."
+        ]
+      },
+      "approvals": [],
+      "notes": "Required launch asset; priority 1; minimum variants 4. Owner role, references and dimension status: assets/references/launch-kit.json. Reference IDs: none yet; original design/research required."
     }
   ]
 }

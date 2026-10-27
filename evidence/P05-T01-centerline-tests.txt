@@ -1,0 +1,10 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+ RUN  v5.0.5 /workspace/scratch/b2e45c568e85/Tin-junction
+
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  23:21:38
+   Duration  466ms (tests 94%, import 3%, transform 2%, worker 1%)
+
