@@ -1,6 +1,6 @@
 # Current handoff — first operating railway
 
-Current continuation: [submission-quality work](handoffs/2026-10-27-submission-continuation.md). Both required workflows passed at `13ecc516`; newer `8f96036` runs are active. Earlier native keyboard/help failures were repaired and verified without weakening their assertions. Inspect live CI for the current revision. The detached v2 format now has source-matched native and web conformance evidence in [the document handoff](handoffs/2026-10-27-layout-design.md).
+Current continuation: [submission-quality work](handoffs/2026-10-27-submission-continuation.md), with the latest [architecture, interaction and native-repair handoff](handoffs/2026-10-27-workbench-refinement.md). Both required workflows passed at `13ecc516`; later web runs passed, but full native run `40451042264` at `6a8f3f3` failed the actual custom-origin GLB assertion and a separate UI-test app-launch cleanup. Repair that failure before accepting new native work. The older keyboard/help defects were verified repaired. The detached v2 format has accepted native/web conformance in [the document handoff](handoffs/2026-10-27-layout-design.md).
 
 Active continuation: [quality continuation](handoffs/2026-10-27-quality-continuation.md). The owner confirmed the previous contributor stopped; current task claims and checks are recorded in the state ledger. The earlier handoff below remains historical evidence.
 

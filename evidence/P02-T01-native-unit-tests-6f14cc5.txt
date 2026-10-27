@@ -1,0 +1,52 @@
+Actual GitHub Actions unit-test log excerpt: run 40449797278, job 122009585826
+Tested commit: 6f14cc5bfa03bfa9e522880e8365ed6e1a2cdc31
+Command: bash tools/ios/test-models.sh; fixed TinJunctionTests target only
+Full xcodebuild.log SHA256: d98830a63c9bcf2d2dee6f1ccc2e7ad97076590c48cf72cf2d56c3707a8d3f46
+This excerpt omits unrelated suites and diagnostic noise; selected test lines and counts are unchanged.
+
+Test Suite 'ApplicationSessionTests' started at 2026-10-27 04:35:39.996.
+Test Case '-[TinJunctionTests.ApplicationSessionTests testPresentationRecreationAndLifecycleKeepTheApplicationAuthority]' started.
+Test Case '-[TinJunctionTests.ApplicationSessionTests testPresentationRecreationAndLifecycleKeepTheApplicationAuthority]' passed (0.015 seconds).
+Test Case '-[TinJunctionTests.ApplicationSessionTests testSecondRendererCannotReplaceOrTearDownTheActiveSession]' started.
+Test Case '-[TinJunctionTests.ApplicationSessionTests testSecondRendererCannotReplaceOrTearDownTheActiveSession]' passed (0.154 seconds).
+Test Suite 'ApplicationSessionTests' passed at 2026-10-27 04:35:40.167.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.169 (0.171) seconds
+Test Suite 'EngineHostModelTests' started at 2026-10-27 04:35:40.914.
+Test Case '-[TinJunctionTests.EngineHostModelTests testFailedSavePreservesOpenLayoutAndDoesNotClaimDurability]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testFailedSavePreservesOpenLayoutAndDoesNotClaimDurability]' passed (0.203 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testOldSessionCannotWriteAfterReload]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testOldSessionCannotWriteAfterReload]' passed (0.008 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testProcessRecoveryIsBoundedWithoutAWebView]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testProcessRecoveryIsBoundedWithoutAWebView]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testProtectedSaveFailuresBlockFurtherWritesAndPreserveOpenEdits]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testProtectedSaveFailuresBlockFurtherWritesAndPreserveOpenEdits]' passed (0.025 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testReadyRequiresCurrentSessionLayoutAcknowledgement]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testReadyRequiresCurrentSessionLayoutAcknowledgement]' passed (0.005 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRecoverableContextLossKeepsTransportAlive]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testRecoverableContextLossKeepsTransportAlive]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRepeatedInFlightRequestIsCoalescedWithoutFillingSaveQueue]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testRepeatedInFlightRequestIsCoalescedWithoutFillingSaveQueue]' passed (0.015 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testReplacedSessionClearsPendingRequestIdentity]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testReplacedSessionClearsPendingRequestIdentity]' passed (0.007 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRestoredIdentityAndRevisionMustMatch]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testRestoredIdentityAndRevisionMustMatch]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testSuccessfulSaveChangesDurableStateOnlyAfterStoreCompletes]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testSuccessfulSaveChangesDurableStateOnlyAfterStoreCompletes]' passed (0.027 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalErrorCannotBeClearedByMetrics]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalErrorCannotBeClearedByMetrics]' passed (0.003 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload]' passed (0.021 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testUnreadableSavedLayoutFailsWithoutFactoryReplacement]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testUnreadableSavedLayoutFailsWithoutFactoryReplacement]' passed (0.014 seconds).
+Test Suite 'EngineHostModelTests' passed at 2026-10-27 04:35:41.253.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.334 (0.339) seconds
+Test Suite 'PlatformStartupTraceTests' started at 2026-10-27 04:35:41.967.
+Test Case '-[TinJunctionTests.PlatformStartupTraceTests testTraceBoundAndFieldValidation]' started.
+Test Case '-[TinJunctionTests.PlatformStartupTraceTests testTraceBoundAndFieldValidation]' passed (0.009 seconds).
+Test Suite 'PlatformStartupTraceTests' passed at 2026-10-27 04:35:41.977.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.009 (0.010) seconds
+Test Suite 'TinJunctionTests.xctest' passed at 2026-10-27 04:35:41.986.
+	 Executed 69 tests, with 0 failures (0 unexpected) in 1.898 (1.990) seconds
+Test Suite 'All tests' passed at 2026-10-27 04:35:41.986.
+	 Executed 69 tests, with 0 failures (0 unexpected) in 1.898 (1.991) seconds
+** TEST SUCCEEDED **

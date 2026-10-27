@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T04:40:09.435Z",
+  "updated_at": "2026-10-27T05:06:04.544Z",
   "health": {
     "ci": {
-      "status": "running",
-      "checked_commit": "8f96036acfab046b87bab5e002b034bc83eeffb6",
+      "status": "failed",
+      "checked_commit": "6a8f3f3bf7e071e421f4d16f8d514097be9ffb67",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40450589020",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40450589029"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40451042264",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40451042453"
       ]
     },
     "incidents": []

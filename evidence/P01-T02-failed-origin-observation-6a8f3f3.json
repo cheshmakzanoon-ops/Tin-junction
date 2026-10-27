@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "kind": "failed-packaged-origin-observation",
+  "testedCommit": "6a8f3f3bf7e071e421f4d16f8d514097be9ffb67",
+  "runId": 40451042264,
+  "jobId": 122014401975,
+  "artifactId": 12711102321,
+  "artifactBytes": 370052062,
+  "artifactSHA256": "69b0c95050ae99195f1e0ea153bb3c386ead50daed2fe550897a43748546804b",
+  "observationTimeUTC": "2026-10-27T04:49:53.768191Z",
+  "recovery": {
+    "method": "Zstandard-decompress the original xcresult data blob, then decode the escaped XC_kAXXCAttributeValue JSON string; no values were supplied by the reviewer.",
+    "entry": "TinJunction-20261027T044550-83348.xcresult/Data/data.0~6o1v4a30qfjKaWi4PLLNhH9e43XvW4-CE8K9dRe25i_tG1mw8XGrcZh1g06JPCt_zHL6028pmBfIUJtA3S6xHg==",
+    "decompressedBytes": 3056591,
+    "decompressedSHA256": "908792d3213be9974ec6faf6e03fc218a53f61f65b3daa31f0a7808e50c9b369"
+  },
+  "observation": {
+    "formatVersion": 1,
+    "isSimulator": true,
+    "networkPolicy": "http-https-denied",
+    "persistentStorage": false,
+    "report": {
+      "documentURL": "tinjunction://bundle/index.html",
+      "formatVersion": 1,
+      "observed": {
+        "audioChannels": 0,
+        "audioFrames": 0,
+        "audioSampleRate": 0,
+        "audioState": "suspended",
+        "glbVisiblePixels": 0,
+        "meshCount": 0,
+        "textureHeight": 8,
+        "textureMatchedQuadrants": 4,
+        "textureWidth": 8,
+        "triangleCount": 0,
+        "wasmValue": null,
+        "workerMessage": "asset-worker-ready:42"
+      },
+      "results": {
+        "audio": {
+          "detail": "Error: tone.wav: response 0",
+          "status": "blocked"
+        },
+        "glb": {
+          "detail": "Error: calibration.glb: response 0",
+          "status": "failed"
+        },
+        "ktx2": {
+          "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+          "status": "blocked"
+        },
+        "texture": {
+          "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+          "status": "passed"
+        },
+        "wasm": {
+          "detail": "Error: add-one.wasm: response 0",
+          "status": "blocked"
+        },
+        "worker": {
+          "detail": "Bundled classic worker executed and returned its expected message.",
+          "status": "passed"
+        }
+      },
+      "sessionId": "05797D86-ED34-4ECE-8CC1-7C6022F61FE5",
+      "stage": "complete",
+      "webgl2": true
+    },
+    "webDataCleared": true
+  }
+}

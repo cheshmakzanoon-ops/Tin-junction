@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P02-T01-native-application-ownership-unit-6f14cc5",
+  "task_id": "P02-T01",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "6f14cc5bfa03bfa9e522880e8365ed6e1a2cdc31",
+  "recorded_at": "2026-10-27T04:54:34Z",
+  "source_files": [
+    {
+      "path": "apps/ios/TinJunction/App/ApplicationSession.swift",
+      "sha256": "ff66bd4016901ca5d4b671ee743d4b452e4d6504517da5df244a5db52c627a53"
+    },
+    {
+      "path": "apps/ios/TinJunction/TinJunctionApp.swift",
+      "sha256": "903febe836a554b4ce6fe80107703b6dfca321d9a7b5282d11ef027311f88c96"
+    },
+    {
+      "path": "apps/ios/TinJunction/RootView.swift",
+      "sha256": "c20467c57da9f9ed81294f8fd574c4dfa79b117ed0e671c482c378573bbdbb08"
+    },
+    {
+      "path": "apps/ios/TinJunction/Info.plist",
+      "sha256": "80da69534c7fddcd34b1cdc1de74536a67c4a3352711cadc757f494d9bd88c9a"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineHostModel.swift",
+      "sha256": "f5d606a9d77283ad3884289c76b8a92345aba30d7f9b1bdd56a017f3a09e445e"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineWebView.swift",
+      "sha256": "4b8d119109750452859116b0b8afb6b4c3b93e72901f54dc57851b6bf181fdd9"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/BundleSchemeHandler.swift",
+      "sha256": "80203181922e91eb45893550d8c51fb10cb8ec4603e07b1239b221dff584dbdc"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/BundleResourcePolicy.swift",
+      "sha256": "f25367b70bc39ffbcecb0a0e0d7089fa017844d0c528885299d7ba3b95141447"
+    },
+    {
+      "path": "apps/ios/TinJunction/Bridge/BridgeEnvelope.swift",
+      "sha256": "55107be8b02b366f745a877abeb9cb2fde2584cd94029c55921103a752f5ccd5"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutDocument.swift",
+      "sha256": "c295162555a0d4f3acd96df484f9a6225448c6179b4e5ad6431f0829deef324e"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutStore.swift",
+      "sha256": "4912af01a24f444d89ee843db1ff197ffb4fb461a0e532b7053be0c061b75cb7"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/AssetOriginProbe.swift",
+      "sha256": "4ce08db51d14436ca4d5305c5f89ca30f02abcc22090d5a3ffcd26ab7ce55a74"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/HostStartupFault.swift",
+      "sha256": "eaf2890e7e05f6b40fdb58c445af4885df328308799363eebf4d4bc7d40e50ca"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/NativeViewport.swift",
+      "sha256": "85dddc0112d70bf9dd176e89fd74127451daa4135a80a1cb77f26a1ecbfb117f"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/PlatformProbe.swift",
+      "sha256": "6b7155aeed6a8dfb32d1c4ec2d40d8ed550aeafe1843d500449b495e20b721e2"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/PlatformStartupTrace.swift",
+      "sha256": "224a463a172d32d334439d827a764ec1f62b632963539add8711e554e118eca8"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/ApplicationSessionTests.swift",
+      "sha256": "2b1d80d5e242659dd6ffea8bdf44edd60d1a85a7c09637d7cc4ef7cb25c699da"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/EngineHostModelTests.swift",
+      "sha256": "0397128b10b7d47bbba410601c1b0be8c85c91d13c47285a5fd860d73b21e75d"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/PlatformStartupTraceTests.swift",
+      "sha256": "61e5dc2231ba906f53b10be7825b36353eb1799935051579723ec8c14eb1323e"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/LayoutDocumentTests.swift",
+      "sha256": "8af9227212ea5837706a240f9326639151f59c6e00c92f67261b45a9d7594f29"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/Fixtures/starter-layout.json",
+      "sha256": "66833832eb5742f4848154be8d3d8adce3ff6a1402182a435b1ac75c015042e3"
+    },
+    {
+      "path": "apps/ios/project.yml",
+      "sha256": "815b190547b0448f91adabbefe4ff8b984376ef3fd221e23e50d7aa930a98e6c"
+    },
+    {
+      "path": ".github/workflows/native-models.yml",
+      "sha256": "4ba30d8ca617d4d7baef25b53130498080a058c246b088c3ffbce788ba670c1c"
+    },
+    {
+      "path": "tools/ios/test-models.sh",
+      "sha256": "67d43940793597144e3df307792374a3c8cf59ac13eee61943ce067ff9dae4d0"
+    },
+    {
+      "path": "tools/ios/test-models.test.mjs",
+      "sha256": "017f1908623dd94e981f85a06c745115a8d6dd9b6f4c0014fa1124619cf51120"
+    },
+    {
+      "path": "tools/ios/select-duo.mjs",
+      "sha256": "4c70db96370a42becbf28e75ffc6a84941e1ac9977af703077dae16fd808ce87"
+    },
+    {
+      "path": "tools/ios/install-xcodegen.sh",
+      "sha256": "be3de3bc63ac773439f0dc986b8efddb20ca691c77e8517e4f28f7849a05c2f5"
+    },
+    {
+      "path": "tools/ios/verify-release-web.py",
+      "sha256": "ce1b176ba813c9ba3002cc5b2cdf7b853ca613889c788a4403cf9576f3affae4"
+    },
+    {
+      "path": "tools/build-web.mjs",
+      "sha256": "324e2e817346bb5ef1c9b40d914b38ebdf57f1b539399d2fbec434eec168b0fe"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "d9f318747a126ce2247661af67852b185def7789492eabfad7bba322be087c33"
+    },
+    {
+      "path": "web/packaged.html",
+      "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+    }
+  ],
+  "commands": [
+    {
+      "command": "bash tools/ios/test-models.sh (GitHub Actions run 40449797278, job 122009585826; fixed TinJunctionTests target only)",
+      "exit_code": 0,
+      "output_path": "evidence/P02-T01-native-unit-tests-6f14cc5.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P02-T01-native-unit-tests-6f14cc5.txt",
+      "sha256": "a1c5906b960aeaaf35e45eeba3c2ae5706a1a63b607ee485d3a80159e4604d8f"
+    },
+    {
+      "path": "evidence/P02-T01-native-unit-review-6f14cc5.md",
+      "sha256": "0ca20e882cdbd64f6a25d3e33c914579097984503fa71a8479ddfc227c009d10"
+    },
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40449797278/artifacts/12709654737",
+      "sha256": "382b7680aa8769f13dddf4b0805fac84873db2f01431145471a8e2edde20fae4"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P02-T01-A1",
+      "evidence": [
+        0,
+        "evidence/P02-T01-native-unit-review-6f14cc5.md"
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Actual Simulator unit-model run: 69 tests passed overall. This record scopes the two ApplicationSession tests, thirteen EngineHostModel tests and one PlatformStartupTrace buffer test; the full UI workflow is separate and required.",
+    "Presentation recreation constructs RootView values and drives lifecycle state directly; it does not establish operating-system scene destruction/recreation or SpringBoard foregrounding. Ownership uses two real but deliberately blank WKWebViews, not running renderers.",
+    "Terminal startup failure, context-loss messages and method-level process termination are controlled unit inputs. P02-T01-A2 and real Retry UI require independent packaged integration evidence; actual WebContent death remains P02-T02.",
+    "Host save assertions use a controlled actor store. They do not prove unsaved edits are durable after process loss or test filesystem interruption.",
+    "Native and build input fingerprints include the existing host, bridge, document/store, platform and diagnostic dependencies. No app rendering or web runtime outcome is inferred from these unit checks.",
+    "No physical-device, fold/posture transition, audio quality, sustained performance, final-art, signed Release archive, distribution or owner-approval claim.",
+    "Original Actions artifact retention currently ends 2026-11-10T04:35:46Z. The compact actual test excerpt and independently verified artifact hash are retained in Git.",
+    "Historical for current integration: the later packaged-origin response repair changes the retained BundleSchemeHandler.swift fingerprint. Current acceptance requires fresh native evidence; the tested source hashes are not removed or relabeled."
+  ]
+}

@@ -34,6 +34,9 @@ final class HostSmokeTests: XCTestCase {
     func testNativeSaveAndRelaunchRestoresAcknowledgedRailway() throws {
         continueAfterFailure = false
         let app = XCUIApplication()
+        // The relaunched app belongs to this fixture too. End its lifetime here
+        // instead of leaving the next test responsible for terminating it.
+        addTeardownBlock { app.terminate() }
         app.launch()
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
         defer { attachScreenshot(app, name: "duo-edit-save-relaunch") }

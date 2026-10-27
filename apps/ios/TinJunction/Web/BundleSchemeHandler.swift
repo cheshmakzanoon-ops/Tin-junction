@@ -21,12 +21,7 @@ final class BundleSchemeHandler: NSObject, WKURLSchemeHandler {
                 throw BundleResourcePolicy.Rejection.assetTooLarge
             }
             guard let requestURL = urlSchemeTask.request.url else { throw BundleResourcePolicy.Rejection.invalidURL }
-            let response = URLResponse(
-                url: requestURL,
-                mimeType: BundleResourcePolicy.mimeTypes[file.pathExtension.lowercased()],
-                expectedContentLength: data.count,
-                textEncodingName: ["html", "js", "css", "json", "gltf", "svg"].contains(file.pathExtension.lowercased()) ? "utf-8" : nil
-            )
+            let response = try Self.response(for: requestURL, file: file, byteCount: data.count)
             urlSchemeTask.didReceive(response)
             urlSchemeTask.didReceive(data)
             urlSchemeTask.didFinish()
@@ -38,5 +33,25 @@ final class BundleSchemeHandler: NSObject, WKURLSchemeHandler {
 
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
         // Requests are fulfilled synchronously. Never call a task after this method.
+    }
+
+    /// WebKit exposes status 0 to fetch for a generic URLResponse. Explicit
+    /// success metadata is required even though the bytes use our local scheme.
+    /// Only policy-owned MIME and measured length are returned; request headers
+    /// cannot add permissions, cookies, redirects or CORS exceptions.
+    static func response(for requestURL: URL, file: URL, byteCount: Int) throws -> HTTPURLResponse {
+        let extensionName = file.pathExtension.lowercased()
+        guard let mimeType = BundleResourcePolicy.mimeTypes[extensionName] else {
+            throw BundleResourcePolicy.Rejection.unsupportedType
+        }
+        guard (0...BundleResourcePolicy.maximumAssetBytes).contains(byteCount) else {
+            throw BundleResourcePolicy.Rejection.assetTooLarge
+        }
+        let isText = ["html", "js", "css", "json", "gltf", "svg"].contains(extensionName)
+        guard let response = HTTPURLResponse(url: requestURL, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: [
+            "Content-Type": mimeType + (isText ? "; charset=utf-8" : ""),
+            "Content-Length": String(byteCount)
+        ]) else { throw BundleResourcePolicy.Rejection.invalidURL }
+        return response
     }
 }

@@ -1,0 +1,47 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> tin-junction@0.1.0 test:browser
+> playwright test
+
+
+Running 28 tests using 1 worker
+
+(node:88989) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:88989) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-harness-not-device-proof] › tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 1100x760 (23.3s)
+  ✓   2 [chromium-harness-not-device-proof] › tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 390x844 (16.7s)
+  ✓   3 [chromium-harness-not-device-proof] › tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 358x300 (14.4s)
+  ✓   4 [chromium-harness-not-device-proof] › tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 844x390 (16.0s)
+  ✓   5 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after native viewport (14.6s)
+  ✓   6 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after native inactive (15.5s)
+  ✓   7 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after document hidden (16.2s)
+  ✓   8 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after canvas resize (22.2s)
+  ✓   9 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:100:1 › a fresh touch can place scenery after an interrupted touch is canceled (21.1s)
+  ✓  10 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after drag away and return (20.1s)
+  ✓  11 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after right click (14.5s)
+  ✓  12 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after middle click (15.8s)
+  ✓  13 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:238:3 › an 80-character railway name leaves controls clear at 1100x760 (16.6s)
+  ✓  14 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:238:3 › an 80-character railway name leaves controls clear at 382x575 (12.8s)
+  ✓  15 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:238:3 › an 80-character railway name leaves controls clear at 358x300 (10.2s)
+  ✓  16 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:238:3 › an 80-character railway name leaves controls clear at 844x390 (11.6s)
+  ✓  17 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:353:1 › Save remains readable against every canvas background (23.9s)
+  ✓  18 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:33:1 › drive, brake and safely reverse the actual train controls (22.1s)
+  ✓  19 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:71:1 › place scenery on the board and undo/redo one complete transaction (25.7s)
+  ✓  20 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:110:1 › name, light and reopen a saved layout with the train stopped (31.7s)
+  ✓  21 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:151:1 › corrupt current generation restores an identified previous save (18.7s)
+  ✓  22 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:212:1 › native bridge queues edits behind a durable acknowledgment and rejects stale sessions (17.3s)
+  ✓  23 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:354:1 › pinch gesture does not commit scenery and focused buttons keep keyboard activation (19.0s)
+  ✓  24 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:413:1 › portrait controls and name editing stay usable as the viewport shrinks (17.1s)
+  ✓  25 [chromium-harness-not-device-proof] › tests/web/browser/scene-recovery.spec.ts:31:1 › restoring a context also restores generated lighting, not just frame delivery (27.4s)
+  ✓  26 [chromium-harness-not-device-proof] › tests/web/browser/smoke.spec.ts:2:1 › offline bundle renders the operating miniature with no external requests (13.1s)
+  ✓  27 [chromium-harness-not-device-proof] › tests/web/browser/smoke.spec.ts:34:1 › bridge validation, lifecycle pause/resume and resize are observable (10.1s)
+  ✓  28 [chromium-harness-not-device-proof] › tests/web/browser/smoke.spec.ts:84:1 › WebGL context loss pauses and restoration resumes the same harness (13.4s)
+
+  28 passed (8.4m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

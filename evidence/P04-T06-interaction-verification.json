@@ -1,0 +1,174 @@
+{
+  "scope": "P04-T06 existing fixed-oval workbench interaction and readability corrections",
+  "status": "implemented and locally verified; source frozen for coordinator integration",
+  "sourceSHA256": {
+    "web/src/main.ts": "d1af805f8fb0f5aa0263fdfaa5df17ec28f3cabaabb4986a4b1cc126495e753c",
+    "web/src/style.css": "1467b8e32d093ac40693696564470f21313d971a0de9135dc13f7527a7307b98",
+    "tests/web/browser/interaction-quality.spec.ts": "3881163a91d4df250ca43312d3df3225e2ff7e9416b74fa67668180cced8e90b"
+  },
+  "runtimeBundle": {
+    "formatVersion": 1,
+    "kind": "first-operating-workbench-not-production-art",
+    "bundler": "esbuild",
+    "scriptFormat": "iife",
+    "externalRuntimeDependencies": [],
+    "assetOriginProbe": false,
+    "artifacts": {
+      "index.html": {
+        "bytes": 884,
+        "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+      },
+      "bundle.js": {
+        "bytes": 712238,
+        "sha256": "0aa9d0cb345e458ee87dccd13dc81a3e1a94cf48352721300fb4702da36cbf80"
+      },
+      "bundle.css": {
+        "bytes": 18493,
+        "sha256": "2951fd778ea783268ebe5221297b6f5db39e33b75315636b756cbb57bd49a9b6"
+      },
+      "bundle.js.LEGAL.txt": {
+        "bytes": 188,
+        "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+      }
+    }
+  },
+  "verification": {
+    "typecheck": "passed after final runtime edit",
+    "diffWhitespace": "passed",
+    "ordinaryBundleIntegrityAndProbeExclusion": "passed by buildWeb",
+    "browserRuns": [
+      {
+        "tests": 18,
+        "passed": 18,
+        "failed": 0,
+        "retries": 0,
+        "duration": "7.3m",
+        "log": "final-test-run.txt",
+        "collectedInteractionTestSHA256": "44ca67c57cfc472d8618062316d134795e20a56b698b99f8b99d94d34956d1b2",
+        "retainedLog": "evidence/P04-T06-interaction-tests.txt",
+        "retainedLogSHA256": "81c7d24b61f3ae38b21b43c38f2f3d6df6f1cfeb42e88e63ceffb6d0ecc1c29b"
+      },
+      {
+        "tests": 1,
+        "passed": 1,
+        "failed": 0,
+        "retries": 0,
+        "duration": "22.2s",
+        "log": "touch-test-run.txt",
+        "interactionTestSHA256": "3881163a91d4df250ca43312d3df3225e2ff7e9416b74fa67668180cced8e90b",
+        "retainedLog": "evidence/P04-T06-interaction-touch-tests.txt",
+        "retainedLogSHA256": "09658c4937297df2c2283a0adb1a9deca12442bc1a495af8b96145dfa23f6528"
+      }
+    ],
+    "testSourceNote": "The single-touch case was appended after the 18-case collection. Removing only that appended case reproduces the recorded 44ca67... hash; all other test bodies remained unchanged."
+  },
+  "reproducedBeforeFix": [
+    {
+      "cases": [
+        "native.viewport interruption",
+        "native inactive/active interruption",
+        "document hidden/visible interruption",
+        "ResizeObserver canvas resize"
+      ],
+      "effect": "scenery count 29 to 30 and revision 0 to 1 on the stale release"
+    },
+    {
+      "cases": [
+        "30px drag away and return",
+        "right click",
+        "middle click"
+      ],
+      "effect": "scenery count 29 to 30 and revision 0 to 1 despite camera-only input"
+    },
+    {
+      "cases": [
+        "80 W characters at 1100x760",
+        "80 W characters at native-style 382x575"
+      ],
+      "effect": "desktop text overflow and compact scene-control overlap"
+    },
+    {
+      "case": "Save status over arbitrary canvas colors",
+      "computedWorstCaseContrast": 1.7861533806832068,
+      "effect": "transparent surface did not protect text contrast"
+    }
+  ],
+  "afterFix": {
+    "gestures": "Interruption and camera-only releases do not mutate scenery/revision; first fresh mouse and Chromium touch taps still place. Existing pinch and undo/redo checks pass.",
+    "title": "Complete 80-character name retained in model, heading text and accessible name; paint bounded to two lines, one line in short viewports; scene controls remain separate.",
+    "save": {
+      "foreground": "#283c34",
+      "background": "#f5f0e7",
+      "computedContrast": 10.357696765695213,
+      "lightingModesChecked": [
+        "daylight",
+        "evening",
+        "night"
+      ]
+    },
+    "targets": "Existing essential controls remain visible, directly hittable and at least 44 logical CSS pixels in tested layouts."
+  },
+  "captures": {
+    "before-native-style-long-name.png": {
+      "source": "results-before/interaction-quality-an-80--77d57-s-controls-clear-at-382x575/maximum-name.png",
+      "sha256": "31ccc443f23e3655e0a058eb4481f588d59a598dcf2c4af180f745e4d12ff6b7",
+      "width": 382,
+      "height": 575
+    },
+    "before-desktop-long-name.png": {
+      "source": "results-before/interaction-quality-an-80--84bc8--controls-clear-at-1100x760/maximum-name.png",
+      "sha256": "607605c6f388daf988afdd00bc0a8729c1a1b3fc5a09753fb057484756ccd366",
+      "width": 1100,
+      "height": 760
+    },
+    "native-style-long-name.png": {
+      "source": "results-final/interaction-quality-an-80--77d57-s-controls-clear-at-382x575/maximum-name.png",
+      "sha256": "0ff8eb3739f1b8b4dab3397afc45130b52a8e3d14201f448494a0182a5c76d3a",
+      "width": 382,
+      "height": 575
+    },
+    "desktop-long-name.png": {
+      "source": "results-final/interaction-quality-an-80--84bc8--controls-clear-at-1100x760/maximum-name.png",
+      "sha256": "dc5f589d2a98b832d5903a6e71689f359538d7fef42931612d3fee81c3c2a50a",
+      "width": 1100,
+      "height": 760
+    },
+    "keyboard-height-long-name.png": {
+      "source": "results-final/interaction-quality-an-80--12ded-s-controls-clear-at-358x300/maximum-name.png",
+      "sha256": "2e3531890ce78d73b0779dc4bd617b7eb40797281d3c5a742ee57bd269cb4017",
+      "width": 358,
+      "height": 300
+    },
+    "landscape-long-name.png": {
+      "source": "results-final/interaction-quality-an-80--3ab0f-s-controls-clear-at-844x390/maximum-name.png",
+      "sha256": "487e171464cb7f99a85da8b3bbbfd5912a1c0c32c0205832d902dead69c76f23",
+      "width": 844,
+      "height": 390
+    },
+    "save-daylight.png": {
+      "source": "results-final/interaction-quality-Save-r-e5912-nst-every-canvas-background/save-daylight.png",
+      "sha256": "1425a45ecb617c0e0aa04a46a1ceb2714774a352a1fe8f07a52c16cbf64623b1",
+      "width": 1100,
+      "height": 760
+    },
+    "save-evening.png": {
+      "source": "results-final/interaction-quality-Save-r-e5912-nst-every-canvas-background/save-evening.png",
+      "sha256": "5b59f88f792e5bac8ab2e589a9421444d3c84fc8aab8f14a3e37248e30c2c7ea",
+      "width": 1100,
+      "height": 760
+    },
+    "save-night.png": {
+      "source": "results-final/interaction-quality-Save-r-e5912-nst-every-canvas-background/save-night.png",
+      "sha256": "e9db447d440d7871e2e545093a4d5f50b35d91e1d12adf62cf6836936aa4feee",
+      "width": 1100,
+      "height": 760
+    }
+  },
+  "limits": [
+    "Chromium/SwiftShader internal browser harness; native-host bridge fixtures are not actual WKWebView device evidence.",
+    "382x575 is an approximate harness case informed by the observed 382x574.6667 simulator viewport, not a prescribed device size.",
+    "No claim of physical touch, VoiceOver, real-device performance or App Store submission readiness.",
+    "Published asset-probe session/generation/disposal logic is preserved; source-matched native integration remains the coordinator gate.",
+    "These exact local runs precede the optional fixed-station visibility guard. The forthcoming complete required workflow must verify the integrated checkpoint; older capture or bundle hashes are not relabeled."
+  ]
+}

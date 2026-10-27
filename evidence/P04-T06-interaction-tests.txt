@@ -1,0 +1,28 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+Running 18 tests using 1 worker
+
+(node:82990) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:82990) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 1100x760 (22.4s)
+  ✓   2 tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 390x844 (30.5s)
+  ✓   3 tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 358x300 (33.5s)
+  ✓   4 tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 844x390 (44.0s)
+  ✓   5 tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after native viewport (23.1s)
+  ✓   6 tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after native inactive (25.5s)
+  ✓   7 tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after document hidden (25.5s)
+  ✓   8 tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after canvas resize (37.0s)
+  ✓   9 tests/web/browser/interaction-quality.spec.ts:101:3 › camera input cannot place scenery after drag away and return (26.6s)
+  ✓  10 tests/web/browser/interaction-quality.spec.ts:101:3 › camera input cannot place scenery after right click (17.9s)
+  ✓  11 tests/web/browser/interaction-quality.spec.ts:101:3 › camera input cannot place scenery after middle click (24.8s)
+  ✓  12 tests/web/browser/interaction-quality.spec.ts:177:3 › an 80-character railway name leaves controls clear at 1100x760 (19.2s)
+  ✓  13 tests/web/browser/interaction-quality.spec.ts:177:3 › an 80-character railway name leaves controls clear at 382x575 (14.5s)
+  ✓  14 tests/web/browser/interaction-quality.spec.ts:177:3 › an 80-character railway name leaves controls clear at 358x300 (9.5s)
+  ✓  15 tests/web/browser/interaction-quality.spec.ts:177:3 › an 80-character railway name leaves controls clear at 844x390 (10.5s)
+  ✓  16 tests/web/browser/interaction-quality.spec.ts:292:1 › Save remains readable against every canvas background (25.5s)
+  ✓  17 tests/web/browser/railway.spec.ts:71:1 › place scenery on the board and undo/redo one complete transaction (22.5s)
+  ✓  18 tests/web/browser/railway.spec.ts:354:1 › pinch gesture does not commit scenery and focused buttons keep keyboard activation (18.9s)
+
+  18 passed (7.3m)

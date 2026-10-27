@@ -11,6 +11,7 @@ import { createPrefabs, createStation, instantiateScenery } from "./scenery";
 import { TrainRig } from "./train";
 import { CASE_DIMENSIONS, createDisplayCase, openCasePose } from "./caseGeometry";
 import { createPondGroup, createPondMaterials, depressPondTerrain } from "./pondGeometry";
+import { FixedStationPlacement } from "./stationPlacement";
 
 export type CameraView = "overview" | "trackside" | "top";
 export type SceneDimensions = { width: number; height: number; drawingBufferWidth: number; drawingBufferHeight: number };
@@ -32,6 +33,7 @@ export class MiniatureScene {
   private environmentTarget: THREE.WebGLRenderTarget | null = null;
   private readonly restoreEnvironment = (): void => { this.rebuildEnvironment(); };
   private readonly lid: THREE.Group;
+  private readonly station: FixedStationPlacement;
   private readonly pondMaterials = createPondMaterials(this.palette);
   private pond = new THREE.Group();
   private readonly train: TrainRig;
@@ -94,7 +96,8 @@ export class MiniatureScene {
     table.receiveShadow = true;
     this.scene.add(table);
     this.lid = this.createCase();
-    this.scene.add(createStation(this.palette));
+    this.station = new FixedStationPlacement(createStation(this.palette));
+    this.scene.add(this.station.object);
     this.terrain = new THREE.Mesh(new THREE.PlaneGeometry(0.8, 0.5), this.palette.grass);
     this.terrain.name = "terrain";
     this.terrain.receiveShadow = true;
@@ -188,6 +191,9 @@ export class MiniatureScene {
     const key = document.track.straightLength + ":" + document.track.radius;
     const trackChanged = key !== this.trackKey;
     if (trackChanged) {
+      // A supported custom oval must never pass through fixed decoration.
+      // Saved scenery, station geometry and authored transforms are untouched.
+      this.station.update(document.track);
       this.disposeGroupGeometry(this.track);
       this.scene.remove(this.track);
       this.track = this.createTrack(document.track);

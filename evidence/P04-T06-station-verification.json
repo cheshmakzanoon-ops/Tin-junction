@@ -1,0 +1,320 @@
+{
+  "result": "passed",
+  "expectedReduction": 30,
+  "components": {
+    "station": {
+      "main": 13,
+      "shadow": 13,
+      "all": 26
+    },
+    "factoryPond": {
+      "main": 5,
+      "shadow": 3,
+      "all": 8
+    },
+    "narrowPond": {
+      "main": 3,
+      "shadow": 1,
+      "all": 4
+    }
+  },
+  "observedReduction": 30,
+  "factoryRestoredExactly": true,
+  "sourceHashesMatch": true,
+  "initialDiagnosticFailures": [
+    "Four-frame capture count check assumed a26-call whole-scene delta before guaranteeing fresh metrics.",
+    "Fresh metrics still rejected the26-call assumption: the existing pond removes4 additional submissions. Constructed component accounting independently explains the observed30-call delta."
+  ],
+  "limits": "Constructed material batches account for submissions in these views; this is not a GPU timing or physical-device benchmark. Texture painting is stubbed only for the separate CPU component count; actual app captures use production materials.",
+  "observations": {
+    "environment": "Actual Chromium WebGL2/SwiftShader native-bridge fixture, not native or physical-device evidence",
+    "browser": "141.0.7390.37",
+    "node": "v24.22.1",
+    "sources": {
+      "web/src/scene/MiniatureScene.ts": {
+        "bytes": 19006,
+        "sha256": "af9b338172f349b73d623575e001acbbe42c74d7e848dc18536930f71227b6b7"
+      },
+      "web/src/scene/stationPlacement.ts": {
+        "bytes": 5022,
+        "sha256": "56a8224150b0575998671bf17c7c7ef5fb72deed64b69fc2fd64c1bdeb182511"
+      },
+      "web/src/scene/scenery.ts": {
+        "bytes": 9516,
+        "sha256": "47930ede316599bbef971c8ad8951ee9d0cf9a573cc8db3b000d7cabc312beca"
+      },
+      "web/src/scene/architectureGeometry.ts": {
+        "bytes": 23710,
+        "sha256": "fad629ebb0bf7a4cda5cfdee386255ee025d0b50009d6122a51530cd30ed04ea"
+      },
+      "web/src/model/geometry.ts": {
+        "bytes": 6995,
+        "sha256": "e56fbe722f3e71cc06d70679af0eda98d32ed2ebe071bab86d37c2f403a1dae9"
+      },
+      "web/src/model/types.ts": {
+        "bytes": 3102,
+        "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+      },
+      "web/src/simulation/vehicleCatalog.ts": {
+        "bytes": 4663,
+        "sha256": "8a48b82b331850acfe108a4f318c0c3414c750d83f1844336569bb4228efdb66"
+      },
+      "web/src/scene/train.ts": {
+        "bytes": 20503,
+        "sha256": "6f9f9ff667a4c2cf054a4cafcf62f053388bd65d3192e2165d069d7c3d311239"
+      },
+      "web/src/main.ts": {
+        "bytes": 26794,
+        "sha256": "d1af805f8fb0f5aa0263fdfaa5df17ec28f3cabaabb4986a4b1cc126495e753c"
+      },
+      "web/src/style.css": {
+        "bytes": 21945,
+        "sha256": "1467b8e32d093ac40693696564470f21313d971a0de9135dc13f7527a7307b98"
+      }
+    },
+    "bundle": {
+      "formatVersion": 1,
+      "kind": "first-operating-workbench-not-production-art",
+      "bundler": "esbuild",
+      "scriptFormat": "iife",
+      "externalRuntimeDependencies": [],
+      "assetOriginProbe": false,
+      "artifacts": {
+        "index.html": {
+          "bytes": 884,
+          "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+        },
+        "bundle.js": {
+          "bytes": 715818,
+          "sha256": "e1936e606f3fb93e309446b5ae210672fc3e916b1682db1c72547cd6ba5075eb"
+        },
+        "bundle.css": {
+          "bytes": 18493,
+          "sha256": "2951fd778ea783268ebe5221297b6f5db39e33b75315636b756cbb57bd49a9b6"
+        },
+        "bundle.js.LEGAL.txt": {
+          "bytes": 188,
+          "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+        }
+      }
+    },
+    "metrics": {
+      "factory-default": {
+        "renderer": "webgl2",
+        "frameCount": 11,
+        "rejectedMessages": 0,
+        "nativeMessages": 4,
+        "lifecycle": "running",
+        "contextLosses": 0,
+        "width": 1400,
+        "height": 950,
+        "drawingBufferWidth": 1400,
+        "drawingBufferHeight": 950,
+        "initialized": true,
+        "loaded": true,
+        "mode": "operate",
+        "revision": 0,
+        "tick": 35,
+        "trainDistance": 0.9864583591154448,
+        "trainSpeed": 0,
+        "throttle": 0,
+        "direction": 1,
+        "sceneryCount": 29,
+        "selectedId": null,
+        "savedRevision": 0,
+        "checkpoint": 1,
+        "saveState": "saved",
+        "documentName": "Alpine afternoon",
+        "drawCalls": 161,
+        "triangles": 328388,
+        "published": {
+          "frames": 11,
+          "drawCalls": 161,
+          "triangles": 328388,
+          "evidenceKind": "diagnostic-only"
+        }
+      },
+      "factory-empty": {
+        "renderer": "webgl2",
+        "frameCount": 28,
+        "rejectedMessages": 0,
+        "nativeMessages": 7,
+        "lifecycle": "running",
+        "contextLosses": 0,
+        "width": 1400,
+        "height": 950,
+        "drawingBufferWidth": 1400,
+        "drawingBufferHeight": 950,
+        "initialized": true,
+        "loaded": true,
+        "mode": "operate",
+        "revision": 0,
+        "tick": 33,
+        "trainDistance": 0.5,
+        "trainSpeed": 0,
+        "throttle": 0,
+        "direction": 1,
+        "sceneryCount": 0,
+        "selectedId": null,
+        "savedRevision": 0,
+        "checkpoint": 0,
+        "saveState": "saved",
+        "documentName": "Fixed station clearance",
+        "drawCalls": 119,
+        "triangles": 192988,
+        "published": {
+          "frames": 28,
+          "drawCalls": 119,
+          "triangles": 192988,
+          "evidenceKind": "diagnostic-only"
+        }
+      },
+      "minimum-radius": {
+        "renderer": "webgl2",
+        "frameCount": 32,
+        "rejectedMessages": 0,
+        "nativeMessages": 10,
+        "lifecycle": "running",
+        "contextLosses": 0,
+        "width": 1400,
+        "height": 950,
+        "drawingBufferWidth": 1400,
+        "drawingBufferHeight": 950,
+        "initialized": true,
+        "loaded": true,
+        "mode": "operate",
+        "revision": 0,
+        "tick": 19,
+        "trainDistance": 0.5,
+        "trainSpeed": 0,
+        "throttle": 0,
+        "direction": 1,
+        "sceneryCount": 0,
+        "selectedId": null,
+        "savedRevision": 0,
+        "checkpoint": 0,
+        "saveState": "saved",
+        "documentName": "Minimum-radius clearance fixture",
+        "drawCalls": 89,
+        "triangles": 171108,
+        "published": {
+          "frames": 32,
+          "drawCalls": 89,
+          "triangles": 171108,
+          "evidenceKind": "diagnostic-only"
+        }
+      },
+      "factory-empty-restored": {
+        "renderer": "webgl2",
+        "frameCount": 44,
+        "rejectedMessages": 0,
+        "nativeMessages": 13,
+        "lifecycle": "running",
+        "contextLosses": 0,
+        "width": 1400,
+        "height": 950,
+        "drawingBufferWidth": 1400,
+        "drawingBufferHeight": 950,
+        "initialized": true,
+        "loaded": true,
+        "mode": "operate",
+        "revision": 0,
+        "tick": 16,
+        "trainDistance": 0.5,
+        "trainSpeed": 0,
+        "throttle": 0,
+        "direction": 1,
+        "sceneryCount": 0,
+        "selectedId": null,
+        "savedRevision": 0,
+        "checkpoint": 0,
+        "saveState": "saved",
+        "documentName": "Fixed station clearance",
+        "drawCalls": 119,
+        "triangles": 192988,
+        "published": {
+          "frames": 44,
+          "drawCalls": 119,
+          "triangles": 192988,
+          "evidenceKind": "diagnostic-only"
+        }
+      },
+      "factory-restored": {
+        "renderer": "webgl2",
+        "frameCount": 49,
+        "rejectedMessages": 0,
+        "nativeMessages": 16,
+        "lifecycle": "running",
+        "contextLosses": 0,
+        "width": 1400,
+        "height": 950,
+        "drawingBufferWidth": 1400,
+        "drawingBufferHeight": 950,
+        "initialized": true,
+        "loaded": true,
+        "mode": "operate",
+        "revision": 0,
+        "tick": 32,
+        "trainDistance": 0.9864583591154448,
+        "trainSpeed": 0,
+        "throttle": 0,
+        "direction": 1,
+        "sceneryCount": 29,
+        "selectedId": null,
+        "savedRevision": 0,
+        "checkpoint": 0,
+        "saveState": "saved",
+        "documentName": "Alpine afternoon",
+        "drawCalls": 161,
+        "triangles": 328388,
+        "published": {
+          "frames": 49,
+          "drawCalls": 161,
+          "triangles": 328388,
+          "evidenceKind": "diagnostic-only"
+        }
+      }
+    },
+    "errors": [],
+    "priorCaptureFailure": "First capture waited four frames; draw counters publish only every two seconds. Its count assertion failed. This capture waits for an actual fresh engine.metrics event after every layout replacement.",
+    "verification": {
+      "result": "passed",
+      "expectedReduction": 30,
+      "components": {
+        "station": {
+          "main": 13,
+          "shadow": 13,
+          "all": 26
+        },
+        "factoryPond": {
+          "main": 5,
+          "shadow": 3,
+          "all": 8
+        },
+        "narrowPond": {
+          "main": 3,
+          "shadow": 1,
+          "all": 4
+        }
+      },
+      "observedReduction": 30,
+      "factoryRestoredExactly": true,
+      "sourceHashesMatch": true,
+      "initialDiagnosticFailures": [
+        "Four-frame capture count check assumed a26-call whole-scene delta before guaranteeing fresh metrics.",
+        "Fresh metrics still rejected the26-call assumption: the existing pond removes4 additional submissions. Constructed component accounting independently explains the observed30-call delta."
+      ],
+      "limits": "Constructed material batches account for submissions in these views; this is not a GPU timing or physical-device benchmark. Texture painting is stubbed only for the separate CPU component count; actual app captures use production materials."
+    }
+  },
+  "environment": {
+    "renderer": "Chromium 141.0.7390.37 WebGL2/SwiftShader",
+    "node": "24.22.1",
+    "viewport": [
+      1400,
+      950
+    ],
+    "nativeBridge": "synthetic browser fixture"
+  },
+  "scope": "Local workbench compatibility review; not a formal native, hardware, performance or final-art acceptance manifest."
+}

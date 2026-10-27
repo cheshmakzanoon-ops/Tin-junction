@@ -5,6 +5,8 @@ import { box, compactGroup, cylinder, terrainHeight, visualRandom } from "./geom
 import type { Palette } from "./materials";
 import { clockTexture, labelTexture } from "./materials";
 import { createCanopyGeometry, createFirBoughGeometry } from "./canopyGeometry";
+import { createCottageArchitecture, createStationArchitecture } from "./architectureGeometry";
+export { createGableGeometry } from "./architectureGeometry";
 
 type Kind = LayoutDocument["scenery"][number]["kind"];
 export type Prefab = { geometry: THREE.BufferGeometry; material: THREE.Material }[];
@@ -73,51 +75,8 @@ function tree(kind: "fir" | "oak", palette: Palette): THREE.Group {
   return compactGroup(group);
 }
 
-/** Closed attic shell, including the formerly open triangular roof ends. */
-export function createGableGeometry(width: number, rise: number, depth: number): THREE.BufferGeometry {
-  if (![width, rise, depth].every(value => Number.isFinite(value) && value > 0)) throw new RangeError("Gable dimensions must be positive");
-  const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute("position", new THREE.Float32BufferAttribute([
-    -width / 2, 0, -depth / 2, width / 2, 0, -depth / 2, 0, rise, -depth / 2,
-    -width / 2, 0, depth / 2, width / 2, 0, depth / 2, 0, rise, depth / 2,
-  ], 3));
-  geometry.setAttribute("uv", new THREE.Float32BufferAttribute([0, 0, 1, 0, 0.5, 1, 0, 0, 1, 0, 0.5, 1], 2));
-  geometry.setIndex([0, 2, 1, 3, 4, 5, 0, 1, 4, 0, 4, 3, 0, 3, 5, 0, 5, 2, 1, 2, 5, 1, 5, 4]);
-  const shell = geometry.toNonIndexed();
-  geometry.dispose(); shell.computeVertexNormals(); shell.computeBoundingSphere();
-  return shell;
-}
-
 function house(palette: Palette): THREE.Group {
-  const group = new THREE.Group();
-  box(group, [0.043, 0.003, 0.038], [0, 0.0015, 0], palette.rock);
-  box(group, [0.038, 0.032, 0.033], [0, 0.019, 0], palette.plaster, 0.0006);
-  const gable = new THREE.Mesh(createGableGeometry(0.038, 0.0183, 0.033), palette.plaster);
-  gable.position.y = 0.0345; group.add(gable);
-  for (const side of [-1, 1]) {
-    const roof = box(group, [0.0275, 0.0024, 0.043], [side * 0.0114, 0.0446, 0], palette.roof, 0.0004);
-    roof.rotation.z = -side * 0.72;
-    for (let row = 0; row < 6; row += 1) {
-      const rib = cylinder(group, 0.00055, 0.00055, 0.043, [side * (0.003 + row * 0.0037), 0.052 - row * 0.0032, 0], palette.roofDark, 7);
-      rib.rotation.x = Math.PI / 2;
-    }
-    for (const end of [-1, 1]) {
-      const fascia = box(group, [0.028, 0.0018, 0.0015], [side * 0.0114, 0.0437, end * 0.0213], palette.darkWood);
-      fascia.rotation.z = -side * 0.72;
-    }
-    box(group, [0.040, 0.002, 0.0015], [0, 0.031, side * 0.0171], palette.darkWood);
-    for (const x of [-0.0115, 0.0115]) {
-      box(group, [0.008, 0.010, 0.001], [x, 0.023, side * 0.0171], palette.glass);
-      box(group, [0.010, 0.0012, 0.0018], [x, 0.0175, side * 0.0177], palette.trim);
-      box(group, [0.0008, 0.010, 0.0018], [x, 0.023, side * 0.0179], palette.trim);
-      for (const shutter of [-1, 1]) box(group, [0.003, 0.010, 0.0012], [x + shutter * 0.006, 0.023, side * 0.0178], palette.green);
-    }
-  }
-  box(group, [0.007, 0.015, 0.0015], [0, 0.0105, 0.0175], palette.darkWood);
-  box(group, [0.009, 0.0015, 0.004], [0, 0.003, 0.020], palette.platform);
-  box(group, [0.005, 0.016, 0.006], [0.010, 0.052, -0.007], palette.plasterDark);
-  box(group, [0.007, 0.002, 0.008], [0.010, 0.061, -0.007], palette.rock);
-  return compactGroup(group);
+  return compactGroup(createCottageArchitecture(palette));
 }
 
 function lamp(palette: Palette): THREE.Group {
@@ -189,47 +148,18 @@ export function instantiateScenery(document: LayoutDocument, prefabs: Record<Kin
 }
 
 export function createStation(palette: Palette): THREE.Group {
-  const group = new THREE.Group();
-  box(group, [0.203, 0.006, 0.030], [-0.025, 0.003, -0.115], palette.platform, 0.0015);
-  for (let index = 0; index < 26; index += 1) box(group, [0.001, 0.0003, 0.027], [-0.122 + index * 0.0077, 0.0063, -0.115], palette.plasterDark);
-  box(group, [0.093, 0.003, 0.039], [-0.037, 0.0075, -0.081], palette.rock);
-  box(group, [0.088, 0.035, 0.034], [-0.037, 0.026, -0.081], palette.plaster, 0.0008);
-  const gable = new THREE.Mesh(createGableGeometry(0.034, 0.0162, 0.088), palette.plaster);
-  gable.rotation.y = Math.PI / 2; gable.position.set(-0.037, 0.043, -0.081); group.add(gable);
-  for (const side of [-1, 1]) {
-    const roof = box(group, [0.104, 0.0025, 0.027], [-0.037, 0.052, -0.081 + side * 0.0115], palette.roof, 0.0005);
-    roof.rotation.x = side * 0.61;
-    for (let tile = 0; tile < 20; tile += 1) {
-      const rib = box(group, [0.0008, 0.0006, 0.028], [-0.087 + tile * 0.0051, 0.0533, -0.081 + side * 0.0115], palette.roofDark);
-      rib.rotation.x = side * 0.61;
-    }
-    for (const end of [-1, 1]) {
-      const fascia = box(group, [0.0015, 0.0019, 0.028], [-0.037 + end * 0.0515, 0.051, -0.081 + side * 0.0115], palette.darkWood);
-      fascia.rotation.x = side * 0.61;
-    }
-  }
-  for (const x of [-0.066, -0.037, -0.008]) {
-    box(group, [0.014, 0.018, 0.0012], [x, 0.027, -0.0988], palette.glass);
-    for (const side of [-1, 1]) box(group, [0.0011, 0.020, 0.0019], [x + side * 0.0076, 0.027, -0.0992], palette.trim);
-    box(group, [0.016, 0.0012, 0.0024], [x, 0.0172, -0.0992], palette.trim);
-    box(group, [0.001, 0.018, 0.002], [x, 0.027, -0.0995], palette.trim);
-  }
-  box(group, [0.093, 0.0015, 0.018], [-0.037, 0.036, -0.109], palette.green);
-  for (const x of [-0.079, 0.005]) cylinder(group, 0.001, 0.001, 0.029, [x, 0.0205, -0.115], palette.green, 10);
-  const stationSign = new THREE.Mesh(new THREE.PlaneGeometry(0.049, 0.012), new THREE.MeshStandardMaterial({ map: labelTexture("TIN JUNCTION", "ALPINE LINE"), roughness: 0.72 }));
-  stationSign.position.set(-0.037, 0.027, -0.0632);
+  const group = createStationArchitecture(palette);
+  const stationSign = new THREE.Mesh(new THREE.PlaneGeometry(0.039, 0.007), new THREE.MeshStandardMaterial({ map: labelTexture("TIN JUNCTION", "ALPINE LINE", true), roughness: 0.72 }));
+  // Fit between the windows and below the projecting eaves. A shallow backing
+  // makes the enamel sign read as mounted hardware instead of painted plaster.
+  box(group, [0.040, 0.0078, 0.0008], [-0.037, 0.0336, -0.0632], palette.darkWood);
+  stationSign.position.set(-0.037, 0.0336, -0.06275);
   group.add(stationSign);
-  const clock = new THREE.Mesh(new THREE.CircleGeometry(0.006, 24), new THREE.MeshStandardMaterial({ map: clockTexture(), roughness: 0.7 }));
-  clock.position.set(-0.037, 0.045, -0.063);
+  const clockMount = cylinder(group, 0.0035, 0.0035, 0.0005, [0.00795, 0.0385, -0.081], palette.green, 24);
+  clockMount.rotation.z = -Math.PI / 2;
+  const clock = new THREE.Mesh(new THREE.CircleGeometry(0.0033, 24), new THREE.MeshStandardMaterial({ map: clockTexture(), roughness: 0.7 }));
+  clock.position.set(0.00825, 0.0385, -0.081); clock.rotation.y = Math.PI / 2;
   group.add(clock);
-  box(group, [0.007, 0.024, 0.007], [-0.065, 0.056, -0.074], palette.plasterDark);
-  box(group, [0.009, 0.002, 0.009], [-0.065, 0.069, -0.074], palette.rock);
-  for (let index = 0; index < 3; index += 1) {
-    box(group, [0.009, 0.008, 0.009], [0.031 + index * 0.011, 0.010, -0.117], palette.wagon, 0.0003);
-    box(group, [0.0095, 0.0007, 0.0095], [0.031 + index * 0.011, 0.014, -0.117], palette.darkWood);
-  }
-  for (let index = 0; index < 17; index += 1) box(group, [0.0016, 0.013, 0.0016], [-0.126 + index * 0.012, 0.007, -0.058], palette.trim);
-  for (const y of [0.0045, 0.0105]) box(group, [0.192, 0.0015, 0.001], [-0.030, y, -0.058], palette.trim);
   const station = compactGroup(group);
   station.name = "station";
   station.scale.x = 0.88; // All fixed architecture fits the same reserved rectangle as the validators.

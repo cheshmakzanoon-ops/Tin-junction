@@ -47,7 +47,10 @@ jobs:
       - name: Test simulator selector
         run: node --test tools/ios/select-duo.test.mjs
       - name: Build the offline native web bundle with explicit diagnostic fixtures
-        run: npm run bundle:ios -- --asset-probe
+        run: |
+          npm run bundle:ios -- --asset-probe
+          # CI packaging input only. Installed-app verification is separate below.
+          cp apps/ios/TinJunction/Resources/WebAssets/bundle-manifest.json artifacts/ios/packaged-web-input-manifest.json
       - name: Install checksum-pinned XcodeGen
         id: xcodegen
         run: bash tools/ios/install-xcodegen.sh
@@ -64,9 +67,22 @@ jobs:
           TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
         run: xcrun simctl boot "$TIN_SIMULATOR_UDID"
       - name: Compile Swift and execute unit and UI smoke tests
+        id: native_tests
         env:
           TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
         run: bash tools/ios/test-simulator.sh
+      - name: Verify web resource identity in the actual installed app
+        if: success() && steps.native_tests.outcome == 'success'
+        env:
+          TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
+        run: |
+          set -euo pipefail
+          tin_compiled_app=artifacts/ios/DerivedData/Build/Products/Debug-iphonesimulator/TinJunction.app
+          tin_bundle_identifier="$(/usr/libexec/PlistBuddy -c 'Print:CFBundleIdentifier' "$tin_compiled_app/Info.plist")"
+          test -n "$tin_bundle_identifier"
+          tin_installed_app="$(xcrun simctl get_app_container "$TIN_SIMULATOR_UDID" "$tin_bundle_identifier" app)"
+          test -n "$tin_installed_app"
+          node tools/ios/record-installed-web.mjs "$tin_installed_app/WebAssets" artifacts/ios artifacts/ios/packaged-web-input-manifest.json
       - name: Preserve test evidence even on failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

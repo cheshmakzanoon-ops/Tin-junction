@@ -6,6 +6,16 @@ final class AssetOriginProbeUITests: XCTestCase {
     func testActualBundledOriginAfterWebDataResetAndColdRelaunch() throws {
         continueAfterFailure = false
         let app = XCUIApplication()
+        // XCTest runs registered teardown blocks even when an assertion stops
+        // the test before Swift defer executes. Capture first, then terminate.
+        addTeardownBlock { app.terminate() }
+        addTeardownBlock { [weak self] in
+            guard let self, (self.testRun?.failureCount ?? 0) > 0 else { return }
+            let probe = app.staticTexts["host.assetProbe"]
+            let text = probe.exists ? (probe.value as? String ?? "Native probe value unavailable") : "Native probe row unavailable"
+            self.attachObservation(text, name: "failure-state")
+            self.attachRendering(app, name: "failure-state")
+        }
         app.launchArguments = ["--asset-origin-probe"]
         app.launch()
         let firstSession = try observe(app, name: "first-launch")
@@ -17,25 +27,12 @@ final class AssetOriginProbeUITests: XCTestCase {
 
     private func observe(_ app: XCUIApplication, name: String) throws -> String {
         let probe = app.staticTexts["host.assetProbe"]
-        // Preserve the real report even when readiness, a loader, the user
-        // gesture, or a later assertion fails. A failure must remain diagnosable.
-        defer {
-            let text = probe.exists ? (probe.value as? String ?? "Native probe value unavailable") : "Native probe row unavailable"
-            let data = XCTAttachment(string: text)
-            data.name = "asset-origin-observation-\(name)"
-            data.lifetime = .keepAlways
-            add(data)
-            let capture = XCTAttachment(screenshot: app.screenshot())
-            capture.name = "asset-origin-rendering-\(name)"
-            capture.lifetime = .keepAlways
-            add(capture)
-        }
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 40))
         XCTAssertTrue(probe.waitForExistence(timeout: 10))
         let initialized = XCTNSPredicateExpectation(
             predicate: NSPredicate(format: "value CONTAINS %@ OR value CONTAINS %@", "\"stage\":\"ready\"", "\"stage\":\"complete\""), object: probe)
         XCTAssertEqual(XCTWaiter.wait(for: [initialized], timeout: 30), .completed)
-        let before = try report(from: probe)
+        let before = try report(from: probe, name: "\(name)-initial")
         if before["stage"] as? String == "ready" {
             let play = app.webViews["host.webview"].buttons["Play probe tone"]
             XCTAssertTrue(play.waitForExistence(timeout: 10))
@@ -45,7 +42,10 @@ final class AssetOriginProbeUITests: XCTestCase {
                 predicate: NSPredicate(format: "value CONTAINS %@", "\"stage\":\"complete\""), object: probe)
             XCTAssertEqual(XCTWaiter.wait(for: [finished], timeout: 15), .completed)
         }
-        let renderer = try report(from: probe)
+        // Attach before checking outcomes, so the actual failure remains in the
+        // exported attachments even with continueAfterFailure set to false.
+        attachRendering(app, name: name)
+        let renderer = try report(from: probe, name: name)
         XCTAssertEqual(renderer["documentURL"] as? String, "tinjunction://bundle/index.html")
         XCTAssertEqual(renderer["webgl2"] as? Bool, true)
         XCTAssertEqual(renderer["stage"] as? String, "complete")
@@ -71,8 +71,23 @@ final class AssetOriginProbeUITests: XCTestCase {
         return try XCTUnwrap(renderer["sessionId"] as? String)
     }
 
-    private func report(from probe: XCUIElement) throws -> [String: Any] {
+    private func attachObservation(_ text: String, name: String) {
+        let data = XCTAttachment(string: text)
+        data.name = "asset-origin-observation-\(name)"
+        data.lifetime = .keepAlways
+        add(data)
+    }
+
+    private func attachRendering(_ app: XCUIApplication, name: String) {
+        let capture = XCTAttachment(screenshot: app.screenshot())
+        capture.name = "asset-origin-rendering-\(name)"
+        capture.lifetime = .keepAlways
+        add(capture)
+    }
+
+    private func report(from probe: XCUIElement, name: String) throws -> [String: Any] {
         let text = try XCTUnwrap(probe.value as? String)
+        attachObservation(text, name: name)
         let wrapper = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(text.utf8)) as? [String: Any])
         XCTAssertEqual(wrapper["formatVersion"] as? Int, 1)
         XCTAssertEqual(wrapper["networkPolicy"] as? String, "http-https-denied")

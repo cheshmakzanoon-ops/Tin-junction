@@ -19,12 +19,12 @@ button svg { width: 21px; height: 21px; flex-shrink: 0; }
 h1 { margin: 0; font: 34px/.98 Georgia, "Times New Roman", serif; letter-spacing: -.05em; font-weight: 400; }
 .brand-dot { color: #ad834d; }
 .header-tools { pointer-events: auto; display: flex; align-items: center; gap: 14px; }
-.quiet-button { border: 0; background: transparent; display: flex; gap: 8px; align-items: center; padding: 10px 4px; font-size: 11px; }
+.quiet-button { border: 1px solid #fffaf0; border-radius: 24px; background: #f5f0e7; color: #283c34; display: flex; gap: 8px; align-items: center; padding: 10px 12px; font-size: 11px; box-shadow: 0 3px 15px #382a1710; }
 .quiet-button svg { width: 16px; height: 16px; }
 .help-button { width: 34px; height: 34px; border-radius: 50%; border: 1px solid #283c3440; background: #f5f0e7b0; font: 18px Georgia, serif; }
-.layout-heading { position: absolute; top: 136px; left: max(40px, env(safe-area-inset-left)); pointer-events: none; }
+.layout-heading { position: absolute; top: 136px; left: max(40px, env(safe-area-inset-left)); right: calc(max(34px, env(safe-area-inset-right)) + 158px); max-width: 28rem; pointer-events: none; }
 .layout-heading .overline { color: #788072; font-size: 8px; }
-.layout-heading h2 { margin: 9px 0 10px; font: 24px/1.1 Georgia, serif; letter-spacing: -.035em; }
+.layout-heading h2 { margin: 9px 0 10px; font: 24px/1.1 Georgia, serif; letter-spacing: -.035em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
 .layout-heading p { margin: 0; color: #6d776b; font-size: 10px; display: flex; align-items: center; gap: 6px; }
 .live-dot { width: 5px; height: 5px; background: #729277; border-radius: 50%; }
 .view-tools { position: absolute; top: 135px; right: max(34px, env(safe-area-inset-right)); z-index: 3; display: flex; flex-direction: column; align-items: flex-end; gap: 18px; }
@@ -97,14 +97,14 @@ dialog summary { cursor: pointer; }
 kbd { border: 1px solid #d2d7c6; border-radius: 4px; padding: 3px 5px; font-size: 9px; }
 .primary-button { width: 100%; border: 0; background: #315440; color: #fff4df; border-radius: 10px; padding: 13px; font-size: 12px; }
 .is-editing .layout-heading { opacity: 0; }
-body[data-time="night"] .brand, body[data-time="night"] .layout-heading h2, body[data-time="night"] .quiet-button { color: #f5efdc; }
+body[data-time="night"] .brand, body[data-time="night"] .layout-heading h2 { color: #f5efdc; }
 body[data-time="night"] .eyebrow, body[data-time="night"] .layout-heading .overline, body[data-time="night"] .layout-heading p, body[data-time="night"] .caption { color: #d6d5c4; }
 body[data-time="night"] .brand-mark { border-color: #d6d5c4; }
 body[data-time="night"] .brand-mark:before, body[data-time="night"] .brand-mark:after { background: #d6d5c4; }
 body[data-time="night"] #status { color: #eee8d6; text-shadow: 0 1px 5px #1b2330; }
 @media (max-width: 850px) {
   .masthead { top: max(20px,env(safe-area-inset-top)); left: 22px; right: 22px; }
-  .layout-heading { left: 25px; top: 115px; }
+  .layout-heading { left: 25px; right: 178px; top: 115px; }
   .view-tools { right: 20px; top: 115px; }
   .bottom-area { left: 20px; right: 20px; }
   .control-desk { gap: 16px; padding: 18px; }
@@ -121,7 +121,7 @@ body[data-time="night"] #status { color: #eee8d6; text-shadow: 0 1px 5px #1b2330
   h1 { font-size: 28px; } .eyebrow { font-size: 6px; }
   .header-tools { gap: 8px; } .quiet-button span { max-width: 80px; line-height: 1.4; font-size: 9px; text-align: left; }
   .help-button { width: 30px; height: 30px; }
-  .layout-heading { top: 100px; left: 22px; }
+  .layout-heading { top: 100px; left: 22px; right: 174px; }
   .layout-heading h2 { font-size: 21px; margin-top: 6px; } .layout-heading .overline { font-size: 7px; } .layout-heading p { font-size: 9px; }
   .view-tools { top: 98px; right: 16px; gap: 14px; }
   .segmented button { width: 30px; height: 30px; padding: 6px; }
@@ -192,7 +192,7 @@ input[type="range"] { height: 44px; }
   .header-tools { gap: 3px; }
   .quiet-button { justify-content: center; padding: 8px; }
   .quiet-button span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  .layout-heading { top: 100px; max-width: calc(100% - 174px); }
+  .layout-heading { top: 100px; }
   .layout-heading h2 { font-size: 21px; }
   .view-tools { gap: 8px; }
   .control-desk { grid-template-columns: 44px minmax(0,1fr) auto; gap: 8px; padding: 13px; }
@@ -217,9 +217,9 @@ input[type="range"] { height: 44px; }
   .brand-mark, .eyebrow, .caption { display: none; }
   h1 { font-size: 24px; }
   /* Keep the user's document name visible after dismissing the keyboard/editor. */
-  .layout-heading { display: block; top: 46px; left: 12px; max-width: calc(100% - 120px); }
+  .layout-heading { display: block; top: 46px; left: 12px; right: auto; max-width: calc(100% - 120px); }
   .layout-heading .overline, .layout-heading p { display: none; }
-  .layout-heading h2 { margin: 0; font-size: 13px; line-height: 16px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .layout-heading h2 { display: block; margin: 0; font-size: 13px; line-height: 16px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   .view-tools { top: 68px; right: 12px; flex-direction: row; gap: 8px; }
   .camera-controls { flex-direction: row; gap: 4px; }
   .camera-controls button { width: 44px; min-height: 44px; }

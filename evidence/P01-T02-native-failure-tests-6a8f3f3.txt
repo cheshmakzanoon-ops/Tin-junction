@@ -1,0 +1,18 @@
+Actual GitHub native test excerpt: run 40451042264, job 122014401975, attempt1
+Tested commit: 6a8f3f3bf7e071e421f4d16f8d514097be9ffb67
+Full xcodebuild.log SHA256: 2304d1cb04cb8b51beb8b99a58834436193011188b6a7658210136aa1a55a792
+Only the absolute runner workspace prefix is removed from error locations.
+
+Test Suite 'TinJunctionTests.xctest' passed at 2026-10-27 04:49:09.998.
+	 Executed 69 tests, with 0 failures (0 unexpected) in 3.925 (4.041) seconds
+apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift:55: error: -[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch] : XCTAssertEqual failed: ("Optional("failed")") is not equal to ("Optional("passed")") - Bundled glb must render through the real custom origin.
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' failed (158.516 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (46.244 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (32.562 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (14.268 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (397.066 seconds).
+apps/ios/TinJunctionUITests/HostStartupUITests.swift:9: error: -[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry] : Failed to terminate com.cheshmakzanoonops.tinjunction:87900: Failed to terminate com.cheshmakzanoonops.tinjunction:0
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' failed (155.733 seconds).
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (68.515 seconds).
+Test Suite 'TinJunctionUITests.xctest' failed at 2026-10-27 05:03:56.594.
+	 Executed 7 tests, with 2 failures (0 unexpected) in 872.904 (873.107) seconds

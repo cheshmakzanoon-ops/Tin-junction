@@ -67,7 +67,8 @@ function start(): void {
   let selected: string | null = null;
   let palette: SceneryKind | null = null;
   let scenerySequence = 0;
-  let pointerStart: { x: number; y: number } | null = null;
+  const tapMovementLimit = 7;
+  let pointerStart: { pointerId: number; x: number; y: number } | null = null;
   const activePointers = new Set<number>();
   let multiPointerGesture = false;
   let noticeTimer = 0;
@@ -76,6 +77,9 @@ function start(): void {
   const throttle = element<HTMLInputElement>("throttle");
   const help = element<HTMLDialogElement>("help-dialog");
 
+  function cancelEditorGesture(): void {
+    pointerStart = null; activePointers.clear(); multiPointerGesture = false;
+  }
   function notice(message: string, persistent = false): void {
     clearTimeout(noticeTimer);
     const node = element("notice"); node.textContent = message; node.hidden = false;
@@ -168,6 +172,7 @@ function start(): void {
   }
   function editing(enabled: boolean): void {
     if (!loaded) return;
+    cancelEditorGesture();
     if (!perform({ type: "mode", value: enabled ? "edit" : "operate" })) return;
     select(null); palette = null;
     element("editor").hidden = !enabled;
@@ -197,6 +202,7 @@ function start(): void {
     switch (message.type) {
       case "native.bootstrap":
         if (message.payload.sessionId && message.payload.sessionId !== sessionId) {
+          cancelEditorGesture();
           assetProbeGeneration += 1; assetProbe?.dispose(); assetProbe = null;
           sessionId = message.payload.sessionId; loaded = false; pending = null; saveQueued = false;
           clearTimeout(acknowledgmentTimer); clearTimeout(saveTimer); setSaveState("loading", "Opening your railway…");
@@ -220,6 +226,7 @@ function start(): void {
         break;
       case "native.layout":
         if (loaded || !native) { diagnostics.rejectedMessages += 1; return; }
+        cancelEditorGesture();
         model = new RailwayModel(message.payload.document ?? createStarterLayout());
         palette = null; selected = null; scene.setSelected(null);
         element("editor").hidden = true; element("edit").setAttribute("aria-pressed", "false");
@@ -250,7 +257,7 @@ function start(): void {
         break;
       case "native.requestCheckpoint": saveNow(true); break;
       case "native.lifecycle":
-        if (message.payload.state !== "active") { saveNow(); audio.pause(); }
+        if (message.payload.state !== "active") { cancelEditorGesture(); saveNow(); audio.pause(); }
         lifecycle.nativeActive = message.payload.state === "active"; updateSchedule(); break;
       case "native.viewport":
         scene.setHingeAngle(message.payload.hingeAngleDegrees ?? null); resize(); break;
@@ -265,7 +272,11 @@ function start(): void {
     receive(message);
   } };
   function resize(): void {
-    if (!lifecycle.disposed) Object.assign(diagnostics, scene.resize());
+    if (lifecycle.disposed) return;
+    // A pointer-up must never pick against a different camera/viewport than
+    // the pointer-down, including native posture and keyboard layout changes.
+    cancelEditorGesture();
+    Object.assign(diagnostics, scene.resize());
   }
   function updateSchedule(): void {
     if (scheduledFrame) cancelAnimationFrame(scheduledFrame);
@@ -314,23 +325,35 @@ function start(): void {
   element<HTMLInputElement>("layout-name").addEventListener("change", event => perform({ type: "rename", value: (event.target as HTMLInputElement).value.trim() }));
   document.querySelectorAll<HTMLButtonElement>("[data-time]").forEach(button => button.addEventListener("click", () => perform({ type: "environment", value: button.dataset.time as TimeOfDay })));
   document.querySelectorAll<HTMLButtonElement>("[data-view]").forEach(button => button.addEventListener("click", () => {
+    cancelEditorGesture();
     scene.setView(button.dataset.view as "overview" | "trackside" | "top");
     document.querySelectorAll<HTMLButtonElement>("[data-view]").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
   }));
   document.querySelectorAll<HTMLButtonElement>("[data-piece]").forEach(button => button.addEventListener("click", () => { palette = palette === button.dataset.piece ? null : button.dataset.piece as SceneryKind; select(null); }));
-  element("help").addEventListener("click", () => { help.showModal(); audio.pause(); });
+  element("help").addEventListener("click", () => { cancelEditorGesture(); help.showModal(); audio.pause(); });
   for (const id of ["close-help", "start-playing"]) element(id).addEventListener("click", () => help.close());
   canvas.addEventListener("pointerdown", event => {
+    if (event.button !== 0 || !loaded || !lifecycle.running || help.open || model.mode !== "edit") return;
     activePointers.add(event.pointerId);
     if (activePointers.size > 1) { multiPointerGesture = true; pointerStart = null; }
-    else if (!multiPointerGesture) pointerStart = { x: event.clientX, y: event.clientY };
+    else if (!multiPointerGesture) pointerStart = { pointerId: event.pointerId, x: event.clientX, y: event.clientY };
   });
-  canvas.addEventListener("pointercancel", event => { activePointers.delete(event.pointerId); pointerStart = null; if (!activePointers.size) multiPointerGesture = false; });
+  canvas.addEventListener("pointermove", event => {
+    // Once a gesture becomes a camera drag, returning to its starting point
+    // cannot turn the eventual release back into a scenery edit.
+    if (pointerStart && pointerStart.pointerId === event.pointerId
+      && Math.hypot(event.clientX - pointerStart.x, event.clientY - pointerStart.y) > tapMovementLimit) pointerStart = null;
+  });
+  canvas.addEventListener("pointercancel", event => {
+    if (!activePointers.delete(event.pointerId)) return;
+    pointerStart = null; if (!activePointers.size) multiPointerGesture = false;
+  });
   canvas.addEventListener("pointerup", event => {
-    activePointers.delete(event.pointerId);
+    if (!activePointers.delete(event.pointerId)) return;
     if (multiPointerGesture) { pointerStart = null; if (!activePointers.size) multiPointerGesture = false; return; }
     const start = pointerStart; pointerStart = null;
-    if (!start || Math.hypot(event.clientX - start.x, event.clientY - start.y) > 7 || model.mode !== "edit") return;
+    if (!start || start.pointerId !== event.pointerId || event.button !== 0 || !lifecycle.running || help.open
+      || Math.hypot(event.clientX - start.x, event.clientY - start.y) > tapMovementLimit || model.mode !== "edit") return;
     const hit = scene.pickScenery(event.clientX, event.clientY);
     if (!palette && hit && hit !== selected) { select(hit); return; }
     const point = scene.pickBoard(event.clientX, event.clientY);
@@ -353,10 +376,11 @@ function start(): void {
     else if (event.key === "Escape") { if (palette || selected) { palette = null; select(null); } else if (model.mode === "edit") editing(false); }
   }
   function visibility(): void {
-    if (document.hidden) { saveNow(); audio.pause(); }
+    if (document.hidden) { cancelEditorGesture(); saveNow(); audio.pause(); }
     lifecycle.documentVisible = !document.hidden; updateSchedule();
   }
   function lost(event: Event): void {
+    cancelEditorGesture();
     event.preventDefault(); lifecycle.contextAvailable = false; diagnostics.contextLosses += 1;
     audio.pause(); updateSchedule(); status("The railway is paused while its view recovers.");
     post("engine.error", { code: "webgl_context_lost", recoverable: true });
@@ -367,6 +391,7 @@ function start(): void {
   document.addEventListener("visibilitychange", visibility);
   canvas.addEventListener("webglcontextlost", lost); canvas.addEventListener("webglcontextrestored", restored);
   window.addEventListener("pagehide", () => {
+    cancelEditorGesture();
     saveNow(); lifecycle.disposed = true; updateSchedule();
     assetProbeGeneration += 1; assetProbe?.dispose(); assetProbe = null;
     clearTimeout(saveTimer); clearTimeout(acknowledgmentTimer); clearTimeout(noticeTimer);

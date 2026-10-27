@@ -1,7 +1,7 @@
 {
   "$schema": "./catalog.schema.json",
   "schemaVersion": 1,
-  "catalogVersion": "0.2.0",
+  "catalogVersion": "0.2.1",
   "assets": [
     {
       "id": "workbench.case",
@@ -26,8 +26,8 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/MiniatureScene.ts",
-          "sha256": "7296827b4902a683faef2095e8abecb8adcd633a0793d203f11fa74b1316ec64",
-          "bytes": 18630,
+          "sha256": "af9b338172f349b73d623575e001acbbe42c74d7e848dc18536930f71227b6b7",
+          "bytes": 19006,
           "mediaType": "text/typescript",
           "storage": "git"
         },
@@ -93,8 +93,8 @@
         },
         {
           "path": "web/src/scene/MiniatureScene.ts",
-          "sha256": "7296827b4902a683faef2095e8abecb8adcd633a0793d203f11fa74b1316ec64",
-          "bytes": 18630,
+          "sha256": "af9b338172f349b73d623575e001acbbe42c74d7e848dc18536930f71227b6b7",
+          "bytes": 19006,
           "mediaType": "text/typescript",
           "storage": "git"
         }
@@ -240,7 +240,7 @@
       "id": "workbench.scenery",
       "label": "Original Alpine miniature scenery kit",
       "kind": "scenery",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "stage": "prototype",
       "taskId": "P04-T06",
       "provenance": {
@@ -259,8 +259,8 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/scenery.ts",
-          "sha256": "6a308debc34cb6900d261877b1e1732cd9908faf5bdd6d36e66a8c77df0fbdc6",
-          "bytes": 14014,
+          "sha256": "47930ede316599bbef971c8ad8951ee9d0cf9a573cc8db3b000d7cabc312beca",
+          "bytes": 9516,
           "mediaType": "text/typescript",
           "storage": "git"
         },
@@ -275,6 +275,20 @@
           "path": "web/src/scene/pondGeometry.ts",
           "sha256": "f8588c579dba55a69960b09d26fca0021bc46f009f8a8fbd4c8eb0e8efccb1aa",
           "bytes": 10248,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/architectureGeometry.ts",
+          "sha256": "fad629ebb0bf7a4cda5cfdee386255ee025d0b50009d6122a51530cd30ed04ea",
+          "bytes": 23710,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/stationPlacement.ts",
+          "sha256": "56a8224150b0575998671bf17c7c7ef5fb72deed64b69fc2fd64c1bdeb182511",
+          "bytes": 5022,
           "mediaType": "text/typescript",
           "storage": "git"
         }
@@ -326,8 +340,8 @@
         },
         {
           "path": "web/src/scene/MiniatureScene.ts",
-          "sha256": "7296827b4902a683faef2095e8abecb8adcd633a0793d203f11fa74b1316ec64",
-          "bytes": 18630,
+          "sha256": "af9b338172f349b73d623575e001acbbe42c74d7e848dc18536930f71227b6b7",
+          "bytes": 19006,
           "mediaType": "text/typescript",
           "storage": "git"
         },

@@ -1,0 +1,16 @@
+Actual GitHub job log excerpt: run40450589029, job122012948001, attempt1
+Tested commit: 8f96036acfab046b87bab5e002b034bc83eeffb6
+The generated project path prefix is removed; exception, command, timestamps and exit status are unchanged.
+
+2026-10-27T04:38:42.6963130Z Xcode 27.1
+2026-10-27T04:38:42.6978970Z Build version 27A9275
+2026-10-27T04:38:52.8512710Z Created project at apps/ios/TinJunction.xcodeproj
+2026-10-27T04:38:58.1177680Z ##[group]Run bash tools/ios/test-simulator.sh
+2026-10-27T04:40:05.2854470Z Xcode 27.1
+2026-10-27T04:40:05.2855340Z Build version 27A9275
+2026-10-27T04:41:03.7953680Z *** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Invalid parameter not satisfying: devicePair'
+2026-10-27T04:41:03.8766050Z 	3   CoreSimulator                       0x0000000104bc1e98 -[SimDeviceSet addDevicePairAsync:].cold.1 + 76
+2026-10-27T04:41:03.8766850Z 	4   CoreSimulator                       0x0000000104b8d4f4 -[SimDeviceSet addDevicePairAsync:] + 260
+2026-10-27T04:41:03.8767940Z 	5   CoreSimulator                       0x0000000104b93f7c -[SimDeviceSet handleXPCNotificationDevicePairAdded:] + 396
+2026-10-27T04:41:04.1271470Z tools/ios/test-simulator.sh: line 26: 54976 Abort trap: 6           xcrun simctl bootstatus "$TIN_SIMULATOR_UDID" -b
+2026-10-27T04:41:05.2820240Z ##[error]Process completed with exit code 134.

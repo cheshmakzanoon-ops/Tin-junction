@@ -1,0 +1,67 @@
+# Workbench architecture and interaction refinement
+
+## Scope
+
+This checkpoint refines the existing P04-T06 fixed-oval workbench. It does not integrate the general track graph, v2 native store, production assets, folding composition or release packaging. P04-T06 remains active until the complete required native and web workflows pass on the integrated implementation and their evidence is recorded.
+
+## Original architecture
+
+Cottages now have actual wall openings on all four façades, recessed glazing, frames, shutters, sills, grounded steps, closed roof decks, staggered roof courses, thin ridge caps, connected gutters and recessed chimney flues. The station has constructed façades and canopy supports, mounted signage, an end-wall clock, platform paving and grounded freight. Its earlier foundation floated approximately 6 mm above the actual ground; the new foundation reaches the 0.4 mm ground plane.
+
+Review rejected a repeating aligned roof pattern and an unnecessarily dense first bevel treatment. The final roof uses tighter staggered joints and fewer tiles. Tiny rounded boxes that previously cost 300 triangles were replaced by closed 44-triangle chamfered blocks. Architecture reuses the existing palette and material batches.
+
+| Measured geometry | Previous train-art checkpoint | Architecture refinement |
+| --- | ---: | ---: |
+| One cottage | 1,616 triangles | 4,672 triangles |
+| Complete fixed station | 3,546 triangles | 7,914 triangles |
+| Cottage / station material batches | 10 / 13 | 10 / 13 |
+| Default scene, all-pass calls | 161 | 161 |
+| Default scene, all-pass triangles | 301,316 | 328,388 |
+
+The last row is a desktop software-renderer observation, not a physical-device result or a main-pass-only count. Root and the art worker inspected actual overview, trackside, macro, rear, night and compact captures. The final capture reported zero page errors. The compact view uses a synthetic native bridge in Chromium. The earlier architecture-only capture bundle has JavaScript SHA-256 `0aa9d0cb345e458ee87dccd13dc81a3e1a94cf48352721300fb4702da36cbf80`; it includes the frozen interaction fixes below and predates the subsequent optional-station guard.
+
+Cottage bounds remain within the existing 28 mm horizontal footprint and 62 mm height: the authored mesh reaches a 27.48745 mm radius and 56.7 mm height. The station remains inside its original reserved area, at X −111.54 to 67.32 mm and Z −130.00 to −56.20 mm, with 69.7 mm maximum height. Train dimensions, pivots and geometry are unchanged.
+
+## Fixed-station compatibility correction
+
+The minimum supported 0.10 m-radius oval exposed a pre-existing defect: its rear track passes through the fixed station. This is a valid saved-track shape, so rejecting the document or changing the user's scenery would be inappropriate. The fixed station is an optional procedural fixture, separate from the document's scenery items.
+
+`FixedStationPlacement` derives the complete transformed station footprint from its actual render geometry and checks it against the actual analytic oval. The minimum distance uses the continuous range of distance to the oval's central segment; it detects a rail crossing the footprint's interior even when all corners are clear. The factory platform has 15 mm centreline clearance. A tighter straight-track corridor is permitted only after excluding curved-axle body reach; other positions require the existing conservative curved-consist envelope. Both retain a positive 0.25 mm physical margin. The narrow coupling-link bound is checked separately from the full-width body.
+
+The guard omits only this fixed decoration for an unsafe oval and restores the same station object when a fitting track returns. It preserves geometry, authored transforms, valid document shapes and user scenery. Bounds are cached because this fixture is immutable; a future station or ancestor transform change must recalculate them. Eight focused tests exercise interior crossings, curved ends, positive-gap boundaries, supported shape bounds, actual constructed-station visibility/restoration and the current vehicle/coupler dimensions. A separate read-only mathematical review found no unsafe acceptance.
+
+Actual 1400 × 950 Chromium/SwiftShader captures confirmed the unobstructed minimum-radius corridor and restored factory architecture. The complete factory scene restored exactly to 161 calls / 328,388 all-pass triangles. Empty factory and narrow scenes measured 119 / 192,988 and 89 / 171,108 respectively. Two initial diagnostic script checks incorrectly expected only the station's 26-call reduction; the first also read counters before a fresh metrics event. Independent construction accounting identified four additional submissions removed by the existing pond adaptation, explaining the actual 30-call reduction. The corrected verification passed with zero page errors and unchanged source. The failed diagnostic checks remain identified in [the retained result](../../evidence/P04-T06-station-verification.json). These observations use ordinary bundle SHA-256 `e1936e606f3fb93e309446b5ae210672fc3e916b1682db1c72547cd6ba5075eb`.
+
+## Editing and readability corrections
+
+Actual pre-fix browser tests showed that releasing a tap after a viewport change, native inactive/active transition, hidden/visible transition or canvas resize could add scenery and increment the revision. A drag 30 logical pixels away and back, a right click and a middle click also placed scenery. Each reproduced case changed the count from 29 to 30 and the revision from 0 to 1.
+
+The corrected input path ties a tap to its pointer ID, rejects secondary buttons and permanently cancels the tap after crossing the existing 7 logical pixel movement threshold. Viewport, lifecycle, visibility, session/layout, camera, mode, help and graphics interruptions cancel pending edits. Tests require both no mutation from the interrupted gesture and a successful fresh intentional mouse or touch tap afterward. Existing multi-pointer behavior is retained.
+
+An 80-character valid layout name previously overflowed or overlapped scene controls. Its full model value, heading text and accessible name are preserved; only its painted text is bounded to two lines, or one line in a short viewport. Existing essential targets remain at least 44 logical CSS pixels and directly hittable. The Save/status control now has an opaque light surface with dark text, giving a computed 10.36:1 contrast in all three lighting modes; the previous transparent surface could fall to 1.79:1.
+
+The final focused run passed 18 browser cases with no failures, retries or relaxed deadlines; an additional direct Chromium touch-recovery case passed separately. Together these are 13 new regression cases plus six existing layout/placement/pinch cases. [The retained verification metadata](../../evidence/P04-T06-interaction-verification.json) records exact source/bundle identities, original failures, captures and limits. This is browser-harness evidence, not native VoiceOver or physical touch certification. The complete required browser runner now collects 28 cases.
+
+The final integrated local run subsequently passed **all 28 browser tests in 8.4 minutes**, with no retries. All 58 recorded browser source inputs and the ordinary bundle remained unchanged throughout the run. The following `npm run check && npm run bundle:ios` also passed: 108 project tests, 28 iOS-tool tests, 301 web units, TypeScript checking, ordinary resource allowlist/hash validation and diagnostic exclusion. [The retained local verification](../../evidence/P04-T06-integrated-local-verification.json) includes exact logs and source identities. These are pre-publication local results; they do not replace the actual required native and web workflow observations on the published commit.
+
+## Native state and next gate
+
+Both required workflows passed previously at `13ecc516`. Web workflows also passed at `8f96036` and metadata descendant `6a8f3f3`. Actual native-model runs passed at `6f14cc5` and `8f96036`; [P02 ownership unit evidence](../../evidence/P02-T01-native-unit-review-6f14cc5.md) preserves the distinction between model fixtures and actual OS/UI behavior.
+
+The first full `8f96036` native attempt aborted inside CoreSimulator `bootstatus`, before xcodebuild. [The preserved failure](../../evidence/P01-T02-simulator-preflight-failure-8f96036.md) records its exact error, exit 134 and independently verified artifact. Source-identical full run `40451042264` at `6a8f3f3` subsequently passed all 69 native units, four HostSmoke UI tests and the PlatformProbe, but failed two new UI tests. The actual asset report records status 0 for GLB, audio and WASM fetches; PNG/WebGL readback and the classic worker passed. The handler's generic response has no successful HTTP status. HostStartup failed while XCUITest attempted to terminate the preceding save/relaunch smoke app (PID 87900) at `app.launch()`, before its renderer-failure/Retry assertions. That app was distinct from the failed probe's PID 87176. Neither failure is a passing acceptance result; [the retained native review](../../evidence/P01-T02-native-failure-review-6a8f3f3.md) records their separate causes and evidence limits.
+
+That run also proved that Swift `defer` did not preserve the report attachment after an aborting XCTest assertion. The native worker recovered the real report from compressed xcresult diagnostics. The repair uses a proper success response with fixed MIME/length metadata, preserves strict web success checks and the CSP, and moves diagnostic retention/cleanup onto XCTest-supported teardown plus pre-assertion attachments. Its new actual native result is still required. The asset-transport ADR remains proposed until passing custom-origin observations are obtained. Older source results must not be relabeled as the forthcoming integrated checkpoint.
+
+The full native workflow now preserves the generated manifest explicitly as packaging input. After successful tests, it derives the application identifier from the compiled plist, resolves the actual installed app through public `simctl get_app_container`, and verifies its WebAssets bytes, finite resource allowlist and exact manifest identity against that packaging input. The recorder publishes a passing identity only after complete verification and writes, removes its own stale results on failure, and excludes container paths from output. Seven functional recorder tests include a different but internally valid old bundle and a real file-write failure; the complete iOS-tool suite passed 28 tests. Actual installed-container observations still require the next macOS run.
+
+After publication, observe the new full native and web runs, preserve failures, and complete P01-T02/P02-T01/P04-T06 only with their own source-matched evidence. The historical P02 unit manifest covers A1 at `6f14cc5`; its retained handler fingerprint has changed in this repair, so current acceptance needs fresh native evidence. The actual initialization-failure/Retry UI test is still required for A2. Keep the dependency graph intact.
+
+## Remaining quality limits
+
+An independent read-only review of the actual overview, trackside, macro, rear, night, synthetic compact and restored-factory images judged this an attractive development workbench, below the production physical-miniature target. Its highest-impact visible defects are disconnected flat ground with no village paths or topographic structure; repetitive paper-tier conifers and rounded canopy/rock shapes; flat opaque glazing and insufficiently differentiated materials; and compact framing that gives the lid and interface more visual weight than the locomotive. Night is readable but lacks a convincing local warm-light hierarchy. Ballast and pond-bank transitions still look graphic, and repeated cottage forms need coherent village integration. These are inspection judgments on the identified desktop captures, not reference-matched or owner approval.
+
+After the current native gate, follow the original dependencies: packaging/validation P10-T03/T04, then shared color/material calibration P11, followed by production terrain, foliage and composition under P14. A coherent close-view section containing train, track, architecture, vegetation, ground and light is a more useful next art review than isolated increases in mesh detail. Dedicated running-gear close views, motion/LOD sequences, neutral swatches, a dense editor view and actual posture/device captures remain absent from this review set. No domain is recorded as final visual approval.
+
+Opaque glazing, simplified foliage, sparse terrain composition, material calibration and production audio remain unfinished. A theoretical population of 128 cottages alone contains 598,016 main-view geometry triangles before the rest of the scene or culling, exceeding the provisional 350,000 target. Scenery LOD and actual device density testing are required; unchanged batching does not establish performance. The broad original-art and physical-device approval gates remain open.
+
+The app is still a fixed-oval development workbench. General track construction, native v2 persistence/migration/library integration, actual Duo folding, physical-device sustained performance, final content approval, supported Duo-only distribution, business/legal decisions and signed release packaging remain open. This checkpoint is not App Store readiness.
