@@ -59,7 +59,8 @@ function walk(state: TurnoutRouteState, cursor: RouteCursor, distance: number) {
   return { intervals, travelled, remaining };
 }
 
-function pathError(state: TurnoutRouteState, intervals: readonly OccupiedRouteInterval[], length: number): string | null {
+/** Shared validation for authoritative and derived retained-route consumers. */
+export function occupiedRouteError(state: TurnoutRouteState, intervals: readonly OccupiedRouteInterval[], length: number): string | null {
   if (intervals.length < 1 || intervals.length > CONSIST_ROUTE_LIMITS.intervals) return "The consist needs a bounded, nonempty route history.";
   let measured = 0;
   const physical = new Map<string, { from: number; to: number }[]>();
@@ -122,7 +123,7 @@ export class RoutedConsist {
     try {
       const traversed = walk(compiled.value, { edgeId: input.rear.edgeId, distance: input.rear.distance }, input.length);
       if (traversed.remaining > CONSIST_ROUTE_LIMITS.lengthTolerance) return invalid("insufficient-route", "The entire consist needs connected track before it can be placed.");
-      const error = pathError(compiled.value, traversed.intervals, input.length);
+      const error = occupiedRouteError(compiled.value, traversed.intervals, input.length);
       return error ? invalid("invalid-placement", error) : { ok: true, consist: new RoutedConsist(compiled.value, input.trainId, input.length, traversed.intervals, 1, 0) };
     } catch { return invalid("invalid-cursor", "The rear cursor is not on a supported route."); }
   }
@@ -135,7 +136,7 @@ export class RoutedConsist {
     const compiled = compileTurnoutRoutes(topology, input.selections);
     if (!compiled.ok) return invalid("selection-shape", compiled.diagnostics[0]!.message);
     const intervals = input.intervals as OccupiedRouteInterval[];
-    const error = pathError(compiled.value, intervals, input.length);
+    const error = occupiedRouteError(compiled.value, intervals, input.length);
     return error ? invalid("snapshot-path", error) : { ok: true, consist: new RoutedConsist(compiled.value, input.trainId, input.length, intervals, input.direction, input.switchRevision) };
   }
 
@@ -183,7 +184,7 @@ export class RoutedConsist {
     if (!Number.isSafeInteger(this.selectionRevision + 1)) return result(false, false, "revision-limit", "The turnout revision limit was reached.");
     const next = compileTurnoutRoutes(this.routeState.topology, this.routeState.selections.map(item => item.turnoutId === turnoutId ? { turnoutId, route } : item));
     if (!next.ok) return result(false, false, "invalid-switch", next.diagnostics[0]!.message);
-    const error = pathError(next.value, this.occupied, this.length);
+    const error = occupiedRouteError(next.value, this.occupied, this.length);
     if (error) return result(false, false, "occupied-route-changed", error);
     this.routeState = next.value; this.selectionRevision++;
     return result(true, true, "turnout-selected", route === "straight" ? "Straight route selected." : "Diverging route selected.");
@@ -201,7 +202,7 @@ export class RoutedConsist {
       if (trim < span) { next[0] = { ...first, from: first.from + trim }; trim = 0; }
       else { trim -= span; next.shift(); }
     }
-    const error = pathError(this.routeState, next, this.length);
+    const error = occupiedRouteError(this.routeState, next, this.length);
     if (error) return { ...result(false, false, "invalid-movement", error), travelled: 0, remaining: distance, blocked: true };
     if (traversed.travelled > 0) this.occupied = freezeIntervals(next);
     const blocked = traversed.remaining > 0;
@@ -215,7 +216,7 @@ export class RoutedConsist {
       const edge = turnoutEdge(this.routeState, interval.edgeId);
       return { edgeId: reverseTurnoutEdge(this.routeState, edge.id).id, from: edge.length - interval.to, to: edge.length - interval.from };
     });
-    const error = pathError(this.routeState, next, this.length);
+    const error = occupiedRouteError(this.routeState, next, this.length);
     if (error) return result(false, false, "invalid-reversal", error);
     this.occupied = freezeIntervals(next); this.travelDirection = this.travelDirection === 1 ? -1 : 1;
     return result(true, true, "reversed", "Travel direction reversed on the same occupied route.");
