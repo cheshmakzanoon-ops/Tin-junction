@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T08:31:40.986Z",
+  "updated_at": "2026-10-27T09:19:17.563Z",
   "health": {
     "ci": {
-      "status": "failed",
-      "checked_commit": "53e193b6435d241f8c1462d859112b2cb1b56b77",
+      "status": "passed",
+      "checked_commit": "c1e6e39ba127e064f4907e9c5a1d84fed7163990",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40471495670",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40471495783",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40471495796"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892017",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475891995",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006"
       ]
     },
     "incidents": [
@@ -17,13 +17,13 @@
         "summary": "Native run 40458903139 remains in progress beyond its configured deadline with no log or artifact, holding new full verification. One-time queue recovery and complete fresh native evidence required; see evidence/INC-NATIVE-QUEUE-20261027.md.",
         "owner": "submission-coordinator",
         "opened_at": "2026-10-27T06:57:20.271Z",
-        "resolved": false,
-        "resolved_at": null,
-        "resolution": null
+        "resolved": true,
+        "resolved_at": "2026-10-27T09:18:48.336Z",
+        "resolution": "Exact c1e6e39 current full run 40475892006 passed 87 units, all eight UI cases, installed identity and literal clean reinstall; focused 40475891995 and web 40475892017 also passed. Original archives/reports/captures and strict Git-bound manifests reviewed. See evidence/INC-NATIVE-QUEUE-20261027.md and planning/handoffs/2026-10-27-verified-workbench.md. Historical host-delay cause remains unknown; no retry, assertion weakening or repeated concurrency change."
       }
     ]
   },
-  "last_handoff": "planning/handoffs/2026-10-27-layout-design.md",
+  "last_handoff": "planning/handoffs/2026-10-27-verified-workbench.md",
   "tasks": {
     "P00-T01": {
       "status": "done",
@@ -142,17 +142,37 @@
       ]
     },
     "P01-T02": {
+      "status": "done",
+      "claim": null,
+      "blockers": [],
+      "evidence": [
+        "evidence/P01-T02-native-integration-c1e6e39.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-verified-workbench.md",
+      "history": [
+        {
+          "at": "2026-10-27T04:11:18.921Z",
+          "action": "claim",
+          "detail": "submission-native; 8 hours"
+        },
+        {
+          "at": "2026-10-27T09:18:48.398Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-verified-workbench.md"
+        }
+      ]
+    },
+    "P01-T03": {
       "status": "in_progress",
       "claim": {
         "owner": "submission-native",
-        "started_at": "2026-10-27T04:11:18.921Z",
-        "expires_at": "2026-10-27T12:11:18.921Z",
-        "head_at_claim": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
+        "started_at": "2026-10-27T09:19:17.433Z",
+        "expires_at": "2026-10-27T17:19:17.433Z",
+        "head_at_claim": "c1e6e39ba127e064f4907e9c5a1d84fed7163990",
         "scope": [
           "apps/ios/TinJunction/Web/",
-          "web/src/",
           "tests/web/",
-          "evidence/"
+          "apps/ios/TinJunctionTests/"
         ]
       },
       "blockers": [],
@@ -160,19 +180,11 @@
       "last_handoff": null,
       "history": [
         {
-          "at": "2026-10-27T04:11:18.921Z",
+          "at": "2026-10-27T09:19:17.433Z",
           "action": "claim",
           "detail": "submission-native; 8 hours"
         }
       ]
-    },
-    "P01-T03": {
-      "status": "todo",
-      "claim": null,
-      "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
     },
     "P01-T04": {
       "status": "blocked",
@@ -205,25 +217,24 @@
       "history": []
     },
     "P02-T01": {
-      "status": "in_progress",
-      "claim": {
-        "owner": "submission-coordinator",
-        "started_at": "2026-10-27T04:17:28.965Z",
-        "expires_at": "2026-10-27T12:17:28.965Z",
-        "head_at_claim": "13ecc51674e629cad78ee6d7251f74278e7edc9e",
-        "scope": [
-          "apps/ios/TinJunction/App/",
-          "apps/ios/TinJunction/Platform/"
-        ]
-      },
+      "status": "done",
+      "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
+      "evidence": [
+        "evidence/P02-T01-native-unit-c1e6e39.json",
+        "evidence/P02-T01-native-integration-c1e6e39.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-verified-workbench.md",
       "history": [
         {
           "at": "2026-10-27T04:17:28.965Z",
           "action": "claim",
           "detail": "submission-coordinator; 8 hours"
+        },
+        {
+          "at": "2026-10-27T09:18:48.758Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-verified-workbench.md"
         }
       ]
     },
@@ -236,12 +247,27 @@
       "history": []
     },
     "P02-T03": {
-      "status": "todo",
-      "claim": null,
+      "status": "in_progress",
+      "claim": {
+        "owner": "submission-coordinator",
+        "started_at": "2026-10-27T09:19:17.499Z",
+        "expires_at": "2026-10-27T17:19:17.499Z",
+        "head_at_claim": "c1e6e39ba127e064f4907e9c5a1d84fed7163990",
+        "scope": [
+          "apps/ios/TinJunction/Settings/",
+          "apps/ios/TinJunction/Accessibility/"
+        ]
+      },
       "blockers": [],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T09:19:17.499Z",
+          "action": "claim",
+          "detail": "submission-coordinator; 8 hours"
+        }
+      ]
     },
     "P02-T04": {
       "status": "todo",
@@ -744,12 +770,28 @@
       ]
     },
     "P10-T03": {
-      "status": "todo",
-      "claim": null,
+      "status": "in_progress",
+      "claim": {
+        "owner": "submission-assets",
+        "started_at": "2026-10-27T09:19:17.563Z",
+        "expires_at": "2026-10-27T17:19:17.563Z",
+        "head_at_claim": "c1e6e39ba127e064f4907e9c5a1d84fed7163990",
+        "scope": [
+          "tools/assets/",
+          "web/src/assets/",
+          "tests/fixtures/assets/"
+        ]
+      },
       "blockers": [],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T09:19:17.563Z",
+          "action": "claim",
+          "detail": "submission-assets; 8 hours"
+        }
+      ]
     },
     "P10-T04": {
       "status": "todo",
@@ -1400,23 +1442,16 @@
       "history": []
     },
     "P04-T06": {
-      "status": "in_progress",
-      "claim": {
-        "owner": "submission-coordinator",
-        "started_at": "2026-10-27T03:28:16.663Z",
-        "expires_at": "2026-10-27T11:28:16.663Z",
-        "head_at_claim": "02c0bc82746b8391fbf578cd0bed2b7bef8e1348",
-        "scope": [
-          "web/src/",
-          "apps/ios/",
-          "tests/web/",
-          "docs/decisions/",
-          "evidence/"
-        ]
-      },
+      "status": "done",
+      "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
+      "evidence": [
+        "evidence/P04-T06-web-unit-c1e6e39.json",
+        "evidence/P04-T06-web-integration-c1e6e39.json",
+        "evidence/P04-T06-native-unit-c1e6e39.json",
+        "evidence/P04-T06-native-integration-c1e6e39.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-verified-workbench.md",
       "history": [
         {
           "at": "2026-10-27T01:04:43.838Z",
@@ -1442,6 +1477,11 @@
           "at": "2026-10-27T03:28:16.663Z",
           "action": "claim",
           "detail": "submission-coordinator; 8 hours"
+        },
+        {
+          "at": "2026-10-27T09:18:49.432Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-verified-workbench.md"
         }
       ]
     }

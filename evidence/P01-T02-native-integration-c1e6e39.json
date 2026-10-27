@@ -1,0 +1,542 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P01-T02-packaged-origin-clean-reinstall-integration-c1e6e39",
+  "task_id": "P01-T02",
+  "kind": "integration_test",
+  "result": "passed",
+  "tested_commit": "c1e6e39ba127e064f4907e9c5a1d84fed7163990",
+  "recorded_at": "2026-10-27T09:15:42Z",
+  "source_files": [
+    {
+      "path": ".github/workflows/ios-simulator.yml",
+      "sha256": "d22ee7a9f8cf8441b5e9f1e348fee64d2b8a5281886895c6f4eabb1eee9ead91"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "d9f318747a126ce2247661af67852b185def7789492eabfad7bba322be087c33"
+    },
+    {
+      "path": "apps/ios/TinJunction/App/ApplicationSession.swift",
+      "sha256": "ff66bd4016901ca5d4b671ee743d4b452e4d6504517da5df244a5db52c627a53"
+    },
+    {
+      "path": "apps/ios/TinJunction/Bridge/BridgeEnvelope.swift",
+      "sha256": "55107be8b02b366f745a877abeb9cb2fde2584cd94029c55921103a752f5ccd5"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/AssetOriginProbe.swift",
+      "sha256": "4ce08db51d14436ca4d5305c5f89ca30f02abcc22090d5a3ffcd26ab7ce55a74"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/HostStartupFault.swift",
+      "sha256": "eaf2890e7e05f6b40fdb58c445af4885df328308799363eebf4d4bc7d40e50ca"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/HostStartupHold.swift",
+      "sha256": "011c36e965f80a68e7a9023d86b4c6bb66301bfcd2eefce483c627f2c991dcc9"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutDesignDocument.swift",
+      "sha256": "e63be6ad77220033731af0f416b0cc0a29c42cb6fa34a37fefb073c6fdc3f6b1"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutDocument.swift",
+      "sha256": "c295162555a0d4f3acd96df484f9a6225448c6179b4e5ad6431f0829deef324e"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutStore.swift",
+      "sha256": "212b128c8cbfa876ceb3b133c91cbaa798db34485b30d68152a2112e5931cae1"
+    },
+    {
+      "path": "apps/ios/TinJunction/Info.plist",
+      "sha256": "80da69534c7fddcd34b1cdc1de74536a67c4a3352711cadc757f494d9bd88c9a"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/NativeViewport.swift",
+      "sha256": "85dddc0112d70bf9dd176e89fd74127451daa4135a80a1cb77f26a1ecbfb117f"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/PlatformProbe.swift",
+      "sha256": "6b7155aeed6a8dfb32d1c4ec2d40d8ed550aeafe1843d500449b495e20b721e2"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/PlatformStartupTrace.swift",
+      "sha256": "224a463a172d32d334439d827a764ec1f62b632963539add8711e554e118eca8"
+    },
+    {
+      "path": "apps/ios/TinJunction/Resources/PrivacyInfo.xcprivacy",
+      "sha256": "418018c160ded561d379cee1510cfb6e0806573c7221177a5330d76ea4145990"
+    },
+    {
+      "path": "apps/ios/TinJunction/RootView.swift",
+      "sha256": "67ee416500d53346eb284228d4e77c67482be065f51fb0a86e1b4f84bc910c28"
+    },
+    {
+      "path": "apps/ios/TinJunction/TinJunctionApp.swift",
+      "sha256": "903febe836a554b4ce6fe80107703b6dfca321d9a7b5282d11ef027311f88c96"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/BundleResourcePolicy.swift",
+      "sha256": "f25367b70bc39ffbcecb0a0e0d7089fa017844d0c528885299d7ba3b95141447"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/BundleSchemeHandler.swift",
+      "sha256": "3bc199ff21836a451946d4f8ca65ea8b746828880bdb0a78fe505fea7ade0bdb"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineHostModel.swift",
+      "sha256": "6ca37b5837904d707203e60527f3d90aaed97d8883bfad6090d2d9a66db7fc6c"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineWebView.swift",
+      "sha256": "a636ce28918124e5d59fb750826dda5e2de9996b8b1784f31c00eb049eb73f35"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineWebViewContainer.swift",
+      "sha256": "4088f6cb43006abdb47c0419b797fd0dabbbbb07f8d379491743c7157f67117d"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/ApplicationSessionTests.swift",
+      "sha256": "2b1d80d5e242659dd6ffea8bdf44edd60d1a85a7c09637d7cc4ef7cb25c699da"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/AssetOriginProbeTests.swift",
+      "sha256": "88d3d0b36e2896cd13d3e4df41e984f3251f956d1d7b2e6b7cea040d56b23506"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/BridgeEnvelopeTests.swift",
+      "sha256": "ec48da219d774c218e1e855709b9f7c06cbef1a33e4a4a5ba6e51e664a51e158"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/BundleResourcePolicyTests.swift",
+      "sha256": "3c6f6fb5632ed32de5c2394d1b81f5086e4332cca27edcab092bbbab7d66f2a3"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/BundleSchemeResponseTests.swift",
+      "sha256": "b3daa96580d7368f48c1652cba2d00f5bf8be62c041ee92cd530c76b8c359e0b"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/EngineHostModelTests.swift",
+      "sha256": "9c9e6948b00c5035aea5367feb7db72f224d2a5d94ef6c0560797d3919f9f4a0"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/EngineWebViewContainerTests.swift",
+      "sha256": "003ebe56bdb243f89bfe7520c8de85cb3e80f3f4ab0f95e85356337832efe943"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/Fixtures/layout-design-v2-corpus.json",
+      "sha256": "735a863cc707e7340333d44b4d4db3699abe2a49bb6675dc5bd044fb4857af42"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/Fixtures/starter-layout.json",
+      "sha256": "66833832eb5742f4848154be8d3d8adce3ff6a1402182a435b1ac75c015042e3"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/HostStartupHoldCoordinatorTests.swift",
+      "sha256": "5c950907e54ade45964c837e764d2fbde717a59e13beab64a2a224a46823c097"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/HostStartupHoldTests.swift",
+      "sha256": "9a9d4399ed2d368fa1a4a22904e27866580720c0bd3863dac6206736d1d2c1d9"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/LayoutDesignDocumentTests.swift",
+      "sha256": "9ae8bbdd95c2e2ee91d5547133735de88c230d0cbf00906ac3e46baa5462c869"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/LayoutDocumentTests.swift",
+      "sha256": "8af9227212ea5837706a240f9326639151f59c6e00c92f67261b45a9d7594f29"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/LayoutStoreTests.swift",
+      "sha256": "522b30a2d1ca6d6b03dbc8f20f39de89fb819e021aa2eb94c93795714552fc30"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/PlatformProbeTests.swift",
+      "sha256": "293f28eb26304732b421f02e254f849e90a4b182e4910036d55af964cf0ef6d5"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/PlatformStartupTraceTests.swift",
+      "sha256": "61e5dc2231ba906f53b10be7825b36353eb1799935051579723ec8c14eb1323e"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift",
+      "sha256": "99e13e483f2ee4d3852ac867d1b58b1ce23b2df505f94836671e3774861e6ba3"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/HostSmokeTests.swift",
+      "sha256": "1b4e6973001cbb09d8b0b2f77dcded76b2cbc4d8f06f0a84ea74fb26322154b1"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/HostStartupUITests.swift",
+      "sha256": "06fcaf938dbd305a9c3a260b93a543c50883f384b56ff2e7cb0c8780d0fa4d1b"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/PlatformProbeUITests.swift",
+      "sha256": "773d4519119ccb5c46a1bbc5b051dfa41101a20268898e4d5a930b3f93d8ed5a"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/UITestApplicationLifetime.swift",
+      "sha256": "5c5a4e1e80646bed65499e440de1abe20b7c5d6e0e671c4dfd837561ed738d98"
+    },
+    {
+      "path": "apps/ios/project.yml",
+      "sha256": "815b190547b0448f91adabbefe4ff8b984376ef3fd221e23e50d7aa930a98e6c"
+    },
+    {
+      "path": "assets/source/calibration/export_fixture.py",
+      "sha256": "25cfceba2b491dc9a62722baf9cc4248906b6930aab51c34a719111ee2ed5ccc"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/add-one.wasm",
+      "sha256": "8f581f8899890a7479c20494f53cc5d60156a4d42e39d6a587a9f3089f198fe0"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/checker.png",
+      "sha256": "82e3ef7f6c8bb9bccf1615132cb6bfc34c1bcdc00482ab289624d9a446079772"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/echo.worker.js",
+      "sha256": "a22bcff005a86d27d5df1005aba161a3ed7a37569345a4aa7029a90cb0351cb9"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/fixture-manifest.json",
+      "sha256": "83cb811673df0a47f544f44945a7166c37dd569f9be322c131e8a0df32a58a48"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/tone.wav",
+      "sha256": "ae05277b3e19f772171e06b7ff4d4ba0dd738fb13291135028eb5f55d16ccfa8"
+    },
+    {
+      "path": "tests/fixtures/assets/calibration.glb",
+      "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+    },
+    {
+      "path": "tests/web/browser/asset-probe-startup.spec.ts",
+      "sha256": "4ac7518facf74199e4d93595cd74d69541123426a585310219b12a0fc83b7dec"
+    },
+    {
+      "path": "tools/assets/generate-origin-probe.mjs",
+      "sha256": "ec3606d0e99838112e27fb50249b1e8af4b117b99ce4598ea1d67e15cb9ffae2"
+    },
+    {
+      "path": "tools/assets/geometry-contract.mjs",
+      "sha256": "76cadf1fe2323cecb1a0d2974e5121466a8e7a1c5a3e21b6bd0bc741308bf66b"
+    },
+    {
+      "path": "tools/build-web.mjs",
+      "sha256": "324e2e817346bb5ef1c9b40d914b38ebdf57f1b539399d2fbec434eec168b0fe"
+    },
+    {
+      "path": "tools/ios/PLATFORM_PROBE.md",
+      "sha256": "6680f1996cb40f2293576dc49a161e2a9a5ef4fc351f18006b9854a02551d510"
+    },
+    {
+      "path": "tools/ios/install-xcodegen.sh",
+      "sha256": "be3de3bc63ac773439f0dc986b8efddb20ca691c77e8517e4f28f7849a05c2f5"
+    },
+    {
+      "path": "tools/ios/record-installed-web.mjs",
+      "sha256": "d77649d9922c24104420a56f5d8f175dcb9d91199518a925380c42e5b21ec0c5"
+    },
+    {
+      "path": "tools/ios/record-installed-web.test.mjs",
+      "sha256": "34519fd652700952167a5ed65092494d71237c90548d4647d287cee8af11e0d8"
+    },
+    {
+      "path": "tools/ios/select-duo.mjs",
+      "sha256": "4c70db96370a42becbf28e75ffc6a84941e1ac9977af703077dae16fd808ce87"
+    },
+    {
+      "path": "tools/ios/select-duo.test.mjs",
+      "sha256": "49b6f8a73f0d7822d9f0c9883779ab2e6dc7926e6fbe69d9f32427dd608b7247"
+    },
+    {
+      "path": "tools/ios/stage-evidence.mjs",
+      "sha256": "420559e4d79be020fe1cca4f9eaf85ed60d67f3e054cdff23152c3db568c3079"
+    },
+    {
+      "path": "tools/ios/stage-evidence.test.mjs",
+      "sha256": "20ecb163d6e43aea742757c7a1140840d7bbd6a0ca3851c2c8bd550fcf07d783"
+    },
+    {
+      "path": "tools/ios/test-clean-install.mjs",
+      "sha256": "cd50a7b3c5ddcaaee505a4faf49a76b3f79338f9b9c4fe59916c2f429bb45d6e"
+    },
+    {
+      "path": "tools/ios/test-clean-install.test.mjs",
+      "sha256": "57903a1d88291b85f515ce95b8f4e188738e1399b948b8b2625cc3be6d420f8d"
+    },
+    {
+      "path": "tools/ios/test-simulator.sh",
+      "sha256": "6224f910afe2855def52ea7a50527621b23578c416dbb57c2fb57d0e5906089d"
+    },
+    {
+      "path": "tools/ios/test-simulator.test.mjs",
+      "sha256": "52c606b9d9584b11dfacea29c26fe48138526a913ff0473594cdee1a6906b66a"
+    },
+    {
+      "path": "tools/ios/verify-release-web.py",
+      "sha256": "ce1b176ba813c9ba3002cc5b2cdf7b853ca613889c788a4403cf9576f3affae4"
+    },
+    {
+      "path": "tools/ios/verify-release-web.test.mjs",
+      "sha256": "c618a1295a6ae480d11070e0731e94a0a0e8cff5e0d5bfa51ad0a1d67d8a1c54"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "web/packaged.html",
+      "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+    },
+    {
+      "path": "web/src/audio.ts",
+      "sha256": "9df6cfbb47875ad491e76e5ef7725f463cf9a7153b7897c5e43732bedd21e2c1"
+    },
+    {
+      "path": "web/src/bridge.ts",
+      "sha256": "214b40845cef5a50b0a3113fc587bfe39da3b52e49e8a79bf31d472bb55afe4e"
+    },
+    {
+      "path": "web/src/clock.ts",
+      "sha256": "77c37952ff76a84e88f1cb3e4cc7980e5b9ed48bb04840b366aec8a8e467c912"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.css",
+      "sha256": "1a5119708079edcdab981a024e80635f37038bfd3dd848c18930e32af17dcdc4"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.ts",
+      "sha256": "5e369571c8695f398d30a2a875fa80dba0b7d9081a92d72262226639680d47e0"
+    },
+    {
+      "path": "web/src/diagnostics/buildFlags.d.ts",
+      "sha256": "468fb269f5b46e8b60c1685eea93449d7e73d50e88e43571c579483440ea3f3e"
+    },
+    {
+      "path": "web/src/documents/layoutDesign.ts",
+      "sha256": "323af0857e72d3d73eea6a33d936cae34748918818e262dec7399aa9d26be1c9"
+    },
+    {
+      "path": "web/src/editor/placementValidation.ts",
+      "sha256": "48b63331cd23ab131d99f85f0251ab26f874e61128c0c7603250cf057b24ff5c"
+    },
+    {
+      "path": "web/src/main.ts",
+      "sha256": "e87ba1b202e3e65948588825ddf020a23d946c1ba824cb478faaa6f3a6647a90"
+    },
+    {
+      "path": "web/src/model/geometry.ts",
+      "sha256": "e56fbe722f3e71cc06d70679af0eda98d32ed2ebe071bab86d37c2f403a1dae9"
+    },
+    {
+      "path": "web/src/model/index.ts",
+      "sha256": "853d7ec3b2a155b0935f5091399760fc0675baecfbcb3ccafb22485379f70161"
+    },
+    {
+      "path": "web/src/model/layout.ts",
+      "sha256": "c55a69e9803d9418ef3084bc65c5bf4c06cba0927021f4438af907aee1d27d50"
+    },
+    {
+      "path": "web/src/model/railway.ts",
+      "sha256": "c38cb8ecbea445583669db3dc79ed67574124b7e4c6370b551effc444149feb3"
+    },
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/model/validation.ts",
+      "sha256": "c5d4eb4f2fdc33f95bc227fad227e71c65a99cbc8f3df86dddfc7e50e7c0f42e"
+    },
+    {
+      "path": "web/src/persistence.ts",
+      "sha256": "aa7d2e9e033e8b5866a1a1a4799d0e4da64ce4366d3dea218612d09e81d0deed"
+    },
+    {
+      "path": "web/src/scene/MiniatureScene.ts",
+      "sha256": "af9b338172f349b73d623575e001acbbe42c74d7e848dc18536930f71227b6b7"
+    },
+    {
+      "path": "web/src/scene/architectureGeometry.ts",
+      "sha256": "fad629ebb0bf7a4cda5cfdee386255ee025d0b50009d6122a51530cd30ed04ea"
+    },
+    {
+      "path": "web/src/scene/canopyGeometry.ts",
+      "sha256": "411ff2d521ab1d80db1bafdab73f3eb10bff04fa081410eac937f951363df4ed"
+    },
+    {
+      "path": "web/src/scene/caseGeometry.ts",
+      "sha256": "d95104c4bac012f168235144fcdf1d14e776d86f5d21546721d9e1f43cc53e24"
+    },
+    {
+      "path": "web/src/scene/geometry.ts",
+      "sha256": "149271929c855fe9683488d0a6477e02fcc76b03373cf5b67d3d7d17d5720b4a"
+    },
+    {
+      "path": "web/src/scene/materials.ts",
+      "sha256": "627438adbe584860fe6947c06dd2ea574ebda8b8656ed2088c7b6ab7a11227da"
+    },
+    {
+      "path": "web/src/scene/pondGeometry.ts",
+      "sha256": "f8588c579dba55a69960b09d26fca0021bc46f009f8a8fbd4c8eb0e8efccb1aa"
+    },
+    {
+      "path": "web/src/scene/scenery.ts",
+      "sha256": "47930ede316599bbef971c8ad8951ee9d0cf9a573cc8db3b000d7cabc312beca"
+    },
+    {
+      "path": "web/src/scene/stationPlacement.ts",
+      "sha256": "56a8224150b0575998671bf17c7c7ef5fb72deed64b69fc2fd64c1bdeb182511"
+    },
+    {
+      "path": "web/src/scene/train.ts",
+      "sha256": "6f9f9ff667a4c2cf054a4cafcf62f053388bd65d3192e2165d069d7c3d311239"
+    },
+    {
+      "path": "web/src/scene/trainDetailGeometry.ts",
+      "sha256": "b64be9f90e242d2dac0cf091c2091811f33a7d1cbc20d59c125deae2fbfa477c"
+    },
+    {
+      "path": "web/src/scene/trainMechanics.ts",
+      "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "b2d1a81d4e14b2ee7ef1c9fbe7293150e9d65cbf90d7317c6bc31f371f361ef0"
+    },
+    {
+      "path": "web/src/simulation/routedMotion.ts",
+      "sha256": "db0d5bc20d479552369f798a0b73e7bb0f60568b948f80d5435e55b34d6ee69e"
+    },
+    {
+      "path": "web/src/simulation/routedPoses.ts",
+      "sha256": "ffbaa7e7dca44a8556a75f98f983b907c8512d91e6d33a65940bfeff99081c01"
+    },
+    {
+      "path": "web/src/simulation/vehicleCatalog.ts",
+      "sha256": "8a48b82b331850acfe108a4f318c0c3414c750d83f1844336569bb4228efdb66"
+    },
+    {
+      "path": "web/src/simulation/vehicleStep.ts",
+      "sha256": "88e0d97f62f6235e01908fcb67573261a8f52b57ad00919a9058bbc56a6483c3"
+    },
+    {
+      "path": "web/src/style.css",
+      "sha256": "6fed42682909f9a628940162ec4156f7742f578946232d00af67de8d7a6be093"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/clearance.ts",
+      "sha256": "b72d636c79ebb885df55786c737451e9aa9dd95f9aa4f93b38e810ebc9ee8b9a"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    },
+    {
+      "path": "web/src/ui.ts",
+      "sha256": "85cc386bb11eaffa4d71dc9dfb50a1743baba5117807163a9235659a337c293e"
+    }
+  ],
+  "commands": [
+    {
+      "command": "bash tools/ios/test-simulator.sh (actual mandatory GitHub Actions run 40475892006, job 122093894596, attempt 1; all native unit/UI cases, no test filter)",
+      "exit_code": 0,
+      "output_path": "evidence/P01-T02-native-observation-tests-c1e6e39.txt"
+    },
+    {
+      "command": "node tools/ios/record-installed-web.mjs \"$tin_installed_app/WebAssets\" artifacts/ios artifacts/ios/packaged-web-input-manifest.json (actual installed app resolved by public simctl after full-suite success)",
+      "exit_code": 0,
+      "output_path": "evidence/P01-T02-native-observation-c1e6e39.json"
+    },
+    {
+      "command": "node tools/ios/test-clean-install.mjs (actual supplemental uninstall/reinstall and unchanged AssetOriginProbeUITests after required full-suite success)",
+      "exit_code": 0,
+      "output_path": "evidence/P01-T02-native-observation-tests-c1e6e39.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P01-T02-native-observation-tests-c1e6e39.txt",
+      "sha256": "b8ce6cc78f96c7b3c7e96082499fd1b242c058f45b55143fa233b99a1d2e6254"
+    },
+    {
+      "path": "evidence/P01-T02-native-observation-review-c1e6e39.md",
+      "sha256": "004dbbd38be12b54ba18c96b31854e76e2eb4d64f2d48577990a3e079e7f8603"
+    },
+    {
+      "path": "evidence/P01-T02-native-observation-c1e6e39.json",
+      "sha256": "76aeabcd38cd4ac974e1a41908b3c0a33a4996b3e20e7895bac399c204a7d693"
+    },
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006/artifacts/12720484130",
+      "sha256": "798ffb5bbbeefa3f8dc0a7011c22ceedf566dbc7c970a99ac12377daf5668a50"
+    },
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006/artifacts/12720898476",
+      "sha256": "32f98b9f1e498832cb4b325c8edd9b8540bdf784a7b09c56ee2868dacd075728"
+    },
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006/artifacts/12720594017",
+      "sha256": "62423a2fe5a3bf54b8054dbd39cf5478fe9624c6ec11dbf202f48bab74b64224"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P01-T02-A1",
+      "evidence": [
+        0,
+        "evidence/P01-T02-native-observation-review-c1e6e39.md",
+        "evidence/P01-T02-native-observation-c1e6e39.json"
+      ]
+    },
+    {
+      "criterion_id": "P01-T02-A2",
+      "evidence": [
+        0,
+        "evidence/P01-T02-native-observation-review-c1e6e39.md",
+        "evidence/P01-T02-native-observation-c1e6e39.json"
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "This is an unsigned Debug Simulator diagnostic run. No physical Duo, signed Release, App Store eligibility, exclusive commercial distribution or owner approval is established.",
+    "The prepared WKWebView denied HTTP and HTTPS resources before navigation, cleared WebKit data and used nonpersistent storage. This establishes offline WebView resource operation, not OS-wide networking disablement or physical airplane mode.",
+    "The clean trial actually removed the native app data container, observed the expected missing-container response, reinstalled the same compiled app and inspected an empty application store before any launch. It does not claim secure erasure or keychain clearing.",
+    "WASM bytes loaded but compilation was refused by the unchanged script CSP. No unsafe-eval or wasm-unsafe-eval relaxation was added. KTX2/Basis is absent and remains disabled; this is an explicit blocker, not a decoder success.",
+    "Audio source completion followed an actual accessible XCTest tap. Sample decoding and context/playback completion do not establish acoustic quality, hardware audio routing or interruption handling.",
+    "The diagnostic bundle has ten runtime files, including original probe fixtures. Actual installed identities are CI observations verified against the packaged manifest. This full lane does not establish ordinary Release resource identity.",
+    "All 57 public application-state observations completed. XCUIApplication.state is asynchronous and is not independent OS process-death proof. The successful isolated test lifetimes do not establish the exclusive cause of earlier host-side delays.",
+    "Startup timings are observations only. The clean cold launch public operation took 44.597 seconds and the platform fixture launch was also slow; this run is not a launch-performance or sustained-rendering baseline.",
+    "All three current platform reports are identical: viewport 382 by 574.6666666666666 points, pixel ratio 3 and hinge angle 0. Orientation requests do not prove a rotation geometry or fold/hinge transition.",
+    "The actual contrast audit covers the native failure screen. VoiceOver navigation/activation, largest accessibility text, physical scene recreation and actual WebContent-process death remain separate tests.",
+    "Nine original diagnostic/native-state PNGs were visually inspected. The procedural scene, remaining UI typography/contrast and raw renderer error copy are not final visual approval. Videos were not watched.",
+    "The current full suite and supplemental clean trial both passed without reruns or weakened assertions. Earlier failed/cancelled runs remain preserved under their original source identities.",
+    "Remote original artifacts expire at the recorded 2026-11-10 provider times. Compact reports, selected exact log/event excerpts, byte identities and source fingerprints are retained in Git; no large binary is committed."
+  ]
+}

@@ -2,13 +2,13 @@
 
 ## Metadata
 
-- **Status:** Proposed; completed first/cold native probe sessions are observed at `0e6d83c`, but current full integration and clean-install verification remain open.
+- **Status:** Accepted for the bounded P01-T02 development transport at `c1e6e39`; complete native integration, installed-resource identity and the separate clean-install trial passed. Unsupported decoders and later security/device gates remain explicit.
 - **Decision date:** 2026-10-27 UTC.
 - **Author:** `submission-native`, coordinated by `submission-coordinator`.
 - **Decision owner:** Project coordinator for the bounded P01-T02 development task; physical-device, final-art and release approvals retain their existing owners.
 - **Related tasks:** P01-T02; follow-up security, lifecycle and device gates P01-T03, P01-T05 and P02-T02.
 - **Supersedes:** None. This specializes the runtime spike required by ADR-0001 and preserves the WebGL2 baseline in ADR-0003.
-- **Approval reference:** Unaccepted; the required complete native workflow, installed-resource identity and clean-install trial have not all passed on a current revision.
+- **Approval reference:** Coordinator review of [current native integration](../../evidence/P01-T02-native-integration-c1e6e39.json), its [original observation review](../../evidence/P01-T02-native-observation-review-c1e6e39.md), and [the verified-workbench handoff](../../planning/handoffs/2026-10-27-verified-workbench.md). This is a development architecture decision, not owner approval of final art, hardware behavior or release.
 
 ## Context
 
@@ -26,7 +26,7 @@ The decision prioritizes observed offline operation, the existing native securit
 | Change to a bundled `file:` entry | Another public loading mechanism | Would require a new origin, read-access, bridge and loader security review; this spike has not tested it |
 | Add a loopback HTTP server | HTTP semantics may suit some existing loaders | Adds server startup, routing and lifecycle behavior; no such implementation or benchmark exists here |
 
-## Proposed decision
+## Decision
 
 Retain the custom scheme only for resource operations demonstrated by the packaged native experiment. Keep unsupported decoder paths disabled with named blockers. Do not enable a loader because the desktop harness works, because its JavaScript exists in a dependency, or because another decoder happened to run.
 
@@ -57,7 +57,11 @@ At `0e6d83c24bd4e0ed5413c095ebaee1cbbc09d406`, [full run 40467652957](https://gi
 
 At `53e193b6435d241f8c1462d859112b2cb1b56b77`, [full run 40471495670](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40471495670) passed all 87 units and six of eight UI cases, including the unchanged recovery exclusion, contrast audit and actual Retry/foreground sequence. Its first asset session completed, but the explicit foreground `app.terminate()` failed before the cold launch. Help's initial launch separately failed while terminating the previous rotation fixture. The recovered runner log records delayed Xcode request handling and process-state notification; it does not establish a product shutdown deadlock or the cause of the host delay. Neither later process death nor an older passing cold session converts this run into a pass. Installed identity and clean reinstall remained skipped.
 
-The original verification requires a separate observed app-data deletion/reinstall, not only WebKit data reset. The decision remains proposed until that trial, current complete native observations and installed resource identities pass together.
+At **`c1e6e39ba127e064f4907e9c5a1d84fed7163990`**, [full native run 40475892006](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006) passed **87 unit tests and all eight UI tests**, followed by installed-resource verification and the separate clean-install trial. All four original terminal asset reports—first/cold before reset and first/cold after reinstall—record 14 GLB meshes, 280 triangles, 423 visible pixels, four correctly sampled PNG quadrants, the actual worker response and gesture-activated mono audio source completion. WASM remains explicitly blocked by CSP and KTX2 remains absent/disabled. Every session is distinct; native reports confirm the HTTP/HTTPS-deny rule, completed WebKit data clearing and nonpersistent storage.
+
+The clean trial observed existing saved-layout generations, successful test-app uninstall, the specific missing-container result, and an empty native layout store after reinstall and before any launch or test. It then ran the unchanged asset UI class with `test-without-building` and verified the same compiled app's installed resource identity before reset, after reinstall and after the test. The full suite remains an independently required pass. The [source-bound observations](../../evidence/P01-T02-native-observation-review-c1e6e39.md) preserve the exact outcomes, four reports and limits. The coordinator independently verified the full archive, matching compact indices and all **139 reports plus 17 PNGs** against their original bytes. All three required current workflows passed; no older failure was converted into a pass.
+
+This completes the original separate app-data-deletion verification for the bounded transport decision. It does not establish secure erasure, physical radio isolation, production decoder compatibility or a cause/fix for the earlier host-side termination delays. The earlier proposed state and failed experiments above remain part of this decision's history.
 
 The local packaging tests verify finite file lists, diagnostic exclusion, fixture hashes, safe cleanup and symlink rejection. Release-guard tests check ordinary and diagnostic manifests, integrity and configuration wiring. These are source/build checks, not native origin evidence. A separate desktop HTTP sanity run likewise does not establish WKWebView compatibility.
 

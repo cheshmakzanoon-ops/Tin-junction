@@ -1,6 +1,6 @@
 # Native verification queue held beyond configured deadline
 
-Status: **OPEN — recovery now passes, but the current full native run failed two application-termination operations.** The original queue condition, repaired application defects and current delayed automation observations remain separate.
+Status: **RESOLVED — current full native, installed-resource, clean-install and all other required checks passed at `c1e6e39`.** This resolves the verification blocker. The original queue condition, repaired application defects and historical delayed automation observations remain separate; no exclusive cause of the host delays is asserted.
 
 ## Observed state
 
@@ -84,3 +84,21 @@ The next bounded change gives every UI fixture ownership of its application and 
 ## Resolution gate
 
 Resolve the current verification blocker only after the fresh required native workflow completes, its actual full unit/UI and clean-install outcomes are inspected, and all required current checks pass. Preserve any later old-run result as historical evidence. Its inaccessible log and unknown execution stage must not be rewritten into a success, a specific application defect or an assumed cancellation.
+
+## Verified resolution at c1e6e39
+
+The exact current implementation is **`c1e6e39ba127e064f4907e9c5a1d84fed7163990`**, tree **`fc1d945c5c68265b8d4fdcac45e9fa1809594aca`**. All three required workflows completed successfully on their original attempts:
+
+| Current workflow | Actual terminal result |
+| --- | --- |
+| [Full native 40475892006](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006) | Job `122093894596`, runner `1000015890`, completed 09:05:13 UTC. All 87 units and eight UI cases passed. Installed-resource verification, the separate clean-install trial, staging and all three uploads passed. |
+| [Focused native models 40475891995](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475891995) | Job `122093894305`, runner `1000015891`, completed 08:55:39 UTC. All 87 units passed; the shared UI lifetime helper also compiled. |
+| [Repository/web 40475892017](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892017) | Both quality/export jobs passed; run updated 09:07:23 UTC. Actual counts: 108 project, 56 iOS-tool and 304 web unit tests; 34 browser cases, 34 attempts, zero retries, flakes, unexpected outcomes, skips or report errors. |
+
+The unchanged full UI suite now completes first/cold asset sessions, handshake, rotation/foreground, Help, actual name edit/save/foreground termination/relaunch, controlled pre-navigation delay, failed renderer accessibility/contrast/Retry and platform observation. The helper records **48 full-suite plus nine clean-trial public application-state observations**. Every completed launch reports `runningForeground`; all explicit and teardown terminations report `notRunning`. These public asynchronous states are not independent process-death measurements, and a passing fixture does not identify the reason for a historical Xcode request-processing delay. No repeated concurrency rename, retry, timeout increase, background-before-termination workaround or relaxed assertion was used.
+
+The installed manifest and all ten diagnostic resource identities matched the packaging input. The separate trial observed existing save generations, successful test-app uninstall, the expected missing-container response, reinstall of the same compiled app and an empty application store before any launch. Its unchanged first/cold asset case passed in **113.130 seconds**, with two new sessions and matching installed identities afterward. All four original terminal reports record the same GLB/PNG/worker/gesture-audio results, with WASM CSP-blocked and KTX2 disabled. HTTP/HTTPS denial is a WebView condition, not OS-wide airplane mode.
+
+The coordinator independently verified the **346,308,224-byte** full archive (`798ffb5bbbeefa3f8dc0a7011c22ceedf566dbc7c970a99ac12377daf5668a50`), both compact archives, their matching index (`5482cf9b6a2bbf39018ad973e4fc7bc75cc3a3b83d2a8a9177291f5a14e700ce`) and all **139 reports plus 17 PNGs** against the full originals. The actual native save/relaunch and failure/Retry captures were inspected. The separate web archive, embedded report, six detailed reports, all 34 first attempts, 23 PNG identities, ordinary manifest and exact unfiltered log spans were independently verified. Formal evidence has exact immutable source fingerprints and strict digest/Git validation.
+
+The [current native review](P01-T02-native-observation-review-c1e6e39.md), [current web review](P04-T06-web-ci-review-c1e6e39.md) and [coordinator handoff](../planning/handoffs/2026-10-27-verified-workbench.md) are the resolution evidence. Earlier failed/cancelled runs and unknown stages remain unchanged above. The observed 44.597-second clean cold launch, identical platform geometries, pending audio lifecycle defect, production art, hardware and release gates remain outside this resolution.

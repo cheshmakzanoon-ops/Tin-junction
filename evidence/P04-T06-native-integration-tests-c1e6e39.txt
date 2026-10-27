@@ -1,0 +1,17 @@
+Test Suite 'All tests' started at 2026-10-27 08:54:27.873.
+	 Executed 87 tests, with 0 failures (0 unexpected) in 3.596 (4.007) seconds
+Test Suite 'All tests' passed at 2026-10-27 08:54:31.880.
+	 Executed 87 tests, with 0 failures (0 unexpected) in 3.596 (4.008) seconds
+Test Suite 'All tests' started at 2026-10-27 08:54:41.144.
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' passed (67.045 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (15.222 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (19.808 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (16.171 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (83.290 seconds).
+Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (41.367 seconds).
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' passed (56.098 seconds).
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (98.860 seconds).
+	 Executed 8 tests, with 0 failures (0 unexpected) in 397.860 (397.895) seconds
+Test Suite 'All tests' passed at 2026-10-27 09:01:19.041.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 397.860 (397.897) seconds
+** TEST SUCCEEDED **

@@ -1,0 +1,102 @@
+# Editorial provenance: selected unchanged original xcodebuild lines, followed by exact original startup-event substrings.
+# Tested commit c1e6e39ba127e064f4907e9c5a1d84fed7163990; full run 40475892006; job 122093894596; attempt 1.
+# Full archive 346308224 bytes; SHA256 798ffb5bbbeefa3f8dc0a7011c22ceedf566dbc7c970a99ac12377daf5668a50.
+# Original xcodebuild.log: 335365 bytes; SHA256 bd99e4be4e1e8ff085b0af588511dee0d417cfd02573464964a408fbdb9591c8.
+# Full mandatory suite (no test filter):
+	 Executed 8 tests, with 0 failures (0 unexpected) in 0.012 (0.015) seconds
+	 Executed 87 tests, with 0 failures (0 unexpected) in 3.596 (4.007) seconds
+	 Executed 87 tests, with 0 failures (0 unexpected) in 3.596 (4.008) seconds
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' passed (67.045 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (15.222 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (19.808 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (16.171 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (83.290 seconds).
+Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (41.367 seconds).
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' passed (56.098 seconds).
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (98.860 seconds).
+	 Executed 8 tests, with 0 failures (0 unexpected) in 397.860 (397.895) seconds
+	 Executed 8 tests, with 0 failures (0 unexpected) in 397.860 (397.897) seconds
+** TEST SUCCEEDED **
+
+# Supplemental clean reinstall: original clean-install-4yzQlq/xcodebuild-clean-install.log.
+# 15626 bytes; SHA256 9e5cbee6d9198d53dc78e1552af70c6929f8854c30bb4f870c321292b6e8fad9.
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' passed (113.130 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 113.130 (113.138) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 113.130 (113.150) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 113.130 (113.151) seconds
+** TEST EXECUTE SUCCEEDED **
+
+# Original native startup-event substrings. These are complete events, not necessarily complete source lines.
+# Compressed/decoded object identities and full originals are recorded in the observation JSON.
+# full-first-launch; observed PID 7436.
+2026-10-27 08:54:47.173434+0000 TinJunction[7436:29914] [TinStartup] +0.000s webview.created
+2026-10-27 08:54:47.499368+0000 TinJunction[7436:29914] [TinStartup] +0.326s host.lifecycle=active
+2026-10-27 08:54:50.704864+0000 TinJunction[7436:29914] [TinStartup] +3.531s navigation.started.window=1
+2026-10-27 08:54:50.729987+0000 TinJunction[7436:29914] [TinStartup] +3.557s host.loading.lifecycle=active
+2026-10-27 08:54:50.752247+0000 TinJunction[7436:29914] [TinStartup] +3.579s resource.ready.type=html.bytes=884
+2026-10-27 08:54:50.779932+0000 TinJunction[7436:29914] [TinStartup] +3.607s navigation.committed.window=1
+2026-10-27 08:54:50.805658+0000 TinJunction[7436:29914] [TinStartup] +3.632s resource.ready.type=css.bytes=19325
+2026-10-27 08:54:50.806347+0000 TinJunction[7436:29914] [TinStartup] +3.633s resource.ready.type=js.bytes=801455
+2026-10-27 08:54:54.781979+0000 TinJunction[7436:29914] [TinStartup] +7.609s navigation.finished.window=1
+2026-10-27 08:55:00.494422+0000 TinJunction[7436:29914] [TinStartup] +13.321s bridge.webReady
+2026-10-27 08:55:00.508612+0000 TinJunction[7436:29914] [TinStartup] +13.335s host.restorePrepared
+2026-10-27 08:55:00.685074+0000 TinJunction[7436:29914] [TinStartup] +13.512s host.layoutAccepted
+2026-10-27 08:55:00.771141+0000 TinJunction[7436:29914] [TinStartup] +13.598s resource.ready.type=glb.bytes=29356
+2026-10-27 08:55:00.781304+0000 TinJunction[7436:29914] [TinStartup] +13.608s resource.ready.type=png.bytes=93
+2026-10-27 08:55:00.791902+0000 TinJunction[7436:29914] [TinStartup] +13.618s resource.ready.type=js.bytes=132
+2026-10-27 08:55:00.801434+0000 TinJunction[7436:29914] [TinStartup] +13.628s resource.ready.type=wasm.bytes=44
+2026-10-27 08:55:01.011650+0000 TinJunction[7436:29914] [TinStartup] +13.838s resource.ready.type=wav.bytes=11564
+# full-cold-relaunch; observed PID 8285.
+2026-10-27 08:55:18.079616+0000 TinJunction[8285:32334] [TinStartup] +0.000s webview.created
+2026-10-27 08:55:18.330135+0000 TinJunction[8285:32334] [TinStartup] +0.250s host.lifecycle=active
+2026-10-27 08:55:21.665598+0000 TinJunction[8285:32334] [TinStartup] +3.586s navigation.started.window=1
+2026-10-27 08:55:21.723585+0000 TinJunction[8285:32334] [TinStartup] +3.644s host.loading.lifecycle=active
+2026-10-27 08:55:21.728691+0000 TinJunction[8285:32334] [TinStartup] +3.649s resource.ready.type=html.bytes=884
+2026-10-27 08:55:21.756367+0000 TinJunction[8285:32334] [TinStartup] +3.677s navigation.committed.window=1
+2026-10-27 08:55:21.794117+0000 TinJunction[8285:32334] [TinStartup] +3.715s resource.ready.type=css.bytes=19325
+2026-10-27 08:55:21.795689+0000 TinJunction[8285:32334] [TinStartup] +3.716s resource.ready.type=js.bytes=801455
+2026-10-27 08:55:22.280187+0000 TinJunction[8285:32334] [TinStartup] +4.201s navigation.finished.window=1
+2026-10-27 08:55:23.524935+0000 TinJunction[8285:32334] [TinStartup] +5.445s bridge.webReady
+2026-10-27 08:55:23.544166+0000 TinJunction[8285:32334] [TinStartup] +5.465s host.restorePrepared
+2026-10-27 08:55:23.591491+0000 TinJunction[8285:32334] [TinStartup] +5.512s host.layoutAccepted
+2026-10-27 08:55:23.613820+0000 TinJunction[8285:32334] [TinStartup] +5.534s resource.ready.type=glb.bytes=29356
+2026-10-27 08:55:23.614536+0000 TinJunction[8285:32334] [TinStartup] +5.535s resource.ready.type=png.bytes=93
+2026-10-27 08:55:23.615238+0000 TinJunction[8285:32334] [TinStartup] +5.536s resource.ready.type=js.bytes=132
+2026-10-27 08:55:23.616079+0000 TinJunction[8285:32334] [TinStartup] +5.536s resource.ready.type=wasm.bytes=44
+2026-10-27 08:55:23.744385+0000 TinJunction[8285:32334] [TinStartup] +5.665s resource.ready.type=wav.bytes=11564
+# clean-first-launch; observed PID 17487.
+2026-10-27 09:02:29.635236+0000 TinJunction[17487:57663] [TinStartup] +0.000s webview.created
+2026-10-27 09:02:30.054830+0000 TinJunction[17487:57663] [TinStartup] +0.420s host.lifecycle=active
+2026-10-27 09:02:34.885354+0000 TinJunction[17487:57663] [TinStartup] +5.250s navigation.started.window=1
+2026-10-27 09:02:34.885653+0000 TinJunction[17487:57663] [TinStartup] +5.250s host.loading.lifecycle=active
+2026-10-27 09:02:34.892448+0000 TinJunction[17487:57663] [TinStartup] +5.257s resource.ready.type=html.bytes=884
+2026-10-27 09:02:34.918540+0000 TinJunction[17487:57663] [TinStartup] +5.283s navigation.committed.window=1
+2026-10-27 09:02:34.919482+0000 TinJunction[17487:57663] [TinStartup] +5.284s resource.ready.type=css.bytes=19325
+2026-10-27 09:02:34.965778+0000 TinJunction[17487:57663] [TinStartup] +5.331s resource.ready.type=js.bytes=801455
+2026-10-27 09:02:39.603146+0000 TinJunction[17487:57663] [TinStartup] +9.968s navigation.finished.window=1
+2026-10-27 09:02:47.667965+0000 TinJunction[17487:57663] [TinStartup] +18.033s bridge.webReady
+2026-10-27 09:02:47.754425+0000 TinJunction[17487:57663] [TinStartup] +18.119s host.restorePrepared
+2026-10-27 09:02:48.155001+0000 TinJunction[17487:57663] [TinStartup] +18.520s host.layoutAccepted
+2026-10-27 09:02:48.315029+0000 TinJunction[17487:57663] [TinStartup] +18.680s resource.ready.type=glb.bytes=29356
+2026-10-27 09:02:48.335474+0000 TinJunction[17487:57663] [TinStartup] +18.700s resource.ready.type=png.bytes=93
+2026-10-27 09:02:48.360344+0000 TinJunction[17487:57663] [TinStartup] +18.725s resource.ready.type=js.bytes=132
+2026-10-27 09:02:48.382526+0000 TinJunction[17487:57663] [TinStartup] +18.747s resource.ready.type=wasm.bytes=44
+2026-10-27 09:02:48.746972+0000 TinJunction[17487:57663] [TinStartup] +19.112s resource.ready.type=wav.bytes=11564
+# clean-cold-relaunch; observed PID 18727.
+2026-10-27 09:03:46.352139+0000 TinJunction[18727:64367] [TinStartup] +0.000s webview.created
+2026-10-27 09:03:47.026522+0000 TinJunction[18727:64367] [TinStartup] +0.674s host.lifecycle=active
+2026-10-27 09:03:53.929767+0000 TinJunction[18727:64367] [TinStartup] +7.578s navigation.started.window=1
+2026-10-27 09:03:53.929945+0000 TinJunction[18727:64367] [TinStartup] +7.578s host.loading.lifecycle=active
+2026-10-27 09:03:53.937153+0000 TinJunction[18727:64367] [TinStartup] +7.585s resource.ready.type=html.bytes=884
+2026-10-27 09:03:53.980516+0000 TinJunction[18727:64367] [TinStartup] +7.628s navigation.committed.window=1
+2026-10-27 09:03:53.981757+0000 TinJunction[18727:64367] [TinStartup] +7.630s resource.ready.type=css.bytes=19325
+2026-10-27 09:03:53.984045+0000 TinJunction[18727:64367] [TinStartup] +7.632s resource.ready.type=js.bytes=801455
+2026-10-27 09:03:55.072238+0000 TinJunction[18727:64367] [TinStartup] +8.720s navigation.finished.window=1
+2026-10-27 09:03:57.148678+0000 TinJunction[18727:64367] [TinStartup] +10.797s bridge.webReady
+2026-10-27 09:03:57.190826+0000 TinJunction[18727:64367] [TinStartup] +10.839s host.restorePrepared
+2026-10-27 09:03:57.294651+0000 TinJunction[18727:64367] [TinStartup] +10.942s host.layoutAccepted
+2026-10-27 09:03:57.359743+0000 TinJunction[18727:64367] [TinStartup] +11.007s resource.ready.type=glb.bytes=29356
+2026-10-27 09:03:57.389697+0000 TinJunction[18727:64367] [TinStartup] +11.037s resource.ready.type=png.bytes=93
+2026-10-27 09:03:57.393059+0000 TinJunction[18727:64367] [TinStartup] +11.041s resource.ready.type=js.bytes=132
+2026-10-27 09:03:57.397239+0000 TinJunction[18727:64367] [TinStartup] +11.045s resource.ready.type=wasm.bytes=44
+2026-10-27 09:03:57.650350+0000 TinJunction[18727:64367] [TinStartup] +11.298s resource.ready.type=wav.bytes=11564

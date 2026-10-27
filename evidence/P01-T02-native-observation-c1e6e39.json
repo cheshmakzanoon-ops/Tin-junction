@@ -1,0 +1,3808 @@
+{
+  "schemaVersion": 1,
+  "kind": "native-packaged-origin-and-shell-integration-observation",
+  "testedCommit": "c1e6e39ba127e064f4907e9c5a1d84fed7163990",
+  "recordedAt": "2026-10-27T09:15:42Z",
+  "runId": 40475892006,
+  "jobId": 122093894596,
+  "runnerId": 1000015890,
+  "attempt": 1,
+  "jobStartedAt": "2026-10-27T08:46:49Z",
+  "nativeStepStartedAt": "2026-10-27T08:47:40Z",
+  "nativeStepCompletedAt": "2026-10-27T09:01:36Z",
+  "jobCompletedAt": "2026-10-27T09:05:13Z",
+  "firstObservedCompletedAt": "2026-10-27T09:05:17Z",
+  "archives": [
+    {
+      "id": 12720484130,
+      "name": "duo-host-40475892006-1",
+      "bytes": 346308224,
+      "sha256": "798ffb5bbbeefa3f8dc0a7011c22ceedf566dbc7c970a99ac12377daf5668a50",
+      "expiresAt": "2026-11-10T09:04:26Z",
+      "url": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006/artifacts/12720484130",
+      "downloadedDigestMatchesProvider": true
+    },
+    {
+      "id": 12720898476,
+      "name": "duo-host-reports-40475892006-1",
+      "bytes": 345660,
+      "sha256": "32f98b9f1e498832cb4b325c8edd9b8540bdf784a7b09c56ee2868dacd075728",
+      "expiresAt": "2026-11-10T09:04:21Z",
+      "url": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006/artifacts/12720898476",
+      "downloadedDigestMatchesProvider": true
+    },
+    {
+      "id": 12720594017,
+      "name": "duo-host-captures-40475892006-1",
+      "bytes": 17947337,
+      "sha256": "62423a2fe5a3bf54b8054dbd39cf5478fe9624c6ec11dbf202f48bab74b64224",
+      "expiresAt": "2026-11-10T09:04:23Z",
+      "url": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006/artifacts/12720594017",
+      "downloadedDigestMatchesProvider": true
+    }
+  ],
+  "fullLog": {
+    "entry": "xcodebuild.log",
+    "bytes": 335365,
+    "sha256": "bd99e4be4e1e8ff085b0af588511dee0d417cfd02573464964a408fbdb9591c8"
+  },
+  "cleanLog": {
+    "entry": "clean-install-4yzQlq/xcodebuild-clean-install.log",
+    "bytes": 15626,
+    "sha256": "9e5cbee6d9198d53dc78e1552af70c6929f8854c30bb4f870c321292b6e8fad9"
+  },
+  "environment": {
+    "xcode": {
+      "attachment": {
+        "entry": "xcode-version.txt",
+        "bytes": 33,
+        "sha256": "ee3fe26035862d2b9653c1a570be3eca4ee5be2815f0ce99ff2d8ffa3399e4c8"
+      },
+      "value": "Xcode 27.1\nBuild version 27A9275\n"
+    },
+    "macOS": {
+      "attachment": {
+        "entry": "macos-version.txt",
+        "bytes": 66,
+        "sha256": "4ef10a0fc370704ea84699cf3851e51488598c5f1ab35cb572eb6b96278a8e5c"
+      },
+      "value": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0.1\nBuildVersion:\t\t26A434\n"
+    },
+    "selectedSimulator": {
+      "attachment": {
+        "entry": "selected-simulator.json",
+        "bytes": 266,
+        "sha256": "2ad7bbe0becc3ec8902758f6e4568a6af9b7a3118901fdc7c5882a9d2c634cb9"
+      },
+      "value": {
+        "name": "iPhone Duo",
+        "udid": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+        "state": "Shutdown",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-1",
+        "runtimeVersion": "27.1",
+        "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Duo"
+      }
+    },
+    "sdkInventory": {
+      "entry": "sdks.txt",
+      "bytes": 745,
+      "sha256": "f75e02b6912d32eb14914e37176e0aa9b43927847fb70020996511a48d545591"
+    },
+    "simulatorInventory": {
+      "entry": "simulator-inventory.json",
+      "bytes": 106872,
+      "sha256": "d67efb986bbf7f3201dc675c2a0352753ce952f30f7fd453b8f944b773cafee8"
+    },
+    "physicalDevice": false
+  },
+  "outcome": {
+    "jobConclusion": "success",
+    "nativeCommandExitCode": 0,
+    "unitTests": 87,
+    "unitFailures": 0,
+    "uiTests": 8,
+    "uiPasses": 8,
+    "uiFailures": 0,
+    "cleanAdditionalUITests": 1,
+    "cleanFailures": 0,
+    "installedResourceStep": "success",
+    "cleanReinstallStep": "success",
+    "evidenceStaging": "success",
+    "reportsUpload": "success",
+    "capturesUpload": "success",
+    "fullEvidenceUpload": "success",
+    "taskAcceptance": "coordinator decision remains separate"
+  },
+  "uiOutcomes": [
+    {
+      "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "outcome": "passed",
+      "seconds": 67.045,
+      "originalLine": "Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' passed (67.045 seconds)."
+    },
+    {
+      "test": "HostSmokeTests/testBundledRendererHandshakes()",
+      "outcome": "passed",
+      "seconds": 15.222,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (15.222 seconds)."
+    },
+    {
+      "test": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+      "outcome": "passed",
+      "seconds": 19.808,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (19.808 seconds)."
+    },
+    {
+      "test": "HostSmokeTests/testNativeHelpRemainsAccessible()",
+      "outcome": "passed",
+      "seconds": 16.171,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (16.171 seconds)."
+    },
+    {
+      "test": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "outcome": "passed",
+      "seconds": 83.29,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (83.290 seconds)."
+    },
+    {
+      "test": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+      "outcome": "passed",
+      "seconds": 41.367,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (41.367 seconds)."
+    },
+    {
+      "test": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+      "outcome": "passed",
+      "seconds": 56.098,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' passed (56.098 seconds)."
+    },
+    {
+      "test": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+      "outcome": "passed",
+      "seconds": 98.86,
+      "originalLine": "Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (98.860 seconds)."
+    }
+  ],
+  "cleanUIOutcome": {
+    "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+    "outcome": "passed",
+    "seconds": 113.13,
+    "originalLine": "Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' passed (113.130 seconds)."
+  },
+  "reviewPackages": {
+    "index": {
+      "entry": "_review/index.json",
+      "bytes": 38269,
+      "sha256": "5482cf9b6a2bbf39018ad973e4fc7bc75cc3a3b83d2a8a9177291f5a14e700ce"
+    },
+    "testedCommit": "c1e6e39ba127e064f4907e9c5a1d84fed7163990",
+    "runId": "40475892006",
+    "runAttempt": "1",
+    "stagingResult": "complete",
+    "stepOutcomes": {
+      "nativeTests": "success",
+      "installedWeb": "success",
+      "cleanInstall": "success"
+    },
+    "issues": [],
+    "reportFiles": 139,
+    "captureFiles": 17,
+    "copiedBytes": {
+      "reports": 1174672,
+      "captures": 18201071
+    },
+    "all156OriginalFilesIndependentlyMatchedFullArchive": true,
+    "scope": "Packaging identity is separate from native test success; both were observed here."
+  },
+  "assetProbeReports": [
+    {
+      "attachment": {
+        "entry": "clean-install-4yzQlq/screenshots/BAF77B12-FA7A-4E76-8402-DD7BE2ACF0CA.txt",
+        "bytes": 1543,
+        "sha256": "d9e4d2552c14af83668d01eaca064bad47822a4ba9e1971a01bc9f1a3fc06689",
+        "suggestedHumanReadableName": "asset-origin-observation-first-launch-initial_0_DC446C16-6663-488D-ADF6-4583D246B52E.txt",
+        "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+        "observedAt": "2026-10-27T09:02:54.127Z",
+        "scope": "clean-install"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "isSimulator": true,
+        "networkPolicy": "http-https-denied",
+        "persistentStorage": false,
+        "report": {
+          "documentURL": "tinjunction://bundle/index.html",
+          "formatVersion": 1,
+          "observed": {
+            "audioChannels": 1,
+            "audioFrames": 5760,
+            "audioSampleRate": 48000,
+            "audioState": "suspended",
+            "glbVisiblePixels": 423,
+            "meshCount": 14,
+            "textureHeight": 8,
+            "textureMatchedQuadrants": 4,
+            "textureWidth": 8,
+            "triangleCount": 280,
+            "wasmValue": null,
+            "workerMessage": "asset-worker-ready:42"
+          },
+          "results": {
+            "audio": {
+              "detail": "Original PCM WAV decoded; awaiting a real tap to resume and play.",
+              "status": "pending"
+            },
+            "glb": {
+              "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+              "status": "passed"
+            },
+            "ktx2": {
+              "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+              "status": "blocked"
+            },
+            "texture": {
+              "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+              "status": "passed"
+            },
+            "wasm": {
+              "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+              "status": "blocked"
+            },
+            "worker": {
+              "detail": "Bundled classic worker executed and returned its expected message.",
+              "status": "passed"
+            }
+          },
+          "sessionId": "C03F6423-9AAF-45DC-8294-FF76A24FA5CC",
+          "stage": "ready",
+          "webgl2": true
+        },
+        "webDataCleared": true
+      }
+    },
+    {
+      "attachment": {
+        "entry": "clean-install-4yzQlq/screenshots/2E0A31C1-AE29-4C71-8EE6-A52F1F9C6653.txt",
+        "bytes": 1590,
+        "sha256": "b03b91739905a425b7f49fecd10fbe5b26e280c729325453d3425955d67bf267",
+        "suggestedHumanReadableName": "asset-origin-observation-first-launch_0_66CB6EE1-8623-4FA5-B729-F2FA25381EA2.txt",
+        "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+        "observedAt": "2026-10-27T09:03:02.813Z",
+        "scope": "clean-install"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "isSimulator": true,
+        "networkPolicy": "http-https-denied",
+        "persistentStorage": false,
+        "report": {
+          "documentURL": "tinjunction://bundle/index.html",
+          "formatVersion": 1,
+          "observed": {
+            "audioChannels": 1,
+            "audioFrames": 5760,
+            "audioSampleRate": 48000,
+            "audioState": "running",
+            "glbVisiblePixels": 423,
+            "meshCount": 14,
+            "textureHeight": 8,
+            "textureMatchedQuadrants": 4,
+            "textureWidth": 8,
+            "triangleCount": 280,
+            "wasmValue": null,
+            "workerMessage": "asset-worker-ready:42"
+          },
+          "results": {
+            "audio": {
+              "detail": "Real user tap resumed audio; the bundled PCM source completed playback. Acoustic quality remains a device check.",
+              "status": "passed"
+            },
+            "glb": {
+              "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+              "status": "passed"
+            },
+            "ktx2": {
+              "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+              "status": "blocked"
+            },
+            "texture": {
+              "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+              "status": "passed"
+            },
+            "wasm": {
+              "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+              "status": "blocked"
+            },
+            "worker": {
+              "detail": "Bundled classic worker executed and returned its expected message.",
+              "status": "passed"
+            }
+          },
+          "sessionId": "C03F6423-9AAF-45DC-8294-FF76A24FA5CC",
+          "stage": "complete",
+          "webgl2": true
+        },
+        "webDataCleared": true
+      }
+    },
+    {
+      "attachment": {
+        "entry": "clean-install-4yzQlq/screenshots/E30DC332-20C9-4889-A2E0-35A3FF95A420.txt",
+        "bytes": 1543,
+        "sha256": "8bb41e7d07f04d46a04192f96c4a8f49e9fabdfb419baf24db5e8d8b99bb2632",
+        "suggestedHumanReadableName": "asset-origin-observation-cold-relaunch-initial_0_64AE2B40-A1B5-40FC-9F33-37AA00FCE1F3.txt",
+        "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+        "observedAt": "2026-10-27T09:04:04.349Z",
+        "scope": "clean-install"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "isSimulator": true,
+        "networkPolicy": "http-https-denied",
+        "persistentStorage": false,
+        "report": {
+          "documentURL": "tinjunction://bundle/index.html",
+          "formatVersion": 1,
+          "observed": {
+            "audioChannels": 1,
+            "audioFrames": 5760,
+            "audioSampleRate": 48000,
+            "audioState": "suspended",
+            "glbVisiblePixels": 423,
+            "meshCount": 14,
+            "textureHeight": 8,
+            "textureMatchedQuadrants": 4,
+            "textureWidth": 8,
+            "triangleCount": 280,
+            "wasmValue": null,
+            "workerMessage": "asset-worker-ready:42"
+          },
+          "results": {
+            "audio": {
+              "detail": "Original PCM WAV decoded; awaiting a real tap to resume and play.",
+              "status": "pending"
+            },
+            "glb": {
+              "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+              "status": "passed"
+            },
+            "ktx2": {
+              "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+              "status": "blocked"
+            },
+            "texture": {
+              "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+              "status": "passed"
+            },
+            "wasm": {
+              "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+              "status": "blocked"
+            },
+            "worker": {
+              "detail": "Bundled classic worker executed and returned its expected message.",
+              "status": "passed"
+            }
+          },
+          "sessionId": "42F2613F-C1CB-41DE-B2D0-B2F5E0EEDDB8",
+          "stage": "ready",
+          "webgl2": true
+        },
+        "webDataCleared": true
+      }
+    },
+    {
+      "attachment": {
+        "entry": "clean-install-4yzQlq/screenshots/6366BFEB-2E19-4612-88E6-845B7AC939E3.txt",
+        "bytes": 1590,
+        "sha256": "778351c39ad720697741740aed1161f69f8797256e98867cf6c466301d89c0d3",
+        "suggestedHumanReadableName": "asset-origin-observation-cold-relaunch_0_0CCF7566-1ACC-469F-A56A-5BE6DCA9F526.txt",
+        "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+        "observedAt": "2026-10-27T09:04:12.002Z",
+        "scope": "clean-install"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "isSimulator": true,
+        "networkPolicy": "http-https-denied",
+        "persistentStorage": false,
+        "report": {
+          "documentURL": "tinjunction://bundle/index.html",
+          "formatVersion": 1,
+          "observed": {
+            "audioChannels": 1,
+            "audioFrames": 5760,
+            "audioSampleRate": 48000,
+            "audioState": "running",
+            "glbVisiblePixels": 423,
+            "meshCount": 14,
+            "textureHeight": 8,
+            "textureMatchedQuadrants": 4,
+            "textureWidth": 8,
+            "triangleCount": 280,
+            "wasmValue": null,
+            "workerMessage": "asset-worker-ready:42"
+          },
+          "results": {
+            "audio": {
+              "detail": "Real user tap resumed audio; the bundled PCM source completed playback. Acoustic quality remains a device check.",
+              "status": "passed"
+            },
+            "glb": {
+              "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+              "status": "passed"
+            },
+            "ktx2": {
+              "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+              "status": "blocked"
+            },
+            "texture": {
+              "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+              "status": "passed"
+            },
+            "wasm": {
+              "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+              "status": "blocked"
+            },
+            "worker": {
+              "detail": "Bundled classic worker executed and returned its expected message.",
+              "status": "passed"
+            }
+          },
+          "sessionId": "42F2613F-C1CB-41DE-B2D0-B2F5E0EEDDB8",
+          "stage": "complete",
+          "webgl2": true
+        },
+        "webDataCleared": true
+      }
+    },
+    {
+      "attachment": {
+        "entry": "screenshots/ABE6984F-4825-4C51-9989-B4E6B752B4CD.txt",
+        "bytes": 1543,
+        "sha256": "1813c95f1587703e8f961facd5b8b75d39571bb6a2349f9d82b8921bc1bcae09",
+        "suggestedHumanReadableName": "asset-origin-observation-first-launch-initial_0_EE6E46A3-406C-4F26-A49D-CA2FA00C549B.txt",
+        "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+        "observedAt": "2026-10-27T08:55:05.948Z",
+        "scope": "full-suite"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "isSimulator": true,
+        "networkPolicy": "http-https-denied",
+        "persistentStorage": false,
+        "report": {
+          "documentURL": "tinjunction://bundle/index.html",
+          "formatVersion": 1,
+          "observed": {
+            "audioChannels": 1,
+            "audioFrames": 5760,
+            "audioSampleRate": 48000,
+            "audioState": "suspended",
+            "glbVisiblePixels": 423,
+            "meshCount": 14,
+            "textureHeight": 8,
+            "textureMatchedQuadrants": 4,
+            "textureWidth": 8,
+            "triangleCount": 280,
+            "wasmValue": null,
+            "workerMessage": "asset-worker-ready:42"
+          },
+          "results": {
+            "audio": {
+              "detail": "Original PCM WAV decoded; awaiting a real tap to resume and play.",
+              "status": "pending"
+            },
+            "glb": {
+              "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+              "status": "passed"
+            },
+            "ktx2": {
+              "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+              "status": "blocked"
+            },
+            "texture": {
+              "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+              "status": "passed"
+            },
+            "wasm": {
+              "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+              "status": "blocked"
+            },
+            "worker": {
+              "detail": "Bundled classic worker executed and returned its expected message.",
+              "status": "passed"
+            }
+          },
+          "sessionId": "205E5918-1238-4167-A491-85367761C319",
+          "stage": "ready",
+          "webgl2": true
+        },
+        "webDataCleared": true
+      }
+    },
+    {
+      "attachment": {
+        "entry": "screenshots/83FF64D4-3AD5-47AA-BDD3-3EB0D50E2950.txt",
+        "bytes": 1590,
+        "sha256": "8bbc7fdd63bd301c9c8a6ffb7b5ec6fd5b39f567b2ed47bf8ee7041db52a641a",
+        "suggestedHumanReadableName": "asset-origin-observation-first-launch_0_A9AC810B-229B-49FD-B204-DD95E7BFBF4B.txt",
+        "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+        "observedAt": "2026-10-27T08:55:12.894Z",
+        "scope": "full-suite"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "isSimulator": true,
+        "networkPolicy": "http-https-denied",
+        "persistentStorage": false,
+        "report": {
+          "documentURL": "tinjunction://bundle/index.html",
+          "formatVersion": 1,
+          "observed": {
+            "audioChannels": 1,
+            "audioFrames": 5760,
+            "audioSampleRate": 48000,
+            "audioState": "running",
+            "glbVisiblePixels": 423,
+            "meshCount": 14,
+            "textureHeight": 8,
+            "textureMatchedQuadrants": 4,
+            "textureWidth": 8,
+            "triangleCount": 280,
+            "wasmValue": null,
+            "workerMessage": "asset-worker-ready:42"
+          },
+          "results": {
+            "audio": {
+              "detail": "Real user tap resumed audio; the bundled PCM source completed playback. Acoustic quality remains a device check.",
+              "status": "passed"
+            },
+            "glb": {
+              "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+              "status": "passed"
+            },
+            "ktx2": {
+              "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+              "status": "blocked"
+            },
+            "texture": {
+              "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+              "status": "passed"
+            },
+            "wasm": {
+              "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+              "status": "blocked"
+            },
+            "worker": {
+              "detail": "Bundled classic worker executed and returned its expected message.",
+              "status": "passed"
+            }
+          },
+          "sessionId": "205E5918-1238-4167-A491-85367761C319",
+          "stage": "complete",
+          "webgl2": true
+        },
+        "webDataCleared": true
+      }
+    },
+    {
+      "attachment": {
+        "entry": "screenshots/EB63C579-113F-4755-B588-6021323793C9.txt",
+        "bytes": 1543,
+        "sha256": "6b2cd2845fb960a36fa5b27aa030086aa940c81f38bc7fe1e2b7bffb68bcc8e7",
+        "suggestedHumanReadableName": "asset-origin-observation-cold-relaunch-initial_0_C2A12996-0105-4B7F-BAE3-3AB9E77DBA41.txt",
+        "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+        "observedAt": "2026-10-27T08:55:32.393Z",
+        "scope": "full-suite"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "isSimulator": true,
+        "networkPolicy": "http-https-denied",
+        "persistentStorage": false,
+        "report": {
+          "documentURL": "tinjunction://bundle/index.html",
+          "formatVersion": 1,
+          "observed": {
+            "audioChannels": 1,
+            "audioFrames": 5760,
+            "audioSampleRate": 48000,
+            "audioState": "suspended",
+            "glbVisiblePixels": 423,
+            "meshCount": 14,
+            "textureHeight": 8,
+            "textureMatchedQuadrants": 4,
+            "textureWidth": 8,
+            "triangleCount": 280,
+            "wasmValue": null,
+            "workerMessage": "asset-worker-ready:42"
+          },
+          "results": {
+            "audio": {
+              "detail": "Original PCM WAV decoded; awaiting a real tap to resume and play.",
+              "status": "pending"
+            },
+            "glb": {
+              "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+              "status": "passed"
+            },
+            "ktx2": {
+              "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+              "status": "blocked"
+            },
+            "texture": {
+              "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+              "status": "passed"
+            },
+            "wasm": {
+              "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+              "status": "blocked"
+            },
+            "worker": {
+              "detail": "Bundled classic worker executed and returned its expected message.",
+              "status": "passed"
+            }
+          },
+          "sessionId": "16545625-CA8F-4BC0-9545-216504E8BBF3",
+          "stage": "ready",
+          "webgl2": true
+        },
+        "webDataCleared": true
+      }
+    },
+    {
+      "attachment": {
+        "entry": "screenshots/4FF50611-D277-4EB7-9005-64F651FAAD52.txt",
+        "bytes": 1590,
+        "sha256": "412d82b6df2f7e6b335cf10c49c1dd23c4c478eaa843ce379e165477d3c12bf7",
+        "suggestedHumanReadableName": "asset-origin-observation-cold-relaunch_0_DC998D4A-07CC-460F-88F6-9339ECC9B392.txt",
+        "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+        "observedAt": "2026-10-27T08:55:46.364Z",
+        "scope": "full-suite"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "isSimulator": true,
+        "networkPolicy": "http-https-denied",
+        "persistentStorage": false,
+        "report": {
+          "documentURL": "tinjunction://bundle/index.html",
+          "formatVersion": 1,
+          "observed": {
+            "audioChannels": 1,
+            "audioFrames": 5760,
+            "audioSampleRate": 48000,
+            "audioState": "running",
+            "glbVisiblePixels": 423,
+            "meshCount": 14,
+            "textureHeight": 8,
+            "textureMatchedQuadrants": 4,
+            "textureWidth": 8,
+            "triangleCount": 280,
+            "wasmValue": null,
+            "workerMessage": "asset-worker-ready:42"
+          },
+          "results": {
+            "audio": {
+              "detail": "Real user tap resumed audio; the bundled PCM source completed playback. Acoustic quality remains a device check.",
+              "status": "passed"
+            },
+            "glb": {
+              "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+              "status": "passed"
+            },
+            "ktx2": {
+              "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+              "status": "blocked"
+            },
+            "texture": {
+              "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+              "status": "passed"
+            },
+            "wasm": {
+              "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+              "status": "blocked"
+            },
+            "worker": {
+              "detail": "Bundled classic worker executed and returned its expected message.",
+              "status": "passed"
+            }
+          },
+          "sessionId": "16545625-CA8F-4BC0-9545-216504E8BBF3",
+          "stage": "complete",
+          "webgl2": true
+        },
+        "webDataCleared": true
+      }
+    }
+  ],
+  "installedResources": {
+    "packagingInputManifest": {
+      "entry": "packaged-web-input-manifest.json",
+      "bytes": 1592,
+      "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd"
+    },
+    "installedManifest": {
+      "entry": "installed-web-manifest.json",
+      "bytes": 1592,
+      "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd"
+    },
+    "installedIdentity": {
+      "attachment": {
+        "entry": "installed-web-identity.json",
+        "bytes": 2295,
+        "sha256": "5b04f8ed83a4b50a67082cab6238cf4dffb43fd52baa34ff4bf2fc4f4d74bde1"
+      },
+      "value": {
+        "formatVersion": 1,
+        "kind": "installed-web-resource-identity",
+        "result": "passed",
+        "observedAt": "2026-10-27T09:01:43.043Z",
+        "verification": "packaged-allowlist-and-observed-byte-identity",
+        "assetOriginProbe": true,
+        "scriptFormat": "iife",
+        "externalRuntimeDependencies": [],
+        "manifest": {
+          "file": "installed-web-manifest.json",
+          "bytes": 1592,
+          "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd"
+        },
+        "packagingInput": {
+          "bytes": 1592,
+          "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd",
+          "matchesInstalledManifest": true
+        },
+        "artifacts": {
+          "index.html": {
+            "bytes": 884,
+            "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+          },
+          "bundle.js": {
+            "bytes": 801455,
+            "sha256": "c037026dc0865d5c6d5e81e998deee4682959e60f7be82c3cca7db6ff089d68b"
+          },
+          "bundle.css": {
+            "bytes": 19325,
+            "sha256": "19bd0240a3682d74c7b8caddeae84ea73978ef590107e40e4f76dc30106cd641"
+          },
+          "bundle.js.LEGAL.txt": {
+            "bytes": 188,
+            "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+          },
+          "probe/calibration.glb": {
+            "bytes": 29356,
+            "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+          },
+          "probe/checker.png": {
+            "bytes": 93,
+            "sha256": "82e3ef7f6c8bb9bccf1615132cb6bfc34c1bcdc00482ab289624d9a446079772"
+          },
+          "probe/tone.wav": {
+            "bytes": 11564,
+            "sha256": "ae05277b3e19f772171e06b7ff4d4ba0dd738fb13291135028eb5f55d16ccfa8"
+          },
+          "probe/add-one.wasm": {
+            "bytes": 44,
+            "sha256": "8f581f8899890a7479c20494f53cc5d60156a4d42e39d6a587a9f3089f198fe0"
+          },
+          "probe/echo.worker.js": {
+            "bytes": 132,
+            "sha256": "a22bcff005a86d27d5df1005aba161a3ed7a37569345a4aa7029a90cb0351cb9"
+          },
+          "probe/fixture-manifest.json": {
+            "bytes": 1511,
+            "sha256": "83cb811673df0a47f544f44945a7166c37dd569f9be322c131e8a0df32a58a48"
+          }
+        },
+        "limitations": [
+          "The native workflow resolves the input from the installed app using simctl get_app_container after successful full native tests.",
+          "Resource identity alone does not establish rendering, physical-device behavior, signing or App Store readiness."
+        ]
+      }
+    }
+  },
+  "cleanReinstall": {
+    "verification": {
+      "attachment": {
+        "entry": "clean-install-4yzQlq/verification.json",
+        "bytes": 8210,
+        "sha256": "434eebb1a3657355c8119e76d4583800342300104c03f3bc0cd0d6ccfff6b06c"
+      },
+      "value": {
+        "formatVersion": 1,
+        "kind": "simulator-clean-install-asset-verification",
+        "result": "passed",
+        "startedAt": "2026-10-27T09:01:43.676Z",
+        "scope": "TinJunctionUITests/AssetOriginProbeUITests",
+        "phase": "complete",
+        "commands": [
+          {
+            "label": "host-platform",
+            "executable": "uname",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:43.697Z",
+            "completedAt": "2026-10-27T09:01:43.705Z"
+          },
+          {
+            "label": "compiler",
+            "executable": "xcodebuild",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:43.708Z",
+            "completedAt": "2026-10-27T09:01:44.343Z"
+          },
+          {
+            "label": "simulator-sdk",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:44.350Z",
+            "completedAt": "2026-10-27T09:01:49.218Z"
+          },
+          {
+            "label": "inventory-before-reset",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:49.230Z",
+            "completedAt": "2026-10-27T09:01:50.269Z"
+          },
+          {
+            "label": "compiled-app-plist",
+            "executable": "plutil",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:50.289Z",
+            "completedAt": "2026-10-27T09:01:50.337Z"
+          },
+          {
+            "label": "simctl-help-install",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:50.339Z",
+            "completedAt": "2026-10-27T09:01:51.012Z"
+          },
+          {
+            "label": "simctl-help-uninstall",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:51.019Z",
+            "completedAt": "2026-10-27T09:01:51.583Z"
+          },
+          {
+            "label": "simctl-help-get_app_container",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:51.586Z",
+            "completedAt": "2026-10-27T09:01:52.047Z"
+          },
+          {
+            "label": "installed-app-before-reset",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:52.065Z",
+            "completedAt": "2026-10-27T09:01:52.781Z"
+          },
+          {
+            "label": "installed-data-before-reset",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:52.785Z",
+            "completedAt": "2026-10-27T09:01:53.364Z"
+          },
+          {
+            "label": "uninstall-compiled-test-app",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:53.413Z",
+            "completedAt": "2026-10-27T09:01:56.460Z"
+          },
+          {
+            "label": "data-container-after-uninstall",
+            "executable": "xcrun",
+            "exitCode": 2,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:01:56.543Z",
+            "completedAt": "2026-10-27T09:02:00.174Z"
+          },
+          {
+            "label": "inventory-after-uninstall",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:02:00.180Z",
+            "completedAt": "2026-10-27T09:02:00.672Z"
+          },
+          {
+            "label": "reinstall-exact-compiled-test-app",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:02:00.696Z",
+            "completedAt": "2026-10-27T09:02:02.729Z"
+          },
+          {
+            "label": "fresh-data-before-launch",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:02:02.730Z",
+            "completedAt": "2026-10-27T09:02:03.671Z"
+          },
+          {
+            "label": "fresh-app-before-test",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:02:03.679Z",
+            "completedAt": "2026-10-27T09:02:05.475Z"
+          },
+          {
+            "label": "unchanged-asset-origin-ui-test",
+            "executable": "xcodebuild",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:02:05.500Z",
+            "completedAt": "2026-10-27T09:04:15.456Z",
+            "log": "xcodebuild-clean-install.log"
+          },
+          {
+            "label": "attachment-export-help",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:04:15.531Z",
+            "completedAt": "2026-10-27T09:04:16.020Z"
+          },
+          {
+            "label": "export-clean-install-attachments",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:04:16.024Z",
+            "completedAt": "2026-10-27T09:04:16.612Z"
+          },
+          {
+            "label": "installed-app-after-test",
+            "executable": "xcrun",
+            "exitCode": 0,
+            "signal": null,
+            "processErrorCode": null,
+            "startedAt": "2026-10-27T09:04:16.613Z",
+            "completedAt": "2026-10-27T09:04:18.746Z"
+          }
+        ],
+        "limitations": [
+          "Additional fixed asset-origin verification after the mandatory full native suite.",
+          "HTTP/HTTPS is denied inside the prepared WKWebView; this is not OS-wide networking or physical airplane mode.",
+          "App-container removal and fresh saved-layout absence do not claim secure erasure, keychain clearing or physical-device evidence."
+        ],
+        "compiler": "Xcode 27.1\nBuild version 27A9275",
+        "selectedSimulator": {
+          "name": "iPhone Duo",
+          "udid": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+          "state": "Booted",
+          "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-1",
+          "runtimeVersion": "27.1",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Duo"
+        },
+        "fullSuiteLog": {
+          "bytes": 335365,
+          "sha256": "bd99e4be4e1e8ff085b0af588511dee0d417cfd02573464964a408fbdb9591c8"
+        },
+        "packagingInput": {
+          "bytes": 1592,
+          "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd"
+        },
+        "originalInstalledIdentity": {
+          "bytes": 2295,
+          "sha256": "5b04f8ed83a4b50a67082cab6238cf4dffb43fd52baa34ff4bf2fc4f4d74bde1"
+        },
+        "bundleIdentifier": "com.cheshmakzanoonops.tinjunction",
+        "priorGenerations": {
+          "current.json": {
+            "bytes": 3527,
+            "sha256": "e46c9d933e4e6dca09e6b5e1d6f9486637f828635ea428f0d192cd75ff2ccb94"
+          },
+          "previous.json": {
+            "bytes": 3527,
+            "sha256": "692d0ed5177102f24d153242404f15e811f6ccec7193b0b2a8d5c178e74fd944"
+          }
+        },
+        "compiledManifest": {
+          "bytes": 1592,
+          "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd"
+        },
+        "removalObservation": {
+          "exitCode": 2,
+          "stdoutEmpty": true,
+          "errorIdentity": {
+            "bytes": 176,
+            "sha256": "eff64c578677a922269a71122a28c8c3b6bd9bdfa33f2ee67bf4aef68a42d1db"
+          },
+          "reportedErrors": [
+            {
+              "domain": "NSPOSIXErrorDomain",
+              "code": 2
+            }
+          ],
+          "expectedPOSIXNoEntry": true
+        },
+        "freshDataBeforeLaunch": {
+          "savedGenerationCount": 0,
+          "applicationStoreEntryCount": 0,
+          "containerLocationChanged": true,
+          "inspectedBeforeAnyLaunchOrTest": true
+        },
+        "nativeTestExitCode": 0,
+        "attachmentExportPassed": true,
+        "postTestInstalledIdentityPassed": true,
+        "observations": [
+          {
+            "name": "first-launch",
+            "file": "2E0A31C1-AE29-4C71-8EE6-A52F1F9C6653.txt",
+            "bytes": 1590,
+            "sha256": "b03b91739905a425b7f49fecd10fbe5b26e280c729325453d3425955d67bf267",
+            "sessionId": "C03F6423-9AAF-45DC-8294-FF76A24FA5CC"
+          },
+          {
+            "name": "cold-relaunch",
+            "file": "6366BFEB-2E19-4612-88E6-845B7AC939E3.txt",
+            "bytes": 1590,
+            "sha256": "778351c39ad720697741740aed1161f69f8797256e98867cf6c466301d89c0d3",
+            "sessionId": "42F2613F-C1CB-41DE-B2D0-B2F5E0EEDDB8"
+          }
+        ],
+        "completedAt": "2026-10-27T09:04:18.863Z"
+      }
+    },
+    "installedIdentities": [
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/before-reset/installed-web-identity.json",
+          "bytes": 2295,
+          "sha256": "caf7fc5b66b8ccfd9d82390438302851960ed9ffc8cbb9f302dbbcba4280c13e"
+        },
+        "value": {
+          "formatVersion": 1,
+          "kind": "installed-web-resource-identity",
+          "result": "passed",
+          "observedAt": "2026-10-27T09:01:53.393Z",
+          "verification": "packaged-allowlist-and-observed-byte-identity",
+          "assetOriginProbe": true,
+          "scriptFormat": "iife",
+          "externalRuntimeDependencies": [],
+          "manifest": {
+            "file": "installed-web-manifest.json",
+            "bytes": 1592,
+            "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd"
+          },
+          "packagingInput": {
+            "bytes": 1592,
+            "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd",
+            "matchesInstalledManifest": true
+          },
+          "artifacts": {
+            "index.html": {
+              "bytes": 884,
+              "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+            },
+            "bundle.js": {
+              "bytes": 801455,
+              "sha256": "c037026dc0865d5c6d5e81e998deee4682959e60f7be82c3cca7db6ff089d68b"
+            },
+            "bundle.css": {
+              "bytes": 19325,
+              "sha256": "19bd0240a3682d74c7b8caddeae84ea73978ef590107e40e4f76dc30106cd641"
+            },
+            "bundle.js.LEGAL.txt": {
+              "bytes": 188,
+              "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+            },
+            "probe/calibration.glb": {
+              "bytes": 29356,
+              "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+            },
+            "probe/checker.png": {
+              "bytes": 93,
+              "sha256": "82e3ef7f6c8bb9bccf1615132cb6bfc34c1bcdc00482ab289624d9a446079772"
+            },
+            "probe/tone.wav": {
+              "bytes": 11564,
+              "sha256": "ae05277b3e19f772171e06b7ff4d4ba0dd738fb13291135028eb5f55d16ccfa8"
+            },
+            "probe/add-one.wasm": {
+              "bytes": 44,
+              "sha256": "8f581f8899890a7479c20494f53cc5d60156a4d42e39d6a587a9f3089f198fe0"
+            },
+            "probe/echo.worker.js": {
+              "bytes": 132,
+              "sha256": "a22bcff005a86d27d5df1005aba161a3ed7a37569345a4aa7029a90cb0351cb9"
+            },
+            "probe/fixture-manifest.json": {
+              "bytes": 1511,
+              "sha256": "83cb811673df0a47f544f44945a7166c37dd569f9be322c131e8a0df32a58a48"
+            }
+          },
+          "limitations": [
+            "The native workflow resolves the input from the installed app using simctl get_app_container after successful full native tests.",
+            "Resource identity alone does not establish rendering, physical-device behavior, signing or App Store readiness."
+          ]
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/after-reinstall/installed-web-identity.json",
+          "bytes": 2295,
+          "sha256": "775f289371761defb83b7c1615e78412f16568c6168862526b3a1fba73f24574"
+        },
+        "value": {
+          "formatVersion": 1,
+          "kind": "installed-web-resource-identity",
+          "result": "passed",
+          "observedAt": "2026-10-27T09:02:05.497Z",
+          "verification": "packaged-allowlist-and-observed-byte-identity",
+          "assetOriginProbe": true,
+          "scriptFormat": "iife",
+          "externalRuntimeDependencies": [],
+          "manifest": {
+            "file": "installed-web-manifest.json",
+            "bytes": 1592,
+            "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd"
+          },
+          "packagingInput": {
+            "bytes": 1592,
+            "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd",
+            "matchesInstalledManifest": true
+          },
+          "artifacts": {
+            "index.html": {
+              "bytes": 884,
+              "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+            },
+            "bundle.js": {
+              "bytes": 801455,
+              "sha256": "c037026dc0865d5c6d5e81e998deee4682959e60f7be82c3cca7db6ff089d68b"
+            },
+            "bundle.css": {
+              "bytes": 19325,
+              "sha256": "19bd0240a3682d74c7b8caddeae84ea73978ef590107e40e4f76dc30106cd641"
+            },
+            "bundle.js.LEGAL.txt": {
+              "bytes": 188,
+              "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+            },
+            "probe/calibration.glb": {
+              "bytes": 29356,
+              "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+            },
+            "probe/checker.png": {
+              "bytes": 93,
+              "sha256": "82e3ef7f6c8bb9bccf1615132cb6bfc34c1bcdc00482ab289624d9a446079772"
+            },
+            "probe/tone.wav": {
+              "bytes": 11564,
+              "sha256": "ae05277b3e19f772171e06b7ff4d4ba0dd738fb13291135028eb5f55d16ccfa8"
+            },
+            "probe/add-one.wasm": {
+              "bytes": 44,
+              "sha256": "8f581f8899890a7479c20494f53cc5d60156a4d42e39d6a587a9f3089f198fe0"
+            },
+            "probe/echo.worker.js": {
+              "bytes": 132,
+              "sha256": "a22bcff005a86d27d5df1005aba161a3ed7a37569345a4aa7029a90cb0351cb9"
+            },
+            "probe/fixture-manifest.json": {
+              "bytes": 1511,
+              "sha256": "83cb811673df0a47f544f44945a7166c37dd569f9be322c131e8a0df32a58a48"
+            }
+          },
+          "limitations": [
+            "The native workflow resolves the input from the installed app using simctl get_app_container after successful full native tests.",
+            "Resource identity alone does not establish rendering, physical-device behavior, signing or App Store readiness."
+          ]
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/after-test/installed-web-identity.json",
+          "bytes": 2295,
+          "sha256": "4927e59327cb54dada1d9ed3eb8c88723d882a2c425b3461aa19b0f7114bda56"
+        },
+        "value": {
+          "formatVersion": 1,
+          "kind": "installed-web-resource-identity",
+          "result": "passed",
+          "observedAt": "2026-10-27T09:04:18.833Z",
+          "verification": "packaged-allowlist-and-observed-byte-identity",
+          "assetOriginProbe": true,
+          "scriptFormat": "iife",
+          "externalRuntimeDependencies": [],
+          "manifest": {
+            "file": "installed-web-manifest.json",
+            "bytes": 1592,
+            "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd"
+          },
+          "packagingInput": {
+            "bytes": 1592,
+            "sha256": "0fce39ed2cc596246e79efb8ba8fec8c871caae2cce7083ad38a87bbe609d8bd",
+            "matchesInstalledManifest": true
+          },
+          "artifacts": {
+            "index.html": {
+              "bytes": 884,
+              "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+            },
+            "bundle.js": {
+              "bytes": 801455,
+              "sha256": "c037026dc0865d5c6d5e81e998deee4682959e60f7be82c3cca7db6ff089d68b"
+            },
+            "bundle.css": {
+              "bytes": 19325,
+              "sha256": "19bd0240a3682d74c7b8caddeae84ea73978ef590107e40e4f76dc30106cd641"
+            },
+            "bundle.js.LEGAL.txt": {
+              "bytes": 188,
+              "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+            },
+            "probe/calibration.glb": {
+              "bytes": 29356,
+              "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+            },
+            "probe/checker.png": {
+              "bytes": 93,
+              "sha256": "82e3ef7f6c8bb9bccf1615132cb6bfc34c1bcdc00482ab289624d9a446079772"
+            },
+            "probe/tone.wav": {
+              "bytes": 11564,
+              "sha256": "ae05277b3e19f772171e06b7ff4d4ba0dd738fb13291135028eb5f55d16ccfa8"
+            },
+            "probe/add-one.wasm": {
+              "bytes": 44,
+              "sha256": "8f581f8899890a7479c20494f53cc5d60156a4d42e39d6a587a9f3089f198fe0"
+            },
+            "probe/echo.worker.js": {
+              "bytes": 132,
+              "sha256": "a22bcff005a86d27d5df1005aba161a3ed7a37569345a4aa7029a90cb0351cb9"
+            },
+            "probe/fixture-manifest.json": {
+              "bytes": 1511,
+              "sha256": "83cb811673df0a47f544f44945a7166c37dd569f9be322c131e8a0df32a58a48"
+            }
+          },
+          "limitations": [
+            "The native workflow resolves the input from the installed app using simctl get_app_container after successful full native tests.",
+            "Resource identity alone does not establish rendering, physical-device behavior, signing or App Store readiness."
+          ]
+        }
+      }
+    ]
+  },
+  "nativeStartup": {
+    "provenance": [
+      {
+        "entry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg==",
+        "archiveBytes": 279607,
+        "archiveSHA256": "fa59635cff1fc7e184411f610343eb99e489ece2dff703e325460c3413b4e180",
+        "zstdOffset": 0,
+        "decodedPath": "trace-object-3.bin",
+        "decodedBytes": 4405525,
+        "decodedSHA256": "b728f505e103662381f364af7607fbaf11e57c874c5552030232a0d76777544e",
+        "plainTraceLineCount": 144
+      },
+      {
+        "entry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q==",
+        "archiveBytes": 34240,
+        "archiveSHA256": "2a7376acd91999ea4a29b143cd4a6c131240cdc8e96375ba4d05bcf371c8699c",
+        "zstdOffset": 0,
+        "decodedPath": "trace-object-5.bin",
+        "decodedBytes": 492897,
+        "decodedSHA256": "03e71685b6df536ba6d9e141e3cb56e304b462c56900027780ab364fd048f9ae",
+        "plainTraceLineCount": 34
+      }
+    ],
+    "eventExtraction": "Complete original timestamp/PID/event substrings; surrounding interleaved diagnostic text is omitted.",
+    "sessions": [
+      {
+        "pid": 7436,
+        "role": "full-first-launch",
+        "events": [
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:47.173434+0000",
+            "elapsedSeconds": 0.0,
+            "event": "webview.created",
+            "originalEventSubstring": "2026-10-27 08:54:47.173434+0000 TinJunction[7436:29914] [TinStartup] +0.000s webview.created",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:47.499368+0000",
+            "elapsedSeconds": 0.326,
+            "event": "host.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:54:47.499368+0000 TinJunction[7436:29914] [TinStartup] +0.326s host.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:50.704864+0000",
+            "elapsedSeconds": 3.531,
+            "event": "navigation.started.window=1",
+            "originalEventSubstring": "2026-10-27 08:54:50.704864+0000 TinJunction[7436:29914] [TinStartup] +3.531s navigation.started.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:50.729987+0000",
+            "elapsedSeconds": 3.557,
+            "event": "host.loading.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:54:50.729987+0000 TinJunction[7436:29914] [TinStartup] +3.557s host.loading.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:50.752247+0000",
+            "elapsedSeconds": 3.579,
+            "event": "resource.ready.type=html.bytes=884",
+            "originalEventSubstring": "2026-10-27 08:54:50.752247+0000 TinJunction[7436:29914] [TinStartup] +3.579s resource.ready.type=html.bytes=884",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:50.779932+0000",
+            "elapsedSeconds": 3.607,
+            "event": "navigation.committed.window=1",
+            "originalEventSubstring": "2026-10-27 08:54:50.779932+0000 TinJunction[7436:29914] [TinStartup] +3.607s navigation.committed.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:50.805658+0000",
+            "elapsedSeconds": 3.632,
+            "event": "resource.ready.type=css.bytes=19325",
+            "originalEventSubstring": "2026-10-27 08:54:50.805658+0000 TinJunction[7436:29914] [TinStartup] +3.632s resource.ready.type=css.bytes=19325",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:50.806347+0000",
+            "elapsedSeconds": 3.633,
+            "event": "resource.ready.type=js.bytes=801455",
+            "originalEventSubstring": "2026-10-27 08:54:50.806347+0000 TinJunction[7436:29914] [TinStartup] +3.633s resource.ready.type=js.bytes=801455",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:54:54.781979+0000",
+            "elapsedSeconds": 7.609,
+            "event": "navigation.finished.window=1",
+            "originalEventSubstring": "2026-10-27 08:54:54.781979+0000 TinJunction[7436:29914] [TinStartup] +7.609s navigation.finished.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:55:00.494422+0000",
+            "elapsedSeconds": 13.321,
+            "event": "bridge.webReady",
+            "originalEventSubstring": "2026-10-27 08:55:00.494422+0000 TinJunction[7436:29914] [TinStartup] +13.321s bridge.webReady",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:55:00.508612+0000",
+            "elapsedSeconds": 13.335,
+            "event": "host.restorePrepared",
+            "originalEventSubstring": "2026-10-27 08:55:00.508612+0000 TinJunction[7436:29914] [TinStartup] +13.335s host.restorePrepared",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:55:00.685074+0000",
+            "elapsedSeconds": 13.512,
+            "event": "host.layoutAccepted",
+            "originalEventSubstring": "2026-10-27 08:55:00.685074+0000 TinJunction[7436:29914] [TinStartup] +13.512s host.layoutAccepted",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:55:00.771141+0000",
+            "elapsedSeconds": 13.598,
+            "event": "resource.ready.type=glb.bytes=29356",
+            "originalEventSubstring": "2026-10-27 08:55:00.771141+0000 TinJunction[7436:29914] [TinStartup] +13.598s resource.ready.type=glb.bytes=29356",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:55:00.781304+0000",
+            "elapsedSeconds": 13.608,
+            "event": "resource.ready.type=png.bytes=93",
+            "originalEventSubstring": "2026-10-27 08:55:00.781304+0000 TinJunction[7436:29914] [TinStartup] +13.608s resource.ready.type=png.bytes=93",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:55:00.791902+0000",
+            "elapsedSeconds": 13.618,
+            "event": "resource.ready.type=js.bytes=132",
+            "originalEventSubstring": "2026-10-27 08:55:00.791902+0000 TinJunction[7436:29914] [TinStartup] +13.618s resource.ready.type=js.bytes=132",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:55:00.801434+0000",
+            "elapsedSeconds": 13.628,
+            "event": "resource.ready.type=wasm.bytes=44",
+            "originalEventSubstring": "2026-10-27 08:55:00.801434+0000 TinJunction[7436:29914] [TinStartup] +13.628s resource.ready.type=wasm.bytes=44",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 7436,
+            "timestamp": "2026-10-27 08:55:01.011650+0000",
+            "elapsedSeconds": 13.838,
+            "event": "resource.ready.type=wav.bytes=11564",
+            "originalEventSubstring": "2026-10-27 08:55:01.011650+0000 TinJunction[7436:29914] [TinStartup] +13.838s resource.ready.type=wav.bytes=11564",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          }
+        ],
+        "lastLoadingToAcceptedSeconds": 9.955
+      },
+      {
+        "pid": 8285,
+        "role": "full-cold-relaunch",
+        "events": [
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:18.079616+0000",
+            "elapsedSeconds": 0.0,
+            "event": "webview.created",
+            "originalEventSubstring": "2026-10-27 08:55:18.079616+0000 TinJunction[8285:32334] [TinStartup] +0.000s webview.created",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:18.330135+0000",
+            "elapsedSeconds": 0.25,
+            "event": "host.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:55:18.330135+0000 TinJunction[8285:32334] [TinStartup] +0.250s host.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:21.665598+0000",
+            "elapsedSeconds": 3.586,
+            "event": "navigation.started.window=1",
+            "originalEventSubstring": "2026-10-27 08:55:21.665598+0000 TinJunction[8285:32334] [TinStartup] +3.586s navigation.started.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:21.723585+0000",
+            "elapsedSeconds": 3.644,
+            "event": "host.loading.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:55:21.723585+0000 TinJunction[8285:32334] [TinStartup] +3.644s host.loading.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:21.728691+0000",
+            "elapsedSeconds": 3.649,
+            "event": "resource.ready.type=html.bytes=884",
+            "originalEventSubstring": "2026-10-27 08:55:21.728691+0000 TinJunction[8285:32334] [TinStartup] +3.649s resource.ready.type=html.bytes=884",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:21.756367+0000",
+            "elapsedSeconds": 3.677,
+            "event": "navigation.committed.window=1",
+            "originalEventSubstring": "2026-10-27 08:55:21.756367+0000 TinJunction[8285:32334] [TinStartup] +3.677s navigation.committed.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:21.794117+0000",
+            "elapsedSeconds": 3.715,
+            "event": "resource.ready.type=css.bytes=19325",
+            "originalEventSubstring": "2026-10-27 08:55:21.794117+0000 TinJunction[8285:32334] [TinStartup] +3.715s resource.ready.type=css.bytes=19325",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:21.795689+0000",
+            "elapsedSeconds": 3.716,
+            "event": "resource.ready.type=js.bytes=801455",
+            "originalEventSubstring": "2026-10-27 08:55:21.795689+0000 TinJunction[8285:32334] [TinStartup] +3.716s resource.ready.type=js.bytes=801455",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:22.280187+0000",
+            "elapsedSeconds": 4.201,
+            "event": "navigation.finished.window=1",
+            "originalEventSubstring": "2026-10-27 08:55:22.280187+0000 TinJunction[8285:32334] [TinStartup] +4.201s navigation.finished.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:23.524935+0000",
+            "elapsedSeconds": 5.445,
+            "event": "bridge.webReady",
+            "originalEventSubstring": "2026-10-27 08:55:23.524935+0000 TinJunction[8285:32334] [TinStartup] +5.445s bridge.webReady",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:23.544166+0000",
+            "elapsedSeconds": 5.465,
+            "event": "host.restorePrepared",
+            "originalEventSubstring": "2026-10-27 08:55:23.544166+0000 TinJunction[8285:32334] [TinStartup] +5.465s host.restorePrepared",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:23.591491+0000",
+            "elapsedSeconds": 5.512,
+            "event": "host.layoutAccepted",
+            "originalEventSubstring": "2026-10-27 08:55:23.591491+0000 TinJunction[8285:32334] [TinStartup] +5.512s host.layoutAccepted",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:23.613820+0000",
+            "elapsedSeconds": 5.534,
+            "event": "resource.ready.type=glb.bytes=29356",
+            "originalEventSubstring": "2026-10-27 08:55:23.613820+0000 TinJunction[8285:32334] [TinStartup] +5.534s resource.ready.type=glb.bytes=29356",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:23.614536+0000",
+            "elapsedSeconds": 5.535,
+            "event": "resource.ready.type=png.bytes=93",
+            "originalEventSubstring": "2026-10-27 08:55:23.614536+0000 TinJunction[8285:32334] [TinStartup] +5.535s resource.ready.type=png.bytes=93",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:23.615238+0000",
+            "elapsedSeconds": 5.536,
+            "event": "resource.ready.type=js.bytes=132",
+            "originalEventSubstring": "2026-10-27 08:55:23.615238+0000 TinJunction[8285:32334] [TinStartup] +5.536s resource.ready.type=js.bytes=132",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:23.616079+0000",
+            "elapsedSeconds": 5.536,
+            "event": "resource.ready.type=wasm.bytes=44",
+            "originalEventSubstring": "2026-10-27 08:55:23.616079+0000 TinJunction[8285:32334] [TinStartup] +5.536s resource.ready.type=wasm.bytes=44",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 8285,
+            "timestamp": "2026-10-27 08:55:23.744385+0000",
+            "elapsedSeconds": 5.665,
+            "event": "resource.ready.type=wav.bytes=11564",
+            "originalEventSubstring": "2026-10-27 08:55:23.744385+0000 TinJunction[8285:32334] [TinStartup] +5.665s resource.ready.type=wav.bytes=11564",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          }
+        ],
+        "lastLoadingToAcceptedSeconds": 1.868
+      },
+      {
+        "pid": 11565,
+        "role": "controlled-startup-hold",
+        "events": [
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:12.232392+0000",
+            "elapsedSeconds": 0.0,
+            "event": "webview.created",
+            "originalEventSubstring": "2026-10-27 08:58:12.232392+0000 TinJunction[11565:41686] [TinStartup] +0.000s webview.created",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:12.737630+0000",
+            "elapsedSeconds": 0.506,
+            "event": "host.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:58:12.737630+0000 TinJunction[11565:41686] [TinStartup] +0.506s host.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:20.334346+0000",
+            "elapsedSeconds": 8.102,
+            "event": "host.lifecycle=inactive",
+            "originalEventSubstring": "2026-10-27 08:58:20.334346+0000 TinJunction[11565:41686] [TinStartup] +8.102s host.lifecycle=inactive",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:26.225976+0000",
+            "elapsedSeconds": 13.994,
+            "event": "host.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:58:26.225976+0000 TinJunction[11565:41686] [TinStartup] +13.994s host.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:30.613287+0000",
+            "elapsedSeconds": 18.381,
+            "event": "navigation.started.window=1",
+            "originalEventSubstring": "2026-10-27 08:58:30.613287+0000 TinJunction[11565:41686] [TinStartup] +18.381s navigation.started.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:30.614533+0000",
+            "elapsedSeconds": 18.382,
+            "event": "host.loading.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:58:30.614533+0000 TinJunction[11565:41686] [TinStartup] +18.382s host.loading.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:30.623477+0000",
+            "elapsedSeconds": 18.391,
+            "event": "resource.ready.type=html.bytes=884",
+            "originalEventSubstring": "2026-10-27 08:58:30.623477+0000 TinJunction[11565:41686] [TinStartup] +18.391s resource.ready.type=html.bytes=884",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:30.650134+0000",
+            "elapsedSeconds": 18.418,
+            "event": "navigation.committed.window=1",
+            "originalEventSubstring": "2026-10-27 08:58:30.650134+0000 TinJunction[11565:41686] [TinStartup] +18.418s navigation.committed.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:30.652435+0000",
+            "elapsedSeconds": 18.42,
+            "event": "resource.ready.type=css.bytes=19325",
+            "originalEventSubstring": "2026-10-27 08:58:30.652435+0000 TinJunction[11565:41686] [TinStartup] +18.420s resource.ready.type=css.bytes=19325",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:30.653634+0000",
+            "elapsedSeconds": 18.421,
+            "event": "resource.ready.type=js.bytes=801455",
+            "originalEventSubstring": "2026-10-27 08:58:30.653634+0000 TinJunction[11565:41686] [TinStartup] +18.421s resource.ready.type=js.bytes=801455",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:31.433287+0000",
+            "elapsedSeconds": 19.201,
+            "event": "navigation.finished.window=1",
+            "originalEventSubstring": "2026-10-27 08:58:31.433287+0000 TinJunction[11565:41686] [TinStartup] +19.201s navigation.finished.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:33.654257+0000",
+            "elapsedSeconds": 21.422,
+            "event": "bridge.webReady",
+            "originalEventSubstring": "2026-10-27 08:58:33.654257+0000 TinJunction[11565:41686] [TinStartup] +21.422s bridge.webReady",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:33.704170+0000",
+            "elapsedSeconds": 21.472,
+            "event": "host.restorePrepared",
+            "originalEventSubstring": "2026-10-27 08:58:33.704170+0000 TinJunction[11565:41686] [TinStartup] +21.472s host.restorePrepared",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 11565,
+            "timestamp": "2026-10-27 08:58:33.887049+0000",
+            "elapsedSeconds": 21.655,
+            "event": "host.layoutAccepted",
+            "originalEventSubstring": "2026-10-27 08:58:33.887049+0000 TinJunction[11565:41686] [TinStartup] +21.655s host.layoutAccepted",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          }
+        ],
+        "lastLoadingToAcceptedSeconds": 3.273
+      },
+      {
+        "pid": 12229,
+        "role": "renderer-failure-retry",
+        "events": [
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:58:51.052114+0000",
+            "elapsedSeconds": 0.0,
+            "event": "webview.created",
+            "originalEventSubstring": "2026-10-27 08:58:51.052114+0000 TinJunction[12229:43607] [TinStartup] +0.000s webview.created",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:58:53.858089+0000",
+            "elapsedSeconds": 2.806,
+            "event": "host.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:58:53.858089+0000 TinJunction[12229:43607] [TinStartup] +2.806s host.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:58:59.580007+0000",
+            "elapsedSeconds": 8.528,
+            "event": "navigation.started.window=1",
+            "originalEventSubstring": "2026-10-27 08:58:59.580007+0000 TinJunction[12229:43607] [TinStartup] +8.528s navigation.started.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:00.069272+0000",
+            "elapsedSeconds": 9.017,
+            "event": "host.loading.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:59:00.069272+0000 TinJunction[12229:43607] [TinStartup] +9.017s host.loading.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:00.089559+0000",
+            "elapsedSeconds": 9.037,
+            "event": "resource.ready.type=html.bytes=884",
+            "originalEventSubstring": "2026-10-27 08:59:00.089559+0000 TinJunction[12229:43607] [TinStartup] +9.037s resource.ready.type=html.bytes=884",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:00.461371+0000",
+            "elapsedSeconds": 9.409,
+            "event": "navigation.committed.window=1",
+            "originalEventSubstring": "2026-10-27 08:59:00.461371+0000 TinJunction[12229:43607] [TinStartup] +9.409s navigation.committed.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:00.925155+0000",
+            "elapsedSeconds": 9.873,
+            "event": "resource.ready.type=css.bytes=19325",
+            "originalEventSubstring": "2026-10-27 08:59:00.925155+0000 TinJunction[12229:43607] [TinStartup] +9.873s resource.ready.type=css.bytes=19325",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:01.176945+0000",
+            "elapsedSeconds": 10.125,
+            "event": "resource.ready.type=js.bytes=801455",
+            "originalEventSubstring": "2026-10-27 08:59:01.176945+0000 TinJunction[12229:43607] [TinStartup] +10.125s resource.ready.type=js.bytes=801455",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:01.668421+0000",
+            "elapsedSeconds": 10.61,
+            "event": "host.failed.beforeBridge",
+            "originalEventSubstring": "2026-10-27 08:59:01.668421+0000 TinJunction[12229:43607] [TinStartup] +10.610s host.failed.beforeBridge",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:01.819861+0000",
+            "elapsedSeconds": 10.768,
+            "event": "navigation.finished.window=0",
+            "originalEventSubstring": "2026-10-27 08:59:01.819861+0000 TinJunction[12229:43607] [TinStartup] +10.768s navigation.finished.window=0",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:11.704580+0000",
+            "elapsedSeconds": 20.652,
+            "event": "host.loading.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:59:11.704580+0000 TinJunction[12229:43607] [TinStartup] +20.652s host.loading.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:11.892348+0000",
+            "elapsedSeconds": 20.84,
+            "event": "navigation.started.window=1",
+            "originalEventSubstring": "2026-10-27 08:59:11.892348+0000 TinJunction[12229:43607] [TinStartup] +20.840s navigation.started.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:12.125116+0000",
+            "elapsedSeconds": 21.073,
+            "event": "host.loading.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 08:59:12.125116+0000 TinJunction[12229:43607] [TinStartup] +21.073s host.loading.lifecycle=active",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:12.128319+0000",
+            "elapsedSeconds": 21.076,
+            "event": "resource.ready.type=html.bytes=884",
+            "originalEventSubstring": "2026-10-27 08:59:12.128319+0000 TinJunction[12229:43607] [TinStartup] +21.076s resource.ready.type=html.bytes=884",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:12.533660+0000",
+            "elapsedSeconds": 21.481,
+            "event": "navigation.committed.window=1",
+            "originalEventSubstring": "2026-10-27 08:59:12.533660+0000 TinJunction[12229:43607] [TinStartup] +21.481s navigation.committed.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:14.001428+0000",
+            "elapsedSeconds": 22.949,
+            "event": "bridge.webReady",
+            "originalEventSubstring": "2026-10-27 08:59:14.001428+0000 TinJunction[12229:43607] [TinStartup] +22.949s bridge.webReady",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:14.038647+0000",
+            "elapsedSeconds": 22.986,
+            "event": "navigation.finished.window=1",
+            "originalEventSubstring": "2026-10-27 08:59:14.038647+0000 TinJunction[12229:43607] [TinStartup] +22.986s navigation.finished.window=1",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:14.055362+0000",
+            "elapsedSeconds": 23.003,
+            "event": "host.restorePrepared",
+            "originalEventSubstring": "2026-10-27 08:59:14.055362+0000 TinJunction[12229:43607] [TinStartup] +23.003s host.restorePrepared",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          },
+          {
+            "pid": 12229,
+            "timestamp": "2026-10-27 08:59:14.114211+0000",
+            "elapsedSeconds": 23.062,
+            "event": "host.layoutAccepted",
+            "originalEventSubstring": "2026-10-27 08:59:14.114211+0000 TinJunction[12229:43607] [TinStartup] +23.062s host.layoutAccepted",
+            "sourceEntry": "TinJunction-20261027T085052-2285.xcresult/Data/data.0~pAbfgE1U-adQhwldo46T26HRjlxl06z3uzmqifmYxPmkl0z-QVAsCiI5ZiNncHPgRJHkzs-lK73TrRtcTwOmmg=="
+          }
+        ],
+        "lastLoadingToAcceptedSeconds": 1.989
+      },
+      {
+        "pid": 17487,
+        "role": "clean-first-launch",
+        "events": [
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:29.635236+0000",
+            "elapsedSeconds": 0.0,
+            "event": "webview.created",
+            "originalEventSubstring": "2026-10-27 09:02:29.635236+0000 TinJunction[17487:57663] [TinStartup] +0.000s webview.created",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:30.054830+0000",
+            "elapsedSeconds": 0.42,
+            "event": "host.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 09:02:30.054830+0000 TinJunction[17487:57663] [TinStartup] +0.420s host.lifecycle=active",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:34.885354+0000",
+            "elapsedSeconds": 5.25,
+            "event": "navigation.started.window=1",
+            "originalEventSubstring": "2026-10-27 09:02:34.885354+0000 TinJunction[17487:57663] [TinStartup] +5.250s navigation.started.window=1",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:34.885653+0000",
+            "elapsedSeconds": 5.25,
+            "event": "host.loading.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 09:02:34.885653+0000 TinJunction[17487:57663] [TinStartup] +5.250s host.loading.lifecycle=active",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:34.892448+0000",
+            "elapsedSeconds": 5.257,
+            "event": "resource.ready.type=html.bytes=884",
+            "originalEventSubstring": "2026-10-27 09:02:34.892448+0000 TinJunction[17487:57663] [TinStartup] +5.257s resource.ready.type=html.bytes=884",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:34.918540+0000",
+            "elapsedSeconds": 5.283,
+            "event": "navigation.committed.window=1",
+            "originalEventSubstring": "2026-10-27 09:02:34.918540+0000 TinJunction[17487:57663] [TinStartup] +5.283s navigation.committed.window=1",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:34.919482+0000",
+            "elapsedSeconds": 5.284,
+            "event": "resource.ready.type=css.bytes=19325",
+            "originalEventSubstring": "2026-10-27 09:02:34.919482+0000 TinJunction[17487:57663] [TinStartup] +5.284s resource.ready.type=css.bytes=19325",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:34.965778+0000",
+            "elapsedSeconds": 5.331,
+            "event": "resource.ready.type=js.bytes=801455",
+            "originalEventSubstring": "2026-10-27 09:02:34.965778+0000 TinJunction[17487:57663] [TinStartup] +5.331s resource.ready.type=js.bytes=801455",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:39.603146+0000",
+            "elapsedSeconds": 9.968,
+            "event": "navigation.finished.window=1",
+            "originalEventSubstring": "2026-10-27 09:02:39.603146+0000 TinJunction[17487:57663] [TinStartup] +9.968s navigation.finished.window=1",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:47.667965+0000",
+            "elapsedSeconds": 18.033,
+            "event": "bridge.webReady",
+            "originalEventSubstring": "2026-10-27 09:02:47.667965+0000 TinJunction[17487:57663] [TinStartup] +18.033s bridge.webReady",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:47.754425+0000",
+            "elapsedSeconds": 18.119,
+            "event": "host.restorePrepared",
+            "originalEventSubstring": "2026-10-27 09:02:47.754425+0000 TinJunction[17487:57663] [TinStartup] +18.119s host.restorePrepared",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:48.155001+0000",
+            "elapsedSeconds": 18.52,
+            "event": "host.layoutAccepted",
+            "originalEventSubstring": "2026-10-27 09:02:48.155001+0000 TinJunction[17487:57663] [TinStartup] +18.520s host.layoutAccepted",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:48.315029+0000",
+            "elapsedSeconds": 18.68,
+            "event": "resource.ready.type=glb.bytes=29356",
+            "originalEventSubstring": "2026-10-27 09:02:48.315029+0000 TinJunction[17487:57663] [TinStartup] +18.680s resource.ready.type=glb.bytes=29356",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:48.335474+0000",
+            "elapsedSeconds": 18.7,
+            "event": "resource.ready.type=png.bytes=93",
+            "originalEventSubstring": "2026-10-27 09:02:48.335474+0000 TinJunction[17487:57663] [TinStartup] +18.700s resource.ready.type=png.bytes=93",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:48.360344+0000",
+            "elapsedSeconds": 18.725,
+            "event": "resource.ready.type=js.bytes=132",
+            "originalEventSubstring": "2026-10-27 09:02:48.360344+0000 TinJunction[17487:57663] [TinStartup] +18.725s resource.ready.type=js.bytes=132",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:48.382526+0000",
+            "elapsedSeconds": 18.747,
+            "event": "resource.ready.type=wasm.bytes=44",
+            "originalEventSubstring": "2026-10-27 09:02:48.382526+0000 TinJunction[17487:57663] [TinStartup] +18.747s resource.ready.type=wasm.bytes=44",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 17487,
+            "timestamp": "2026-10-27 09:02:48.746972+0000",
+            "elapsedSeconds": 19.112,
+            "event": "resource.ready.type=wav.bytes=11564",
+            "originalEventSubstring": "2026-10-27 09:02:48.746972+0000 TinJunction[17487:57663] [TinStartup] +19.112s resource.ready.type=wav.bytes=11564",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          }
+        ],
+        "lastLoadingToAcceptedSeconds": 13.27
+      },
+      {
+        "pid": 18727,
+        "role": "clean-cold-relaunch",
+        "events": [
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:46.352139+0000",
+            "elapsedSeconds": 0.0,
+            "event": "webview.created",
+            "originalEventSubstring": "2026-10-27 09:03:46.352139+0000 TinJunction[18727:64367] [TinStartup] +0.000s webview.created",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:47.026522+0000",
+            "elapsedSeconds": 0.674,
+            "event": "host.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 09:03:47.026522+0000 TinJunction[18727:64367] [TinStartup] +0.674s host.lifecycle=active",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:53.929767+0000",
+            "elapsedSeconds": 7.578,
+            "event": "navigation.started.window=1",
+            "originalEventSubstring": "2026-10-27 09:03:53.929767+0000 TinJunction[18727:64367] [TinStartup] +7.578s navigation.started.window=1",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:53.929945+0000",
+            "elapsedSeconds": 7.578,
+            "event": "host.loading.lifecycle=active",
+            "originalEventSubstring": "2026-10-27 09:03:53.929945+0000 TinJunction[18727:64367] [TinStartup] +7.578s host.loading.lifecycle=active",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:53.937153+0000",
+            "elapsedSeconds": 7.585,
+            "event": "resource.ready.type=html.bytes=884",
+            "originalEventSubstring": "2026-10-27 09:03:53.937153+0000 TinJunction[18727:64367] [TinStartup] +7.585s resource.ready.type=html.bytes=884",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:53.980516+0000",
+            "elapsedSeconds": 7.628,
+            "event": "navigation.committed.window=1",
+            "originalEventSubstring": "2026-10-27 09:03:53.980516+0000 TinJunction[18727:64367] [TinStartup] +7.628s navigation.committed.window=1",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:53.981757+0000",
+            "elapsedSeconds": 7.63,
+            "event": "resource.ready.type=css.bytes=19325",
+            "originalEventSubstring": "2026-10-27 09:03:53.981757+0000 TinJunction[18727:64367] [TinStartup] +7.630s resource.ready.type=css.bytes=19325",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:53.984045+0000",
+            "elapsedSeconds": 7.632,
+            "event": "resource.ready.type=js.bytes=801455",
+            "originalEventSubstring": "2026-10-27 09:03:53.984045+0000 TinJunction[18727:64367] [TinStartup] +7.632s resource.ready.type=js.bytes=801455",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:55.072238+0000",
+            "elapsedSeconds": 8.72,
+            "event": "navigation.finished.window=1",
+            "originalEventSubstring": "2026-10-27 09:03:55.072238+0000 TinJunction[18727:64367] [TinStartup] +8.720s navigation.finished.window=1",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:57.148678+0000",
+            "elapsedSeconds": 10.797,
+            "event": "bridge.webReady",
+            "originalEventSubstring": "2026-10-27 09:03:57.148678+0000 TinJunction[18727:64367] [TinStartup] +10.797s bridge.webReady",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:57.190826+0000",
+            "elapsedSeconds": 10.839,
+            "event": "host.restorePrepared",
+            "originalEventSubstring": "2026-10-27 09:03:57.190826+0000 TinJunction[18727:64367] [TinStartup] +10.839s host.restorePrepared",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:57.294651+0000",
+            "elapsedSeconds": 10.942,
+            "event": "host.layoutAccepted",
+            "originalEventSubstring": "2026-10-27 09:03:57.294651+0000 TinJunction[18727:64367] [TinStartup] +10.942s host.layoutAccepted",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:57.359743+0000",
+            "elapsedSeconds": 11.007,
+            "event": "resource.ready.type=glb.bytes=29356",
+            "originalEventSubstring": "2026-10-27 09:03:57.359743+0000 TinJunction[18727:64367] [TinStartup] +11.007s resource.ready.type=glb.bytes=29356",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:57.389697+0000",
+            "elapsedSeconds": 11.037,
+            "event": "resource.ready.type=png.bytes=93",
+            "originalEventSubstring": "2026-10-27 09:03:57.389697+0000 TinJunction[18727:64367] [TinStartup] +11.037s resource.ready.type=png.bytes=93",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:57.393059+0000",
+            "elapsedSeconds": 11.041,
+            "event": "resource.ready.type=js.bytes=132",
+            "originalEventSubstring": "2026-10-27 09:03:57.393059+0000 TinJunction[18727:64367] [TinStartup] +11.041s resource.ready.type=js.bytes=132",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:57.397239+0000",
+            "elapsedSeconds": 11.045,
+            "event": "resource.ready.type=wasm.bytes=44",
+            "originalEventSubstring": "2026-10-27 09:03:57.397239+0000 TinJunction[18727:64367] [TinStartup] +11.045s resource.ready.type=wasm.bytes=44",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          },
+          {
+            "pid": 18727,
+            "timestamp": "2026-10-27 09:03:57.650350+0000",
+            "elapsedSeconds": 11.298,
+            "event": "resource.ready.type=wav.bytes=11564",
+            "originalEventSubstring": "2026-10-27 09:03:57.650350+0000 TinJunction[18727:64367] [TinStartup] +11.298s resource.ready.type=wav.bytes=11564",
+            "sourceEntry": "clean-install-4yzQlq/CleanInstall.xcresult/Data/data.0~4TMbIhk4KGy9MtHumM57NUjrfAyv0BJ6mQG4aY_MyOSRc0CjRGmo3iEFksJX9_-L_pGXzlw_tkxnqmnGZ7WS5Q=="
+          }
+        ],
+        "lastLoadingToAcceptedSeconds": 3.364
+      }
+    ],
+    "unchangedNativeReadinessTimeoutSeconds": 20
+  },
+  "lifecycle": {
+    "fullObservationCount": 48,
+    "cleanObservationCount": 9,
+    "allSequencesComplete": true,
+    "semantics": "Public asynchronous XCUIApplication.state observations, not independent PID/death measurements.",
+    "observations": [
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/E77E91AB-6834-4401-AF82-0A2E9E5E34E7.txt",
+          "bytes": 321,
+          "sha256": "7fddaa46a8f8b3d3db1aa2e87b6acd513df1d54390b5b5c5809456515cdb1f5b",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_616A17E2-23E6-48E0-BE91-6273F68AF212.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:02:20.545Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T09:02:20.545Z",
+          "systemUptimeSeconds": 1094.6706714583333,
+          "elapsedSeconds": 0.0014585833332603215,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/AD24C485-48F2-44DB-BA3F-BE0EBB53B4CC.txt",
+          "bytes": 324,
+          "sha256": "7126e8ad83ed954f791a495f23204ab76c7ed71ad0ac2db8c9c4678244c96dfe",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_E9B2E814-65A7-4BA0-9F34-17C178049073.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:02:31.183Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T09:02:31.182Z",
+          "systemUptimeSeconds": 1105.3078407916666,
+          "elapsedSeconds": 10.638627916666564,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/0CE55113-13D2-4567-B16F-B20FFB41C762.txt",
+          "bytes": 330,
+          "sha256": "6994c710867eaecb8a99144f45fcbae4317e6c0294bc2e80855bba58160675a6",
+          "suggestedHumanReadableName": "native-lifecycle-3-before-cold-relaunch-before_0_F0777D55-AC05-4891-BB93-BEB9EFA4A3CE.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:03:02.815Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 3,
+          "operation": "before-cold-relaunch",
+          "point": "before",
+          "utc": "2026-10-27T09:03:02.815Z",
+          "systemUptimeSeconds": 1136.9403066250002,
+          "elapsedSeconds": 42.27109375000009,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/DB2CE8E3-760D-4852-8006-AB21374E1385.txt",
+          "bytes": 322,
+          "sha256": "a9d33c0801de09ddd8152a08ac9678caf45fa8fc26eda220aabe65318d90e770",
+          "suggestedHumanReadableName": "native-lifecycle-4-before-cold-relaunch-after_0_8D2DF77E-0753-44F3-B04F-FFE8A2BE47B5.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:03:03.844Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 4,
+          "operation": "before-cold-relaunch",
+          "point": "after",
+          "utc": "2026-10-27T09:03:03.844Z",
+          "systemUptimeSeconds": 1137.9697499166668,
+          "elapsedSeconds": 43.30053704166676,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/9DD538C7-2E18-4056-AB52-AC15334FB10E.txt",
+          "bytes": 317,
+          "sha256": "2ceecffb99770d56bd8e3e1d120cdf7cbc1da9ff5ef53496c20648988b177946",
+          "suggestedHumanReadableName": "native-lifecycle-5-cold-relaunch-before_0_81C09B1D-53E9-4391-963A-4E89B6E5239E.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:03:03.846Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 5,
+          "operation": "cold-relaunch",
+          "point": "before",
+          "utc": "2026-10-27T09:03:03.846Z",
+          "systemUptimeSeconds": 1137.9717843333333,
+          "elapsedSeconds": 43.302571458333205,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/D27DEC81-3295-419D-9612-A4E30AF0A0E4.txt",
+          "bytes": 322,
+          "sha256": "c1c203dccd9f760b41d03f43da669a3c1f1bec93032a61b08f7c9bfbd46bb4b3",
+          "suggestedHumanReadableName": "native-lifecycle-6-cold-relaunch-after_0_1B837AA5-45A5-4BC3-80DA-1773FECB092F.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:03:48.444Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 6,
+          "operation": "cold-relaunch",
+          "point": "after",
+          "utc": "2026-10-27T09:03:48.443Z",
+          "systemUptimeSeconds": 1182.5683065416667,
+          "elapsedSeconds": 87.89909366666666,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/EAF1D898-CF47-41D3-9009-4A460EDAB962.txt",
+          "bytes": 326,
+          "sha256": "242fdf05914485b70e2ce558932220da3af57400850ca84834617dac2a77765b",
+          "suggestedHumanReadableName": "native-lifecycle-7-fixture-teardown-enter_0_C038381C-6221-4473-A3FA-8BC51932ACBB.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:04:12.014Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 7,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T09:04:12.013Z",
+          "systemUptimeSeconds": 1206.1387287083335,
+          "elapsedSeconds": 111.46951583333339,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/8ECBB3ED-A289-4B40-BF90-126E90E0D0B9.txt",
+          "bytes": 326,
+          "sha256": "60976433bf369dac653ca01db87ee54f637284e7feed584cacd2017e3d263b59",
+          "suggestedHumanReadableName": "native-lifecycle-8-fixture-teardown-before_0_3354B2C1-8E6D-4086-8A83-34F2F738DEED.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:04:12.017Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 8,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T09:04:12.017Z",
+          "systemUptimeSeconds": 1206.1430598333334,
+          "elapsedSeconds": 111.4738469583333,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "clean-install-4yzQlq/screenshots/AA5B1161-64C0-40A7-BE5F-766798691507.txt",
+          "bytes": 319,
+          "sha256": "547414adfff435adf0d577a017325bf55214d385327b1eb8b50c4c704783b28e",
+          "suggestedHumanReadableName": "native-lifecycle-9-fixture-teardown-after_0_7D70A3B9-C424-43F4-8F6A-B95637BE36B3.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T09:04:13.079Z",
+          "scope": "clean-install"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 9,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T09:04:13.079Z",
+          "systemUptimeSeconds": 1207.2046110833335,
+          "elapsedSeconds": 112.53539820833339,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/1A8DF5A2-5956-492C-8BD7-20E8CF75FBC8.txt",
+          "bytes": 320,
+          "sha256": "7b7658e4679bf18f9a8926dc31847f05308191c2efdf6a5ab64e6d3d5cd8e49f",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_C321434C-FF76-4896-BD7F-0F50EE137B6E.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:54:41.911Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T08:54:41.911Z",
+          "systemUptimeSeconds": 636.0364064583333,
+          "elapsedSeconds": 0.0009906666666665842,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/46CECC29-F008-4166-9D5A-4E27D2A2E910.txt",
+          "bytes": 322,
+          "sha256": "b668b074e87c9ad798b1929ccbac029a23209128ce2b83abf0dc67a2fc7077f0",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_F82BBF28-C7A7-44C6-8FB1-511CCCBCE5E7.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:54:48.609Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T08:54:48.609Z",
+          "systemUptimeSeconds": 642.7348131666668,
+          "elapsedSeconds": 6.699397375000103,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/72CD55B6-0B95-4132-8CA6-655B24B0F4B9.txt",
+          "bytes": 330,
+          "sha256": "924c6d06b8dcff4fb4a0161332faa41a4ac3bab9c8661c52ea0ace7c2fa8a0ae",
+          "suggestedHumanReadableName": "native-lifecycle-3-before-cold-relaunch-before_0_11052ED3-AA61-419A-9E1E-C062CDB8E830.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:55:12.896Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 3,
+          "operation": "before-cold-relaunch",
+          "point": "before",
+          "utc": "2026-10-27T08:55:12.896Z",
+          "systemUptimeSeconds": 667.0214112916667,
+          "elapsedSeconds": 30.985995500000058,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/767CDAF4-6A84-4CDD-BAA9-1F558E569BFF.txt",
+          "bytes": 312,
+          "sha256": "f546bf6e6385e674bec5854bc18c4c74d7115a40bf9e886eecc51476e9352089",
+          "suggestedHumanReadableName": "native-lifecycle-5-cold-relaunch-before_0_2A0B5974-FD76-484C-BB06-561426C8E4FC.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:55:13.961Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 5,
+          "operation": "cold-relaunch",
+          "point": "before",
+          "utc": "2026-10-27T08:55:13.961Z",
+          "systemUptimeSeconds": 668.086825875,
+          "elapsedSeconds": 32.051410083333394,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/A1827B8D-4159-4529-AE50-2FD7B6662484.txt",
+          "bytes": 316,
+          "sha256": "d1e25e4483e9f4f7f2b802c2d37fbdd932000e5e730b69f7659fad88c7ca3443",
+          "suggestedHumanReadableName": "native-lifecycle-4-before-cold-relaunch-after_0_1E5C1BA8-8657-4D1D-B254-9A642CFBA4E0.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:55:13.961Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 4,
+          "operation": "before-cold-relaunch",
+          "point": "after",
+          "utc": "2026-10-27T08:55:13.961Z",
+          "systemUptimeSeconds": 668.086351375,
+          "elapsedSeconds": 32.0509355833334,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/F82F0760-16AA-46EE-91A1-F0104207119B.txt",
+          "bytes": 321,
+          "sha256": "d445f588e3d816c8b8ae2a436aae37083d0155ce95bc2fca4e98b11e25dc87b8",
+          "suggestedHumanReadableName": "native-lifecycle-6-cold-relaunch-after_0_70A9AB98-707C-4CC5-ABA0-D121C3824BB1.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:55:19.497Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 6,
+          "operation": "cold-relaunch",
+          "point": "after",
+          "utc": "2026-10-27T08:55:19.497Z",
+          "systemUptimeSeconds": 673.6230383333334,
+          "elapsedSeconds": 37.58762254166675,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/AE670554-6ACC-4178-BB0E-9CB931D6DBF9.txt",
+          "bytes": 319,
+          "sha256": "1db1e47fde5e0aeed9c136c45cb2e6297e68b0e066975240c27ef5491b2ea3be",
+          "suggestedHumanReadableName": "native-lifecycle-7-fixture-teardown-enter_0_E6D4989F-3894-4A9C-A782-82ACFD504FD9.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:55:46.382Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 7,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T08:55:46.381Z",
+          "systemUptimeSeconds": 700.5069161666667,
+          "elapsedSeconds": 64.471500375,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/5C6CC214-95C4-42C2-BD17-F1C0C37C0478.txt",
+          "bytes": 325,
+          "sha256": "51eb3fcc78ae0a79e9554e4f6323f55972fd1269040629501274b611f399d5ec",
+          "suggestedHumanReadableName": "native-lifecycle-8-fixture-teardown-before_0_2473E374-EBE4-43FB-A159-B49B07136E2C.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:55:46.383Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 8,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T08:55:46.383Z",
+          "systemUptimeSeconds": 700.5084331666667,
+          "elapsedSeconds": 64.47301737500004,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/F182EC38-CA9E-449F-8B4D-98C61D5AE464.txt",
+          "bytes": 317,
+          "sha256": "23f5afbd9106e63fef9eb26a28127854a8dacfb05d90cb8ad340239f328db1ed",
+          "suggestedHumanReadableName": "native-lifecycle-9-fixture-teardown-after_0_B91E058C-0A76-4046-9D1D-060EF2D027AC.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:55:47.451Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]",
+          "observation": 9,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T08:55:47.451Z",
+          "systemUptimeSeconds": 701.5762617500001,
+          "elapsedSeconds": 65.54084595833342,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/1B46C034-0D91-46C6-B595-8BB8039FD04F.txt",
+          "bytes": 285,
+          "sha256": "49f47386c38a4c736dc87862830e8344d5655a2d8f536b9b35bde0ee146ba373",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_FA9C3C05-5DAA-4A8D-8E25-728E2664E0F1.txt",
+          "testIdentifier": "HostSmokeTests/testBundledRendererHandshakes()",
+          "observedAt": "2026-10-27T08:55:48.274Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testBundledRendererHandshakes]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T08:55:48.273Z",
+          "systemUptimeSeconds": 702.3991767083334,
+          "elapsedSeconds": 0.0005623333332778202,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/66D807D7-3EA0-4CC0-AC2D-F838EE504727.txt",
+          "bytes": 286,
+          "sha256": "4e17207738a59277ff7916919fd17d50ec77c4652adbc1b554909c11799d5afd",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_04D04EC4-9CB3-40EE-93A3-CB9A54487C38.txt",
+          "testIdentifier": "HostSmokeTests/testBundledRendererHandshakes()",
+          "observedAt": "2026-10-27T08:55:55.878Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testBundledRendererHandshakes]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T08:55:55.878Z",
+          "systemUptimeSeconds": 710.0038307083333,
+          "elapsedSeconds": 7.60521633333326,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/0AE7C103-F0E0-422F-BC80-AF8E5CBBE5AB.txt",
+          "bytes": 285,
+          "sha256": "ed373e158978a6a9e38319f9321a5c3d13f2bed1a2894b8f627270cb4a34db40",
+          "suggestedHumanReadableName": "native-lifecycle-3-fixture-teardown-enter_0_1C6A6FAD-EB55-45E1-A8EA-90C4840291EF.txt",
+          "testIdentifier": "HostSmokeTests/testBundledRendererHandshakes()",
+          "observedAt": "2026-10-27T08:56:02.304Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testBundledRendererHandshakes]",
+          "observation": 3,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T08:56:02.304Z",
+          "systemUptimeSeconds": 716.42965325,
+          "elapsedSeconds": 14.031038874999922,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/4D09CADB-A2FF-46E2-A0D3-FE49E9E7B026.txt",
+          "bytes": 291,
+          "sha256": "65e523376d238f21ac7467d67b9b401f9f9c40549a9c8ea86706beb5477b887e",
+          "suggestedHumanReadableName": "native-lifecycle-4-fixture-teardown-before_0_E6058FE1-2195-4EE1-9A9A-5486C04CFB29.txt",
+          "testIdentifier": "HostSmokeTests/testBundledRendererHandshakes()",
+          "observedAt": "2026-10-27T08:56:02.305Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testBundledRendererHandshakes]",
+          "observation": 4,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T08:56:02.305Z",
+          "systemUptimeSeconds": 716.4304732083334,
+          "elapsedSeconds": 14.031858833333331,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/4D7442F0-2B73-4056-B807-FE735D0CE0B4.txt",
+          "bytes": 283,
+          "sha256": "3ee0b8c90fa48a48187a724486cc8195459bf792d48ad1bc9ac2d1510f428742",
+          "suggestedHumanReadableName": "native-lifecycle-5-fixture-teardown-after_0_6DA6818A-130C-4B8B-B2CB-7D08D477E4A0.txt",
+          "testIdentifier": "HostSmokeTests/testBundledRendererHandshakes()",
+          "observedAt": "2026-10-27T08:56:03.369Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testBundledRendererHandshakes]",
+          "observation": 5,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T08:56:03.368Z",
+          "systemUptimeSeconds": 717.4941367916667,
+          "elapsedSeconds": 15.095522416666654,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/CA027919-5513-4B35-AEEE-33AC23401C32.txt",
+          "bytes": 296,
+          "sha256": "c84ed11e5bd5610874065c80e0509fc52d499117a0aa5e9b428e9fd60c05e9e4",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_D5822F10-9D91-45EE-8EB3-EFD4E529FD80.txt",
+          "testIdentifier": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+          "observedAt": "2026-10-27T08:56:03.452Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testHostSurvivesRotationAndForegrounding]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T08:56:03.452Z",
+          "systemUptimeSeconds": 717.5772840416668,
+          "elapsedSeconds": 0.0007334166666623787,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/675F7AE5-BC3C-4828-9419-FC1EDF208CC1.txt",
+          "bytes": 298,
+          "sha256": "2025da3f748757d85fc766e8b3481f766671fbe20cac847ad610c5478e4684e7",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_EA694EAE-5B10-4512-8B02-905C38536C5A.txt",
+          "testIdentifier": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+          "observedAt": "2026-10-27T08:56:08.924Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testHostSurvivesRotationAndForegrounding]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T08:56:08.924Z",
+          "systemUptimeSeconds": 723.0493430833334,
+          "elapsedSeconds": 5.472792458333288,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/895CAD31-7EF9-4F17-9DE1-A11D43AF4FC1.txt",
+          "bytes": 301,
+          "sha256": "a63d021068c060743aebd6dd5b31a1e9a286066556382f45927c3658a520d66c",
+          "suggestedHumanReadableName": "native-lifecycle-3-fixture-teardown-enter_0_1C2EFB54-80D7-4EBB-9D7D-9549903B2B96.txt",
+          "testIdentifier": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+          "observedAt": "2026-10-27T08:56:22.086Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testHostSurvivesRotationAndForegrounding]",
+          "observation": 3,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T08:56:22.085Z",
+          "systemUptimeSeconds": 736.2110565416667,
+          "elapsedSeconds": 18.634505916666626,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/0A3C4E53-DB80-46B3-AF7D-30B030D11F63.txt",
+          "bytes": 302,
+          "sha256": "7be8bb8f64ae2aa098587a8e080016fa39735a1bce37aa32d8b8a1db71b94109",
+          "suggestedHumanReadableName": "native-lifecycle-4-fixture-teardown-before_0_5BDFF28A-E7F1-4E4E-AD30-7B1F7B041FCC.txt",
+          "testIdentifier": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+          "observedAt": "2026-10-27T08:56:22.088Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testHostSurvivesRotationAndForegrounding]",
+          "observation": 4,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T08:56:22.088Z",
+          "systemUptimeSeconds": 736.2133281250001,
+          "elapsedSeconds": 18.636777499999994,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/99D2A06F-FA38-4283-BC8E-3398ED87A52C.txt",
+          "bytes": 294,
+          "sha256": "f385e4eeb30c7f78283a10145c0ce69ab7b5a9e3e48aced7ea40d9ebf016f463",
+          "suggestedHumanReadableName": "native-lifecycle-5-fixture-teardown-after_0_4A1A186C-A3DB-4682-8026-0FD59B420519.txt",
+          "testIdentifier": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+          "observedAt": "2026-10-27T08:56:23.178Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testHostSurvivesRotationAndForegrounding]",
+          "observation": 5,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T08:56:23.178Z",
+          "systemUptimeSeconds": 737.3037624166667,
+          "elapsedSeconds": 19.727211791666605,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/2EF84167-5165-4415-976D-1618E84F15B3.txt",
+          "bytes": 287,
+          "sha256": "829bda0cd918b6f1d2f352bc551bbf6d405533c920a08a6752590f682b73af13",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_E4BAE7DC-8B97-4254-87C1-BF42828C6BAD.txt",
+          "testIdentifier": "HostSmokeTests/testNativeHelpRemainsAccessible()",
+          "observedAt": "2026-10-27T08:56:23.259Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeHelpRemainsAccessible]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T08:56:23.259Z",
+          "systemUptimeSeconds": 737.3847427500001,
+          "elapsedSeconds": 0.0007932083333344053,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/C1ABB5A7-37D3-42F7-BC6F-AC48B3967C4F.txt",
+          "bytes": 289,
+          "sha256": "5c3a2e06c0f886a312a312ac1f729ea306820c88f5bb847a56cc07fbc124fb2f",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_5ACA9A09-42F8-40B1-8D65-9941C7539BA3.txt",
+          "testIdentifier": "HostSmokeTests/testNativeHelpRemainsAccessible()",
+          "observedAt": "2026-10-27T08:56:30.052Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeHelpRemainsAccessible]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T08:56:30.052Z",
+          "systemUptimeSeconds": 744.1780239166667,
+          "elapsedSeconds": 6.794074374999923,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/DFCAB538-BF48-47DA-ADE2-0E8808C04668.txt",
+          "bytes": 292,
+          "sha256": "0e394aceb4c01dba946a0b0857cc4c6b9bc0611a99067861878d7ae5d0653f08",
+          "suggestedHumanReadableName": "native-lifecycle-3-fixture-teardown-enter_0_80507738-1078-4996-B2EF-32BCC997F35B.txt",
+          "testIdentifier": "HostSmokeTests/testNativeHelpRemainsAccessible()",
+          "observedAt": "2026-10-27T08:56:38.349Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeHelpRemainsAccessible]",
+          "observation": 3,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T08:56:38.349Z",
+          "systemUptimeSeconds": 752.4745730000001,
+          "elapsedSeconds": 15.090623458333312,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/720158A4-2DA6-4108-B7D5-F3CCF6623884.txt",
+          "bytes": 293,
+          "sha256": "04f8af079799ff3a0117e447c7072432bdf4a690c1009d984edf72bb3477fa00",
+          "suggestedHumanReadableName": "native-lifecycle-4-fixture-teardown-before_0_083CE12D-C175-4A27-80E6-0D75297ED7BF.txt",
+          "testIdentifier": "HostSmokeTests/testNativeHelpRemainsAccessible()",
+          "observedAt": "2026-10-27T08:56:38.350Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeHelpRemainsAccessible]",
+          "observation": 4,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T08:56:38.350Z",
+          "systemUptimeSeconds": 752.4754642083334,
+          "elapsedSeconds": 15.091514666666626,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/2CD7E7ED-A76A-46AE-9900-A382F2D5195E.txt",
+          "bytes": 281,
+          "sha256": "dd18d613ef3f70a0fd424d5a8b00f5e9fd60a1f55346fafb8910a5dadddd837f",
+          "suggestedHumanReadableName": "native-lifecycle-5-fixture-teardown-after_0_7025C110-A951-482C-9833-21064C14B3CE.txt",
+          "testIdentifier": "HostSmokeTests/testNativeHelpRemainsAccessible()",
+          "observedAt": "2026-10-27T08:56:39.361Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeHelpRemainsAccessible]",
+          "observation": 5,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T08:56:39.361Z",
+          "systemUptimeSeconds": 753.486333875,
+          "elapsedSeconds": 16.102384333333248,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/3B14ACC1-2646-43F2-ACAF-DC22CAB7A76D.txt",
+          "bytes": 308,
+          "sha256": "ebc9b8b43b21b58588ed0992471f7a1b13a61e16d9ad570fce2097ef74be1a4e",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_4CE2E2A2-1462-44B5-ABC5-C808CA9E10C8.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:56:39.430Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T08:56:39.430Z",
+          "systemUptimeSeconds": 753.5555381666667,
+          "elapsedSeconds": 0.0006305416666236852,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/7D2E6894-D726-4139-A19F-EC21EB852A31.txt",
+          "bytes": 310,
+          "sha256": "dfb07a2df1c1b54f36f400050d23e1f3a0592f2a79748a26bf8913129e9097d8",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_EC763396-3F2E-4BBF-B7E4-CB83B1538762.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:56:47.443Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T08:56:47.443Z",
+          "systemUptimeSeconds": 761.5687946666667,
+          "elapsedSeconds": 8.013887041666635,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/16B87FCF-7B68-459D-9243-5B01E81970DA.txt",
+          "bytes": 321,
+          "sha256": "1075e23aa068af077b1217cc3b1b606506534deb2cb6a15a1784afd6eaa11e2f",
+          "suggestedHumanReadableName": "native-lifecycle-3-before-saved-railway-relaunch-before_0_FFCEC08E-27DA-4D13-9EF5-A2BDBB79AC2A.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:57:27.930Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 3,
+          "operation": "before-saved-railway-relaunch",
+          "point": "before",
+          "utc": "2026-10-27T08:57:27.930Z",
+          "systemUptimeSeconds": 802.05582975,
+          "elapsedSeconds": 48.50092212499999,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/3F487561-1AEB-4DAD-8E25-9F9925B25001.txt",
+          "bytes": 311,
+          "sha256": "424cc6351b35f86325ae5b4dfc75e1ad3a8d23904635f2b54833d0cfbadf819b",
+          "suggestedHumanReadableName": "native-lifecycle-4-before-saved-railway-relaunch-after_0_309BA2AC-3455-4D62-85C2-A2D89E982F0A.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:57:28.947Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 4,
+          "operation": "before-saved-railway-relaunch",
+          "point": "after",
+          "utc": "2026-10-27T08:57:28.947Z",
+          "systemUptimeSeconds": 803.072703,
+          "elapsedSeconds": 49.51779537499999,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/2F30DBE1-FBFA-4A41-A9D9-7F7882D10127.txt",
+          "bytes": 312,
+          "sha256": "d3327903748f1a038070059991fba732e54aa8743c577820cf763f1efafb1d05",
+          "suggestedHumanReadableName": "native-lifecycle-5-saved-railway-relaunch-before_0_CA25EA01-A276-41D3-9A8A-680C79A9E7B4.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:57:28.948Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 5,
+          "operation": "saved-railway-relaunch",
+          "point": "before",
+          "utc": "2026-10-27T08:57:28.948Z",
+          "systemUptimeSeconds": 803.0738713333334,
+          "elapsedSeconds": 49.51896370833333,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/9E66AA5C-B950-419C-92AB-855D3F289AE9.txt",
+          "bytes": 318,
+          "sha256": "4cd284053f759d0e98fa376ca9ed664f31428429ef88333547efc9e007357094",
+          "suggestedHumanReadableName": "native-lifecycle-6-saved-railway-relaunch-after_0_82A603E7-3254-422F-A8C6-7CCA3F6565B7.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:57:42.465Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 6,
+          "operation": "saved-railway-relaunch",
+          "point": "after",
+          "utc": "2026-10-27T08:57:42.465Z",
+          "systemUptimeSeconds": 816.5906159583334,
+          "elapsedSeconds": 63.03570833333333,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/0D16DC98-1015-4D53-ADE9-CFEB9F7DACAB.txt",
+          "bytes": 312,
+          "sha256": "0354a182aa1c35eee72d6fa823fe304db12351a7062ee7d542ea48834d060d8a",
+          "suggestedHumanReadableName": "native-lifecycle-7-fixture-teardown-enter_0_522A0156-09FB-4B1C-BB83-997161F9C5D5.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:58:01.431Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 7,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T08:58:01.431Z",
+          "systemUptimeSeconds": 835.5567188333334,
+          "elapsedSeconds": 82.00181120833338,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/7D3E251C-8197-47A7-9C5B-8A88749FDB46.txt",
+          "bytes": 313,
+          "sha256": "d550a8d4722838fd29e722b2b19c1e6d2ed7af17db1892097c198c60954569a5",
+          "suggestedHumanReadableName": "native-lifecycle-8-fixture-teardown-before_0_C4EBD383-74A7-4D71-A0F1-F3095EC8C2E6.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:58:01.432Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 8,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T08:58:01.432Z",
+          "systemUptimeSeconds": 835.5578340833334,
+          "elapsedSeconds": 82.00292645833338,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/D832F37B-72CF-4936-A2A5-2F9824535B11.txt",
+          "bytes": 304,
+          "sha256": "245eecb451ad541712b69e3f7e5c878936231008a046597cbc421c43d8c15722",
+          "suggestedHumanReadableName": "native-lifecycle-9-fixture-teardown-after_0_148F0076-33FF-4405-977E-8E3D7E51582C.txt",
+          "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+          "observedAt": "2026-10-27T08:58:02.497Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]",
+          "observation": 9,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T08:58:02.497Z",
+          "systemUptimeSeconds": 836.6226192916668,
+          "elapsedSeconds": 83.0677116666667,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/7529D1C0-1FC4-478B-B0B3-5D9246FF5F3D.txt",
+          "bytes": 329,
+          "sha256": "9b66fead9199c7e647bf40ee989bfe3c5d9ca8098c415ef1f11cde07bf63e8b4",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_FC33C164-AE50-4C32-A633-AD5926E7EA67.txt",
+          "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+          "observedAt": "2026-10-27T08:58:02.759Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T08:58:02.759Z",
+          "systemUptimeSeconds": 836.8849801250001,
+          "elapsedSeconds": 0.0020123333333685878,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/133DC15C-F84F-4BC8-89F5-87E786566C15.txt",
+          "bytes": 332,
+          "sha256": "31ffa78a7598ce8ae5612db4782133115a73f70182be162c4067e342259dc04f",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_0341584D-DCEA-497B-BC4F-17A070C67667.txt",
+          "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+          "observedAt": "2026-10-27T08:58:14.098Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T08:58:14.098Z",
+          "systemUptimeSeconds": 848.2233413333333,
+          "elapsedSeconds": 11.340373541666622,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/50EF1734-E96C-4B3B-B2E7-E73F3FB711DA.txt",
+          "bytes": 334,
+          "sha256": "ac4e29051acf3359b56c2547be6f6dbc8bbda86d95f5f379fa56c63733198f8f",
+          "suggestedHumanReadableName": "native-lifecycle-3-fixture-teardown-enter_0_F485E105-09AF-45C6-A428-DDE1D9B94136.txt",
+          "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+          "observedAt": "2026-10-27T08:58:42.869Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]",
+          "observation": 3,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T08:58:42.869Z",
+          "systemUptimeSeconds": 876.9948612500001,
+          "elapsedSeconds": 40.111893458333384,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/959340BF-DDF0-461F-8A22-0A3C527B3172.txt",
+          "bytes": 334,
+          "sha256": "630a87755ecd56438f5b8bd117a128820a23fce8c7c7304ab30c8b4591b7943a",
+          "suggestedHumanReadableName": "native-lifecycle-4-fixture-teardown-before_0_ED049C83-EA1D-4F05-ADE0-E57B89DED948.txt",
+          "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+          "observedAt": "2026-10-27T08:58:42.872Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]",
+          "observation": 4,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T08:58:42.871Z",
+          "systemUptimeSeconds": 876.9971636250001,
+          "elapsedSeconds": 40.11419583333338,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/1A3027A4-6029-479E-BFCE-48B80C2AD07F.txt",
+          "bytes": 326,
+          "sha256": "159524247723b3ae04b2da1c104596f470661b8ceaaf9bb9e9ef8ceb835c27cc",
+          "suggestedHumanReadableName": "native-lifecycle-5-fixture-teardown-after_0_E73F1A76-CA4C-4DB6-9F3E-E1D2C1C7953C.txt",
+          "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+          "observedAt": "2026-10-27T08:58:43.880Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]",
+          "observation": 5,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T08:58:43.880Z",
+          "systemUptimeSeconds": 878.0058973333333,
+          "elapsedSeconds": 41.12292954166662,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/8CF9DA17-067F-48DE-886B-4DAE93347AB6.txt",
+          "bytes": 320,
+          "sha256": "8c48cf35e5c4506f01f30838d1de6d8d7ab31404234fcd4b6ea041bc3df1aac3",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_58B9B3BD-6C25-418E-8604-AFFF319AE5FC.txt",
+          "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+          "observedAt": "2026-10-27T08:58:44.105Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T08:58:44.105Z",
+          "systemUptimeSeconds": 878.2309273333334,
+          "elapsedSeconds": 0.001708541666630481,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/BEEB3757-7312-4BB0-83FD-08E3A6CAD5E5.txt",
+          "bytes": 323,
+          "sha256": "538f8387f6b04a93566347043f83c22449f44eb426381f54c6d653a0344dbf53",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_E73028F1-2875-4FB1-B0B5-A8B618452D90.txt",
+          "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+          "observedAt": "2026-10-27T08:58:54.975Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T08:58:54.975Z",
+          "systemUptimeSeconds": 889.1004212083334,
+          "elapsedSeconds": 10.87120241666662,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/A16B9253-E514-41C6-909E-9B27CF60BDC4.txt",
+          "bytes": 325,
+          "sha256": "9621f5b2c14ce9548079ab420c81c71bb100368a99fdf71fc80525df03323bc9",
+          "suggestedHumanReadableName": "native-lifecycle-3-fixture-teardown-enter_0_2783C299-47E3-4EB7-AF9C-D3577107D22B.txt",
+          "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+          "observedAt": "2026-10-27T08:59:28.565Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]",
+          "observation": 3,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T08:59:28.562Z",
+          "systemUptimeSeconds": 922.6874147083333,
+          "elapsedSeconds": 44.45819591666657,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/E75A44D8-EE97-4C2E-8115-80522C2BCEB4.txt",
+          "bytes": 326,
+          "sha256": "3ef22e8d743cfd85db93bc099af576e6d9e14bd60e8ec68404a5b79c872b99ce",
+          "suggestedHumanReadableName": "native-lifecycle-4-fixture-teardown-before_0_88B8987C-AAB8-4574-B2D6-CA5FFB78AD6A.txt",
+          "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+          "observedAt": "2026-10-27T08:59:28.578Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]",
+          "observation": 4,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T08:59:28.577Z",
+          "systemUptimeSeconds": 922.7023265833334,
+          "elapsedSeconds": 44.47310779166662,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/C8DE322E-10F8-4F12-9C1A-2CA26DFEDBAD.txt",
+          "bytes": 318,
+          "sha256": "a2d332cdbfaff4040960f0fd604311dfe2db955589297697d388683c9fe91c38",
+          "suggestedHumanReadableName": "native-lifecycle-5-fixture-teardown-after_0_57C3D64E-D357-45F8-8E57-62634E993056.txt",
+          "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+          "observedAt": "2026-10-27T08:59:34.611Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]",
+          "observation": 5,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T08:59:34.611Z",
+          "systemUptimeSeconds": 928.7364085833334,
+          "elapsedSeconds": 50.50718979166663,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/187DBDA2-CDDD-47C7-847D-6A8747357A1B.txt",
+          "bytes": 316,
+          "sha256": "56ede971eae4a02a6cb66e848288fa9d70d649bd7ec277e59b73b056229acba6",
+          "suggestedHumanReadableName": "native-lifecycle-1-initial-launch-before_0_597B7F10-7D90-47E0-BFB2-0F17EAA668A9.txt",
+          "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+          "observedAt": "2026-10-27T08:59:40.600Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]",
+          "observation": 1,
+          "operation": "initial-launch",
+          "point": "before",
+          "utc": "2026-10-27T08:59:40.600Z",
+          "systemUptimeSeconds": 934.7253582500001,
+          "elapsedSeconds": 0.022132875000011154,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/0867C79E-98A6-4330-ABA0-DFCFA97A94A3.txt",
+          "bytes": 314,
+          "sha256": "5506a4a0efd5203737d9937c3f8fd4a48cc44c11b99bba5cd8315131af2622c1",
+          "suggestedHumanReadableName": "native-lifecycle-2-initial-launch-after_0_028673A2-10C4-4CFB-BC53-56DD10ED0EE7.txt",
+          "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+          "observedAt": "2026-10-27T09:00:13.835Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]",
+          "observation": 2,
+          "operation": "initial-launch",
+          "point": "after",
+          "utc": "2026-10-27T09:00:13.829Z",
+          "systemUptimeSeconds": 967.95479675,
+          "elapsedSeconds": 33.25157137499991,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/DE50ECF1-9852-442E-9CFD-23EDEA689C0E.txt",
+          "bytes": 316,
+          "sha256": "d5e19644da8d55070788fc73faf81adaa4723c6bfed48e346f45edc6ba8d2ab3",
+          "suggestedHumanReadableName": "native-lifecycle-3-fixture-teardown-enter_0_67630C5E-0427-4330-810A-0C2E8EF2715B.txt",
+          "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+          "observedAt": "2026-10-27T09:01:17.362Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]",
+          "observation": 3,
+          "operation": "fixture",
+          "point": "teardown-enter",
+          "utc": "2026-10-27T09:01:17.359Z",
+          "systemUptimeSeconds": 1031.48501375,
+          "elapsedSeconds": 96.7817883749999,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/A698B2B1-9719-4F0E-84C3-69716707E013.txt",
+          "bytes": 323,
+          "sha256": "10b30181d06598086f4d0e3409b7798333db2722202e97054e447b00cbef2aa5",
+          "suggestedHumanReadableName": "native-lifecycle-4-fixture-teardown-before_0_10EB4D19-B649-4EA2-8E6C-8CB2A8DC8CE7.txt",
+          "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+          "observedAt": "2026-10-27T09:01:17.371Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]",
+          "observation": 4,
+          "operation": "fixture-teardown",
+          "point": "before",
+          "utc": "2026-10-27T09:01:17.371Z",
+          "systemUptimeSeconds": 1031.4969502916667,
+          "elapsedSeconds": 96.79372491666663,
+          "applicationState": 4,
+          "applicationStateName": "runningForeground"
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/DA09D28F-5E48-4560-9B09-7BCC4439F3FE.txt",
+          "bytes": 315,
+          "sha256": "ccd1454f832bb37fbec15ee226ab5e7967a44b732d935ed2c0575214337d6f42",
+          "suggestedHumanReadableName": "native-lifecycle-5-fixture-teardown-after_0_5E8BF0F2-1EAC-4CF6-B1F1-BD4B53E093E0.txt",
+          "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+          "observedAt": "2026-10-27T09:01:18.492Z",
+          "scope": "full-suite"
+        },
+        "observed": {
+          "formatVersion": 1,
+          "test": "-[PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]",
+          "observation": 5,
+          "operation": "fixture-teardown",
+          "point": "after",
+          "utc": "2026-10-27T09:01:18.492Z",
+          "systemUptimeSeconds": 1032.6176855833335,
+          "elapsedSeconds": 97.91446020833337,
+          "applicationState": 1,
+          "applicationStateName": "notRunning"
+        }
+      }
+    ]
+  },
+  "platformReports": [
+    {
+      "attachment": {
+        "entry": "screenshots/05C9B4F1-70C3-4511-BBC7-68E63BBAF4E5.txt",
+        "bytes": 314,
+        "sha256": "87e322044ff02dfe33aa47c9f3f7ed2fcf2e3e1452badc0741593add74bb2216",
+        "suggestedHumanReadableName": "platform-observation-portrait_0_A4A18191-8761-472C-A43C-37FB81B6500D.txt",
+        "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+        "observedAt": "2026-10-27T09:00:37.741Z",
+        "scope": "full-suite"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "hingeAngleDegrees": 0,
+        "hingeObservation": "measured",
+        "isSimulator": true,
+        "viewport": {
+          "height": 574.6666666666666,
+          "hingeAngleDegrees": 0,
+          "pixelRatio": 3,
+          "reservedRegions": [
+            {
+              "height": 37,
+              "width": 37,
+              "x": 399.6666666666667,
+              "y": -40
+            },
+            {
+              "height": 174,
+              "width": 84,
+              "x": 382,
+              "y": -69.33333333333333
+            }
+          ],
+          "width": 382
+        }
+      }
+    },
+    {
+      "attachment": {
+        "entry": "screenshots/82B9CA6D-8D79-4B83-8266-75C270550BEA.txt",
+        "bytes": 314,
+        "sha256": "87e322044ff02dfe33aa47c9f3f7ed2fcf2e3e1452badc0741593add74bb2216",
+        "suggestedHumanReadableName": "platform-observation-landscape-left_0_62F0F1F4-76C9-4268-9A94-12BF843CDF98.txt",
+        "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+        "observedAt": "2026-10-27T09:00:56.025Z",
+        "scope": "full-suite"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "hingeAngleDegrees": 0,
+        "hingeObservation": "measured",
+        "isSimulator": true,
+        "viewport": {
+          "height": 574.6666666666666,
+          "hingeAngleDegrees": 0,
+          "pixelRatio": 3,
+          "reservedRegions": [
+            {
+              "height": 37,
+              "width": 37,
+              "x": 399.6666666666667,
+              "y": -40
+            },
+            {
+              "height": 174,
+              "width": 84,
+              "x": 382,
+              "y": -69.33333333333333
+            }
+          ],
+          "width": 382
+        }
+      }
+    },
+    {
+      "attachment": {
+        "entry": "screenshots/F96BFDDF-A12B-4ABF-B2FE-CC936151E0F8.txt",
+        "bytes": 314,
+        "sha256": "87e322044ff02dfe33aa47c9f3f7ed2fcf2e3e1452badc0741593add74bb2216",
+        "suggestedHumanReadableName": "platform-observation-landscape-right_0_5265678F-3B94-4E23-BF5F-6839AF3177F4.txt",
+        "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+        "observedAt": "2026-10-27T09:01:11.985Z",
+        "scope": "full-suite"
+      },
+      "acceptedValue": {
+        "formatVersion": 1,
+        "hingeAngleDegrees": 0,
+        "hingeObservation": "measured",
+        "isSimulator": true,
+        "viewport": {
+          "height": 574.6666666666666,
+          "hingeAngleDegrees": 0,
+          "pixelRatio": 3,
+          "reservedRegions": [
+            {
+              "height": 37,
+              "width": 37,
+              "x": 399.6666666666667,
+              "y": -40
+            },
+            {
+              "height": 174,
+              "width": 84,
+              "x": 382,
+              "y": -69.33333333333333
+            }
+          ],
+          "width": 382
+        }
+      }
+    }
+  ],
+  "captures": [
+    {
+      "entry": "clean-install-4yzQlq/screenshots/F2D7B2FD-4891-4F1E-B97B-46CF2A262D1E.png",
+      "bytes": 849369,
+      "sha256": "2909df6d5d59e4c957fa0d65e97cd2496ee36b43193a9caef7fdd32c32c51f85",
+      "suggestedHumanReadableName": "asset-origin-rendering-first-launch_0_214325F9-835D-4A86-99B0-8712A8A9BCC4.png",
+      "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "observedAt": "2026-10-27T09:03:02.485Z",
+      "scope": "clean-install",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "clean-install-4yzQlq/screenshots/14293933-06C5-46B2-8263-591CCD45225F.png",
+      "bytes": 849021,
+      "sha256": "872c3ffa28be0b695941791d4328aeb58b4c257554340a1beacb7e66d72ae307",
+      "suggestedHumanReadableName": "asset-origin-rendering-cold-relaunch_0_B40960BD-B6B9-4C3B-BE06-A4921F50A716.png",
+      "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "observedAt": "2026-10-27T09:04:10.907Z",
+      "scope": "clean-install",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "screenshots/2E22F315-B730-4644-B9CE-3D244510383C.png",
+      "bytes": 848992,
+      "sha256": "93c1a2ca06eb24624f6952557071f0da33d0fefc7c76ec339a1bcfee316d42f7",
+      "suggestedHumanReadableName": "asset-origin-rendering-first-launch_0_6673F9F6-7589-4E7A-8014-B56FC371E47B.png",
+      "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "observedAt": "2026-10-27T08:55:12.716Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "screenshots/F733FBD7-2CDC-4423-9174-9CE1E715CF0D.png",
+      "bytes": 848897,
+      "sha256": "2d238e505df6b75c22ccfdb1616f734abcb4ca97d9fe0cb3195d903ade50006d",
+      "suggestedHumanReadableName": "asset-origin-rendering-cold-relaunch_0_9B163D2C-D9AF-400E-853E-E8557EADE282.png",
+      "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "observedAt": "2026-10-27T08:55:45.665Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "screenshots/744F9BE0-B567-4891-9B2B-EAA1F8BBB384.png",
+      "bytes": 1393321,
+      "sha256": "51a1fb6d5ccf3a5ea1f4884de3cdd1c14d376987922c1e7bf4c61c0a301a8445",
+      "suggestedHumanReadableName": "duo-host-handshake_0_16A8F9A8-4036-4D91-9DC1-FB513950A69D.png",
+      "testIdentifier": "HostSmokeTests/testBundledRendererHandshakes()",
+      "observedAt": "2026-10-27T08:56:02.301Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": false
+    },
+    {
+      "entry": "screenshots/97E4FBD1-4DA4-465B-A796-322B312D68D1.png",
+      "bytes": 1393321,
+      "sha256": "51a1fb6d5ccf3a5ea1f4884de3cdd1c14d376987922c1e7bf4c61c0a301a8445",
+      "suggestedHumanReadableName": "duo-host-after-lifecycle_0_AEB6146B-B570-451F-A6AC-28DA309C3759.png",
+      "testIdentifier": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+      "observedAt": "2026-10-27T08:56:22.032Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": false
+    },
+    {
+      "entry": "screenshots/370DF695-81D7-47B6-89AC-4EE0E16F082B.png",
+      "bytes": 1694724,
+      "sha256": "ce1cc7c59ca95f420cd3ffc3ba45ff56093cd9e1e1668e23b74e2c95715aedae",
+      "suggestedHumanReadableName": "duo-railway-durable-save_0_B7056456-41B0-4800-8420-7576CA48C347.png",
+      "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "observedAt": "2026-10-27T08:57:27.920Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": false
+    },
+    {
+      "entry": "screenshots/D7F146FB-1689-4E99-A2D5-5A24D21C03CF.png",
+      "bytes": 1394710,
+      "sha256": "704a636a5f10283edb4ebfa0033bf53b3d8812f722443b04a4a243cfbdcd35af",
+      "suggestedHumanReadableName": "duo-railway-restored_0_58704A87-F0F7-4259-B669-FFE78D9411FA.png",
+      "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "observedAt": "2026-10-27T08:58:01.014Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": false
+    },
+    {
+      "entry": "screenshots/971CC310-764A-4215-9742-7E0FE237EE39.png",
+      "bytes": 1394710,
+      "sha256": "704a636a5f10283edb4ebfa0033bf53b3d8812f722443b04a4a243cfbdcd35af",
+      "suggestedHumanReadableName": "duo-edit-save-relaunch_0_E6603BE1-F0D5-4775-94C6-471A1D8309B9.png",
+      "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "observedAt": "2026-10-27T08:58:01.427Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": false
+    },
+    {
+      "entry": "screenshots/E8B8D13B-8344-4F36-9082-00E7EBD16D5D.png",
+      "bytes": 184869,
+      "sha256": "0b1dd706017457e00a5a261e74656fc2a1c62f78f0ee2048ac10e6bd1834f42e",
+      "suggestedHumanReadableName": "native-startup-held_0_06A7D9E6-813D-48C2-B83D-10129CA7F782.png",
+      "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+      "observedAt": "2026-10-27T08:58:17.613Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "screenshots/C93BDD58-3A5E-4A08-BFBD-CC59A8302446.png",
+      "bytes": 185183,
+      "sha256": "e7f098bcd402421c4d2c21363a8ad530337c238abe81bce9dfd7786ace0c10dd",
+      "suggestedHumanReadableName": "native-startup-held-after-help_0_C8181AE0-476B-4A89-8554-23985193EAA8.png",
+      "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+      "observedAt": "2026-10-27T08:58:28.442Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "screenshots/5EF717F9-449F-4CD7-BCC6-85236EF66BBA.png",
+      "bytes": 1394710,
+      "sha256": "704a636a5f10283edb4ebfa0033bf53b3d8812f722443b04a4a243cfbdcd35af",
+      "suggestedHumanReadableName": "native-startup-released-ready_0_7DD1F7C5-B0FC-4076-8B7B-E409A2D37152.png",
+      "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+      "observedAt": "2026-10-27T08:58:42.839Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "screenshots/6A5E8CE6-B2EB-4B39-9216-BA38AA0A19E2.png",
+      "bytes": 189821,
+      "sha256": "f77eca7a2e426e7fbec9e6bf5f1bafa7cf4771877fa2ec7ea3e208f1de0822b8",
+      "suggestedHumanReadableName": "native-renderer-failure_0_1E3A7DA6-C5BE-4075-8D51-2FA9BF6FB7B6.png",
+      "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+      "observedAt": "2026-10-27T08:59:06.202Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "screenshots/5A8D0A54-2B6A-40B8-8135-E999C07CA06F.png",
+      "bytes": 1395039,
+      "sha256": "6474204b1789355c3c193da8ca118e8df5c0aa9531d3e434883b7541f0375d2d",
+      "suggestedHumanReadableName": "native-renderer-retry-and-foreground_0_3CD4690F-BA92-440B-B420-81FF52792982.png",
+      "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+      "observedAt": "2026-10-27T08:59:28.548Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": true
+    },
+    {
+      "entry": "screenshots/9DA64F58-37D3-469E-862A-9B813207CC91.png",
+      "bytes": 1394629,
+      "sha256": "9f815608c47814537f2584704fb293e41bff96c781b5e4f2328197cc76d21c8f",
+      "suggestedHumanReadableName": "platform-geometry-portrait_0_02731497-B847-4051-8497-CF0B387CFB70.png",
+      "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+      "observedAt": "2026-10-27T09:00:42.874Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": false
+    },
+    {
+      "entry": "screenshots/174CDC24-0B52-4828-B3EB-0E1AF789002A.png",
+      "bytes": 1394885,
+      "sha256": "f2e3d3f35005603b6bb86142e075e306dd8285d1bb1d4153825e398ec13a9651",
+      "suggestedHumanReadableName": "platform-geometry-landscape-left_0_56730FC3-B9E6-412F-8497-B571EAF900FA.png",
+      "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+      "observedAt": "2026-10-27T09:01:01.036Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": false
+    },
+    {
+      "entry": "screenshots/50ACE1A7-6DE6-4043-AD14-47EB76E57493.png",
+      "bytes": 1394870,
+      "sha256": "ac1ec4ff9b5a916c44eae43dedb029a6642ea333a9cb2c2f94c07b1990a1f9a8",
+      "suggestedHumanReadableName": "platform-geometry-landscape-right_0_1D39A043-5ADE-4763-A7F9-DAB591BE28C5.png",
+      "testIdentifier": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+      "observedAt": "2026-10-27T09:01:17.171Z",
+      "scope": "full-suite",
+      "visuallyInspectedByNativeReviewer": false
+    }
+  ],
+  "sourceClosure": {
+    "P01-T02": "P01-T02-native-integration-c1e6e39.json (113 exact Git inputs)",
+    "P02-T01": "P02-T01-native-integration-c1e6e39.json (118 exact Git inputs)"
+  },
+  "limitations": [
+    "This is an unsigned Debug Simulator diagnostic run. No physical Duo, signed Release, App Store eligibility, exclusive commercial distribution or owner approval is established.",
+    "The prepared WKWebView denied HTTP and HTTPS resources before navigation, cleared WebKit data and used nonpersistent storage. This establishes offline WebView resource operation, not OS-wide networking disablement or physical airplane mode.",
+    "The clean trial actually removed the native app data container, observed the expected missing-container response, reinstalled the same compiled app and inspected an empty application store before any launch. It does not claim secure erasure or keychain clearing.",
+    "WASM bytes loaded but compilation was refused by the unchanged script CSP. No unsafe-eval or wasm-unsafe-eval relaxation was added. KTX2/Basis is absent and remains disabled; this is an explicit blocker, not a decoder success.",
+    "Audio source completion followed an actual accessible XCTest tap. Sample decoding and context/playback completion do not establish acoustic quality, hardware audio routing or interruption handling.",
+    "The diagnostic bundle has ten runtime files, including original probe fixtures. Actual installed identities are CI observations verified against the packaged manifest. This full lane does not establish ordinary Release resource identity.",
+    "All 57 public application-state observations completed. XCUIApplication.state is asynchronous and is not independent OS process-death proof. The successful isolated test lifetimes do not establish the exclusive cause of earlier host-side delays.",
+    "Startup timings are observations only. The clean cold launch public operation took 44.597 seconds and the platform fixture launch was also slow; this run is not a launch-performance or sustained-rendering baseline.",
+    "All three current platform reports are identical: viewport 382 by 574.6666666666666 points, pixel ratio 3 and hinge angle 0. Orientation requests do not prove a rotation geometry or fold/hinge transition.",
+    "The actual contrast audit covers the native failure screen. VoiceOver navigation/activation, largest accessibility text, physical scene recreation and actual WebContent-process death remain separate tests.",
+    "Nine original diagnostic/native-state PNGs were visually inspected. The procedural scene, remaining UI typography/contrast and raw renderer error copy are not final visual approval. Videos were not watched.",
+    "The current full suite and supplemental clean trial both passed without reruns or weakened assertions. Earlier failed/cancelled runs remain preserved under their original source identities.",
+    "Remote original artifacts expire at the recorded 2026-11-10 provider times. Compact reports, selected exact log/event excerpts, byte identities and source fingerprints are retained in Git; no large binary is committed."
+  ]
+}
