@@ -125,6 +125,10 @@ final class EngineHostModel: ObservableObject {
     }
 
     func accept(_ envelope: BridgeEnvelope) {
+        // Messages already queued by a failed WebContent session cannot
+        // reopen transport or write storage. Only an explicit load/retry may
+        // leave terminal failure and establish a new session.
+        guard phase != .failed else { return }
         guard !acceptedIDs.contains(envelope.id) else { return }
         acceptedIDs.append(envelope.id)
         if acceptedIDs.count > 256 { acceptedIDs.removeFirst() }

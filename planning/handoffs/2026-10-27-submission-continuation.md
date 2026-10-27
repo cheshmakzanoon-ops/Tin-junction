@@ -14,11 +14,13 @@ Local baseline `npm run check` passed: 100 project tests, 12 iOS tool tests and 
 - Scope platform-probe scrolling to the actual help List, and retain an assertion that dismissal remains hittable after scrolling.
 - Wait for the actual native keyboard and reacquire the layout-name field after its resize before typing. Wait for the complete generated text to appear through accessibility before retaining the original edit/save/revision/relaunch assertions.
 
-The keyboard diagnosis is a hypothesis pending the next actual native run. This checkpoint does not claim the failure repaired before that run completes. No required test or release criterion is removed.
+Published repair: `02c0bc82746b8391fbf578cd0bed2b7bef8e1348`. Its [native run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40444287209) and [web run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40444287322) are running. The keyboard diagnosis is a hypothesis pending that native result. No required test or release criterion is removed.
+
+Follow-up checkpoint closes the terminal-failure state against queued bridge messages until explicit retry. A native regression checks both rejected writes and successful explicit recovery. Native presentation also delegates app-title/save/help chrome to Swift instead of displaying a duplicated web header. The focused browser native-save/retry/session suite passes using the actual native command path. The complete baseline browser suite passed 15/15 in 3.8 minutes.
 
 ## Parallel scopes
 
-The coordinator owns integration, planning and publication. Native repair owns the three native view/UI-test files. Track investigation covers explicit turnout routes and whole-consist occupancy. Graphics investigation covers original instanced foliage and closed building gables. Feature implementation waits for the required CI repair; final artwork, hardware performance and distribution are not accepted from these investigations.
+The coordinator owns integration, planning and publication. Prior task claims were explicitly released after inspecting the published implementation and reassigned to this continuation. The native worker owns host recovery and native verification. Track work covers explicit turnout routes and whole-consist occupancy under P05-T04. Graphics work repairs the existing workbench's cone foliage and open building gables under P04-T06. The repair is published and current checks are running; no task is completed on pending CI. Final artwork, hardware performance and distribution remain unaccepted.
 
 ## Remaining release limitations
 

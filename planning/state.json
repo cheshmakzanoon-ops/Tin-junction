@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T03:23:51.874Z",
+  "updated_at": "2026-10-27T03:28:17.004Z",
   "health": {
     "ci": {
-      "status": "failed",
-      "checked_commit": "0f312d27de28960da7f14348384ea0e72eed5495",
+      "status": "running",
+      "checked_commit": "02c0bc82746b8391fbf578cd0bed2b7bef8e1348",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40441273798",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40441273793"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40444287209",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40444287322"
       ]
     },
     "incidents": []
@@ -101,10 +101,10 @@
     "P01-T01": {
       "status": "in_progress",
       "claim": {
-        "owner": "pew-pew-platform",
-        "started_at": "2026-10-27T02:13:17.965Z",
-        "expires_at": "2026-10-27T10:13:17.965Z",
-        "head_at_claim": "c59f7acbdaf591552de718d19bc7418d16fd8cd7",
+        "owner": "submission-native",
+        "started_at": "2026-10-27T03:28:16.841Z",
+        "expires_at": "2026-10-27T11:28:16.841Z",
+        "head_at_claim": "02c0bc82746b8391fbf578cd0bed2b7bef8e1348",
         "scope": [
           "apps/ios/TinJunction/Platform/",
           "tools/ios/",
@@ -119,6 +119,16 @@
           "at": "2026-10-27T02:13:17.965Z",
           "action": "claim",
           "detail": "pew-pew-platform; 8 hours"
+        },
+        {
+          "at": "2026-10-27T03:28:16.752Z",
+          "action": "release",
+          "detail": "Prior platform probe inspected; coordinator native worker continues verified published implementation and current CI"
+        },
+        {
+          "at": "2026-10-27T03:28:16.841Z",
+          "action": "claim",
+          "detail": "submission-native; 8 hours"
         }
       ]
     },
@@ -414,10 +424,10 @@
     "P05-T04": {
       "status": "in_progress",
       "claim": {
-        "owner": "pew-pew-track",
-        "started_at": "2026-10-27T02:51:11.438Z",
-        "expires_at": "2026-10-27T10:51:11.438Z",
-        "head_at_claim": "7e5541b7c4be7db8392f4eee4804048bf0986578",
+        "owner": "submission-track",
+        "started_at": "2026-10-27T03:28:17.004Z",
+        "expires_at": "2026-10-27T11:28:17.004Z",
+        "head_at_claim": "02c0bc82746b8391fbf578cd0bed2b7bef8e1348",
         "scope": [
           "web/src/track/",
           "web/src/simulation/"
@@ -431,6 +441,16 @@
           "at": "2026-10-27T02:51:11.438Z",
           "action": "claim",
           "detail": "pew-pew-track; 8 hours"
+        },
+        {
+          "at": "2026-10-27T03:28:16.916Z",
+          "action": "release",
+          "detail": "Prior checkpoint and clean track scope inspected; no turnout files existed; current coordinated worker resumes"
+        },
+        {
+          "at": "2026-10-27T03:28:17.004Z",
+          "action": "claim",
+          "detail": "submission-track; 8 hours"
         }
       ]
     },
@@ -1288,10 +1308,10 @@
     "P04-T06": {
       "status": "in_progress",
       "claim": {
-        "owner": "pew-pew",
-        "started_at": "2026-10-27T02:13:17.667Z",
-        "expires_at": "2026-10-27T10:13:17.667Z",
-        "head_at_claim": "c59f7acbdaf591552de718d19bc7418d16fd8cd7",
+        "owner": "submission-coordinator",
+        "started_at": "2026-10-27T03:28:16.663Z",
+        "expires_at": "2026-10-27T11:28:16.663Z",
+        "head_at_claim": "02c0bc82746b8391fbf578cd0bed2b7bef8e1348",
         "scope": [
           "web/src/",
           "apps/ios/",
@@ -1318,6 +1338,16 @@
           "at": "2026-10-27T02:13:17.667Z",
           "action": "claim",
           "detail": "pew-pew; 8 hours"
+        },
+        {
+          "at": "2026-10-27T03:28:16.589Z",
+          "action": "release",
+          "detail": "Owner requested continuation; prior published checkpoints and clean checkout inspected; native repair published as 02c0bc8 and coordinator takes over"
+        },
+        {
+          "at": "2026-10-27T03:28:16.663Z",
+          "action": "claim",
+          "detail": "submission-coordinator; 8 hours"
         }
       ]
     }

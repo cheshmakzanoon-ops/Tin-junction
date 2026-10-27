@@ -97,6 +97,44 @@ final class EngineHostModelTests: XCTestCase {
         XCTAssertTrue(host.status.contains("renderer_initialization_failed"))
     }
 
+    func testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload() async throws {
+        let store = HostTestStore()
+        let host = EngineHostModel(store: store)
+        defer { host.detach() }
+        try await start(host)
+        try acknowledgeLayout(host)
+        let failedSessionID = host.sessionID
+        host.accept(try envelope("terminal-error", "engine.error", [
+            "code": "renderer_initialization_failed", "recoverable": false
+        ]))
+
+        host.accept(try envelope("late-ready", "web.ready", [
+            "build": "first-railway", "protocolVersion": 1, "renderer": "webgl2"
+        ]))
+        await host.awaitPendingStorage()
+        host.accept(try envelope("late-loaded", "layout.loaded", [
+            "sessionId": failedSessionID, "documentId": "test-railway", "revision": 0
+        ]))
+        host.accept(try checkpoint(host, sessionID: failedSessionID))
+        await host.awaitPendingStorage()
+
+        XCTAssertEqual(host.phase, .failed, "A late renderer handshake cannot bypass the visible retry action.")
+        XCTAssertFalse(host.isBridgeReady)
+        XCTAssertFalse(host.isReady)
+        let rejectedSaveCount = await store.numberOfSaves()
+        XCTAssertEqual(rejectedSaveCount, 0, "A failed session cannot resume writing through queued messages.")
+
+        try await start(host)
+        XCTAssertNotEqual(host.sessionID, failedSessionID)
+        try acknowledgeLayout(host)
+        host.accept(try checkpoint(host))
+        await host.awaitPendingStorage()
+        XCTAssertEqual(host.phase, .ready)
+        XCTAssertEqual(host.saveState, .saved)
+        let acceptedSaveCount = await store.numberOfSaves()
+        XCTAssertEqual(acceptedSaveCount, 1, "An explicit fresh load can recover and save normally.")
+    }
+
     func testSuccessfulSaveChangesDurableStateOnlyAfterStoreCompletes() async throws {
         let host = EngineHostModel(store: HostTestStore())
         defer { host.detach() }

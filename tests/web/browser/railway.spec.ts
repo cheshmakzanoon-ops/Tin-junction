@@ -121,10 +121,14 @@ test("native bridge queues edits behind a durable acknowledgment and rejects sta
   await expect.poll(async () => (await checkpoints(page)).length).toBe(1);
   const first = (await checkpoints(page))[0]!;
   expect(first.expectedRevision).toBeNull();
-  await page.getByRole("button", { name: "Save layout", exact: true }).evaluate(button => { for (let index = 0; index < 24; index += 1) (button as HTMLButtonElement).click(); });
+  // The packaged app has native title/save/help controls. Exercise the native
+  // save command here instead of a duplicated web-only save button.
+  await expect(page.locator(".masthead")).toBeHidden();
+  await expect(page.getByRole("heading", { name: "Alpine afternoon", exact: true })).toBeVisible();
+  for (let index = 0; index < 24; index += 1) await deliver(page, "native.requestCheckpoint", { sessionId: "native-session-1" });
   expect((await checkpoints(page)).length).toBe(1);
   await rename(page, "A carefully saved railway");
-  await page.getByRole("button", { name: "Save layout", exact: true }).click();
+  await deliver(page, "native.requestCheckpoint", { sessionId: "native-session-1" });
   expect((await checkpoints(page)).length).toBe(1);
   // The deadline reports a retryable failure, but never publishes another
   // checkpoint on its own. A deliberate retry must resend the exact immutable
@@ -140,11 +144,11 @@ test("native bridge queues edits behind a durable acknowledgment and rejects sta
   await page.clock.fastForward(1);
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.saveState)).toBe("failed");
   expect((await checkpoints(page)).length).toBe(1);
-  await page.getByRole("button", { name: "Save layout", exact: true }).click();
+  await deliver(page, "native.requestCheckpoint", { sessionId: "native-session-1" });
   const retried = await checkpoints(page);
   expect(retried).toHaveLength(2);
   expect(retried[1]).toEqual(first);
-  await page.getByRole("button", { name: "Save layout", exact: true }).evaluate(button => { for (let index = 0; index < 24; index += 1) (button as HTMLButtonElement).click(); });
+  for (let index = 0; index < 24; index += 1) await deliver(page, "native.requestCheckpoint", { sessionId: "native-session-1" });
   expect((await checkpoints(page)).length).toBe(2);
   await acknowledge(page, first, "obsolete-session");
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.savedRevision)).toBeNull();
@@ -164,12 +168,12 @@ test("native bridge queues edits behind a durable acknowledgment and rejects sta
   await expect(page.getByRole("region", { name: "Scenery workshop", exact: true })).toBeHidden();
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.mode)).toBe("operate");
   await page.getByRole("button", { name: "Night", exact: true }).click();
-  await page.getByRole("button", { name: "Save layout", exact: true }).click();
+  await deliver(page, "native.requestCheckpoint", { sessionId: "native-session-2" });
   await expect.poll(async () => (await checkpoints(page)).length).toBe(4);
   const third = (await checkpoints(page))[3]!;
   await deliver(page, "native.saveFailed", { sessionId: "native-session-2", requestId: third.requestId,
     code: "revision_conflict", message: "The stored revision changed." });
-  await expect(page.getByRole("button", { name: "Save layout", exact: true })).toBeDisabled();
+  await expect(page.locator("#save")).toBeDisabled();
   await expect(page.getByRole("alert")).toContainText("Saving is paused to protect your saved railway");
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.saveState)).toBe("blocked");
   await deliver(page, "native.requestCheckpoint", { sessionId: "native-session-2" });

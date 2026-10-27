@@ -242,3 +242,16 @@ input[type="range"] { height: 44px; }
   dialog { padding: 18px; max-height: calc(100% - 16px); }
   dialog h2 { font-size: 30px; }
 }
+
+/* The Swift shell owns the app title, durable save state and help action.
+   Give the miniature that space back inside the packaged app. */
+.native-host .masthead { display: none; }
+.native-host .layout-heading { top: 24px; }
+.native-host .view-tools { top: 22px; }
+.native-host .editor-panel { top: 22px; }
+.native-host .notice { top: 14px; }
+@media (max-height: 500px) {
+  .native-host .layout-heading { top: 12px; }
+  .native-host .view-tools { top: 40px; }
+  .native-host .editor-panel { top: 8px; }
+}
