@@ -57,9 +57,22 @@ final class HostSmokeTests: XCTestCase {
         let originalName = try XCTUnwrap(nameField.value as? String)
         let uniqueTag = " CI\(UUID().uuidString.prefix(8))"
         nameField.tap()
+        XCTAssertTrue(app.keyboards.firstMatch.waitForExistence(timeout: 10),
+                      "The actual keyboard must be present before entering a layout name.")
+        // Keyboard presentation resizes the native WebView. Reacquire the
+        // field after that transition instead of typing into stale geometry.
+        let readyForTyping = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "hittable == true"), object: nameField)
+        XCTAssertEqual(XCTWaiter.wait(for: [readyForTyping], timeout: 5), .completed)
+        nameField.tap()
         // Insert through the actual keyboard. Reading back the field avoids
         // assumptions about where WebKit positions the caret on first tap.
         nameField.typeText(uniqueTag)
+        let entered = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value CONTAINS %@", uniqueTag.trimmingCharacters(in: .whitespaces)),
+            object: nameField)
+        XCTAssertEqual(XCTWaiter.wait(for: [entered], timeout: 10), .completed,
+                       "WebKit must expose the complete name entered through the real keyboard.")
         let changedName = try XCTUnwrap(nameField.value as? String)
             .trimmingCharacters(in: .whitespacesAndNewlines)
         XCTAssertTrue(changedName.contains(uniqueTag.trimmingCharacters(in: .whitespaces)))
@@ -108,7 +121,7 @@ final class HostSmokeTests: XCTestCase {
         app.buttons["host.help"].tap()
         XCTAssertTrue(app.navigationBars["Railway guide"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["Save status"].exists)
-        app.buttons["Done"].tap()
+        app.buttons["host.help.done"].tap()
         XCTAssertTrue(app.staticTexts["host.title"].exists)
     }
 

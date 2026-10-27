@@ -18,11 +18,15 @@ final class PlatformProbeUITests: XCTestCase {
             XCTAssertTrue(app.buttons["host.help"].waitForExistence(timeout: 10))
             app.buttons["host.help"].tap()
             XCTAssertTrue(app.navigationBars["Railway guide"].waitForExistence(timeout: 5))
+            let done = app.buttons["host.help.done"]
+            XCTAssertTrue(done.waitForExistence(timeout: 5))
+            let contents = app.collectionViews["host.help.contents"]
+            XCTAssertTrue(contents.waitForExistence(timeout: 5))
             let probe = app.staticTexts["host.platformProbe"]
             // A List may lazily create its final rows only after scrolling.
             for _ in 0..<4 {
                 if probe.exists { break }
-                app.swipeUp()
+                contents.swipeUp()
             }
             XCTAssertTrue(probe.waitForExistence(timeout: 5))
             let available = XCTNSPredicateExpectation(
@@ -51,7 +55,8 @@ final class PlatformProbeUITests: XCTestCase {
             data.name = "platform-observation-\(name)"
             data.lifetime = .keepAlways
             add(data)
-            app.buttons["Done"].tap()
+            XCTAssertTrue(done.isHittable, "The guide's close action must remain reachable after scrolling.")
+            done.tap()
             let dismissed = XCTNSPredicateExpectation(
                 predicate: NSPredicate(format: "exists == false"), object: app.navigationBars["Railway guide"])
             XCTAssertEqual(XCTWaiter.wait(for: [dismissed], timeout: 5), .completed)

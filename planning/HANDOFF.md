@@ -1,5 +1,7 @@
 # Current handoff — first operating railway
 
+Current continuation: [submission-quality work](handoffs/2026-10-27-submission-continuation.md). The latest baseline native run failed two UI checks; the first new checkpoint repairs help dismissal and investigates keyboard entry without weakening save/relaunch assertions. Inspect the corresponding live CI before accepting it.
+
 Active continuation: [quality continuation](handoffs/2026-10-27-quality-continuation.md). The owner confirmed the previous contributor stopped; current task claims and checks are recorded in the state ledger. The earlier handoff below remains historical evidence.
 
 Read [the current implementation and verification handoff](handoffs/2026-10-27-first-railway.md). The repository now contains a working miniature railway, scenery workbench and native save/recovery integration. [The implemented contract](../docs/architecture/FIRST_WORKBENCH.md) records the precise scope.

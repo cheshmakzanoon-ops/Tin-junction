@@ -124,8 +124,20 @@ struct RootView: View {
                         #endif
                     }
                 }
+                .accessibilityIdentifier("host.help.contents")
                 .navigationTitle("Railway guide")
-                .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { showingHelp = false } } }
+                // Keep dismissal in the sheet's safe area. The adaptive
+                // navigation bar can omit its toolbar action from the Duo
+                // accessibility tree after the List scrolls.
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    Button("Done") { showingHelp = false }
+                        .buttonStyle(.borderedProminent)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 12)
+                        .background(paper)
+                        .accessibilityIdentifier("host.help.done")
+                }
             }
             .tint(ink)
         }
