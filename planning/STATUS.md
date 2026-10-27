@@ -2,9 +2,9 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T02:25:28.991Z
+Ledger updated: 2026-10-27T02:33:55.915Z
 
-Tasks: 131; done: 11; active: 4; review: 0; blocked: 0; todo: 116.
+Tasks: 131; done: 12; active: 4; review: 0; blocked: 0; todo: 115.
 
 CI snapshot: **running** for c59f7acbdaf591552de718d19bc7418d16fd8cd7. This may be stale; inspect current remote checks.
 
@@ -17,7 +17,7 @@ CI snapshot: **running** for c59f7acbdaf591552de718d19bc7418d16fd8cd7. This may 
 | [P02](phases/P02-native-application-shell.md) | Swift native application shell | 0/4 | — |
 | [P03](phases/P03-native-web-contract.md) | Secure native-to-web contract | 0/5 | — |
 | [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 5/6 | P04-T06 in_progress |
-| [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 1/5 | P05-T02 in_progress |
+| [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 2/5 | P05-T03 in_progress |
 | [P06](phases/P06-first-operating-railway.md) | First operating railway | 0/4 | — |
 | [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 0/5 | — |
 | [P08](phases/P08-camera-selection-and-input.md) | Camera, picking and gesture arbitration | 0/4 | — |

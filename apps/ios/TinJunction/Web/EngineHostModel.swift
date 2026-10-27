@@ -85,6 +85,7 @@ final class EngineHostModel: ObservableObject {
     }
 
     func loading() {
+        PlatformStartupTrace.record("host.loading.lifecycle=\(lifecycle.rawValue)")
         cancelSession()
         sessionID = UUID().uuidString
         recoveringRenderer = false
@@ -108,6 +109,7 @@ final class EngineHostModel: ObservableObject {
     }
 
     func fail(_ description: String) {
+        PlatformStartupTrace.record(isBridgeReady ? "host.failed.afterBridge" : "host.failed.beforeBridge")
         cancelSession()
         recoveringRenderer = false
         isReady = false
@@ -128,6 +130,7 @@ final class EngineHostModel: ObservableObject {
         if acceptedIDs.count > 256 { acceptedIDs.removeFirst() }
         switch envelope.type {
         case "web.ready":
+            PlatformStartupTrace.record("bridge.webReady")
             guard !isBridgeReady else { return }
             isBridgeReady = true
             recoveringRenderer = false
@@ -194,6 +197,7 @@ final class EngineHostModel: ObservableObject {
                 if let stored { document = try stored.document.stoppedForRestore().bridgeObject() }
                 else { document = NSNull() }
                 self.restorePrepared = true
+                PlatformStartupTrace.record("host.restorePrepared")
                 self.send(type: "native.layout", payload: [
                     "sessionId": self.sessionID, "document": document,
                     "checkpoint": stored?.checkpoint ?? 0, "recovered": stored?.recovered ?? false
@@ -220,6 +224,7 @@ final class EngineHostModel: ObservableObject {
         }
         activeDocumentID = documentID
         acceptedLayout = true
+        PlatformStartupTrace.record("host.layoutAccepted")
         handshakeTimeoutTask?.cancel()
         handshakeTimeoutTask = nil
         isReady = !recoveringRenderer
@@ -312,6 +317,7 @@ final class EngineHostModel: ObservableObject {
     }
 
     func updateLifecycle(_ value: Lifecycle) {
+        if lifecycle != value { PlatformStartupTrace.record("host.lifecycle=\(value.rawValue)") }
         lifecycle = value
         sendLifecycle()
         if value != .active { requestCheckpoint() }

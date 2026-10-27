@@ -113,7 +113,7 @@
       "id": "workbench.locomotive",
       "label": "Original miniature steam locomotive",
       "kind": "locomotive",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "stage": "prototype",
       "taskId": "P04-T06",
       "provenance": {
@@ -132,8 +132,15 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/train.ts",
-          "sha256": "5f711b4f029477b59269adec3b112f571f7d2b3b0b0efdc4a3a5a5ff0ae6e1d9",
-          "bytes": 11263,
+          "sha256": "51652aa4c636050698ea7b932500f41fb9b394e4c441b49a1ccc548182eba402",
+          "bytes": 13370,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/trainMechanics.ts",
+          "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320",
+          "bytes": 1405,
           "mediaType": "text/typescript",
           "storage": "git"
         }
@@ -159,7 +166,7 @@
       "id": "workbench.wagons",
       "label": "Original two-wagon consist",
       "kind": "rolling-stock",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "stage": "prototype",
       "taskId": "P04-T06",
       "provenance": {
@@ -178,8 +185,15 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/train.ts",
-          "sha256": "5f711b4f029477b59269adec3b112f571f7d2b3b0b0efdc4a3a5a5ff0ae6e1d9",
-          "bytes": 11263,
+          "sha256": "51652aa4c636050698ea7b932500f41fb9b394e4c441b49a1ccc548182eba402",
+          "bytes": 13370,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/trainMechanics.ts",
+          "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320",
+          "bytes": 1405,
           "mediaType": "text/typescript",
           "storage": "git"
         }

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "task_id": "P05-T02",
+  "result": "passed",
+  "tested_commit": "f7eb7c074802b447c9feda334b4a3ae122997e82",
+  "recorded_at": "2026-10-27T02:33:25Z",
+  "source_files": [
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "tests/web/unit/track-module.test.ts",
+      "sha256": "4fe2fb3385e1201d1058d2dfbaa4d7b00b7e9a1d7fd7e608f8fc5c13f002af9f"
+    },
+    {
+      "path": "tests/fixtures/track/joints.ts",
+      "sha256": "a2e7430bea5b97a4c8d43853f31b80a23d403d84183ef612e7d0101d97cadb4d"
+    },
+    {
+      "path": "tests/fixtures/track/joints.html",
+      "sha256": "af1d584565e5690d7b07c4b98df985ed0ab9d9b7567bbcdf0a0d6f3d32d0290c"
+    },
+    {
+      "path": "tests/fixtures/track/capture-joints.mjs",
+      "sha256": "7f3d0358899905cadb2b6b8a5fb45a933aa4489dfd068bbfa6a008e5814f5d1c"
+    }
+  ],
+  "reviewed_by": "pew pew \u2014 AI engineering geometry inspection, not owner or final art approval",
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Engineering inspection of original modular geometry only, not final production asset approval or real-device evidence.",
+    "Current app remains on its schema-v1 fixed oval; route graph/editor integration is a later dependency-gated task.",
+    "Four actual Three.js/Chromium views inspected: straight-to-right-curve and right-to-left-curve overview/rail-height close-ups. No visible seam gaps, intersecting rails or reversed surfaces at these standard joints.",
+    "Compact 88 KB inspection plate retained with the manifest; future CI captures are uploaded as Actions artifacts."
+  ],
+  "evidence_id": "P05-T02-modules-joint-review",
+  "kind": "visual_review",
+  "commands": [],
+  "artifacts": [
+    {
+      "path": "evidence/P05-T02-joints.png",
+      "sha256": "0d09b2b1169ba544dbdbb571fec730356dac2d0a468275eb88b488fbb993151e"
+    },
+    {
+      "path": "evidence/P05-T02-joint-diagnostics.json",
+      "sha256": "134aba1c1ae5fa5a6aecc2e4623afd474d22a09c06e9fcec8a07129be5fa91d6"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P05-T02-A2",
+      "evidence": [
+        "evidence/P05-T02-joints.png",
+        "evidence/P05-T02-joint-diagnostics.json"
+      ]
+    }
+  ]
+}

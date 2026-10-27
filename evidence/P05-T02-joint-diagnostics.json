@@ -1,0 +1,26 @@
+{
+  "environment": "Desktop Chromium with SwiftShader; not physical device evidence",
+  "results": [
+    {
+      "title": "Straight → right curve · overview",
+      "compatible": true,
+      "triangles": 9192
+    },
+    {
+      "title": "Straight → right curve · rail-height close-up",
+      "compatible": true,
+      "triangles": 9156
+    },
+    {
+      "title": "Right → left curve · overview",
+      "compatible": true,
+      "triangles": 17568
+    },
+    {
+      "title": "Right → left curve · rail-height close-up",
+      "compatible": true,
+      "triangles": 17484
+    }
+  ],
+  "errors": []
+}

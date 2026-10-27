@@ -15,6 +15,8 @@ final class BundleSchemeHandler: NSObject, WKURLSchemeHandler {
         do {
             let file = try BundleResourcePolicy.resolve(urlSchemeTask.request, root: root)
             let data = try Data(contentsOf: file, options: .mappedIfSafe)
+            // Only the known bundled extension and byte count; never log a path.
+            PlatformStartupTrace.record("resource.ready.type=\(file.pathExtension).bytes=\(data.count)")
             guard data.count <= BundleResourcePolicy.maximumAssetBytes else {
                 throw BundleResourcePolicy.Rejection.assetTooLarge
             }
@@ -29,6 +31,7 @@ final class BundleSchemeHandler: NSObject, WKURLSchemeHandler {
             urlSchemeTask.didReceive(data)
             urlSchemeTask.didFinish()
         } catch {
+            PlatformStartupTrace.record("resource.rejected")
             urlSchemeTask.didFailWithError(error)
         }
     }

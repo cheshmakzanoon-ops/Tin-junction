@@ -4,6 +4,7 @@ import type { LayoutDocument } from "../model/index";
 import { box, compactGroup, cylinder, RAIL_OFFSET, RAIL_TOP } from "./geometry";
 import type { Palette } from "./materials";
 import { steamTexture } from "./materials";
+import { CHIMNEY_OUTLET, crankOffset, steamOrigin } from "./trainMechanics";
 
 function alongZ(mesh: THREE.Mesh): THREE.Mesh { mesh.rotation.x = Math.PI / 2; return mesh; }
 function alongX(mesh: THREE.Mesh): THREE.Mesh { mesh.rotation.z = Math.PI / 2; return mesh; }
@@ -26,7 +27,7 @@ function locomotive(palette: Palette): THREE.Group {
     box(group, [0.0035, 0.0015, 0.010], [side * 0.0133, 0.013, -0.024], palette.iron);
   }
   cylinder(group, 0.0039, 0.003, 0.0115, [0, 0.044, 0.023], palette.iron, 18);
-  cylinder(group, 0.005, 0.0046, 0.0018, [0, 0.0507, 0.023], palette.brass, 18);
+  cylinder(group, 0.005, 0.0046, 0.0018, [0, CHIMNEY_OUTLET.y - 0.0009, CHIMNEY_OUTLET.z], palette.brass, 18);
   cylinder(group, 0.0037, 0.0048, 0.006, [0, 0.0401, 0.004], palette.brass, 18);
   cylinder(group, 0.0012, 0.0015, 0.005, [0.004, 0.042, -0.005], palette.brass, 12);
   box(group, [0.022, 0.013, 0.023], [0, 0.025, -0.023], palette.green, 0.0006);
@@ -79,13 +80,29 @@ function carriage(palette: Palette, freight: boolean): THREE.Group {
   return compactGroup(group);
 }
 
-function wheelPrefab(palette: Palette): THREE.Group {
+export function wheelPrefab(palette: Palette): THREE.Group {
   const group = new THREE.Group();
-  alongX(cylinder(group, WHEEL_RADIUS, WHEEL_RADIUS, 0.0018, [0, 0, 0], palette.steel, 20));
-  alongX(cylinder(group, WHEEL_RADIUS * 0.85, WHEEL_RADIUS * 0.85, 0.0021, [0, 0, 0], palette.wheel, 20));
+  // A closed radial section makes a real hollow tyre, not a solid cylinder
+  // with painted-on spokes. The flange is on local -X (towards the track centre).
+  const section = [
+    [0.0047, -0.0013], [0.0065, -0.0013], [0.0065, -0.0009],
+    [WHEEL_RADIUS, -0.0007], [WHEEL_RADIUS, 0.0009], [0.0047, 0.0009], [0.0047, -0.0013],
+  ].map(([radius, axial]) => new THREE.Vector2(radius!, axial!));
+  const tyreGeometry = new THREE.LatheGeometry(section, 32);
+  // sin(2π) is not exactly zero. Close the duplicated seam bit-for-bit, which
+  // also prevents a ray passing through the seam at macro inspection distance.
+  const tyrePositions = tyreGeometry.getAttribute("position");
+  for (let point = 0; point < section.length; point += 1) {
+    tyrePositions.setXYZ(32 * section.length + point, tyrePositions.getX(point), tyrePositions.getY(point), tyrePositions.getZ(point));
+  }
+  const tyre = new THREE.Mesh(tyreGeometry, palette.steel);
+  // Lathe's axial +Y becomes local +X.
+  tyre.rotation.z = -Math.PI / 2;
+  group.add(tyre);
   for (let spoke = 0; spoke < 8; spoke += 1) {
-    const rib = box(group, [0.00225, 0.0095, 0.00055], [0, 0, 0], palette.wheel);
-    rib.rotation.x = spoke * Math.PI / 8;
+    const angle = spoke * Math.PI / 4;
+    const rib = box(group, [0.0015, 0.0039, 0.0007], [0, Math.cos(angle) * 0.0031, Math.sin(angle) * 0.0031], palette.wheel);
+    rib.rotation.x = angle;
   }
   alongX(cylinder(group, 0.0014, 0.0014, 0.003, [0, 0, 0], palette.darkBrass, 12));
   return compactGroup(group);
@@ -98,6 +115,7 @@ export class TrainRig {
   private readonly wheels: THREE.InstancedMesh[];
   private readonly rods: THREE.Mesh[];
   private readonly couplers: THREE.Mesh[];
+  private readonly crankPins: THREE.InstancedMesh;
   private readonly steam: THREE.Points;
   private readonly transforms = Array.from({ length: 3 }, () => new THREE.Matrix4());
   private readonly transform = new THREE.Object3D();
@@ -113,13 +131,21 @@ export class TrainRig {
     this.wheels = prefab.children.map(child => {
       const source = child as THREE.Mesh<THREE.BufferGeometry, THREE.Material>;
       const mesh = new THREE.InstancedMesh(source.geometry, source.material, 14);
+      mesh.name = "instanced-wheel-parts";
       mesh.castShadow = true; mesh.receiveShadow = true;
       this.group.add(mesh); return mesh;
     });
     this.rods = [-1, 1].map(() => {
       const rod = new THREE.Mesh(new THREE.BoxGeometry(0.0012, 0.0016, 0.037), palette.steel);
+      rod.name = "coupling-rod";
       rod.castShadow = true; this.group.add(rod); return rod;
     });
+    const pinGeometry = new THREE.CylinderGeometry(0.0008, 0.0008, 0.0018, 10);
+    pinGeometry.rotateZ(Math.PI / 2);
+    this.crankPins = new THREE.InstancedMesh(pinGeometry, palette.darkBrass, 6);
+    this.crankPins.name = "quartered-crank-pins";
+    this.crankPins.castShadow = true;
+    this.group.add(this.crankPins);
     this.couplers = [0, 1].map(() => {
       const coupler = new THREE.Mesh(new THREE.CylinderGeometry(0.0011, 0.0011, 1, 8), palette.iron);
       this.group.add(coupler); return coupler;
@@ -128,6 +154,7 @@ export class TrainRig {
     geometry.setAttribute("position", new THREE.Float32BufferAttribute(new Float32Array(16 * 3), 3));
     const material = new THREE.PointsMaterial({ map: steamTexture(), color: 0xf2eee4, size: 0.018, transparent: true, opacity: 0.35, depthWrite: false, sizeAttenuation: true });
     this.steam = new THREE.Points(geometry, material);
+    this.steam.name = "chimney-steam";
     this.steam.frustumCulled = false;
     this.group.add(this.steam);
   }
@@ -156,7 +183,9 @@ export class TrainRig {
           this.transform.position.x += this.point.x;
           this.transform.position.z = this.point.z;
         }
-        this.transform.rotation.set(phase + (side < 0 ? Math.PI / 2 : 0), 0, 0);
+        // Turn the left tyre around so both flanges face inwards. Do not use
+        // negative instance scales: Three.js InstancedMesh does not support them.
+        this.transform.rotation.set(phase + (side < 0 ? Math.PI / 2 : 0), side < 0 ? Math.PI : 0, 0);
         this.transform.scale.setScalar(1);
         this.transform.updateMatrix();
         this.worldMatrix.multiplyMatrices(body.matrix, this.transform.matrix);
@@ -165,14 +194,24 @@ export class TrainRig {
       }
     }
     this.wheels.forEach(mesh => { mesh.instanceMatrix.needsUpdate = true; mesh.computeBoundingSphere(); });
+    this.transform.scale.setScalar(1);
     this.rods.forEach((rod, index) => {
-      const side = index === 0 ? -1 : 1, angle = phase + (side < 0 ? Math.PI / 2 : 0);
-      this.transform.position.set(side * 0.0109, RAIL_TOP + WHEEL_RADIUS + Math.cos(angle) * 0.0022, Math.sin(angle) * 0.0022);
+      const side = index === 0 ? -1 : 1;
+      const crank = crankOffset(phase, side);
+      this.transform.position.set(crank.x, RAIL_TOP + WHEEL_RADIUS + crank.y, crank.z);
       this.transform.rotation.set(0, 0, 0);
       this.transform.updateMatrix();
       rod.matrixAutoUpdate = false;
       rod.matrix.multiplyMatrices(this.transforms[0]!, this.transform.matrix);
+      for (let axle = 0; axle < 3; axle += 1) {
+        this.transform.position.z = crank.z + (axle - 1) * CONSIST[0]!.wheelbase / 2;
+        this.transform.updateMatrix();
+        this.worldMatrix.multiplyMatrices(this.transforms[0]!, this.transform.matrix);
+        this.crankPins.setMatrixAt(index * 3 + axle, this.worldMatrix);
+      }
     });
+    this.crankPins.instanceMatrix.needsUpdate = true;
+    this.crankPins.computeBoundingSphere();
     this.couplers.forEach((coupler, index) => {
       const rear = couplerPosition(poses[index]!, CONSIST[index]!.bodyLength, "rear");
       const front = couplerPosition(poses[index + 1]!, CONSIST[index + 1]!.bodyLength, "front");
@@ -188,8 +227,8 @@ export class TrainRig {
       const positions = this.steam.geometry.getAttribute("position");
       for (let index = 0; index < positions.count; index += 1) {
         const age = ((document.tick / 60 + index * 0.107) % 1.7);
-        const sample = sampleOval(document.track, document.train.distance - document.train.direction * document.train.speed * age);
-        positions.setXYZ(index, sample.position.x + Math.sin(index * 1.77 + age) * age * 0.004, 0.051 + age * 0.021, sample.position.z + 0.01 * age);
+        const outlet = steamOrigin(document.track, document.train.distance, document.train.speed, document.train.direction, age);
+        positions.setXYZ(index, outlet.x + Math.sin(index * 1.77 + age) * age * 0.004, outlet.y + age * 0.021, outlet.z + 0.01 * age);
       }
       positions.needsUpdate = true;
     }

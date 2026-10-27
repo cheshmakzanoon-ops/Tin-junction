@@ -7,6 +7,7 @@ struct EngineWebView: UIViewRepresentable {
     func makeCoordinator() -> Coordinator { Coordinator(host: host) }
 
     func makeUIView(context: Context) -> WKWebView {
+        PlatformStartupTrace.record("webview.created")
         let configuration = WKWebViewConfiguration()
         configuration.websiteDataStore = .nonPersistent()
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
@@ -66,18 +67,30 @@ struct EngineWebView: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+            PlatformStartupTrace.record("navigation.started.window=\(webView.window != nil ? 1 : 0)")
             host.loading()
         }
 
+        func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+            PlatformStartupTrace.record("navigation.committed.window=\(webView.window != nil ? 1 : 0)")
+        }
+
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+            PlatformStartupTrace.record("navigation.finished.window=\(webView.window != nil ? 1 : 0)")
+        }
+
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+            PlatformStartupTrace.record("navigation.provisionalFailed")
             host.fail("Document load failed: \(error.localizedDescription)")
         }
 
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+            PlatformStartupTrace.record("navigation.failed")
             host.fail("Navigation failed: \(error.localizedDescription)")
         }
 
         func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+            PlatformStartupTrace.record("webview.processTerminated")
             host.contentProcessTerminated()
         }
     }
