@@ -64,9 +64,17 @@ P02-T01 implementation moves the single layout host to an application-owned sess
 
 Integrated local validation before this checkpoint passed 108 project tests, 17 native-tool tests and 283 web unit tests, plus TypeScript, ordinary offline build and exact bundle integrity/probe-exclusion checks. The added Release guard subsequently passed its four isolated tests. Existing full native and browser workflows remain required. The general railway editor, v2 native-store integration and device/release gates are still unfinished.
 
+## Current conformance checkpoint
+
+Both required workflows subsequently passed for `9971887` and `13ecc516`. The newest published implementation, `8f96036acfab046b87bab5e002b034bc83eeffb6`, has active full native, focused model and web runs; it has not yet been accepted on an unfinished run.
+
+P06-T02 is accepted on its scoped unit and source-matched six-view mechanical inspection, with actual rail-contact, coupling and reversal diagnostics. The [vehicle handoff](2026-10-27-routed-vehicles.md) records the component's constraints and its separation from the live oval scene.
+
+P07-T01 now has fresh actual native conformance at `6f14cc5`: 69 native unit tests, including 11 v2 tests and the shared 46-case corpus. The web reader passes 51 document tests at `8f96036`, including a newly rejected hidden array serialization hook; its corpus resources are byte-identical. All 45 scoped native/web source inputs match their tested commits and current implementations, and strict evidence validation has no errors or warnings. The [format handoff](2026-10-27-layout-design.md) records acceptance and the still-gated native save integration. Model-unit success does not establish custom-origin asset loading or native startup recovery; those require the active full UI workflow.
+
 ## Parallel scopes
 
-The coordinator owns integration, planning, P07-T01/P02-T01 and publication. The native worker verifies P01-T02's opt-in packaged asset-origin probe. Track work completes P06-T02 source-matched visual evidence. A separate graphics worker now refines cottage/station construction under P04-T06 while preserving scenery footprints and ground contact. These workers have disjoint source scopes and do not publish independently. Final artwork, hardware performance and distribution remain unaccepted.
+The coordinator owns integration, planning, P02-T01 and publication. The native worker verifies P01-T02's opt-in packaged asset-origin probe. A graphics worker refines cottage/station construction under P04-T06 while preserving scenery footprints and ground contact, and a separate interaction worker corrects interrupted placement gestures and long-title/control contrast. These workers have disjoint source scopes and do not publish independently. Final artwork, hardware performance and distribution remain unaccepted.
 
 ## Remaining release limitations
 

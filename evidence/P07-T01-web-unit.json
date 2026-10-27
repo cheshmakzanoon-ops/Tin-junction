@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P07-T01-web-design-conformance-8f96036",
+  "task_id": "P07-T01",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "8f96036acfab046b87bab5e002b034bc83eeffb6",
+  "recorded_at": "2026-10-27T04:39:46.126629+00:00",
+  "source_files": [
+    {
+      "path": ".node-version",
+      "sha256": "d9f318747a126ce2247661af67852b185def7789492eabfad7bba322be087c33"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/Fixtures/layout-design-v2-corpus.json",
+      "sha256": "735a863cc707e7340333d44b4d4db3699abe2a49bb6675dc5bd044fb4857af42"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "tests/fixtures/documents/layout-design-v2-corpus.json",
+      "sha256": "735a863cc707e7340333d44b4d4db3699abe2a49bb6675dc5bd044fb4857af42"
+    },
+    {
+      "path": "tests/project/document-fixtures.test.mjs",
+      "sha256": "b852fce894873aaf19cdd0cc7790392077ddeecdf696025b00416116ae0bd7a2"
+    },
+    {
+      "path": "tests/web/unit/layout-design.test.ts",
+      "sha256": "68e3b8ed1084f10b0ccab789489eb4b7593059cde0bd0b29644b5a21b98d1b09"
+    },
+    {
+      "path": "tools/documents/generate-fixtures.ts",
+      "sha256": "13b1d5e85d696997859bffc7897ae327b25941425daf3fc54ad4aaf8807c93f7"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "6235e2576f6780c2c0b6c79f4ba8ab84a19a7158effe1d66773e7ca4b49b18b4"
+    },
+    {
+      "path": "web/src/documents/FORMAT_V2.md",
+      "sha256": "6e84f77afd0fd7f408a5e6c97062540f88132510335a3a18012fe73fef685d00"
+    },
+    {
+      "path": "web/src/documents/layoutDesign.ts",
+      "sha256": "323af0857e72d3d73eea6a33d936cae34748918818e262dec7399aa9d26be1c9"
+    },
+    {
+      "path": "web/src/model/geometry.ts",
+      "sha256": "e56fbe722f3e71cc06d70679af0eda98d32ed2ebe071bab86d37c2f403a1dae9"
+    },
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/model/validation.ts",
+      "sha256": "c5d4eb4f2fdc33f95bc227fad227e71c65a99cbc8f3df86dddfc7e50e7c0f42e"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "b2d1a81d4e14b2ee7ef1c9fbe7293150e9d65cbf90d7317c6bc31f371f361ef0"
+    },
+    {
+      "path": "web/src/simulation/routedMotion.ts",
+      "sha256": "db0d5bc20d479552369f798a0b73e7bb0f60568b948f80d5435e55b34d6ee69e"
+    },
+    {
+      "path": "web/src/simulation/vehicleCatalog.ts",
+      "sha256": "8a48b82b331850acfe108a4f318c0c3414c750d83f1844336569bb4228efdb66"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/clearance.ts",
+      "sha256": "b72d636c79ebb885df55786c737451e9aa9dd95f9aa4f93b38e810ebc9ee8b9a"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npx vitest run tests/web/unit/layout-design.test.ts",
+      "exit_code": 0,
+      "output_path": "evidence/P07-T01-web-tests.txt"
+    },
+    {
+      "command": "node --test tests/project/document-fixtures.test.mjs",
+      "exit_code": 0,
+      "output_path": "evidence/P07-T01-fixture-tests.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P07-T01-web-tests.txt",
+      "sha256": "1b79ebd781aca187389fbe91a840eff70fd602990b617332ca48108d0c28f0a2"
+    },
+    {
+      "path": "evidence/P07-T01-fixture-tests.txt",
+      "sha256": "3b8279205337e97ce7abfbe71febf1e2291966589f6865eb42845a25427ca8f7"
+    },
+    {
+      "path": "web/src/documents/FORMAT_V2.md",
+      "sha256": "6e84f77afd0fd7f408a5e6c97062540f88132510335a3a18012fe73fef685d00"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P07-T01-A1",
+      "evidence": [
+        0,
+        1,
+        "evidence/P07-T01-web-tests.txt",
+        "evidence/P07-T01-fixture-tests.txt"
+      ]
+    },
+    {
+      "criterion_id": "P07-T01-A2",
+      "evidence": [
+        0,
+        "web/src/documents/FORMAT_V2.md"
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Web validator component evidence: 51 tests, including 46 shared literal validity cases, plus byte-identical native/web fixture resources. Current native validator evidence is separately required for cross-language acceptance.",
+    "Version 2 is a detached design format. The live oval app, native store, migration and bridge still use schema 1; this evidence does not claim v2 operational integration.",
+    "File validity preserves incomplete editable designs; placement/operation requires separate track clearance and complete routed-vehicle compatibility checks.",
+    "Canonical serialization preserves logical array ordering, physical vehicle/history ordering and full numeric precision. It does not promise byte-identical floating-point JSON spelling between JavaScript and Swift."
+  ]
+}

@@ -1,6 +1,6 @@
 # Current handoff — first operating railway
 
-Current continuation: [submission-quality work](handoffs/2026-10-27-submission-continuation.md). The latest baseline native run failed two UI checks; the first new checkpoint repairs help dismissal and investigates keyboard entry without weakening save/relaunch assertions. Inspect the corresponding live CI before accepting it.
+Current continuation: [submission-quality work](handoffs/2026-10-27-submission-continuation.md). Both required workflows passed at `13ecc516`; newer `8f96036` runs are active. Earlier native keyboard/help failures were repaired and verified without weakening their assertions. Inspect live CI for the current revision. The detached v2 format now has source-matched native and web conformance evidence in [the document handoff](handoffs/2026-10-27-layout-design.md).
 
 Active continuation: [quality continuation](handoffs/2026-10-27-quality-continuation.md). The owner confirmed the previous contributor stopped; current task claims and checks are recorded in the state ledger. The earlier handoff below remains historical evidence.
 

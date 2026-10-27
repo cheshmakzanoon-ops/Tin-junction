@@ -2,11 +2,11 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T04:30:00.471Z
+Ledger updated: 2026-10-27T04:40:09.435Z
 
-Tasks: 131; done: 19; active: 4; review: 0; blocked: 1; todo: 107.
+Tasks: 131; done: 20; active: 3; review: 0; blocked: 1; todo: 107.
 
-CI snapshot: **running** for 13ecc51674e629cad78ee6d7251f74278e7edc9e. This may be stale; inspect current remote checks.
+CI snapshot: **running** for 8f96036acfab046b87bab5e002b034bc83eeffb6. This may be stale; inspect current remote checks.
 
 [Next task](NEXT_TASK.md) · [Current handoff](HANDOFF.md) · [Agent rules](../AGENTS.md)
 
@@ -19,7 +19,7 @@ CI snapshot: **running** for 13ecc51674e629cad78ee6d7251f74278e7edc9e. This may 
 | [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 5/6 | P04-T06 in_progress |
 | [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 5/5 | — |
 | [P06](phases/P06-first-operating-railway.md) | First operating railway | 2/4 | — |
-| [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 0/5 | P07-T01 in_progress |
+| [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 1/5 | — |
 | [P08](phases/P08-camera-selection-and-input.md) | Camera, picking and gesture arbitration | 0/4 | — |
 | [P09](phases/P09-track-editor.md) | Creative track-layout editor | 0/5 | — |
 | [P10](phases/P10-asset-production-pipeline.md) | Reproducible 3D asset pipeline | 2/4 | — |

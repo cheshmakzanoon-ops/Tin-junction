@@ -1,0 +1,34 @@
+Actual xcodebuild.log excerpt, run 40449797278 / job 122009585826
+Tested commit: 6f14cc5bfa03bfa9e522880e8365ed6e1a2cdc31
+Scope: unit-models-only; Debug iPhone Duo Simulator / Xcode 27.1
+Command: bash tools/ios/test-models.sh; observed exit status 0
+
+Test Suite 'LayoutDesignDocumentTests' started at 2026-10-27 04:35:41.253.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testCanonicalOrderingPreservesPhysicalVehicleAndHistoryOrder]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testCanonicalOrderingPreservesPhysicalVehicleAndHistoryOrder]' passed (0.015 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testCatalogFootprintVehicleOrderAndIdentityAreAuthoritative]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testCatalogFootprintVehicleOrderAndIdentityAreAuthoritative]' passed (0.007 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testConnectedRetainedPathRejectsMissingMisalignedAndReusedJoins]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testConnectedRetainedPathRejectsMissingMisalignedAndReusedJoins]' passed (0.010 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testEmptyAndEditableDesignsRemainDistinctFromOperatingCertification]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testEmptyAndEditableDesignsRemainDistinctFromOperatingCertification]' passed (0.003 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testExactRoundTripPreservesSavedMotionInsteadOfParkingTheDesign]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testExactRoundTripPreservesSavedMotionInsteadOfParkingTheDesign]' passed (0.003 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testRejectsUnknownFieldsAndNonNumericBooleanValues]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testRejectsUnknownFieldsAndNonNumericBooleanValues]' passed (0.006 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testSharedTypeScriptAndSwiftConformanceCorpus]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testSharedTypeScriptAndSwiftConformanceCorpus]' passed (0.520 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testStructuralBudgetsRejectBeforeTypedDocumentTraversal]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testStructuralBudgetsRejectBeforeTypedDocumentTraversal]' passed (0.038 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testTurnoutSelectionMustMatchDocumentAndEntireRetainedRoute]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testTurnoutSelectionMustMatchDocumentAndEntireRetainedRoute]' passed (0.007 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testUnsafeExactMotionIsNotAcceptedOnThePromiseOfAStoppedRestore]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testUnsafeExactMotionIsNotAcceptedOnThePromiseOfAStoppedRestore]' passed (0.004 seconds).
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testUnsupportedVersionsRemainDistinctAndScalarBoundsAreStrict]' started.
+Test Case '-[TinJunctionTests.LayoutDesignDocumentTests testUnsupportedVersionsRemainDistinctAndScalarBoundsAreStrict]' passed (0.010 seconds).
+Test Suite 'LayoutDesignDocumentTests' passed at 2026-10-27 04:35:41.879.
+	 Executed 11 tests, with 0 failures (0 unexpected) in 0.621 (0.626) seconds
+
+	 Executed 69 tests, with 0 failures (0 unexpected) in 1.898 (1.990) seconds
+	 Executed 69 tests, with 0 failures (0 unexpected) in 1.898 (1.991) seconds
+** TEST SUCCEEDED **
