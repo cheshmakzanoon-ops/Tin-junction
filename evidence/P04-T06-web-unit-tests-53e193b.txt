@@ -1,0 +1,316 @@
+2026-10-27T08:09:09.4477876Z ##[group]Run npm run check
+2026-10-27T08:09:09.4478193Z [36;1mnpm run check[0m
+2026-10-27T08:09:09.4540645Z shell: /usr/bin/bash -e {0}
+2026-10-27T08:09:09.4540945Z ##[endgroup]
+2026-10-27T08:09:09.5544646Z 
+2026-10-27T08:09:09.5545069Z > tin-junction@0.1.0 check
+2026-10-27T08:09:09.5546347Z > npm run project:validate && npm run typecheck && npm test && npm run build && npm run build:verify
+2026-10-27T08:09:09.5547169Z 
+2026-10-27T08:09:09.6555460Z 
+2026-10-27T08:09:09.6556217Z > tin-junction@0.1.0 project:validate
+2026-10-27T08:09:09.6556899Z > node tools/project.mjs validate
+2026-10-27T08:09:09.6557355Z 
+2026-10-27T08:09:10.5568168Z Validated 31 phases and 131 tasks; graph, state, evidence, generated views and local links are consistent.
+2026-10-27T08:09:10.5569144Z Historical evidence warnings:
+2026-10-27T08:09:10.5570561Z P00-T01 evidence evidence/P00-T01-foundation.json: source changed since evidence: docs/architecture/SYSTEM_ARCHITECTURE.md
+2026-10-27T08:09:10.5571787Z P00-T02 evidence evidence/P00-T02-foundation.json: source changed since evidence: tools/project.mjs
+2026-10-27T08:09:10.5572765Z P00-T02 evidence evidence/P00-T02-foundation.json: source changed since evidence: tests/project/project.test.mjs
+2026-10-27T08:09:10.5573701Z P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: package.json
+2026-10-27T08:09:10.5574626Z P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: package-lock.json
+2026-10-27T08:09:10.5575586Z P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: tools/build-web.mjs
+2026-10-27T08:09:10.5576644Z P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: .github/workflows/quality.yml
+2026-10-27T08:09:10.5577675Z P00-T03 evidence evidence/P00-T03-foundation.json: source changed since evidence: .github/workflows/ios-simulator.yml
+2026-10-27T08:09:10.5578673Z P00-T04 evidence evidence/P00-T04-foundation.json: source changed since evidence: planning/HANDOFF.md
+2026-10-27T08:09:10.5579679Z P00-T04 evidence evidence/P00-T04-foundation.json: source changed since evidence: tools/project.mjs
+2026-10-27T08:09:10.5581072Z P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/TinJunction/RootView.swift
+2026-10-27T08:09:10.5582313Z P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/TinJunction/Web/EngineWebView.swift
+2026-10-27T08:09:10.5583610Z P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/TinJunction/Web/EngineHostModel.swift
+2026-10-27T08:09:10.5584924Z P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/TinJunctionUITests/HostSmokeTests.swift
+2026-10-27T08:09:10.5586106Z P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: tools/ios/test-simulator.sh
+2026-10-27T08:09:10.5587117Z P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: apps/ios/project.yml
+2026-10-27T08:09:10.5588118Z P01-T01 evidence evidence/P01-T01-native-integration.json: source changed since evidence: .github/workflows/ios-simulator.yml
+2026-10-27T08:09:10.5589512Z P01-T01 evidence evidence/P01-T01-source-verification.json: source changed since evidence: apps/ios/TinJunction/RootView.swift
+2026-10-27T08:09:10.5590752Z P05-T01 evidence evidence/P05-T01-centerlines.json: source changed since evidence: web/src/track/README.md
+2026-10-27T08:09:10.5591760Z P05-T04 evidence evidence/P05-T04-turnout-routing-unit.json: source changed since evidence: web/src/simulation/routedConsist.ts
+2026-10-27T08:09:10.5592802Z P05-T05 evidence evidence/P05-T05-clearance-unit.json: source changed since evidence: web/src/simulation/routedConsist.ts
+2026-10-27T08:09:10.5593870Z P05-T05 evidence evidence/P05-T05-placement-integration.json: source changed since evidence: web/src/simulation/routedConsist.ts
+2026-10-27T08:09:10.5595211Z P06-T01 evidence evidence/P06-T01-routed-motion-unit.json: source changed since evidence: web/src/simulation/routedConsist.ts
+2026-10-27T08:09:10.5596215Z P10-T01 evidence evidence/P10-T01-references.json: source changed since evidence: assets/catalog.json
+2026-10-27T08:09:10.5596989Z This checks repository consistency, not gameplay, graphics quality or current remote CI.
+2026-10-27T08:09:10.6601791Z 
+2026-10-27T08:09:10.6602925Z > tin-junction@0.1.0 typecheck
+2026-10-27T08:09:10.6603455Z > tsc --noEmit
+2026-10-27T08:09:10.6603705Z 
+2026-10-27T08:09:11.1784979Z 
+2026-10-27T08:09:11.1785768Z > tin-junction@0.1.0 test
+2026-10-27T08:09:11.1786426Z > npm run test:project && npm run test:ios-tools && npm run test:web
+2026-10-27T08:09:11.1786804Z 
+2026-10-27T08:09:11.2806179Z 
+2026-10-27T08:09:11.2806740Z > tin-junction@0.1.0 test:project
+2026-10-27T08:09:11.2807221Z > node --test tests/project/*.test.mjs
+2026-10-27T08:09:11.2807461Z 
+2026-10-27T08:09:11.6703822Z ✔ explicit probe packages only finite original fixtures and the production CSP (259.082997ms)
+2026-10-27T08:09:11.9875580Z ✔ ordinary rebuild removes prior manifest-owned probe files, code and CSS from both destinations (320.986933ms)
+2026-10-27T08:09:11.9953312Z ✔ unknown prior outputs are preserved and block cleanup (7.92793ms)
+2026-10-27T08:09:12.0055532Z ✔ corrupted manifest-owned bytes block cleanup before any deletion (9.888058ms)
+2026-10-27T08:09:12.0212266Z ✔ root, manifest and child symlinks cannot redirect packaging or cleanup (15.556242ms)
+2026-10-27T08:09:12.0238020Z ✔ minimal WASM and classic-worker fixtures execute their actual expected behavior (2.622683ms)
+2026-10-27T08:09:12.0270998Z ✔ PNG quadrants and the low-level PCM tone contain real original sample data (3.097559ms)
+2026-10-27T08:09:12.0429129Z ✔ Blender fixture has correct ruler, axle, sockets, normals, UVs and PBR factors (10.162189ms)
+2026-10-27T08:09:12.0430821Z ✔ recorded export hashes identify exact source and GLB bytes (0.881585ms)
+2026-10-27T08:09:12.0431913Z ✔ asset contract rejects root scale (0.711788ms)
+2026-10-27T08:09:12.0432794Z ✔ asset contract rejects root rotation (0.411678ms)
+2026-10-27T08:09:12.0433801Z ✔ asset contract rejects missing physical units (0.50938ms)
+2026-10-27T08:09:12.0434756Z ✔ asset contract rejects wrong socket (0.765198ms)
+2026-10-27T08:09:12.0435891Z ✔ asset contract rejects wrong socket direction (0.464266ms)
+2026-10-27T08:09:12.0436951Z ✔ asset contract rejects lost material semantics (0.730283ms)
+2026-10-27T08:09:12.0437906Z ✔ asset contract rejects external buffer (0.469886ms)
+2026-10-27T08:09:12.0438899Z ✔ asset contract rejects unknown required extension (0.555907ms)
+2026-10-27T08:09:12.0439868Z ✔ asset contract rejects duplicate node (0.570917ms)
+2026-10-27T08:09:12.0441406Z ✔ asset contract rejects missing UVs (1.353235ms)
+2026-10-27T08:09:12.0442326Z ✔ asset contract rejects missing material (1.650087ms)
+2026-10-27T08:09:12.0443295Z ✔ asset contract rejects double sided material (0.555847ms)
+2026-10-27T08:09:12.0444190Z ✔ asset contract rejects NaN vertex (0.572869ms)
+2026-10-27T08:09:12.0445001Z ✔ asset contract rejects bad normal (1.049157ms)
+2026-10-27T08:09:12.0445932Z ✔ asset contract rejects out of bounds accessor (0.317743ms)
+2026-10-27T08:09:12.0447263Z ✔ asset contract rejects sparse accessor (0.489753ms)
+2026-10-27T08:09:12.0448248Z ✔ asset contract rejects wrong ruler length (3.863387ms)
+2026-10-27T08:09:12.0449280Z ✔ GLB parser rejects truncated bytes and malicious length (0.33257ms)
+2026-10-27T08:09:12.0450997Z ✔ native and web consume byte-identical versioned layout conformance cases (10.799698ms)
+2026-10-27T08:09:12.0452370Z ✔ task order and readiness are derived, not a mutable next-task field (1.832489ms)
+2026-10-27T08:09:12.0453640Z ✔ failing CI and unresolved incidents outrank planned features (0.377644ms)
+2026-10-27T08:09:12.0455069Z ✔ incident lifecycle preserves the observed problem and requires explicit resolution (2.495585ms)
+2026-10-27T08:09:12.0456518Z ✔ incident CLI writes and resolves fixtures without hand editing the ledger (7.561839ms)
+2026-10-27T08:09:12.0458073Z ✔ claim, stale-claim recovery, release and dependency checks (0.774986ms)
+2026-10-27T08:09:12.0459399Z ✔ claim hours cannot be infinite, negative, zero or longer than one day (0.436424ms)
+2026-10-27T08:09:12.0461239Z ✔ blocking completed work preserves history and evidence; explicit resolution reopens it (0.394686ms)
+2026-10-27T08:09:12.0462893Z ✔ validator rejects cycles, orphan states and unfinished dependencies marked done (0.570214ms)
+2026-10-27T08:09:12.0464406Z ✔ evidence needs real files, matching hashes, commands and criterion references (3.36048ms)
+2026-10-27T08:09:12.0465944Z ✔ command output must also be a hashed local artifact or manifested HTTPS artifact (2.827174ms)
+2026-10-27T08:09:12.0467353Z ✔ changed source fails completion but remains a historical warning (2.070213ms)
+2026-10-27T08:09:12.0469214Z ✔ claim→submit→complete needs handoff and evidence; no self-certification from status alone (2.100008ms)
+2026-10-27T08:09:12.0471651Z ✔ in-review can collect partial evidence but completion requires all criteria (1.686265ms)
+2026-10-27T08:09:12.0473225Z ✔ failed CI and open incidents block completion but allow review submission (2.47076ms)
+2026-10-27T08:09:12.0474448Z ✔ simulator cannot satisfy a hardware gate (1.384664ms)
+2026-10-27T08:09:12.0475550Z ✔ owner gate requires a real identified decision reference (1.386076ms)
+2026-10-27T08:09:12.0476740Z ✔ path traversal and absolute evidence paths are rejected (0.353149ms)
+2026-10-27T08:09:12.0478067Z ✔ generated views are deterministic and do not invent product completion (0.688444ms)
+2026-10-27T08:09:12.0479582Z ✔ sync registers only new todo tasks and preserves claims, blockers and owner gates (4.153358ms)
+2026-10-27T08:09:12.0481706Z ✔ reference registry and required launch catalog have consistent identities, rights and dimensions (10.475043ms)
+2026-10-27T08:09:12.0483418Z ✔ rights/design records exist and research contains no unlicensed reference binaries (3.555573ms)
+2026-10-27T08:09:12.0485010Z ✔ museum metadata permission is not confused with a commercial photo licence (3.491795ms)
+2026-10-27T08:09:12.0486252Z ✔ reference inventory rejects missing creator (4.431588ms)
+2026-10-27T08:09:12.0487286Z ✔ reference inventory rejects missing rights evidence (3.634791ms)
+2026-10-27T08:09:12.0488179Z ✔ reference inventory rejects insecure source (3.861795ms)
+2026-10-27T08:09:12.0489079Z ✔ reference inventory rejects implicit image rights (4.516947ms)
+2026-10-27T08:09:12.0490051Z ✔ reference inventory rejects unreviewed image rights (3.115362ms)
+2026-10-27T08:09:12.0491436Z ✔ reference inventory rejects duplicate reference (3.888535ms)
+2026-10-27T08:09:12.0492541Z ✔ reference inventory rejects missing required family (3.806942ms)
+2026-10-27T08:09:12.0493769Z ✔ reference inventory rejects missing dimension qualification (2.474476ms)
+2026-10-27T08:09:12.0494961Z ✔ reference inventory rejects unknown source reference (1.72078ms)
+2026-10-27T08:09:12.0496084Z ✔ reference inventory rejects unassigned owner (1.975786ms)
+2026-10-27T08:09:12.0497166Z ✔ reference inventory rejects unknown production task (2.109807ms)
+2026-10-27T08:09:12.0498305Z ✔ reference inventory rejects duplicate launch asset (2.419855ms)
+2026-10-27T08:09:12.0499754Z ✔ reference inventory rejects missing catalog entry (3.417506ms)
+2026-10-27T08:09:12.0501134Z ✔ reference inventory rejects fabricated production files (1.815246ms)
+2026-10-27T08:09:12.0502324Z ✔ reference inventory rejects fabricated art approval (1.820817ms)
+2026-10-27T08:09:12.0503441Z ✔ reference inventory rejects unearned asset rights (2.547522ms)
+2026-10-27T08:09:12.0504524Z ✔ reference inventory rejects wrong catalog source (2.099076ms)
+2026-10-27T08:09:12.0505862Z ✔ complete temporary fixture passes without performing any release action (6.744813ms)
+2026-10-27T08:09:12.0507015Z ✔ missing approval blocks release (1.240925ms)
+2026-10-27T08:09:12.0507868Z ✔ false authorization blocks release (2.179336ms)
+2026-10-27T08:09:12.0508728Z ✔ string authorization blocks release (0.92758ms)
+2026-10-27T08:09:12.0509585Z ✔ agent approval blocks release (1.78516ms)
+2026-10-27T08:09:12.0510062Z ✔ substitute owner blocks release (0.883608ms)
+2026-10-27T08:09:12.0510846Z ✔ expired approval blocks release (0.914426ms)
+2026-10-27T08:09:12.0511750Z ✔ invalid calendar expiry blocks release (0.629775ms)
+2026-10-27T08:09:12.0512713Z ✔ future approval blocks release (0.885652ms)
+2026-10-27T08:09:12.0513441Z ✔ wrong approval commit blocks release (0.93279ms)
+2026-10-27T08:09:12.0514196Z ✔ candidate differs from HEAD blocks release (0.748276ms)
+2026-10-27T08:09:12.0514904Z ✔ dirty checkout blocks release (0.743928ms)
+2026-10-27T08:09:12.0515621Z ✔ placeholder reference blocks release (0.670862ms)
+2026-10-27T08:09:12.0516363Z ✔ missing reference file blocks release (0.825892ms)
+2026-10-27T08:09:12.0517128Z ✔ non-file decision reference blocks release (0.663578ms)
+2026-10-27T08:09:12.0517892Z ✔ HTTP decision reference blocks release (0.746332ms)
+2026-10-27T08:09:12.0518576Z ✔ incomplete task blocks release (0.742986ms)
+2026-10-27T08:09:12.0519249Z ✔ truncated roadmap blocks release (1.209546ms)
+2026-10-27T08:09:12.0519879Z ✔ empty phase blocks release (1.968796ms)
+2026-10-27T08:09:12.0520758Z ✔ validator error blocks release (0.662596ms)
+2026-10-27T08:09:12.0521568Z ✔ missing validator result blocks release (0.724131ms)
+2026-10-27T08:09:12.0522342Z ✔ open incident blocks release (0.701027ms)
+2026-10-27T08:09:12.0523049Z ✔ missing live CI blocks release (0.642248ms)
+2026-10-27T08:09:12.0523782Z ✔ CI stale observation blocks release (0.65382ms)
+2026-10-27T08:09:12.0524519Z ✔ CI future observation blocks release (0.667456ms)
+2026-10-27T08:09:12.0525243Z ✔ CI wrong candidate blocks release (0.624154ms)
+2026-10-27T08:09:12.0526015Z ✔ CI missing native workflow blocks release (0.76115ms)
+2026-10-27T08:09:12.0526844Z ✔ CI skipped workflow blocks release (0.593116ms)
+2026-10-27T08:09:12.0527544Z ✔ CI failure blocks release (0.596412ms)
+2026-10-27T08:09:12.0528188Z ✔ CI running blocks release (0.637078ms)
+2026-10-27T08:09:12.0528892Z ✔ CI forged run host blocks release (0.605149ms)
+2026-10-27T08:09:12.0529931Z ✔ latest failed run wins over an older success for the same commit (0.791156ms)
+2026-10-27T08:09:12.0531311Z ✔ fork, PR, and nonmain runs are not candidate release health (0.748246ms)
+2026-10-27T08:09:12.0532195Z ✔ a newly failed rerun of an older run cannot hide behind a higher run ID (0.71789ms)
+2026-10-27T08:09:12.0533116Z ✔ HTTPS decision reference accepted as a reference, not a legal/identity certification (0.732637ms)
+2026-10-27T08:09:12.0534354Z ✔ generated reading links preserve external HTTPS URLs (2.377054ms)
+2026-10-27T08:09:12.0535555Z ✔ an explicit claim cannot bypass the unresolved-incident repair gate (1.204958ms)
+2026-10-27T08:09:12.0536981Z ✔ repository paths cannot traverse an existing symlink outside the repository (2.361976ms)
+2026-10-27T08:09:12.0538668Z ✔ reopening a prerequisite cascades to active and completed descendants but not independent work (0.993702ms)
+2026-10-27T08:09:12.0540277Z ✔ reopened acceptance cannot be completed by reusing pre-regression evidence (3.097359ms)
+2026-10-27T08:09:12.0541941Z ✔ criterion coverage cannot use a disallowed evidence type (5.692963ms)
+2026-10-27T08:09:12.0543048Z ℹ tests 108
+2026-10-27T08:09:12.0543486Z ℹ suites 0
+2026-10-27T08:09:12.0543929Z ℹ pass 108
+2026-10-27T08:09:12.0544324Z ℹ fail 0
+2026-10-27T08:09:12.0544749Z ℹ cancelled 0
+2026-10-27T08:09:12.0545194Z ℹ skipped 0
+2026-10-27T08:09:12.0545588Z ℹ todo 0
+2026-10-27T08:09:12.0546049Z ℹ duration_ms 730.50379
+2026-10-27T08:09:12.1514379Z 
+2026-10-27T08:09:12.1515061Z > tin-junction@0.1.0 test:ios-tools
+2026-10-27T08:09:12.1515771Z > node --test tools/ios/*.test.mjs
+2026-10-27T08:09:12.1516127Z 
+2026-10-27T08:09:12.7791397Z ✔ records exact ordinary and diagnostic installed bytes without container paths (503.523935ms)
+2026-10-27T08:09:12.9019592Z ✔ altered, missing, unexpected and falsely relabeled installed resources remove stale passing evidence (124.147758ms)
+2026-10-27T08:09:12.9169723Z ✔ symlinked resources, manifest or WebAssets root cannot produce a passing identity (14.967165ms)
+2026-10-27T08:09:12.9888908Z ✔ recording fails closed for unusable output and never writes into installed resources (6.066778ms)
+2026-10-27T08:09:13.0694359Z ✔ CLI verification failure exits nonzero without printing its private input path (66.259264ms)
+2026-10-27T08:09:13.0712426Z ✔ a real child-process file-write limit cannot publish partial evidence as passed (80.739295ms)
+2026-10-27T08:09:13.0992475Z ✔ a different internally valid installed build cannot pass this build's identity gate (28.483002ms)
+2026-10-27T08:09:13.1246616Z ✔ selects measured Duo UDID and runtime, not a fabricated product identifier (3.640992ms)
+2026-10-27T08:09:13.1248287Z ✔ refuses another phone as fallback (0.724522ms)
+2026-10-27T08:09:13.1249782Z ✔ does not trust an editable simulator name to prove device model (0.474986ms)
+2026-10-27T08:09:13.1251489Z ✔ accepts a renamed actual Duo only by observed device-type identity (0.296744ms)
+2026-10-27T08:09:13.1253033Z ✔ refuses absent or ambiguous device-type metadata (0.404925ms)
+2026-10-27T08:09:13.1254380Z ✔ refuses unavailable runtime or mismatched SDK (0.339283ms)
+2026-10-27T08:09:13.1255472Z ✔ refuses ambiguous device selections (0.322492ms)
+2026-10-27T08:09:13.1256647Z ✔ refuses malformed UDIDs and transitional states (0.464467ms)
+2026-10-27T08:09:13.1258124Z ✔ copies original full and clean-install reports/PNGs and leaves complete inputs untouched (142.277191ms)
+2026-10-27T08:09:13.1259926Z ▶ missing attachments and malformed manifests leave explicit incomplete indices and available originals
+2026-10-27T08:09:13.1261709Z   ✔ referenced original is missing (29.839058ms)
+2026-10-27T08:09:13.1262826Z   ✔ manifest is malformed (37.175785ms)
+2026-10-27T08:09:13.1263992Z   ✔ manifest-associated opaque original is missing (30.334554ms)
+2026-10-27T08:09:13.1265100Z   ✔ clean invocation lacks its export (54.069131ms)
+2026-10-27T08:09:13.1266722Z ✔ missing attachments and malformed manifests leave explicit incomplete indices and available originals (153.319556ms)
+2026-10-27T08:09:13.1271413Z ▶ file, aggregate and entry limits cannot publish complete or oversized review packages
+2026-10-27T08:09:13.1272932Z   ✔ file (29.447498ms)
+2026-10-27T08:09:13.1273824Z   ✔ opaque file (29.445645ms)
+2026-10-27T08:09:13.1274771Z   ✔ aggregate (33.249611ms)
+2026-10-27T08:09:13.1275583Z   ✔ entries (29.40152ms)
+2026-10-27T08:09:13.1276991Z ✔ file, aggregate and entry limits cannot publish complete or oversized review packages (122.970793ms)
+2026-10-27T08:09:13.1292737Z ✔ symlinks, overlapping destinations and stale outputs cannot be followed or overwritten (42.328556ms)
+2026-10-27T08:09:13.1294416Z ✔ unsafe manifest filenames and missing successful-step inputs stay incomplete (27.147416ms)
+2026-10-27T08:09:13.1296942Z ✔ the workflow command exits nonzero while preserving readable incomplete packages (99.255051ms)
+2026-10-27T08:09:24.4447407Z ✔ fixed clean reinstall proves prior data, fresh empty storage, two sessions and installed byte identity (986.830766ms)
+2026-10-27T08:09:24.4449431Z ✔ arbitrary bundle identifiers and test filters are rejected before native commands (69.640041ms)
+2026-10-27T08:09:24.4452938Z ✔ successful native help on stderr is retained and does not require stdout (777.429915ms)
+2026-10-27T08:09:24.4456018Z ✔ failed full suite, stale installed identity, wrong compiled app and absent prior save forbid app removal (1031.30422ms)
+2026-10-27T08:09:24.4460032Z ✔ an unrelated service error or surviving mapping cannot masquerade as a removed data container (916.51571ms)
+2026-10-27T08:09:24.4469637Z ✔ a missing-container response is insufficient if the actual selected Simulator is no longer available (481.773617ms)
+2026-10-27T08:09:24.4471639Z ✔ failed uninstall preserves its real exit code and prevents reinstall or tests (409.773487ms)
+2026-10-27T08:09:24.4472901Z ✔ retained save data or changed installed resources stop before any post-reset test launch (1115.458449ms)
+2026-10-27T08:09:24.4474794Z ✔ symlinks cannot redirect the compiled app or the fresh native storage inspection (739.291464ms)
+2026-10-27T08:09:24.4483605Z ✔ native exit65 has priority while attachment export and post-test identity are still attempted (1379.834187ms)
+2026-10-27T08:09:24.4485933Z ✔ failed attachment export cannot turn a passing native test into a passing verification (677.275362ms)
+2026-10-27T08:09:24.4487608Z ✔ missing final observations or a repeated native session reject an otherwise successful command (1391.749965ms)
+2026-10-27T08:09:24.4489196Z ✔ post-test resource changes fail even when the fixed UI test and attachment export succeeded (686.954694ms)
+2026-10-27T08:09:24.4491029Z ✔ repeated verification preserves each result directory and the original full-suite artifacts (1403.032272ms)
+2026-10-27T08:09:24.4570618Z ✔ the separate model lane selects exactly the unit target and identifies its evidence scope (49.927357ms)
+2026-10-27T08:09:24.4572054Z ✔ failed model test still exports attachments and preserves exit 65 (47.55572ms)
+2026-10-27T08:09:24.4573206Z ✔ failed export cannot conceal failed model test (46.087419ms)
+2026-10-27T08:09:24.4574268Z ✔ missing evidence fails an otherwise successful model test (49.315045ms)
+2026-10-27T08:09:24.4575033Z ✔ arbitrary test filters are rejected before starting native tools (5.133367ms)
+2026-10-27T08:09:24.4575651Z ✔ successful native test and evidence export pass (61.497368ms)
+2026-10-27T08:09:24.4576276Z ✔ failed native test still exports attachments and preserves exit 65 (56.79257ms)
+2026-10-27T08:09:24.4576881Z ✔ failed export cannot conceal failed native test (42.287055ms)
+2026-10-27T08:09:24.4577603Z ✔ missing evidence fails an otherwise successful native test (50.426532ms)
+2026-10-27T08:09:24.4579145Z ✔ ordinary assets pass Release while a leftover opt-in diagnostic bundle fails with a rebuild instruction (531.983842ms)
+2026-10-27T08:09:24.4581109Z ✔ missing, unknown and falsely relabeled resources cannot enter a Release archive (179.564519ms)
+2026-10-27T08:09:24.4582611Z ✔ Release verifies actual file bytes and rejects diagnostic JS/CSS even if someone updates its checksum (148.16187ms)
+2026-10-27T08:09:24.4583827Z ✔ Release rejects symlinks and project wiring enforces the guard before resources are copied (47.128255ms)
+2026-10-27T08:09:24.4584383Z ℹ tests 56
+2026-10-27T08:09:24.4584603Z ℹ suites 0
+2026-10-27T08:09:24.4584921Z ℹ pass 56
+2026-10-27T08:09:24.4585236Z ℹ fail 0
+2026-10-27T08:09:24.4585449Z ℹ cancelled 0
+2026-10-27T08:09:24.4585713Z ℹ skipped 0
+2026-10-27T08:09:24.4585923Z ℹ todo 0
+2026-10-27T08:09:24.4586160Z ℹ duration_ms 12274.197493
+2026-10-27T08:09:24.5586765Z 
+2026-10-27T08:09:24.5587527Z > tin-junction@0.1.0 test:web
+2026-10-27T08:09:24.5587879Z > vitest run
+2026-10-27T08:09:24.5588018Z 
+2026-10-27T08:09:24.8589635Z 
+2026-10-27T08:09:24.8594526Z [1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/home/runner/work/Tin-junction/Tin-junction[39m
+2026-10-27T08:09:24.8595236Z 
+2026-10-27T08:09:25.6294563Z  [32m✓[39m tests/web/unit/routed-motion.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 426[2mms[22m[39m
+2026-10-27T08:09:25.7042885Z  [32m✓[39m tests/web/unit/turnout.test.ts [2m([22m[2m17 tests[22m[2m)[22m[33m 507[2mms[22m[39m
+2026-10-27T08:09:25.7056456Z    [32m✓[39m whole-consist turnout protection P05-T04 [2m(10)[22m
+2026-10-27T08:09:25.7072342Z      [33m[2m✓[22m[39m keeps occupied history bounded over 20,000 steps and reversible save/reloads on a circuit[33m 455[2mms[22m[39m
+2026-10-27T08:09:26.3114655Z  [32m✓[39m tests/web/unit/model-railway.test.ts [2m([22m[2m23 tests[22m[2m)[22m[33m 422[2mms[22m[39m
+2026-10-27T08:09:26.5342558Z  [32m✓[39m tests/web/unit/track-graph.test.ts [2m([22m[2m19 tests[22m[2m)[22m[33m 662[2mms[22m[39m
+2026-10-27T08:09:26.5423659Z    [32m✓[39m directed route graph P05-T03 [2m(19)[22m
+2026-10-27T08:09:26.5452282Z      [33m[2m✓[22m[39m traverses 20,000 successive laps without losing route identity[33m 550[2mms[22m[39m
+2026-10-27T08:09:27.0512559Z  [32m✓[39m tests/web/unit/architecture-geometry.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 421[2mms[22m[39m
+2026-10-27T08:09:27.7437838Z  [32m✓[39m tests/web/unit/track-centerline.test.ts [2m([22m[2m15 tests[22m[2m)[22m[33m 486[2mms[22m[39m
+2026-10-27T08:09:27.7502983Z    [32m✓[39m parametric centerlines P05-T01 [2m(15)[22m
+2026-10-27T08:09:27.7522378Z      [33m[2m✓[22m[39m builds bounded monotonic tables and meets chord/tangent/length budgets[33m 341[2mms[22m[39m
+2026-10-27T08:09:28.8873076Z  [32m✓[39m tests/web/unit/track-module.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 1005[2mms[22m[39m
+2026-10-27T08:09:28.8892136Z    [32m✓[39m modular track geometry P05-T02 [2m(12)[22m
+2026-10-27T08:09:28.8922824Z      [33m[2m✓[22m[39m has outward winding, finite unit normals and no degenerate indexed faces[33m 880[2mms[22m[39m
+2026-10-27T08:09:29.1113300Z  [32m✓[39m tests/web/unit/persistence.test.ts [2m([22m[2m13 tests[22m[2m)[22m[32m 36[2mms[22m[39m
+2026-10-27T08:09:29.4189648Z  [32m✓[39m tests/web/unit/placement-validation.test.ts [2m([22m[2m10 tests[22m[2m)[22m[32m 51[2mms[22m[39m
+2026-10-27T08:09:29.6685683Z  [32m✓[39m tests/web/unit/track-clearance.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 116[2mms[22m[39m
+2026-10-27T08:09:30.1372257Z  [32m✓[39m tests/web/unit/station-clearance.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 237[2mms[22m[39m
+2026-10-27T08:09:30.3229752Z  [32m✓[39m tests/web/unit/model-validation.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 49[2mms[22m[39m
+2026-10-27T08:09:30.6101357Z  [32m✓[39m tests/web/unit/model-geometry.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 107[2mms[22m[39m
+2026-10-27T08:09:30.8144157Z  [32m✓[39m tests/web/unit/case-pond-geometry.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 4020[2mms[22m[39m
+2026-10-27T08:09:30.8174754Z    [32m✓[39m pond shore, dry route banks and resource ownership [2m(3)[22m
+2026-10-27T08:09:30.8212498Z      [33m[2m✓[22m[39m clips both water and bank inside the reserved footprint and away from valid rail beds[33m 672[2mms[22m[39m
+2026-10-27T08:09:30.8222417Z      [33m[2m✓[22m[39m never depresses a rail bed or unrelated ground when the track crosses the pond area[33m 770[2mms[22m[39m
+2026-10-27T08:09:30.8263354Z      [33m[2m✓[22m[39m filters decorative stones and reeds without changing layout geometry or shared materials[33m 2126[2mms[22m[39m
+2026-10-27T08:09:31.0492693Z  [32m✓[39m tests/web/unit/train-mechanics.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 182[2mms[22m[39m
+2026-10-27T08:09:31.5081242Z  [32m✓[39m tests/web/unit/scenery-geometry.test.ts [2m([22m[2m5 tests[22m[2m)[22m[32m 187[2mms[22m[39m
+2026-10-27T08:09:31.8805530Z  [32m✓[39m tests/web/unit/scene-geometry.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 797[2mms[22m[39m
+2026-10-27T08:09:31.8807323Z    [32m✓[39m presentation terrain and reproducible resource limits [2m(4)[22m
+2026-10-27T08:09:31.8809186Z      [33m[2m✓[22m[39m keeps every authored scenery mesh inside the model's validated placement footprint[33m 426[2mms[22m[39m
+2026-10-27T08:09:32.2550680Z  [32m✓[39m tests/web/unit/train-art-geometry.test.ts [2m([22m[2m5 tests[22m[2m)[22m[33m 385[2mms[22m[39m
+2026-10-27T08:09:32.2553006Z  [32m✓[39m tests/web/unit/routed-poses.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 7022[2mms[22m[39m
+2026-10-27T08:09:32.2554476Z    [32m✓[39m rigid routed vehicle and wheel placement P06-T02 [2m(12)[22m
+2026-10-27T08:09:32.2556251Z      [33m[2m✓[22m[39m preserves rigid wheelbase chords, rail gauge/contact and coupler gaps at the minimum radius[33m 377[2mms[22m[39m
+2026-10-27T08:09:32.2558373Z      [33m[2m✓[22m[39m places the complete consist through a minimum-radius S curve with an authored transition[33m 1584[2mms[22m[39m
+2026-10-27T08:09:32.2560633Z      [33m[2m✓[22m[39m rejects an immediate reverse S curve when it exceeds the supported coupler angle[33m 333[2mms[22m[39m
+2026-10-27T08:09:32.2562812Z      [33m[2m✓[22m[39m commits compatible motion and poses together and parks before an unsupported transition[33m 1260[2mms[22m[39m
+2026-10-27T08:09:32.2564886Z      [33m[2m✓[22m[39m bounds an eight-vehicle consist on a loop and preserves all physical identities after reversal[33m 340[2mms[22m[39m
+2026-10-27T08:09:32.2566891Z      [33m[2m✓[22m[39m keeps trailing vehicles on the latched turnout after the locomotive has cleared it[33m 2017[2mms[22m[39m
+2026-10-27T08:09:32.2568725Z      [33m[2m✓[22m[39m uses each axle's actual arc displacement as rigid and coupling offsets change through a curve[33m 1074[2mms[22m[39m
+2026-10-27T08:09:32.4217508Z  [32m✓[39m tests/web/unit/clock.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+2026-10-27T08:09:32.4482397Z  [32m✓[39m tests/web/unit/bridge.test.ts [2m([22m[2m7 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+2026-10-27T08:09:32.5900926Z  [32m✓[39m tests/web/unit/layout-design.test.ts [2m([22m[2m51 tests[22m[2m)[22m[32m 201[2mms[22m[39m
+2026-10-27T08:09:32.5937334Z 
+2026-10-27T08:09:32.5944068Z [2m Test Files [22m [1m[32m22 passed[39m[22m[90m (22)[39m
+2026-10-27T08:09:32.5945524Z [2m      Tests [22m [1m[32m304 passed[39m[22m[90m (304)[39m
+2026-10-27T08:09:32.5946319Z [2m   Start at [22m 08:09:24
+2026-10-27T08:09:32.5951582Z [2m   Duration [22m 7.73s[2m (tests 88%, transform 6%, import 5%, worker 1%)[22m
+2026-10-27T08:09:32.5966597Z 
+2026-10-27T08:09:32.5967433Z [2m    Isolate [22m [33m22 workers spawned[39m[2m · ~124ms startup each (spawn + environment, per file)[22m
+2026-10-27T08:09:32.5968831Z [2m            [22m [2mat least ~787ms faster with [22m[33misolate: false[39m[2m — reuses workers across files instead of one per file[22m
+2026-10-27T08:09:32.5969448Z 
+2026-10-27T08:09:32.7278633Z 
+2026-10-27T08:09:32.7279176Z > tin-junction@0.1.0 build
+2026-10-27T08:09:32.7279663Z > node tools/build-web.mjs
+2026-10-27T08:09:32.7279843Z 
+2026-10-27T08:09:32.8933549Z Built the offline workbench with all asset-origin diagnostic code, controls and fixtures excluded.
+2026-10-27T08:09:32.9943554Z 
+2026-10-27T08:09:32.9944053Z > tin-junction@0.1.0 build:verify
+2026-10-27T08:09:32.9944522Z > node tools/build-web.mjs --check
+2026-10-27T08:09:32.9944732Z 
+2026-10-27T08:09:33.0413067Z Verified bundle allowlist, byte counts, SHA-256 hashes and ordinary-build probe exclusion.
+2026-10-27T08:09:33.0600337Z ##[group]Run npm run bundle:ios
+2026-10-27T08:09:33.0601022Z [36;1mnpm run bundle:ios[0m
+2026-10-27T08:09:33.0664227Z shell: /usr/bin/bash -e {0}
+2026-10-27T08:09:33.0664501Z ##[endgroup]
+2026-10-27T08:09:33.1738680Z 
+2026-10-27T08:09:33.1739452Z > tin-junction@0.1.0 bundle:ios
+2026-10-27T08:09:33.1740127Z > node tools/build-web.mjs --ios
+2026-10-27T08:09:33.1740730Z 
+2026-10-27T08:09:33.3933248Z Built the offline workbench with all asset-origin diagnostic code, controls and fixtures excluded.

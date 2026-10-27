@@ -1,0 +1,1025 @@
+{
+  "schemaVersion": 1,
+  "kind": "native-first-session-and-recovery-success-with-termination-failures-observation",
+  "testedCommit": "53e193b6435d241f8c1462d859112b2cb1b56b77",
+  "runId": 40471495670,
+  "jobId": 122079338958,
+  "runnerId": 1000015885,
+  "attempt": 1,
+  "jobStartedAt": "2026-10-27T08:08:57Z",
+  "nativeStepStartedAt": "2026-10-27T08:09:17Z",
+  "nativeStepCompletedAt": "2026-10-27T08:30:07Z",
+  "jobCompletedAt": "2026-10-27T08:30:51Z",
+  "observedCompletedAt": "2026-10-27T08:31:15Z",
+  "artifactId": 12719623690,
+  "artifactName": "duo-host-40471495670-1",
+  "artifactBytes": 411740701,
+  "artifactSHA256": "9e5fa0d5ff94fe82fafec6600fd405c0b6c0eaab044564329b5901706d238997",
+  "artifactExpiresAt": "2026-11-10T08:30:17Z",
+  "downloadedDigestMatchesProvider": true,
+  "fullLog": {
+    "entry": "xcodebuild.log",
+    "bytes": 338566,
+    "sha256": "27b4ae1bb7fb169225f8dbe01c9bf4d0b7f5c2058625444e7ad0b4eeca4ab622"
+  },
+  "environment": {
+    "xcode": "27.1",
+    "xcodeBuild": "27A9275",
+    "macOS": "27.0.1",
+    "macOSBuild": "26A434",
+    "runtime": "iOS 27.1",
+    "simulator": "iPhone Duo",
+    "simulatorUDID": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+    "physicalDevice": false
+  },
+  "outcome": {
+    "jobConclusion": "failure",
+    "nativeCommandExitCode": 65,
+    "unitTests": 87,
+    "unitFailures": 0,
+    "uiTests": 8,
+    "uiPasses": 6,
+    "uiFailures": 2,
+    "installedResourceStep": "skipped",
+    "cleanReinstallStep": "skipped",
+    "evidenceStaging": "success",
+    "reportsUpload": "success",
+    "capturesUpload": "success",
+    "fullEvidenceUpload": "success",
+    "wholeTaskAcceptance": false
+  },
+  "uiOutcomes": [
+    {
+      "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "outcome": "failed",
+      "seconds": 184.412,
+      "originalLine": "Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' failed (184.412 seconds)."
+    },
+    {
+      "test": "HostSmokeTests/testBundledRendererHandshakes()",
+      "outcome": "passed",
+      "seconds": 26.414,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (26.414 seconds)."
+    },
+    {
+      "test": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+      "outcome": "passed",
+      "seconds": 48.543,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (48.543 seconds)."
+    },
+    {
+      "test": "HostSmokeTests/testNativeHelpRemainsAccessible()",
+      "outcome": "failed",
+      "seconds": 123.295,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' failed (123.295 seconds)."
+    },
+    {
+      "test": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "outcome": "passed",
+      "seconds": 109.529,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (109.529 seconds)."
+    },
+    {
+      "test": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+      "outcome": "passed",
+      "seconds": 52.504,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (52.504 seconds)."
+    },
+    {
+      "test": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+      "outcome": "passed",
+      "seconds": 31.621,
+      "originalLine": "Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' passed (31.621 seconds)."
+    },
+    {
+      "test": "PlatformProbeUITests/testObservedPlatformGeometryAcrossSupportedOrientations()",
+      "outcome": "passed",
+      "seconds": 62.615,
+      "originalLine": "Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (62.615 seconds)."
+    }
+  ],
+  "assetProbe": {
+    "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+    "outcome": "failed",
+    "firstSessionAssertionsCompleted": true,
+    "coldRelaunchEntered": false,
+    "reports": [
+      {
+        "attachment": {
+          "entry": "screenshots/481F0270-C4B2-454E-AAF7-20569B3890CA.txt",
+          "bytes": 1543,
+          "sha256": "93109805596f089c4ed265f99eb549db3fdf6b6691e909ad98390108391a59be",
+          "suggestedHumanReadableName": "asset-origin-observation-first-launch-initial_0_C2C8A22D-959A-40E2-B1E6-DBBB4E1E4E68.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:19:20.719000Z"
+        },
+        "acceptedValue": {
+          "formatVersion": 1,
+          "isSimulator": true,
+          "networkPolicy": "http-https-denied",
+          "persistentStorage": false,
+          "report": {
+            "documentURL": "tinjunction://bundle/index.html",
+            "formatVersion": 1,
+            "observed": {
+              "audioChannels": 1,
+              "audioFrames": 5760,
+              "audioSampleRate": 48000,
+              "audioState": "suspended",
+              "glbVisiblePixels": 423,
+              "meshCount": 14,
+              "textureHeight": 8,
+              "textureMatchedQuadrants": 4,
+              "textureWidth": 8,
+              "triangleCount": 280,
+              "wasmValue": null,
+              "workerMessage": "asset-worker-ready:42"
+            },
+            "results": {
+              "audio": {
+                "detail": "Original PCM WAV decoded; awaiting a real tap to resume and play.",
+                "status": "pending"
+              },
+              "glb": {
+                "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+                "status": "passed"
+              },
+              "ktx2": {
+                "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+                "status": "blocked"
+              },
+              "texture": {
+                "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+                "status": "passed"
+              },
+              "wasm": {
+                "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+                "status": "blocked"
+              },
+              "worker": {
+                "detail": "Bundled classic worker executed and returned its expected message.",
+                "status": "passed"
+              }
+            },
+            "sessionId": "30652382-11CC-4619-8986-06FF01D92CE2",
+            "stage": "ready",
+            "webgl2": true
+          },
+          "webDataCleared": true
+        }
+      },
+      {
+        "attachment": {
+          "entry": "screenshots/07D05F8A-627B-4753-96F2-EACEDB2096AC.txt",
+          "bytes": 1590,
+          "sha256": "97f9f292b67f2bca8e33180b4d050fe3954c6dd739ac55360d86abc28c5e899c",
+          "suggestedHumanReadableName": "asset-origin-observation-first-launch_0_6B21FFB0-64F7-4411-B305-1CA031F316BD.txt",
+          "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+          "observedAt": "2026-10-27T08:20:33.180000Z"
+        },
+        "acceptedValue": {
+          "formatVersion": 1,
+          "isSimulator": true,
+          "networkPolicy": "http-https-denied",
+          "persistentStorage": false,
+          "report": {
+            "documentURL": "tinjunction://bundle/index.html",
+            "formatVersion": 1,
+            "observed": {
+              "audioChannels": 1,
+              "audioFrames": 5760,
+              "audioSampleRate": 48000,
+              "audioState": "running",
+              "glbVisiblePixels": 423,
+              "meshCount": 14,
+              "textureHeight": 8,
+              "textureMatchedQuadrants": 4,
+              "textureWidth": 8,
+              "triangleCount": 280,
+              "wasmValue": null,
+              "workerMessage": "asset-worker-ready:42"
+            },
+            "results": {
+              "audio": {
+                "detail": "Real user tap resumed audio; the bundled PCM source completed playback. Acoustic quality remains a device check.",
+                "status": "passed"
+              },
+              "glb": {
+                "detail": "Parsed 14 meshes / 280 triangles; 423 visible pixels from custom-origin GLB.",
+                "status": "passed"
+              },
+              "ktx2": {
+                "detail": "Basis/KTX2 transcoder and fixture are not packaged. The compressed texture loader remains disabled; WASM and worker transport are probed separately.",
+                "status": "blocked"
+              },
+              "texture": {
+                "detail": "Decoded 8×8 original PNG; all four color quadrants reached WebGL readback.",
+                "status": "passed"
+              },
+              "wasm": {
+                "detail": "CompileError: Refused to create a WebAssembly object because 'unsafe-eval' or 'wasm-unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' tinjunction://bundle\".\n (evaluating 'WebAssembly.instantiate(await U(\"add-one.wasm\"))')",
+                "status": "blocked"
+              },
+              "worker": {
+                "detail": "Bundled classic worker executed and returned its expected message.",
+                "status": "passed"
+              }
+            },
+            "sessionId": "30652382-11CC-4619-8986-06FF01D92CE2",
+            "stage": "complete",
+            "webgl2": true
+          },
+          "webDataCleared": true
+        }
+      }
+    ],
+    "failureAttachment": {
+      "entry": "screenshots/01E1EB04-E409-4EEF-AF61-E6F36CD5923F.txt",
+      "bytes": 28,
+      "sha256": "9d45a98df89809aede38692be3727d1a42d56ab7597efda21ab4fc9b3f580a9c",
+      "suggestedHumanReadableName": "asset-origin-observation-failure-state_0_4AA27828-BB0C-41C0-8CA1-E0B815EF9597.txt",
+      "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "observedAt": "2026-10-27T08:21:37.292000Z"
+    },
+    "failureAttachmentText": "Native probe row unavailable",
+    "firstRenderingCapture": {
+      "entry": "screenshots/1F52893A-F835-44DF-BDBE-E76530395081.png",
+      "bytes": 849167,
+      "sha256": "3d2a1d1c960cedfd368b72338796ad5fe073291ca67bb5b6701f565b0eecdbe7",
+      "suggestedHumanReadableName": "asset-origin-rendering-first-launch_0_E6D53812-3208-481E-AC0C-3C65F449DBC7.png",
+      "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "observedAt": "2026-10-27T08:19:57.019000Z"
+    },
+    "actualGestureAttachment": {
+      "entry": "screenshots/5DD5A575-C275-47D2-9A2E-A8001CB123B5",
+      "bytes": 1891,
+      "sha256": "1df1ecaf21a5f094983c59c1ea03aeb05adb48c0e8b87da58bed5e658b34857e",
+      "suggestedHumanReadableName": "Synthesized Event 2026-10-27 at 08.19.36 AM",
+      "testIdentifier": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "observedAt": "2026-10-27T08:19:36.820000Z"
+    },
+    "nativeAppDataDeletionObserved": false,
+    "nativeLoadingToLayoutAcceptedSeconds": 14.279
+  },
+  "terminationFailures": [
+    {
+      "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "source": "apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift:22",
+      "operation": "explicit app.terminate() after first-session observe",
+      "pid": 11744,
+      "runnerRequestAt": "08:20:33.291",
+      "hostRequestReceivedAt": "08:20:33.362",
+      "hostTrackerCancellationAt": "08:21:07.881",
+      "hostDeathNoticeAt": "08:21:24.865",
+      "deathSignal": 15,
+      "runnerTimeoutAt": "08:21:33.347",
+      "runnerTimeoutState": "Running Foreground",
+      "runnerNotRunningNotificationAt": "08:21:43.380",
+      "errorDomain": "com.apple.dt.xctest.ui-testing.error",
+      "errorCode": 10013,
+      "coldLaunchUnexecuted": true
+    },
+    {
+      "test": "HostSmokeTests/testNativeHelpRemainsAccessible()",
+      "source": "apps/ios/TinJunctionUITests/HostSmokeTests.swift:123",
+      "operation": "app.launch() implicitly terminating previous rotation/foreground app",
+      "pid": 13723,
+      "runnerRequestAt": "08:23:03.204",
+      "hostRequestReceivedAt": "08:25:01.697",
+      "hostTrackerCancellationAt": "08:25:01.702",
+      "runnerTimeoutAt": "08:24:04.058",
+      "runnerTimeoutState": "Running Foreground",
+      "hostDeathNoticeAt": "08:25:05.758",
+      "deathSignal": 15,
+      "runnerNotRunningNotificationAt": "08:25:05.473",
+      "errorDomain": "com.apple.dt.xctest.ui-testing.error",
+      "errorCode": 10013,
+      "helpBodyUnexecuted": true
+    }
+  ],
+  "terminationInterpretation": {
+    "observed": "Both failures include delayed host processing and/or runner state acknowledgement. PID11744 death notice preceded the runner timeout, whose Running Foreground state was stale.",
+    "unknown": "Why host processing and state delivery were delayed; no exclusive cause or shared-runner interference established.",
+    "notEstablished": [
+      "product main-thread shutdown deadlock",
+      "app ignored termination",
+      "repair proven by adding test cleanup",
+      "public app.state recorded at failed call site"
+    ]
+  },
+  "runnerDiagnosticObject": {
+    "entry": "TinJunction-20261027T081123-5419.xcresult/Data/data.0~nMbMiY_0Xc9CpmRdIqPzcXP78BQUHo4BkjBbtp_LPMH1GQ-apa-RuIhvtI7zhRYDjsrXoJEP5T1GYM1GtHWuEg==",
+    "archiveBytes": 397531,
+    "archiveSHA256": "c494b01209106b5dbd43ec50e4bc82a02f81f30683ea6ee2804fb87cc786cc7b",
+    "zstdOffset": 0,
+    "decodedPath": "termination-object-57.bin",
+    "decodedBytes": 6452992,
+    "decodedSHA256": "adbe5f04c3e114c388652789a46e76c61d11b90894da408bc6bebfb100995b65"
+  },
+  "targetStartupTrace": {
+    "entry": "TinJunction-20261027T081123-5419.xcresult/Data/data.0~44YLzRsfTHyQV5k9U5kKR5s5Z3EvozaSuRhdE9NiVodMiEY6NO5cjRw1EykLXgmEhypVE6JDERw-fv5DuIrqRg==",
+    "archiveBytes": 257884,
+    "archiveSHA256": "4d1c9a944221fbe7712073e93eb5d283434a37ab832a77f99bed018ac58bc1f8",
+    "zstdOffset": 0,
+    "decodedPath": "trace-object-1.bin",
+    "decodedBytes": 4144685,
+    "decodedSHA256": "0e943cf84b372927c4c55fd218548d8b605da6ae2a4151ec54ef6e8f04f49ead"
+  },
+  "recoveryPass": {
+    "test": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+    "seconds": 31.621,
+    "assertionsExecuted": [
+      "exact renderer_initialization_failed status",
+      "native recovery container and individually identified hittable Retry >=44pt",
+      "failed WKWebView absent from accessibility query",
+      "ready absent and Help hittable while failed",
+      "public XCTest contrast accessibility audit",
+      "real Retry and packaged host.ready",
+      "recovery dismissed and exactly one WKWebView",
+      "Home/activate and ready with exactly one WKWebView"
+    ],
+    "captures": [
+      {
+        "entry": "screenshots/BC995F99-4E60-4872-8E4C-DD4B0966C7F6.png",
+        "bytes": 189293,
+        "sha256": "675479a094e54f57fc6cf919c9d551c19fa778a10cc14f5c35cfca4885102bf9",
+        "suggestedHumanReadableName": "native-renderer-failure_0_4A97FEC5-AFFE-43B4-B7E6-1EC53375B00A.png",
+        "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+        "observedAt": "2026-10-27T08:28:04.004000Z"
+      },
+      {
+        "entry": "screenshots/7DCB302F-2BB3-4488-9BA6-F15D7FB4D4B2.png",
+        "bytes": 1428036,
+        "sha256": "9fce8924a37a990b4d3744d8313c649befda99c9afee6ec9568a76e8a06b669e",
+        "suggestedHumanReadableName": "native-renderer-retry-and-foreground_0_59E007FE-61EA-4F03-9D09-9568D9C56FA3.png",
+        "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+        "observedAt": "2026-10-27T08:28:18.650000Z"
+      }
+    ],
+    "actualGestureAttachment": {
+      "entry": "screenshots/E0C13E6C-CFEA-4277-96D7-C3F673433B18",
+      "bytes": 1903,
+      "sha256": "28d6b4e5939103d0f5e2d68ad64cc8357b8f5ec97ad0cc148a5bef1cf6d01e37",
+      "suggestedHumanReadableName": "Synthesized Event 2026-10-27 at 08.28.06 AM",
+      "testIdentifier": "HostStartupUITests/testRealRendererInitializationFailureOffersWorkingNativeRetry()",
+      "observedAt": "2026-10-27T08:28:06.944000Z"
+    }
+  },
+  "controlledDelayPass": {
+    "test": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+    "seconds": 52.504,
+    "assertionsExecuted": [
+      "actual loading overlay and explicit pre-navigation hold",
+      "Save disabled, Help hittable, ready absent and exactly one WKWebView",
+      "native Help opens and actual contents dismiss",
+      "held-state assertions repeated after Help",
+      "explicit release then actual packaged readiness",
+      "hold controls/loading disappear, Save enabled and exactly one WKWebView"
+    ],
+    "captures": [
+      {
+        "entry": "screenshots/DF9EA715-BA0C-48C6-801F-BFF844C12919.png",
+        "bytes": 184917,
+        "sha256": "b008e8449dcc3fe81a5fd2a924f362cb974342e77272f47ee12d428d696b696e",
+        "suggestedHumanReadableName": "native-startup-held_0_FABC7390-CEAF-454A-ABF1-F58EABB82FBC.png",
+        "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+        "observedAt": "2026-10-27T08:27:05.447000Z"
+      },
+      {
+        "entry": "screenshots/C28FE332-A13B-4F01-B7DD-AB2229AA791B.png",
+        "bytes": 185043,
+        "sha256": "ca76c04ef0028bc4a038b618b0668551c44587bcfdd4e2dfd2cdb0a6c0e8d741",
+        "suggestedHumanReadableName": "native-startup-held-after-help_0_43A8A3AC-F613-4BFC-9B10-C93E0426CCDE.png",
+        "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+        "observedAt": "2026-10-27T08:27:12.953000Z"
+      },
+      {
+        "entry": "screenshots/EEEF5B17-F8C2-47DF-91BE-0BE61ACE877D.png",
+        "bytes": 1428185,
+        "sha256": "c7b2bb62cf1aeec7d666abef1f149d2ddd8065a7299200eb549f1b4d4d8e0cdd",
+        "suggestedHumanReadableName": "native-startup-released-ready_0_9037E129-C704-4A01-85B5-9E41CBFBFFB9.png",
+        "testIdentifier": "HostStartupUITests/testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness()",
+        "observedAt": "2026-10-27T08:27:29.527000Z"
+      }
+    ]
+  },
+  "hostSmokeCaptures": [
+    {
+      "entry": "screenshots/17EE30AD-1258-41B6-8752-0BB34DEDDDA3.png",
+      "bytes": 1421368,
+      "sha256": "f46bca219a38c132094f196c0afd22ba8a8fc5fc466e3ab46fac73b53b76dfb7",
+      "suggestedHumanReadableName": "duo-host-handshake_0_68EC440D-81FA-46D2-ADD3-813663AD551A.png",
+      "testIdentifier": "HostSmokeTests/testBundledRendererHandshakes()",
+      "observedAt": "2026-10-27T08:22:07.713000Z"
+    },
+    {
+      "entry": "screenshots/B4787D62-B5A1-4D6A-90C5-0DF0D5B43513.png",
+      "bytes": 1421368,
+      "sha256": "f46bca219a38c132094f196c0afd22ba8a8fc5fc466e3ab46fac73b53b76dfb7",
+      "suggestedHumanReadableName": "duo-host-after-lifecycle_0_47C1BFFA-6AE0-489F-B561-14F3E0BF2771.png",
+      "testIdentifier": "HostSmokeTests/testHostSurvivesRotationAndForegrounding()",
+      "observedAt": "2026-10-27T08:22:50.175000Z"
+    },
+    {
+      "entry": "screenshots/25B3A13E-B707-483D-8106-59F2E1044A4E.png",
+      "bytes": 1428362,
+      "sha256": "fbb980fa97f392711a17616697a82caf19b9fbe07a74cd1a8f1277a138bb3052",
+      "suggestedHumanReadableName": "duo-edit-save-relaunch_0_65CFA616-0602-43D0-B045-B428917576E6.png",
+      "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "observedAt": "2026-10-27T08:26:54.249000Z"
+    },
+    {
+      "entry": "screenshots/7B43521F-4906-4D77-94E8-55EE51EB7072.png",
+      "bytes": 1428362,
+      "sha256": "fbb980fa97f392711a17616697a82caf19b9fbe07a74cd1a8f1277a138bb3052",
+      "suggestedHumanReadableName": "duo-railway-restored_0_CB68E0A9-EF2B-449A-8D84-461AA37BDC04.png",
+      "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "observedAt": "2026-10-27T08:26:53.832000Z"
+    },
+    {
+      "entry": "screenshots/90F65D91-7CB2-49D0-A571-0FB4821D15C0.png",
+      "bytes": 1831228,
+      "sha256": "0112ee11bcf26d1cfaf52621c177530ea37211641dc787ad6b4429d5b92d1360",
+      "suggestedHumanReadableName": "duo-railway-durable-save_0_178C0BC2-25B5-4AFA-81B0-3B1B547849EC.png",
+      "testIdentifier": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "observedAt": "2026-10-27T08:26:20.251000Z"
+    }
+  ],
+  "boundedEvidence": {
+    "reports": {
+      "artifactId": 12719603035,
+      "name": "duo-host-reports-40471495670-1",
+      "bytes": 190272,
+      "sha256": "ae03db079b44b53796aa0201fa1cdcf538a11f1e00a731d4875b4d686a09dbd1",
+      "expiresAt": "2026-11-10T08:30:09Z"
+    },
+    "captures": {
+      "artifactId": 12719603049,
+      "name": "duo-host-captures-40471495670-1",
+      "bytes": 15883560,
+      "sha256": "8bee3d985618393e2b736baf4b0ddc0c4af29f02944fb2911361700b2df0cf25",
+      "expiresAt": "2026-11-10T08:30:12Z"
+    },
+    "index": {
+      "entry": "_review/index.json",
+      "bytes": 17822,
+      "sha256": "30413fbc7ef37c35bc5a6ff8be46b47741cba7fe5269820359526fecba107488",
+      "testedCommit": "53e193b6435d241f8c1462d859112b2cb1b56b77",
+      "runId": 40471495670,
+      "runAttempt": 1,
+      "stagingResult": "complete",
+      "issues": []
+    },
+    "originalReports": 52,
+    "originalPNGs": 14,
+    "originalBytes": 16791904,
+    "all66OriginalFilesVerifiedAgainstFullArchive": true,
+    "verificationScope": "Each declared path, length and SHA256 verified in its bounded package and again against the original full archive; no whole-test pass inferred."
+  },
+  "packagingInput": {
+    "entry": "packaged-web-input-manifest.json",
+    "bytes": 1592,
+    "sha256": "47974b52afb8076476bda63262319bb96db60ca30cfbe60bfb3fbcc6805454cc",
+    "manifest": {
+      "formatVersion": 1,
+      "kind": "first-operating-workbench-not-production-art",
+      "bundler": "esbuild",
+      "scriptFormat": "iife",
+      "externalRuntimeDependencies": [],
+      "assetOriginProbe": true,
+      "artifacts": {
+        "index.html": {
+          "bytes": 884,
+          "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+        },
+        "bundle.js": {
+          "bytes": 801455,
+          "sha256": "c037026dc0865d5c6d5e81e998deee4682959e60f7be82c3cca7db6ff089d68b"
+        },
+        "bundle.css": {
+          "bytes": 19022,
+          "sha256": "9ed7e3ef3c3e25db24714182c75eb3359f9b08f5eb33affad577c6fcb17b8d44"
+        },
+        "bundle.js.LEGAL.txt": {
+          "bytes": 188,
+          "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+        },
+        "probe/calibration.glb": {
+          "bytes": 29356,
+          "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+        },
+        "probe/checker.png": {
+          "bytes": 93,
+          "sha256": "82e3ef7f6c8bb9bccf1615132cb6bfc34c1bcdc00482ab289624d9a446079772"
+        },
+        "probe/tone.wav": {
+          "bytes": 11564,
+          "sha256": "ae05277b3e19f772171e06b7ff4d4ba0dd738fb13291135028eb5f55d16ccfa8"
+        },
+        "probe/add-one.wasm": {
+          "bytes": 44,
+          "sha256": "8f581f8899890a7479c20494f53cc5d60156a4d42e39d6a587a9f3089f198fe0"
+        },
+        "probe/echo.worker.js": {
+          "bytes": 132,
+          "sha256": "a22bcff005a86d27d5df1005aba161a3ed7a37569345a4aa7029a90cb0351cb9"
+        },
+        "probe/fixture-manifest.json": {
+          "bytes": 1511,
+          "sha256": "83cb811673df0a47f544f44945a7166c37dd569f9be322c131e8a0df32a58a48"
+        }
+      }
+    },
+    "installedBytesVerified": false
+  },
+  "platformObservation": {
+    "testOutcome": "passed",
+    "allThreeReportsSameViewport": true,
+    "width": 382,
+    "height": 574.6666666666666,
+    "pixelRatio": 3,
+    "hingeAngleDegrees": 0,
+    "actualRotationOrHingeTransitionProved": false
+  },
+  "limitations": [
+    "Full suite failed; this is a mixed observation, not whole-task integration acceptance.",
+    "The current asset cold-relaunch body and standalone Help body were not executed after their termination failures.",
+    "Installed WebAssets byte verification and native uninstall/reinstall repeat were skipped.",
+    "WebKit data clearing/nonpersistent storage are not native app-container deletion; WebView HTTP/HTTPS denial is not hardware airplane mode.",
+    "KTX2 remains disabled because its fixture/transcoder are absent; WASM compilation was blocked by unchanged CSP.",
+    "Simulator audio completion does not establish physical acoustic quality.",
+    "Recovery/held-start assertions passed, but actual VoiceOver navigation and largest-text layout remain separate gates.",
+    "Three identical geometry observations do not prove rotation or hinge transition.",
+    "Distinct advertised full/model runner identities do not establish a shared host from cloned simulator UDID.",
+    "Host-side processing/state-delivery delay is observed; its cause and whether it is transient remain unknown.",
+    "No physical-device, distribution, signing or production-artwork readiness claim.",
+    "All 112 source fingerprints are pinned to the tested 53e193b commit; future source/test changes need their own actual run."
+  ],
+  "source_files": [
+    {
+      "path": ".github/workflows/ios-simulator.yml",
+      "sha256": "d22ee7a9f8cf8441b5e9f1e348fee64d2b8a5281886895c6f4eabb1eee9ead91"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "d9f318747a126ce2247661af67852b185def7789492eabfad7bba322be087c33"
+    },
+    {
+      "path": "apps/ios/TinJunction/App/ApplicationSession.swift",
+      "sha256": "ff66bd4016901ca5d4b671ee743d4b452e4d6504517da5df244a5db52c627a53"
+    },
+    {
+      "path": "apps/ios/TinJunction/Bridge/BridgeEnvelope.swift",
+      "sha256": "55107be8b02b366f745a877abeb9cb2fde2584cd94029c55921103a752f5ccd5"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/AssetOriginProbe.swift",
+      "sha256": "4ce08db51d14436ca4d5305c5f89ca30f02abcc22090d5a3ffcd26ab7ce55a74"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/HostStartupFault.swift",
+      "sha256": "eaf2890e7e05f6b40fdb58c445af4885df328308799363eebf4d4bc7d40e50ca"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/HostStartupHold.swift",
+      "sha256": "011c36e965f80a68e7a9023d86b4c6bb66301bfcd2eefce483c627f2c991dcc9"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutDesignDocument.swift",
+      "sha256": "e63be6ad77220033731af0f416b0cc0a29c42cb6fa34a37fefb073c6fdc3f6b1"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutDocument.swift",
+      "sha256": "c295162555a0d4f3acd96df484f9a6225448c6179b4e5ad6431f0829deef324e"
+    },
+    {
+      "path": "apps/ios/TinJunction/Documents/LayoutStore.swift",
+      "sha256": "212b128c8cbfa876ceb3b133c91cbaa798db34485b30d68152a2112e5931cae1"
+    },
+    {
+      "path": "apps/ios/TinJunction/Info.plist",
+      "sha256": "80da69534c7fddcd34b1cdc1de74536a67c4a3352711cadc757f494d9bd88c9a"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/NativeViewport.swift",
+      "sha256": "85dddc0112d70bf9dd176e89fd74127451daa4135a80a1cb77f26a1ecbfb117f"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/PlatformProbe.swift",
+      "sha256": "6b7155aeed6a8dfb32d1c4ec2d40d8ed550aeafe1843d500449b495e20b721e2"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/PlatformStartupTrace.swift",
+      "sha256": "224a463a172d32d334439d827a764ec1f62b632963539add8711e554e118eca8"
+    },
+    {
+      "path": "apps/ios/TinJunction/Resources/PrivacyInfo.xcprivacy",
+      "sha256": "418018c160ded561d379cee1510cfb6e0806573c7221177a5330d76ea4145990"
+    },
+    {
+      "path": "apps/ios/TinJunction/RootView.swift",
+      "sha256": "67ee416500d53346eb284228d4e77c67482be065f51fb0a86e1b4f84bc910c28"
+    },
+    {
+      "path": "apps/ios/TinJunction/TinJunctionApp.swift",
+      "sha256": "903febe836a554b4ce6fe80107703b6dfca321d9a7b5282d11ef027311f88c96"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/BundleResourcePolicy.swift",
+      "sha256": "f25367b70bc39ffbcecb0a0e0d7089fa017844d0c528885299d7ba3b95141447"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/BundleSchemeHandler.swift",
+      "sha256": "3bc199ff21836a451946d4f8ca65ea8b746828880bdb0a78fe505fea7ade0bdb"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineHostModel.swift",
+      "sha256": "6ca37b5837904d707203e60527f3d90aaed97d8883bfad6090d2d9a66db7fc6c"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineWebView.swift",
+      "sha256": "a636ce28918124e5d59fb750826dda5e2de9996b8b1784f31c00eb049eb73f35"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineWebViewContainer.swift",
+      "sha256": "4088f6cb43006abdb47c0419b797fd0dabbbbb07f8d379491743c7157f67117d"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/ApplicationSessionTests.swift",
+      "sha256": "2b1d80d5e242659dd6ffea8bdf44edd60d1a85a7c09637d7cc4ef7cb25c699da"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/AssetOriginProbeTests.swift",
+      "sha256": "88d3d0b36e2896cd13d3e4df41e984f3251f956d1d7b2e6b7cea040d56b23506"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/BridgeEnvelopeTests.swift",
+      "sha256": "ec48da219d774c218e1e855709b9f7c06cbef1a33e4a4a5ba6e51e664a51e158"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/BundleResourcePolicyTests.swift",
+      "sha256": "3c6f6fb5632ed32de5c2394d1b81f5086e4332cca27edcab092bbbab7d66f2a3"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/BundleSchemeResponseTests.swift",
+      "sha256": "b3daa96580d7368f48c1652cba2d00f5bf8be62c041ee92cd530c76b8c359e0b"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/EngineHostModelTests.swift",
+      "sha256": "9c9e6948b00c5035aea5367feb7db72f224d2a5d94ef6c0560797d3919f9f4a0"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/EngineWebViewContainerTests.swift",
+      "sha256": "003ebe56bdb243f89bfe7520c8de85cb3e80f3f4ab0f95e85356337832efe943"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/Fixtures/layout-design-v2-corpus.json",
+      "sha256": "735a863cc707e7340333d44b4d4db3699abe2a49bb6675dc5bd044fb4857af42"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/Fixtures/starter-layout.json",
+      "sha256": "66833832eb5742f4848154be8d3d8adce3ff6a1402182a435b1ac75c015042e3"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/HostStartupHoldCoordinatorTests.swift",
+      "sha256": "5c950907e54ade45964c837e764d2fbde717a59e13beab64a2a224a46823c097"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/HostStartupHoldTests.swift",
+      "sha256": "9a9d4399ed2d368fa1a4a22904e27866580720c0bd3863dac6206736d1d2c1d9"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/LayoutDesignDocumentTests.swift",
+      "sha256": "9ae8bbdd95c2e2ee91d5547133735de88c230d0cbf00906ac3e46baa5462c869"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/LayoutDocumentTests.swift",
+      "sha256": "8af9227212ea5837706a240f9326639151f59c6e00c92f67261b45a9d7594f29"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/LayoutStoreTests.swift",
+      "sha256": "522b30a2d1ca6d6b03dbc8f20f39de89fb819e021aa2eb94c93795714552fc30"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/PlatformProbeTests.swift",
+      "sha256": "293f28eb26304732b421f02e254f849e90a4b182e4910036d55af964cf0ef6d5"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/PlatformStartupTraceTests.swift",
+      "sha256": "61e5dc2231ba906f53b10be7825b36353eb1799935051579723ec8c14eb1323e"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift",
+      "sha256": "28e9a2d0af8602ef84dd5aa8dbfd1f5f51ded45225655b0a777c02426a3b98d9"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/HostSmokeTests.swift",
+      "sha256": "e160ebb1e6ae8224d15f8c00f401e079fe01605a768190d899fc0b614b7c208f"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/HostStartupUITests.swift",
+      "sha256": "6a5e5327869037b159a31f81def8030c268cbf8059ecaea28cff425003f5a685"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/PlatformProbeUITests.swift",
+      "sha256": "dbc296c20aa185ce01f8096db020ff99bf963f67326f2269f9670ed6c5e7b243"
+    },
+    {
+      "path": "apps/ios/project.yml",
+      "sha256": "815b190547b0448f91adabbefe4ff8b984376ef3fd221e23e50d7aa930a98e6c"
+    },
+    {
+      "path": "assets/source/calibration/export_fixture.py",
+      "sha256": "25cfceba2b491dc9a62722baf9cc4248906b6930aab51c34a719111ee2ed5ccc"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/add-one.wasm",
+      "sha256": "8f581f8899890a7479c20494f53cc5d60156a4d42e39d6a587a9f3089f198fe0"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/checker.png",
+      "sha256": "82e3ef7f6c8bb9bccf1615132cb6bfc34c1bcdc00482ab289624d9a446079772"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/echo.worker.js",
+      "sha256": "a22bcff005a86d27d5df1005aba161a3ed7a37569345a4aa7029a90cb0351cb9"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/fixture-manifest.json",
+      "sha256": "83cb811673df0a47f544f44945a7166c37dd569f9be322c131e8a0df32a58a48"
+    },
+    {
+      "path": "tests/fixtures/asset-origin/tone.wav",
+      "sha256": "ae05277b3e19f772171e06b7ff4d4ba0dd738fb13291135028eb5f55d16ccfa8"
+    },
+    {
+      "path": "tests/fixtures/assets/calibration.glb",
+      "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+    },
+    {
+      "path": "tests/web/browser/asset-probe-startup.spec.ts",
+      "sha256": "4ac7518facf74199e4d93595cd74d69541123426a585310219b12a0fc83b7dec"
+    },
+    {
+      "path": "tools/assets/generate-origin-probe.mjs",
+      "sha256": "ec3606d0e99838112e27fb50249b1e8af4b117b99ce4598ea1d67e15cb9ffae2"
+    },
+    {
+      "path": "tools/assets/geometry-contract.mjs",
+      "sha256": "76cadf1fe2323cecb1a0d2974e5121466a8e7a1c5a3e21b6bd0bc741308bf66b"
+    },
+    {
+      "path": "tools/build-web.mjs",
+      "sha256": "324e2e817346bb5ef1c9b40d914b38ebdf57f1b539399d2fbec434eec168b0fe"
+    },
+    {
+      "path": "tools/ios/PLATFORM_PROBE.md",
+      "sha256": "6680f1996cb40f2293576dc49a161e2a9a5ef4fc351f18006b9854a02551d510"
+    },
+    {
+      "path": "tools/ios/install-xcodegen.sh",
+      "sha256": "be3de3bc63ac773439f0dc986b8efddb20ca691c77e8517e4f28f7849a05c2f5"
+    },
+    {
+      "path": "tools/ios/record-installed-web.mjs",
+      "sha256": "d77649d9922c24104420a56f5d8f175dcb9d91199518a925380c42e5b21ec0c5"
+    },
+    {
+      "path": "tools/ios/record-installed-web.test.mjs",
+      "sha256": "34519fd652700952167a5ed65092494d71237c90548d4647d287cee8af11e0d8"
+    },
+    {
+      "path": "tools/ios/select-duo.mjs",
+      "sha256": "4c70db96370a42becbf28e75ffc6a84941e1ac9977af703077dae16fd808ce87"
+    },
+    {
+      "path": "tools/ios/select-duo.test.mjs",
+      "sha256": "49b6f8a73f0d7822d9f0c9883779ab2e6dc7926e6fbe69d9f32427dd608b7247"
+    },
+    {
+      "path": "tools/ios/stage-evidence.mjs",
+      "sha256": "420559e4d79be020fe1cca4f9eaf85ed60d67f3e054cdff23152c3db568c3079"
+    },
+    {
+      "path": "tools/ios/stage-evidence.test.mjs",
+      "sha256": "20ecb163d6e43aea742757c7a1140840d7bbd6a0ca3851c2c8bd550fcf07d783"
+    },
+    {
+      "path": "tools/ios/test-clean-install.mjs",
+      "sha256": "cd50a7b3c5ddcaaee505a4faf49a76b3f79338f9b9c4fe59916c2f429bb45d6e"
+    },
+    {
+      "path": "tools/ios/test-clean-install.test.mjs",
+      "sha256": "57903a1d88291b85f515ce95b8f4e188738e1399b948b8b2625cc3be6d420f8d"
+    },
+    {
+      "path": "tools/ios/test-simulator.sh",
+      "sha256": "6224f910afe2855def52ea7a50527621b23578c416dbb57c2fb57d0e5906089d"
+    },
+    {
+      "path": "tools/ios/test-simulator.test.mjs",
+      "sha256": "52c606b9d9584b11dfacea29c26fe48138526a913ff0473594cdee1a6906b66a"
+    },
+    {
+      "path": "tools/ios/verify-release-web.py",
+      "sha256": "ce1b176ba813c9ba3002cc5b2cdf7b853ca613889c788a4403cf9576f3affae4"
+    },
+    {
+      "path": "tools/ios/verify-release-web.test.mjs",
+      "sha256": "c618a1295a6ae480d11070e0731e94a0a0e8cff5e0d5bfa51ad0a1d67d8a1c54"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "web/packaged.html",
+      "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+    },
+    {
+      "path": "web/src/audio.ts",
+      "sha256": "9df6cfbb47875ad491e76e5ef7725f463cf9a7153b7897c5e43732bedd21e2c1"
+    },
+    {
+      "path": "web/src/bridge.ts",
+      "sha256": "214b40845cef5a50b0a3113fc587bfe39da3b52e49e8a79bf31d472bb55afe4e"
+    },
+    {
+      "path": "web/src/clock.ts",
+      "sha256": "77c37952ff76a84e88f1cb3e4cc7980e5b9ed48bb04840b366aec8a8e467c912"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.css",
+      "sha256": "1a5119708079edcdab981a024e80635f37038bfd3dd848c18930e32af17dcdc4"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.ts",
+      "sha256": "5e369571c8695f398d30a2a875fa80dba0b7d9081a92d72262226639680d47e0"
+    },
+    {
+      "path": "web/src/diagnostics/buildFlags.d.ts",
+      "sha256": "468fb269f5b46e8b60c1685eea93449d7e73d50e88e43571c579483440ea3f3e"
+    },
+    {
+      "path": "web/src/documents/layoutDesign.ts",
+      "sha256": "323af0857e72d3d73eea6a33d936cae34748918818e262dec7399aa9d26be1c9"
+    },
+    {
+      "path": "web/src/editor/placementValidation.ts",
+      "sha256": "48b63331cd23ab131d99f85f0251ab26f874e61128c0c7603250cf057b24ff5c"
+    },
+    {
+      "path": "web/src/main.ts",
+      "sha256": "e87ba1b202e3e65948588825ddf020a23d946c1ba824cb478faaa6f3a6647a90"
+    },
+    {
+      "path": "web/src/model/geometry.ts",
+      "sha256": "e56fbe722f3e71cc06d70679af0eda98d32ed2ebe071bab86d37c2f403a1dae9"
+    },
+    {
+      "path": "web/src/model/index.ts",
+      "sha256": "853d7ec3b2a155b0935f5091399760fc0675baecfbcb3ccafb22485379f70161"
+    },
+    {
+      "path": "web/src/model/layout.ts",
+      "sha256": "c55a69e9803d9418ef3084bc65c5bf4c06cba0927021f4438af907aee1d27d50"
+    },
+    {
+      "path": "web/src/model/railway.ts",
+      "sha256": "c38cb8ecbea445583669db3dc79ed67574124b7e4c6370b551effc444149feb3"
+    },
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/model/validation.ts",
+      "sha256": "c5d4eb4f2fdc33f95bc227fad227e71c65a99cbc8f3df86dddfc7e50e7c0f42e"
+    },
+    {
+      "path": "web/src/persistence.ts",
+      "sha256": "aa7d2e9e033e8b5866a1a1a4799d0e4da64ce4366d3dea218612d09e81d0deed"
+    },
+    {
+      "path": "web/src/scene/MiniatureScene.ts",
+      "sha256": "af9b338172f349b73d623575e001acbbe42c74d7e848dc18536930f71227b6b7"
+    },
+    {
+      "path": "web/src/scene/architectureGeometry.ts",
+      "sha256": "fad629ebb0bf7a4cda5cfdee386255ee025d0b50009d6122a51530cd30ed04ea"
+    },
+    {
+      "path": "web/src/scene/canopyGeometry.ts",
+      "sha256": "411ff2d521ab1d80db1bafdab73f3eb10bff04fa081410eac937f951363df4ed"
+    },
+    {
+      "path": "web/src/scene/caseGeometry.ts",
+      "sha256": "d95104c4bac012f168235144fcdf1d14e776d86f5d21546721d9e1f43cc53e24"
+    },
+    {
+      "path": "web/src/scene/geometry.ts",
+      "sha256": "149271929c855fe9683488d0a6477e02fcc76b03373cf5b67d3d7d17d5720b4a"
+    },
+    {
+      "path": "web/src/scene/materials.ts",
+      "sha256": "627438adbe584860fe6947c06dd2ea574ebda8b8656ed2088c7b6ab7a11227da"
+    },
+    {
+      "path": "web/src/scene/pondGeometry.ts",
+      "sha256": "f8588c579dba55a69960b09d26fca0021bc46f009f8a8fbd4c8eb0e8efccb1aa"
+    },
+    {
+      "path": "web/src/scene/scenery.ts",
+      "sha256": "47930ede316599bbef971c8ad8951ee9d0cf9a573cc8db3b000d7cabc312beca"
+    },
+    {
+      "path": "web/src/scene/stationPlacement.ts",
+      "sha256": "56a8224150b0575998671bf17c7c7ef5fb72deed64b69fc2fd64c1bdeb182511"
+    },
+    {
+      "path": "web/src/scene/train.ts",
+      "sha256": "6f9f9ff667a4c2cf054a4cafcf62f053388bd65d3192e2165d069d7c3d311239"
+    },
+    {
+      "path": "web/src/scene/trainDetailGeometry.ts",
+      "sha256": "b64be9f90e242d2dac0cf091c2091811f33a7d1cbc20d59c125deae2fbfa477c"
+    },
+    {
+      "path": "web/src/scene/trainMechanics.ts",
+      "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "b2d1a81d4e14b2ee7ef1c9fbe7293150e9d65cbf90d7317c6bc31f371f361ef0"
+    },
+    {
+      "path": "web/src/simulation/routedMotion.ts",
+      "sha256": "db0d5bc20d479552369f798a0b73e7bb0f60568b948f80d5435e55b34d6ee69e"
+    },
+    {
+      "path": "web/src/simulation/routedPoses.ts",
+      "sha256": "ffbaa7e7dca44a8556a75f98f983b907c8512d91e6d33a65940bfeff99081c01"
+    },
+    {
+      "path": "web/src/simulation/vehicleCatalog.ts",
+      "sha256": "8a48b82b331850acfe108a4f318c0c3414c750d83f1844336569bb4228efdb66"
+    },
+    {
+      "path": "web/src/simulation/vehicleStep.ts",
+      "sha256": "88e0d97f62f6235e01908fcb67573261a8f52b57ad00919a9058bbc56a6483c3"
+    },
+    {
+      "path": "web/src/style.css",
+      "sha256": "1467b8e32d093ac40693696564470f21313d971a0de9135dc13f7527a7307b98"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/clearance.ts",
+      "sha256": "b72d636c79ebb885df55786c737451e9aa9dd95f9aa4f93b38e810ebc9ee8b9a"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    },
+    {
+      "path": "web/src/ui.ts",
+      "sha256": "85cc386bb11eaffa4d71dc9dfb50a1743baba5117807163a9235659a337c293e"
+    }
+  ],
+  "reviewArtifacts": [
+    {
+      "path": "evidence/P01-T02-native-observation-review-53e193b.md",
+      "bytes": 9336,
+      "sha256": "b00bcf4e4566acc3bfb0628cd404a61c0fbbd1c65ff20190822225051005c0fc"
+    },
+    {
+      "path": "evidence/P01-T02-native-observation-tests-53e193b.txt",
+      "bytes": 16941,
+      "sha256": "f1c358a31ee85fb006d69366eec45faad0a4678ab23aedc47bf6d15a309f1806"
+    },
+    {
+      "path": "evidence/P01-T02-native-termination-53e193b.txt",
+      "bytes": 11872,
+      "sha256": "20d1802f5a5fa7fcdd5188c5be065a2bcc15f86a631270b541a25a465c58a820"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+Source: original native model xcodebuild.log, run 40471495783, job 122079339187, attempt 1
+Tested commit: 53e193b6435d241f8c1462d859112b2cb1b56b77
+Original log SHA256: 9c9d998bba4c5c47ffb6d951a9c950410fb8d3b06d2806c0727504cdb513f35a
+Scope: 27 actual P02 fixtures; complete target 87 tests. No UI/installed/clean result.
+
+Test Case '-[TinJunctionTests.ApplicationSessionTests testPresentationRecreationAndLifecycleKeepTheApplicationAuthority]' passed (0.061 seconds).
+Test Case '-[TinJunctionTests.ApplicationSessionTests testSecondRendererCannotReplaceOrTearDownTheActiveSession]' passed (0.925 seconds).
+Test Suite 'ApplicationSessionTests' passed at 2026-10-27 08:19:46.148.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.986 (0.988) seconds
+Test Case '-[TinJunctionTests.EngineHostModelTests testFailedSavePreservesOpenLayoutAndDoesNotClaimDurability]' passed (0.062 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testOldSessionCannotWriteAfterReload]' passed (0.009 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testProcessRecoveryIsBoundedWithoutAWebView]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testProtectedSaveFailuresBlockFurtherWritesAndPreserveOpenEdits]' passed (0.025 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testReadyRequiresCurrentSessionLayoutAcknowledgement]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRecoverableContextLossKeepsTransportAlive]' passed (0.003 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRepeatedInFlightRequestIsCoalescedWithoutFillingSaveQueue]' passed (0.037 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testReplacedSessionClearsPendingRequestIdentity]' passed (0.094 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRestoredIdentityAndRevisionMustMatch]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testSuccessfulSaveChangesDurableStateOnlyAfterStoreCompletes]' passed (0.020 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalErrorCannotBeClearedByMetrics]' passed (0.003 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload]' passed (0.019 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testUnreadableSavedLayoutFailsWithoutFactoryReplacement]' passed (0.002 seconds).
+Test Suite 'EngineHostModelTests' passed at 2026-10-27 08:19:46.759.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.278 (0.327) seconds
+Test Case '-[TinJunctionTests.EngineWebViewContainerTests testDetachedRendererIsRetainedAndFitsTheCurrentBoundsWhenRestored]' passed (0.010 seconds).
+Test Case '-[TinJunctionTests.EngineWebViewContainerTests testDismantlingUnavailableRendererDetachesOnlyItsOwnHost]' passed (0.041 seconds).
+Test Case '-[TinJunctionTests.EngineWebViewContainerTests testFailureRemovesRendererFromWindowAndRetryReusesItsAuthority]' passed (0.022 seconds).
+Test Suite 'EngineWebViewContainerTests' passed at 2026-10-27 08:19:46.834.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.073 (0.074) seconds
+Test Case '-[TinJunctionTests.HostStartupHoldCoordinatorTests testDismantlingAnArmedCoordinatorDiscardsItsNavigationCallback]' passed (1.280 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldCoordinatorTests testFailureAndDetachBeforeDeferredArmCannotStartNavigation]' passed (0.569 seconds).
+Test Suite 'HostStartupHoldCoordinatorTests' passed at 2026-10-27 08:19:48.684.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 1.849 (1.850) seconds
+Test Case '-[TinJunctionTests.HostStartupHoldTests testExpiryConsumesNavigationBeforePublishingItsFailure]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testHoldRequiresItsExplicitLaunchArgument]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testHostFailureCancelsBeforeAndAfterDeferredArming]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testRealNavigationAndDetachDisarmAnyPendingHold]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testReleaseConsumesTheHoldBeforeInvokingNavigation]' passed (0.000 seconds).
+Test Case '-[TinJunctionTests.HostStartupHoldTests testStaleCancellationCannotTakeAnotherOwnersHold]' passed (0.000 seconds).
+Test Suite 'HostStartupHoldTests' passed at 2026-10-27 08:19:49.042.
+	 Executed 6 tests, with 0 failures (0 unexpected) in 0.004 (0.357) seconds
+Test Case '-[TinJunctionTests.PlatformStartupTraceTests testTraceBoundAndFieldValidation]' passed (0.008 seconds).
+Test Suite 'PlatformStartupTraceTests' passed at 2026-10-27 08:19:50.535.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.008 (0.010) seconds
+	 Executed 87 tests, with 0 failures (0 unexpected) in 4.819 (5.376) seconds
+Test Suite 'All tests' passed at 2026-10-27 08:19:50.536.
+	 Executed 87 tests, with 0 failures (0 unexpected) in 4.819 (5.377) seconds
+** TEST SUCCEEDED **

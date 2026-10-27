@@ -1,0 +1,179 @@
+Selected original xcodebuild.log lines. Original file SHA256 27b4ae1bb7fb169225f8dbe01c9bf4d0b7f5c2058625444e7ad0b4eeca4ab622.
+Full run 40471495670 attempt1, tested commit 53e193b6435d241f8c1462d859112b2cb1b56b77.
+
+	 Executed 87 tests, with 0 failures (0 unexpected) in 6.695 (8.656) seconds
+	 Executed 87 tests, with 0 failures (0 unexpected) in 6.695 (8.657) seconds
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift:22: error: -[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch] : Failed to terminate com.cheshmakzanoonops.tinjunction:11744: Failed to terminate com.cheshmakzanoonops.tinjunction:0
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' failed (184.412 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (26.414 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (48.543 seconds).
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/HostSmokeTests.swift:123: error: -[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible] : Failed to terminate com.cheshmakzanoonops.tinjunction:13723: Failed to terminate com.cheshmakzanoonops.tinjunction:0
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' failed (123.295 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (109.529 seconds).
+Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (52.504 seconds).
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' passed (31.621 seconds).
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (62.615 seconds).
+	 Executed 8 tests, with 2 failures (0 unexpected) in 638.933 (638.989) seconds
+	 Executed 8 tests, with 2 failures (0 unexpected) in 638.933 (638.993) seconds
+** TEST FAILED **
+
+Original activity lines for the two successful HostStartup tests:
+
+Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' started.
+    t =     0.01s Start Test at 2026-10-27 08:26:55.645
+2026-10-27 08:26:55.926 xcodebuild[6026:21921] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-27 08:26:55.926 xcodebuild[6026:21921] [MT] IDELaunchParametersSnapshot: no debugger version
+    t =     0.20s Set Up
+    t =     0.20s                 Open com.cheshmakzanoonops.tinjunction
+    t =     0.20s                     Launch com.cheshmakzanoonops.tinjunction
+2026-10-27 08:26:56.035 xcodebuild[6026:21921] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 08:26:56.039 xcodebuild[6026:21921] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+    t =     0.59s                         Setting up automation session
+    t =     6.70s                         Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =     8.46s                 Waiting 20.0s for "host.startup.release" Button to exist
+    t =     9.53s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.startup.release" Button`
+    t =     9.53s                         Checking existence of `"host.startup.release" Button`
+    t =     9.62s                 Find the Target Application 'com.cheshmakzanoonops.tinjunction'
+    t =     9.81s Added attachment named 'native-startup-held'
+    t =     9.81s                 Checking existence of `"host.startup.held" StaticText`
+    t =     9.89s                 Checking existence of `"host.loading" Any`
+    t =    10.27s                 Checking existence of `"host.ready" StaticText`
+    t =    10.32s                 Find the "host.save" Button
+    t =    10.36s                 Find the "host.help" Button
+    t =    10.42s                 Get number of matches for: Elements matching predicate '"host.webview" IN identifiers'
+    t =    10.46s                 Tap "host.help" Button
+    t =    10.46s                     Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    10.47s                     Find the "host.help" Button
+    t =    10.53s                     Check for interrupting elements affecting "host.help" Button
+    t =    10.58s                         Wait for com.apple.springboard to idle
+    t =    10.63s                     Synthesize event
+    t =    10.99s                     Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    11.59s                 Waiting 10.0s for "host.help.contents" Any to exist
+    t =    12.65s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.help.contents" Any`
+    t =    12.65s                         Checking existence of `"host.help.contents" Any`
+    t =    13.17s                 Waiting 10.0s for "host.help.done" Button to exist
+    t =    14.23s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.help.done" Button`
+    t =    14.23s                         Checking existence of `"host.help.done" Button`
+    t =    14.53s                 Find the "host.help.done" Button
+    t =    14.70s                 Tap "host.help.done" Button
+    t =    14.70s                     Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    14.70s                     Find the "host.help.done" Button
+    t =    14.77s                     Check for interrupting elements affecting "host.help.done" Button
+    t =    14.85s                         Wait for com.apple.springboard to idle
+    t =    14.91s                     Synthesize event
+    t =    15.23s                     Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    16.68s                 Checking `Expect predicate `exists == 0` for object "host.help.contents" Any`
+    t =    16.68s                     Checking existence of `"host.help.contents" Any`
+    t =    17.02s                 Find the Target Application 'com.cheshmakzanoonops.tinjunction'
+    t =    17.31s Added attachment named 'native-startup-held-after-help'
+    t =    17.31s                 Checking existence of `"host.startup.held" StaticText`
+    t =    17.39s                 Checking existence of `"host.loading" Any`
+    t =    17.55s                 Checking existence of `"host.ready" StaticText`
+    t =    17.66s                 Find the "host.save" Button
+    t =    17.77s                 Find the "host.help" Button
+    t =    17.90s                 Get number of matches for: Elements matching predicate '"host.webview" IN identifiers'
+    t =    17.99s                 Find the "host.startup.release" Button
+    t =    18.09s                 Tap "host.startup.release" Button
+    t =    18.09s                     Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    18.10s                     Find the "host.startup.release" Button
+    t =    18.17s                     Check for interrupting elements affecting "host.startup.release" Button
+    t =    18.25s                         Wait for com.apple.springboard to idle
+    t =    18.34s                     Synthesize event
+    t =    18.66s                     Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    18.67s                 Waiting 30.0s for "host.ready" StaticText to exist
+    t =    19.71s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.ready" StaticText`
+    t =    19.72s                         Checking existence of `"host.ready" StaticText`
+    t =    21.76s                         Capturing element debug description
+    t =    22.74s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.ready" StaticText`
+    t =    22.74s                         Checking existence of `"host.ready" StaticText`
+    t =    24.12s                 Checking existence of `"host.startup.release" Button`
+    t =    24.95s                 Checking existence of `"host.startup.held" StaticText`
+    t =    25.55s                 Checking existence of `"host.loading" Any`
+    t =    27.63s                 Get number of matches for: Elements matching predicate '"host.webview" IN identifiers'
+    t =    29.72s                 Checking `Expect predicate `enabled == 1` for object "host.save" Button`
+    t =    29.72s                     Find the "host.save" Button
+    t =    30.42s                 Find the Target Application 'com.cheshmakzanoonops.tinjunction'
+    t =    33.89s Added attachment named 'native-startup-released-ready'
+    t =    33.91s Tear Down
+    t =    33.91s                     Terminate com.cheshmakzanoonops.tinjunction:16991
+2026-10-27 08:27:32.916 xcodebuild[6026:21921] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 08:27:33.146 xcodebuild[6026:21921] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-27 08:27:33.146 xcodebuild[6026:21921] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 08:27:33.146 xcodebuild[6026:21921] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-27 08:27:33.148 xcodebuild[6026:21921] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 08:27:33.881 xcodebuild[6026:21921] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (52.504 seconds).
+
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' started.
+    t =     0.00s Start Test at 2026-10-27 08:27:48.147
+    t =     0.13s Set Up
+    t =     0.14s                 Open com.cheshmakzanoonops.tinjunction
+    t =     0.14s                     Launch com.cheshmakzanoonops.tinjunction
+2026-10-27 08:27:48.321 xcodebuild[6026:21921] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-27 08:27:48.321 xcodebuild[6026:21921] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-27 08:27:48.385 xcodebuild[6026:21921] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 08:27:48.385 xcodebuild[6026:21921] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+    t =     1.07s                         Setting up automation session
+    t =     7.90s                         Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =     9.90s                 Waiting 30.0s for "host.retry" Button to exist
+    t =    10.95s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.retry" Button`
+    t =    10.95s                         Checking existence of `"host.retry" Button`
+    t =    11.23s                         Capturing element debug description
+    t =    11.96s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.retry" Button`
+    t =    11.96s                         Checking existence of `"host.retry" Button`
+    t =    11.98s                         Capturing element debug description
+    t =    12.93s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.retry" Button`
+    t =    12.93s                         Checking existence of `"host.retry" Button`
+    t =    12.97s                         Capturing element debug description
+    t =    13.91s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.retry" Button`
+    t =    13.92s                         Checking existence of `"host.retry" Button`
+    t =    13.98s                         Capturing element debug description
+    t =    14.98s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.retry" Button`
+    t =    14.98s                         Checking existence of `"host.retry" Button`
+    t =    15.03s                 Find the Target Application 'com.cheshmakzanoonops.tinjunction'
+    t =    15.86s Added attachment named 'native-renderer-failure'
+    t =    16.91s                 Checking `Expect predicate `label CONTAINS "renderer_initialization_failed"` for object "host.status" StaticText`
+    t =    16.91s                     Find the "host.status" StaticText
+    t =    16.93s                 Checking existence of `"host.recovery" Other`
+    t =    16.96s                 Find the "host.retry" Button
+    t =    17.03s                 Find the "host.retry" Button
+    t =    17.07s                 Find the "host.retry" Button
+    t =    17.10s                 Checking existence of `"host.webview" WebView`
+    t =    17.12s                 Checking existence of `"host.ready" StaticText`
+    t =    17.15s                 Find the "host.help" Button
+    t =    18.14s                 Tap "host.retry" Button
+    t =    18.14s                     Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    18.15s                     Find the "host.retry" Button
+    t =    18.32s                     Check for interrupting elements affecting "host.retry" Button
+    t =    18.34s                         Wait for com.apple.springboard to idle
+    t =    18.45s                     Synthesize event
+    t =    18.80s                     Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    18.86s                 Waiting 30.0s for "host.ready" StaticText to exist
+    t =    19.87s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.ready" StaticText`
+    t =    19.87s                         Checking existence of `"host.ready" StaticText`
+    t =    20.96s                         Capturing element debug description
+    t =    21.93s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.ready" StaticText`
+    t =    21.93s                         Checking existence of `"host.ready" StaticText`
+    t =    22.16s                 Checking existence of `"host.retry" Button`
+    t =    22.24s                 Checking existence of `"host.recovery" Other`
+    t =    22.50s                 Get number of matches for: Elements matching predicate '"host.webview" IN identifiers'
+    t =    22.88s                 Pressing Home button
+    t =    28.39s                 Open com.cheshmakzanoonops.tinjunction
+    t =    28.40s                     Activate com.cheshmakzanoonops.tinjunction
+    t =    28.48s                         Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    28.52s                 Waiting 15.0s for "host.ready" StaticText to exist
+    t =    29.61s                     Checking `Expect predicate `existsNoRetry == 1` for object "host.ready" StaticText`
+    t =    29.61s                         Checking existence of `"host.ready" StaticText`
+    t =    29.87s                 Get number of matches for: Elements matching predicate '"host.webview" IN identifiers'
+    t =    30.04s                 Find the Target Application 'com.cheshmakzanoonops.tinjunction'
+    t =    30.50s Added attachment named 'native-renderer-retry-and-foreground'
+    t =    30.52s Tear Down
+    t =    30.52s                     Terminate com.cheshmakzanoonops.tinjunction:18153
+2026-10-27 08:28:19.097 xcodebuild[6026:21921] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 08:28:19.098 xcodebuild[6026:21921] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-27 08:28:19.098 xcodebuild[6026:21921] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 08:28:19.098 xcodebuild[6026:21921] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-27 08:28:19.102 xcodebuild[6026:21921] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 08:28:19.102 xcodebuild[6026:21921] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' passed (31.621 seconds).
+

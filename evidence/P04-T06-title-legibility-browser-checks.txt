@@ -1,0 +1,16 @@
+
+Running 4 tests using 1 worker
+
+[1A[2K(node:156604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:156604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K[1/4] [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:278:3 › an 80-character railway name leaves controls clear at 1100x760
+[1A[2K[2/4] [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:278:3 › an 80-character railway name leaves controls clear at 382x575
+[1A[2K[3/4] [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:278:3 › an 80-character railway name leaves controls clear at 358x300
+[1A[2K[4/4] [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:278:3 › an 80-character railway name leaves controls clear at 844x390
+[1A[2K  4 passed (53.5s)

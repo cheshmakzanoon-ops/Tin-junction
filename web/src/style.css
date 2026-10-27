@@ -22,10 +22,12 @@ h1 { margin: 0; font: 34px/.98 Georgia, "Times New Roman", serif; letter-spacing
 .quiet-button { border: 1px solid #fffaf0; border-radius: 24px; background: #f5f0e7; color: #283c34; display: flex; gap: 8px; align-items: center; padding: 10px 12px; font-size: 11px; box-shadow: 0 3px 15px #382a1710; }
 .quiet-button svg { width: 16px; height: 16px; }
 .help-button { width: 34px; height: 34px; border-radius: 50%; border: 1px solid #283c3440; background: #f5f0e7b0; font: 18px Georgia, serif; }
-.layout-heading { position: absolute; top: 136px; left: max(40px, env(safe-area-inset-left)); right: calc(max(34px, env(safe-area-inset-right)) + 158px); max-width: 28rem; pointer-events: none; }
-.layout-heading .overline { color: #788072; font-size: 8px; }
+.layout-heading { position: absolute; top: 136px; left: max(40px, env(safe-area-inset-left)); right: calc(max(34px, env(safe-area-inset-right)) + 158px); max-width: 28rem; pointer-events: none; isolation: isolate; }
+/* Keep the railway name readable over every camera angle without changing its layout. */
+.layout-heading::before { content: ""; position: absolute; inset: -9px -11px; z-index: -1; background: #f5f0e7; border: 1px solid #fffaf0; border-radius: 12px; }
+.layout-heading .overline { color: #596653; font-size: 8px; }
 .layout-heading h2 { margin: 9px 0 10px; font: 24px/1.1 Georgia, serif; letter-spacing: -.035em; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
-.layout-heading p { margin: 0; color: #6d776b; font-size: 10px; display: flex; align-items: center; gap: 6px; }
+.layout-heading p { margin: 0; color: #596653; font-size: 10px; display: flex; align-items: center; gap: 6px; }
 .live-dot { width: 5px; height: 5px; background: #729277; border-radius: 50%; }
 .view-tools { position: absolute; top: 135px; right: max(34px, env(safe-area-inset-right)); z-index: 3; display: flex; flex-direction: column; align-items: flex-end; gap: 18px; }
 .segmented { display: flex; padding: 4px; border-radius: 25px; background: #f6f2e9e0; border: 1px solid #ffffffa0; box-shadow: 0 4px 18px #4b43340b; }
@@ -98,6 +100,7 @@ kbd { border: 1px solid #d2d7c6; border-radius: 4px; padding: 3px 5px; font-size
 .primary-button { width: 100%; border: 0; background: #315440; color: #fff4df; border-radius: 10px; padding: 13px; font-size: 12px; }
 .is-editing .layout-heading { opacity: 0; }
 body[data-time="night"] .brand, body[data-time="night"] .layout-heading h2 { color: #f5efdc; }
+body[data-time="night"] .layout-heading::before { background: #25382f; border-color: #405247; }
 body[data-time="night"] .eyebrow, body[data-time="night"] .layout-heading .overline, body[data-time="night"] .layout-heading p, body[data-time="night"] .caption { color: #d6d5c4; }
 body[data-time="night"] .brand-mark { border-color: #d6d5c4; }
 body[data-time="night"] .brand-mark:before, body[data-time="night"] .brand-mark:after { background: #d6d5c4; }
@@ -218,6 +221,7 @@ input[type="range"] { height: 44px; }
   h1 { font-size: 24px; }
   /* Keep the user's document name visible after dismissing the keyboard/editor. */
   .layout-heading { display: block; top: 46px; left: 12px; right: auto; max-width: calc(100% - 120px); }
+  .layout-heading::before { inset: -4px -6px; border-radius: 6px; }
   .layout-heading .overline, .layout-heading p { display: none; }
   .layout-heading h2 { display: block; margin: 0; font-size: 13px; line-height: 16px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   .view-tools { top: 68px; right: 12px; flex-direction: row; gap: 8px; }

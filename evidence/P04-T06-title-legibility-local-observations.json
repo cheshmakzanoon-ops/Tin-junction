@@ -1,0 +1,1445 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-10-27T08:40:36.989Z",
+  "evidenceClass": "actual rebuilt working-tree web bundle in Chromium with synthetic native bridge; not native runtime",
+  "baseImplementationCommit": "53e193b6435d241f8c1462d859112b2cb1b56b77",
+  "testedRevision": "uncommitted working-tree candidate; identities in inputs",
+  "baseURL": "http://127.0.0.1:4173",
+  "inputs": [
+    {
+      "path": "web/src/style.css",
+      "bytes": 22381,
+      "sha256": "6fed42682909f9a628940162ec4156f7742f578946232d00af67de8d7a6be093"
+    },
+    {
+      "path": "web/src/ui.ts",
+      "bytes": 8377,
+      "sha256": "85cc386bb11eaffa4d71dc9dfb50a1743baba5117807163a9235659a337c293e"
+    },
+    {
+      "path": "dist/web/bundle.css",
+      "bytes": 18796,
+      "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+    },
+    {
+      "path": "dist/web/bundle.js",
+      "bytes": 716416,
+      "sha256": "7ed3d0a95874f06b77a2d3234f91a1da56653ca79ab24917eba7f6915be18907"
+    },
+    {
+      "path": "dist/web/index.html",
+      "bytes": 884,
+      "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+    },
+    {
+      "path": "dist/web/bundle-manifest.json",
+      "bytes": 753,
+      "sha256": "c1d9357dacfb70793ab30f060c2ccd6b656cad89a6949bdff5675010819e0ac1"
+    },
+    {
+      "path": "apps/ios/TinJunction/Resources/WebAssets/bundle.css",
+      "bytes": 18796,
+      "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 66385,
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "tests/web/browser/interaction-quality.spec.ts",
+      "bytes": 14287,
+      "sha256": "d45ba52d563f6bfa546cd65757f8b582a2746139069983d537067a0392b30e49"
+    }
+  ],
+  "stylesheetIntercepted": false,
+  "sourceEqualsReviewedCandidate": true,
+  "scope": "Actual new CSS, JavaScript and HTML from the existing preview. No routing, stylesheet overrides, CSP changes, source/build mutations or preview-server changes.",
+  "referenceObservationPath": "/tmp/tin-title-legibility-review/v2-no-shadow/observations.json",
+  "cases": [
+    {
+      "variant": "integrated",
+      "viewport": {
+        "width": 382,
+        "height": 575
+      },
+      "theme": "Daylight",
+      "observation": {
+        "headingBounds": {
+          "x": 22,
+          "y": 24,
+          "width": 186,
+          "height": 94.1875
+        },
+        "titleBounds": {
+          "x": 22,
+          "y": 49,
+          "width": 186,
+          "height": 46.1875
+        },
+        "viewToolsBounds": {
+          "x": 224,
+          "y": 22,
+          "width": 142,
+          "height": 206
+        },
+        "pseudoBounds": {
+          "x": 11,
+          "y": 15,
+          "width": 208,
+          "height": 112.1875
+        },
+        "pseudo": {
+          "content": "\"\"",
+          "backgroundColor": "rgb(245, 240, 231)",
+          "borderTopWidth": "1px",
+          "boxSizing": "content-box",
+          "width": "206px",
+          "height": "110.188px",
+          "top": "-9px",
+          "right": "-11px",
+          "bottom": "-9px",
+          "left": "-11px",
+          "zIndex": "-1",
+          "opacity": "1"
+        },
+        "heading": {
+          "isolation": "isolate",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "documentName": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "bodyClass": "native-host",
+        "time": "day",
+        "texts": {
+          "name": {
+            "color": "rgb(40, 60, 52)",
+            "display": "flow-root",
+            "fontSize": "21px",
+            "lineHeight": "23.1px"
+          },
+          "overline": {
+            "color": "rgb(89, 102, 83)",
+            "display": "inline",
+            "fontSize": "10px",
+            "lineHeight": "15px"
+          },
+          "mode": {
+            "color": "rgb(89, 102, 83)",
+            "display": "flex",
+            "fontSize": "11px",
+            "lineHeight": "normal"
+          }
+        },
+        "clipping": {
+          "lineHeight": 23.1,
+          "overflowX": "hidden",
+          "scrollWidth": 186,
+          "clientWidth": 186
+        },
+        "csp": "default-src 'none'; script-src 'self' tinjunction://bundle; style-src 'self' tinjunction://bundle; img-src 'self' tinjunction://bundle data: blob:; connect-src 'self' tinjunction://bundle; worker-src 'self' tinjunction://bundle blob:; media-src 'self' tinjunction://bundle blob:; base-uri 'none'; form-action 'none'",
+        "contrasts": {
+          "name": 10.357696765695213,
+          "overline": 5.362095981544521,
+          "mode": 5.362095981544521
+        },
+        "backgroundSamplePoints": [
+          {
+            "label": "top padding center",
+            "x": 115,
+            "y": 22
+          },
+          {
+            "label": "bottom padding center",
+            "x": 115,
+            "y": 120
+          }
+        ],
+        "geometryAndContrastsMatchReviewedCandidate": true
+      },
+      "targets": [
+        {
+          "label": "Daylight",
+          "bounds": {
+            "x": 229,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Evening",
+          "bounds": {
+            "x": 273,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Night",
+          "bounds": {
+            "x": 317,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overview camera",
+          "bounds": {
+            "x": 322,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Trackside camera",
+          "bounds": {
+            "x": 322,
+            "y": 134,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overhead camera",
+          "bounds": {
+            "x": 322,
+            "y": 184,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Stop train",
+          "bounds": {
+            "x": 311,
+            "y": 391,
+            "width": 44,
+            "height": 48
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Arrange scenery",
+          "bounds": {
+            "x": 225.34375,
+            "y": 323,
+            "width": 139.65625,
+            "height": 44
+          },
+          "centerHits": true
+        }
+      ],
+      "screenshot": {
+        "path": "integrated-382x575-daylight.png",
+        "bytes": 177713,
+        "sha256": "9e390423c9f2ca1311e16103a0b8e51d6a90676934cb3ecf021ef3325773fac2"
+      },
+      "stylesheetIntercepted": false,
+      "cssBytes": 18796,
+      "cssSha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb",
+      "documentSha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437",
+      "responses": [
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "status": 200,
+          "bytes": 18796,
+          "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "status": 200,
+          "bytes": 716416,
+          "sha256": "7ed3d0a95874f06b77a2d3234f91a1da56653ca79ab24917eba7f6915be18907"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/?capture=1",
+          "resourceType": "document"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "resourceType": "script"
+        }
+      ]
+    },
+    {
+      "variant": "integrated",
+      "viewport": {
+        "width": 382,
+        "height": 575
+      },
+      "theme": "Evening",
+      "observation": {
+        "headingBounds": {
+          "x": 22,
+          "y": 24,
+          "width": 186,
+          "height": 94.1875
+        },
+        "titleBounds": {
+          "x": 22,
+          "y": 49,
+          "width": 186,
+          "height": 46.1875
+        },
+        "viewToolsBounds": {
+          "x": 224,
+          "y": 22,
+          "width": 142,
+          "height": 206
+        },
+        "pseudoBounds": {
+          "x": 11,
+          "y": 15,
+          "width": 208,
+          "height": 112.1875
+        },
+        "pseudo": {
+          "content": "\"\"",
+          "backgroundColor": "rgb(245, 240, 231)",
+          "borderTopWidth": "1px",
+          "boxSizing": "content-box",
+          "width": "206px",
+          "height": "110.188px",
+          "top": "-9px",
+          "right": "-11px",
+          "bottom": "-9px",
+          "left": "-11px",
+          "zIndex": "-1",
+          "opacity": "1"
+        },
+        "heading": {
+          "isolation": "isolate",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "documentName": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "bodyClass": "native-host",
+        "time": "dusk",
+        "texts": {
+          "name": {
+            "color": "rgb(40, 60, 52)",
+            "display": "flow-root",
+            "fontSize": "21px",
+            "lineHeight": "23.1px"
+          },
+          "overline": {
+            "color": "rgb(89, 102, 83)",
+            "display": "inline",
+            "fontSize": "10px",
+            "lineHeight": "15px"
+          },
+          "mode": {
+            "color": "rgb(89, 102, 83)",
+            "display": "flex",
+            "fontSize": "11px",
+            "lineHeight": "normal"
+          }
+        },
+        "clipping": {
+          "lineHeight": 23.1,
+          "overflowX": "hidden",
+          "scrollWidth": 186,
+          "clientWidth": 186
+        },
+        "csp": "default-src 'none'; script-src 'self' tinjunction://bundle; style-src 'self' tinjunction://bundle; img-src 'self' tinjunction://bundle data: blob:; connect-src 'self' tinjunction://bundle; worker-src 'self' tinjunction://bundle blob:; media-src 'self' tinjunction://bundle blob:; base-uri 'none'; form-action 'none'",
+        "contrasts": {
+          "name": 10.357696765695213,
+          "overline": 5.362095981544521,
+          "mode": 5.362095981544521
+        },
+        "backgroundSamplePoints": [
+          {
+            "label": "top padding center",
+            "x": 115,
+            "y": 22
+          },
+          {
+            "label": "bottom padding center",
+            "x": 115,
+            "y": 120
+          }
+        ],
+        "geometryAndContrastsMatchReviewedCandidate": true
+      },
+      "targets": [
+        {
+          "label": "Daylight",
+          "bounds": {
+            "x": 229,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Evening",
+          "bounds": {
+            "x": 273,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Night",
+          "bounds": {
+            "x": 317,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overview camera",
+          "bounds": {
+            "x": 322,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Trackside camera",
+          "bounds": {
+            "x": 322,
+            "y": 134,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overhead camera",
+          "bounds": {
+            "x": 322,
+            "y": 184,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Stop train",
+          "bounds": {
+            "x": 311,
+            "y": 391,
+            "width": 44,
+            "height": 48
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Arrange scenery",
+          "bounds": {
+            "x": 225.34375,
+            "y": 323,
+            "width": 139.65625,
+            "height": 44
+          },
+          "centerHits": true
+        }
+      ],
+      "screenshot": {
+        "path": "integrated-382x575-evening.png",
+        "bytes": 173991,
+        "sha256": "58e3c78367581890c98582124897f581e46bdfb31b41d48a88caa3644e08aa8f"
+      },
+      "stylesheetIntercepted": false,
+      "cssBytes": 18796,
+      "cssSha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb",
+      "documentSha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437",
+      "responses": [
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "status": 200,
+          "bytes": 18796,
+          "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "status": 200,
+          "bytes": 716416,
+          "sha256": "7ed3d0a95874f06b77a2d3234f91a1da56653ca79ab24917eba7f6915be18907"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/?capture=1",
+          "resourceType": "document"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "resourceType": "script"
+        }
+      ]
+    },
+    {
+      "variant": "integrated",
+      "viewport": {
+        "width": 382,
+        "height": 575
+      },
+      "theme": "Night",
+      "observation": {
+        "headingBounds": {
+          "x": 22,
+          "y": 24,
+          "width": 186,
+          "height": 94.1875
+        },
+        "titleBounds": {
+          "x": 22,
+          "y": 49,
+          "width": 186,
+          "height": 46.1875
+        },
+        "viewToolsBounds": {
+          "x": 224,
+          "y": 22,
+          "width": 142,
+          "height": 206
+        },
+        "pseudoBounds": {
+          "x": 11,
+          "y": 15,
+          "width": 208,
+          "height": 112.1875
+        },
+        "pseudo": {
+          "content": "\"\"",
+          "backgroundColor": "rgb(37, 56, 47)",
+          "borderTopWidth": "1px",
+          "boxSizing": "content-box",
+          "width": "206px",
+          "height": "110.188px",
+          "top": "-9px",
+          "right": "-11px",
+          "bottom": "-9px",
+          "left": "-11px",
+          "zIndex": "-1",
+          "opacity": "1"
+        },
+        "heading": {
+          "isolation": "isolate",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "documentName": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "bodyClass": "native-host",
+        "time": "night",
+        "texts": {
+          "name": {
+            "color": "rgb(245, 239, 220)",
+            "display": "flow-root",
+            "fontSize": "21px",
+            "lineHeight": "23.1px"
+          },
+          "overline": {
+            "color": "rgb(214, 213, 196)",
+            "display": "inline",
+            "fontSize": "10px",
+            "lineHeight": "15px"
+          },
+          "mode": {
+            "color": "rgb(214, 213, 196)",
+            "display": "flex",
+            "fontSize": "11px",
+            "lineHeight": "normal"
+          }
+        },
+        "clipping": {
+          "lineHeight": 23.1,
+          "overflowX": "hidden",
+          "scrollWidth": 186,
+          "clientWidth": 186
+        },
+        "csp": "default-src 'none'; script-src 'self' tinjunction://bundle; style-src 'self' tinjunction://bundle; img-src 'self' tinjunction://bundle data: blob:; connect-src 'self' tinjunction://bundle; worker-src 'self' tinjunction://bundle blob:; media-src 'self' tinjunction://bundle blob:; base-uri 'none'; form-action 'none'",
+        "contrasts": {
+          "name": 10.835872757715387,
+          "overline": 8.409994779177094,
+          "mode": 8.409994779177094
+        },
+        "backgroundSamplePoints": [
+          {
+            "label": "top padding center",
+            "x": 115,
+            "y": 22
+          },
+          {
+            "label": "bottom padding center",
+            "x": 115,
+            "y": 120
+          }
+        ],
+        "geometryAndContrastsMatchReviewedCandidate": true
+      },
+      "targets": [
+        {
+          "label": "Daylight",
+          "bounds": {
+            "x": 229,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Evening",
+          "bounds": {
+            "x": 273,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Night",
+          "bounds": {
+            "x": 317,
+            "y": 27,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overview camera",
+          "bounds": {
+            "x": 322,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Trackside camera",
+          "bounds": {
+            "x": 322,
+            "y": 134,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overhead camera",
+          "bounds": {
+            "x": 322,
+            "y": 184,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Stop train",
+          "bounds": {
+            "x": 311,
+            "y": 391,
+            "width": 44,
+            "height": 48
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Arrange scenery",
+          "bounds": {
+            "x": 225.34375,
+            "y": 323,
+            "width": 139.65625,
+            "height": 44
+          },
+          "centerHits": true
+        }
+      ],
+      "screenshot": {
+        "path": "integrated-382x575-night.png",
+        "bytes": 164219,
+        "sha256": "21852b611906470341fca13f5bb7f50a541160f593adbc80d07e8d77c6c2125d"
+      },
+      "stylesheetIntercepted": false,
+      "cssBytes": 18796,
+      "cssSha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb",
+      "documentSha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437",
+      "responses": [
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "status": 200,
+          "bytes": 18796,
+          "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "status": 200,
+          "bytes": 716416,
+          "sha256": "7ed3d0a95874f06b77a2d3234f91a1da56653ca79ab24917eba7f6915be18907"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/?capture=1",
+          "resourceType": "document"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "resourceType": "script"
+        }
+      ]
+    },
+    {
+      "variant": "integrated",
+      "viewport": {
+        "width": 358,
+        "height": 300
+      },
+      "theme": "Daylight",
+      "observation": {
+        "headingBounds": {
+          "x": 12,
+          "y": 12,
+          "width": 238,
+          "height": 16
+        },
+        "titleBounds": {
+          "x": 12,
+          "y": 12,
+          "width": 238,
+          "height": 16
+        },
+        "viewToolsBounds": {
+          "x": 56,
+          "y": 40,
+          "width": 290,
+          "height": 54
+        },
+        "pseudoBounds": {
+          "x": 6,
+          "y": 8,
+          "width": 250,
+          "height": 24
+        },
+        "pseudo": {
+          "content": "\"\"",
+          "backgroundColor": "rgb(245, 240, 231)",
+          "borderTopWidth": "1px",
+          "boxSizing": "content-box",
+          "width": "248px",
+          "height": "22px",
+          "top": "-4px",
+          "right": "-6px",
+          "bottom": "-4px",
+          "left": "-6px",
+          "zIndex": "-1",
+          "opacity": "1"
+        },
+        "heading": {
+          "isolation": "isolate",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "documentName": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "bodyClass": "native-host",
+        "time": "day",
+        "texts": {
+          "name": {
+            "color": "rgb(40, 60, 52)",
+            "display": "block",
+            "fontSize": "13px",
+            "lineHeight": "16px"
+          },
+          "overline": {
+            "color": "rgb(89, 102, 83)",
+            "display": "none",
+            "fontSize": "10px",
+            "lineHeight": "15px"
+          },
+          "mode": {
+            "color": "rgb(89, 102, 83)",
+            "display": "none",
+            "fontSize": "11px",
+            "lineHeight": "normal"
+          }
+        },
+        "clipping": {
+          "lineHeight": 16,
+          "overflowX": "hidden",
+          "scrollWidth": 1033,
+          "clientWidth": 238
+        },
+        "csp": "default-src 'none'; script-src 'self' tinjunction://bundle; style-src 'self' tinjunction://bundle; img-src 'self' tinjunction://bundle data: blob:; connect-src 'self' tinjunction://bundle; worker-src 'self' tinjunction://bundle blob:; media-src 'self' tinjunction://bundle blob:; base-uri 'none'; form-action 'none'",
+        "contrasts": {
+          "name": 10.357696765695213
+        },
+        "backgroundSamplePoints": [
+          {
+            "label": "top padding center",
+            "x": 131,
+            "y": 10
+          },
+          {
+            "label": "bottom padding center",
+            "x": 131,
+            "y": 30
+          }
+        ],
+        "geometryAndContrastsMatchReviewedCandidate": true
+      },
+      "targets": [
+        {
+          "label": "Daylight",
+          "bounds": {
+            "x": 61,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Evening",
+          "bounds": {
+            "x": 105,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Night",
+          "bounds": {
+            "x": 149,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overview camera",
+          "bounds": {
+            "x": 206,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Trackside camera",
+          "bounds": {
+            "x": 254,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overhead camera",
+          "bounds": {
+            "x": 302,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Stop train",
+          "bounds": {
+            "x": 298,
+            "y": 231.5,
+            "width": 44,
+            "height": 48
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Arrange scenery",
+          "bounds": {
+            "x": 206.34375,
+            "y": 170,
+            "width": 139.65625,
+            "height": 44
+          },
+          "centerHits": true
+        }
+      ],
+      "screenshot": {
+        "path": "integrated-358x300-daylight.png",
+        "bytes": 98156,
+        "sha256": "0b09ec0c3788e770e4cd29eed2d85eb103b0d6aeae2eca475330c1f6a2d24b75"
+      },
+      "stylesheetIntercepted": false,
+      "cssBytes": 18796,
+      "cssSha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb",
+      "documentSha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437",
+      "responses": [
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "status": 200,
+          "bytes": 18796,
+          "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "status": 200,
+          "bytes": 716416,
+          "sha256": "7ed3d0a95874f06b77a2d3234f91a1da56653ca79ab24917eba7f6915be18907"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/?capture=1",
+          "resourceType": "document"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "resourceType": "script"
+        }
+      ]
+    },
+    {
+      "variant": "integrated",
+      "viewport": {
+        "width": 358,
+        "height": 300
+      },
+      "theme": "Evening",
+      "observation": {
+        "headingBounds": {
+          "x": 12,
+          "y": 12,
+          "width": 238,
+          "height": 16
+        },
+        "titleBounds": {
+          "x": 12,
+          "y": 12,
+          "width": 238,
+          "height": 16
+        },
+        "viewToolsBounds": {
+          "x": 56,
+          "y": 40,
+          "width": 290,
+          "height": 54
+        },
+        "pseudoBounds": {
+          "x": 6,
+          "y": 8,
+          "width": 250,
+          "height": 24
+        },
+        "pseudo": {
+          "content": "\"\"",
+          "backgroundColor": "rgb(245, 240, 231)",
+          "borderTopWidth": "1px",
+          "boxSizing": "content-box",
+          "width": "248px",
+          "height": "22px",
+          "top": "-4px",
+          "right": "-6px",
+          "bottom": "-4px",
+          "left": "-6px",
+          "zIndex": "-1",
+          "opacity": "1"
+        },
+        "heading": {
+          "isolation": "isolate",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "documentName": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "bodyClass": "native-host",
+        "time": "dusk",
+        "texts": {
+          "name": {
+            "color": "rgb(40, 60, 52)",
+            "display": "block",
+            "fontSize": "13px",
+            "lineHeight": "16px"
+          },
+          "overline": {
+            "color": "rgb(89, 102, 83)",
+            "display": "none",
+            "fontSize": "10px",
+            "lineHeight": "15px"
+          },
+          "mode": {
+            "color": "rgb(89, 102, 83)",
+            "display": "none",
+            "fontSize": "11px",
+            "lineHeight": "normal"
+          }
+        },
+        "clipping": {
+          "lineHeight": 16,
+          "overflowX": "hidden",
+          "scrollWidth": 1033,
+          "clientWidth": 238
+        },
+        "csp": "default-src 'none'; script-src 'self' tinjunction://bundle; style-src 'self' tinjunction://bundle; img-src 'self' tinjunction://bundle data: blob:; connect-src 'self' tinjunction://bundle; worker-src 'self' tinjunction://bundle blob:; media-src 'self' tinjunction://bundle blob:; base-uri 'none'; form-action 'none'",
+        "contrasts": {
+          "name": 10.357696765695213
+        },
+        "backgroundSamplePoints": [
+          {
+            "label": "top padding center",
+            "x": 131,
+            "y": 10
+          },
+          {
+            "label": "bottom padding center",
+            "x": 131,
+            "y": 30
+          }
+        ],
+        "geometryAndContrastsMatchReviewedCandidate": true
+      },
+      "targets": [
+        {
+          "label": "Daylight",
+          "bounds": {
+            "x": 61,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Evening",
+          "bounds": {
+            "x": 105,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Night",
+          "bounds": {
+            "x": 149,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overview camera",
+          "bounds": {
+            "x": 206,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Trackside camera",
+          "bounds": {
+            "x": 254,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overhead camera",
+          "bounds": {
+            "x": 302,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Stop train",
+          "bounds": {
+            "x": 298,
+            "y": 231.5,
+            "width": 44,
+            "height": 48
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Arrange scenery",
+          "bounds": {
+            "x": 206.34375,
+            "y": 170,
+            "width": 139.65625,
+            "height": 44
+          },
+          "centerHits": true
+        }
+      ],
+      "screenshot": {
+        "path": "integrated-358x300-evening.png",
+        "bytes": 97840,
+        "sha256": "fbac1cece321be9209458672d50adc171a58f209a2b2a2af6dab183ad5e2a541"
+      },
+      "stylesheetIntercepted": false,
+      "cssBytes": 18796,
+      "cssSha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb",
+      "documentSha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437",
+      "responses": [
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "status": 200,
+          "bytes": 18796,
+          "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "status": 200,
+          "bytes": 716416,
+          "sha256": "7ed3d0a95874f06b77a2d3234f91a1da56653ca79ab24917eba7f6915be18907"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/?capture=1",
+          "resourceType": "document"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "resourceType": "script"
+        }
+      ]
+    },
+    {
+      "variant": "integrated",
+      "viewport": {
+        "width": 358,
+        "height": 300
+      },
+      "theme": "Night",
+      "observation": {
+        "headingBounds": {
+          "x": 12,
+          "y": 12,
+          "width": 238,
+          "height": 16
+        },
+        "titleBounds": {
+          "x": 12,
+          "y": 12,
+          "width": 238,
+          "height": 16
+        },
+        "viewToolsBounds": {
+          "x": 56,
+          "y": 40,
+          "width": 290,
+          "height": 54
+        },
+        "pseudoBounds": {
+          "x": 6,
+          "y": 8,
+          "width": 250,
+          "height": 24
+        },
+        "pseudo": {
+          "content": "\"\"",
+          "backgroundColor": "rgb(37, 56, 47)",
+          "borderTopWidth": "1px",
+          "boxSizing": "content-box",
+          "width": "248px",
+          "height": "22px",
+          "top": "-4px",
+          "right": "-6px",
+          "bottom": "-4px",
+          "left": "-6px",
+          "zIndex": "-1",
+          "opacity": "1"
+        },
+        "heading": {
+          "isolation": "isolate",
+          "opacity": "1",
+          "pointerEvents": "none"
+        },
+        "name": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "documentName": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+        "bodyClass": "native-host",
+        "time": "night",
+        "texts": {
+          "name": {
+            "color": "rgb(245, 239, 220)",
+            "display": "block",
+            "fontSize": "13px",
+            "lineHeight": "16px"
+          },
+          "overline": {
+            "color": "rgb(214, 213, 196)",
+            "display": "none",
+            "fontSize": "10px",
+            "lineHeight": "15px"
+          },
+          "mode": {
+            "color": "rgb(214, 213, 196)",
+            "display": "none",
+            "fontSize": "11px",
+            "lineHeight": "normal"
+          }
+        },
+        "clipping": {
+          "lineHeight": 16,
+          "overflowX": "hidden",
+          "scrollWidth": 1033,
+          "clientWidth": 238
+        },
+        "csp": "default-src 'none'; script-src 'self' tinjunction://bundle; style-src 'self' tinjunction://bundle; img-src 'self' tinjunction://bundle data: blob:; connect-src 'self' tinjunction://bundle; worker-src 'self' tinjunction://bundle blob:; media-src 'self' tinjunction://bundle blob:; base-uri 'none'; form-action 'none'",
+        "contrasts": {
+          "name": 10.835872757715387
+        },
+        "backgroundSamplePoints": [
+          {
+            "label": "top padding center",
+            "x": 131,
+            "y": 10
+          },
+          {
+            "label": "bottom padding center",
+            "x": 131,
+            "y": 30
+          }
+        ],
+        "geometryAndContrastsMatchReviewedCandidate": true
+      },
+      "targets": [
+        {
+          "label": "Daylight",
+          "bounds": {
+            "x": 61,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Evening",
+          "bounds": {
+            "x": 105,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Night",
+          "bounds": {
+            "x": 149,
+            "y": 45,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overview camera",
+          "bounds": {
+            "x": 206,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Trackside camera",
+          "bounds": {
+            "x": 254,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Overhead camera",
+          "bounds": {
+            "x": 302,
+            "y": 50,
+            "width": 44,
+            "height": 44
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Stop train",
+          "bounds": {
+            "x": 298,
+            "y": 231.5,
+            "width": 44,
+            "height": 48
+          },
+          "centerHits": true
+        },
+        {
+          "label": "Arrange scenery",
+          "bounds": {
+            "x": 206.34375,
+            "y": 170,
+            "width": 139.65625,
+            "height": 44
+          },
+          "centerHits": true
+        }
+      ],
+      "screenshot": {
+        "path": "integrated-358x300-night.png",
+        "bytes": 91481,
+        "sha256": "912ab657fb79ee0e5ed72455603bf4e03c0d37fb106aa5e7c1bbcccb31cc452b"
+      },
+      "stylesheetIntercepted": false,
+      "cssBytes": 18796,
+      "cssSha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb",
+      "documentSha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437",
+      "responses": [
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "status": 200,
+          "bytes": 18796,
+          "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "status": 200,
+          "bytes": 716416,
+          "sha256": "7ed3d0a95874f06b77a2d3234f91a1da56653ca79ab24917eba7f6915be18907"
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "requests": [
+        {
+          "url": "http://127.0.0.1:4173/?capture=1",
+          "resourceType": "document"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.css",
+          "resourceType": "stylesheet"
+        },
+        {
+          "url": "http://127.0.0.1:4173/bundle.js",
+          "resourceType": "script"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "browserVersion": "141.0.7390.37",
+  "inputsAfter": [
+    {
+      "path": "web/src/style.css",
+      "bytes": 22381,
+      "sha256": "6fed42682909f9a628940162ec4156f7742f578946232d00af67de8d7a6be093"
+    },
+    {
+      "path": "web/src/ui.ts",
+      "bytes": 8377,
+      "sha256": "85cc386bb11eaffa4d71dc9dfb50a1743baba5117807163a9235659a337c293e"
+    },
+    {
+      "path": "dist/web/bundle.css",
+      "bytes": 18796,
+      "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+    },
+    {
+      "path": "dist/web/bundle.js",
+      "bytes": 716416,
+      "sha256": "7ed3d0a95874f06b77a2d3234f91a1da56653ca79ab24917eba7f6915be18907"
+    },
+    {
+      "path": "dist/web/index.html",
+      "bytes": 884,
+      "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+    },
+    {
+      "path": "dist/web/bundle-manifest.json",
+      "bytes": 753,
+      "sha256": "c1d9357dacfb70793ab30f060c2ccd6b656cad89a6949bdff5675010819e0ac1"
+    },
+    {
+      "path": "apps/ios/TinJunction/Resources/WebAssets/bundle.css",
+      "bytes": 18796,
+      "sha256": "242d4963802fa7a1e1fa09b923d8c5568f661fad8678f124df48fbc0443825bb"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 66385,
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "tests/web/browser/interaction-quality.spec.ts",
+      "bytes": 14287,
+      "sha256": "d45ba52d563f6bfa546cd65757f8b582a2746139069983d537067a0392b30e49"
+    }
+  ],
+  "inputBytesUnchanged": true,
+  "completedAt": "2026-10-27T08:41:13.612Z",
+  "result": "passed-browser-experiment"
+}

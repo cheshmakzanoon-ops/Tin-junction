@@ -5,22 +5,26 @@ import XCTest
 final class AssetOriginProbeUITests: XCTestCase {
     func testActualBundledOriginAfterWebDataResetAndColdRelaunch() throws {
         continueAfterFailure = false
-        let app = XCUIApplication()
-        // XCTest runs registered teardown blocks even when an assertion stops
-        // the test before Swift defer executes. Capture first, then terminate.
-        addTeardownBlock { app.terminate() }
+        let lifetime = UITestApplicationLifetime(testCase: self)
+        let app = lifetime.app
+        // The lifetime already owns termination. Register failure capture later
+        // so XCTest's LIFO teardown preserves it before cleanup.
         addTeardownBlock { [weak self] in
             guard let self, (self.testRun?.failureCount ?? 0) > 0 else { return }
+            guard app.state == .runningForeground else {
+                self.attachObservation("Native probe row unavailable while the app is not foregrounded", name: "failure-state")
+                return
+            }
             let probe = app.staticTexts["host.assetProbe"]
             let text = probe.exists ? (probe.value as? String ?? "Native probe value unavailable") : "Native probe row unavailable"
             self.attachObservation(text, name: "failure-state")
             self.attachRendering(app, name: "failure-state")
         }
         app.launchArguments = ["--asset-origin-probe"]
-        app.launch()
+        lifetime.launch()
         let firstSession = try observe(app, name: "first-launch")
-        app.terminate()
-        app.launch()
+        lifetime.terminate("before-cold-relaunch")
+        lifetime.launch("cold-relaunch")
         let nextSession = try observe(app, name: "cold-relaunch")
         XCTAssertNotEqual(firstSession, nextSession, "Cold relaunch must establish a new native renderer session.")
     }

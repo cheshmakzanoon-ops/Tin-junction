@@ -4,8 +4,9 @@ import XCTest
 final class HostStartupUITests: XCTestCase {
     func testRealRendererInitializationFailureOffersWorkingNativeRetry() throws {
         continueAfterFailure = false
-        let app = preparedApplication(arguments: ["--fail-renderer-once"], failureCapture: "native-renderer-failure-state")
-        app.launch()
+        let lifetime = preparedApplication(arguments: ["--fail-renderer-once"], failureCapture: "native-renderer-failure-state")
+        let app = lifetime.app
+        lifetime.launch()
         let recovery = app.otherElements["host.recovery"]
         let retry = app.buttons["host.retry"]
         XCTAssertTrue(retry.waitForExistence(timeout: 30),
@@ -41,8 +42,9 @@ final class HostStartupUITests: XCTestCase {
     #if DEBUG
     func testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness() throws {
         continueAfterFailure = false
-        let app = preparedApplication(arguments: ["--hold-native-startup"], failureCapture: "native-startup-delay-failure-state")
-        app.launch()
+        let lifetime = preparedApplication(arguments: ["--hold-native-startup"], failureCapture: "native-startup-delay-failure-state")
+        let app = lifetime.app
+        lifetime.launch()
         let release = app.buttons["host.startup.release"]
         XCTAssertTrue(release.waitForExistence(timeout: 20))
         attach(app, name: "native-startup-held")
@@ -85,11 +87,11 @@ final class HostStartupUITests: XCTestCase {
     }
     #endif
 
-    private func preparedApplication(arguments: [String], failureCapture: String) -> XCUIApplication {
-        let app = XCUIApplication()
-        // XCTest teardown runs even when continueAfterFailure aborts the body.
-        // LIFO registration captures the failure before terminating this app.
-        addTeardownBlock { app.terminate() }
+    private func preparedApplication(arguments: [String], failureCapture: String) -> UITestApplicationLifetime {
+        let lifetime = UITestApplicationLifetime(testCase: self)
+        let app = lifetime.app
+        // LIFO registration captures the failure before the owned lifetime's
+        // teardown, including when continueAfterFailure aborts the test body.
         addTeardownBlock { [weak self] in
             guard let self, (self.testRun?.failureCount ?? 0) > 0 else { return }
             let state = XCTAttachment(string: "Application state: \(app.state.rawValue)")
@@ -99,7 +101,7 @@ final class HostStartupUITests: XCTestCase {
             if app.state == .runningForeground { self.attach(app, name: failureCapture) }
         }
         app.launchArguments = arguments
-        return app
+        return lifetime
     }
 
     private func attach(_ app: XCUIApplication, name: String) {

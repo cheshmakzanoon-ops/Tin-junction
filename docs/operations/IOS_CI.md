@@ -70,6 +70,8 @@ The separate review artifacts address an observed access failure: the `2b630f1` 
 
 Each review package contains `_review/index.json`; verify its tested commit, run/attempt, original-byte hashes and `stagingResult` before using it. A complete index proves packaging only. Raw `.xcresult` contents and video remain in the full artifact, so console details available only inside a result bundle may still require that archive. A runner loss, cancellation or exhausted overall job deadline can prevent later `always()` steps from executing. Local byte-copy verification does not establish that the new staging/upload steps have executed in CI.
 
+Actual run `40471495670` at `53e193b` subsequently executed all three uploads successfully after two native UI failures. Both downloaded compact indices matched and all 52 report files plus 14 PNGs retained their indexed hashes. The full archive was also within the downloader limit and independently verified; its detailed runner log was necessary to observe delayed termination-request handling and not-running notifications. This is evidence that the packaging repair worked on that run, while native tests still failed and installed/clean-install checks remained skipped. See the [incident timeline](../../evidence/INC-NATIVE-QUEUE-20261027.md).
+
 ## 4. Check meanings and non-claims
 
 | Check | What success establishes | What it does not establish |

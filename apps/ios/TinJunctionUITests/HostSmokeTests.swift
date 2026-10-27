@@ -4,9 +4,12 @@ import XCTest
 final class HostSmokeTests: XCTestCase {
     func testBundledRendererHandshakes() throws {
         continueAfterFailure = false
-        let app = XCUIApplication()
-        app.launch()
-        defer { attachScreenshot(app, name: "duo-host-handshake") }
+        let lifetime = UITestApplicationLifetime(testCase: self)
+        let app = lifetime.app
+        addTeardownBlock { [weak self] in
+            if app.state == .runningForeground { self?.attachScreenshot(app, name: "duo-host-handshake") }
+        }
+        lifetime.launch()
         XCTAssertTrue(app.staticTexts["host.title"].waitForExistence(timeout: 15))
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30),
                       "Bundled WebKit bridge must handshake on Duo; no browser fallback.")
@@ -15,13 +18,14 @@ final class HostSmokeTests: XCTestCase {
 
     func testHostSurvivesRotationAndForegrounding() throws {
         continueAfterFailure = false
-        let app = XCUIApplication()
-        app.launch()
-        XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
-        defer {
-            attachScreenshot(app, name: "duo-host-after-lifecycle")
-            XCUIDevice.shared.orientation = .portrait
+        let lifetime = UITestApplicationLifetime(testCase: self)
+        let app = lifetime.app
+        addTeardownBlock { XCUIDevice.shared.orientation = .portrait }
+        addTeardownBlock { [weak self] in
+            if app.state == .runningForeground { self?.attachScreenshot(app, name: "duo-host-after-lifecycle") }
         }
+        lifetime.launch()
+        XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
         XCUIDevice.shared.orientation = .landscapeLeft
         XCTAssertTrue(app.staticTexts["host.title"].exists)
         XCUIDevice.shared.press(.home)
@@ -33,13 +37,13 @@ final class HostSmokeTests: XCTestCase {
 
     func testNativeSaveAndRelaunchRestoresAcknowledgedRailway() throws {
         continueAfterFailure = false
-        let app = XCUIApplication()
-        // The relaunched app belongs to this fixture too. End its lifetime here
-        // instead of leaving the next test responsible for terminating it.
-        addTeardownBlock { app.terminate() }
-        app.launch()
+        let lifetime = UITestApplicationLifetime(testCase: self)
+        let app = lifetime.app
+        addTeardownBlock { [weak self] in
+            if app.state == .runningForeground { self?.attachScreenshot(app, name: "duo-edit-save-relaunch") }
+        }
+        lifetime.launch()
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
-        defer { attachScreenshot(app, name: "duo-edit-save-relaunch") }
 
         let durableMarker = app.staticTexts.matching(
             NSPredicate(format: "identifier == 'host.saved' OR identifier == 'host.restored'")
@@ -104,8 +108,8 @@ final class HostSmokeTests: XCTestCase {
         XCTAssertEqual(XCTWaiter.wait(for: [changedRevisionSaved], timeout: 15), .completed,
                        "An earlier autosave cannot satisfy the acknowledgement for this specific edit.")
         attachScreenshot(app, name: "duo-railway-durable-save")
-        app.terminate()
-        app.launch()
+        lifetime.terminate("before-saved-railway-relaunch")
+        lifetime.launch("saved-railway-relaunch")
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
         XCTAssertTrue(app.staticTexts["host.restored"].waitForExistence(timeout: 10),
                       "Relaunch must load a validated native save, not silently show a fresh scene.")
@@ -119,8 +123,9 @@ final class HostSmokeTests: XCTestCase {
 
     func testNativeHelpRemainsAccessible() throws {
         continueAfterFailure = false
-        let app = XCUIApplication()
-        app.launch()
+        let lifetime = UITestApplicationLifetime(testCase: self)
+        let app = lifetime.app
+        lifetime.launch()
         XCTAssertTrue(app.buttons["host.help"].waitForExistence(timeout: 15))
         app.buttons["host.help"].tap()
         XCTAssertTrue(app.navigationBars["Railway guide"].waitForExistence(timeout: 5))

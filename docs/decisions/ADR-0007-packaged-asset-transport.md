@@ -2,13 +2,13 @@
 
 ## Metadata
 
-- **Status:** Proposed; actual first-launch resource transport is observed, but complete native probe and clean-install verification remain open.
+- **Status:** Proposed; completed first/cold native probe sessions are observed at `0e6d83c`, but current full integration and clean-install verification remain open.
 - **Decision date:** 2026-10-27 UTC.
 - **Author:** `submission-native`, coordinated by `submission-coordinator`.
 - **Decision owner:** Project coordinator for the bounded P01-T02 development task; physical-device, final-art and release approvals retain their existing owners.
 - **Related tasks:** P01-T02; follow-up security, lifecycle and device gates P01-T03, P01-T05 and P02-T02.
 - **Supersedes:** None. This specializes the runtime spike required by ADR-0001 and preserves the WebGL2 baseline in ADR-0003.
-- **Approval reference:** Unaccepted; the complete native asset-origin probe has not passed.
+- **Approval reference:** Unaccepted; the required complete native workflow, installed-resource identity and clean-install trial have not all passed on a current revision.
 
 ## Context
 
@@ -51,7 +51,13 @@ The bounded repair supplies public `HTTPURLResponse` success metadata and fixed 
 
 That run still failed: the audio handler published a terminal audio result while its stage remained `ready`, violating the unchanged native schema before its subsequent `complete` update. The last accepted native report stayed pending/suspended; completed playback and the second cold launch were not established. A separate native recovery identifier/contrast defect prevented the Retry UI test from completing. These failures cannot be adopted as passing integration evidence.
 
-The reviewed repair at `f0303cc9a9f49e48902350b14f526d5dcdbda3de` publishes the audio outcome and completion stage atomically and repairs native recovery containment, text contrast and hit area. Its actual full native result is pending. The original verification also requires a separate observed app-data deletion/reinstall, not only WebKit data reset. The decision remains proposed until those observations and installed resource identities pass.
+The reviewed repair at `f0303cc9a9f49e48902350b14f526d5dcdbda3de` publishes the audio outcome and completion stage atomically and repairs native recovery containment, text contrast and hit area. Its full native run later reported cancelled, with no retrievable completed log or artifact. The [verification incident](../../evidence/INC-NATIVE-QUEUE-20261027.md) preserves the unknown execution stage and subsequent distinct failures; cancellation provides no native passing result.
+
+At `0e6d83c24bd4e0ed5413c095ebaee1cbbc09d406`, [full run 40467652957](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40467652957) completed both first-launch and cold-relaunch asset observations with different native sessions. GLB rendering, four-quadrant texture sampling, the classic worker and user-gesture audio source completion passed; WASM remained explicitly CSP-blocked and KTX2 disabled. The [source-bound review](../../evidence/P01-T02-native-observation-review-0e6d83c.md) records the unchanged assertions and actual reports. That full run still failed its separate recovery accessibility assertion, so installed-resource verification and the clean-install trial were skipped.
+
+At `53e193b6435d241f8c1462d859112b2cb1b56b77`, [full run 40471495670](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40471495670) passed all 87 units and six of eight UI cases, including the unchanged recovery exclusion, contrast audit and actual Retry/foreground sequence. Its first asset session completed, but the explicit foreground `app.terminate()` failed before the cold launch. Help's initial launch separately failed while terminating the previous rotation fixture. The recovered runner log records delayed Xcode request handling and process-state notification; it does not establish a product shutdown deadlock or the cause of the host delay. Neither later process death nor an older passing cold session converts this run into a pass. Installed identity and clean reinstall remained skipped.
+
+The original verification requires a separate observed app-data deletion/reinstall, not only WebKit data reset. The decision remains proposed until that trial, current complete native observations and installed resource identities pass together.
 
 The local packaging tests verify finite file lists, diagnostic exclusion, fixture hashes, safe cleanup and symlink rejection. Release-guard tests check ordinary and diagnostic manifests, integrity and configuration wiring. These are source/build checks, not native origin evidence. A separate desktop HTTP sanity run likewise does not establish WKWebView compatibility.
 

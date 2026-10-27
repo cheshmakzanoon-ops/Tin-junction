@@ -1,0 +1,100 @@
+Selected original runner/host diagnostic lines; order follows the explicit groups below.
+Source xcresult Data object: TinJunction-20261027T081123-5419.xcresult/Data/data.0~nMbMiY_0Xc9CpmRdIqPzcXP78BQUHo4BkjBbtp_LPMH1GQ-apa-RuIhvtI7zhRYDjsrXoJEP5T1GYM1GtHWuEg==
+Original compressed object SHA256 c494b01209106b5dbd43ec50e4bc82a02f81f30683ea6ee2804fb87cc786cc7b.
+Decoded object SHA256 adbe5f04c3e114c388652789a46e76c61d11b90894da408bc6bebfb100995b65.
+Timestamps are those recorded by the named host/runner process; no duration is inferred from merged-file position.
+
+Asset explicit termination; PID11744/token1
+
+08:20:33.278 TinJunctionUITests-Runner[11510:39880] <XCTContext: 0x1072aed00> started activity <XCActivityRecord: 0x10a2cd490> 2026-10-27 08:20:33 +0000: Terminate com.cheshmakzanoonops.tinjunction:11744
+08:20:33.291 TinJunctionUITests-Runner[11510:39880] Using token to terminate <XCTRunnerIDESession: 0x10721a300> via Xcode
+08:20:33.362 xcodebuild[6026:21921] Test runner session received request for termination of application with token 1
+08:21:07.881 xcodebuild[6026:21921] Terminating session for token 1 by canceling execution tracker <IDEExecutionOperationTracker: 0x7a0cca59d0: Launch application com.cheshmakzanoonops.tinjunction for UI testing.
+08:20:33.297 TinJunctionUITests-Runner[11510:39880] <XCTWaiter: 0x10a2e1410> entering wait loop for 60.00s with expectations: `Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:11744)`
+08:21:14.193 TinJunctionUITests-Runner[11510:40063] Automation session connection to pid 11744 interrupted
+08:21:24.865 xcodebuild[6026:21921] 📱<DVTiPhoneSimulator (0x7a0c0bd200), iPhone Duo, unknown class, 27.1 (24A94425), 4C56FCAC-377C-469C-B415-8ABBC4375CBA> got death notice for pid 11744 (exit code: (null), signal: 15), removing from SimulatorSessionMap
+08:21:33.047 xcodebuild[6026:21921] Ignoring exit of launch session <IDELaunchSession: 0x7a0c35eb80> because it does not match the launch session currently tracked for token 1
+08:21:33.706 xcodebuild[6026:21921] Observed termination of tracker for token 1 for launch of com.cheshmakzanoonops.tinjunction at /Users/runner/work/Tin-junction/Tin-junction/artifacts/ios/DerivedData/Build/Products/Debug-iphonesimulator/TinJunction.app
+08:21:33.346 TinJunctionUITests-Runner[11510:39880] <XCTWaiter: 0x10a2e1410> reporting timed out failure with Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:11744)
+08:21:33.347 TinJunctionUITests-Runner[11510:39880] Wait <XCTWaiterWait: 0x10a1e0c00> completed after 60.049s
+08:21:33.347 TinJunctionUITests-Runner[11510:39880] Failed to terminate com.cheshmakzanoonops.tinjunction:11744 after 60.0s; state is still `Running Foreground`.
+08:21:33.347 TinJunctionUITests-Runner[11510:39880] Setting pid for 0x1073a1480 11744 -> 0
+08:21:33.348 TinJunctionUITests-Runner[11510:39880] Error (com.apple.dt.xctest.ui-testing.error) 10013, userInfo keys: (null): Failed to terminate com.cheshmakzanoonops.tinjunction:0
+08:21:43.380 TinJunctionUITests-Runner[11510:40063] -[XCTRunnerDaemonSession(XCTMessagingRole_UIApplicationStateUpdating) _XCT_applicationDidUpdateState:] com.cheshmakzanoonops.tinjunction@/Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Containers/Bundle/Application/C80A61D9-56C1-4B00-AAB5-44F17DAC1E5D/TinJunction.app processName: TinJunction pid: 11744 state: not running
+
+Help implicit termination during launch; PID13723/token3
+
+08:23:03.195 TinJunctionUITests-Runner[11510:39880] <XCTContext: 0x1072aed00> started activity <XCActivityRecord: 0x10a2cdb20> 2026-10-27 08:23:03 +0000: Terminate com.cheshmakzanoonops.tinjunction:13723
+08:23:03.204 TinJunctionUITests-Runner[11510:39880] Using token to terminate <XCTRunnerIDESession: 0x10721a300> via Xcode
+08:25:01.697 xcodebuild[6026:21921] Test runner session received request for termination of application with token 3
+08:25:01.702 xcodebuild[6026:21921] Terminating session for token 3 by canceling execution tracker <IDEExecutionOperationTracker: 0x7a0ce33250: Launch application com.cheshmakzanoonops.tinjunction for UI testing.
+08:23:03.204 TinJunctionUITests-Runner[11510:39880] <XCTWaiter: 0x10a2e2190> entering wait loop for 60.00s with expectations: `Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:13723)`
+08:24:03.469 TinJunctionUITests-Runner[11510:39880] <XCTWaiter: 0x10a2e2190> reporting timed out failure with Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:13723)
+08:24:04.052 TinJunctionUITests-Runner[11510:39880] Wait <XCTWaiterWait: 0x10a1deec0> completed after 60.848s
+08:24:04.058 TinJunctionUITests-Runner[11510:39880] Failed to terminate com.cheshmakzanoonops.tinjunction:13723 after 60.0s; state is still `Running Foreground`.
+08:24:04.059 TinJunctionUITests-Runner[11510:39880] Setting pid for 0x11381b780 13723 -> 0
+08:24:04.215 TinJunctionUITests-Runner[11510:39880] Error (com.apple.dt.xctest.ui-testing.error) 10013, userInfo keys: (null): Failed to terminate com.cheshmakzanoonops.tinjunction:0
+08:25:05.758 xcodebuild[6026:21921] 📱<DVTiPhoneSimulator (0x7a0c0bd200), iPhone Duo, unknown class, 27.1 (24A94425), 4C56FCAC-377C-469C-B415-8ABBC4375CBA> got death notice for pid 13723 (exit code: (null), signal: 15), removing from SimulatorSessionMap
+08:25:05.963 xcodebuild[6026:21921] Ignoring exit of launch session <IDELaunchSession: 0x7a0c35eb80> because it does not match the launch session currently tracked for token 3
+08:25:06.066 xcodebuild[6026:21921] Observed termination of tracker for token 3 for launch of com.cheshmakzanoonops.tinjunction at /Users/runner/work/Tin-junction/Tin-junction/artifacts/ios/DerivedData/Build/Products/Debug-iphonesimulator/TinJunction.app
+08:25:04.746 TinJunctionUITests-Runner[11510:42206] Automation session connection to pid 13723 interrupted
+08:25:05.473 TinJunctionUITests-Runner[11510:40061] -[XCTRunnerDaemonSession(XCTMessagingRole_UIApplicationStateUpdating) _XCT_applicationDidUpdateState:] com.cheshmakzanoonops.tinjunction@/Users/runner/Library/Developer/CoreSimulator/Devices/4C56FCAC-377C-469C-B415-8ABBC4375CBA/data/Containers/Bundle/Application/C80A61D9-56C1-4B00-AAB5-44F17DAC1E5D/TinJunction.app processName: TinJunction pid: 13723 state: not running
+
+Successful prior-app termination also logs the launch-session mismatch; this message is not a unique failure cause
+
+08:22:14.384 xcodebuild[6026:21921] Test runner session received request for termination of application with token 2
+08:22:14.601 xcodebuild[6026:21921] 📱<DVTiPhoneSimulator (0x7a0c0bd200), iPhone Duo, unknown class, 27.1 (24A94425), 4C56FCAC-377C-469C-B415-8ABBC4375CBA> got death notice for pid 12959 (exit code: (null), signal: 15), removing from SimulatorSessionMap
+08:22:14.655 xcodebuild[6026:21921] Ignoring exit of launch session <IDELaunchSession: 0x7a0c35eb80> because it does not match the launch session currently tracked for token 2
+
+Selected original target-console responsiveness lines:
+Source xcresult Data object: TinJunction-20261027T081123-5419.xcresult/Data/data.0~44YLzRsfTHyQV5k9U5kKR5s5Z3EvozaSuRhdE9NiVodMiEY6NO5cjRw1EykLXgmEhypVE6JDERw-fv5DuIrqRg==
+Decoded object SHA256 0e943cf84b372927c4c55fd218548d8b605da6ae2a4151ec54ef6e8f04f49ead.
+
+2026-10-27 08:20:33.116405+0000 TinJunction[11744:40716] [Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-10-27 08:20:33.117990+0000 TinJunction[11744:40716] [Default] Got attributes, transferring to dictionary for return.
+2026-10-27 08:20:33.118144+0000 TinJunction[11744:40753] [Default] Replying with attribute values: {
+2026-10-27 08:22:50.223274+0000 TinJunction[13723:47550] [Default] Sending main run loop idle reply
+2026-10-27 08:22:50.223385+0000 TinJunction[13723:48038] [Default] Sending animations idle reply with error: (null)
+
+Complete TinStartup event substrings selected from possibly interleaved original console lines:
+
+PID 11744
+2026-10-27 08:18:52.933723+0000 TinJunction[11744:40716] [TinStartup] +0.000s webview.created
+2026-10-27 08:18:53.406600+0000 TinJunction[11744:40716] [TinStartup] +0.473s host.lifecycle=active
+2026-10-27 08:18:57.501771+0000 TinJunction[11744:40716] [TinStartup] +4.568s navigation.started.window=1
+2026-10-27 08:18:57.501949+0000 TinJunction[11744:40716] [TinStartup] +4.568s host.loading.lifecycle=active
+2026-10-27 08:18:57.509079+0000 TinJunction[11744:40716] [TinStartup] +4.575s resource.ready.type=html.bytes=884
+2026-10-27 08:18:57.547048+0000 TinJunction[11744:40716] [TinStartup] +4.613s navigation.committed.window=1
+2026-10-27 08:18:57.548378+0000 TinJunction[11744:40716] [TinStartup] +4.615s resource.ready.type=css.bytes=19022
+2026-10-27 08:18:57.576207+0000 TinJunction[11744:40716] [TinStartup] +4.642s resource.ready.type=js.bytes=801455
+2026-10-27 08:18:58.411973+0000 TinJunction[11744:40716] [TinStartup] +5.478s navigation.finished.window=1
+2026-10-27 08:19:11.452561+0000 TinJunction[11744:40716] [TinStartup] +18.519s bridge.webReady
+2026-10-27 08:19:11.513865+0000 TinJunction[11744:40716] [TinStartup] +18.580s host.restorePrepared
+2026-10-27 08:19:11.781004+0000 TinJunction[11744:40716] [TinStartup] +18.847s host.layoutAccepted
+2026-10-27 08:19:12.058980+0000 TinJunction[11744:40716] [TinStartup] +19.125s resource.ready.type=glb.bytes=29356
+2026-10-27 08:19:12.082512+0000 TinJunction[11744:40716] [TinStartup] +19.149s resource.ready.type=png.bytes=93
+2026-10-27 08:19:12.110864+0000 TinJunction[11744:40716] [TinStartup] +19.177s resource.ready.type=js.bytes=132
+2026-10-27 08:19:12.120362+0000 TinJunction[11744:40716] [TinStartup] +19.186s resource.ready.type=wasm.bytes=44
+2026-10-27 08:19:12.583249+0000 TinJunction[11744:40716] [TinStartup] +19.649s resource.ready.type=wav.bytes=11564
+
+PID 18153
+2026-10-27 08:27:56.348729+0000 TinJunction[18153:60831] [TinStartup] +0.000s webview.created
+2026-10-27 08:27:56.876150+0000 TinJunction[18153:60831] [TinStartup] +0.527s host.lifecycle=active
+2026-10-27 08:28:02.428456+0000 TinJunction[18153:60831] [TinStartup] +6.080s navigation.started.window=1
+2026-10-27 08:28:02.429050+0000 TinJunction[18153:60831] [TinStartup] +6.080s host.loading.lifecycle=active
+2026-10-27 08:28:02.439162+0000 TinJunction[18153:60831] [TinStartup] +6.090s resource.ready.type=html.bytes=884
+2026-10-27 08:28:02.466582+0000 TinJunction[18153:60831] [TinStartup] +6.118s navigation.committed.window=1
+2026-10-27 08:28:02.468650+0000 TinJunction[18153:60831] [TinStartup] +6.120s resource.ready.type=css.bytes=19022
+2026-10-27 08:28:02.498256+0000 TinJunction[18153:60831] [TinStartup] +6.150s resource.ready.type=js.bytes=801455
+2026-10-27 08:28:02.881782+0000 TinJunction[18153:60831] [TinStartup] +6.533s host.failed.beforeBridge
+2026-10-27 08:28:02.942866+0000 TinJunction[18153:60831] [TinStartup] +6.594s navigation.finished.window=0
+2026-10-27 08:28:06.737861+0000 TinJunction[18153:60831] [TinStartup] +10.389s host.loading.lifecycle=active
+2026-10-27 08:28:06.867251+0000 TinJunction[18153:60831] [TinStartup] +10.519s navigation.started.window=1
+2026-10-27 08:28:06.867542+0000 TinJunction[18153:60831] [TinStartup] +10.519s host.loading.lifecycle=active
+2026-10-27 08:28:06.868947+0000 TinJunction[18153:60831] [TinStartup] +10.520s resource.ready.type=html.bytes=884
+2026-10-27 08:28:06.902181+0000 TinJunction[18153:60831] [TinStartup] +10.553s navigation.committed.window=1
+2026-10-27 08:28:08.898758+0000 TinJunction[18153:60831] [TinStartup] +12.550s bridge.webReady
+2026-10-27 08:28:08.928324+0000 TinJunction[18153:60831] [TinStartup] +12.580s navigation.finished.window=1
+2026-10-27 08:28:08.932452+0000 TinJunction[18153:60831] [TinStartup] +12.584s host.restorePrepared
+2026-10-27 08:28:09.075452+0000 TinJunction[18153:60831] [TinStartup] +12.727s host.layoutAccepted
+

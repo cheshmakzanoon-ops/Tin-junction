@@ -1,6 +1,6 @@
 # Native verification queue held beyond configured deadline
 
-Status: **OPEN — the fresh native run completed with a recovery accessibility failure; a further repair requires full verification.** The original queue condition and the later diagnosed application failures remain separate observations.
+Status: **OPEN — recovery now passes, but the current full native run failed two application-termination operations.** The original queue condition, repaired application defects and current delayed automation observations remain separate.
 
 ## Observed state
 
@@ -53,6 +53,33 @@ The full `0e6d83c` job completed **failed at 07:52:45 UTC**, with exit 65: **84 
 The current archive `12717438505` was independently downloaded and hashed: **297,014,053 bytes**, SHA-256 `d3db5275efd6418f5fd054df29dfa6ddacde6de636c3e5ae640bf183e4858104`. The current web workflow completed cleanly with **34 cases, 34 attempts and no retries**; that success does not resolve the remaining native failure.
 
 The next repair retains the single WKWebView in a stable native container, removes the failed child from the visible hierarchy, and synchronously reattaches it before Retry navigation. The unchanged UI test remains the required runtime proof. Separately, the workflow preserves its complete upload and adds bounded report/capture uploads so oversized video/result archives do not hide ordinary diagnostics. The [local packaging verification](INC-NATIVE-QUEUE-20261027-review-package-local.json) copied **72 files**, including **15 original PNGs and 38 opaque attachments**, from a fresh extraction of this verified archive; all **1,804 original files** retained identical bytes. The reports package is 788,196 bytes and the capture package 15,726,213 bytes including indices. This is local packaging evidence, with no new native or upload execution claim. All original test gates, deadlines, permissions and concurrency remain unchanged.
+
+### Completed 53 containment result and delayed termination handling
+
+The containment repair at `53e193b6435d241f8c1462d859112b2cb1b56b77` compiled in both native lanes. The [focused model run 40471495783](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40471495783) passed all **87 native units**, including all three new container cases. The [web run 40471495796](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40471495796) passed **34 cases in 34 attempts**, with no retries, flakes, skipped cases or report errors. Its actual project/tool/web unit counts are 108/56/304. The exact scoped [native unit](P02-T01-native-unit-53e193b.json) and [web review](P04-T06-web-ci-review-53e193b.md) retain this revision's source identities.
+
+The [full native run 40471495670](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40471495670), job `122079338958`, completed **failed at 08:30:51 UTC** on advertised runner `1000015885`. All **87 units and six of eight UI cases passed**. The unchanged renderer-failure case now passes accessibility exclusion, native Help, the contrast audit, actual Retry, readiness, recovery removal, single-WebView identity and foreground return. Controlled startup, handshake, rotation/foreground, durable edit/save/relaunch and platform observations also passed.
+
+The asset case completed every first-session assertion, then failed at `AssetOriginProbeUITests.swift:22`, its explicit foreground `app.terminate()`. Cold launch was never reached. The separate Help case failed in its initial `app.launch()`, which attempted to terminate the rotation fixture's still-running instance. Its Help interactions were never reached. Installed-resource verification and clean reinstall were correctly skipped; none of these partial observations accepts the active tasks.
+
+The original detailed runner log distinguishes delayed automation from an established app shutdown defect:
+
+| Original event | Asset process 11744 | Rotation process 13723, terminated by Help launch |
+| --- | --- | --- |
+| Runner sends termination request | 08:20:33.291 | 08:23:03.204 |
+| Xcode records receiving request | 08:20:33.362 | 08:25:01.697 |
+| Xcode begins execution-tracker cancellation | 08:21:07.881 | 08:25:01.702 |
+| XCTest reports its unchanged 60-second timeout | 08:21:33.347 | 08:24:04.058 |
+| Xcode records process death, signal 15 | 08:21:24.865 | 08:25:05.758 |
+| Runner receives not-running state | 08:21:43.380 | 08:25:05.473 |
+
+Times are original UTC log timestamps on 2026-10-27. The first death notice precedes the runner's timeout but its state notification follows it. The second request reaches Xcode **118.493 seconds** after the runner sends it. Xcode also shows a **90.650-second** gap between recorded Help test-start handling and its next main-thread log entry. These are observed delays, not a measured CPU, memory, video, disk or Apple implementation diagnosis. Both targets answered public automation work shortly before their termination requests. XCTest resets its tracked PID to zero after a timeout, so the nested `:0` error does not establish prior successful exit. Preserve the original failure, without adding retries, backgrounding before termination or extending internal deadlines.
+
+The complete archive is **411,740,701 bytes**, SHA-256 `9e5fa0d5ff94fe82fafec6600fd405c0b6c0eaab044564329b5901706d238997`, and was independently downloaded and verified. The original 338,566-byte `xcodebuild.log` has SHA-256 `27b4ae1bb7fb169225f8dbe01c9bf4d0b7f5c2058625444e7ad0b4eeca4ab622`. The recovered detailed runner object is **6,452,992 bytes**, SHA-256 `adbe5f04c3e114c388652789a46e76c61d11b90894da408bc6bebfb100995b65`; its compact original excerpts and source-bound review preserve the timeline.
+
+The new bounded packaging steps also executed successfully. Reports artifact `12719603035` is **190,272 bytes**, SHA-256 `ae03db079b44b53796aa0201fa1cdcf538a11f1e00a731d4875b4d686a09dbd1`; captures artifact `12719603049` is **15,883,560 bytes**, SHA-256 `8bee3d985618393e2b736baf4b0ddc0c4af29f02944fb2911361700b2df0cf25`. Both exact indices have SHA-256 `30413fbc7ef37c35bc5a6ff8be46b47741cba7fe5269820359526fecba107488`, identify this commit/run/attempt, and retain failure/skipped outcomes. The coordinator independently checked all **52 report files and 14 original PNGs** against their recorded bytes/hashes. Complete packaging establishes evidence access, not passing native execution.
+
+The next bounded change gives every UI fixture ownership of its application and orientation cleanup, registers cleanup before launch, and records lightweight public state/timestamps around the same launch and foreground-termination calls. This corrects observed cross-fixture lifetime ownership and makes future failures attributable. It does not claim to cure the host-side delays, and the asset foreground cold-relaunch assertions remain unchanged.
 
 ## Resolution gate
 

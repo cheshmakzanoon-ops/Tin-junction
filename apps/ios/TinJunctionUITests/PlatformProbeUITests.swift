@@ -5,9 +5,10 @@ import XCTest
 final class PlatformProbeUITests: XCTestCase {
     func testObservedPlatformGeometryAcrossSupportedOrientations() throws {
         continueAfterFailure = false
-        let app = XCUIApplication()
-        app.launch()
-        defer { XCUIDevice.shared.orientation = .portrait }
+        let lifetime = UITestApplicationLifetime(testCase: self)
+        let app = lifetime.app
+        addTeardownBlock { XCUIDevice.shared.orientation = .portrait }
+        lifetime.launch()
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
 
         let orientations: [(String, UIDeviceOrientation)] = [
