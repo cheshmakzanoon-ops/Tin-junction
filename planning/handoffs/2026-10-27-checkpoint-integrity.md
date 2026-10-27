@@ -6,7 +6,9 @@ P01-T02, P02-T01 and P04-T06 remain active. No task is completed by this checkpo
 
 The preceding published implementation is `f0303cc9a9f49e48902350b14f526d5dcdbda3de`. Its [web workflow](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40458903202) passed all 28 browser cases without retries, plus 108 project, 28 iOS-tool and 301 web unit tests, build checks and the separate reproducible asset-export job. Its [focused native model workflow](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40458903138) passed all 79 native units. The compact f030 records retain exact source and artifact hashes; these successful executions are historical evidence, not validation of the repairs below.
 
-At the latest observation during preparation, the [full native workflow](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40458903139) remained in its compile/test script step, with installed-byte verification and artifact upload still pending. That status does not establish whether the script reached compilation, UI execution or export. Inspect its completed log before diagnosing the long run. Its original overall job deadline is 45 minutes from the observed 06:04:13 UTC start.
+At 06:56:28 UTC, the [full native workflow](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40458903139) still reported its compile/test script step in progress, with installed-byte verification and artifact upload pending. It exceeded its configured 45-minute job limit and the possible five-minute cancellation interval without releasing a log/artifact. Its exact execution stage remains unknown. [Incident INC-NATIVE-QUEUE-20261027](../../evidence/INC-NATIVE-QUEUE-20261027.md) records a one-time versioned concurrency-group recovery, preserving that run and every required check while permitting a fresh complete native job.
+
+The integrated corrections below were published at `02d2230947528fedc3129d1d4ca43c9749cfa1c6`. Its [web run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40463712719) and [native model run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40463712718) started; its [full native run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40463712735) waited in the old group. The queue recovery is a subsequent workflow-only coordination change, not a new application repair or accepted native outcome.
 
 ## Integrity defect and compatibility policy
 
@@ -34,8 +36,8 @@ The workflow now runs that additional trial only after both prerequisites succee
 
 ## Next action
 
-1. Inspect and preserve the completed f030 full native outcome. Fix any demonstrated failure before relying on another run; do not infer a UI failure from a still-running script step.
-2. Publish the reviewed integrated corrections and run all required workflows against that exact commit. Preserve full unit/UI results, actual held/released startup and Retry captures, both audio/asset observations and installed-byte identity.
+1. Observe the complete required native run under the recovered queue. Preserve any later f030 outcome, but do not invent a failure cause from its unavailable log. If the fresh queue also stalls, escalate the specific runner/control limitation instead of repeatedly changing group names.
+2. Run all required workflows against the queue-recovery commit. Preserve full unit/UI results, actual held/released startup and Retry captures, both audio/asset observations and installed-byte identity. Resolve the operational incident only after the full current verification succeeds.
 3. Require the additional clean-install trial before accepting P01-T02 or the proposed transport ADR. Prepare new source-bound evidence; do not replace f030 hashes with newer files or drop changed source fingerprints.
 4. Accept P02-T01 and P04-T06 only when their complete current criteria pass. Then use the project CLI to select and claim newly available work: asynchronous resource handling, accessible preferences and compressed-asset compatibility are prepared directions, not completed dependencies.
 

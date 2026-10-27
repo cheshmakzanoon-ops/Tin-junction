@@ -1,16 +1,26 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T06:04:51.893Z",
+  "updated_at": "2026-10-27T06:57:20.271Z",
   "health": {
     "ci": {
       "status": "running",
-      "checked_commit": "f0303cc9a9f49e48902350b14f526d5dcdbda3de",
+      "checked_commit": "02d2230947528fedc3129d1d4ca43c9749cfa1c6",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40458903139",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40458903202"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40463712735",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40463712719"
       ]
     },
-    "incidents": []
+    "incidents": [
+      {
+        "id": "INC-NATIVE-QUEUE-20261027",
+        "summary": "Native run 40458903139 remains in progress beyond its configured deadline with no log or artifact, holding new full verification. One-time queue recovery and complete fresh native evidence required; see evidence/INC-NATIVE-QUEUE-20261027.md.",
+        "owner": "submission-coordinator",
+        "opened_at": "2026-10-27T06:57:20.271Z",
+        "resolved": false,
+        "resolved_at": null,
+        "resolution": null
+      }
+    ]
   },
   "last_handoff": "planning/handoffs/2026-10-27-layout-design.md",
   "tasks": {

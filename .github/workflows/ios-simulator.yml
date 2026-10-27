@@ -11,7 +11,10 @@ permissions:
   contents: read
 
 concurrency:
-  group: ios-simulator-${{ github.ref }}
+  # One-time queue recovery: the former group is held by run 40458903139
+  # beyond its configured deadline with no logs/artifacts available.
+  # Keep future native runs serialized; see INC-NATIVE-QUEUE-20261027.
+  group: ios-simulator-v2-${{ github.ref }}
   # Keep running native evidence intact across frequent reviewed checkpoints.
   cancel-in-progress: false
 
