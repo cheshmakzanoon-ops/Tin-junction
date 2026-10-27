@@ -59,11 +59,10 @@ struct EngineWebView: UIViewRepresentable {
             catch { host.fail("Rejected invalid renderer bridge message.") }
         }
 
-        func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
-                     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
             let allowed = navigationAction.targetFrame?.isMainFrame == true
                 && BundleResourcePolicy.isEntryDocument(navigationAction.request.url)
-            decisionHandler(allowed ? .allow : .cancel)
+            return allowed ? .allow : .cancel
         }
 
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {

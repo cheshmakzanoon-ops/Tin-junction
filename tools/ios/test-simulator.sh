@@ -13,7 +13,7 @@ repo_root="$(git rev-parse --show-toplevel)"
 cd "$repo_root"
 mkdir -p artifacts/ios
 xcodebuild -version | tee artifacts/ios/xcode-version.txt
-if [[ "$(xcodebuild -version | head -n 1)" != 'Xcode 27.1' ]]; then
+if [[ "$(sed -n '1p' artifacts/ios/xcode-version.txt)" != 'Xcode 27.1' ]]; then
   printf 'Required compiler is Xcode 27.1; update pins only with recorded evidence.\n' >&2
   exit 1
 fi

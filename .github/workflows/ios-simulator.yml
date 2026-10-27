@@ -39,7 +39,7 @@ jobs:
           xcodebuild -version | tee artifacts/ios/xcode-version.txt
           xcodebuild -showsdks | tee artifacts/ios/sdks.txt
           xcrun simctl list --json > artifacts/ios/simulator-inventory.json
-          test "$(xcodebuild -version | head -n 1)" = 'Xcode 27.1'
+          test "$(sed -n '1p' artifacts/ios/xcode-version.txt)" = 'Xcode 27.1'
           test "$(xcrun --sdk iphonesimulator --show-sdk-version)" = '27.1'
       - name: Install locked web dependencies
         run: npm ci

@@ -20,12 +20,15 @@ final class EngineHostModel: ObservableObject {
     private var acceptedIDs: [String] = []
     private var recoveringRenderer = false
     private var handshakeTimeoutTask: Task<Void, Never>?
+    private var deliveryTask: Task<Void, Never>?
 
     func attach(_ webView: WKWebView) { self.webView = webView }
     func detach() {
         loadGeneration += 1
         handshakeTimeoutTask?.cancel()
         handshakeTimeoutTask = nil
+        deliveryTask?.cancel()
+        deliveryTask = nil
         isBridgeReady = false
         webView = nil
     }
@@ -33,6 +36,8 @@ final class EngineHostModel: ObservableObject {
     func loading() {
         loadGeneration += 1
         handshakeTimeoutTask?.cancel()
+        deliveryTask?.cancel()
+        deliveryTask = nil
         isBridgeReady = false
         recoveringRenderer = false
         isReady = false
@@ -49,8 +54,11 @@ final class EngineHostModel: ObservableObject {
     }
 
     func fail(_ description: String) {
+        loadGeneration += 1
         handshakeTimeoutTask?.cancel()
         handshakeTimeoutTask = nil
+        deliveryTask?.cancel()
+        deliveryTask = nil
         isBridgeReady = false
         recoveringRenderer = false
         isReady = false
@@ -160,17 +168,25 @@ final class EngineHostModel: ObservableObject {
         let generation = loadGeneration
         // The program is constant. Data is passed through WebKit arguments, never
         // interpolated into evaluated JavaScript source.
-        webView.callAsyncJavaScript(
-            """
-            if (!window.TinJunction || typeof window.TinJunction.receiveNative !== 'function') {
-                throw new Error('TinJunction receiver is unavailable');
-            }
-            window.TinJunction.receiveNative(message);
-            """,
-            arguments: ["message": envelope], in: nil, contentWorld: .page
-        ) { [weak self] result in
-            guard let self, self.loadGeneration == generation else { return }
-            if case .failure(let error) = result {
+        // Chain the actor-isolated tasks explicitly: independently launched Tasks
+        // do not promise FIFO delivery of bootstrap, lifecycle and viewport.
+        let predecessor = deliveryTask
+        deliveryTask = Task { @MainActor [weak self, weak webView] in
+            if let predecessor { await predecessor.value }
+            guard !Task.isCancelled, let self, let webView,
+                  self.loadGeneration == generation, self.isBridgeReady else { return }
+            do {
+                _ = try await webView.callAsyncJavaScript(
+                    """
+                    if (!window.TinJunction || typeof window.TinJunction.receiveNative !== 'function') {
+                        throw new Error('TinJunction receiver is unavailable');
+                    }
+                    window.TinJunction.receiveNative(message);
+                    """,
+                    arguments: ["message": envelope], in: nil, contentWorld: .page
+                )
+            } catch {
+                guard self.loadGeneration == generation, !Task.isCancelled else { return }
                 self.fail("Native bridge delivery failed: \(error.localizedDescription)")
             }
         }
