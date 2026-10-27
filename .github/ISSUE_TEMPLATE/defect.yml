@@ -1,0 +1,25 @@
+name: Reproducible defect
+description: Record an observed failure with exact revision and reproduction evidence.
+title: "[Defect] "
+body:
+  - type: input
+    id: revision
+    attributes:
+      label: Tested commit and affected task
+      description: Full commit SHA and task ID; do not guess the version.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction, expected result, actual result
+      description: Include fixture, seed, device or simulator, OS and lifecycle state.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and impact
+      description: Link logs or captures. Remove secrets and personal information. State what was not tested.
+    validations:
+      required: true

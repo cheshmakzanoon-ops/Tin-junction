@@ -1,0 +1,1055 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-27T00:24:29.572Z",
+  "health": {
+    "ci": {
+      "status": "unknown",
+      "checked_commit": null,
+      "run_urls": []
+    },
+    "incidents": []
+  },
+  "last_handoff": "planning/HANDOFF.md",
+  "tasks": {
+    "P00-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P00-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P00-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P00-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P01-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P01-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P01-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P01-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P01-T05": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P02-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P02-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P02-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P02-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P03-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P03-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P03-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P03-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P03-T05": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P04-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P04-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P04-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P04-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P04-T05": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P05-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P05-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P05-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P05-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P05-T05": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P06-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P06-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P06-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P06-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P07-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P07-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P07-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P07-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P07-T05": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P08-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P08-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P08-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P08-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P09-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P09-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P09-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P09-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P09-T05": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P10-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P10-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P10-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P10-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P11-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P11-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P11-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P11-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P12-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P12-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P12-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P12-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P13-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P13-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P13-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P13-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P14-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P14-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P14-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P14-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P15-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P15-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P15-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P15-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P16-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P16-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P16-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P16-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P17-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P17-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P17-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P17-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P18-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P18-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P18-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P18-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P19-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P19-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P19-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P19-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P20-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P20-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P20-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P20-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P21-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P21-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P21-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P21-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P22-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P22-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P22-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P22-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P23-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P23-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P23-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P23-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P24-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P24-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P24-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P24-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P25-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P25-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P25-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P25-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P26-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P26-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P26-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P26-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P27-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P27-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P27-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P27-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P28-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P28-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P28-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P28-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P29-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P29-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P29-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P29-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P30-T01": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P30-T02": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P30-T03": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    },
+    "P30-T04": {
+      "status": "todo",
+      "claim": null,
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": []
+    }
+  }
+}

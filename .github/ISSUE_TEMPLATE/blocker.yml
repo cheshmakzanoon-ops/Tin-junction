@@ -1,0 +1,24 @@
+name: Engineering or owner blocker
+description: Identify a concrete missing decision, capability or prerequisite.
+title: "[Blocker] "
+body:
+  - type: input
+    id: task
+    attributes:
+      label: Affected task IDs
+    validations:
+      required: true
+  - type: textarea
+    id: obstacle
+    attributes:
+      label: Exact obstacle and evidence
+      description: Include attempted checks and authoritative sources. Distinguish unavailable information from confirmed impossibility.
+    validations:
+      required: true
+  - type: textarea
+    id: resolution
+    attributes:
+      label: Who can resolve it and what is needed
+      description: State the decision, credential, device, upstream fix or approval needed; list independent work that can continue.
+    validations:
+      required: true

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "evidence_id": "REPLACE_WITH_UNIQUE_EVIDENCE_ID",
+  "task_id": "PXX-TYY",
+  "kind": "repository_validation",
+  "result": "not_run",
+  "tested_commit": "REPLACE_WITH_ALREADY_COMMITTED_FULL_IMPLEMENTATION_SHA",
+  "recorded_at": "REPLACE_WITH_ACTUAL_ISO_8601_TIMESTAMP",
+  "source_files": [
+    {
+      "path": "REPLACE_WITH_RELEVANT_REPOSITORY_RELATIVE_INPUT_PATH",
+      "sha256": "REPLACE_WITH_ACTUALLY_MEASURED_SHA256"
+    }
+  ],
+  "commands": [
+    {
+      "command": "REPLACE_WITH_ACTUAL_COMMAND_EXECUTED",
+      "exit_code": null,
+      "output_path": "REPLACE_WITH_ACTUAL_LOCAL_PATH_OR_VERIFIED_HTTPS_URL"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "REPLACE_WITH_ACTUAL_LOCAL_PATH_OR_VERIFIED_HTTPS_URL",
+      "sha256": "REPLACE_WITH_ACTUAL_LOCAL_ARTIFACT_SHA256_OR_NULL_FOR_REMOTE"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "PXX-TYY-A1",
+      "evidence": [
+        0,
+        "REPLACE_WITH_ACTUAL_LOCAL_PATH_OR_VERIFIED_HTTPS_URL"
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "TEMPLATE ONLY: no verification has been performed by this record.",
+    "Replace every placeholder, select the actual evidence kind and record real results before submission.",
+    "For a real device_test add device model, os, build, duration_minutes, is_simulator false and workload context.",
+    "Owner approval requires the actual reviewer and a concrete approval reference; never self-grant it."
+  ]
+}

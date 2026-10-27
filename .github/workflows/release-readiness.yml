@@ -1,0 +1,35 @@
+name: Read-only release readiness
+
+on:
+  workflow_dispatch:
+    inputs:
+      candidate:
+        description: Full 40-character main commit SHA to inspect; this does not publish anything
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  preflight:
+    name: Owner-authorized candidate inspection only
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out candidate and evidence history
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.candidate }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .node-version
+      - name: Evaluate gates without changing the repository or publishing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TIN_CANDIDATE: ${{ inputs.candidate }}
+          TIN_RELEASE_APPROVAL_JSON: ${{ vars.TIN_RELEASE_APPROVAL_JSON }}
+        run: node tools/release-readiness.mjs --candidate "$TIN_CANDIDATE" --approval-env --observe-ci

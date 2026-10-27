@@ -1,0 +1,35 @@
+{
+  "name": "tin-junction",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Agent-ready engineering plan and diagnostic harness for Tin Junction",
+  "type": "module",
+  "engines": { "node": ">=24.0.0 <25" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "project:status": "node tools/project.mjs status",
+    "project:next": "node tools/project.mjs next",
+    "project:validate": "node tools/project.mjs validate",
+    "project:render": "node tools/project.mjs render",
+    "typecheck": "tsc --noEmit",
+    "test:project": "node --test tests/project/*.test.mjs",
+    "test:ios-tools": "node --test tools/ios/select-duo.test.mjs",
+    "test:web": "vitest run",
+    "test": "npm run test:project && npm run test:ios-tools && npm run test:web",
+    "build": "node tools/build-web.mjs",
+    "build:verify": "node tools/build-web.mjs --check",
+    "bundle:ios": "node tools/build-web.mjs --ios",
+    "test:browser": "playwright test",
+    "check": "npm run project:validate && npm run typecheck && npm test && npm run build && npm run build:verify"
+  },
+  "dependencies": { "three": "0.186.1" },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "@types/three": "0.186.0",
+    "esbuild": "0.28.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}

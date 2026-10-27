@@ -1,0 +1,80 @@
+name: iOS Simulator
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-simulator-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  duo-host:
+    name: Duo native host and bundled WebGL2
+    runs-on: xcode-27
+    defaults:
+      run:
+        shell: bash
+    timeout-minutes: 45
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_27.1.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - name: Inventory the exact runner and SDK
+        run: |
+          mkdir -p artifacts/ios
+          sw_vers | tee artifacts/ios/macos-version.txt
+          xcodebuild -version | tee artifacts/ios/xcode-version.txt
+          xcodebuild -showsdks | tee artifacts/ios/sdks.txt
+          xcrun simctl list --json > artifacts/ios/simulator-inventory.json
+          test "$(xcodebuild -version | head -n 1)" = 'Xcode 27.1'
+          test "$(xcrun --sdk iphonesimulator --show-sdk-version)" = '27.1'
+      - name: Install locked web dependencies
+        run: npm ci
+      - name: Test simulator selector
+        run: node --test tools/ios/select-duo.test.mjs
+      - name: Build the offline native web bundle
+        run: npm run bundle:ios
+      - name: Install checksum-pinned XcodeGen
+        id: xcodegen
+        run: bash tools/ios/install-xcodegen.sh
+      - name: Generate the native Xcode project
+        env:
+          XCODEGEN_BIN: ${{ steps.xcodegen.outputs.binary }}
+        run: '"$XCODEGEN_BIN" generate --spec apps/ios/project.yml'
+      - name: Select actual Duo simulator without fallback
+        id: simulator
+        run: node tools/ios/select-duo.mjs artifacts/ios/simulator-inventory.json --github-output | tee artifacts/ios/selected-simulator.json
+      - name: Boot Duo if needed
+        if: steps.simulator.outputs.state == 'Shutdown'
+        env:
+          TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
+        run: xcrun simctl boot "$TIN_SIMULATOR_UDID"
+      - name: Compile Swift and execute unit and UI smoke tests
+        env:
+          TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
+        run: bash tools/ios/test-simulator.sh
+      - name: Preserve test evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: duo-host-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            artifacts/ios/*.txt
+            artifacts/ios/*.json
+            artifacts/ios/*.log
+            artifacts/ios/*.xcresult
+          if-no-files-found: error
+          retention-days: 14

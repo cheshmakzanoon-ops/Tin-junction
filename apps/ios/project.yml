@@ -1,0 +1,84 @@
+name: TinJunction
+options:
+  minimumXcodeGenVersion: "2.46.0"
+  xcodeVersion: "27.1"
+  projectFormat: xcode16_3
+  deploymentTarget:
+    iOS: "27.1"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "27.1"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+targets:
+  TinJunction:
+    type: application
+    platform: iOS
+    sources:
+      - path: TinJunction
+        excludes:
+          - Info.plist
+          - Resources/WebAssets
+      - path: TinJunction/Resources/WebAssets
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cheshmakzanoonops.tinjunction
+        INFOPLIST_FILE: TinJunction/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SUPPORTS_MACCATALYST: NO
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: NO
+    dependencies:
+      - sdk: WebKit.framework
+  TinJunctionTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - TinJunctionTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cheshmakzanoonops.tinjunction.tests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: TinJunction
+  TinJunctionUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - TinJunctionUITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cheshmakzanoonops.tinjunction.uitests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: TinJunction
+schemes:
+  TinJunction:
+    build:
+      targets:
+        TinJunction: all
+        TinJunctionTests: [test]
+        TinJunctionUITests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets: [TinJunction]
+      targets:
+        - name: TinJunctionTests
+          parallelizable: false
+        - name: TinJunctionUITests
+          parallelizable: false
+      captureScreenshotsAutomatically: true
+      deleteScreenshotsWhenEachTestSucceeds: false
+    archive:
+      config: Release

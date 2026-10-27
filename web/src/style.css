@@ -1,0 +1,11 @@
+:root { color-scheme: dark; font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; background: #151b20; color: #f4eddc; }
+* { box-sizing: border-box; }
+html, body, #app { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+#app { position: relative; }
+#world { display: block; width: 100%; height: 100%; touch-action: none; }
+#diagnostics { position: absolute; top: max(16px, env(safe-area-inset-top)); left: max(16px, env(safe-area-inset-left)); right: max(16px, env(safe-area-inset-right)); max-width: 440px; padding: 16px 20px; border: 1px solid #65737b; border-radius: 12px; background: rgb(15 22 27 / 94%); pointer-events: none; }
+h1 { margin: 0; font-size: 1.4rem; font-weight: 650; letter-spacing: 0.02em; }
+p { margin: 8px 0 0; font-size: 0.85rem; line-height: 1.45; }
+.label { color: #d7be7b; }
+#metrics { font-variant-numeric: tabular-nums; color: #bbc8cc; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
