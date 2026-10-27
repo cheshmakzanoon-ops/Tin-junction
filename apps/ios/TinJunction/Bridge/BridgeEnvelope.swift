@@ -44,7 +44,13 @@ indirect enum BridgeJSON: Decodable, Equatable, Sendable {
 struct BridgeEnvelope: Decodable, Equatable, Sendable {
     static let maximumBytes = 65_536
     static let maximumCheckpointBytes = 524_288
-    static let allowedTypes: Set<String> = ["web.ready", "engine.error", "engine.metrics", "layout.loaded", "layout.checkpoint"]
+    static let allowedTypes: Set<String> = {
+        var values: Set<String> = ["web.ready", "engine.error", "engine.metrics", "layout.loaded", "layout.checkpoint"]
+        #if DEBUG
+        values.insert("engine.assetProbe")
+        #endif
+        return values
+    }()
 
     let version: Int
     let id: String
@@ -55,6 +61,7 @@ struct BridgeEnvelope: Decodable, Equatable, Sendable {
         case invalidJSON, tooLarge, unexpectedFields, unsupportedVersion
         case invalidIdentifier, unsupportedType, invalidReadyPayload, invalidErrorPayload
         case invalidLayoutPayload
+        case invalidAssetProbePayload
     }
 
     static func decode(_ body: Any) throws -> BridgeEnvelope {
@@ -110,6 +117,11 @@ struct BridgeEnvelope: Decodable, Equatable, Sendable {
                   case .some(.object(let document)) = envelope.payload["document"] else { throw Rejection.invalidLayoutPayload }
             _ = try LayoutDocument.decode(document.mapValues(\.foundationValue))
         }
+        #if DEBUG
+        if envelope.type == "engine.assetProbe", !AssetOriginProbe.isValid(envelope.payload) {
+            throw Rejection.invalidAssetProbePayload
+        }
+        #endif
         return envelope
     }
 }

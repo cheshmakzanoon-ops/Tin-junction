@@ -15,6 +15,7 @@ try {
   await page.goto('http://127.0.0.1:4188/tests/fixtures/track/vehicles.html');
   await page.waitForFunction(() => window.__VEHICLE_FIXTURE__?.results.length === 6, { timeout: 30000 });
   const report = await page.evaluate(() => window.__VEHICLE_FIXTURE__);
+  report.runtime = { browserVersion: browser.version(), nodeVersion: process.version, platform: process.platform, launchArguments: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] };
   if (errors.length || !report.switchBlocked || report.reversalError > 1e-9 || report.results.some(view => view.missedRailContacts || view.maximumWheelContactError > 1e-8 || view.maximumCouplerGapError > 1e-8 || view.maximumCouplerAngleDegrees > 60 || view.triangles <= 0)) throw new Error(JSON.stringify({ report, errors }));
   await page.screenshot({ path: resolve(output, 'inspection.png'), fullPage: true });
   for (const view of report.results) await page.locator(`#${view.id}`).screenshot({ path: resolve(output, `${view.id}.png`) });

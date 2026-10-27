@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P06-T02-routed-vehicles-unit",
+  "task_id": "P06-T02",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "13ecc51674e629cad78ee6d7251f74278e7edc9e",
+  "recorded_at": "2026-10-27T04:17:12.964043+00:00",
+  "source_files": [
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/clock.ts",
+      "sha256": "77c37952ff76a84e88f1cb3e4cc7980e5b9ed48bb04840b366aec8a8e467c912"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    },
+    {
+      "path": "web/src/track/clearance.ts",
+      "sha256": "b72d636c79ebb885df55786c737451e9aa9dd95f9aa4f93b38e810ebc9ee8b9a"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "b2d1a81d4e14b2ee7ef1c9fbe7293150e9d65cbf90d7317c6bc31f371f361ef0"
+    },
+    {
+      "path": "web/src/simulation/routedMotion.ts",
+      "sha256": "db0d5bc20d479552369f798a0b73e7bb0f60568b948f80d5435e55b34d6ee69e"
+    },
+    {
+      "path": "web/src/simulation/vehicleCatalog.ts",
+      "sha256": "8a48b82b331850acfe108a4f318c0c3414c750d83f1844336569bb4228efdb66"
+    },
+    {
+      "path": "web/src/simulation/routedPoses.ts",
+      "sha256": "ffbaa7e7dca44a8556a75f98f983b907c8512d91e6d33a65940bfeff99081c01"
+    },
+    {
+      "path": "web/src/simulation/vehicleStep.ts",
+      "sha256": "88e0d97f62f6235e01908fcb67573261a8f52b57ad00919a9058bbc56a6483c3"
+    },
+    {
+      "path": "web/src/simulation/VEHICLES.md",
+      "sha256": "48ccd4ab5e7835e8774edf3b342e59a4260550597dad22c64c0fa19ecf0f94a8"
+    },
+    {
+      "path": "tests/fixtures/track/graph-fixtures.ts",
+      "sha256": "7fc8ea553ddac19e4dcfb8fe050262defcf49b011681ad03178dc8e4a015323f"
+    },
+    {
+      "path": "tests/fixtures/track/turnout-fixtures.ts",
+      "sha256": "02011b0638e216face36e13d65a462e6d05ab3fae6984798ded42cea08e34230"
+    },
+    {
+      "path": "tests/fixtures/track/vehicle-fixtures.ts",
+      "sha256": "87579bb17e00b2a9a23f75489db83aabf34da6aae3189f50093cc4c2cc6bdb5e"
+    },
+    {
+      "path": "tests/web/unit/routed-poses.test.ts",
+      "sha256": "4d4d7e7c8617a01edf0da3ff60ff08038731fda69377b30938b9c7a06b79a9c1"
+    },
+    {
+      "path": "tests/web/unit/turnout.test.ts",
+      "sha256": "5f6c139b8e99eaef69f679eceec80cc39310926445bbeec8ff63e12d4c385639"
+    },
+    {
+      "path": "tests/web/unit/routed-motion.test.ts",
+      "sha256": "7227a07ef896e1b5c4946212b87fdb9f21954117e7cef84eba1fd4f0c1b840bb"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "6235e2576f6780c2c0b6c79f4ba8ab84a19a7158effe1d66773e7ca4b49b18b4"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run test:web -- tests/web/unit/routed-poses.test.ts tests/web/unit/turnout.test.ts tests/web/unit/routed-motion.test.ts",
+      "exit_code": 0,
+      "output_path": "evidence/P06-T02-vehicle-tests.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P06-T02-vehicle-tests.txt",
+      "sha256": "e9c4b8a3fbd516ab1c50a5df1c201696d452bc4ed2f96524fc452afd83fe3c10"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P06-T02-A1",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion_id": "P06-T02-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "48 passing Node/Vitest tests: 14 vehicle/catalog/pose/transaction tests, 17 routed-consist/turnout tests and 17 scalar-motion tests. This manifest supplies unit evidence; actual visual evidence is separate.",
+    "Rigid chord spacing, independent axle rail frames, articulated fixed-length stems/link, supported 100 mm curves and transitioned S curves, whole-consist turnout retention, stopped reversal, save/restore and per-axle phase are covered. Phase deltas are independently compared with route cursor stations through curvature changes.",
+    "Immediate opposite 100 mm-radius S curves exceeding 60 degree coupler articulation are explicitly rejected. Graph-tolerated gaps/overlaps/tangent steps are rejected by the stricter pose gate. Full-loop contact and forged self-overlapping pose histories are rejected.",
+    "prepareVehicleStep is a bounded candidate/commit component gate. Failed candidate geometry leaves the supplied motion unchanged and supplies a parked fallback at identical placement. App integration must commit both motion and poses together; the live app remains the original oval runtime.",
+    "The prototype steam arrangement permits a laterally accommodated middle axle. Inner/outer conical tyre rolling radii, coupled side rods, production asset certification, general track editor UI, native operation, and physical-device performance are not established.",
+    "GitHub Actions, device-only gates and release readiness are tracked separately by the coordinator."
+  ]
+}

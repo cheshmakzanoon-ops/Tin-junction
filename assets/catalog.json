@@ -139,8 +139,8 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/train.ts",
-          "sha256": "51652aa4c636050698ea7b932500f41fb9b394e4c441b49a1ccc548182eba402",
-          "bytes": 13370,
+          "sha256": "6f9f9ff667a4c2cf054a4cafcf62f053388bd65d3192e2165d069d7c3d311239",
+          "bytes": 20503,
           "mediaType": "text/typescript",
           "storage": "git"
         },
@@ -148,6 +148,13 @@
           "path": "web/src/scene/trainMechanics.ts",
           "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320",
           "bytes": 1405,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/trainDetailGeometry.ts",
+          "sha256": "b64be9f90e242d2dac0cf091c2091811f33a7d1cbc20d59c125deae2fbfa477c",
+          "bytes": 3935,
           "mediaType": "text/typescript",
           "storage": "git"
         }
@@ -192,8 +199,8 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/train.ts",
-          "sha256": "51652aa4c636050698ea7b932500f41fb9b394e4c441b49a1ccc548182eba402",
-          "bytes": 13370,
+          "sha256": "6f9f9ff667a4c2cf054a4cafcf62f053388bd65d3192e2165d069d7c3d311239",
+          "bytes": 20503,
           "mediaType": "text/typescript",
           "storage": "git"
         },
@@ -201,6 +208,13 @@
           "path": "web/src/scene/trainMechanics.ts",
           "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320",
           "bytes": 1405,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/trainDetailGeometry.ts",
+          "sha256": "b64be9f90e242d2dac0cf091c2091811f33a7d1cbc20d59c125deae2fbfa477c",
+          "bytes": 3935,
           "mediaType": "text/typescript",
           "storage": "git"
         }

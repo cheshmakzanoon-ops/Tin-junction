@@ -1,0 +1,73 @@
+{
+  "formatVersion": 1,
+  "provenance": "Original generated diagnostic fixtures; calibration GLB from assets/source/calibration/export_fixture.py",
+  "texture": {
+    "width": 8,
+    "height": 8,
+    "colors": [
+      [
+        230,
+        60,
+        45,
+        255
+      ],
+      [
+        60,
+        180,
+        95,
+        255
+      ],
+      [
+        60,
+        100,
+        230,
+        255
+      ],
+      [
+        238,
+        204,
+        70,
+        255
+      ]
+    ]
+  },
+  "audio": {
+    "sampleRate": 48000,
+    "frames": 5760,
+    "channels": 1,
+    "format": "PCM16",
+    "frequencyHz": 880
+  },
+  "wasm": {
+    "export": "add_one",
+    "input": 41,
+    "expected": 42
+  },
+  "worker": {
+    "input": "asset-probe",
+    "expected": "asset-worker-ready:42"
+  },
+  "artifacts": {
+    "checker.png": {
+      "bytes": 93,
+      "sha256": "82e3ef7f6c8bb9bccf1615132cb6bfc34c1bcdc00482ab289624d9a446079772"
+    },
+    "tone.wav": {
+      "bytes": 11564,
+      "sha256": "ae05277b3e19f772171e06b7ff4d4ba0dd738fb13291135028eb5f55d16ccfa8"
+    },
+    "add-one.wasm": {
+      "bytes": 44,
+      "sha256": "8f581f8899890a7479c20494f53cc5d60156a4d42e39d6a587a9f3089f198fe0"
+    },
+    "echo.worker.js": {
+      "bytes": 132,
+      "sha256": "a22bcff005a86d27d5df1005aba161a3ed7a37569345a4aa7029a90cb0351cb9"
+    }
+  },
+  "calibrationGLB": {
+    "source": "tests/fixtures/assets/calibration.glb",
+    "bytes": 29356,
+    "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da"
+  }
+}

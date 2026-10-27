@@ -46,8 +46,8 @@ jobs:
         run: npm ci
       - name: Test simulator selector
         run: node --test tools/ios/select-duo.test.mjs
-      - name: Build the offline native web bundle
-        run: npm run bundle:ios
+      - name: Build the offline native web bundle with explicit diagnostic fixtures
+        run: npm run bundle:ios -- --asset-probe
       - name: Install checksum-pinned XcodeGen
         id: xcodegen
         run: bash tools/ios/install-xcodegen.sh

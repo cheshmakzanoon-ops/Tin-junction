@@ -20,6 +20,14 @@ targets:
   TinJunction:
     type: application
     platform: iOS
+    preBuildScripts:
+      - name: Verify ordinary resources before Release
+        script: /usr/bin/python3 "${SRCROOT}/../../tools/ios/verify-release-web.py" --configuration "${CONFIGURATION}" --assets "${SRCROOT}/TinJunction/Resources/WebAssets"
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
+        inputFiles:
+          - $(SRCROOT)/../../tools/ios/verify-release-web.py
+          - $(SRCROOT)/TinJunction/Resources/WebAssets
     sources:
       - path: TinJunction
         excludes:

@@ -13,6 +13,8 @@ interface Diagnostic {
   id: string; tick: number; direction: number; vehicleIds: string[]; axleEdges: string[];
   maximumWheelContactError: number; missedRailContacts: number; maximumWheelbaseError: number;
   maximumCouplerGapError: number; maximumCouplerAngleDegrees: number; calls: number; triangles: number;
+  camera: { position: number[]; target: number[]; quaternion: number[]; left: number; right: number; top: number; bottom: number; near: number; far: number };
+  rendering: { width: number; height: number; pixelRatio: number; antialias: boolean; colorSpace: string; toneMapping: string; exposure: number; shadows: boolean };
 }
 const palette = createPalette(), prefab = wheelPrefab(palette), results: Diagnostic[] = [];
 const roadbedHeight = VEHICLE_CONSTRAINTS.railTop - (SLEEPER.height + RAIL_PROFILE.footHeight + RAIL_PROFILE.webHeight + RAIL_PROFILE.headHeight);
@@ -105,7 +107,9 @@ function show(id: string, title: string, caption: string, motion: RoutedMotion, 
   }
   const result = { id, tick: motion.tickCount, direction: motion.direction, vehicleIds: poses.map(pose => pose.id), axleEdges: poses.flatMap(pose => pose.axles.map(axle => axle.routeCursor.edgeId)),
     maximumWheelContactError: contactError, missedRailContacts: missed, maximumWheelbaseError: wheelbaseError, maximumCouplerGapError: couplingError,
-    maximumCouplerAngleDegrees: angle * 180 / Math.PI, calls: renderer.info.render.calls, triangles: renderer.info.render.triangles };
+    maximumCouplerAngleDegrees: angle * 180 / Math.PI, calls: renderer.info.render.calls, triangles: renderer.info.render.triangles,
+    camera: { position: camera.position.toArray(), target: target.toArray(), quaternion: camera.quaternion.toArray(), left: camera.left, right: camera.right, top: camera.top, bottom: camera.bottom, near: camera.near, far: camera.far },
+    rendering: { width: 620, height: 350, pixelRatio: 1, antialias: true, colorSpace: "sRGB", toneMapping: "ACESFilmic", exposure: 1.3, shadows: false } };
   results.push(result);
   metrics.textContent = `Contact error ${(contactError * 1e6).toFixed(3)} µm · ${missed} missed contacts · coupling max ${(angle * 180 / Math.PI).toFixed(1)}° / 60°`;
 }
@@ -133,4 +137,5 @@ if (!circle.reverse().ok) throw new Error("Stopped reversal failed.");
 const after = solve(circle);
 show("after-reversal", "06 · Reversed control direction", "Only travel direction changes. This image should match the preceding stopped pose: vehicles do not rotate 180°, reorder, or jump to another route.", circle, after);
 const reversalError = Math.max(...before.flatMap((pose, index) => [point(pose.position).distanceTo(point(after[index]!.position)), point(pose.frontCoupler).distanceTo(point(after[index]!.frontCoupler)), point(pose.rearCoupler).distanceTo(point(after[index]!.rearCoupler))]));
-Object.assign(window, { __VEHICLE_FIXTURE__: { environment: "Desktop Chromium / software rendering; engineering body envelopes, not production art or device evidence", roadbedHeight, switchBlocked, reversalError, results } });
+Object.assign(window, { __VEHICLE_FIXTURE__: { environment: "Desktop Chromium / software rendering; engineering body envelopes, not production art or device evidence", roadbedHeight, switchBlocked, reversalError,
+  lighting: { hemisphere: { sky: "#f3f7fa", ground: "#4a3c2f", intensity: 3 }, directional: { color: "#ffe8cd", intensity: 4, position: [-0.25, 0.6, -0.4] }, effects: "No shadows, depth of field, bloom, weather or post-processing" }, results } });

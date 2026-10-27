@@ -1,0 +1,21 @@
+Tested commit: 13ecc51674e629cad78ee6d7251f74278e7edc9e
+Started UTC: 2026-10-27T04:17:06.022912+00:00
+Command: npm run test:web -- tests/web/unit/routed-poses.test.ts tests/web/unit/turnout.test.ts tests/web/unit/routed-motion.test.ts
+Scoped source bytes equal the committed tree before and after testing: 23 files
+
+
+> tin-junction@0.1.0 test:web
+> vitest run tests/web/unit/routed-poses.test.ts tests/web/unit/turnout.test.ts tests/web/unit/routed-motion.test.ts
+
+
+ RUN  v5.0.5 .
+
+
+ Test Files  3 passed (3)
+      Tests  48 passed (48)
+   Start at  21:17:06
+   Duration  6.05s (tests 96%, transform 2%, import 2%)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+Observed exit code: 0

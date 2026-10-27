@@ -71,6 +71,8 @@ function start(): void {
   const activePointers = new Set<number>();
   let multiPointerGesture = false;
   let noticeTimer = 0;
+  let assetProbe: { dispose(): void } | null = null;
+  let assetProbeGeneration = 0;
   const throttle = element<HTMLInputElement>("throttle");
   const help = element<HTMLDialogElement>("help-dialog");
 
@@ -195,8 +197,25 @@ function start(): void {
     switch (message.type) {
       case "native.bootstrap":
         if (message.payload.sessionId && message.payload.sessionId !== sessionId) {
+          assetProbeGeneration += 1; assetProbe?.dispose(); assetProbe = null;
           sessionId = message.payload.sessionId; loaded = false; pending = null; saveQueued = false;
           clearTimeout(acknowledgmentTimer); clearTimeout(saveTimer); setSaveState("loading", "Opening your railway…");
+          // The production build eliminates this branch and its fixture module.
+          // A native DEBUG opt-in is still required in the diagnostic build.
+          if (typeof __TIN_ASSET_PROBE__ !== "undefined" && __TIN_ASSET_PROBE__
+            && native && message.payload.debug && message.payload.assetProbe === true) {
+            const generation = assetProbeGeneration, probeSession = sessionId;
+            void import("./diagnostics/assetProbe").then(({ startAssetOriginProbe }) => {
+              if (lifecycle.disposed || generation !== assetProbeGeneration || sessionId !== probeSession) return;
+              assetProbe = startAssetOriginProbe({ sessionId: probeSession, report(payload) {
+                if (!lifecycle.disposed && generation === assetProbeGeneration && sessionId === probeSession) post("engine.assetProbe", { ...payload });
+              } });
+            }).catch(() => {
+              if (!lifecycle.disposed && generation === assetProbeGeneration) post("engine.error", {
+                code: "asset_probe_initialization_failed", recoverable: false,
+              });
+            });
+          }
         }
         break;
       case "native.layout":
@@ -349,6 +368,7 @@ function start(): void {
   canvas.addEventListener("webglcontextlost", lost); canvas.addEventListener("webglcontextrestored", restored);
   window.addEventListener("pagehide", () => {
     saveNow(); lifecycle.disposed = true; updateSchedule();
+    assetProbeGeneration += 1; assetProbe?.dispose(); assetProbe = null;
     clearTimeout(saveTimer); clearTimeout(acknowledgmentTimer); clearTimeout(noticeTimer);
     observer.disconnect(); document.removeEventListener("keydown", keyboard); document.removeEventListener("visibilitychange", visibility);
     canvas.removeEventListener("webglcontextlost", lost); canvas.removeEventListener("webglcontextrestored", restored);

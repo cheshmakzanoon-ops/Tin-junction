@@ -18,6 +18,9 @@ final class EngineHostModel: ObservableObject {
     @Published private(set) var hingeDescription = "awaiting system context"
     #if DEBUG
     @Published private(set) var platformProbeJSON = "{}"
+    @Published private(set) var assetProbeJSON = "{}"
+    let assetProbeEnabled: Bool
+    private var assetProbePrepared = false
     private var hasObservedHinge = false
     #endif
     @Published private(set) var saveState: SaveState = .unsaved
@@ -50,9 +53,27 @@ final class EngineHostModel: ObservableObject {
     private var restoreTask: Task<Void, Never>?
     private var saveTask: Task<Void, Never>?
 
-    init(store: any LayoutStoring = LayoutStore()) { self.store = store }
+    init(store: any LayoutStoring = LayoutStore(), launchArguments: [String] = ProcessInfo.processInfo.arguments) {
+        self.store = store
+        #if DEBUG
+        self.assetProbeEnabled = AssetOriginProbe.isRequested(arguments: launchArguments)
+        #endif
+    }
 
-    func attach(_ webView: WKWebView) { self.webView = webView }
+    /// Root view recreation must not create a second live renderer authority.
+    @discardableResult
+    func attach(to webView: WKWebView) -> Bool {
+        if let attached = self.webView { return attached === webView }
+        self.webView = webView
+        return true
+    }
+
+    func detach(from webView: WKWebView) {
+        guard self.webView === webView else { return }
+        detach()
+    }
+
+    func isAttached(to webView: WKWebView) -> Bool { self.webView === webView }
 
     /// Used by orderly teardown and deterministic host tests. Acknowledgements
     /// still originate exclusively from completed store operations.
@@ -65,7 +86,18 @@ final class EngineHostModel: ObservableObject {
         cancelSession()
         isReady = false
         webView = nil
+        #if DEBUG
+        assetProbePrepared = false
+        assetProbeJSON = "{}"
+        #endif
     }
+
+    #if DEBUG
+    func assetProbeDidPrepare(networkDenied: Bool, webDataCleared: Bool, persistentStorage: Bool) {
+        guard assetProbeEnabled else { return }
+        assetProbePrepared = networkDenied && webDataCleared && !persistentStorage
+    }
+    #endif
 
     private func cancelSession() {
         loadGeneration += 1
@@ -98,6 +130,9 @@ final class EngineHostModel: ObservableObject {
         acceptedIDs.removeAll(keepingCapacity: true)
         phase = .loading
         status = "Opening your miniature…"
+        #if DEBUG
+        assetProbeJSON = "{}"
+        #endif
         let generation = loadGeneration
         handshakeTimeoutTask = Task { [weak self] in
             do { try await Task.sleep(for: .seconds(20)) }
@@ -146,7 +181,11 @@ final class EngineHostModel: ObservableObject {
             #else
             let debug = false
             #endif
-            send(type: "native.bootstrap", payload: ["host": "ios", "debug": debug, "sessionId": sessionID])
+            var bootstrap: [String: Any] = ["host": "ios", "debug": debug, "sessionId": sessionID]
+            #if DEBUG
+            if assetProbeEnabled && assetProbePrepared { bootstrap["assetProbe"] = true }
+            #endif
+            send(type: "native.bootstrap", payload: bootstrap)
             sendLifecycle()
             sendViewport()
             restoreSavedLayout()
@@ -173,6 +212,13 @@ final class EngineHostModel: ObservableObject {
                 phase = .ready
                 status = "The railway view has recovered."
             }
+        #if DEBUG
+        case "engine.assetProbe":
+            guard assetProbeEnabled, assetProbePrepared, isBridgeReady,
+                  envelope.payload["sessionId"]?.string == sessionID,
+                  let encoded = AssetOriginProbe.encodeVerifiedReport(envelope.payload) else { return }
+            assetProbeJSON = encoded
+        #endif
         default: break
         }
     }

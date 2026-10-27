@@ -4,7 +4,7 @@ import SwiftUI
 struct RootView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.displayScale) private var displayScale
-    @StateObject private var host = EngineHostModel()
+    @ObservedObject var host: EngineHostModel
     @State private var showingHelp = false
 
     private let ink = Color(red: 0.10, green: 0.16, blue: 0.14)
@@ -41,6 +41,17 @@ struct RootView: View {
             .padding(.vertical, 4)
             .foregroundStyle(ink)
             .background(paper)
+
+            #if DEBUG
+            if host.assetProbeEnabled {
+                Text("Bundled asset origin observations")
+                    .font(.caption2)
+                    .frame(maxWidth: .infinity)
+                    .background(paper)
+                    .accessibilityIdentifier("host.assetProbe")
+                    .accessibilityValue(host.assetProbeJSON)
+            }
+            #endif
 
             if host.isReady && (host.saveState == .saved || host.saveState == .recovered) {
                 Text(host.hasRestoredLayout ? "Saved railway restored" : "Railway saved on this iPhone")
@@ -82,6 +93,22 @@ struct RootView: View {
                             .background(paper)
                             .foregroundStyle(ink)
                             .accessibilityIdentifier("host.recovery")
+                        } else if !host.isReady {
+                            VStack(spacing: 14) {
+                                ProgressView()
+                                    .controlSize(.large)
+                                Text(host.phase == .recovering ? "Restoring your railway view" : "Opening your railway")
+                                    .font(.system(.title3, design: .serif))
+                                Text(host.status)
+                                    .font(.callout)
+                                    .multilineTextAlignment(.center)
+                            }
+                            .padding(28)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .background(paper)
+                            .foregroundStyle(ink)
+                            .accessibilityElement(children: .combine)
+                            .accessibilityIdentifier("host.loading")
                         }
                     }
                     .onChange(of: viewport, initial: true) { _, newValue in

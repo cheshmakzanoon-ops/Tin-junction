@@ -1,0 +1,31 @@
+#asset-origin-probe-panel {
+  position: fixed;
+  z-index: 10000;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  max-width: 360px;
+  padding: 12px;
+  color: #18372b;
+  background: #f8f4e8;
+  border: 2px solid #395f4d;
+  border-radius: 12px;
+  font: 12px system-ui;
+}
+#asset-origin-probe-panel canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 8px 0;
+  background: #e8e2d2;
+}
+#asset-origin-probe-panel p { margin: 6px 0; }
+#asset-origin-probe-panel button {
+  min-height: 44px;
+  padding: 10px 16px;
+  color: white;
+  background: #18372b;
+  border: 0;
+  border-radius: 8px;
+}
+#asset-origin-probe-panel button:disabled { opacity: .55; }

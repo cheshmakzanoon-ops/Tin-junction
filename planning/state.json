@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T04:11:18.921Z",
+  "updated_at": "2026-10-27T04:22:48.828Z",
   "health": {
     "ci": {
-      "status": "passed",
-      "checked_commit": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
+      "status": "running",
+      "checked_commit": "13ecc51674e629cad78ee6d7251f74278e7edc9e",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40446521510",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40446521525"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40448793167",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40448793158"
       ]
     },
     "incidents": []
@@ -194,12 +194,27 @@
       "history": []
     },
     "P02-T01": {
-      "status": "todo",
-      "claim": null,
+      "status": "in_progress",
+      "claim": {
+        "owner": "submission-coordinator",
+        "started_at": "2026-10-27T04:17:28.965Z",
+        "expires_at": "2026-10-27T12:17:28.965Z",
+        "head_at_claim": "13ecc51674e629cad78ee6d7251f74278e7edc9e",
+        "scope": [
+          "apps/ios/TinJunction/App/",
+          "apps/ios/TinJunction/Platform/"
+        ]
+      },
       "blockers": [],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T04:17:28.965Z",
+          "action": "claim",
+          "detail": "submission-coordinator; 8 hours"
+        }
+      ]
     },
     "P02-T02": {
       "status": "todo",

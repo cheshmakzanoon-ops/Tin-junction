@@ -13,6 +13,13 @@ describe("native bridge boundary", () => {
   it("rejects malformed, unknown and oversized messages", () => {
     for (const value of [null, [], "script", {}, { ...lifecycle, version: 2 }, { ...lifecycle, type: "eval" }, { ...lifecycle, id: "../path" }, { ...lifecycle, payload: { state: "banana" } }, { ...lifecycle, arbitrary: true }, { ...lifecycle, payload: { state: "active", text: "x".repeat(70_000) } }]) expect(parseNativeMessage(value)).toBeNull();
   });
+  it("permits an asset probe only in an explicitly debug bootstrap", () => {
+    const boot = { version: 1, id: "boot-probe", type: "native.bootstrap", payload: { host: "ios", debug: true, sessionId: "session-1", assetProbe: true } };
+    expect(parseNativeMessage(boot)?.type).toBe("native.bootstrap");
+    for (const payload of [{ ...boot.payload, debug: false }, { ...boot.payload, assetProbe: "true" }, { ...boot.payload, assetProbe: 1 }, { ...boot.payload, arbitrary: "script" }]) {
+      expect(parseNativeMessage({ ...boot, payload })).toBeNull();
+    }
+  });
   it("rejects nonfinite and unreasonable geometry", () => {
     for (const payload of [{ width: Number.NaN, height: 400, pixelRatio: 2 }, { width: 500, height: 400, pixelRatio: 99 }, { width: 500, height: 0, pixelRatio: 2 }, { width: 500, height: 400, pixelRatio: 2, hingeAngleDegrees: 999 }, { width: 500, height: 400, pixelRatio: 2, reservedRegions: [{ x: 0, y: 0, width: -1, height: 5 }] }]) expect(parseNativeMessage({ version: 1, id: "v", type: "native.viewport", payload })).toBeNull();
   });

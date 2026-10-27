@@ -5,14 +5,14 @@ export type LifecycleState = "active" | "inactive" | "background";
 export type Rectangle = { x: number; y: number; width: number; height: number };
 type Envelope<T extends string, P> = { version: 1; id: string; type: T; payload: P };
 export type NativeMessage =
-  | Envelope<"native.bootstrap", { host: "ios" | "browser"; debug: boolean; sessionId?: string }>
+  | Envelope<"native.bootstrap", { host: "ios" | "browser"; debug: boolean; sessionId?: string; assetProbe?: boolean }>
   | Envelope<"native.lifecycle", { state: LifecycleState }>
   | Envelope<"native.viewport", { width: number; height: number; pixelRatio: number; reservedRegions?: Rectangle[]; hingeAngleDegrees?: number | null }>
   | Envelope<"native.layout", { sessionId: string; document: LayoutDocument | null; recovered: boolean; checkpoint: number }>
   | Envelope<"native.saved", { sessionId: string; requestId: string; documentId: string; revision: number; checkpoint: number; checksum: string }>
   | Envelope<"native.saveFailed", { sessionId: string; requestId: string; code: string; message: string }>
   | Envelope<"native.requestCheckpoint", { sessionId: string }>;
-export type WebMessage = Envelope<"web.ready" | "engine.error" | "engine.metrics" | "layout.checkpoint" | "layout.loaded", Record<string, unknown>>;
+export type WebMessage = Envelope<"web.ready" | "engine.error" | "engine.metrics" | "engine.assetProbe" | "layout.checkpoint" | "layout.loaded", Record<string, unknown>>;
 
 const object = (value: unknown): value is Record<string, unknown> => typeof value === "object" && value !== null && !Array.isArray(value);
 const finite = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);
@@ -29,7 +29,7 @@ export function parseNativeMessage(value: unknown): NativeMessage | null {
   const payload = value.payload;
   switch (value.type) {
     case "native.bootstrap":
-      if (!keys(payload, ["host", "debug", "sessionId"]) || (payload.host !== "ios" && payload.host !== "browser") || typeof payload.debug !== "boolean" || (payload.sessionId !== undefined && !identifier(payload.sessionId))) return null;
+      if (!keys(payload, ["host", "debug", "sessionId", "assetProbe"]) || (payload.host !== "ios" && payload.host !== "browser") || typeof payload.debug !== "boolean" || (payload.sessionId !== undefined && !identifier(payload.sessionId)) || (payload.assetProbe !== undefined && (typeof payload.assetProbe !== "boolean" || !payload.debug))) return null;
       break;
     case "native.lifecycle":
       if (!keys(payload, ["state"]) || (payload.state !== "active" && payload.state !== "inactive" && payload.state !== "background")) return null;
