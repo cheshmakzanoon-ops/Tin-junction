@@ -1,0 +1,13 @@
+{
+  "name": "tin-junction-asset-validation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node validate-fixture.mjs",
+    "test:source": "node --test source-validation.test.mjs"
+  },
+  "dependencies": {
+    "gltf-validator": "2.0.0-dev.3.10"
+  }
+}

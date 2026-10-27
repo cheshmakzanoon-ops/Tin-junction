@@ -99,12 +99,22 @@ async function acknowledge(page: Page, request: Checkpoint, sessionId = "native-
   await deliver(page, "native.saved", { sessionId, requestId: request.requestId, documentId: request.document.documentId, revision: request.document.revision, checkpoint: request.checkpoint, checksum: "a".repeat(64) });
 }
 test("native bridge queues edits behind a durable acknowledgment and rejects stale sessions", async ({ page }) => {
+  // Install before application timers are created, but let the actual renderer
+  // initialize normally before pausing. Slow CI clicks must not accidentally
+  // cross the production acknowledgment deadline in a pre-deadline assertion.
+  // https://playwright.dev/docs/clock#consistent-time-and-timers
+  await page.clock.install();
   await page.addInitScript(() => {
     Reflect.set(window, "__NATIVE_MESSAGES__", []);
-    window.webkit = { messageHandlers: { tinJunction: { postMessage: message => Reflect.get(window, "__NATIVE_MESSAGES__").push(message) } } };
+    Reflect.set(window, "__CHECKPOINT_TIMES__", []);
+    window.webkit = { messageHandlers: { tinJunction: { postMessage: message => {
+      Reflect.get(window, "__NATIVE_MESSAGES__").push(message);
+      if (message.type === "layout.checkpoint") Reflect.get(window, "__CHECKPOINT_TIMES__").push(performance.now());
+    } } } };
   });
   await page.goto("/");
   await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.initialized);
+  await page.clock.pauseAt(new Date(await page.evaluate(() => Date.now()) + 60_000));
   await expect(page.getByRole("button", { name: "Run train", exact: true })).toBeDisabled();
   await deliver(page, "native.bootstrap", { host: "ios", debug: true, sessionId: "native-session-1" });
   await deliver(page, "native.layout", { sessionId: "native-session-1", document: null, recovered: false, checkpoint: 0 });
@@ -116,11 +126,33 @@ test("native bridge queues edits behind a durable acknowledgment and rejects sta
   await rename(page, "A carefully saved railway");
   await page.getByRole("button", { name: "Save layout", exact: true }).click();
   expect((await checkpoints(page)).length).toBe(1);
+  // The deadline reports a retryable failure, but never publishes another
+  // checkpoint on its own. A deliberate retry must resend the exact immutable
+  // request, not assign a new ID/checkpoint or include the queued newer edits.
+  // Measure from the intercepted send, rather than assuming no clock ticks
+  // elapsed during UI actionability/animation-frame checks.
+  const elapsed = await page.evaluate(() => performance.now() - Reflect.get(window, "__CHECKPOINT_TIMES__")[0]);
+  expect(elapsed).toBeGreaterThanOrEqual(0);
+  expect(elapsed).toBeLessThan(10_000);
+  await page.clock.fastForward(9_999 - elapsed);
+  expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.saveState)).not.toBe("failed");
+  expect((await checkpoints(page)).length).toBe(1);
+  await page.clock.fastForward(1);
+  expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.saveState)).toBe("failed");
+  expect((await checkpoints(page)).length).toBe(1);
+  await page.getByRole("button", { name: "Save layout", exact: true }).click();
+  const retried = await checkpoints(page);
+  expect(retried).toHaveLength(2);
+  expect(retried[1]).toEqual(first);
+  await page.getByRole("button", { name: "Save layout", exact: true }).evaluate(button => { for (let index = 0; index < 24; index += 1) (button as HTMLButtonElement).click(); });
+  expect((await checkpoints(page)).length).toBe(2);
   await acknowledge(page, first, "obsolete-session");
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.savedRevision)).toBeNull();
   await acknowledge(page, first);
-  await expect.poll(async () => (await checkpoints(page)).length).toBe(2);
-  const second = (await checkpoints(page))[1]!;
+  await expect.poll(async () => (await checkpoints(page)).length).toBe(3);
+  const second = (await checkpoints(page))[2]!;
+  expect(second.requestId).not.toBe(first.requestId);
+  expect(second.checkpoint).toBe(first.checkpoint + 1);
   expect(second.expectedRevision).toBe(0); expect(second.document.revision).toBeGreaterThan(0);
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.saveState)).not.toBe("saved");
   await acknowledge(page, second);
@@ -133,15 +165,15 @@ test("native bridge queues edits behind a durable acknowledgment and rejects sta
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.mode)).toBe("operate");
   await page.getByRole("button", { name: "Night", exact: true }).click();
   await page.getByRole("button", { name: "Save layout", exact: true }).click();
-  await expect.poll(async () => (await checkpoints(page)).length).toBe(3);
-  const third = (await checkpoints(page))[2]!;
+  await expect.poll(async () => (await checkpoints(page)).length).toBe(4);
+  const third = (await checkpoints(page))[3]!;
   await deliver(page, "native.saveFailed", { sessionId: "native-session-2", requestId: third.requestId,
     code: "revision_conflict", message: "The stored revision changed." });
   await expect(page.getByRole("button", { name: "Save layout", exact: true })).toBeDisabled();
   await expect(page.getByRole("alert")).toContainText("Saving is paused to protect your saved railway");
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.saveState)).toBe("blocked");
   await deliver(page, "native.requestCheckpoint", { sessionId: "native-session-2" });
-  expect((await checkpoints(page)).length).toBe(3);
+  expect((await checkpoints(page)).length).toBe(4);
 });
 
 test("pinch gesture does not commit scenery and focused buttons keep keyboard activation", async ({ page, context }) => {

@@ -2,18 +2,18 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T02:33:55.915Z
+Ledger updated: 2026-10-27T02:48:36.030Z
 
-Tasks: 131; done: 12; active: 4; review: 0; blocked: 0; todo: 115.
+Tasks: 131; done: 12; active: 4; review: 0; blocked: 1; todo: 114.
 
-CI snapshot: **running** for c59f7acbdaf591552de718d19bc7418d16fd8cd7. This may be stale; inspect current remote checks.
+CI snapshot: **running** for 0b2923061a2539d4dcb46545e728152b19f00a7d. This may be stale; inspect current remote checks.
 
 [Next task](NEXT_TASK.md) · [Current handoff](HANDOFF.md) · [Agent rules](../AGENTS.md)
 
 | Phase | Purpose | Recorded done | Active / review / blocked |
 |---|---|---:|---|
 | [P00](phases/P00-repository-foundation.md) | Repository foundation and agent continuity | 4/4 | — |
-| [P01](phases/P01-platform-and-runtime-spikes.md) | Platform truth and packaged-runtime spikes | 0/5 | P01-T01 in_progress |
+| [P01](phases/P01-platform-and-runtime-spikes.md) | Platform truth and packaged-runtime spikes | 0/5 | P01-T01 in_progress; P01-T04 blocked |
 | [P02](phases/P02-native-application-shell.md) | Swift native application shell | 0/4 | — |
 | [P03](phases/P03-native-web-contract.md) | Secure native-to-web contract | 0/5 | — |
 | [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 5/6 | P04-T06 in_progress |

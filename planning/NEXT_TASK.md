@@ -38,4 +38,4 @@ Manual gate: none
 
 ## Blocked work
 
-No task is explicitly blocked. This is not evidence that future external gates are resolved.
+- P01-T04: No supported Duo-only purchase/install eligibility mechanism verified in current Apple public sources. Preserve exclusivity; obtain Apple Developer Support guidance and verify actual eligibility. See docs/research/DUO_DISTRIBUTION_2026-10-27.md.

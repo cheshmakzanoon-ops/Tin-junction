@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T02:33:55.915Z",
+  "updated_at": "2026-10-27T02:48:36.030Z",
   "health": {
     "ci": {
       "status": "running",
-      "checked_commit": "c59f7acbdaf591552de718d19bc7418d16fd8cd7",
+      "checked_commit": "0b2923061a2539d4dcb46545e728152b19f00a7d",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40436429877",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40436429875"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40439499031",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40439499133"
       ]
     },
     "incidents": []
@@ -139,12 +139,26 @@
       "history": []
     },
     "P01-T04": {
-      "status": "todo",
+      "status": "blocked",
       "claim": null,
-      "blockers": [],
+      "blockers": [
+        {
+          "reason": "No supported Duo-only purchase/install eligibility mechanism verified in current Apple public sources. Preserve exclusivity; obtain Apple Developer Support guidance and verify actual eligibility. See docs/research/DUO_DISTRIBUTION_2026-10-27.md.",
+          "owner": "project-owner",
+          "opened_at": "2026-10-27T02:47:05.427Z",
+          "resolved_at": null,
+          "resolution": null
+        }
+      ],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T02:47:05.427Z",
+          "action": "block",
+          "detail": "No supported Duo-only purchase/install eligibility mechanism verified in current Apple public sources. Preserve exclusivity; obtain Apple Developer Support guidance and verify actual eligibility. See docs/research/DUO_DISTRIBUTION_2026-10-27.md."
+        }
+      ]
     },
     "P01-T05": {
       "status": "todo",

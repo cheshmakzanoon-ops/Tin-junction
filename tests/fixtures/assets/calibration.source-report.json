@@ -1,0 +1,26 @@
+{
+  "assetId": "fixture.calibration.001",
+  "meshCount": 14,
+  "socketCount": 4,
+  "units": "physical-model-meters",
+  "sourceValidation": "passed",
+  "blenderVersion": "4.3.2",
+  "exportSettings": {
+    "export_format": "GLB",
+    "export_yup": true,
+    "export_apply": true,
+    "export_normals": true,
+    "export_texcoords": true,
+    "export_tangents": false,
+    "export_materials": "EXPORT",
+    "export_animations": false,
+    "export_extras": true,
+    "export_cameras": false,
+    "export_lights": false,
+    "export_image_format": "AUTO",
+    "export_draco_mesh_compression_enable": false
+  },
+  "bytes": 29356,
+  "sha256": "3fd4cead1d6fedfaeb49d503a3b8c6e3cc65089049a8fe3b74436316288062da",
+  "generatorSha256": "25cfceba2b491dc9a62722baf9cc4248906b6930aab51c34a719111ee2ed5ccc"
+}
