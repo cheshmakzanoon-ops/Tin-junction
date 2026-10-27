@@ -1,0 +1,174 @@
+--- Original target lines 16-17 ---
+2026-10-27 09:27:34.322012+0000 TinJunction[672:231940] [Process] WebContent process (0x1190bc0c0) took 1.191466 seconds to launch
+2026-10-27 09:27:34.529587+0000 TinJunction[672:231940] [Process] GPU process (0x119100200) took 1.360988 seconds to launch
+
+--- Original target lines 349-350 ---
+2026-10-27 09:27:38.103282+0000 TinJunction[672:231940] [Process] 0x1190bc0c0 - [PID=1244] WebProcessProxy::didBecomeUnresponsive:
+2026-10-27 09:27:38.103506+0000 TinJunction[672:231940] [Process] 0x1092a8018 - [pageProxyID=7, webPageID=8, PID=1244] WebPageProxy::processDidBecomeUnresponsive:
+
+--- Original target lines 1621-1623 ---
+2026-10-27 09:30:54.546095+0000 TinJunction[4296:242913] [Process] GPU process (0x11a108200) took 1.426084 seconds to launch
+2026-10-27 09:30:55.093202+0000 TinJunction[4296:242913] [Process] Networking process (0x11a130180) took 1.834649 seconds to launch
+2026-10-27 09:30:55.427975+0000 TinJunction[4296:242913] [Process] WebContent process (0x11a0b80c0) took 2.484477 seconds to launch
+
+--- Original target lines 1980-1986 ---
+2026-10-27 09:30:59.569296+0000 TinJunction[4296:242913] [Process] 0x11a108200 - GPUProcessProxy::gpuProcessExited: reason=IdleExit
+2026-10-27 09:30:59.569830+0000 TinJunction[4296:242913] [Process] 0x11a0b80c0 - [PID=4321] WebProcessProxy::gpuProcessExited: reason=IdleExit
+2026-10-27 09:30:59.570261+0000 TinJunction[4296:242991] [assertion] Error acquiring assertion: <Error Domain=RBSServiceErrorDomain Code=1 "((target is not running or doesn't have entitlement com.apple.developer.web-browser-engine.rendering AND target is not running or doesn't have entitlement com.apple.developer.web-browser-engine.networking AND target is not running or doesn't have entitlement com.apple.developer.web-browser-engine.webcontent))" UserInfo={NSLocalizedFailureReason=((target is not running or doesn't have entitlement com.apple.developer.web-browser-engine.rendering AND target is not running or doesn't have entitlement com.apple.developer.web-browser-engine.networking AND target is not running or doesn't have entitlement com2026-10-27 09:30:59.570541+0000 TinJunction[4296:242913] [ProcessSuspension] ProcessAssertion::remainingRunTimeInSeconds failed to get identifier for process with PID=0
+.apple.developer.web-browser-engine.webcontent))}>
+2026-10-27 09:30:59.645144+0000 TinJunction[4296:242991] [ProcessSuspension] 0x11a144180 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=4317, error: (null)
+2026-10-27 09:30:59.649406+0000 TinJunction[4296:242991] [assertion] Error acquiring assertion: <Error Domain=RBSAssertionErrorDomain Code=2 "Specified target process 4317 does not exist" UserInfo={NSLocalizedFailureReason=Specified target process 4317 does not exist}>
+2026-10-27 09:30:59.650370+0000 TinJunction[4296:242991] [ProcessSuspension] 0x11a144240 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'GPUProcess Background Assertion' for process with PID=0, error: (null)
+
+--- Original target lines 14494-14524 ---
+2026-10-27 09:33:47.942234+0000 TinJunction[4702:245390] [Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-10-27 09:33:47.942386+0000 TinJunction[4702:245390] [Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-10-27 09:33:47.942459+0000 TinJunction[4702:245390] [Default] Fetching AX attributes XC_kAXXCAttributeFrame, XC_kAXXCAttributeWindowDisplayId, XC_kAXXCAttributeWindowContextId for App element pid: 4702
+2026-10-27 09:33:47.942414+0000 TinJunction[4702:246107] [Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-10-27 09:33:47.942776+0000 TinJunction[4702:246107] [Defa2026-10-27 09:33:47.946842+0000 TinJunction[4702:245390] [Default] Got attributes, transferring to dictionary for return.
+ult] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-10-27 09:33:48.024249+0000 TinJunction[4702:246107] [Default] Replying with attribute values: {
+    "XC_kAXXCAttributeFrame" =     {
+        Height = 678;
+        Width = 466;
+        X = 0;
+        Y = 0;
+    };
+    "XC_kAXXCAttributeWindowContextId" = 4159353444;
+    "XC_kAXXCAttributeWindowDisplayId" = 0;
+}
+2026-10-27 09:33:48.032212+0000 TinJunction[4702:246845] [Default] Received attributes request for element: App element pid: 4702. Attributes: (
+    "XC_kAXXCAttributeWindowDisplayId"
+)
+2026-10-27 09:33:48.032383+0000 TinJunction[4702:246845] [Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-10-27 09:33:48.032574+0000 TinJunction[4702:245390] [Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-10-27 09:33:48.032640+0000 TinJunction[4702:245390] [Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-10-27 09:33:48.032876+0000 TinJunction[4702:246845] [Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-10-27 09:33:48.106249+0000 TinJunction[4702:245390] [Default] Fetching AX attributes XC_kAXXCAttributeWindowDisplayId for App element pid: 4702
+2026-10-27 09:33:48.106220+0000 TinJunction[4702:246845] [Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-10-27 09:33:48.106446+0000 TinJunction[4702:245390] [Default] Got attributes, transferring to dictionary for return.
+2026-10-27 09:33:48.106586+0000 TinJunction[4702:246845] [Default] Replying with attribute values: {
+    "XC_kAXXCAttributeWindowDisplayId" = 0;
+}
+2026-10-27 09:34:26.150123+0000 TinJunction[4702:246107] [UAFAssetProvider] Sandbox extension request for asset set: com.apple.linguisticdata failed with error: Error Domain=com.apple.MobileAssetError.AutoAsset Code=6582 "[handleSetRequestSandboxExtension:NoSharedLock(6582)] no short-term lockable atomic instance" UserInfo={NSLocalizedDescription=[handleSetRequestSandboxExtension:NoSharedLock(6582)] no short-term lockable atomic instance}
+2026-10-27 09:34:26.151345+0000 TinJunction[4702:246107] [UAFAssetManager] Failed to grant sandbox extension: Error Domain=com.apple.MobileAssetError.AutoAsset Code=6582 "[handleSetRequestSandboxExtension:NoSharedLock(6582)] no short-term lockable atomic instance" UserInfo={NSLocalizedDescription=[handleSetRequestSandboxExtension:NoSharedLock(6582)] no short-term lockable atomic instance}
+
+--- Original runner lines 2733-2741 ---
+09:29:05.940 TinJunctionUITests-Runner[99803:231249] Monitor: termination is being tracked for com.cheshmakzanoonops.tinjunction (pid:672)
+09:29:05.939 TinJunctionUITests-Runner[99803:231069] Using token to terminate <XCTRunnerIDESession: 0x1031ca120> via Xcode
+09:29:10.214 xcodebuild[96349:220647] Test runner session received request for termination of application with token 1
+09:29:11.538 xcodebuild[96349:220647] Terminating session for token 1 by canceling execution tracker <IDEExecutionOperationTracker: 0x795b8319d0: Launch application com.cheshmakzanoonops.tinjunction for UI testing.
+	subtrackers=(
+    "<IDEExecutionRunnableTracker: 0x795c346040: subtrackers=none>"
+)>
+09:29:05.942 TinJunctionUITests-Runner[99803:231069] Waiting for termination
+09:29:05.942 TinJunctionUITests-Runner[99803:231069] <XCTWaiter: 0x1062b45a0> entering wait loop for 60.00s with expectations: `Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:672)`
+
+--- Original runner lines 4932-4955 ---
+09:30:06.099 TinJunctionUITests-Runner[99803:231069] <XCTWaiter: 0x1062b45a0> reporting timed out failure with Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:672)
+09:30:06.107 TinJunctionUITests-Runner[99803:231069] Returning result XCTWaiterResultTimedOut for synchronous waiter <XCTWaiter: 0x1062b45a0>
+09:30:06.108 TinJunctionUITests-Runner[99803:231069] Wait <XCTWaiterWait: 0x1061c9dc0> completed after 60.167s
+09:30:06.115 TinJunctionUITests-Runner[99803:231069] cleaning up Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:672)
+09:30:06.137 TinJunctionUITests-Runner[99803:231069] Failed to terminate com.cheshmakzanoonops.tinjunction:672 after 60.0s; state is still `Running Foreground`.
+09:30:06.137 TinJunctionUITests-Runner[99803:231069] Setting pid for 0x103390d00 672 -> 0
+09:30:06.145 TinJunctionUITests-Runner[99803:233092] com.cheshmakzanoonops.tinjunction (pid:672) pid 672 -> 0
+09:30:06.146 TinJunctionUITests-Runner[99803:233092] Monitor: retaining a lightweight application process with pid 672 for crash detection
+09:30:06.146 TinJunctionUITests-Runner[99803:233092] Monitor: set (null) for pid 672
+09:30:06.325 TinJunctionUITests-Runner[99803:231069] Error (com.apple.dt.xctest.ui-testing.error) 10013, userInfo keys: (null): Failed to terminate com.cheshmakzanoonops.tinjunction:0
+09:30:06.398 TinJunctionUITests-Runner[99803:231069] Error (com.apple.dt.xctest.ui-testing.error) 10013, userInfo keys: (null): Failed to terminate com.cheshmakzanoonops.tinjunction:0
+09:30:06.616 TinJunctionUITests-Runner[99803:231069] Performing in-process symbolication of 89-frame call stack for reporting
+09:30:06.656 TinJunctionUITests-Runner[99803:231069] Preparing to throw exception to interrupt test (XCTShouldExitOnTestInterruption=(unset), isInvocationAsync=0, overridesAsyncSetUpOrTearDown=0)
+09:30:06.657 TinJunctionUITests-Runner[99803:231069] <XCTContext: 0x1062e7ed0> finished activity <XCActivityRecord: 0x106396e60> 2026-10-27 09:28:58 +0000: Tear Down (68.0151s)
+09:30:11.013 xcodebuild[96349:220647] _XCT_testCaseWithIdentifier:<XCTTestIdentifier leaf, method, swift ["AssetOriginProbeUITests", "testActualBundledOriginAfterWebDataResetAndColdRelaunch"]> didFinishActivity:<XCActivityRecord: 0x795b8319d0> 2026-10-27 09:28:58 +0000: Tear Down (68.0151s)
+09:30:34.938 xcodebuild[96349:220647] Nothing to delete
+09:30:06.934 TinJunctionUITests-Runner[99803:231069] Interrupting test execution
+09:30:06.960 TinJunctionUITests-Runner[99803:231069] <XCTWaiter: 0x1062b4a50> entering indefinite wait loop for expectations: `failable invocation block completion`
+09:30:06.961 TinJunctionUITests-Runner[99803:231069] Returning result XCTWaiterResultCompleted for synchronous waiter <XCTWaiter: 0x1062b4a50>
+09:30:06.961 TinJunctionUITests-Runner[99803:231069] Wait <XCTWaiterWait: 0x1061cad40> completed after 0.000s
+09:30:06.961 TinJunctionUITests-Runner[99803:231069] cleaning up failable invocation block completion
+09:30:06.961 TinJunctionUITests-Runner[99803:231069] Creating future for 'requesting to stop screen recording' with timeout 30.00
+09:30:06.966 TinJunctionUITests-Runner[99803:231069] Stopping diagnostic screen recording with UUID 8A1B5069-7DF0-4FA4-8360-2C1759CA360C.
+09:30:06.975 TinJunctionUITests-Runner[99803:231069] <XCTWaiter: 0x1062b4c30> entering wait loop for 29.99s with expectations: `requesting to stop screen recording`
+
+--- Original runner lines 23504-23512 ---
+09:33:48.711 TinJunctionUITests-Runner[99803:244521] Monitor: termination is being tracked for com.cheshmakzanoonops.tinjunction (pid:4702)
+09:33:48.711 TinJunctionUITests-Runner[99803:231069] Using token to terminate <XCTRunnerIDESession: 0x1031ca120> via Xcode
+09:34:45.692 xcodebuild[96349:220647] Test runner session received request for termination of application with token 5
+09:34:46.209 xcodebuild[96349:220647] Terminating session for token 5 by canceling execution tracker <IDEExecutionOperationTracker: 0x795ba845b0: Launch application com.cheshmakzanoonops.tinjunction for UI testing.
+	subtrackers=(
+    "<IDEExecutionRunnableTracker: 0x795b8d96e0: subtrackers=none>"
+)>
+09:33:48.715 TinJunctionUITests-Runner[99803:231069] Waiting for termination
+09:33:48.716 TinJunctionUITests-Runner[99803:231069] <XCTWaiter: 0x106308c00> entering wait loop for 60.00s with expectations: `Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:4702)`
+
+--- Original runner lines 23598-23613 ---
+09:34:50.744 xcodebuild[96349:220647] Ignoring exit of launch session <IDELaunchSession: 0x795c32ea00> because it does not match the launch session currently tracked for token 5
+09:34:51.040 xcodebuild[96349:220647] Observed termination of tracker for token 5 for launch of com.cheshmakzanoonops.tinjunction at /Users/runner/work/Tin-junction/Tin-junction/artifacts/ios/DerivedData/Build/Products/Debug-iphonesimulator/TinJunction.app
+09:34:48.338 TinJunctionUITests-Runner[99803:244521] Automation session connection to pid 4702 interrupted
+09:34:48.868 TinJunctionUITests-Runner[99803:231069] <XCTWaiter: 0x106308c00> reporting timed out failure with Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:4702)
+09:34:48.868 TinJunctionUITests-Runner[99803:231069] Returning result XCTWaiterResultTimedOut for synchronous waiter <XCTWaiter: 0x106308c00>
+09:34:48.869 TinJunctionUITests-Runner[99803:231069] Wait <XCTWaiterWait: 0x1061c5ac0> completed after 60.153s
+09:34:48.870 TinJunctionUITests-Runner[99803:231069] cleaning up Expect predicate `running == 0` for object com.cheshmakzanoonops.tinjunction (pid:4702)
+09:34:48.875 TinJunctionUITests-Runner[99803:231069] Failed to terminate com.cheshmakzanoonops.tinjunction:4702 after 60.0s; state is still `Running Foreground`.
+09:34:48.879 TinJunctionUITests-Runner[99803:231069] Setting pid for 0x10f729b80 4702 -> 0
+09:34:48.879 TinJunctionUITests-Runner[99803:244521] com.cheshmakzanoonops.tinjunction (pid:4702) pid 4702 -> 0
+09:34:48.881 TinJunctionUITests-Runner[99803:244521] Monitor: retaining a lightweight application process with pid 4702 for crash detection
+09:34:48.881 TinJunctionUITests-Runner[99803:244521] Monitor: set (null) for pid 4702
+09:34:48.882 TinJunctionUITests-Runner[99803:231069] Error (com.apple.dt.xctest.ui-testing.error) 10013, userInfo keys: (null): Failed to terminate com.cheshmakzanoonops.tinjunction:0
+09:34:48.883 TinJunctionUITests-Runner[99803:231069] Error (com.apple.dt.xctest.ui-testing.error) 10013, userInfo keys: (null): Failed to terminate com.cheshmakzanoonops.tinjunction:0
+09:34:48.992 TinJunctionUITests-Runner[99803:231069] Performing in-process symbolication of 83-frame call stack for reporting
+09:34:49.036 TinJunctionUITests-Runner[99803:231069] Creating future for 'getting screen identifiers' with timeout 30.00
+
+--- Original xcodebuild lines 1360-1362 ---
+	 Executed 87 tests, with 0 failures (0 unexpected) in 4.498 (6.441) seconds
+Test Suite 'All tests' passed at 2026-10-27 09:27:05.120.
+	 Executed 87 tests, with 0 failures (0 unexpected) in 4.498 (6.442) seconds
+
+--- Original xcodebuild lines 1427-1427 ---
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift:34: error: -[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch] : XCTAssertTrue failed
+
+--- Original xcodebuild lines 1434-1445 ---
+    t =   101.89s     Added attachment named 'native-lifecycle-3-fixture-teardown-enter'
+    t =   101.89s     Added attachment named 'native-lifecycle-4-fixture-teardown-before'
+    t =   101.89s     Terminate com.cheshmakzanoonops.tinjunction:672
+2026-10-27 09:29:14.865 xcodebuild[96349:220647] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 09:29:15.607 xcodebuild[96349:220647] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-27 09:29:16.361 xcodebuild[96349:220647] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 09:29:16.361 xcodebuild[96349:220647] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-27 09:29:17.601 xcodebuild[96349:220647] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 09:29:17.601 xcodebuild[96349:220647] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' failed (196.736 seconds).
+Test Suite 'AssetOriginProbeUITests' failed at 2026-10-27 09:30:40.806.
+	 Executed 1 test, with 1 failure (0 unexpected) in 196.736 (196.759) seconds
+
+--- Original xcodebuild lines 1542-1542 ---
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/HostSmokeTests.swift:14: error: -[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes] : XCTAssertTrue failed - Bundled WebKit bridge must handshake on Duo; no browser fallback.
+
+--- Original xcodebuild lines 1777-1793 ---
+    t =    85.56s     Find the Target Application 'com.cheshmakzanoonops.tinjunction'
+    t =    87.40s Added attachment named 'duo-railway-durable-save'
+    t =    87.42s Added attachment named 'native-lifecycle-3-before-saved-railway-relaunch-before'
+    t =    87.42s     Terminate com.cheshmakzanoonops.tinjunction:4702
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/UITestApplicationLifetime.swift:43: error: -[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway] : Failed to terminate com.cheshmakzanoonops.tinjunction:4702: Failed to terminate com.cheshmakzanoonops.tinjunction:0
+2026-10-27 09:34:50.468 xcodebuild[96349:220647] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 09:34:50.510 xcodebuild[96349:220647] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+2026-10-27 09:34:50.523 xcodebuild[96349:220647] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 09:34:50.523 xcodebuild[96349:220647] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+    t =   147.94s Tear Down
+    t =   147.97s     Added attachment named 'native-lifecycle-4-fixture-teardown-enter'
+    t =   147.98s     Added attachment named 'native-lifecycle-5-fixture-teardown-before'
+    t =   147.98s             Terminate com.cheshmakzanoonops.tinjunction:0
+    t =   147.98s     Added attachment named 'native-lifecycle-6-fixture-teardown-after'
+2026-10-27 09:34:50.627 xcodebuild[96349:220647] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-27 09:34:50.627 xcodebuild[96349:220647] [MT] IDESchemeActionDeviceRecord: versionAndBuild = 27.1 (24A94425), error = invalidDigitCount(94425).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' failed (169.640 seconds).
+
+--- Original xcodebuild lines 2182-2185 ---
+Test Suite 'TinJunctionUITests.xctest' failed at 2026-10-27 09:37:47.699.
+	 Executed 8 tests, with 3 failures (0 unexpected) in 623.595 (623.652) seconds
+Test Suite 'All tests' failed at 2026-10-27 09:37:47.700.
+	 Executed 8 tests, with 3 failures (0 unexpected) in 623.595 (623.654) seconds
+
+--- Original xcodebuild lines 2204-2204 ---
+** TEST FAILED **
+

@@ -443,6 +443,7 @@ final class EngineHostModel: ObservableObject {
             if let predecessor { await predecessor.value }
             guard !Task.isCancelled, let self, let webView,
                   self.loadGeneration == generation, self.isBridgeReady else { return }
+            PlatformStartupTrace.record("bridge.send.type=\(type)")
             do {
                 _ = try await webView.callAsyncJavaScript(
                     """
@@ -453,7 +454,9 @@ final class EngineHostModel: ObservableObject {
                     """,
                     arguments: ["message": envelope], in: nil, contentWorld: .page
                 )
+                PlatformStartupTrace.record("bridge.delivered.type=\(type)")
             } catch {
+                PlatformStartupTrace.record("bridge.failed.type=\(type)")
                 guard self.loadGeneration == generation, !Task.isCancelled else { return }
                 self.fail("The connection to the railway view stopped. Try loading again; your saved layout is retained.")
             }

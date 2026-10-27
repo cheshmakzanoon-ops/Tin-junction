@@ -25,23 +25,47 @@ final class UITestApplicationLifetime {
         // abort, when Swift defer may not execute. LIFO records the state before
         // cleanup; a failed termination remains a failure, never a retry pass.
         testCase.addTeardownBlock { [self] in
-            terminate("fixture-teardown")
+            // Never make the final cleanup depend on an accessibility read.
+            // Its separate later-registered block owns optional diagnostics.
+            terminateApp("fixture-teardown")
         }
         testCase.addTeardownBlock { [self] in
+            captureStartupTrace("fixture-teardown")
             record(operation: "fixture", point: "teardown-enter")
         }
     }
 
     func launch(_ operation: StaticString = "initial-launch") {
+        if !app.launchArguments.contains("--host-diagnostics") {
+            app.launchArguments.append("--host-diagnostics")
+        }
         record(operation: operation, point: "before")
         app.launch()
         record(operation: operation, point: "after")
     }
 
     func terminate(_ operation: StaticString) {
+        // Preserve this before an app termination can abort the test or remove
+        // the accessibility tree. A failed terminate still fails unchanged.
+        captureStartupTrace(operation)
+        terminateApp(operation)
+    }
+
+    private func terminateApp(_ operation: StaticString) {
         record(operation: operation, point: "before")
         app.terminate()
         record(operation: operation, point: "after")
+    }
+
+    private func captureStartupTrace(_ operation: StaticString) {
+        guard let testCase, app.state == .runningForeground else { return }
+        let element = app.staticTexts["host.startupTrace"]
+        guard element.exists, let value = element.value as? String,
+              value.utf8.count <= 32_768 else { return }
+        let attachment = XCTAttachment(string: value)
+        attachment.name = "native-startup-\(String(describing: operation))"
+        attachment.lifetime = .keepAlways
+        testCase.add(attachment)
     }
 
     private func record(operation: StaticString, point: StaticString) {

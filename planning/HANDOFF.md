@@ -1,4 +1,6 @@
-# Current handoff — verified workbench, continuing native quality and assets
+# Current handoff — native recurrence investigation
+
+**Current native CI failed at `8efb6d4edc68058a5c809ab80118105f1a805d60`.** Continue with [the recurrence investigation and preserved source work](handoffs/2026-10-27-native-recurrence.md). The [new incident record](../evidence/INC-NATIVE-RECURRENCE-20261027.md) contains the exact failures and reviewed originals. Native startup instrumentation is the immediate bounded experiment; no cause or repair is yet established. The previous accepted result below remains historical.
 
 Continue with [the verified workbench and next implementation boundaries](handoffs/2026-10-27-verified-workbench.md). At tested implementation **`c1e6e39ba127e064f4907e9c5a1d84fed7163990`**, all required checks passed: 87 native units, all eight native UI tests, installed-resource identity, literal clean reinstall with the unchanged supplemental asset case, and 34 browser tests on their first attempts. Original archives, reports, source identities and captures were independently reviewed.
 

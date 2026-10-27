@@ -2,11 +2,11 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T09:19:17.563Z
+Ledger updated: 2026-10-27T09:43:23.488Z
 
 Tasks: 131; done: 23; active: 3; review: 0; blocked: 1; todo: 104.
 
-CI snapshot: **passed** for c1e6e39ba127e064f4907e9c5a1d84fed7163990. This may be stale; inspect current remote checks.
+CI snapshot: **failed** for 8efb6d4edc68058a5c809ab80118105f1a805d60. This may be stale; inspect current remote checks.
 
 [Next task](NEXT_TASK.md) · [Current handoff](HANDOFF.md) · [Agent rules](../AGENTS.md)
 

@@ -43,6 +43,11 @@ struct RootView: View {
             .background(paper)
 
             #if DEBUG
+            if ProcessInfo.processInfo.arguments.contains("--host-diagnostics") {
+                StartupTraceDiagnostic()
+                    .frame(height: 14)
+                    .background(paper)
+            }
             StartupHoldControl(hold: host.startupHold)
                 .foregroundStyle(ink)
                 .background(paper)

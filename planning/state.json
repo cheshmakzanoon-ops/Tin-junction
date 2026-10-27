@@ -1,14 +1,13 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T09:19:17.563Z",
+  "updated_at": "2026-10-27T09:43:23.488Z",
   "health": {
     "ci": {
-      "status": "passed",
-      "checked_commit": "c1e6e39ba127e064f4907e9c5a1d84fed7163990",
+      "status": "failed",
+      "checked_commit": "8efb6d4edc68058a5c809ab80118105f1a805d60",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892017",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475891995",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40475892006"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40480076020",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40480075989"
       ]
     },
     "incidents": [
@@ -20,6 +19,15 @@
         "resolved": true,
         "resolved_at": "2026-10-27T09:18:48.336Z",
         "resolution": "Exact c1e6e39 current full run 40475892006 passed 87 units, all eight UI cases, installed identity and literal clean reinstall; focused 40475891995 and web 40475892017 also passed. Original archives/reports/captures and strict Git-bound manifests reviewed. See evidence/INC-NATIVE-QUEUE-20261027.md and planning/handoffs/2026-10-27-verified-workbench.md. Historical host-delay cause remains unknown; no retry, assertion weakening or repeated concurrency change."
+      },
+      {
+        "id": "INC-NATIVE-RECURRENCE-20261027",
+        "summary": "Native workflow40480076020 at metadata-only8efb6d4 failed asset readiness, handshake and app termination;87 units and5 of8 UI cases passed. Prior code-identicalc1e6e39 passed. Preserve failure and investigate; installed and clean verification skipped.",
+        "owner": "submission-coordinator",
+        "opened_at": "2026-10-27T09:43:23.488Z",
+        "resolved": false,
+        "resolved_at": null,
+        "resolution": null
       }
     ]
   },

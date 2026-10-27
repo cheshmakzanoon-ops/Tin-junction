@@ -1,0 +1,138 @@
+{
+  "formatVersion": 1,
+  "kind": "unfiltered-native-attachment-transcription",
+  "testedCommit": "8efb6d4edc68058a5c809ab80118105f1a805d60",
+  "runID": 40480076020,
+  "runAttempt": 1,
+  "sourceArtifactID": 12722564069,
+  "observations": [
+    {
+      "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "source": "screenshots/8FEB72C6-7FCE-48FF-B6AF-EC442CDD0D04.txt",
+      "name": "native-lifecycle-1-initial-launch-before_0_70277B81-9F51-42BB-935A-4EFBCFF68945.txt",
+      "timestamp": 1793093245.531,
+      "sha256": "b589bef9dbeca8e38b2457098cadf38014e16e8b62ff9c2962519aa19cf05f31",
+      "text": "formatVersion: 1\ntest: -[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]\nobservation: 1\noperation: initial-launch\npoint: before\nutc: 2026-10-27T09:27:25.531Z\nsystemUptimeSeconds: 3914.160572041667\nelapsedSeconds: 0.0018992499999512802\napplicationState: 1\napplicationStateName: notRunning"
+    },
+    {
+      "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "source": "screenshots/EC9FB27D-1DB4-46AA-9244-1ED78B512C7C.txt",
+      "name": "native-lifecycle-2-initial-launch-after_0_BB6DCFA6-AF29-49F3-A621-08E26D83B756.txt",
+      "timestamp": 1793093254.724,
+      "sha256": "c639a0366ab24f16a0b7953cd5596f08ed842f0253896a8fa9ad91d654bfd3a6",
+      "text": "formatVersion: 1\ntest: -[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]\nobservation: 2\noperation: initial-launch\npoint: after\nutc: 2026-10-27T09:27:34.724Z\nsystemUptimeSeconds: 3923.3538788333335\nelapsedSeconds: 9.195206041666552\napplicationState: 4\napplicationStateName: runningForeground"
+    },
+    {
+      "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "source": "screenshots/F2E204FC-ED93-478C-AB90-B6BC1511E2CB.txt",
+      "name": "asset-origin-observation-failure-state_0_D29B1048-9449-488A-B06C-71C959424FC5.txt",
+      "timestamp": 1793093344.29,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "text": "{}"
+    },
+    {
+      "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "source": "screenshots/044C03D1-F4EA-483A-A2C3-4BF588DF0995.txt",
+      "name": "native-lifecycle-3-fixture-teardown-enter_0_202546C3-2608-405F-A097-01AEA96E129A.txt",
+      "timestamp": 1793093345.937,
+      "sha256": "79d17ade63d008ac192410dcf3dd3015ff73e4dcc6ef969138406e6cb1b47a30",
+      "text": "formatVersion: 1\ntest: -[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]\nobservation: 3\noperation: fixture\npoint: teardown-enter\nutc: 2026-10-27T09:29:05.932Z\nsystemUptimeSeconds: 4014.561403416667\nelapsedSeconds: 100.402730625\napplicationState: 4\napplicationStateName: runningForeground"
+    },
+    {
+      "test": "AssetOriginProbeUITests/testActualBundledOriginAfterWebDataResetAndColdRelaunch()",
+      "source": "screenshots/11B524BA-943D-4B2D-9B09-630FA01A11CE.txt",
+      "name": "native-lifecycle-4-fixture-teardown-before_0_C97990B7-3C8B-4C7A-8122-3AE088E12F42.txt",
+      "timestamp": 1793093345.938,
+      "sha256": "69d79e5f9c569148e9a79be207748f610f117022a5f0b88b74623871a56d9af9",
+      "text": "formatVersion: 1\ntest: -[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]\nobservation: 4\noperation: fixture-teardown\npoint: before\nutc: 2026-10-27T09:29:05.938Z\nsystemUptimeSeconds: 4014.5674287083334\nelapsedSeconds: 100.40875591666645\napplicationState: 4\napplicationStateName: runningForeground"
+    },
+    {
+      "test": "HostSmokeTests/testBundledRendererHandshakes()",
+      "source": "screenshots/2390E1EA-B80E-469F-A77F-00798324E12F.txt",
+      "name": "native-lifecycle-1-initial-launch-before_0_23523456-6D87-4B9B-A57B-C7884B41E704.txt",
+      "timestamp": 1793093441.174,
+      "sha256": "0d1bc999d39e65fc99a5b7aa4e421963786aad1b29dc656cef5c912dd7e67806",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testBundledRendererHandshakes]\nobservation: 1\noperation: initial-launch\npoint: before\nutc: 2026-10-27T09:30:41.173Z\nsystemUptimeSeconds: 4109.80285775\nelapsedSeconds: 0.00604516666589916\napplicationState: 1\napplicationStateName: notRunning"
+    },
+    {
+      "test": "HostSmokeTests/testBundledRendererHandshakes()",
+      "source": "screenshots/B447B9CC-B5C4-4CBB-819D-46883875E8DF.txt",
+      "name": "native-lifecycle-2-initial-launch-after_0_FED2D243-0A95-4DCC-83AD-B40064C15130.txt",
+      "timestamp": 1793093455.594,
+      "sha256": "14f5114267cb82cbc1b97088f35bf7117619a93b22d89cb09e5e877570ffaa36",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testBundledRendererHandshakes]\nobservation: 2\noperation: initial-launch\npoint: after\nutc: 2026-10-27T09:30:55.593Z\nsystemUptimeSeconds: 4124.222415625\nelapsedSeconds: 14.425603041666363\napplicationState: 4\napplicationStateName: runningForeground"
+    },
+    {
+      "test": "HostSmokeTests/testBundledRendererHandshakes()",
+      "source": "screenshots/83E45FA3-E660-4A1B-8885-2DA19C4D6ABA.txt",
+      "name": "native-lifecycle-3-fixture-teardown-enter_0_FC19989D-1A63-40A4-955B-F4FF9F10A174.txt",
+      "timestamp": 1793093488.019,
+      "sha256": "0bd813b4bab6f45fe8d8e595f6432438b7224d9d11f4d4477faf2d4790cc93db",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testBundledRendererHandshakes]\nobservation: 3\noperation: fixture\npoint: teardown-enter\nutc: 2026-10-27T09:31:28.018Z\nsystemUptimeSeconds: 4156.647723916667\nelapsedSeconds: 46.85091133333299\napplicationState: 4\napplicationStateName: runningForeground"
+    },
+    {
+      "test": "HostSmokeTests/testBundledRendererHandshakes()",
+      "source": "screenshots/51E34BCE-8917-449A-AE0E-A85F0A6F3819.txt",
+      "name": "native-lifecycle-4-fixture-teardown-before_0_CC25057D-8CC9-4F92-BC92-F61E9044131A.txt",
+      "timestamp": 1793093488.02,
+      "sha256": "7b8c423f3d980591b99bb70f84e0fe3e60c140560cc609ae085ea3ab2bef81c1",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testBundledRendererHandshakes]\nobservation: 4\noperation: fixture-teardown\npoint: before\nutc: 2026-10-27T09:31:28.020Z\nsystemUptimeSeconds: 4156.650075291667\nelapsedSeconds: 46.853262708333205\napplicationState: 4\napplicationStateName: runningForeground"
+    },
+    {
+      "test": "HostSmokeTests/testBundledRendererHandshakes()",
+      "source": "screenshots/CBAD6998-D160-4098-9EBB-F064F182D2B5.txt",
+      "name": "native-lifecycle-5-fixture-teardown-after_0_F59485BB-5D3C-4B5B-AE87-8B9B9D301FC6.txt",
+      "timestamp": 1793093490.091,
+      "sha256": "47f0a7cf9e1b6595683f0f7e3671fe13512d2e3931d65707da5ed8704fa621f4",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testBundledRendererHandshakes]\nobservation: 5\noperation: fixture-teardown\npoint: after\nutc: 2026-10-27T09:31:30.091Z\nsystemUptimeSeconds: 4158.720539208333\nelapsedSeconds: 48.92372662499929\napplicationState: 1\napplicationStateName: notRunning"
+    },
+    {
+      "test": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "source": "screenshots/EB919C7B-46B7-4BD2-9DAB-FDFB59A95E2E.txt",
+      "name": "native-lifecycle-1-initial-launch-before_0_7112977D-CCFB-4E98-97B5-BCA324B3D6FA.txt",
+      "timestamp": 1793093541.358,
+      "sha256": "94d6ced6c4ff30db984dc4d7c21ede6fb924696fdd47206193344f400d9f4089",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]\nobservation: 1\noperation: initial-launch\npoint: before\nutc: 2026-10-27T09:32:21.357Z\nsystemUptimeSeconds: 4209.987152875\nelapsedSeconds: 0.0008129583329719026\napplicationState: 1\napplicationStateName: notRunning"
+    },
+    {
+      "test": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "source": "screenshots/1AD3CF9A-433D-49FA-BF04-A48CACB392F8.txt",
+      "name": "native-lifecycle-2-initial-launch-after_0_AC8E7F4A-3AAB-46F9-8A83-5C5E27831514.txt",
+      "timestamp": 1793093552.454,
+      "sha256": "571ef4c6ec9ac0c53c98b147f9542e570995a2e649ab70735fab1a19b1f0d839",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]\nobservation: 2\noperation: initial-launch\npoint: after\nutc: 2026-10-27T09:32:32.454Z\nsystemUptimeSeconds: 4221.08400275\nelapsedSeconds: 11.097662833332834\napplicationState: 4\napplicationStateName: runningForeground"
+    },
+    {
+      "test": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "source": "screenshots/73F914A5-487E-4C8A-8562-FD7637972637.txt",
+      "name": "native-lifecycle-3-before-saved-railway-relaunch-before_0_6016EA5D-5C35-430A-AACC-51A20C8AFD9A.txt",
+      "timestamp": 1793093628.706,
+      "sha256": "ad2056fb58f7bf3fe90984e05f637df716fdcfe545f8012dcb27cded28c249bd",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]\nobservation: 3\noperation: before-saved-railway-relaunch\npoint: before\nutc: 2026-10-27T09:33:48.706Z\nsystemUptimeSeconds: 4297.3356165000005\nelapsedSeconds: 87.34927658333345\napplicationState: 4\napplicationStateName: runningForeground"
+    },
+    {
+      "test": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "source": "screenshots/7AA615EA-D713-4F1C-B4F3-E4C7D1CAFB23.txt",
+      "name": "native-lifecycle-4-fixture-teardown-enter_0_80BD858C-785F-4743-A18F-B4F80381D7C7.txt",
+      "timestamp": 1793093689.26,
+      "sha256": "ca0bdd02c6795fb68c6b49ad1db3249fc3c88c15ec1ae03e146ea1773f7c8979",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]\nobservation: 4\noperation: fixture\npoint: teardown-enter\nutc: 2026-10-27T09:34:49.247Z\nsystemUptimeSeconds: 4357.877259666667\nelapsedSeconds: 147.89091974999974\napplicationState: 1\napplicationStateName: notRunning"
+    },
+    {
+      "test": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "source": "screenshots/7897ECA7-A8BA-4AEE-BF36-FF164D8818B3.txt",
+      "name": "native-lifecycle-5-fixture-teardown-before_0_A8956FBB-A2EB-466D-AAD7-2C352A735512.txt",
+      "timestamp": 1793093689.267,
+      "sha256": "53d044073d09a953faa9a597cb11f86798bfa0e7f74d03ffdec48dc361df222b",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]\nobservation: 5\noperation: fixture-teardown\npoint: before\nutc: 2026-10-27T09:34:49.267Z\nsystemUptimeSeconds: 4357.896526500001\nelapsedSeconds: 147.9101865833336\napplicationState: 1\napplicationStateName: notRunning"
+    },
+    {
+      "test": "HostSmokeTests/testNativeSaveAndRelaunchRestoresAcknowledgedRailway()",
+      "source": "screenshots/B574D738-E4A2-46CC-8C06-57D661218966.txt",
+      "name": "native-lifecycle-6-fixture-teardown-after_0_7177FA86-C1D6-43FF-87AA-A69BADCAC77B.txt",
+      "timestamp": 1793093689.269,
+      "sha256": "97cefff44c4e768baea9dd3cf5494d63f2dcd19f8a497c020d2caa8a4e16aa09",
+      "text": "formatVersion: 1\ntest: -[HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]\nobservation: 6\noperation: fixture-teardown\npoint: after\nutc: 2026-10-27T09:34:49.269Z\nsystemUptimeSeconds: 4357.899155958334\nelapsedSeconds: 147.9128160416667\napplicationState: 1\napplicationStateName: notRunning"
+    }
+  ]
+}
