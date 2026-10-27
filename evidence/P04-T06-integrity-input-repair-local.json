@@ -1,0 +1,142 @@
+{
+  "record_type": "local-repair-observation-not-task-acceptance",
+  "base_commit": "f0303cc9a9f49e48902350b14f526d5dcdbda3de",
+  "scope": "Working-tree browser persistence and pointer arbitration corrections; native source requires separate actual execution.",
+  "source_files": [
+    {
+      "path": "web/src/main.ts",
+      "bytes": 27230,
+      "sha256": "6cffe3be63aefc70b1ecd44af9389dc4a4530c497999d00d033744ff9c6c8cdf"
+    },
+    {
+      "path": "web/src/persistence.ts",
+      "bytes": 5918,
+      "sha256": "aa7d2e9e033e8b5866a1a1a4799d0e4da64ce4366d3dea218612d09e81d0deed"
+    },
+    {
+      "path": "tests/web/unit/persistence.test.ts",
+      "bytes": 8859,
+      "sha256": "218b9f3239c919c1ed2b37c51dfa0b71d83f4f0994effd453825653af3035087"
+    },
+    {
+      "path": "tests/web/browser/interaction-quality.spec.ts",
+      "bytes": 14287,
+      "sha256": "d45ba52d563f6bfa546cd65757f8b582a2746139069983d537067a0392b30e49"
+    }
+  ],
+  "before_correction": {
+    "trusted_browser_observation": {
+      "path": "evidence/P04-T06-modifier-reproduction-f0303cc.json",
+      "bytes": 722,
+      "sha256": "323a5a267b4710e96e14af81c8aedb77381e6e92e671c5674f6daa7d685dff7b"
+    },
+    "browser_regressions": {
+      "command": "npx playwright test tests/web/browser/interaction-quality.spec.ts --grep 'camera modifier|after (Control|Meta|Shift) click' --reporter=list --output=/tmp/tin-modifier-red-test-results",
+      "exit_code": 1,
+      "failed": 4,
+      "retried": 0,
+      "observed_failure": "Control/Meta/Shift click and a Shift key press/release during an already held pointer each changed scenery29 to30 and revision0 to1."
+    },
+    "storage_regressions": {
+      "command": "npx vitest run tests/web/unit/persistence.test.ts",
+      "exit_code": 1,
+      "passed": 10,
+      "failed": 3,
+      "observed_failure": "Checkpoint-only changes to0 and9007199254740991 were accepted as current/unrecovered; legacy9007199254740991 was trusted instead of normalized to0."
+    }
+  },
+  "after_correction": {
+    "focused_storage": {
+      "command": "npx vitest run tests/web/unit/persistence.test.ts",
+      "exit_code": 0,
+      "passed": 13,
+      "failed": 0
+    },
+    "local_check": {
+      "command": "npm run check && npm run bundle:ios",
+      "exit_code": 0,
+      "project_tests_passed": 108,
+      "ios_process_fixture_tests_passed": 42,
+      "web_unit_tests_passed": 304,
+      "typecheck": "passed",
+      "ordinary_build_integrity": "passed",
+      "ordinary_ios_packaging": "passed",
+      "log": {
+        "path": "evidence/P04-T06-integrity-input-local-checks.txt",
+        "bytes": 17104,
+        "sha256": "32fd0895eb858e59329d28ae42c6427a03bd984074fce3bf09b7901854f9ffb4"
+      }
+    },
+    "browser": {
+      "command": "npx playwright test tests/web/browser/interaction-quality.spec.ts --grep 'camera input|camera modifier|interrupted editor tap|fresh touch' --reporter=list --output=/tmp/tin-modifier-green-test-results",
+      "exit_code": 0,
+      "passed": 12,
+      "failed": 0,
+      "retried": 0,
+      "reported_duration": "3.4m",
+      "log": {
+        "path": "evidence/P04-T06-integrity-input-browser-tests.txt",
+        "bytes": 2591,
+        "sha256": "dc33a5cb6722e50a81fa533a35bf9317270cdc14bd450be65ac2e45be33b783c"
+      }
+    },
+    "ordinary_bundle": {
+      "manifest_bytes": 753,
+      "manifest_sha256": "56a002d9a9554a9dd65b40f3cbeb653d71d33c3230f7b1b09bcfa7c078424d80",
+      "manifest": {
+        "formatVersion": 1,
+        "kind": "first-operating-workbench-not-production-art",
+        "bundler": "esbuild",
+        "scriptFormat": "iife",
+        "externalRuntimeDependencies": [],
+        "assetOriginProbe": false,
+        "artifacts": {
+          "index.html": {
+            "bytes": 884,
+            "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+          },
+          "bundle.js": {
+            "bytes": 716308,
+            "sha256": "cb73662ef54a78a8f0f980d95bbb4a41ee4f9b3b6729ae30059e9dabfccc93ec"
+          },
+          "bundle.css": {
+            "bytes": 18493,
+            "sha256": "2951fd778ea783268ebe5221297b6f5db39e33b75315636b756cbb57bd49a9b6"
+          },
+          "bundle.js.LEGAL.txt": {
+            "bytes": 188,
+            "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Local Swift compilation/execution is unavailable. These results do not test the native storage correction or actual Simulator clean-install trial.",
+    "The full web/native workflows must run against the next published commit. Earlier f030 records remain bound to f030.",
+    "Pointer fixtures prove cancellation and fresh-tap recovery; camera displacement was not separately measured. Chromium input is not physical Duo touch evidence.",
+    "Legacy storage never protected its ordering counter. Compatibility preserves the verified document and starts a new sequence; it does not authenticate historical ordering."
+  ],
+  "native_source_review": {
+    "result": "reviewed-not-compiled-or-executed",
+    "new_layout_store_tests": 5,
+    "host_timing_test": "Existing test now observes the actual awaited store call through a consumed MainActor callback before mutation/return. Exactly one observation is required. No WKWebView acknowledgement delivery is asserted.",
+    "source_files": [
+      {
+        "path": "apps/ios/TinJunction/Documents/LayoutStore.swift",
+        "bytes": 9978,
+        "sha256": "212b128c8cbfa876ceb3b133c91cbaa798db34485b30d68152a2112e5931cae1"
+      },
+      {
+        "path": "apps/ios/TinJunctionTests/LayoutStoreTests.swift",
+        "bytes": 19330,
+        "sha256": "522b30a2d1ca6d6b03dbc8f20f39de89fb819e021aa2eb94c93795714552fc30"
+      },
+      {
+        "path": "apps/ios/TinJunctionTests/EngineHostModelTests.swift",
+        "bytes": 14493,
+        "sha256": "9c9e6948b00c5035aea5367feb7db72f224d2a5d94ef6c0560797d3919f9f4a0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+Actual native model workflow 40458903138, job 122038591253, tested f0303cc9a9f49e48902350b14f526d5dcdbda3de
+Selected 41 first-workbench bridge/host/document/store pass lines from the independently hashed full log.
+
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testAcceptsExpectedReady]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testDocumentChannelDoesNotIncreaseDiagnosticLimit]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testErrorPayloadRequiresCodeAndRecoverability]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testFirstRailwayReadyAndStrictLayoutHandshake]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testMetricsCannotCarryNonFiniteNumbers]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testRejectsArbitraryCommand]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testRejectsExtraTopLevelAuthority]' passed (0.000 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testRejectsInvalidIdentifier]' passed (0.013 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testRejectsNonObjectPayload]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testRejectsUnboundedPayload]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testRejectsWrongRendererOrBuild]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testRejectsWrongVersion]' passed (0.030 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testSnapshotValidatesDocumentAndExpectedRevision]' passed (0.008 seconds).
+Test Case '-[TinJunctionTests.BridgeEnvelopeTests testViewportUsesPointsAndNullableHinge]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testFailedSavePreservesOpenLayoutAndDoesNotClaimDurability]' passed (0.081 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testOldSessionCannotWriteAfterReload]' passed (0.045 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testProcessRecoveryIsBoundedWithoutAWebView]' passed (0.005 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testProtectedSaveFailuresBlockFurtherWritesAndPreserveOpenEdits]' passed (0.030 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testReadyRequiresCurrentSessionLayoutAcknowledgement]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRecoverableContextLossKeepsTransportAlive]' passed (0.004 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRepeatedInFlightRequestIsCoalescedWithoutFillingSaveQueue]' passed (0.018 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testReplacedSessionClearsPendingRequestIdentity]' passed (0.005 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testRestoredIdentityAndRevisionMustMatch]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testSuccessfulSaveChangesDurableStateOnlyAfterStoreCompletes]' passed (0.004 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalErrorCannotBeClearedByMetrics]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload]' passed (0.021 seconds).
+Test Case '-[TinJunctionTests.EngineHostModelTests testUnreadableSavedLayoutFailsWithoutFactoryReplacement]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.LayoutDocumentTests testInvalidNumericTypesAndRangesAreRejected]' passed (0.002 seconds).
+Test Case '-[TinJunctionTests.LayoutDocumentTests testNamesCountScalarsAndRejectControlCharacters]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.LayoutDocumentTests testRestoreStopsTrainWithoutMutatingSavedDocument]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.LayoutDocumentTests testRoundTripPreservesIdentityAndModel]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.LayoutDocumentTests testSceneryChecksIdentityBoardRailAndFixedFixtures]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.LayoutDocumentTests testSourceSizeIsBoundedBeforeDecoding]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.LayoutDocumentTests testTypeScriptStarterFixtureDecodesWithIdenticalModelBounds]' passed (0.003 seconds).
+Test Case '-[TinJunctionTests.LayoutDocumentTests testUnknownFieldsAndFutureSchemaAreRejected]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.LayoutStoreTests testBothCorruptFilesRemainUntouchedAndBlockFactoryOverwrite]' passed (0.014 seconds).
+Test Case '-[TinJunctionTests.LayoutStoreTests testChecksumDetectsValidJSONCorruption]' passed (0.008 seconds).
+Test Case '-[TinJunctionTests.LayoutStoreTests testCorruptPrimaryRecoversVerifiedPreviousWithoutRewritingIt]' passed (0.548 seconds).
+Test Case '-[TinJunctionTests.LayoutStoreTests testFirstSaveReloadAndIdempotentRetry]' passed (0.026 seconds).
+Test Case '-[TinJunctionTests.LayoutStoreTests testInterruptedWritesPreserveCompleteGenerationAtEveryBoundary]' passed (0.020 seconds).
+Test Case '-[TinJunctionTests.LayoutStoreTests testStaleConflictingAndForeignSavesNeverReplaceLatest]' passed (0.006 seconds).
+
+	 Executed 79 tests, with 0 failures (0 unexpected) in 2.854 (3.132) seconds
+	 Executed 79 tests, with 0 failures (0 unexpected) in 2.854 (3.133) seconds
+** TEST SUCCEEDED **

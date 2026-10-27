@@ -77,7 +77,7 @@ test("a fresh touch can place scenery after an interrupted touch is canceled", a
   await expect.poll(() => page.evaluate(() => window.__TIN_DIAGNOSTICS__!.sceneryCount)).toBe(before.scenery + 1);
 });
 
-for (const gesture of ["drag away and return", "right click", "middle click"] as const) {
+for (const gesture of ["drag away and return", "right click", "middle click", "Control click", "Meta click", "Shift click"] as const) {
   test(`camera input cannot place scenery after ${gesture}`, async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 900 });
     await openWorkbench(page);
@@ -90,6 +90,11 @@ for (const gesture of ["drag away and return", "right click", "middle click"] as
       await page.mouse.move(680, 410, { steps: 2 });
       await page.mouse.move(650, 410, { steps: 2 });
       await page.mouse.up();
+    } else if (gesture === "Control click" || gesture === "Meta click" || gesture === "Shift click") {
+      const modifier = gesture.split(" ")[0]!;
+      await page.keyboard.down(modifier);
+      await page.mouse.click(650, 410);
+      await page.keyboard.up(modifier);
     } else await page.mouse.click(650, 410, { button: gesture === "right click" ? "right" : "middle" });
     await nextFrames(page);
     expect(await page.evaluate(() => ({ scenery: window.__TIN_DIAGNOSTICS__!.sceneryCount, revision: window.__TIN_DIAGNOSTICS__!.revision }))).toEqual(before);
@@ -97,6 +102,25 @@ for (const gesture of ["drag away and return", "right click", "middle click"] as
     await expect.poll(() => page.evaluate(() => window.__TIN_DIAGNOSTICS__!.sceneryCount)).toBe(before.scenery + 1);
   });
 }
+
+test("pressing and releasing a camera modifier cancels an already held editor tap", async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await openWorkbench(page);
+  await page.getByRole("button", { name: "Arrange scenery", exact: true }).click();
+  await page.getByRole("button", { name: "Place fir tree", exact: true }).click();
+  const before = await page.evaluate(() => ({ scenery: window.__TIN_DIAGNOSTICS__!.sceneryCount, revision: window.__TIN_DIAGNOSTICS__!.revision }));
+  await page.mouse.move(650, 410);
+  await page.mouse.down();
+  // All pointer events retain the same position and the release has no modifier.
+  // Observing only pointer-up flags would incorrectly commit this camera gesture.
+  await page.keyboard.down("Shift");
+  await page.keyboard.up("Shift");
+  await page.mouse.up();
+  await nextFrames(page);
+  expect(await page.evaluate(() => ({ scenery: window.__TIN_DIAGNOSTICS__!.sceneryCount, revision: window.__TIN_DIAGNOSTICS__!.revision }))).toEqual(before);
+  await page.mouse.click(650, 410);
+  await expect.poll(() => page.evaluate(() => window.__TIN_DIAGNOSTICS__!.sceneryCount)).toBe(before.scenery + 1);
+});
 
 async function usableTarget(locator: Locator, page: Page): Promise<void> {
   await expect(locator).toBeVisible();

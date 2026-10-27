@@ -1,0 +1,22 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+Running 12 tests using 1 worker
+
+(node:122931) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:122931) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after native viewport (13.6s)
+  ✓   2 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after native inactive (17.0s)
+  ✓   3 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after document hidden (16.2s)
+  ✓   4 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after canvas resize (19.2s)
+  ✓   5 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:100:1 › a fresh touch can place scenery after an interrupted touch is canceled (22.8s)
+  ✓   6 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after drag away and return (17.5s)
+  ✓   7 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after right click (15.2s)
+  ✓   8 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after middle click (16.1s)
+  ✓   9 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after Control click (15.7s)
+  ✓  10 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after Meta click (15.3s)
+  ✓  11 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after Shift click (15.1s)
+  ✓  12 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:209:1 › pressing and releasing a camera modifier cancels an already held editor tap (16.3s)
+
+  12 passed (3.4m)

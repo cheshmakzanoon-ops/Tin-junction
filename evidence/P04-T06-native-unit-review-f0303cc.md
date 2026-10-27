@@ -1,0 +1,18 @@
+# P04-T06 — native workbench unit results at f0303cc
+
+[Native model run 40458903138](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40458903138), job `122038591253`, executed the fixed `TinJunctionTests` target at **`f0303cc9a9f49e48902350b14f526d5dcdbda3de`**. All **79 unit tests passed** with zero failures; XCTest completed at **2026-10-27 06:11:05.666 UTC**. This record uses the 41 bridge/host/v1-document/store results relevant to P04-T06-A2, alongside the separately required web model and full integration evidence.
+
+| Actual unit class | Passed cases | Requirement contribution |
+| --- | ---: | --- |
+| BridgeEnvelopeTests | 14 | Reject arbitrary commands, wrong versions/renderers/builds, invalid IDs, non-object/oversized/non-finite input and extra authority; validate layout handshakes, document revisions and nullable viewport data |
+| EngineHostModelTests | 13 | Reject stale session writes, retain protected/open edits after save failure, coalesce pending saves, observe initial/final durable state around a controlled store, require matching restored identity/revision and preserve terminal failure until explicit reload |
+| LayoutDocumentTests | 8 | Bound input before decode; reject malformed numeric types/ranges, unknown fields/future versions, invalid names and unsafe scenery; preserve model identity and stop restored trains |
+| LayoutStoreTests | 6 | Exercise actual temporary-file save/reload and idempotent retry, corruption detection and previous-generation recovery, conflicting/stale/foreign save rejection, protection of two damaged files, and injected interrupted-write boundaries |
+
+The [selected actual pass lines](P04-T06-native-unit-tests-f0303cc.txt) retain every case name and its observed outcome. At this tested commit, the controlled actor store completed without a held suspension. Its timing fixture observed the host before its scheduled task ran and after storage completed, without inspecting an in-flight write or actual `native.saved` delivery. The later repair adds that pending-state observation. The separate storage tests use temporary files. Method-level process termination and controlled errors do not establish real WebContent process death or physical power-loss behavior.
+
+Subsequent review found that the f030 generation checksum did not bind checkpoint metadata. Its six passing storage cases did not cover a checkpoint-only alteration. The [current repair](../planning/handoffs/2026-10-27-checkpoint-integrity.md) adds integrity protection and regressions; this record preserves the actual earlier pass and all tested hashes, and cannot accept those newer sources.
+
+The [evidence manifest](P04-T06-native-unit-f0303cc.json) pins the tested source dependencies and links the actual artifact. The downloaded archive is **267,604 bytes**, SHA-256 **`8e2987806a7f141860b77b1f3a27be5b07200397d6e10fcd73a49f5415df3a75`**, matching the reported upload digest. Its full `xcodebuild.log` is **248,059 bytes**, SHA-256 **`864885100a5899d4f6cca6c53ab092ee6e65b7598b15cc4af4108f034f4c9731`**. The artifact is `native-models-40458903138-1`, ID `12713359093`, with recorded retention through **2026-11-10 06:11:15 UTC**.
+
+The runner selected the actual iPhone Duo Simulator and compiled against Xcode 27.1 / iOS 27.1. This lane executed no UI tests. The full native and web workflows remain mandatory, and this manifest alone does not complete P04-T06. The existing [visual/prototype limitations](../planning/handoffs/2026-10-27-workbench-refinement.md#remaining-quality-limits) remain unchanged: the running application is a procedural fixed-oval workbench, while the detached general-track and v2 schema work has its own later integration gates. This is not physical-device or final-art approval.

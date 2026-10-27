@@ -4,7 +4,7 @@ import type { LayoutDocument } from "./model";
 export const BROWSER_SAVE_KEY = "tin-junction.workbench.v1.current";
 export const BROWSER_BACKUP_KEY = "tin-junction.workbench.v1.previous";
 export interface KeyValueStore { getItem(key: string): string | null; setItem(key: string, value: string): void }
-type Generation = { format: "tin-junction-browser-generation"; checkpoint: number; checksum: string; document: LayoutDocument };
+type Generation = { format: "tin-junction-browser-generation"; storageVersion: 2; checkpoint: number; checksum: string; generationChecksum: string; document: LayoutDocument };
 export type RestoreResult = { document: LayoutDocument | null; checkpoint: number; recovered: boolean; error: string | null };
 
 /** Non-cryptographic accidental-corruption checksum. Native generations use SHA-256. */
@@ -12,6 +12,14 @@ function checksum(text: string): string {
   let value = 0x811c9dc5;
   for (let index = 0; index < text.length; index += 1) { value ^= text.charCodeAt(index); value = Math.imul(value, 0x01000193); }
   return (value >>> 0).toString(16).padStart(8, "0");
+}
+function generationChecksum(checkpoint: number, documentChecksum: string): string {
+  return checksum(JSON.stringify({ checkpoint, checksum: documentChecksum, storageVersion: 2 }));
+}
+function generation(document: LayoutDocument, checkpoint: number): Generation {
+  const digest = checksum(JSON.stringify(document));
+  return { format: "tin-junction-browser-generation", storageVersion: 2, checkpoint, checksum: digest,
+    generationChecksum: generationChecksum(checkpoint, digest), document };
 }
 const structure = (document: LayoutDocument): string => JSON.stringify([
   document.documentId, document.revision, document.name, document.seed,
@@ -23,10 +31,20 @@ function decode(raw: string | null): Generation | null {
     const value: unknown = JSON.parse(raw);
     if (!value || typeof value !== "object" || Array.isArray(value)) return null;
     const item = value as Record<string, unknown>;
-    if (Object.keys(item).some(key => !["format", "checkpoint", "checksum", "document"].includes(key)) || item.format !== "tin-junction-browser-generation" || !Number.isSafeInteger(item.checkpoint) || (item.checkpoint as number) < 0) return null;
+    const legacy = item.storageVersion === undefined;
+    const keys = legacy ? ["format", "checkpoint", "checksum", "document"]
+      : ["format", "storageVersion", "checkpoint", "checksum", "generationChecksum", "document"];
+    if (Object.keys(item).length !== keys.length || Object.keys(item).some(key => !keys.includes(key))
+      || (!legacy && item.storageVersion !== 2) || item.format !== "tin-junction-browser-generation"
+      || !Number.isSafeInteger(item.checkpoint) || (item.checkpoint as number) < 0) return null;
     const parsed = parseLayoutDocument(item.document);
     if (!parsed.ok || item.checksum !== checksum(JSON.stringify(item.document))) return null;
-    return { format: "tin-junction-browser-generation", checkpoint: item.checkpoint as number, checksum: checksum(JSON.stringify(parsed.value)), document: parsed.value };
+    if (!legacy && item.generationChecksum !== generationChecksum(item.checkpoint as number, item.checksum as string)) return null;
+    // Legacy checksums never protected ordering metadata. Preserve the verified
+    // document and original stored bytes, but start its new session at zero.
+    // Only a later successful save upgrades the wrapper; this is not a fallback
+    // to an older document and must not display a lost-changes recovery notice.
+    return generation(parsed.value, legacy ? 0 : item.checkpoint as number);
   } catch { return null; }
 }
 
@@ -62,7 +80,7 @@ export class BrowserLayoutStore {
       throw new Error("This checkpoint conflicts with the saved layout.");
     }
     if (old && old.document.revision === document.revision && structure(old.document) !== structure(parsed.value)) throw new Error("Layout changes require a new revision.");
-    const next: Generation = { format: "tin-junction-browser-generation", checkpoint, checksum: digest, document: parsed.value };
+    const next = generation(parsed.value, checkpoint);
     const bytes = JSON.stringify(next);
     if (new TextEncoder().encode(bytes).length > 524_288) throw new Error("Layout exceeds the supported save size.");
     // localStorage replaces each key atomically. A failed primary write leaves the old generation intact.

@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "task_id": "P04-T06",
+  "result": "passed",
+  "tested_commit": "f0303cc9a9f49e48902350b14f526d5dcdbda3de",
+  "recorded_at": "2026-10-27T06:22:38.452366+00:00",
+  "reviewed_by": "installed_bundle_evidence (read-only completed-CI review; coordinator acceptance remains separate)",
+  "decision_reference": null,
+  "device": null,
+  "evidence_id": "P04-T06-web-workbench-unit-f0303cc",
+  "kind": "unit_test",
+  "source_files": [
+    {
+      "path": ".github/workflows/quality.yml",
+      "sha256": "55e2b02a28efc8ae9c5ce924006185e3ca51ccbcbdc07cd8d27eea25b78245bd"
+    },
+    {
+      "path": ".node-version",
+      "sha256": "d9f318747a126ce2247661af67852b185def7789492eabfad7bba322be087c33"
+    },
+    {
+      "path": "assets/catalog.json",
+      "sha256": "8992916f2045163d5795de53e73fecb995f35f4eec2edc959af2bb19dd83ca7b"
+    },
+    {
+      "path": "docs/architecture/FIRST_WORKBENCH.md",
+      "sha256": "b5096ab03b77da33d12ef0b0a1bfbddb72408efa3e89a3079220776a084479af"
+    },
+    {
+      "path": "docs/decisions/ADR-0006-first-operating-workbench.md",
+      "sha256": "3941d00aa161fbae2430c31f36ea3870df782ba72770d7e33a6281d4def4687b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "playwright.config.ts",
+      "sha256": "562c3c57fcda59ed920bbc38d77594c6731f0cfa32be884796bf9b73ba52eb99"
+    },
+    {
+      "path": "tests/fixtures/documents/layout-design-v2-corpus.json",
+      "sha256": "735a863cc707e7340333d44b4d4db3699abe2a49bb6675dc5bd044fb4857af42"
+    },
+    {
+      "path": "tests/fixtures/track/capture-joints.mjs",
+      "sha256": "7f3d0358899905cadb2b6b8a5fb45a933aa4489dfd068bbfa6a008e5814f5d1c"
+    },
+    {
+      "path": "tests/fixtures/track/capture-vehicles.mjs",
+      "sha256": "fe3960055edad5f2c24c46c80113e2d4544647e59d6eb5248d3e6e4fe91524a5"
+    },
+    {
+      "path": "tests/fixtures/track/centerlines.json",
+      "sha256": "1b4be09b431aca1a48ab10d18801a2a5f8233fe20390907aca94f4e9b160022d"
+    },
+    {
+      "path": "tests/fixtures/track/clearance-fixtures.ts",
+      "sha256": "87936982fb6b216a3936c56c7d472b217b6a9c068d57deeb09c88dfc41f7bc30"
+    },
+    {
+      "path": "tests/fixtures/track/graph-fixtures.ts",
+      "sha256": "7fc8ea553ddac19e4dcfb8fe050262defcf49b011681ad03178dc8e4a015323f"
+    },
+    {
+      "path": "tests/fixtures/track/joints.html",
+      "sha256": "af1d584565e5690d7b07c4b98df985ed0ab9d9b7567bbcdf0a0d6f3d32d0290c"
+    },
+    {
+      "path": "tests/fixtures/track/joints.ts",
+      "sha256": "a2e7430bea5b97a4c8d43853f31b80a23d403d84183ef612e7d0101d97cadb4d"
+    },
+    {
+      "path": "tests/fixtures/track/turnout-fixtures.ts",
+      "sha256": "02011b0638e216face36e13d65a462e6d05ab3fae6984798ded42cea08e34230"
+    },
+    {
+      "path": "tests/fixtures/track/vehicle-fixtures.ts",
+      "sha256": "87579bb17e00b2a9a23f75489db83aabf34da6aae3189f50093cc4c2cc6bdb5e"
+    },
+    {
+      "path": "tests/fixtures/track/vehicles.html",
+      "sha256": "d1a4ba61559be2c2aba43c367d6b8070fd78a64b7ae1178fe8bce8502fad364a"
+    },
+    {
+      "path": "tests/fixtures/track/vehicles.ts",
+      "sha256": "7a08b06c65c22fd4eaf5278685c514883230acaa6cb09a97acb7b71115d2b8f2"
+    },
+    {
+      "path": "tests/web/unit/architecture-geometry.test.ts",
+      "sha256": "a5a81d4dc9b0ac1fc638758e8630f9ebde98700eb53922dfb0fa196f68960a7b"
+    },
+    {
+      "path": "tests/web/unit/bridge.test.ts",
+      "sha256": "0ca3de2ff6084caa2b3872c23bbaf32073a943c19681b893fe0ca68062064253"
+    },
+    {
+      "path": "tests/web/unit/case-pond-geometry.test.ts",
+      "sha256": "97bad37aee6dc0626538342da57d63b215990653640f3f9b0d6e6ac00d2f425e"
+    },
+    {
+      "path": "tests/web/unit/clock.test.ts",
+      "sha256": "abb741abfb9287958e4250b1d1a50a522dbaabc5ffd7593179acb4fe8fb9a641"
+    },
+    {
+      "path": "tests/web/unit/layout-design.test.ts",
+      "sha256": "68e3b8ed1084f10b0ccab789489eb4b7593059cde0bd0b29644b5a21b98d1b09"
+    },
+    {
+      "path": "tests/web/unit/model-geometry.test.ts",
+      "sha256": "20448ca1c6a0d99b23c6ae175fc80f88c3684e3c23ae6e3ed35a3f07bd067d3b"
+    },
+    {
+      "path": "tests/web/unit/model-railway.test.ts",
+      "sha256": "055658063f6f78da42142b9ecdb0457e2e0230f6453e0a53e1e0555e46e91330"
+    },
+    {
+      "path": "tests/web/unit/model-validation.test.ts",
+      "sha256": "911f36628eba24d532d028085cf6c14533d7363eccabf17e1fde2503635358c3"
+    },
+    {
+      "path": "tests/web/unit/persistence.test.ts",
+      "sha256": "64f5d04197e5361dbe4d7bc3e607f4994e91d1c41a14dc5168615280d131fdff"
+    },
+    {
+      "path": "tests/web/unit/placement-validation.test.ts",
+      "sha256": "16f72ca83c95b79bdb9effa9f85567c3016d570db843a2176aa3743718bc76d4"
+    },
+    {
+      "path": "tests/web/unit/routed-motion.test.ts",
+      "sha256": "7227a07ef896e1b5c4946212b87fdb9f21954117e7cef84eba1fd4f0c1b840bb"
+    },
+    {
+      "path": "tests/web/unit/routed-poses.test.ts",
+      "sha256": "4d4d7e7c8617a01edf0da3ff60ff08038731fda69377b30938b9c7a06b79a9c1"
+    },
+    {
+      "path": "tests/web/unit/scene-geometry.test.ts",
+      "sha256": "bdcab18658460dca94f54478a485641c638277e4aab1b5a42f14622dc60cebc1"
+    },
+    {
+      "path": "tests/web/unit/scenery-geometry.test.ts",
+      "sha256": "8a85ffff9ab550d1820ec54ca74de4ef8070c0095157120e5b9fba37c4becb35"
+    },
+    {
+      "path": "tests/web/unit/station-clearance.test.ts",
+      "sha256": "2774b77cc7f7325e0cd7c225b0088df8fe5c5dc814cf841f216c4de4d29100e1"
+    },
+    {
+      "path": "tests/web/unit/track-centerline.test.ts",
+      "sha256": "97f2cadd91bfe473bdf51e624afe20cb5e71788032d42844647d0a8ebf9fa2df"
+    },
+    {
+      "path": "tests/web/unit/track-clearance.test.ts",
+      "sha256": "d6b5bf82be5dee19af5f8db7212e0f7063cff3c19ee18162f56fde51a23fdf41"
+    },
+    {
+      "path": "tests/web/unit/track-graph.test.ts",
+      "sha256": "a24d3d2cd103532466382bf48fe6069682d778b3934aed8cff95c9c6c9b0ae62"
+    },
+    {
+      "path": "tests/web/unit/track-module.test.ts",
+      "sha256": "4fe2fb3385e1201d1058d2dfbaa4d7b00b7e9a1d7fd7e608f8fc5c13f002af9f"
+    },
+    {
+      "path": "tests/web/unit/train-art-geometry.test.ts",
+      "sha256": "0bbb313951e710c3fe46c5374205787073f6e7411164a4c2c08dd95b9190c857"
+    },
+    {
+      "path": "tests/web/unit/train-mechanics.test.ts",
+      "sha256": "cfcff4d4299e8ebdd0ebb53a6f6143b106b1f97745cdfb04bfad0090aaae2924"
+    },
+    {
+      "path": "tests/web/unit/turnout.test.ts",
+      "sha256": "5f6c139b8e99eaef69f679eceec80cc39310926445bbeec8ff63e12d4c385639"
+    },
+    {
+      "path": "tools/build-web.mjs",
+      "sha256": "324e2e817346bb5ef1c9b40d914b38ebdf57f1b539399d2fbec434eec168b0fe"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "6235e2576f6780c2c0b6c79f4ba8ab84a19a7158effe1d66773e7ca4b49b18b4"
+    },
+    {
+      "path": "web/packaged.html",
+      "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+    },
+    {
+      "path": "web/src/audio.ts",
+      "sha256": "9df6cfbb47875ad491e76e5ef7725f463cf9a7153b7897c5e43732bedd21e2c1"
+    },
+    {
+      "path": "web/src/bridge.ts",
+      "sha256": "214b40845cef5a50b0a3113fc587bfe39da3b52e49e8a79bf31d472bb55afe4e"
+    },
+    {
+      "path": "web/src/clock.ts",
+      "sha256": "77c37952ff76a84e88f1cb3e4cc7980e5b9ed48bb04840b366aec8a8e467c912"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.css",
+      "sha256": "1a5119708079edcdab981a024e80635f37038bfd3dd848c18930e32af17dcdc4"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.ts",
+      "sha256": "5e369571c8695f398d30a2a875fa80dba0b7d9081a92d72262226639680d47e0"
+    },
+    {
+      "path": "web/src/diagnostics/buildFlags.d.ts",
+      "sha256": "468fb269f5b46e8b60c1685eea93449d7e73d50e88e43571c579483440ea3f3e"
+    },
+    {
+      "path": "web/src/documents/FORMAT_V2.md",
+      "sha256": "6e84f77afd0fd7f408a5e6c97062540f88132510335a3a18012fe73fef685d00"
+    },
+    {
+      "path": "web/src/documents/layoutDesign.ts",
+      "sha256": "323af0857e72d3d73eea6a33d936cae34748918818e262dec7399aa9d26be1c9"
+    },
+    {
+      "path": "web/src/editor/placementValidation.ts",
+      "sha256": "48b63331cd23ab131d99f85f0251ab26f874e61128c0c7603250cf057b24ff5c"
+    },
+    {
+      "path": "web/src/main.ts",
+      "sha256": "d1af805f8fb0f5aa0263fdfaa5df17ec28f3cabaabb4986a4b1cc126495e753c"
+    },
+    {
+      "path": "web/src/model/geometry.ts",
+      "sha256": "e56fbe722f3e71cc06d70679af0eda98d32ed2ebe071bab86d37c2f403a1dae9"
+    },
+    {
+      "path": "web/src/model/index.ts",
+      "sha256": "853d7ec3b2a155b0935f5091399760fc0675baecfbcb3ccafb22485379f70161"
+    },
+    {
+      "path": "web/src/model/layout.ts",
+      "sha256": "c55a69e9803d9418ef3084bc65c5bf4c06cba0927021f4438af907aee1d27d50"
+    },
+    {
+      "path": "web/src/model/railway.ts",
+      "sha256": "c38cb8ecbea445583669db3dc79ed67574124b7e4c6370b551effc444149feb3"
+    },
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/model/validation.ts",
+      "sha256": "c5d4eb4f2fdc33f95bc227fad227e71c65a99cbc8f3df86dddfc7e50e7c0f42e"
+    },
+    {
+      "path": "web/src/persistence.ts",
+      "sha256": "f87345bb2c569d43b733c28c035d7588bb28ba97b09d6b85912346290df2bbbe"
+    },
+    {
+      "path": "web/src/scene/MiniatureScene.ts",
+      "sha256": "af9b338172f349b73d623575e001acbbe42c74d7e848dc18536930f71227b6b7"
+    },
+    {
+      "path": "web/src/scene/architectureGeometry.ts",
+      "sha256": "fad629ebb0bf7a4cda5cfdee386255ee025d0b50009d6122a51530cd30ed04ea"
+    },
+    {
+      "path": "web/src/scene/canopyGeometry.ts",
+      "sha256": "411ff2d521ab1d80db1bafdab73f3eb10bff04fa081410eac937f951363df4ed"
+    },
+    {
+      "path": "web/src/scene/caseGeometry.ts",
+      "sha256": "d95104c4bac012f168235144fcdf1d14e776d86f5d21546721d9e1f43cc53e24"
+    },
+    {
+      "path": "web/src/scene/geometry.ts",
+      "sha256": "149271929c855fe9683488d0a6477e02fcc76b03373cf5b67d3d7d17d5720b4a"
+    },
+    {
+      "path": "web/src/scene/materials.ts",
+      "sha256": "627438adbe584860fe6947c06dd2ea574ebda8b8656ed2088c7b6ab7a11227da"
+    },
+    {
+      "path": "web/src/scene/pondGeometry.ts",
+      "sha256": "f8588c579dba55a69960b09d26fca0021bc46f009f8a8fbd4c8eb0e8efccb1aa"
+    },
+    {
+      "path": "web/src/scene/scenery.ts",
+      "sha256": "47930ede316599bbef971c8ad8951ee9d0cf9a573cc8db3b000d7cabc312beca"
+    },
+    {
+      "path": "web/src/scene/stationPlacement.ts",
+      "sha256": "56a8224150b0575998671bf17c7c7ef5fb72deed64b69fc2fd64c1bdeb182511"
+    },
+    {
+      "path": "web/src/scene/train.ts",
+      "sha256": "6f9f9ff667a4c2cf054a4cafcf62f053388bd65d3192e2165d069d7c3d311239"
+    },
+    {
+      "path": "web/src/scene/trainDetailGeometry.ts",
+      "sha256": "b64be9f90e242d2dac0cf091c2091811f33a7d1cbc20d59c125deae2fbfa477c"
+    },
+    {
+      "path": "web/src/scene/trainMechanics.ts",
+      "sha256": "0ed340064bde4eddb92e1a30ea6e5d25a24de96b373e23ca0368b750059b8320"
+    },
+    {
+      "path": "web/src/simulation/MOTION.md",
+      "sha256": "3074213c3c134d81ca596bdfd07ea4b47f70c68e45ec2efd24625c97a4df8e6c"
+    },
+    {
+      "path": "web/src/simulation/VEHICLES.md",
+      "sha256": "48ccd4ab5e7835e8774edf3b342e59a4260550597dad22c64c0fa19ecf0f94a8"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "b2d1a81d4e14b2ee7ef1c9fbe7293150e9d65cbf90d7317c6bc31f371f361ef0"
+    },
+    {
+      "path": "web/src/simulation/routedMotion.ts",
+      "sha256": "db0d5bc20d479552369f798a0b73e7bb0f60568b948f80d5435e55b34d6ee69e"
+    },
+    {
+      "path": "web/src/simulation/routedPoses.ts",
+      "sha256": "ffbaa7e7dca44a8556a75f98f983b907c8512d91e6d33a65940bfeff99081c01"
+    },
+    {
+      "path": "web/src/simulation/vehicleCatalog.ts",
+      "sha256": "8a48b82b331850acfe108a4f318c0c3414c750d83f1844336569bb4228efdb66"
+    },
+    {
+      "path": "web/src/simulation/vehicleStep.ts",
+      "sha256": "88e0d97f62f6235e01908fcb67573261a8f52b57ad00919a9058bbc56a6483c3"
+    },
+    {
+      "path": "web/src/style.css",
+      "sha256": "1467b8e32d093ac40693696564470f21313d971a0de9135dc13f7527a7307b98"
+    },
+    {
+      "path": "web/src/track/CLEARANCE.md",
+      "sha256": "fcf4ba1d11262f1c42e1b0beac77de470709ef5b6d9f044555ec8f402288f5c8"
+    },
+    {
+      "path": "web/src/track/README.md",
+      "sha256": "052dee4508151e0f2f3cc01326ee32218cd1f4c961550e2e867cfbe92e08eecd"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/clearance.ts",
+      "sha256": "b72d636c79ebb885df55786c737451e9aa9dd95f9aa4f93b38e810ebc9ee8b9a"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    },
+    {
+      "path": "web/src/ui.ts",
+      "sha256": "85cc386bb11eaffa4d71dc9dfb50a1743baba5117807163a9235659a337c293e"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run check (actual GitHub Actions run 40458903202, job 122038591432; project validation, typecheck, 108 project tests, 28 iOS-tool tests, 301 web unit tests, ordinary build and verification)",
+      "exit_code": 0,
+      "output_path": "evidence/P04-T06-web-unit-tests-f0303cc.txt"
+    },
+    {
+      "command": "npm run bundle:ios (actual GitHub Actions run 40458903202, job 122038591432; ordinary packaging, not installed native verification)",
+      "exit_code": 0,
+      "output_path": "evidence/P04-T06-web-unit-tests-f0303cc.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P04-T06-web-unit-tests-f0303cc.txt",
+      "sha256": "c0d32b3f112b617e928b3b6fa7424a61f38c371e0dc3627bd0e55d0ac0338fa2"
+    },
+    {
+      "path": "evidence/P04-T06-web-ci-observations-f0303cc.json",
+      "sha256": "9fee758fb34b8f863b13dd6ab6bb8141756376c5c91b3e347597f9c97d12cd8a"
+    },
+    {
+      "path": "evidence/P04-T06-web-ci-review-f0303cc.md",
+      "sha256": "f0b510f6e22830e2c9e6bcfcd51e5435e5eabc1d62db06bb7cf5c6581eb4b484"
+    },
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40458903202/artifacts/12714156008",
+      "sha256": "91b8d2bb78718eaedfea979ea8f85e556544a6b8e54d80a73750be0a6a322108"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P04-T06-A2",
+      "evidence": [
+        0,
+        1,
+        "evidence/P04-T06-web-ci-observations-f0303cc.json",
+        "evidence/P04-T06-web-ci-review-f0303cc.md"
+      ]
+    }
+  ],
+  "limitations": [
+    "Actual f030 hosted CI executed 108 project tests, 28 iOS-tool tests and 301 web unit tests in 22 files; later local-only tool additions are not results from this tested commit.",
+    "The 91-file fingerprint scope covers the web workbench/unit inputs. Project/iOS-tool counts are observed ancillary pipeline checks; they do not confer native runtime acceptance.",
+    "Deterministic fixed-oval commands, invalid input, edit transactions and malformed/stale/recovered browser storage are the workbench subset. Passing detached graph/turnout/routed-consist/v2 tests does not integrate those systems into the runtime or complete their roadmap tasks.",
+    "Browser and controlled storage tests do not establish native Application Support durability or arbitrary process/power-loss behavior. Native storage and host evidence are separate.",
+    "The preserved manifest identifies ordinary web packaging only; no installed native bundle, clean install or denied-network native behavior is claimed.",
+    "Prototype scope and remaining general editor, migration, original production art, audio/haptics, real-device performance, accessibility, signing/distribution and owner gates are recorded in the review.",
+    "This manifest maps A2 only. Actual native integration, full required workflows and coordinator review remain necessary for whole-task acceptance.",
+    "The downloaded browser archive digest was independently checked; its GitHub expiry is 2026-11-10T06:14:53Z. Compact actual CI output remains in Git."
+  ]
+}

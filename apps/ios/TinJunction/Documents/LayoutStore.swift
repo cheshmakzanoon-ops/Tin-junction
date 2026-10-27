@@ -28,15 +28,34 @@ actor LayoutStore: LayoutStoring {
         case invalidStoredGeneration = "invalid_stored_generation"
     }
 
+    private struct GenerationIdentity: Encodable {
+        let storageVersion: Int
+        let checkpoint: Int
+        let checksum: String
+    }
+
     private struct Generation: Codable {
         let storageVersion: Int
         let checkpoint: Int
         let checksum: String
         let document: LayoutDocument
+        let generationChecksum: String?
 
         func checked(recovered: Bool) throws -> StoredLayout {
-            guard storageVersion == 1, (0...LayoutDocument.maximumInteger).contains(checkpoint),
+            guard (0...LayoutDocument.maximumInteger).contains(checkpoint),
                   checksum == LayoutStore.digest(try document.canonicalData()) else {
+                throw Failure.invalidStoredGeneration
+            }
+            if storageVersion == 1 {
+                // Legacy checksums protected the document, not ordering metadata.
+                // Preserve the verified content and raw file, but start the new
+                // host session's checkpoint sequence at zero. This is not backup
+                // recovery. The next normal save writes a protected v2 wrapper.
+                guard generationChecksum == nil else { throw Failure.invalidStoredGeneration }
+                return StoredLayout(document: document, checkpoint: 0, checksum: checksum, recovered: recovered)
+            }
+            guard storageVersion == 2, let generationChecksum,
+                  generationChecksum == (try LayoutStore.generationDigest(checkpoint: checkpoint, checksum: checksum)) else {
                 throw Failure.invalidStoredGeneration
             }
             return StoredLayout(document: document, checkpoint: checkpoint, checksum: checksum, recovered: recovered)
@@ -67,17 +86,34 @@ actor LayoutStore: LayoutStoring {
         SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
     }
 
+    private static func generationDigest(checkpoint: Int, checksum: String) throws -> String {
+        // Bind the ordering fields to the independently verified document digest.
+        // StoredLayout.checksum keeps its existing document/bridge meaning.
+        let identity = GenerationIdentity(storageVersion: 2, checkpoint: checkpoint, checksum: checksum)
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.sortedKeys, .withoutEscapingSlashes]
+        return digest(try encoder.encode(identity))
+    }
+
     private func read(_ url: URL, recovered: Bool) throws -> StoredLayout {
         let size = try url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
         guard size <= LayoutDocument.maximumBytes + 1_024 else { throw Failure.invalidStoredGeneration }
         let data = try Data(contentsOf: url)
         guard let raw = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-              Set(raw.keys) == ["storageVersion", "checkpoint", "checksum", "document"],
               let document = raw["document"] as? [String: Any] else { throw Failure.invalidStoredGeneration }
+        let legacyFields: Set<String> = ["storageVersion", "checkpoint", "checksum", "document"]
+        let protectedFields = legacyFields.union(["generationChecksum"])
+        let fields = Set(raw.keys)
+        guard fields == legacyFields || fields == protectedFields else { throw Failure.invalidStoredGeneration }
         // Codable intentionally gets a strict preflight: unknown fields in a
         // corrupted or future-format save must not disappear silently.
         _ = try LayoutDocument.decode(document)
-        return try JSONDecoder().decode(Generation.self, from: data).checked(recovered: recovered)
+        let generation = try JSONDecoder().decode(Generation.self, from: data)
+        guard (generation.storageVersion == 1 && fields == legacyFields)
+                || (generation.storageVersion == 2 && fields == protectedFields) else {
+            throw Failure.invalidStoredGeneration
+        }
+        return try generation.checked(recovered: recovered)
     }
 
     func load() throws -> StoredLayout? {
@@ -140,7 +176,8 @@ actor LayoutStore: LayoutStoring {
             }
         }
         try inject(.afterBackup)
-        let generation = Generation(storageVersion: 1, checkpoint: checkpoint, checksum: checksum, document: document)
+        let generation = Generation(storageVersion: 2, checkpoint: checkpoint, checksum: checksum, document: document,
+                                    generationChecksum: try Self.generationDigest(checkpoint: checkpoint, checksum: checksum))
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.sortedKeys, .withoutEscapingSlashes]
         let data = try encoder.encode(generation)

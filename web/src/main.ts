@@ -336,13 +336,15 @@ function start(): void {
     if (event.button !== 0 || !loaded || !lifecycle.running || help.open || model.mode !== "edit") return;
     activePointers.add(event.pointerId);
     if (activePointers.size > 1) { multiPointerGesture = true; pointerStart = null; }
+    else if (event.ctrlKey || event.metaKey || event.shiftKey) pointerStart = null;
     else if (!multiPointerGesture) pointerStart = { pointerId: event.pointerId, x: event.clientX, y: event.clientY };
   });
   canvas.addEventListener("pointermove", event => {
     // Once a gesture becomes a camera drag, returning to its starting point
     // cannot turn the eventual release back into a scenery edit.
     if (pointerStart && pointerStart.pointerId === event.pointerId
-      && Math.hypot(event.clientX - pointerStart.x, event.clientY - pointerStart.y) > tapMovementLimit) pointerStart = null;
+      && (event.ctrlKey || event.metaKey || event.shiftKey
+        || Math.hypot(event.clientX - pointerStart.x, event.clientY - pointerStart.y) > tapMovementLimit)) pointerStart = null;
   });
   canvas.addEventListener("pointercancel", event => {
     if (!activePointers.delete(event.pointerId)) return;
@@ -352,7 +354,7 @@ function start(): void {
     if (!activePointers.delete(event.pointerId)) return;
     if (multiPointerGesture) { pointerStart = null; if (!activePointers.size) multiPointerGesture = false; return; }
     const start = pointerStart; pointerStart = null;
-    if (!start || start.pointerId !== event.pointerId || event.button !== 0 || !lifecycle.running || help.open
+    if (!start || start.pointerId !== event.pointerId || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || !lifecycle.running || help.open
       || Math.hypot(event.clientX - start.x, event.clientY - start.y) > tapMovementLimit || model.mode !== "edit") return;
     const hit = scene.pickScenery(event.clientX, event.clientY);
     if (!palette && hit && hit !== selected) { select(hit); return; }
@@ -367,6 +369,9 @@ function start(): void {
     } else if (selected) perform({ type: "scenery.move", id: selected, ...point });
   });
   function keyboard(event: KeyboardEvent): void {
+    // OrbitControls reserves these modifiers for camera pan. Once used during
+    // a held pointer, releasing the key cannot turn that gesture into an edit.
+    if (event.ctrlKey || event.metaKey || event.shiftKey) pointerStart = null;
     if ((event.target instanceof Element && event.target.closest("input,textarea,button,select,a,summary,[contenteditable='true']")) || help.open) return;
     if (event.code === "Space") { event.preventDefault(); perform({ type: "stop" }); }
     else if (event.key.toLowerCase() === "e" && !event.metaKey && !event.ctrlKey) editing(model.mode !== "edit");

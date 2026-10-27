@@ -63,6 +63,40 @@ describe("browser development checkpoint integrity", () => {
     expect(recovered.recovered).toBe(true); expect(recovered.document).toEqual(original);
     expect(storage.getItem(BROWSER_SAVE_KEY)).toBe("damaged");
   });
+  it.each([0, Number.MAX_SAFE_INTEGER])("detects checkpoint-only corruption to %i and can save after recovery", corruptedCheckpoint => {
+    const storage = new MemoryStorage(), store = new BrowserLayoutStore(storage), original = createStarterLayout();
+    store.load(); store.save(original, 1);
+    store.save({ ...original, tick: 60, train: { ...original.train, distance: original.train.distance + 0.01 } }, 2);
+    const damaged = JSON.parse(storage.getItem(BROWSER_SAVE_KEY)!) as { checkpoint: number };
+    damaged.checkpoint = corruptedCheckpoint;
+    const damagedBytes = JSON.stringify(damaged);
+    storage.setItem(BROWSER_SAVE_KEY, damagedBytes);
+    const reopened = new BrowserLayoutStore(storage);
+    expect(reopened.load()).toEqual({ document: original, checkpoint: 1, recovered: true, error: null });
+    expect(storage.getItem(BROWSER_SAVE_KEY)).toBe(damagedBytes);
+    const recoveredEdit = { ...original, revision: 1, name: "Saved after recovery" };
+    reopened.save(recoveredEdit, 2);
+    expect(new BrowserLayoutStore(storage).load()).toEqual({ document: recoveredEdit, checkpoint: 2, recovered: false, error: null });
+    expect(() => reopened.save(original, 1)).toThrow(/stale/);
+  });
+  it("preserves a legacy document while discarding its unprotected checkpoint and upgrading on the next save", () => {
+    const storage = new MemoryStorage(), store = new BrowserLayoutStore(storage), original = createStarterLayout();
+    store.load(); store.save(original, 1);
+    const written = JSON.parse(storage.getItem(BROWSER_SAVE_KEY)!) as { checksum: string; document: LayoutDocument };
+    // The legacy wrapper checksum protected only the document. A high, valid
+    // counter is intentionally not trusted when establishing the new session.
+    const legacyBytes = JSON.stringify({ format: "tin-junction-browser-generation", checkpoint: Number.MAX_SAFE_INTEGER,
+      checksum: written.checksum, document: written.document });
+    storage.setItem(BROWSER_SAVE_KEY, legacyBytes);
+    const reopened = new BrowserLayoutStore(storage);
+    expect(reopened.load()).toEqual({ document: original, checkpoint: 0, recovered: false, error: null });
+    expect(storage.getItem(BROWSER_SAVE_KEY)).toBe(legacyBytes);
+    const changed = { ...original, revision: 1, name: "A new afternoon" };
+    reopened.save(changed, 1);
+    expect(new BrowserLayoutStore(storage).load()).toEqual({ document: changed, checkpoint: 1, recovered: false, error: null });
+    storage.setItem(BROWSER_SAVE_KEY, "interrupted");
+    expect(new BrowserLayoutStore(storage).load()).toEqual({ document: original, checkpoint: 0, recovered: true, error: null });
+  });
   it("keeps a valid primary and backup after a simulated failed primary write", () => {
     const storage = new MemoryStorage(), store = new BrowserLayoutStore(storage), original = createStarterLayout();
     store.load(); store.save(original, 1); storage.failingKey = BROWSER_SAVE_KEY;

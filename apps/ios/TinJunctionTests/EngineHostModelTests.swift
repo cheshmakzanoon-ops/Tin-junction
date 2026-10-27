@@ -7,6 +7,8 @@ private actor HostTestStore: LayoutStoring {
     let failSave: Bool
     let saveFailure: LayoutStore.Failure?
     private var saveCount = 0
+    private var saveObservationCount = 0
+    private var beforeSaveCompletion: (@MainActor @Sendable () -> Void)?
 
     init(initial: StoredLayout? = nil, failLoad: Bool = false, failSave: Bool = false, saveFailure: LayoutStore.Failure? = nil) {
         self.initial = initial
@@ -20,8 +22,15 @@ private actor HostTestStore: LayoutStoring {
         return initial
     }
 
-    func save(document: LayoutDocument, checkpoint: Int, expectedRevision: Int?) throws -> StoredLayout {
+    func save(document: LayoutDocument, checkpoint: Int, expectedRevision: Int?) async throws -> StoredLayout {
         saveCount += 1
+        if let observation = beforeSaveCompletion {
+            beforeSaveCompletion = nil
+            // The actual store call suspends before mutation or return. Consume
+            // this one-shot callback first; returning from it releases the save.
+            await observation()
+            saveObservationCount += 1
+        }
         if let saveFailure { throw saveFailure }
         if failSave { throw LayoutStore.Failure.injectedWriteFailure }
         let stored = StoredLayout(document: document, checkpoint: checkpoint, checksum: String(repeating: "a", count: 64), recovered: false)
@@ -30,6 +39,11 @@ private actor HostTestStore: LayoutStoring {
     }
 
     func numberOfSaves() -> Int { saveCount }
+    func numberOfSaveObservations() -> Int { saveObservationCount }
+
+    func observeNextSaveBeforeCompletion(_ observation: @escaping @MainActor @Sendable () -> Void) {
+        beforeSaveCompletion = observation
+    }
 }
 
 @MainActor
@@ -136,14 +150,29 @@ final class EngineHostModelTests: XCTestCase {
     }
 
     func testSuccessfulSaveChangesDurableStateOnlyAfterStoreCompletes() async throws {
-        let host = EngineHostModel(store: HostTestStore())
+        let store = HostTestStore()
+        let host = EngineHostModel(store: store)
         defer { host.detach() }
         try await start(host)
         try acknowledgeLayout(host)
-        host.accept(try checkpoint(host))
+        let request = try checkpoint(host)
+        await store.observeNextSaveBeforeCompletion { [weak host] in
+            guard let host else { XCTFail("The host must remain alive while its save is pending."); return }
+            // Observe after the host task entered storage, with the actual save
+            // awaiting this callback before it can mutate or return. There is no
+            // continuation to abandon and no scheduling delay used as evidence.
+            XCTAssertEqual(host.saveState, .saving)
+            XCTAssertNil(host.durableRevision)
+            XCTAssertNil(host.durableCheckpoint)
+        }
+        host.accept(request)
         XCTAssertEqual(host.saveState, .saving)
         XCTAssertNil(host.durableRevision)
         await host.awaitPendingStorage()
+        let saves = await store.numberOfSaves()
+        let observations = await store.numberOfSaveObservations()
+        XCTAssertEqual(saves, 1)
+        XCTAssertEqual(observations, 1, "The pending-state assertions must execute inside the real store call.")
         XCTAssertEqual(host.saveState, .saved)
         XCTAssertEqual(host.durableRevision, 0)
         XCTAssertEqual(host.durableCheckpoint, 1)

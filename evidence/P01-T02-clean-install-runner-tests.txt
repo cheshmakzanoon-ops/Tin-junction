@@ -1,0 +1,22 @@
+✔ fixed clean reinstall proves prior data, fresh empty storage, two sessions and installed byte identity (839.210034ms)
+✔ arbitrary bundle identifiers and test filters are rejected before native commands (57.955154ms)
+✔ successful native help on stderr is retained and does not require stdout (833.824822ms)
+✔ failed full suite, stale installed identity, wrong compiled app and absent prior save forbid app removal (1094.859096ms)
+✔ an unrelated service error or surviving mapping cannot masquerade as a removed data container (929.256788ms)
+✔ a missing-container response is insufficient if the actual selected Simulator is no longer available (518.742733ms)
+✔ failed uninstall preserves its real exit code and prevents reinstall or tests (448.897375ms)
+✔ retained save data or changed installed resources stop before any post-reset test launch (1152.766269ms)
+✔ symlinks cannot redirect the compiled app or the fresh native storage inspection (776.437182ms)
+✔ native exit65 has priority while attachment export and post-test identity are still attempted (1502.384211ms)
+✔ failed attachment export cannot turn a passing native test into a passing verification (767.128821ms)
+✔ missing final observations or a repeated native session reject an otherwise successful command (1455.227595ms)
+✔ post-test resource changes fail even when the fixed UI test and attachment export succeeded (778.021129ms)
+✔ repeated verification preserves each result directory and the original full-suite artifacts (1567.054536ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12816.588159

@@ -22,7 +22,9 @@ jobs:
     defaults:
       run:
         shell: bash
-    timeout-minutes: 45
+    # Preserve the full-suite ceiling, then allow the separate clean-install
+    # trial and evidence upload. Each native invocation remains bounded below.
+    timeout-minutes: 75
     env:
       DEVELOPER_DIR: /Applications/Xcode_27.1.app/Contents/Developer
     steps:
@@ -68,10 +70,12 @@ jobs:
         run: xcrun simctl boot "$TIN_SIMULATOR_UDID"
       - name: Compile Swift and execute unit and UI smoke tests
         id: native_tests
+        timeout-minutes: 45
         env:
           TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
         run: bash tools/ios/test-simulator.sh
       - name: Verify web resource identity in the actual installed app
+        id: installed_web
         if: success() && steps.native_tests.outcome == 'success'
         env:
           TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
@@ -83,6 +87,15 @@ jobs:
           tin_installed_app="$(xcrun simctl get_app_container "$TIN_SIMULATOR_UDID" "$tin_bundle_identifier" app)"
           test -n "$tin_installed_app"
           node tools/ios/record-installed-web.mjs "$tin_installed_app/WebAssets" artifacts/ios artifacts/ios/packaged-web-input-manifest.json
+      - name: Repeat packaged asset probes after observed clean app reinstall
+        id: clean_install_tests
+        if: success() && steps.native_tests.outcome == 'success' && steps.installed_web.outcome == 'success'
+        # The runner bounds xcodebuild itself to 20 minutes; retain five more
+        # for reset verification, attachment export and installed-byte checks.
+        timeout-minutes: 25
+        env:
+          TIN_SIMULATOR_UDID: ${{ steps.simulator.outputs.udid }}
+        run: node tools/ios/test-clean-install.mjs
       - name: Preserve test evidence even on failure
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -94,5 +107,6 @@ jobs:
             artifacts/ios/*.log
             artifacts/ios/*.xcresult
             artifacts/ios/screenshots/
+            artifacts/ios/clean-install-*/
           if-no-files-found: error
           retention-days: 14

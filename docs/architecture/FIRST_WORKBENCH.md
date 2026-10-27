@@ -25,7 +25,7 @@ The first launch starts stopped on the foreground straight. Run sets a moderate 
 
 Choose a scenery kind, then tap a clear board location. Tap the selected kind again to leave placement mode. With no placement kind active, tap an existing object to select it; a subsequent board tap moves it. Rotate and Remove act on that selection. Undo/Redo apply complete transactions and increase the durable revision; they never rewind a storage revision.
 
-Space stops the train when focus is on the scene. E toggles Arrange, W sounds the whistle, Escape clears placement/selection or closes Arrange, and Command/Ctrl-Z operates editor undo. Native button keyboard semantics take precedence when a button has focus. Multi-touch gestures cannot commit placement transactions.
+Space stops the train when focus is on the scene. E toggles Arrange, W sounds the whistle, Escape clears placement/selection or closes Arrange, and Command/Ctrl-Z operates editor undo. Native button keyboard semantics take precedence when a button has focus. Multi-touch gestures cannot commit placement transactions. Control, Command/Meta and Shift belong to camera pan; using any of them during a held pointer cancels its pending scenery edit even when the key is released before the pointer.
 
 A new durable factory layout is created only when storage is empty. An unreadable saved layout is retained and reported; it is not silently overwritten by a fresh scene. The browser development harness can display a starter preview when storage cannot be read, with saving blocked and an explicit warning. Restoring a valid document preserves position and wheel travel but resets speed/throttle to zero.
 
@@ -68,6 +68,10 @@ Ordinary messages remain capped at 64 KiB; document transfers are separately cap
 Structural edits coalesce for 200 ms. Moving trains checkpoint at a bounded five-second interval, with explicit Save and lifecycle checkpoints as additional triggers. Forced termination can still lose unacknowledged changes; hardware power-loss immunity is not claimed.
 
 The browser store is exclusively an internal development fallback. It uses atomic localStorage key replacement, previous-generation recovery and an accidental-corruption checksum. The Swift app always uses native storage and SHA-256. LocalStorage is not the production save authority.
+
+The fixed-oval storage wrapper now writes `storageVersion: 2`, separately checking the document checksum and a generation checksum that binds the wrapper version, checkpoint and document checksum. The bridge acknowledgement's `checksum` continues to identify the document. This wrapper version does not change the fixed-oval document schema or activate the detached general-layout v2 format.
+
+Legacy wrappers protected only document content. A valid legacy document is preserved, but its unprotected checkpoint starts at zero in the new session. Loading does not rewrite stored bytes or claim a backup recovery. The next successful save upgrades the wrapper through the existing backup/atomic-write path. A damaged new wrapper falls back to a verified previous generation; if none survives, saving remains blocked. These integrity checks detect accidental damage; they do not authenticate a maliciously rewritten save or reconstruct trustworthy legacy ordering.
 
 ## Verification and provenance
 

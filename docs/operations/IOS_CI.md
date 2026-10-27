@@ -1,6 +1,6 @@
 # iOS Simulator CI, evidence and release runbook
 
-Baseline reviewed **2026-10-26**. This runbook describes the executable scaffold in `.github/workflows/ios-simulator.yml`. A checked-in workflow is not a passed workflow; use the GitHub run for the exact current commit as evidence.
+Baseline reviewed **2026-10-26**; packaged-probe, installed-resource, clean-install and concurrency details reconciled **2026-10-27**. This runbook describes `.github/workflows/ios-simulator.yml`. A checked-in workflow is not a passed workflow; use the GitHub run for the exact current commit as evidence.
 
 ## 1. Toolchain lock and source rationale
 
@@ -48,14 +48,20 @@ When updating a pin: inspect the upstream release/commit, record motivation and 
 2. Install the repository's pinned Node version and restore npm's download cache. No native build cache is trusted as proof of compilation.
 3. Capture macOS version, Xcode version, SDK list and complete simulator inventory. Assert the required compiler and Simulator SDK.
 4. Run `npm ci` and the simulator-selector tests. Invalid, missing, ambiguous and substituted destinations must fail, including a renamed ordinary iPhone pretending to be Duo. A genuine Duo instance may have a custom name; its observed device-type identity is authoritative.
-5. Run `npm run bundle:ios`. This builds the pinned renderer and copies the verified offline runtime allowlist into the native WebAssets folder.
+5. Run `npm run bundle:ios -- --asset-probe`. This builds the pinned renderer plus the explicitly opted-in original probe fixtures and copies the verified finite runtime allowlist into native WebAssets. Preserve the generated manifest separately as packaging input. Probe activation also requires its Debug launch argument; ordinary and Release packaging must exclude all probe code, CSS, controls and resources.
 6. Download and verify the pinned XcodeGen archive, then generate `apps/ios/TinJunction.xcodeproj` from `project.yml`.
 7. Select the one available Duo device on the required runtime and save the selected UDID/runtime/type identifier to an evidence file. Device identifiers are observations, not source-code constants.
 8. Boot only if the device is shut down, then wait for `simctl bootstatus`.
 9. Execute the Swift unit and UI targets with `xcodebuild test`, explicit destination, Debug configuration, signing disabled, unique result bundle and pipeline failure propagation.
-10. Upload inventory, selection, logs and `.xcresult` bundles even if testing fails. UI-test attachments include screenshots. Missing evidence is not silently ignored.
+10. After successful full tests, derive the bundle identifier from the actual compiled app's Info.plist and resolve its installed app using public `simctl get_app_container`. Verify the installed WebAssets allowlist, every byte count/hash and exact manifest equality with this run's packaging input. The input manifest alone is not an installed-resource observation.
+11. After the full suite and installed-resource verification both succeed, run the fixed `tools/ios/test-clean-install.mjs` trial on the same observed Duo. It verifies the passing full-suite log, configured compiled app and installed bytes, then records existing native save-generation identities. It uninstalls only that test app, requires specific missing-container evidence and a fresh valid Duo inventory, reinstalls the same compiled app, and verifies that its native layout store is empty before any launch or test. It reruns the unchanged `AssetOriginProbeUITests` class with `test-without-building`, exports separate attachments, checks both completed observations and distinct sessions, and rechecks installed bytes. The original full-suite result remains intact and mandatory.
+12. Upload inventory, selection, logs, resource identities, exported attachments and `.xcresult` bundles even if testing fails, including the recursive `artifacts/ios/clean-install-*/` directories. A failed full suite skips installed verification and the clean-install trial; it cannot publish an assumed passing result for either. Missing evidence is not silently ignored.
 
-The job timeout bounds a hung runner to 45 minutes. Explicit `shell: bash` enables GitHub's `-eo pipefail` behavior so a selector failure cannot be hidden by a successful `tee`. Concurrency cancellation prevents obsolete runs on the same ref from consuming the queue after a newer push. A cancelled old run is not a failed current commit; inspect commit associations carefully.
+The full compile/unit/UI step retains a 45-minute hard limit. The separate clean-install step has a 25-minute limit: its runner bounds `xcodebuild` to 20 minutes and reserves additional time for reset checks, attachment export and installed-resource verification. The overall job has 75 minutes for those separate stages plus setup and artifact upload. This additional allowance does not extend the full-suite step's limit or turn a timeout into a pass. Explicit `shell: bash` enables GitHub's `-eo pipefail` behavior so a selector failure cannot be hidden by a successful `tee`. Concurrency uses `cancel-in-progress: false` to retain running verification when another checkpoint is published. Inspect the exact commit associated with every completed, queued or cancelled run; cancellation is not a passing result.
+
+`AssetOriginProbeUITests` clears WebKit data in a nonpersistent store, installs an HTTP/HTTPS-deny content rule before navigation, and repeats the same packaged resource experiment after a cold app relaunch with a distinct native session. That WebKit reset does not delete native saved layouts or uninstall the app. The additional clean-install trial observes removal of the installed app's data-container mapping and absence of saved layouts after reinstall. Neither experiment switches physical radios off, proves OS-wide network isolation, clears Keychain entries or establishes secure erasure. Until the separate native clean-install trial actually passes on the tested commit, P01-T02's app-data-deletion verification remains open.
+
+The clean-install runner's process-stub tests exercise orchestration and fail-closed guards; they are not Simulator execution evidence. Actual `simctl` missing-container error formatting and `test-without-building` reuse of this generated project and DerivedData remain runtime checks. Unexpected native output fails the trial instead of being treated as evidence that deletion occurred.
 
 ## 4. Check meanings and non-claims
 
@@ -67,10 +73,11 @@ The job timeout bounds a hung runner to 45 minutes. Explicit `shell: bash` enabl
 | Swift policy/state tests | Exercised envelope, path, symlink, size-policy and recoverable-versus-terminal host states behave as asserted | An exhaustive security audit or packaged GPU recovery proof |
 | Bundled-entry unit test | Native app contains the generated entry with the selected script format | Texture/GLB/decoder streaming readiness |
 | UI handshake | Real packaged WebKit reports the expected WebGL2 diagnostic readiness | Finished gameplay, hyperrealistic art, or high performance |
+| Clean-install asset trial | Observed test-app removal, an empty native layout store before first launch, matching installed resources and two completed packaged probe sessions | Secure erasure, Keychain clearing, OS-wide network isolation or physical-device evidence |
 | Rotation/foreground UI smoke | Host remains present and reports readiness through those transitions | Fold-system events, saved-world recovery, haptics or audio latency |
 | Simulator screenshot | Reproducible simulator appearance for its captured state | A physical-device photograph or reference-matched final-art approval |
 
-The harness sends native viewport/lifecycle values, but the initial tests do not yet assert end-to-end acknowledgements of every event. Add explicit observable protocol evidence before claiming those richer semantics tested. The harness's single content-process reload is not durable game-state recovery.
+The harness sends native viewport/lifecycle values, but the tests do not assert end-to-end acknowledgements of every event. Add explicit observable protocol evidence before claiming those richer semantics tested. Save/relaunch assertions establish their specific durable checkpoint path. A model-level termination input or scripted reload is not an actual WebContent-process-death experiment; that recovery gate remains separate.
 
 ## 5. Local/agent reproduction
 
@@ -92,6 +99,8 @@ xcodebuild test \
 ```
 
 `tools/ios/test-simulator.sh` supplies an actual unique result path and records the log. Its variables are task-specific, not `HOME` overrides. Use that script rather than copying the illustrative `UNIQUE-RUN` filename across several runs.
+
+Run `node tools/ios/test-clean-install.mjs` only after the same checkout's full suite and installed-resource verification pass, with `TIN_SIMULATOR_UDID` still set to the selected Duo. This command deliberately uninstalls and reinstalls the fixed Tin Junction Simulator test app; it accepts no bundle identifier, filesystem target or test-filter arguments. It requires the existing artifacts and compiled product from that full run, preserves its output in a unique `artifacts/ios/clean-install-*` directory, and never substitutes for `test-simulator.sh`.
 
 After downloading an Actions artifact, retain the manifest/compact conclusions in `evidence/` and point to the run URL, job URL, tested Git commit, artifact name and any expiry. Do not commit DerivedData, complete app bundles, generated Xcode projects, signing material or large `.xcresult` directories. For long-term release evidence, the owner must preserve large artifacts outside the default 14-day Actions retention window.
 
