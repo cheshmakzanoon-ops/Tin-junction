@@ -16,6 +16,10 @@ final class EngineHostModel: ObservableObject {
     @Published private(set) var status = "Opening your miniature…"
     @Published private(set) var isReady = false
     @Published private(set) var hingeDescription = "awaiting system context"
+    #if DEBUG
+    @Published private(set) var platformProbeJSON = "{}"
+    private var hasObservedHinge = false
+    #endif
     @Published private(set) var saveState: SaveState = .unsaved
     @Published private(set) var saveDescription = "Not saved yet"
     @Published private(set) var durableRevision: Int?
@@ -316,6 +320,9 @@ final class EngineHostModel: ObservableObject {
     func updateViewport(_ value: NativeViewport) {
         guard value.isValid else { return }
         viewport = value
+        #if DEBUG
+        refreshPlatformProbe()
+        #endif
         sendViewport()
     }
 
@@ -324,6 +331,10 @@ final class EngineHostModel: ObservableObject {
             guard angleDegrees.isFinite, (0...360).contains(angleDegrees) else { return }
         }
         hingeAngleDegrees = angleDegrees
+        #if DEBUG
+        hasObservedHinge = true
+        refreshPlatformProbe()
+        #endif
         if let angleDegrees {
             hingeDescription = "measured \(angleDegrees.formatted(.number.precision(.fractionLength(1))))°"
         } else {
@@ -331,6 +342,14 @@ final class EngineHostModel: ObservableObject {
         }
         sendViewport()
     }
+
+    #if DEBUG
+    /// Read-only observations, never a synthetic hinge or device-eligibility signal.
+    private func refreshPlatformProbe() {
+        platformProbeJSON = PlatformProbe.encode(viewport: viewport,
+            hingeAngleDegrees: hingeAngleDegrees, hasObservedHinge: hasObservedHinge)
+    }
+    #endif
 
     func contentProcessTerminated() {
         loading()

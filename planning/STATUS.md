@@ -2,27 +2,27 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T01:52:53.601Z
+Ledger updated: 2026-10-27T02:13:17.965Z
 
-Tasks: 131; done: 9; active: 1; review: 0; blocked: 0; todo: 121.
+Tasks: 131; done: 9; active: 4; review: 0; blocked: 0; todo: 118.
 
-CI snapshot: **failed** for 06378af5861875a13a38c361effa9c64304a10cb. This may be stale; inspect current remote checks.
+CI snapshot: **running** for c59f7acbdaf591552de718d19bc7418d16fd8cd7. This may be stale; inspect current remote checks.
 
 [Next task](NEXT_TASK.md) · [Current handoff](HANDOFF.md) · [Agent rules](../AGENTS.md)
 
 | Phase | Purpose | Recorded done | Active / review / blocked |
 |---|---|---:|---|
 | [P00](phases/P00-repository-foundation.md) | Repository foundation and agent continuity | 4/4 | — |
-| [P01](phases/P01-platform-and-runtime-spikes.md) | Platform truth and packaged-runtime spikes | 0/5 | — |
+| [P01](phases/P01-platform-and-runtime-spikes.md) | Platform truth and packaged-runtime spikes | 0/5 | P01-T01 in_progress |
 | [P02](phases/P02-native-application-shell.md) | Swift native application shell | 0/4 | — |
 | [P03](phases/P03-native-web-contract.md) | Secure native-to-web contract | 0/5 | — |
 | [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 5/6 | P04-T06 in_progress |
-| [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 0/5 | — |
+| [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 0/5 | P05-T01 in_progress |
 | [P06](phases/P06-first-operating-railway.md) | First operating railway | 0/4 | — |
 | [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 0/5 | — |
 | [P08](phases/P08-camera-selection-and-input.md) | Camera, picking and gesture arbitration | 0/4 | — |
 | [P09](phases/P09-track-editor.md) | Creative track-layout editor | 0/5 | — |
-| [P10](phases/P10-asset-production-pipeline.md) | Reproducible 3D asset pipeline | 0/4 | — |
+| [P10](phases/P10-asset-production-pipeline.md) | Reproducible 3D asset pipeline | 0/4 | P10-T01 in_progress |
 | [P11](phases/P11-renderer-and-material-calibration.md) | Renderer foundation and material calibration | 0/4 | — |
 | [P12](phases/P12-hero-locomotive.md) | Hero locomotive production | 0/4 | — |
 | [P13](phases/P13-railway-infrastructure.md) | Track and railway infrastructure art | 0/4 | — |

@@ -12,7 +12,8 @@ permissions:
 
 concurrency:
   group: ios-simulator-${{ github.ref }}
-  cancel-in-progress: true
+  # Keep running native evidence intact across frequent reviewed checkpoints.
+  cancel-in-progress: false
 
 jobs:
   duo-host:

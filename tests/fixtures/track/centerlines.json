@@ -1,0 +1,6 @@
+[
+  { "name": "canonical straight", "definition": { "kind": "straight", "length": 0.2 }, "length": 0.2, "end": [0, 0, 0.2], "tangent": [0, 0, 1] },
+  { "name": "minimum-radius right quarter", "definition": { "kind": "arc", "radius": 0.1, "sweep": 1.5707963267948966 }, "length": 0.15707963267948966, "end": [0.1, 0, 0.1], "tangent": [1, 0, 0] },
+  { "name": "minimum-radius left quarter", "definition": { "kind": "arc", "radius": 0.1, "sweep": -1.5707963267948966 }, "length": 0.15707963267948966, "end": [-0.1, 0, 0.1], "tangent": [-1, 0, 0] },
+  { "name": "complete right circle", "definition": { "kind": "arc", "radius": 0.1, "sweep": 6.283185307179586 }, "length": 0.6283185307179586, "end": [0, 0, 0], "tangent": [0, 0, 1] }
+]

@@ -116,6 +116,12 @@ struct RootView: View {
                         Text("Duo context: \(host.hingeDescription)")
                             .font(.caption)
                             .accessibilityIdentifier("host.hinge")
+                        #if DEBUG
+                        Text("Platform observations (simulator or device; not hardware approval)")
+                            .font(.caption)
+                            .accessibilityIdentifier("host.platformProbe")
+                            .accessibilityValue(host.platformProbeJSON)
+                        #endif
                     }
                 }
                 .navigationTitle("Railway guide")

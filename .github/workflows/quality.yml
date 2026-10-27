@@ -12,7 +12,8 @@ permissions:
 
 concurrency:
   group: quality-${{ github.ref }}
-  cancel-in-progress: true
+  # Keep running verification intact; the newest pending revision runs next.
+  cancel-in-progress: false
 
 jobs:
   quality:
