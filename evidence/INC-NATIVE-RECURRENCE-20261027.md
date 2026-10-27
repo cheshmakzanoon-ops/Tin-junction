@@ -52,3 +52,29 @@ The original test cases, readiness deadlines, termination call, failure behavior
 Three fixed send/delivered/failed trace events also distinguish a pending native-to-web call from a call that returned. `bridge.delivered` means only that the public JavaScript call returned; it is not a semantic receipt or layout acceptance. The trace is app-scoped and bounded, and event names do not independently identify a retry generation. Final fixture termination is kept in a separate teardown block, so an optional accessibility snapshot cannot prevent the cleanup attempt. Local repository validation, the project tests and all 56 iOS-tool tests passed; no local Swift result is claimed.
 
 The previously accepted `c1e6e39` evidence remains immutable and scoped to that execution. The open incident and failed current CI block new acceptance. Unpublished P01 security, P02 preferences and P10 compression work remains separate from this diagnostic checkpoint.
+
+## Follow-up at `eea6f0d`: failure narrowed to the first asset launch
+
+The isolated diagnostic was published as `eea6f0db5e3f7511663506ab580d3a4848ce8abc`, tree `180cc58983821125fbf62fca087ad86600b53e5b`. [Full native run 40484196926, attempt 1](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40484196926), job `122121763501`, completed **failure** at 10:16:23 UTC. Compilation and **88 units passed; seven of eight UI cases passed**. Only the first asset-probe launch failed its unchanged readiness assertion. Installed identity and clean reinstall remained skipped. Both jobs in [web run 40484196997](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40484196997) and [focused model run 40484197052](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40484197052) succeeded. These results exercise the diagnostic baseline, not the unpublished security/preferences/compression features.
+
+The new snapshot exposes the precise gap: loading began at +8.898 seconds, HTML was supplied at +8.913, navigation committed at +19.268, JavaScript was supplied at +19.276, navigation finished at +23.747, and `host.failed.beforeBridge` occurred at +29.511. No `web.ready`, native send or asset report preceded failure. The original target log reported an unresponsive WebContent process before navigation began. This demonstrates a pre-script delay and a missing first-frame acknowledgement; it does not identify why either occurred. The current web code emits `web.ready` only after an actual rendered frame.
+
+The asset fixture terminated successfully this time: public foreground state at 10:06:06.840 UTC and `notRunning` at 10:06:24.917. Ordinary handshake, rotation/foreground, Help, save/relaunch, both controlled startup cases and platform observation passed. The preceding termination failures remain failures in their original execution.
+
+Root independently checked the three downloaded archive digests, all **121 report files and 14 PNGs** against both the compact index and full originals, the new startup snapshot and original failure PNG, and separately decompressed the original unit/target Zstandard objects with a bounded native library buffer. The compact index SHA-256 is `dee4e4ce648732dd00ff35295ca16e3ecb1de546f06cd37c9faea16d086dc768`; the 340,025-byte raw test log SHA-256 is `dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b`.
+
+| Original artifact | ID | Bytes | SHA-256 |
+| --- | --- | ---: | --- |
+| `duo-host-reports-40484196926-1` | `12725657062` | 237530 | `ee6f6d8bddde679fa57d4e5ae54584f9755f16c6adbe69bbe1278f9b81e0a394` |
+| `duo-host-captures-40484196926-1` | `12725372412` | 14847089 | `68557997be7c2ff6eb0fd1c9d44077a95d8dfe417b93875b7ea73aaa6a2abb6f` |
+| `duo-host-40484196926-1` | `12725367469` | 358761012 | `ccf05d0a6bd1085be6781db5ecf62918826f7b7b255daa5ffef75e167fdaf2d1` |
+
+The [source-pinned follow-up review](P01-T02-native-recurrence-eea6f0d-review.md) retains the complete narrow startup and test excerpts. Eleven explicit unit-fixture WKWebViews and the real test-host app view existed in the source; their process activity is a hypothesis to investigate, not a measured live-process census or established cause. The same fixture constructors existed in the earlier passing implementation.
+
+## Next bounded observation: first-frame state
+
+The next isolated Debug diagnostic performs one public `callAsyncJavaScript` read after each actual navigation finish, only with `--host-diagnostics`. It reads the document readiness/visibility, receiver existence and five primitive renderer-state fields. A document-start listener separately counts script errors and unhandled rejections, capped at 32 each, without reading their contents, preventing events or changing app state. This distinguishes an observed error from an otherwise unexplained zero-frame result. Four native parser tests bound the exact 14-field shape and reject unknown/coerced values. Both actual embedded JavaScript bodies passed a bounded Node VM check of exact fields, absence handling, counter saturation and lack of bridge/model mutation; this is not Swift/WebKit execution.
+
+Request and callback events retain native elapsed time, phase and window attachment. A five-second diagnostic timer records a missing callback but does not fail the app, change the startup deadline, await readiness or cancel a later observation. A late result from the same attached view/session is explicitly labelled; replacement navigation and dismantling cancel ownership. Since failure removes the renderer from its window, a hidden/paused result after failure cannot establish the state at navigation finish. A missing response cannot alone distinguish busy, suspended or unresponsive JavaScript.
+
+This remains an experiment, not a repair. Original tests, assertions, timeouts, workflow concurrency and the strict asset policy remain unchanged. The incident remains open until a justified repair and current native evidence support resolution.

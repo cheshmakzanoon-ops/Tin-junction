@@ -18,6 +18,7 @@ struct EngineWebView: UIViewRepresentable {
         configuration.userContentController.add(context.coordinator, name: "tinJunction")
         #if DEBUG
         context.coordinator.startupFault.install(in: configuration.userContentController)
+        context.coordinator.installStartupDiagnostic(in: configuration.userContentController)
         #endif
 
         let assetRoot = Bundle.main.url(forResource: "WebAssets", withExtension: nil)
@@ -77,6 +78,7 @@ struct EngineWebView: UIViewRepresentable {
         let host: EngineHostModel
         #if DEBUG
         let startupFault = HostStartupFault()
+        private let startupDiagnostic = WebStartupDiagnostic()
         private var startupHoldTask: Task<Void, Never>?
         private var startupHoldToken: UUID?
         private var preparationTask: Task<Void, Never>?
@@ -117,6 +119,10 @@ struct EngineWebView: UIViewRepresentable {
         }
 
         #if DEBUG
+        func installStartupDiagnostic(in controller: WKUserContentController) {
+            startupDiagnostic.install(in: controller)
+        }
+
         func cancelStartupHold() {
             startupHoldTask?.cancel()
             startupHoldTask = nil
@@ -173,6 +179,7 @@ struct EngineWebView: UIViewRepresentable {
 
         func cancelPreparation() {
             #if DEBUG
+            startupDiagnostic.cancel()
             preparationTask?.cancel()
             preparationTask = nil
             preparationTimeout?.cancel()
@@ -202,6 +209,9 @@ struct EngineWebView: UIViewRepresentable {
 
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
             guard host.isAttached(to: webView) else { return }
+            #if DEBUG
+            startupDiagnostic.cancel()
+            #endif
             PlatformStartupTrace.record("navigation.started.window=\(webView.window != nil ? 1 : 0)")
             host.loading()
         }
@@ -217,6 +227,9 @@ struct EngineWebView: UIViewRepresentable {
             startupFault.disarm()
             #endif
             PlatformStartupTrace.record("navigation.finished.window=\(webView.window != nil ? 1 : 0)")
+            #if DEBUG
+            startupDiagnostic.capture(in: webView, host: host)
+            #endif
         }
 
         func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {

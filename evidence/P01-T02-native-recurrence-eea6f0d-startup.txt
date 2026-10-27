@@ -1,0 +1,168 @@
+Tin Junction — failed diagnostic native startup, exact tested commit eea6f0db5e3f7511663506ab580d3a4848ce8abc
+Run40484196926/attempt1. Source lines below are unchanged originals; headings are editorial.
+
+--- Original asset startup AX JSON; 981762FD-CE31-4601-BACD-403FD4CC9E93.txt; 815 bytes; SHA256 29e7ae7f82fe0a37a6b2777a2fa0c5600b0c352878f10266dc571ac2219f10e0 ---
+{"capacity":128,"events":[{"elapsedSeconds":1.4166666915116366e-06,"event":"webview.created"},{"elapsedSeconds":0.6117452083333319,"event":"host.lifecycle=active"},{"elapsedSeconds":8.8975747916666705,"event":"navigation.started.window=1"},{"elapsedSeconds":8.8982882083333834,"event":"host.loading.lifecycle=active"},{"elapsedSeconds":8.9127334583333777,"event":"resource.ready.type=html.bytes=884"},{"elapsedSeconds":19.26837183333339,"event":"navigation.committed.window=1"},{"elapsedSeconds":19.270703708333372,"event":"resource.ready.type=css.bytes=19325"},{"elapsedSeconds":19.275873666666712,"event":"resource.ready.type=js.bytes=801455"},{"elapsedSeconds":23.747496833333344,"event":"navigation.finished.window=1"},{"elapsedSeconds":29.510940625000103,"event":"host.failed.beforeBridge"}],"formatVersion":1}
+
+--- Original object-8.txt, lines 11–11; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:38.831480+0000 TinJunction[7739:31847] [TinStartup] +0.000s webview.created
+
+--- Original object-8.txt, lines 13–13; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:39.442976+0000 TinJunction[7739:31847] [TinStartup] +0.612s host.lifecycle=active
+
+--- Original object-8.txt, lines 716–716; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:47.729098+0000 TinJunction[7739:31847] [TinStartup] +8.898s navigation.started.window=1
+
+--- Original object-8.txt, lines 717–717; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:47.729551+0000 TinJunction[7739:31847] [TinStartup] +8.898s host.loading.lifecycle=active
+
+--- Original object-8.txt, lines 718–718; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:47.744187+0000 TinJunction[7739:31847] [TinStartup] +8.913s resource.ready.type=html.bytes=884
+
+--- Original object-8.txt, lines 1999–1999; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:58.099641+0000 TinJunction[7739:31847] [TinStartup] +19.268s navigation.committed.window=1
+
+--- Original object-8.txt, lines 2000–2000; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:58.101914+0000 TinJunction[7739:31847] [TinStartup] +19.271s resource.ready.type=css.bytes=19325
+
+--- Original object-8.txt, lines 2001–2001; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:58.107243+0000 TinJunction[7739:31847] [TinStartup] +19.276s resource.ready.type=js.bytes=801455
+
+--- Original object-8.txt, lines 2119–2119; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:05:02.578862+0000 TinJunction[7739:31847] [TinStartup] +23.747s navigation.finished.window=1
+
+--- Original object-8.txt, lines 2121–2121; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:05:08.342620+0000 TinJunction[7739:31847] [TinStartup] +29.511s host.failed.beforeBridge
+
+--- Original object-8.txt, lines 16–18; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:40.713022+0000 TinJunction[7739:31847] [Process] WebContent process (0x1160c40c0) took 1.788076 seconds to launch
+2026-10-27 10:04:40.770570+0000 TinJunction[7739:31847] [Process] GPU process (0x11610c200) took 1.807380 seconds to launch
+2026-10-27 10:04:40.979982+0000 TinJunction[7739:31847] [Process] Networking process (0x116184180) took 1.294876 seconds to launch
+
+--- Original object-8.txt, lines 301–316; SHA256 f103daef404009463d7778ca1537dd730a63b9f1adbfc622d32842ca68624f6e ---
+2026-10-27 10:04:43.980227+0000 TinJunction[7739:31847] [Default] Snapshot attributes 5004, 5019, 5003, 5058, 2001, 2004, 2158, 5002, 5043
+2026-10-27 10:04:43.999148+0000 TinJunction[7739:31847] [Default] Got snapshot for <AXUIElementRef 0x105f49a10> {pid=7739} {uid=[ID:1 hash:0x0]}
+2026-10-27 10:04:44.000013+0000 TinJunction[7739:31847] [Default] Got app orientation 0
+2026-10-27 10:04:44.060875+0000 TinJunction[7739:31847] [Default] Captured accessibility snapshot data in 0.26s
+2026-10-27 10:04:44.062030+0000 TinJunction[7739:31929] [Default] Checking 'Tin Junction' for privileged AX value slot attributes
+2026-10-27 10:04:44.062960+0000 TinJunction[7739:31929] [Default] Found main window: Window
+2026-10-27 10:04:44.063206+0000 TinJunction[7739:31929] [Default] Checking 'Startup diagnostics' for privileged AX value slot attributes
+2026-10-27 10:04:44.063320+0000 TinJunction[7739:31929] [Default] StaticText, identifier: 'host.startupTrace', label: 'Startup diagnostics', value: {"capacity":128,"e... is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-10-27 10:04:44.063423+0000 TinJunction[7739:31929] [Default] Preferring automation type 58 instead of legacy element type OTHER derived from class/trait: WKWebView:UIView 146028888064
+2026-10-27 10:04:44.065263+0000 TinJunction[7739:31929] [Default] Other is not actually a child of 2026-10-27 10:04:44.067269+0000 TinJunction[7739:31847] [Process] 0x1160c40c0 - [PID=7845] WebProcessProxy::didBecomeUnresponsive:
+Other, including at this point anyway (rdar://problem/20738636)
+2026-10-27 10:04:44.141255+0000 TinJunction[7739:31847] [Process] 0x105760018 - [pageProxyID=7, webPageID=8, PID=7845] WebPageProxy::processDidBecomeUnresponsive:
+2026-10-27 10:04:44.141355+0000 TinJunction[7739:31929] [Default] Preferring automation type 36 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:NSObject 8589935104
+2026-10-27 10:04:44.141787+0000 TinJunction[7739:31929] [Default] Preferring automation type 36 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:NSObject 8589935104
+2026-10-27 10:04:44.142328+0000 TinJunction[7739:31929] [Default] ActivityIndicator, value: 1 is not actually a child of ActivityIndicator, label: 'In progress', value: 1, including at this point anyway (rdar://problem/20738636)
+2026-10-27 10:04:44.142740+0000 TinJunction[7739:31929] [Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+
+Unit-process observations below precede the UI launch. They do not prove resource-pressure causation.
+
+--- Original object-6.txt, lines 1–1; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:03:54.596584+0000 TinJunction[7388:30180] [TinStartup] +0.000s webview.created
+
+--- Original object-6.txt, lines 5–5; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:03:56.400926+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0bc0c0) took 1.324635 seconds to launch
+
+--- Original object-6.txt, lines 7–7; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:03:56.583772+0000 TinJunction[7388:30180] [Process] GPU process (0x11b110200) took 1.203833 seconds to launch
+
+--- Original object-6.txt, lines 8–8; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:03:57.256566+0000 TinJunction[7388:30180] [Process] Networking process (0x11b134180) took 1.790722 seconds to launch
+
+--- Original object-6.txt, lines 59–59; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:01.235458+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0bcc40) took 1.406261 seconds to launch
+
+--- Original object-6.txt, lines 60–60; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:01.238678+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0bc680) took 1.432956 seconds to launch
+
+--- Original object-6.txt, lines 165–165; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:02.529891+0000 TinJunction[7388:30346] [ProcessSuspension] 0x11b154600 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=7435, error: (null)
+
+--- Original object-6.txt, lines 306–306; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:05.755394+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0bdd80) took 1.916574 seconds to launch
+
+--- Original object-6.txt, lines 307–307; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:05.755827+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0bd7c0) took 1.931826 seconds to launch
+
+--- Original object-6.txt, lines 308–308; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:05.760610+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0be340) took 1.896382 seconds to launch
+
+--- Original object-6.txt, lines 310–310; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:06.646892+0000 TinJunction[7388:30559] [ProcessSuspension] 0x11b154b40 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=7452, er2026-10-27 10:04:06.650541+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0be900) took 2.776397 seconds to launch
+
+--- Original object-6.txt, lines 376–376; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:07.641233+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0bf480) took 1.888800 seconds to launch
+
+--- Original object-6.txt, lines 377–377; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:07.753265+0000 TinJunction[7388:30180] [Process] WebContent process (0x11b0beec0) took 2.008596 seconds to launch
+
+--- Original object-6.txt, lines 380–380; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+154fc0 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=7460, error: (null)
+
+--- Original object-6.txt, lines 385–385; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:07.929730+0000 TinJunction[7388:30344] [ProcessSuspension] 0x11b155080 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=7461, error: (null)
+
+--- Original object-6.txt, lines 391–391; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:08.073603+0000 TinJunction[7388:30180] [cfprefsd] WebCo2026-10-27 10:04:08.073841+0000 TinJunction[7388:30344] [ProcessSuspension] 0x11b155140 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=7462, error: (null)
+
+--- Original object-6.txt, lines 397–397; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:08.278796+0000 TinJunction[7388:30346] [ProcessSuspension] 0x11b154300 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=7463, error: (null)
+
+--- Original object-6.txt, lines 420–420; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+43c0 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=7468, error: (null)
+
+--- Original object-6.txt, lines 423–423; SHA256 63723e72a21c43afc39165d0f18e3035344d469cb5070f7e7776f88649ae40cf ---
+2026-10-27 10:04:08.535979+0000 TinJunction[7388:30348] [ProcessSuspension] 0x11b154540 - ProcessAssertion::acquireSync Failed to acquire RBS assertion 'XPCConnectionTerminationWatchdog' for process with PID=7472, error: (null)
+
+--- Original attachment 45FF9C74-1BC6-4688-862E-63A333269C3C.txt; SHA256 44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a ---
+{}
+
+--- Original attachment 0EB5B1CF-C052-42B3-AE77-F172E054BEAF.txt; SHA256 700121430db8aff263cb3e0350920e7e87c95214dc97fe92a1ec8833e6990487 ---
+formatVersion: 1
+test: -[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]
+observation: 1
+operation: initial-launch
+point: before
+utc: 2026-10-27T10:04:27.983Z
+systemUptimeSeconds: 786.7146324583334
+elapsedSeconds: 0.003917875000070126
+applicationState: 1
+applicationStateName: notRunning
+
+--- Original attachment A137133C-C0FE-4FBA-A65E-484005D3A670.txt; SHA256 0f617ae5a5b4a30f760e8a95e4c436104c0f69ccf513b52c52e9991dc0058b85 ---
+formatVersion: 1
+test: -[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]
+observation: 2
+operation: initial-launch
+point: after
+utc: 2026-10-27T10:04:40.629Z
+systemUptimeSeconds: 799.3606212083333
+elapsedSeconds: 12.649906624999971
+applicationState: 4
+applicationStateName: runningForeground
+
+--- Original attachment 89F3D122-C718-463A-9FFE-AC657A57A8B5.txt; SHA256 6609db0225b405d2cc95e3f1ad59faa35cb58e20574904f8c7f64bc731df7ba9 ---
+formatVersion: 1
+test: -[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]
+observation: 4
+operation: fixture-teardown
+point: before
+utc: 2026-10-27T10:06:06.840Z
+systemUptimeSeconds: 885.5716311666667
+elapsedSeconds: 98.86091658333339
+applicationState: 4
+applicationStateName: runningForeground
+
+--- Original attachment FAA46D36-812C-4BF4-A01F-BA8D53E5CEF7.txt; SHA256 cd6877ba26731d8174961e0c9dc4d71bbcb144f0d1703aa79c89d5bdb6bfdaef ---
+formatVersion: 1
+test: -[AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]
+observation: 5
+operation: fixture-teardown
+point: after
+utc: 2026-10-27T10:06:24.917Z
+systemUptimeSeconds: 903.6485607916667
+elapsedSeconds: 116.93784620833333
+applicationState: 1
+applicationStateName: notRunning

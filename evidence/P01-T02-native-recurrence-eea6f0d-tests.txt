@@ -1,0 +1,107 @@
+Tin Junction — original mixed native test outcome, exact tested commit eea6f0db5e3f7511663506ab580d3a4848ce8abc
+Run40484196926/attempt1. This is failure evidence, not whole-task acceptance.
+
+--- Original xcodebuild.log, lines 1365–1365; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionTests.PlatformStartupTraceTests testSnapshotPreservesBoundedEventOrderAndElapsedTime]' passed (0.011 seconds).
+
+--- Original xcodebuild.log, lines 1371–1371; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+	 Executed 88 tests, with 0 failures (0 unexpected) in 8.467 (9.098) seconds
+
+--- Original xcodebuild.log, lines 1373–1373; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+	 Executed 88 tests, with 0 failures (0 unexpected) in 8.467 (9.109) seconds
+
+--- Original xcodebuild.log, lines 1459–1459; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift:34: error: -[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch] : XCTAssertTrue failed
+
+--- Original xcodebuild.log, lines 1479–1479; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' failed (119.050 seconds).
+
+--- Original xcodebuild.log, lines 1540–1540; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (42.938 seconds).
+
+--- Original xcodebuild.log, lines 1616–1616; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (45.949 seconds).
+
+--- Original xcodebuild.log, lines 1668–1668; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (42.932 seconds).
+
+--- Original xcodebuild.log, lines 1872–1872; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (160.045 seconds).
+
+--- Original xcodebuild.log, lines 1967–1967; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionUITests.HostStartupUITests testControlledStartupDelayKeepsNativeHelpAvailableBeforeRealReadiness]' passed (47.344 seconds).
+
+--- Original xcodebuild.log, lines 2050–2050; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' passed (51.856 seconds).
+
+--- Original xcodebuild.log, lines 2279–2279; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (90.501 seconds).
+
+--- Original xcodebuild.log, lines 2283–2283; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+	 Executed 8 tests, with 1 failure (0 unexpected) in 600.615 (600.648) seconds
+
+--- Original xcodebuild.log, lines 2285–2285; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+	 Executed 8 tests, with 1 failure (0 unexpected) in 600.615 (600.652) seconds
+
+--- Original xcodebuild.log, lines 2302–2302; SHA256 dc6f9188afdd2871d384c258357ec6418ab58e22b887e8a9b94f8f2215ecd76b ---
+** TEST FAILED **
+
+--- Original candidate-1.txt, lines 7–18; SHA256 0595cead9dc8a5fb58b14877bc1e490276908a89039aadd81684e5a794fb683e ---
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' started.
+    t =     0.01s Start Test at 2026-10-27 10:04:26.755
+    t =     1.21s Set Up
+    t =     1.24s Added attachment named 'native-lifecycle-1-initial-launch-before'
+    t =     1.24s Open com.cheshmakzanoonops.tinjunction
+    t =     1.24s     Launch com.cheshmakzanoonops.tinjunction
+    t =     2.78s         Setting up automation session
+    t =    11.61s         Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =    13.88s Added attachment named 'native-lifecycle-2-initial-launch-after'
+    t =    14.00s Waiting 40.0s for "host.ready" StaticText to exist
+    t =    15.06s     Checking `Expect predicate `existsNoRetry == 1` for object "host.ready" StaticText`
+    t =    15.06s         Checking existence of `"host.ready" StaticText`
+
+--- Original candidate-1.txt, lines 64–90; SHA256 0595cead9dc8a5fb58b14877bc1e490276908a89039aadd81684e5a794fb683e ---
+    t =    30.05s         Capturing element debug description
+    t =    31.01s     Checking `Expect predicate `existsNoRetry == 1` for object "host.ready" StaticText`
+    t =    31.01s         Checking existence of `"host.ready" StaticText`
+    t =    31.05s         Capturing element debug description
+    t =    32.01s     Checking `Expect predicate `existsNoRetry == 1` for object "host.ready" StaticText`
+    t =    32.01s         Checking existence of `"host.ready" StaticText`
+    t =    54.26s         Capturing element debug description
+    t =    54.26s     Checking existence of `"host.ready" StaticText`
+    t =    54.33s Collecting debug information to assist test failure triage
+    t =    54.33s     Requesting snapshot of accessibility hierarchy for app with pid 7739
+/Users/runner/work/Tin-junction/Tin-junction/apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift:34: error: -[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch] : XCTAssertTrue failed
+    t =    95.15s Tear Down
+    t =    95.15s     Checking existence of `"host.assetProbe" StaticText`
+    t =    97.45s     Find the "host.assetProbe" StaticText
+    t =    98.13s     Added attachment named 'asset-origin-observation-failure-state'
+    t =    98.13s     Find the Target Application 'com.cheshmakzanoonops.tinjunction'
+    t =    99.09s     Added attachment named 'asset-origin-rendering-failure-state'
+    t =    99.09s     Checking existence of `"host.startupTrace" StaticText`
+    t =    99.39s     Find the "host.startupTrace" StaticText
+    t =   100.09s     Added attachment named 'native-startup-fixture-teardown'
+    t =   100.09s     Added attachment named 'native-lifecycle-3-fixture-teardown-enter'
+    t =   100.09s     Added attachment named 'native-lifecycle-4-fixture-teardown-before'
+    t =   100.09s     Terminate com.cheshmakzanoonops.tinjunction:7739
+    t =   118.17s     Added attachment named 'native-lifecycle-5-fixture-teardown-after'
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' failed (119.050 seconds).
+Test Suite 'AssetOriginProbeUITests' failed at 2026-10-27 10:06:25.804.
+	 Executed 1 test, with 1 failure (0 unexpected) in 119.050 (119.056) seconds
+
+--- Original candidate-1.txt, lines 367–376; SHA256 0595cead9dc8a5fb58b14877bc1e490276908a89039aadd81684e5a794fb683e ---
+    t =   111.52s Added attachment named 'native-startup-before-saved-railway-relaunch'
+    t =   111.54s Added attachment named 'native-lifecycle-3-before-saved-railway-relaunch-before'
+    t =   111.54s Terminate com.cheshmakzanoonops.tinjunction:11639
+    t =   113.62s Added attachment named 'native-lifecycle-4-before-saved-railway-relaunch-after'
+    t =   113.62s Added attachment named 'native-lifecycle-5-saved-railway-relaunch-before'
+    t =   113.63s Open com.cheshmakzanoonops.tinjunction
+    t =   113.63s     Launch com.cheshmakzanoonops.tinjunction
+    t =   121.77s         Setting up automation session
+    t =   134.89s         Wait for com.cheshmakzanoonops.tinjunction to idle
+    t =   140.37s Added attachment named 'native-lifecycle-6-saved-railway-relaunch-after'
+
+--- Original candidate-1.txt, lines 429–431; SHA256 0595cead9dc8a5fb58b14877bc1e490276908a89039aadd81684e5a794fb683e ---
+    t =   158.05s     Terminate com.cheshmakzanoonops.tinjunction:13207
+    t =   159.12s     Added attachment named 'native-lifecycle-9-fixture-teardown-after'
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (160.045 seconds).
