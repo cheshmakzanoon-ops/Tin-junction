@@ -16,7 +16,7 @@
     "project:render": "node tools/project.mjs render",
     "typecheck": "tsc --noEmit",
     "test:project": "node --test tests/project/*.test.mjs",
-    "test:ios-tools": "node --test tools/ios/select-duo.test.mjs",
+    "test:ios-tools": "node --test tools/ios/*.test.mjs",
     "test:web": "vitest run",
     "test": "npm run test:project && npm run test:ios-tools && npm run test:web",
     "build": "node tools/build-web.mjs",

@@ -47,7 +47,9 @@ final class HostSmokeTests: XCTestCase {
             .replacingOccurrences(of: "Revision ", with: "")))
 
         let web = app.webViews["host.webview"]
-        let arrange = web.buttons["Arrange scenery"]
+        // WKWebView exposes an aria-pressed HTML toggle as an accessibility
+        // switch. The captured failing hierarchy confirms this is not a Button.
+        let arrange = web.switches["Arrange scenery"]
         XCTAssertTrue(arrange.waitForExistence(timeout: 10))
         arrange.tap()
         let nameField = web.textFields["Layout name"]

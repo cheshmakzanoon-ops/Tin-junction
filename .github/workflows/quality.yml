@@ -41,6 +41,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Run packaged browser harness tests
         run: npm run test:browser
+      - name: Capture actual modular track joint geometry
+        run: node tests/fixtures/track/capture-joints.mjs
       - name: Preserve browser diagnostics
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

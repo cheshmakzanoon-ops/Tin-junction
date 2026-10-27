@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T02:21:56.841Z",
+  "updated_at": "2026-10-27T02:25:28.991Z",
   "health": {
     "ci": {
       "status": "running",
@@ -546,16 +546,37 @@
       "history": []
     },
     "P10-T01": {
+      "status": "done",
+      "claim": null,
+      "blockers": [],
+      "evidence": [
+        "evidence/P10-T01-references.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-quality-continuation.md",
+      "history": [
+        {
+          "at": "2026-10-27T02:13:17.862Z",
+          "action": "claim",
+          "detail": "pew-pew-art; 8 hours"
+        },
+        {
+          "at": "2026-10-27T02:25:28.881Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-quality-continuation.md"
+        }
+      ]
+    },
+    "P10-T02": {
       "status": "in_progress",
       "claim": {
-        "owner": "pew-pew-art",
-        "started_at": "2026-10-27T02:13:17.862Z",
-        "expires_at": "2026-10-27T10:13:17.862Z",
-        "head_at_claim": "c59f7acbdaf591552de718d19bc7418d16fd8cd7",
+        "owner": "pew-pew-assets",
+        "started_at": "2026-10-27T02:25:28.991Z",
+        "expires_at": "2026-10-27T10:25:28.991Z",
+        "head_at_claim": "a260536a0c2e2aba556b2a025cef483cf25a8766",
         "scope": [
-          "assets/catalog.json",
-          "assets/references/",
-          "assets/source/"
+          "assets/source/",
+          "tools/assets/",
+          "tests/fixtures/assets/"
         ]
       },
       "blockers": [],
@@ -563,19 +584,11 @@
       "last_handoff": null,
       "history": [
         {
-          "at": "2026-10-27T02:13:17.862Z",
+          "at": "2026-10-27T02:25:28.991Z",
           "action": "claim",
-          "detail": "pew-pew-art; 8 hours"
+          "detail": "pew-pew-assets; 8 hours"
         }
       ]
-    },
-    "P10-T02": {
-      "status": "todo",
-      "claim": null,
-      "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
     },
     "P10-T03": {
       "status": "todo",

@@ -14,3 +14,13 @@ This pure module is independent of the current schema-v1 oval and does not repla
 `parameterAtDistance` validates the table before binary search. For future hot-path graph traversal, compile/validate route caches once rather than repeatedly accepting untrusted tables. Both primitives already have analytic distance parameterizations; no lookup approximation is needed for their actual motion.
 
 Fixtures: `tests/fixtures/track/centerlines.json`. Tests: `tests/web/unit/track-centerline.test.ts`. Neither browser/device rendering nor general graph connectivity is established by these tests.
+
+## Modular rail kit (P05-T02)
+
+`module.ts` sweeps the shared original HO-like rail section along the analytic centerline. The 16.5 mm gauge is between the inner head faces, while 1 mm heads put rail centers 17.5 mm apart. Rail foot, web and head are one concave section with hard face normals, consistently outward triangle winding and optional endpoint caps. Rendering samples do not change analytic route length. Planar arcs preserve a positive inner offset radius at the minimum supported 0.1 m centerline radius.
+
+Sleepers are 29 × 3 × 1.5 mm at 7 mm center spacing. Supply cumulative `routeOffset` to retain the same half-spacing lattice across module boundaries. Exactly-on-boundary sleepers belong only to the following module. The fixed dimension limits bound sleeper allocation; route offsets are finite 0–10,000 m.
+
+Connectors have stable `entrance`/`exit` IDs scoped to a piece ID, outward tangents, +Y up, grade zero, gauge and profile metadata. Unsupported profiles/grades or malformed frames fail explicitly. Compatibility checks use the specification's 0.2 mm positional and 0.25° angular limits; exact alignment returns a new pose and does not mutate a layout. Occupancy, duplicate connections and graph authority are intentionally P05-T03 work. A compatible-looking seam is not automatically registered as a graph connection. End caps are removed only when the caller explicitly asks; no proximity heuristic hides broken topology.
+
+`tests/web/unit/track-module.test.ts` checks gauge throughout both minimum-radius curve directions, coincident section vertices at standard joints, winding/normals, connector round trips, and sleeper continuity. `tests/fixtures/track/joints.html` is a separate non-shipping Three.js inspection fixture. Run `node tests/fixtures/track/capture-joints.mjs` (with an installed Playwright Chromium) from the repository root to capture actual straight/curve and curve/curve overviews and close-ups in `test-results/track-joints/`. Captures use single-sided materials so reversed surfaces cannot be hidden by DoubleSide. This is geometric visual evidence, not final production art or a native/device test.

@@ -1,0 +1,30 @@
+✔ reference registry and required launch catalog have consistent identities, rights and dimensions (15.987294ms)
+✔ rights/design records exist and research contains no unlicensed reference binaries (7.021245ms)
+✔ museum metadata permission is not confused with a commercial photo licence (7.182287ms)
+✔ reference inventory rejects missing creator (6.411264ms)
+✔ reference inventory rejects missing rights evidence (2.248032ms)
+✔ reference inventory rejects insecure source (6.413648ms)
+✔ reference inventory rejects implicit image rights (2.357338ms)
+✔ reference inventory rejects unreviewed image rights (3.449475ms)
+✔ reference inventory rejects duplicate reference (9.693567ms)
+✔ reference inventory rejects missing required family (2.202443ms)
+✔ reference inventory rejects missing dimension qualification (6.200305ms)
+✔ reference inventory rejects unknown source reference (4.166427ms)
+✔ reference inventory rejects unassigned owner (6.359757ms)
+✔ reference inventory rejects unknown production task (2.396506ms)
+✔ reference inventory rejects duplicate launch asset (11.346371ms)
+✔ reference inventory rejects missing catalog entry (6.329821ms)
+✔ reference inventory rejects fabricated production files (2.130925ms)
+✔ reference inventory rejects fabricated art approval (6.170731ms)
+✔ reference inventory rejects unearned asset rights (2.29956ms)
+✔ reference inventory rejects wrong catalog source (6.202368ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 324.579301
+
+Catalog validated using Python jsonschema Draft202012Validator.

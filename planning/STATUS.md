@@ -2,9 +2,9 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T02:21:56.841Z
+Ledger updated: 2026-10-27T02:25:28.991Z
 
-Tasks: 131; done: 10; active: 4; review: 0; blocked: 0; todo: 117.
+Tasks: 131; done: 11; active: 4; review: 0; blocked: 0; todo: 116.
 
 CI snapshot: **running** for c59f7acbdaf591552de718d19bc7418d16fd8cd7. This may be stale; inspect current remote checks.
 
@@ -22,7 +22,7 @@ CI snapshot: **running** for c59f7acbdaf591552de718d19bc7418d16fd8cd7. This may 
 | [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 0/5 | — |
 | [P08](phases/P08-camera-selection-and-input.md) | Camera, picking and gesture arbitration | 0/4 | — |
 | [P09](phases/P09-track-editor.md) | Creative track-layout editor | 0/5 | — |
-| [P10](phases/P10-asset-production-pipeline.md) | Reproducible 3D asset pipeline | 0/4 | P10-T01 in_progress |
+| [P10](phases/P10-asset-production-pipeline.md) | Reproducible 3D asset pipeline | 1/4 | P10-T02 in_progress |
 | [P11](phases/P11-renderer-and-material-calibration.md) | Renderer foundation and material calibration | 0/4 | — |
 | [P12](phases/P12-hero-locomotive.md) | Hero locomotive production | 0/4 | — |
 | [P13](phases/P13-railway-infrastructure.md) | Track and railway infrastructure art | 0/4 | — |

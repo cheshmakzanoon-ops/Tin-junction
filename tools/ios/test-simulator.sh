@@ -27,6 +27,8 @@ xcrun simctl bootstatus "$TIN_SIMULATOR_UDID" -b
 
 # Preserve prior runs instead of silently overwriting an existing result bundle.
 result_path="artifacts/ios/TinJunction-$(date -u +%Y%m%dT%H%M%S)-$$.xcresult"
+# Keep the original test result while still exporting failure attachments.
+set +e
 xcodebuild test \
   -project apps/ios/TinJunction.xcodeproj \
   -scheme TinJunction \
@@ -38,14 +40,25 @@ xcodebuild test \
   -parallel-testing-enabled NO \
   CODE_SIGNING_ALLOWED=NO \
   | tee artifacts/ios/xcodebuild.log
+pipeline_status=("${PIPESTATUS[@]}")
+set -e
 
 # Public xcresulttool attachment export (introduced in Xcode 16). Retain the
-# installed tool's own help alongside the actual test evidence. set -e/pipefail
-# above ensures a failed xcodebuild cannot be masked by a successful export.
+# installed tool's own help alongside the actual test evidence. Export must run
+# after a failed assertion too; its success never converts failed tests to green.
 # https://developer.apple.com/documentation/xcode-release-notes/xcode-16_3-release-notes
-xcrun xcresulttool help export attachments > artifacts/ios/xcresulttool-attachments-help.txt
-mkdir -p artifacts/ios/screenshots
-xcrun xcresulttool export attachments \
-  --path "$result_path" \
-  --output-path artifacts/ios/screenshots
-test -s artifacts/ios/screenshots/manifest.json
+export_status=0
+if xcrun xcresulttool help export attachments > artifacts/ios/xcresulttool-attachments-help.txt \
+  && mkdir -p artifacts/ios/screenshots \
+  && xcrun xcresulttool export attachments --path "$result_path" --output-path artifacts/ios/screenshots \
+  && test -s artifacts/ios/screenshots/manifest.json; then
+  printf 'Exported test attachments, including any failure evidence.\n'
+else
+  export_status=$?
+  printf 'Attachment export failed; the original xcresult and build log are retained.\n' >&2
+fi
+
+# Preserve priority: test failure, log-write failure, then evidence-export failure.
+if (( pipeline_status[0] != 0 )); then exit "${pipeline_status[0]}"; fi
+if (( pipeline_status[1] != 0 )); then exit "${pipeline_status[1]}"; fi
+exit "$export_status"

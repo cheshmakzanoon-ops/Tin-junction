@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P10-T01-reference-inventory-validation",
+  "task_id": "P10-T01",
+  "kind": "repository_validation",
+  "result": "passed",
+  "tested_commit": "a260536a0c2e2aba556b2a025cef483cf25a8766",
+  "recorded_at": "2026-10-27T02:25:10Z",
+  "source_files": [
+    {
+      "path": "assets/catalog.json",
+      "sha256": "547969033a16a3b7e9af206a11083f4dc7f39c7c66b1015304dfc2da241d4549"
+    },
+    {
+      "path": "tests/project/references.test.mjs",
+      "sha256": "6447debbc34079ca486d489e6dbac6ae33b9da51f1c7f6055546a6ae791f0da6"
+    },
+    {
+      "path": "assets/references/DESIGN_BRIEF.md",
+      "sha256": "b9447b3c9cd9bef2e11f75689c3110d7b6119b479e38b41b0db873c73df544fc"
+    },
+    {
+      "path": "assets/references/README.md",
+      "sha256": "40ec2d9a2ad9a81b46039a4fd22376716a3261ee668a7b7b2f525cadd5d87618"
+    },
+    {
+      "path": "assets/references/RIGHTS.md",
+      "sha256": "02623d31f4d06709ba2ec9965d8441cbbc59c22ae29baee648ab90b993fb7b5c"
+    },
+    {
+      "path": "assets/references/launch-kit.json",
+      "sha256": "bcde90a97482eb372c12a8c3d6a8007a3044f28f05060a110da8dec48362a96f"
+    },
+    {
+      "path": "assets/references/registry.json",
+      "sha256": "acead544000eb07fe3ca39f62f9b6301f08bfbe3d37ecee737026505a222c320"
+    },
+    {
+      "path": "assets/references/validate.mjs",
+      "sha256": "54cb4cdc00ff41abdb66a0af1964032deb0c03c671d487e4283d3fdb0486f1eb"
+    }
+  ],
+  "commands": [
+    {
+      "command": "node --test tests/project/references.test.mjs",
+      "exit_code": 0,
+      "output_path": "evidence/P10-T01-reference-tests.txt"
+    },
+    {
+      "command": "Python jsonschema.Draft202012Validator(catalog.schema.json).validate(catalog.json)",
+      "exit_code": 0,
+      "output_path": "evidence/P10-T01-reference-tests.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P10-T01-reference-tests.txt",
+      "sha256": "2d724fd7bcd39e0a0bf4c4b788575c50cf4354e7aba70275f32ba2f1d8d9a1df"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P10-T01-A1",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion_id": "P10-T01-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Link-only references and metadata inventory, not admission of third-party images or assets into the app.",
+    "20 required production entries remain planned, 7 pre-existing procedural assets remain prototypes. No owner, art, device, commercial rights or release approval inferred.",
+    "Exact production multi-angle references remain requirements of the individual production tasks."
+  ]
+}
