@@ -97,6 +97,11 @@ dialog summary { cursor: pointer; }
 kbd { border: 1px solid #d2d7c6; border-radius: 4px; padding: 3px 5px; font-size: 9px; }
 .primary-button { width: 100%; border: 0; background: #315440; color: #fff4df; border-radius: 10px; padding: 13px; font-size: 12px; }
 .is-editing .layout-heading { opacity: 0; }
+body[data-time="night"] .brand, body[data-time="night"] .layout-heading h2, body[data-time="night"] .quiet-button { color: #f5efdc; }
+body[data-time="night"] .eyebrow, body[data-time="night"] .layout-heading .overline, body[data-time="night"] .layout-heading p, body[data-time="night"] .caption { color: #d6d5c4; }
+body[data-time="night"] .brand-mark { border-color: #d6d5c4; }
+body[data-time="night"] .brand-mark:before, body[data-time="night"] .brand-mark:after { background: #d6d5c4; }
+body[data-time="night"] #status { color: #eee8d6; text-shadow: 0 1px 5px #1b2330; }
 @media (max-width: 850px) {
   .masthead { top: max(20px,env(safe-area-inset-top)); left: 22px; right: 22px; }
   .layout-heading { left: 25px; top: 115px; }

@@ -8,5 +8,7 @@ Use [the ADR template](../../templates/ADR.md). Decisions have a status (`propos
 | [ADR-0002](ADR-0002-duo-only.md) | Duo-only product scope; distribution verification gate | Accepted scope; distribution mechanism unresolved |
 | [ADR-0003](ADR-0003-graphics-baseline.md) | WebGL2 baseline, physical miniature units, measured quality | Accepted baseline; hardware budget provisional |
 | [ADR-0004](ADR-0004-agent-state.md) | Task graph + evidence ledger, generated continuation views | Accepted |
+| [ADR-0005](ADR-0005-scale-and-model.md) | Meter-scale deterministic oval, rigid consist and bounded document format | Accepted for development; full track graph remains future work |
+| [ADR-0006](ADR-0006-first-operating-workbench.md) | First operating workbench with scenery transactions and native checkpoints | Accepted development slice; original production gates retained |
 
 New decisions receive new stable IDs. Do not rewrite history to pretend an early assumption was verified. When reversing a decision, record the old ID in the new ADR and link both directions.

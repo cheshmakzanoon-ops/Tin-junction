@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P04-T03-operating-model-unit_test",
+  "task_id": "P04-T03",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "299619d6924d2c631c8f58d3eeb5f0e779066cbe",
+  "recorded_at": "2026-10-27T01:28:11.845922+00:00",
+  "source_files": [
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/model/validation.ts",
+      "sha256": "c5d4eb4f2fdc33f95bc227fad227e71c65a99cbc8f3df86dddfc7e50e7c0f42e"
+    },
+    {
+      "path": "tests/web/unit/model-validation.test.ts",
+      "sha256": "911f36628eba24d532d028085cf6c14533d7363eccabf17e1fde2503635358c3"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "output_path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40431721192"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40431721192",
+      "sha256": null
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P04-T03-A1",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion_id": "P04-T03-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Applies to the explicit analytic-oval kernel and declared invariants in ADR-0005. General graph routes, turnouts and production vehicle artwork are not accepted by this evidence.",
+    "The observed remote job executed 91 web unit tests, including 61 model tests, plus repository and simulator-selector checks. No hardware or frame-rate claim."
+  ]
+}

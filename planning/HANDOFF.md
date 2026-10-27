@@ -1,16 +1,9 @@
-# Current handoff — repository bootstrap
+# Current handoff — first operating railway
 
-The engineering plan and diagnostic scaffolds are being integrated. This is a setup checkpoint, not a completed railway application.
+Read [the current implementation and verification handoff](handoffs/2026-10-27-first-railway.md). The repository now contains a working miniature railway, scenery workbench and native save/recovery integration. [The implemented contract](../docs/architecture/FIRST_WORKBENCH.md) records the precise scope.
 
-## Current boundary
+P00 and the five deterministic-kernel tasks are accepted against published evidence. P04-T06 remains in progress until the refined implementation passes both required Actions workflows. The first native run compiled and passed all 46 unit tests, but its UI runner stalled during simulator Accessibility initialization before any UI test executed. Preserve that failure record and inspect the fresh run; do not weaken tests.
 
-- The product is the Duo-only miniature railway defined in [the product contract](../docs/product/PRODUCT_SPEC.md).
-- [The roadmap](roadmap.json) defines all tasks. [The state ledger](state.json) is authoritative for progress.
-- Initial setup tasks remain incomplete until their actual evidence and published implementation SHA are recorded.
-- Native compilation, Duo Simulator behavior and physical-device results must be tracked independently. Do not infer them from web tests or file existence.
+After P04-T06 verification, use `npm run project:next` to resume the original platform/packaged-runtime gates. The fixed oval and procedural art do not complete the later general track graph, production editor, asset or device-validation phases. Native simulator evidence and physical-device evidence remain distinct.
 
-## Next action
-
-Run `npm run project:validate`, inspect actual GitHub Actions results for `origin/main`, then run `npm run project:next`. Follow the selected task, preserving unrelated work and recording a chronological handoff before ending.
-
-The unresolved Duo-only distribution and naming gates remain in [the risk register](../docs/operations/RISK_REGISTER.md). No signing, store upload or external purchase is authorized by this setup checkpoint.
+The [state ledger](state.json) owns progress. Inspect current remote checks before acting; the stored CI snapshot may be stale. Unresolved Duo-only distribution, name/rights, final art and release gates remain in [the risk register](../docs/operations/RISK_REGISTER.md).

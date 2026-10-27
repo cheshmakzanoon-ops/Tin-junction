@@ -38,3 +38,14 @@ xcodebuild test \
   -parallel-testing-enabled NO \
   CODE_SIGNING_ALLOWED=NO \
   | tee artifacts/ios/xcodebuild.log
+
+# Public xcresulttool attachment export (introduced in Xcode 16). Retain the
+# installed tool's own help alongside the actual test evidence. set -e/pipefail
+# above ensures a failed xcodebuild cannot be masked by a successful export.
+# https://developer.apple.com/documentation/xcode-release-notes/xcode-16_3-release-notes
+xcrun xcresulttool help export attachments > artifacts/ios/xcresulttool-attachments-help.txt
+mkdir -p artifacts/ios/screenshots
+xcrun xcresulttool export attachments \
+  --path "$result_path" \
+  --output-path artifacts/ios/screenshots
+test -s artifacts/ios/screenshots/manifest.json

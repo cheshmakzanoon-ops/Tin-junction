@@ -2,11 +2,11 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T01:04:43.838Z
+Ledger updated: 2026-10-27T01:32:32.257Z
 
-Tasks: 131; done: 4; active: 2; review: 0; blocked: 0; todo: 125.
+Tasks: 131; done: 9; active: 1; review: 0; blocked: 0; todo: 121.
 
-CI snapshot: **passed** for 90d8bc439be6c4f93c6c95344fae56582eca55d1. This may be stale; inspect current remote checks.
+CI snapshot: **failed** for 299619d6924d2c631c8f58d3eeb5f0e779066cbe. This may be stale; inspect current remote checks.
 
 [Next task](NEXT_TASK.md) · [Current handoff](HANDOFF.md) · [Agent rules](../AGENTS.md)
 
@@ -16,7 +16,7 @@ CI snapshot: **passed** for 90d8bc439be6c4f93c6c95344fae56582eca55d1. This may b
 | [P01](phases/P01-platform-and-runtime-spikes.md) | Platform truth and packaged-runtime spikes | 0/5 | — |
 | [P02](phases/P02-native-application-shell.md) | Swift native application shell | 0/4 | — |
 | [P03](phases/P03-native-web-contract.md) | Secure native-to-web contract | 0/5 | — |
-| [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 0/6 | P04-T01 in_progress; P04-T06 in_progress |
+| [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 5/6 | P04-T06 in_progress |
 | [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 0/5 | — |
 | [P06](phases/P06-first-operating-railway.md) | First operating railway | 0/4 | — |
 | [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 0/5 | — |

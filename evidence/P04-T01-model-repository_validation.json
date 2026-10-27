@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P04-T01-operating-model-repository_validation",
+  "task_id": "P04-T01",
+  "kind": "repository_validation",
+  "result": "passed",
+  "tested_commit": "299619d6924d2c631c8f58d3eeb5f0e779066cbe",
+  "recorded_at": "2026-10-27T01:28:11.845922+00:00",
+  "source_files": [
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/model/geometry.ts",
+      "sha256": "e56fbe722f3e71cc06d70679af0eda98d32ed2ebe071bab86d37c2f403a1dae9"
+    },
+    {
+      "path": "tests/web/unit/model-geometry.test.ts",
+      "sha256": "20448ca1c6a0d99b23c6ae175fc80f88c3684e3c23ae6e3ed35a3f07bd067d3b"
+    },
+    {
+      "path": "docs/decisions/ADR-0005-scale-and-model.md",
+      "sha256": "abeeb801d79837a44c3c0e1f785a3d043e43c3511323bba871eb721d4f1bcbde"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "output_path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40431721192"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40431721192",
+      "sha256": null
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P04-T01-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Applies to the explicit analytic-oval kernel and declared invariants in ADR-0005. General graph routes, turnouts and production vehicle artwork are not accepted by this evidence.",
+    "The observed remote job executed 91 web unit tests, including 61 model tests, plus repository and simulator-selector checks. No hardware or frame-rate claim."
+  ]
+}

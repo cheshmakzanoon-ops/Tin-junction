@@ -1,6 +1,6 @@
 # System architecture
 
-Status: development architecture accepted; production implementation proceeds through the task graph. The checked-in calibration harness demonstrates plumbing, not the final railway.
+Status: development architecture accepted; production implementation proceeds through the task graph. The [first operating workbench](FIRST_WORKBENCH.md) implements the bounded oval, scenery transactions and native checkpoints. The full production architecture below retains its original gates.
 
 ## 1. Product boundary
 
@@ -28,7 +28,7 @@ The experience is a personally arranged model railway: operate a locomotive, set
 1. Native boot loads settings and last-known-good layout metadata without launching multiple renderer instances.
 2. Native validates the installed asset manifest and creates a WebView configured for local content only.
 3. The bundled web entry initializes bridge validation and reports readiness or a bounded error.
-4. Native sends the protocol handshake, actual viewport and lifecycle state. Later production phases add a versioned layout snapshot.
+4. Native sends the protocol handshake, actual viewport, lifecycle state and a validated versioned layout snapshot for the first-loop format.
 5. The engine validates the snapshot and asset IDs, builds the simulation graph, creates the render scene, and acknowledges the accepted revision.
 6. User actions become typed commands. The domain validates and applies them transactionally, increments revision and updates render/audio projections.
 7. Native receives bounded durable snapshots at explicit transaction/checkpoint boundaries, writes atomically, and acknowledges the durable revision.
@@ -126,6 +126,6 @@ Write migration fixtures before changing a format. Never confuse app semantic ve
 
 ## 13. Build-now versus design-next
 
-The setup contains a native/WebGL diagnostic harness, minimal bridge validation, test configurations and the agent planning system. It does not contain production trains, track topology, full storage, scenery editing, licensed art, production sound, completed posture UX or release-ready compatibility enforcement. Those are tasks, not implied capabilities.
+The current workbench contains a deterministic operating oval, procedural train/case/scenery, constrained scenery editing, native current/previous-generation persistence, validated session/checkpoint transport and actual browser/native tests. It does not contain the general track topology/editor, full document library/import/migration system, approved launch art, production native sound/haptics, completed posture UX or release-ready compatibility enforcement. See [the implemented contract](FIRST_WORKBENCH.md) for exact boundaries.
 
 Use the [roadmap](../../planning/roadmap.json) and generated phase files to implement these systems incrementally. Any change to these boundaries must include an ADR, tests and a handoff explaining the downstream consequences.

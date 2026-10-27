@@ -76,5 +76,6 @@ jobs:
             artifacts/ios/*.json
             artifacts/ios/*.log
             artifacts/ios/*.xcresult
+            artifacts/ios/screenshots/
           if-no-files-found: error
           retention-days: 14

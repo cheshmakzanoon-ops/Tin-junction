@@ -1,6 +1,6 @@
 # Asset workspace
 
-This directory starts with an **empty catalog** and policies. There are no implied production meshes, textures, sound effects, licensed references or device screenshots. Do not create fake manifest entries to make the project appear more complete.
+The catalog now inventories the original procedural **prototype** assets used by the first operating workbench. [Provenance and reproducible sources](PROCEDURAL_PROTOTYPES.md) identify what actually exists. There are no approved production assets or physical-device approvals.
 
 Read [asset pipeline](../docs/graphics/ASSET_PIPELINE.md), [art direction](../docs/graphics/ART_DIRECTION.md), [rendering](../docs/graphics/RENDERING_SPEC.md), [visual acceptance](../docs/graphics/VISUAL_ACCEPTANCE.md) and [performance budgets](../docs/graphics/PERFORMANCE_BUDGETS.md).
 

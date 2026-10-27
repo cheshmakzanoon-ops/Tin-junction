@@ -27,7 +27,8 @@ export class MiniatureScene {
   private readonly keyLight = new THREE.DirectionalLight(0xfff0d7, 3.5);
   private readonly fillLight = new THREE.HemisphereLight(0xc6d8e7, 0x786b4e, 2.1);
   private readonly lanternLights = [new THREE.PointLight(0xffba68, 0, 0.14, 2), new THREE.PointLight(0xffba68, 0, 0.14, 2)];
-  private readonly environmentTarget: THREE.WebGLRenderTarget;
+  private environmentTarget: THREE.WebGLRenderTarget | null = null;
+  private readonly restoreEnvironment = (): void => { this.rebuildEnvironment(); };
   private readonly lid = new THREE.Group();
   private readonly train: TrainRig;
   private readonly terrain: THREE.Mesh;
@@ -52,15 +53,14 @@ export class MiniatureScene {
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.06;
     this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.scene.background = new THREE.Color(0xd3c7b2);
     this.scene.fog = new THREE.Fog(0xd3c7b2, 3, 9);
-    const room = new RoomEnvironment();
-    const generator = new THREE.PMREMGenerator(this.renderer);
-    this.environmentTarget = generator.fromScene(room, 0.05);
-    this.scene.environment = this.environmentTarget.texture;
+    this.rebuildEnvironment();
     this.scene.environmentIntensity = 0.55;
-    generator.dispose(); room.dispose();
+    // Render-target pixels cannot be uploaded from a CPU image after WebGL context loss.
+    // The renderer registered its own restore listener first, so its new context is ready here.
+    canvas.addEventListener("webglcontextrestored", this.restoreEnvironment);
 
     this.controls = new OrbitControls(this.camera, canvas);
     this.controls.enableDamping = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -107,6 +107,21 @@ export class MiniatureScene {
     this.scene.add(this.selection);
     this.resize();
     this.setView("overview");
+  }
+
+  private rebuildEnvironment(): void {
+    if (this.disposed) return;
+    this.scene.environment = null;
+    this.environmentTarget?.dispose();
+    const room = new RoomEnvironment();
+    const generator = new THREE.PMREMGenerator(this.renderer);
+    try {
+      this.environmentTarget = generator.fromScene(room, 0.05);
+      this.scene.environment = this.environmentTarget.texture;
+    } finally {
+      generator.dispose();
+      room.dispose();
+    }
   }
 
   private createCase(): void {
@@ -366,6 +381,7 @@ export class MiniatureScene {
   dispose(): void {
     if (this.disposed) return;
     this.disposed = true;
+    this.canvas.removeEventListener("webglcontextrestored", this.restoreEnvironment);
     this.controls.dispose();
     const geometries = new Set<THREE.BufferGeometry>(), materials = new Set<THREE.Material>(), textures = new Set<THREE.Texture>();
     this.scene.traverse(object => {
@@ -383,7 +399,9 @@ export class MiniatureScene {
     });
     geometries.forEach(geometry => geometry.dispose()); textures.forEach(texture => texture.dispose());
     this.keyLight.shadow.map?.dispose();
-    this.environmentTarget.dispose();
+    this.scene.environment = null;
+    this.environmentTarget?.dispose();
+    this.environmentTarget = null;
     this.renderer.dispose();
   }
 }

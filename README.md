@@ -2,7 +2,9 @@
 
 A highly realistic miniature model railway in a folding case, designed exclusively for **iPhone Duo**. Swift/SwiftUI owns the native application; bundled TypeScript/Three.js owns the railway, editor and rendering inside WKWebView. The browser version is an internal diagnostic harness, not a second shipping product.
 
-**Current maturity:** engineering plan, agent-continuity tooling and diagnostic scaffolds. The playable railway and production artwork are not implemented. Passing scaffold tests does not mean finished graphics, measured device performance or release readiness.
+**Current maturity:** a playable first operating workbench. Drive an original miniature locomotive and two wagons, arrange six kinds of scenery with undo/redo, choose daylight/evening/night, name your layout, and save/reopen it through the native host. The walnut case, station, rails, scenery and train are procedural development artwork. The general track editor, turnouts, final art, physical-device performance and release approval remain ahead.
+
+Read the [implemented workbench contract](docs/architecture/FIRST_WORKBENCH.md) for exact behavior, data format, controls and current limits. Actual verification and the latest implementation SHA are recorded in the [handoff](planning/HANDOFF.md).
 
 ## Continue this project
 
@@ -15,7 +17,7 @@ npm run project:status
 npm run project:next
 ```
 
-The authoritative roadmap contains **31 phases, 130 tasks and 260 acceptance criteria**. Task dependencies, claims, blockers, evidence and handoffs determine what the next agent should do. The generated pages are navigation aids, not a second editable task ledger.
+The authoritative roadmap contains **31 phases, 131 tasks and 262 acceptance criteria**, including the explicitly bounded first operating workbench. Original production gates remain in place. Task dependencies, claims, blockers, evidence and handoffs determine what the next agent should do.
 
 | Question | Authoritative entry |
 |---|---|
@@ -43,7 +45,7 @@ The initial visual target is a coherent premium miniature railway, not a full-si
 npm run check          # planning, TypeScript, unit tests and reproducible web bundle
 npm run bundle:ios     # generate local WebAssets for the Swift host
 npm run test:browser   # install Playwright Chromium first if absent
-npm run dev           # internal engineering scene; not the finished game
+npm run dev           # playable internal workbench; not a separate shipping platform
 ```
 
 GitHub Actions runs repository/web checks and unsigned native tests on the specified Xcode/iPhone Duo Simulator toolchain. See the [Actions page](https://github.com/cheshmakzanoon-ops/Tin-junction/actions). Inspect the actual run for the current SHA; workflow files alone are not evidence of success. Real Duo hardware is required for fold ergonomics, haptics, thermals, sustained performance and final visual approval.
@@ -52,7 +54,7 @@ GitHub Actions runs repository/web checks and unsigned native tests on the speci
 
 - **Duo-only distribution:** no supported App Store hardware-exclusivity mechanism has yet been verified. Preserve the exclusive scope, do not invent capability keys, and keep commercial release blocked until the owner approves a documented route.
 - **Name and rights:** Tin Junction is a provisional working title. Trademark, App Store name availability, asset rights and licenses need explicit review.
-- **Artwork:** the [asset catalog](assets/catalog.json) intentionally contains no fabricated production assets or approvals.
+- **Artwork:** the [asset catalog](assets/catalog.json) records original procedural prototypes and their source hashes. None is presented as approved production art; see [provenance](assets/PROCEDURAL_PROTOTYPES.md).
 - **Publishing:** ordinary workflows never sign, upload to TestFlight or publish. A manual [read-only release preflight](release/README.md) checks the exact candidate, live CI and an externally supplied owner decision. Release still requires the separate owner gates in the [release runbook](docs/operations/RELEASE_RUNBOOK.md).
 
 See [contributing](CONTRIBUTING.md), [security](SECURITY.md), [risks](docs/operations/RISK_REGISTER.md) and [primary sources](docs/research/SOURCES.md). Repository publication is not an open-source license grant; no project license has been selected by the owner.

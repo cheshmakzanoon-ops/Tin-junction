@@ -1,18 +1,18 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T01:04:43.838Z",
+  "updated_at": "2026-10-27T01:32:32.257Z",
   "health": {
     "ci": {
-      "status": "passed",
-      "checked_commit": "90d8bc439be6c4f93c6c95344fae56582eca55d1",
+      "status": "failed",
+      "checked_commit": "299619d6924d2c631c8f58d3eeb5f0e779066cbe",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40427491810",
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40427491834"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40431721192",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40431721076"
       ]
     },
     "incidents": []
   },
-  "last_handoff": "planning/handoffs/2026-10-27-foundation-verification.md",
+  "last_handoff": "planning/handoffs/2026-10-27-first-railway.md",
   "tasks": {
     "P00-T01": {
       "status": "done",
@@ -211,60 +211,111 @@
       "history": []
     },
     "P04-T01": {
-      "status": "in_progress",
-      "claim": {
-        "owner": "railway-model",
-        "started_at": "2026-10-27T01:03:43.718Z",
-        "expires_at": "2026-10-27T05:03:43.718Z",
-        "head_at_claim": "4dc7b7fc672f9f55c23ca4f74ff2efa9cbff2938",
-        "scope": [
-          "web/src/model/",
-          "docs/decisions/",
-          "tests/fixtures/model/"
-        ]
-      },
+      "status": "done",
+      "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
+      "evidence": [
+        "evidence/P04-T01-model-unit_test.json",
+        "evidence/P04-T01-model-repository_validation.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-first-railway.md",
       "history": [
         {
           "at": "2026-10-27T01:03:43.718Z",
           "action": "claim",
           "detail": "railway-model; 4 hours"
+        },
+        {
+          "at": "2026-10-27T01:28:11.978Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-first-railway.md"
         }
       ]
     },
     "P04-T02": {
-      "status": "todo",
+      "status": "done",
       "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
+      "evidence": [
+        "evidence/P04-T02-model-unit_test.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-first-railway.md",
+      "history": [
+        {
+          "at": "2026-10-27T01:28:12.103Z",
+          "action": "claim",
+          "detail": "milestone-coordinator; 4 hours"
+        },
+        {
+          "at": "2026-10-27T01:28:12.165Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-first-railway.md"
+        }
+      ]
     },
     "P04-T03": {
-      "status": "todo",
+      "status": "done",
       "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
+      "evidence": [
+        "evidence/P04-T03-model-unit_test.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-first-railway.md",
+      "history": [
+        {
+          "at": "2026-10-27T01:28:12.274Z",
+          "action": "claim",
+          "detail": "milestone-coordinator; 4 hours"
+        },
+        {
+          "at": "2026-10-27T01:28:12.360Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-first-railway.md"
+        }
+      ]
     },
     "P04-T04": {
-      "status": "todo",
+      "status": "done",
       "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
+      "evidence": [
+        "evidence/P04-T04-model-unit_test.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-first-railway.md",
+      "history": [
+        {
+          "at": "2026-10-27T01:28:12.449Z",
+          "action": "claim",
+          "detail": "milestone-coordinator; 4 hours"
+        },
+        {
+          "at": "2026-10-27T01:28:12.549Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-first-railway.md"
+        }
+      ]
     },
     "P04-T05": {
-      "status": "todo",
+      "status": "done",
       "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
+      "evidence": [
+        "evidence/P04-T05-model-unit_test.json",
+        "evidence/P04-T05-model-repository_validation.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-first-railway.md",
+      "history": [
+        {
+          "at": "2026-10-27T01:28:12.620Z",
+          "action": "claim",
+          "detail": "milestone-coordinator; 4 hours"
+        },
+        {
+          "at": "2026-10-27T01:28:12.685Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-first-railway.md"
+        }
+      ]
     },
     "P05-T01": {
       "status": "todo",

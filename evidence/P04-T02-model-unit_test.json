@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P04-T02-operating-model-unit_test",
+  "task_id": "P04-T02",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "299619d6924d2c631c8f58d3eeb5f0e779066cbe",
+  "recorded_at": "2026-10-27T01:28:11.845922+00:00",
+  "source_files": [
+    {
+      "path": "web/src/clock.ts",
+      "sha256": "77c37952ff76a84e88f1cb3e4cc7980e5b9ed48bb04840b366aec8a8e467c912"
+    },
+    {
+      "path": "web/src/model/layout.ts",
+      "sha256": "c55a69e9803d9418ef3084bc65c5bf4c06cba0927021f4438af907aee1d27d50"
+    },
+    {
+      "path": "web/src/model/railway.ts",
+      "sha256": "c38cb8ecbea445583669db3dc79ed67574124b7e4c6370b551effc444149feb3"
+    },
+    {
+      "path": "tests/web/unit/model-railway.test.ts",
+      "sha256": "055658063f6f78da42142b9ecdb0457e2e0230f6453e0a53e1e0555e46e91330"
+    },
+    {
+      "path": "tests/web/unit/clock.test.ts",
+      "sha256": "abb741abfb9287958e4250b1d1a50a522dbaabc5ffd7593179acb4fe8fb9a641"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "output_path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40431721192"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40431721192",
+      "sha256": null
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P04-T02-A1",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion_id": "P04-T02-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Applies to the explicit analytic-oval kernel and declared invariants in ADR-0005. General graph routes, turnouts and production vehicle artwork are not accepted by this evidence.",
+    "The observed remote job executed 91 web unit tests, including 61 model tests, plus repository and simulator-selector checks. No hardware or frame-rate claim."
+  ]
+}

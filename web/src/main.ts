@@ -85,6 +85,7 @@ function start(): void {
   }
   function syncUI(): void {
     const state = model.state;
+    document.body.dataset.time = state.environment.timeOfDay;
     Object.assign(diagnostics, { loaded, mode: model.mode, revision: state.revision, tick: state.tick,
       trainDistance: state.train.distance, trainSpeed: state.train.speed, throttle: state.train.throttle,
       direction: state.train.direction, sceneryCount: state.scenery.length, selectedId: selected,

@@ -1,6 +1,350 @@
 {
   "$schema": "./catalog.schema.json",
   "schemaVersion": 1,
-  "catalogVersion": "0.0.0",
-  "assets": []
+  "catalogVersion": "0.1.0",
+  "assets": [
+    {
+      "id": "workbench.case",
+      "label": "Walnut and brass folding case",
+      "kind": "case",
+      "version": "0.1.0",
+      "stage": "prototype",
+      "taskId": "P04-T06",
+      "provenance": {
+        "author": "Tin Junction project, AI-assisted original implementation",
+        "origin": "original",
+        "license": "Original project source; no project-wide public license selected",
+        "rightsRecord": "assets/PROCEDURAL_PROTOTYPES.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Owner rights and final production approvals remain unrecorded."
+        ]
+      },
+      "sourceFiles": [
+        {
+          "path": "web/src/scene/MiniatureScene.ts",
+          "sha256": "975c76353c98697837eef6324fa8f6e1372b971b7f100eac9f60fef2e5acbfe8",
+          "bytes": 21282,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/materials.ts",
+          "sha256": "ce819cd61f9ae899089c8f3458b72ae9ee429e8bdb77c70513cba7d75486f400",
+          "bytes": 5892,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        }
+      ],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "pass",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [
+          "docs/architecture/FIRST_WORKBENCH.md"
+        ],
+        "openDefects": [
+          "Procedural development art has not passed final reference-matched visual or physical-device review."
+        ]
+      },
+      "approvals": [],
+      "notes": "Runtime geometry/materials are constructed from bundled source, not a separately exported asset file. Permission flags remain false pending the recorded owner rights review; this is not a statement about copyright ownership."
+    },
+    {
+      "id": "workbench.track",
+      "label": "Analytic profiled oval railway",
+      "kind": "track",
+      "version": "0.1.0",
+      "stage": "prototype",
+      "taskId": "P04-T06",
+      "provenance": {
+        "author": "Tin Junction project, AI-assisted original implementation",
+        "origin": "original",
+        "license": "Original project source; no project-wide public license selected",
+        "rightsRecord": "assets/PROCEDURAL_PROTOTYPES.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Owner rights and final production approvals remain unrecorded."
+        ]
+      },
+      "sourceFiles": [
+        {
+          "path": "web/src/scene/geometry.ts",
+          "sha256": "149271929c855fe9683488d0a6477e02fcc76b03373cf5b67d3d7d17d5720b4a",
+          "bytes": 6949,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/MiniatureScene.ts",
+          "sha256": "975c76353c98697837eef6324fa8f6e1372b971b7f100eac9f60fef2e5acbfe8",
+          "bytes": 21282,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        }
+      ],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "pass",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [
+          "docs/architecture/FIRST_WORKBENCH.md"
+        ],
+        "openDefects": [
+          "Procedural development art has not passed final reference-matched visual or physical-device review."
+        ]
+      },
+      "approvals": [],
+      "notes": "Runtime geometry/materials are constructed from bundled source, not a separately exported asset file. Permission flags remain false pending the recorded owner rights review; this is not a statement about copyright ownership."
+    },
+    {
+      "id": "workbench.locomotive",
+      "label": "Original miniature steam locomotive",
+      "kind": "locomotive",
+      "version": "0.1.0",
+      "stage": "prototype",
+      "taskId": "P04-T06",
+      "provenance": {
+        "author": "Tin Junction project, AI-assisted original implementation",
+        "origin": "original",
+        "license": "Original project source; no project-wide public license selected",
+        "rightsRecord": "assets/PROCEDURAL_PROTOTYPES.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Owner rights and final production approvals remain unrecorded."
+        ]
+      },
+      "sourceFiles": [
+        {
+          "path": "web/src/scene/train.ts",
+          "sha256": "5f711b4f029477b59269adec3b112f571f7d2b3b0b0efdc4a3a5a5ff0ae6e1d9",
+          "bytes": 11263,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        }
+      ],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "pass",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [
+          "docs/architecture/FIRST_WORKBENCH.md"
+        ],
+        "openDefects": [
+          "Procedural development art has not passed final reference-matched visual or physical-device review."
+        ]
+      },
+      "approvals": [],
+      "notes": "Runtime geometry/materials are constructed from bundled source, not a separately exported asset file. Permission flags remain false pending the recorded owner rights review; this is not a statement about copyright ownership."
+    },
+    {
+      "id": "workbench.wagons",
+      "label": "Original two-wagon consist",
+      "kind": "rolling-stock",
+      "version": "0.1.0",
+      "stage": "prototype",
+      "taskId": "P04-T06",
+      "provenance": {
+        "author": "Tin Junction project, AI-assisted original implementation",
+        "origin": "original",
+        "license": "Original project source; no project-wide public license selected",
+        "rightsRecord": "assets/PROCEDURAL_PROTOTYPES.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Owner rights and final production approvals remain unrecorded."
+        ]
+      },
+      "sourceFiles": [
+        {
+          "path": "web/src/scene/train.ts",
+          "sha256": "5f711b4f029477b59269adec3b112f571f7d2b3b0b0efdc4a3a5a5ff0ae6e1d9",
+          "bytes": 11263,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        }
+      ],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "pass",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [
+          "docs/architecture/FIRST_WORKBENCH.md"
+        ],
+        "openDefects": [
+          "Procedural development art has not passed final reference-matched visual or physical-device review."
+        ]
+      },
+      "approvals": [],
+      "notes": "Runtime geometry/materials are constructed from bundled source, not a separately exported asset file. Permission flags remain false pending the recorded owner rights review; this is not a statement about copyright ownership."
+    },
+    {
+      "id": "workbench.scenery",
+      "label": "Original Alpine miniature scenery kit",
+      "kind": "scenery",
+      "version": "0.1.0",
+      "stage": "prototype",
+      "taskId": "P04-T06",
+      "provenance": {
+        "author": "Tin Junction project, AI-assisted original implementation",
+        "origin": "original",
+        "license": "Original project source; no project-wide public license selected",
+        "rightsRecord": "assets/PROCEDURAL_PROTOTYPES.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Owner rights and final production approvals remain unrecorded."
+        ]
+      },
+      "sourceFiles": [
+        {
+          "path": "web/src/scene/scenery.ts",
+          "sha256": "ae7c4385ae0948d21c6a136d61bab7550026e921c6c9dc39498cc1d35789a32e",
+          "bytes": 9953,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        }
+      ],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "pass",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [
+          "docs/architecture/FIRST_WORKBENCH.md"
+        ],
+        "openDefects": [
+          "Procedural development art has not passed final reference-matched visual or physical-device review."
+        ]
+      },
+      "approvals": [],
+      "notes": "Runtime geometry/materials are constructed from bundled source, not a separately exported asset file. Permission flags remain false pending the recorded owner rights review; this is not a statement about copyright ownership."
+    },
+    {
+      "id": "workbench.materials",
+      "label": "Procedural miniature materials and studio environment",
+      "kind": "material",
+      "version": "0.1.0",
+      "stage": "prototype",
+      "taskId": "P04-T06",
+      "provenance": {
+        "author": "Tin Junction project, AI-assisted original implementation",
+        "origin": "original",
+        "license": "Original project source; no project-wide public license selected",
+        "rightsRecord": "assets/PROCEDURAL_PROTOTYPES.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Owner rights and final production approvals remain unrecorded."
+        ]
+      },
+      "sourceFiles": [
+        {
+          "path": "web/src/scene/materials.ts",
+          "sha256": "ce819cd61f9ae899089c8f3458b72ae9ee429e8bdb77c70513cba7d75486f400",
+          "bytes": 5892,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/MiniatureScene.ts",
+          "sha256": "975c76353c98697837eef6324fa8f6e1372b971b7f100eac9f60fef2e5acbfe8",
+          "bytes": 21282,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        }
+      ],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "pass",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [
+          "docs/architecture/FIRST_WORKBENCH.md"
+        ],
+        "openDefects": [
+          "Procedural development art has not passed final reference-matched visual or physical-device review."
+        ]
+      },
+      "approvals": [],
+      "notes": "Runtime geometry/materials are constructed from bundled source, not a separately exported asset file. Permission flags remain false pending the recorded owner rights review; this is not a statement about copyright ownership."
+    },
+    {
+      "id": "workbench.whistle",
+      "label": "Original synthesized locomotive whistle",
+      "kind": "audio",
+      "version": "0.1.0",
+      "stage": "prototype",
+      "taskId": "P04-T06",
+      "provenance": {
+        "author": "Tin Junction project, AI-assisted original implementation",
+        "origin": "original",
+        "license": "Original project source; no project-wide public license selected",
+        "rightsRecord": "assets/PROCEDURAL_PROTOTYPES.md",
+        "redistributionAllowed": false,
+        "derivativeWorksAllowed": false,
+        "sourceUrls": [],
+        "status": "pending",
+        "restrictions": [
+          "Owner rights and final production approvals remain unrecorded."
+        ]
+      },
+      "sourceFiles": [
+        {
+          "path": "web/src/audio.ts",
+          "sha256": "9df6cfbb47875ad491e76e5ef7725f463cf9a7153b7897c5e43732bedd21e2c1",
+          "bytes": 1729,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        }
+      ],
+      "runtimeFiles": [],
+      "requiredExtensions": [],
+      "quality": {
+        "technical": "pass",
+        "visual": "not_run",
+        "device": "not_run",
+        "provisionalBudgets": true,
+        "evidence": [
+          "docs/architecture/FIRST_WORKBENCH.md"
+        ],
+        "openDefects": [
+          "Procedural development art has not passed final reference-matched visual or physical-device review."
+        ]
+      },
+      "approvals": [],
+      "notes": "Runtime geometry/materials are constructed from bundled source, not a separately exported asset file. Permission flags remain false pending the recorded owner rights review; this is not a statement about copyright ownership."
+    }
+  ]
 }
