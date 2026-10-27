@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P01-T01-public-platform-source-review-20261027",
+  "task_id": "P01-T01",
+  "kind": "source_verification",
+  "result": "passed",
+  "tested_commit": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
+  "recorded_at": "2026-10-27T04:09:07.466577+00:00",
+  "source_files": [
+    {
+      "path": "apps/ios/TinJunction/RootView.swift",
+      "sha256": "96326512f7e20f32a23af4645770a0d2c6e0031febe31bb5842203f849f4bb24"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/NativeViewport.swift",
+      "sha256": "85dddc0112d70bf9dd176e89fd74127451daa4135a80a1cb77f26a1ecbfb117f"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/PlatformProbe.swift",
+      "sha256": "6b7155aeed6a8dfb32d1c4ec2d40d8ed550aeafe1843d500449b495e20b721e2"
+    },
+    {
+      "path": "tools/ios/PLATFORM_PROBE.md",
+      "sha256": "6680f1996cb40f2293576dc49a161e2a9a5ef4fc351f18006b9854a02551d510"
+    }
+  ],
+  "commands": [],
+  "artifacts": [
+    {
+      "path": "evidence/P01-T01-source-review.md",
+      "sha256": "3fb372625c5a6d4b440ec217960ccc90ccb6b4bcc2ea572988e1b9137a1628b1"
+    },
+    {
+      "path": "https://developer.apple.com/videos/play/tech-talks/111464/",
+      "sha256": null
+    },
+    {
+      "path": "https://developer.apple.com/videos/play/tech-talks/111463/",
+      "sha256": null
+    },
+    {
+      "path": "https://developer.apple.com/videos/play/tech-talks/111461/",
+      "sha256": null
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P01-T01-A2",
+      "evidence": [
+        "evidence/P01-T01-source-review.md",
+        "https://developer.apple.com/videos/play/tech-talks/111464/",
+        "https://developer.apple.com/videos/play/tech-talks/111463/",
+        "https://developer.apple.com/videos/play/tech-talks/111461/"
+      ]
+    }
+  ],
+  "reviewed_by": "Tin Junction native-readiness engineering agent; documentation review only",
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Official source verification only. The separate native integration record is required for P01-T01-A1.",
+    "No physical-device observation, real fold sweep, commercial eligibility, visual sign-off or owner release approval is established.",
+    "The direct API documentation page returned a JavaScript shell and its Markdown endpoint could not be retrieved. Readable official video code was inspected instead."
+  ]
+}

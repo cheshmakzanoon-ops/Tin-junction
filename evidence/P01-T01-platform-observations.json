@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "testedCommit": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
+  "runId": 40446521510,
+  "jobId": 122000278157,
+  "runURL": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40446521510",
+  "conclusion": "success",
+  "artifact": {
+    "id": 12709365676,
+    "name": "duo-host-40446521510-1",
+    "bytes": 184855412,
+    "sha256": "8a358a1eba886141de5eae1879393246cf270c9fdb15e2abafc0d7136814417c",
+    "expiresAt": "2026-11-10T04:06:15Z"
+  },
+  "inventory": {
+    "xcode": "Xcode 27.1\nBuild version 27A9275",
+    "macOS": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0.1\nBuildVersion:\t\t26A434",
+    "selectedSimulator": {
+      "name": "iPhone Duo",
+      "udid": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+      "state": "Shutdown",
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-27-1",
+      "runtimeVersion": "27.1",
+      "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Duo"
+    },
+    "simulatorSDK": "27.1",
+    "files": [
+      {
+        "artifact_path": "xcode-version.txt",
+        "bytes": 33,
+        "sha256": "ee3fe26035862d2b9653c1a570be3eca4ee5be2815f0ce99ff2d8ffa3399e4c8"
+      },
+      {
+        "artifact_path": "sdks.txt",
+        "bytes": 745,
+        "sha256": "f75e02b6912d32eb14914e37176e0aa9b43927847fb70020996511a48d545591"
+      },
+      {
+        "artifact_path": "macos-version.txt",
+        "bytes": 66,
+        "sha256": "4ef10a0fc370704ea84699cf3851e51488598c5f1ab35cb572eb6b96278a8e5c"
+      },
+      {
+        "artifact_path": "selected-simulator.json",
+        "bytes": 266,
+        "sha256": "2ad7bbe0becc3ec8902758f6e4568a6af9b7a3118901fdc7c5882a9d2c634cb9"
+      },
+      {
+        "artifact_path": "simulator-inventory.json",
+        "bytes": 106872,
+        "sha256": "80a7b9478c64e22c9a42aa3c43cc1cdea078a0f154ffba79ea312041a0350d4a"
+      },
+      {
+        "artifact_path": "xcodebuild.log",
+        "bytes": 236743,
+        "sha256": "540ca62120cc1e4d8fd20c7d88d78bd3fb292fbe90537cb4425e40ea03a359b6"
+      },
+      {
+        "artifact_path": "screenshots/manifest.json",
+        "bytes": 18130,
+        "sha256": "d1b195f961dd2fd59623522240ba362a1e789b1e2c5d89c141d6235eb53726a6"
+      }
+    ]
+  },
+  "testCounts": {
+    "nativeUnitPassed": 52,
+    "uiPassed": 5,
+    "failed": 0,
+    "simulatorSelectorPassed": 8
+  },
+  "captures": [
+    {
+      "name": "platform-geometry-landscape-right_0_78B2C1BE-A047-4DB7-85F5-AF797C5297BA.png",
+      "artifact_path": "screenshots/14580C6B-9EBE-4C90-BB7C-2D33F7A764C1.png",
+      "sha256": "708e00c2f72a2a0b7a463889df860e7e42c2426ca6907b21b4c2361b6a4f55e7",
+      "timestamp": 1793073968.183,
+      "device_id": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+      "device_name": "iPhone Duo"
+    },
+    {
+      "name": "platform-observation-landscape-right_0_F87FB74E-4408-468D-B35D-DE0C60D5B889.txt",
+      "artifact_path": "screenshots/CE18E430-1AFC-4E9C-9A37-129B9EBAD999.txt",
+      "sha256": "87e322044ff02dfe33aa47c9f3f7ed2fcf2e3e1452badc0741593add74bb2216",
+      "timestamp": 1793073964.252,
+      "device_id": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+      "device_name": "iPhone Duo",
+      "observed": {
+        "formatVersion": 1,
+        "hingeAngleDegrees": 0,
+        "hingeObservation": "measured",
+        "isSimulator": true,
+        "viewport": {
+          "height": 574.6666666666666,
+          "hingeAngleDegrees": 0,
+          "pixelRatio": 3,
+          "reservedRegions": [
+            {
+              "height": 37,
+              "width": 37,
+              "x": 399.6666666666667,
+              "y": -40
+            },
+            {
+              "height": 174,
+              "width": 84,
+              "x": 382,
+              "y": -69.33333333333333
+            }
+          ],
+          "width": 382
+        }
+      }
+    },
+    {
+      "name": "platform-geometry-landscape-left_0_6850292F-32BA-4614-9D37-2BE3718BD646.png",
+      "artifact_path": "screenshots/61AF0F93-D953-4E90-89DC-BEB2744E4F66.png",
+      "sha256": "027327262d328b60cc20717e6181ed71086971f98a28791d048b1e88d39d7968",
+      "timestamp": 1793073954.766,
+      "device_id": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+      "device_name": "iPhone Duo"
+    },
+    {
+      "name": "platform-observation-landscape-left_0_0B5B4172-53E3-4CF7-A1E2-A9200DD345CA.txt",
+      "artifact_path": "screenshots/3841A425-DA6A-49B0-B131-5C64B8B33239.txt",
+      "sha256": "87e322044ff02dfe33aa47c9f3f7ed2fcf2e3e1452badc0741593add74bb2216",
+      "timestamp": 1793073951.151,
+      "device_id": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+      "device_name": "iPhone Duo",
+      "observed": {
+        "formatVersion": 1,
+        "hingeAngleDegrees": 0,
+        "hingeObservation": "measured",
+        "isSimulator": true,
+        "viewport": {
+          "height": 574.6666666666666,
+          "hingeAngleDegrees": 0,
+          "pixelRatio": 3,
+          "reservedRegions": [
+            {
+              "height": 37,
+              "width": 37,
+              "x": 399.6666666666667,
+              "y": -40
+            },
+            {
+              "height": 174,
+              "width": 84,
+              "x": 382,
+              "y": -69.33333333333333
+            }
+          ],
+          "width": 382
+        }
+      }
+    },
+    {
+      "name": "platform-geometry-portrait_0_8C0333B1-F303-4B6F-A861-714BC8467387.png",
+      "artifact_path": "screenshots/6778C12A-C425-4949-8007-1BDA2052BCCB.png",
+      "sha256": "e5ee9eb965e3fdc60b06811ae2d953fcabebf106f2ab5211eeae22639c702a6b",
+      "timestamp": 1793073941.911,
+      "device_id": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+      "device_name": "iPhone Duo"
+    },
+    {
+      "name": "platform-observation-portrait_0_68AA63C5-A35B-4845-AA92-17DC6840663B.txt",
+      "artifact_path": "screenshots/128900E1-9508-46D4-895C-53AEA0116253.txt",
+      "sha256": "87e322044ff02dfe33aa47c9f3f7ed2fcf2e3e1452badc0741593add74bb2216",
+      "timestamp": 1793073937.504,
+      "device_id": "4C56FCAC-377C-469C-B415-8ABBC4375CBA",
+      "device_name": "iPhone Duo",
+      "observed": {
+        "formatVersion": 1,
+        "hingeAngleDegrees": 0,
+        "hingeObservation": "measured",
+        "isSimulator": true,
+        "viewport": {
+          "height": 574.6666666666666,
+          "hingeAngleDegrees": 0,
+          "pixelRatio": 3,
+          "reservedRegions": [
+            {
+              "height": 37,
+              "width": 37,
+              "x": 399.6666666666667,
+              "y": -40
+            },
+            {
+              "height": 174,
+              "width": 84,
+              "x": 382,
+              "y": -69.33333333333333
+            }
+          ],
+          "width": 382
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "All three orientation requests retained the same measured 382 by 574.6666666666666 point viewport and measured zero-degree hinge. The screenshots remain portrait; an actual display-orientation transition is not established.",
+    "No nil-hinge observation occurred in this runtime sample. Separate unit fixtures exercise nil semantics, not physical device behavior.",
+    "Simulator only; no real fold sweep, expanded display, physical-device thermal or performance result, App Store eligibility, signing or final-art approval."
+  ]
+}

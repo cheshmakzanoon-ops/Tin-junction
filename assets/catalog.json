@@ -26,8 +26,8 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/MiniatureScene.ts",
-          "sha256": "975c76353c98697837eef6324fa8f6e1372b971b7f100eac9f60fef2e5acbfe8",
-          "bytes": 21282,
+          "sha256": "7296827b4902a683faef2095e8abecb8adcd633a0793d203f11fa74b1316ec64",
+          "bytes": 18630,
           "mediaType": "text/typescript",
           "storage": "git"
         },
@@ -35,6 +35,13 @@
           "path": "web/src/scene/materials.ts",
           "sha256": "627438adbe584860fe6947c06dd2ea574ebda8b8656ed2088c7b6ab7a11227da",
           "bytes": 7944,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/caseGeometry.ts",
+          "sha256": "d95104c4bac012f168235144fcdf1d14e776d86f5d21546721d9e1f43cc53e24",
+          "bytes": 6544,
           "mediaType": "text/typescript",
           "storage": "git"
         }
@@ -86,8 +93,8 @@
         },
         {
           "path": "web/src/scene/MiniatureScene.ts",
-          "sha256": "975c76353c98697837eef6324fa8f6e1372b971b7f100eac9f60fef2e5acbfe8",
-          "bytes": 21282,
+          "sha256": "7296827b4902a683faef2095e8abecb8adcd633a0793d203f11fa74b1316ec64",
+          "bytes": 18630,
           "mediaType": "text/typescript",
           "storage": "git"
         }
@@ -249,6 +256,13 @@
           "bytes": 4254,
           "mediaType": "text/typescript",
           "storage": "git"
+        },
+        {
+          "path": "web/src/scene/pondGeometry.ts",
+          "sha256": "f8588c579dba55a69960b09d26fca0021bc46f009f8a8fbd4c8eb0e8efccb1aa",
+          "bytes": 10248,
+          "mediaType": "text/typescript",
+          "storage": "git"
         }
       ],
       "runtimeFiles": [],
@@ -298,8 +312,15 @@
         },
         {
           "path": "web/src/scene/MiniatureScene.ts",
-          "sha256": "975c76353c98697837eef6324fa8f6e1372b971b7f100eac9f60fef2e5acbfe8",
-          "bytes": 21282,
+          "sha256": "7296827b4902a683faef2095e8abecb8adcd633a0793d203f11fa74b1316ec64",
+          "bytes": 18630,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/pondGeometry.ts",
+          "sha256": "f8588c579dba55a69960b09d26fca0021bc46f009f8a8fbd4c8eb0e8efccb1aa",
+          "bytes": 10248,
           "mediaType": "text/typescript",
           "storage": "git"
         }

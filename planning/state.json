@@ -1,17 +1,18 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T03:48:46.262Z",
+  "updated_at": "2026-10-27T04:11:18.921Z",
   "health": {
     "ci": {
-      "status": "running",
-      "checked_commit": "79789aec2894bcf578506997b3bd0da542fa36e1",
+      "status": "passed",
+      "checked_commit": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
       "run_urls": [
-        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40446175188"
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40446521510",
+        "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40446521525"
       ]
     },
     "incidents": []
   },
-  "last_handoff": "planning/handoffs/2026-10-27-turnout-routing.md",
+  "last_handoff": "evidence/P01-T01-native-review.md",
   "tasks": {
     "P00-T01": {
       "status": "done",
@@ -98,21 +99,14 @@
       ]
     },
     "P01-T01": {
-      "status": "in_progress",
-      "claim": {
-        "owner": "submission-native",
-        "started_at": "2026-10-27T03:28:16.841Z",
-        "expires_at": "2026-10-27T11:28:16.841Z",
-        "head_at_claim": "02c0bc82746b8391fbf578cd0bed2b7bef8e1348",
-        "scope": [
-          "apps/ios/TinJunction/Platform/",
-          "tools/ios/",
-          "evidence/"
-        ]
-      },
+      "status": "done",
+      "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
+      "evidence": [
+        "evidence/P01-T01-native-integration.json",
+        "evidence/P01-T01-source-verification.json"
+      ],
+      "last_handoff": "evidence/P01-T01-native-review.md",
       "history": [
         {
           "at": "2026-10-27T02:13:17.965Z",
@@ -128,16 +122,38 @@
           "at": "2026-10-27T03:28:16.841Z",
           "action": "claim",
           "detail": "submission-native; 8 hours"
+        },
+        {
+          "at": "2026-10-27T04:11:18.814Z",
+          "action": "complete",
+          "detail": "evidence/P01-T01-native-review.md"
         }
       ]
     },
     "P01-T02": {
-      "status": "todo",
-      "claim": null,
+      "status": "in_progress",
+      "claim": {
+        "owner": "submission-native",
+        "started_at": "2026-10-27T04:11:18.921Z",
+        "expires_at": "2026-10-27T12:11:18.921Z",
+        "head_at_claim": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
+        "scope": [
+          "apps/ios/TinJunction/Web/",
+          "web/src/",
+          "tests/web/",
+          "evidence/"
+        ]
+      },
       "blockers": [],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T04:11:18.921Z",
+          "action": "claim",
+          "detail": "submission-native; 8 hours"
+        }
+      ]
     },
     "P01-T03": {
       "status": "todo",
@@ -452,38 +468,58 @@
       ]
     },
     "P05-T05": {
-      "status": "in_progress",
-      "claim": {
-        "owner": "submission-track",
-        "started_at": "2026-10-27T03:38:37.038Z",
-        "expires_at": "2026-10-27T11:38:37.038Z",
-        "head_at_claim": "e4e5146459d6a3df45594bc5ef5f06a5c244851d",
-        "scope": [
-          "web/src/track/",
-          "web/src/editor/"
-        ]
-      },
+      "status": "done",
+      "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
+      "evidence": [
+        "evidence/P05-T05-clearance-unit.json",
+        "evidence/P05-T05-placement-integration.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-planar-clearance.md",
       "history": [
         {
           "at": "2026-10-27T03:38:37.038Z",
           "action": "claim",
           "detail": "submission-track; 8 hours"
+        },
+        {
+          "at": "2026-10-27T03:54:48.962Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-planar-clearance.md"
         }
       ]
     },
     "P06-T01": {
+      "status": "done",
+      "claim": null,
+      "blockers": [],
+      "evidence": [
+        "evidence/P06-T01-routed-motion-unit.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-routed-motion.md",
+      "history": [
+        {
+          "at": "2026-10-27T03:39:47.018Z",
+          "action": "claim",
+          "detail": "submission-coordinator; 8 hours"
+        },
+        {
+          "at": "2026-10-27T03:54:49.116Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-routed-motion.md"
+        }
+      ]
+    },
+    "P06-T02": {
       "status": "in_progress",
       "claim": {
-        "owner": "submission-coordinator",
-        "started_at": "2026-10-27T03:39:47.018Z",
-        "expires_at": "2026-10-27T11:39:47.018Z",
-        "head_at_claim": "e4e5146459d6a3df45594bc5ef5f06a5c244851d",
+        "owner": "submission-track",
+        "started_at": "2026-10-27T03:54:49.234Z",
+        "expires_at": "2026-10-27T11:54:49.234Z",
+        "head_at_claim": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
         "scope": [
           "web/src/simulation/",
-          "web/src/model/"
+          "web/src/rendering/"
         ]
       },
       "blockers": [],
@@ -491,19 +527,11 @@
       "last_handoff": null,
       "history": [
         {
-          "at": "2026-10-27T03:39:47.018Z",
+          "at": "2026-10-27T03:54:49.234Z",
           "action": "claim",
-          "detail": "submission-coordinator; 8 hours"
+          "detail": "submission-track; 8 hours"
         }
       ]
-    },
-    "P06-T02": {
-      "status": "todo",
-      "claim": null,
-      "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
     },
     "P06-T03": {
       "status": "todo",
@@ -522,12 +550,28 @@
       "history": []
     },
     "P07-T01": {
-      "status": "todo",
-      "claim": null,
+      "status": "in_progress",
+      "claim": {
+        "owner": "submission-coordinator",
+        "started_at": "2026-10-27T03:54:49.300Z",
+        "expires_at": "2026-10-27T11:54:49.300Z",
+        "head_at_claim": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
+        "scope": [
+          "web/src/documents/",
+          "apps/ios/TinJunction/Documents/",
+          "tests/fixtures/documents/"
+        ]
+      },
       "blockers": [],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T03:54:49.300Z",
+          "action": "claim",
+          "detail": "submission-coordinator; 8 hours"
+        }
+      ]
     },
     "P07-T02": {
       "status": "todo",

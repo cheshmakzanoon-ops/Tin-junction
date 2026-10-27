@@ -1,0 +1,21 @@
+Tin Junction P05-T05 integration_test
+Tested committed source: 637b0dd348dbef0fe92b23aa32b7b0a5f7761ded
+Recorded at: 2026-10-27T03:52:45.530792+00:00
+Environment: Linux, Node v24.22.1; repository-root working directory.
+No browser, native simulator or physical device was used.
+COMMAND: npm run test:web -- tests/web/unit/placement-validation.test.ts
+
+> tin-junction@0.1.0 test:web
+> vitest run tests/web/unit/placement-validation.test.ts
+
+
+ RUN  v5.0.5 .
+
+
+ Test Files  1 passed (1)
+      Tests  10 passed (10)
+   Start at  20:52:47
+   Duration  241ms (tests 41%, transform 38%, import 18%, worker 2%)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+EXIT CODE: 0

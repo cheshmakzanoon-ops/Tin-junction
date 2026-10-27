@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P05-T05-placement-integration",
+  "task_id": "P05-T05",
+  "kind": "integration_test",
+  "result": "passed",
+  "tested_commit": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
+  "recorded_at": "2026-10-27T03:52:45.530792+00:00",
+  "source_files": [
+    {
+      "path": "web/src/model/types.ts",
+      "sha256": "83d12e1c3763e668aec739e0a4ab3dd333fddab7b0b4aa6b065266ef81ebe38f"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "7573a545200b45fffcafd4a9a389d3c1b7914b22f9191a76860e9051fa8e131d"
+    },
+    {
+      "path": "tests/fixtures/track/graph-fixtures.ts",
+      "sha256": "7fc8ea553ddac19e4dcfb8fe050262defcf49b011681ad03178dc8e4a015323f"
+    },
+    {
+      "path": "tests/fixtures/track/turnout-fixtures.ts",
+      "sha256": "02011b0638e216face36e13d65a462e6d05ab3fae6984798ded42cea08e34230"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "6235e2576f6780c2c0b6c79f4ba8ab84a19a7158effe1d66773e7ca4b49b18b4"
+    },
+    {
+      "path": "web/src/track/clearance.ts",
+      "sha256": "b72d636c79ebb885df55786c737451e9aa9dd95f9aa4f93b38e810ebc9ee8b9a"
+    },
+    {
+      "path": "web/src/track/CLEARANCE.md",
+      "sha256": "fcf4ba1d11262f1c42e1b0beac77de470709ef5b6d9f044555ec8f402288f5c8"
+    },
+    {
+      "path": "tests/fixtures/track/clearance-fixtures.ts",
+      "sha256": "87936982fb6b216a3936c56c7d472b217b6a9c068d57deeb09c88dfc41f7bc30"
+    },
+    {
+      "path": "tests/web/unit/track-clearance.test.ts",
+      "sha256": "d6b5bf82be5dee19af5f8db7212e0f7063cff3c19ee18162f56fde51a23fdf41"
+    },
+    {
+      "path": "web/src/editor/placementValidation.ts",
+      "sha256": "48b63331cd23ab131d99f85f0251ab26f874e61128c0c7603250cf057b24ff5c"
+    },
+    {
+      "path": "tests/web/unit/placement-validation.test.ts",
+      "sha256": "16f72ca83c95b79bdb9effa9f85567c3016d570db843a2176aa3743718bc76d4"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run test:web -- tests/web/unit/placement-validation.test.ts",
+      "exit_code": 0,
+      "output_path": "evidence/P05-T05-placement-tests.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P05-T05-placement-tests.txt",
+      "sha256": "07f562b705f1b6aa8f40c41e1800ea07f42b58ae3188e705317a370366a871f9"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P05-T05-A2",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Node/Vitest integration exercises the actual editor draft transaction, topology compiler, clearance gate and routed-consist placement together.",
+    "Tests preserve invalid/incomplete editable drafts, identify conflicting physical piece IDs, reject unsafe/stale/non-edit placement, preserve the previous committed train, and verify corrected placement plus turnout occupancy.",
+    "This is a component integration test, not a browser UI, packaged WKWebView, native storage, migration, production asset or device test. Existing app schema-v1 oval remains unchanged.",
+    "Required GitHub Actions statuses are tracked separately by the coordinator; this record does not declare native CI or release readiness passed."
+  ]
+}

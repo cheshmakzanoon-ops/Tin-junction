@@ -4,11 +4,13 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { resolutionScale } from "../clock";
 import { sampleOval } from "../model/index";
 import type { LayoutDocument } from "../model/index";
-import { box, compactGroup, cylinder, loopLength, makeTerrain, RAIL_HEAD_WIDTH, RAIL_OFFSET, RAIL_TOP, rectangularRail, sweepProfile, terrainHeight, visualRandom } from "./geometry";
+import { compactGroup, loopLength, makeTerrain, RAIL_HEAD_WIDTH, RAIL_OFFSET, RAIL_TOP, rectangularRail, sweepProfile, terrainHeight, visualRandom } from "./geometry";
 import type { Track } from "./geometry";
 import { createPalette, labelTexture } from "./materials";
 import { createPrefabs, createStation, instantiateScenery } from "./scenery";
 import { TrainRig } from "./train";
+import { CASE_DIMENSIONS, createDisplayCase, openCasePose } from "./caseGeometry";
+import { createPondGroup, createPondMaterials, depressPondTerrain } from "./pondGeometry";
 
 export type CameraView = "overview" | "trackside" | "top";
 export type SceneDimensions = { width: number; height: number; drawingBufferWidth: number; drawingBufferHeight: number };
@@ -29,7 +31,9 @@ export class MiniatureScene {
   private readonly lanternLights = [new THREE.PointLight(0xffba68, 0, 0.14, 2), new THREE.PointLight(0xffba68, 0, 0.14, 2)];
   private environmentTarget: THREE.WebGLRenderTarget | null = null;
   private readonly restoreEnvironment = (): void => { this.rebuildEnvironment(); };
-  private readonly lid = new THREE.Group();
+  private readonly lid: THREE.Group;
+  private readonly pondMaterials = createPondMaterials(this.palette);
+  private pond = new THREE.Group();
   private readonly train: TrainRig;
   private readonly terrain: THREE.Mesh;
   private readonly selection: THREE.Mesh;
@@ -86,16 +90,15 @@ export class MiniatureScene {
 
     const table = new THREE.Mesh(new THREE.PlaneGeometry(20, 20), this.palette.table);
     table.rotation.x = -Math.PI / 2;
-    table.position.y = -0.056;
+    table.position.y = CASE_DIMENSIONS.tableY;
     table.receiveShadow = true;
     this.scene.add(table);
-    this.createCase();
+    this.lid = this.createCase();
     this.scene.add(createStation(this.palette));
-    this.createPond();
     this.terrain = new THREE.Mesh(new THREE.PlaneGeometry(0.8, 0.5), this.palette.grass);
     this.terrain.name = "terrain";
     this.terrain.receiveShadow = true;
-    this.scene.add(this.terrain, this.track, this.scenery);
+    this.scene.add(this.terrain, this.track, this.scenery, this.pond);
     this.train = new TrainRig(this.palette);
     this.scene.add(this.train.group);
     this.selection = new THREE.Mesh(
@@ -124,76 +127,13 @@ export class MiniatureScene {
     }
   }
 
-  private createCase(): void {
-    const group = new THREE.Group();
-    group.name = "case";
-    box(group, [0.846, 0.040, 0.546], [0, -0.025, 0], this.palette.walnut, 0.009);
-    box(group, [0.811, 0.009, 0.510], [0, -0.008, 0], this.palette.felt, 0.002);
-    for (const side of [-1, 1]) {
-      box(group, [0.018, 0.042, 0.542], [side * 0.414, -0.005, 0], this.palette.walnut, 0.002);
-      box(group, [0.815, 0.042, 0.018], [0, -0.005, side * 0.264], this.palette.walnut, 0.002);
-      box(group, [0.002, 0.0014, 0.524], [side * 0.405, 0.0163, 0], this.palette.brass);
-      box(group, [0.812, 0.0014, 0.002], [0, 0.0163, side * 0.255], this.palette.brass);
-      for (const end of [-1, 1]) {
-        cylinder(group, 0.014, 0.017, 0.009, [side * 0.344, -0.049, end * 0.204], this.palette.felt, 16);
-        box(group, [0.033, 0.0015, 0.025], [side * 0.403, 0.017, end * 0.257], this.palette.brass, 0.002);
-        cylinder(group, 0.0018, 0.0018, 0.0009, [side * 0.398, 0.018, end * 0.254], this.palette.darkBrass, 12);
-      }
-      box(group, [0.023, 0.022, 0.0025], [side * 0.245, -0.012, 0.274], this.palette.darkBrass, 0.002);
-      box(group, [0.014, 0.013, 0.004], [side * 0.245, -0.011, 0.277], this.palette.brass, 0.002);
-      cylinder(group, 0.0016, 0.0016, 0.018, [side * 0.245, -0.012, 0.281], this.palette.brass, 10).rotation.z = Math.PI / 2;
-    }
-    for (const x of [-0.29, 0, 0.29]) {
-      cylinder(group, 0.0045, 0.0045, 0.054, [x, 0.014, -0.274], this.palette.brass, 16).rotation.z = Math.PI / 2;
-      box(group, [0.052, 0.0015, 0.021], [x, 0.017, -0.257], this.palette.brass);
-    }
-    const handle = new THREE.Mesh(new THREE.TorusGeometry(0.024, 0.0032, 10, 30, Math.PI), this.palette.darkWood);
-    handle.rotation.z = Math.PI;
-    handle.scale.x = 2.5;
-    handle.position.set(0, -0.014, 0.288);
-    group.add(handle);
-    for (const side of [-1, 1]) box(group, [0.011, 0.013, 0.010], [side * 0.059, -0.013, 0.278], this.palette.brass, 0.001);
-    this.scene.add(compactGroup(group));
-
-    this.lid.position.set(0, 0.014, -0.274);
-    this.lid.name = "case-lid";
-    box(this.lid, [0.844, 0.018, 0.274], [0, 0, -0.137], this.palette.walnut, 0.006);
-    box(this.lid, [0.799, 0.002, 0.234], [0, 0.010, -0.137], this.palette.felt, 0.004);
-    for (const side of [-1, 1]) {
-      box(this.lid, [0.0016, 0.0014, 0.235], [side * 0.398, 0.0115, -0.137], this.palette.brass);
-      box(this.lid, [0.799, 0.0014, 0.0016], [0, 0.0115, -0.137 + side * 0.117], this.palette.brass);
-    }
+  private createCase(): THREE.Group {
+    const { base, lid } = createDisplayCase(this.palette);
+    this.scene.add(compactGroup(base));
     const plaque = new THREE.Mesh(new THREE.PlaneGeometry(0.37, 0.0925), new THREE.MeshStandardMaterial({ map: labelTexture("TIN JUNCTION", "A LITTLE WORLD, YOUR OWN", true), roughness: 0.68 }));
     plaque.rotation.x = -Math.PI / 2;
-    plaque.position.set(0, 0.0119, -0.142);
-    this.lid.add(plaque);
-    compactGroup(this.lid);
-    this.lid.rotation.x = 1.04;
-    this.scene.add(this.lid);
-  }
-
-  private createPond(): void {
-    const pond = new THREE.Group();
-    pond.name = "pond";
-    const water = new THREE.Mesh(new THREE.CircleGeometry(0.035, 48), this.palette.water);
-    water.rotation.x = -Math.PI / 2;
-    water.scale.set(1.23, 0.71, 1);
-    water.position.set(0.205, 0.0019, 0.066);
-    water.receiveShadow = true;
-    pond.add(water);
-    const random = visualRandom(711);
-    for (let index = 0; index < 40; index += 1) {
-      const angle = index / 40 * Math.PI * 2;
-      const rock = new THREE.Mesh(new THREE.SphereGeometry(0.0028 + random() * 0.001, 8, 5), this.palette.rock);
-      rock.position.set(0.205 + Math.cos(angle) * 0.043, 0.0012, 0.066 + Math.sin(angle) * 0.026);
-      rock.scale.set(1, 0.65, 1);
-      pond.add(rock);
-    }
-    for (let index = 0; index < 10; index += 1) {
-      const x = 0.18 + random() * 0.014, z = 0.085 + random() * 0.006;
-      cylinder(pond, 0.0002, 0.0003, 0.007 + random() * 0.004, [x, 0.004, z], this.palette.pine, 5);
-    }
-    this.scene.add(compactGroup(pond));
+    plaque.position.set(0, -CASE_DIMENSIONS.lidCavity + 0.0016, CASE_DIMENSIONS.lidRear - CASE_DIMENSIONS.depth / 2);
+    lid.add(plaque); compactGroup(lid); this.scene.add(lid); return lid;
   }
 
   private createTrack(track: Track): THREE.Group {
@@ -252,8 +192,13 @@ export class MiniatureScene {
       this.scene.remove(this.track);
       this.track = this.createTrack(document.track);
       this.scene.add(this.track);
+      this.disposeGroupGeometry(this.pond);
+      this.scene.remove(this.pond);
+      this.pond = createPondGroup(document.track, this.palette, this.pondMaterials);
+      this.scene.add(this.pond);
       this.terrain.geometry.dispose();
       this.terrain.geometry = makeTerrain(document.track);
+      depressPondTerrain(this.terrain.geometry, document.track);
       this.trackKey = key;
     }
     if (trackChanged || document.documentId !== this.documentId || document.revision !== this.lastRevision) {
@@ -297,7 +242,7 @@ export class MiniatureScene {
   render(_deltaSeconds = 0): void {
     if (this.disposed) return;
     this.controls.target.x = THREE.MathUtils.clamp(this.controls.target.x, -0.30, 0.30);
-    this.controls.target.y = THREE.MathUtils.clamp(this.controls.target.y, -0.08, 0.10);
+    this.controls.target.y = THREE.MathUtils.clamp(this.controls.target.y, -0.08, 0.18);
     this.controls.target.z = THREE.MathUtils.clamp(this.controls.target.z, -0.20, 0.20);
     this.controls.update();
     this.renderer.render(this.scene, this.camera);
@@ -325,8 +270,10 @@ export class MiniatureScene {
 
   setView(view: CameraView): void {
     this.view = view;
-    const target = view === "trackside" ? new THREE.Vector3(0, 0.022, 0.045) : new THREE.Vector3(0, 0.025, -0.035);
-    const offset = view === "top" ? new THREE.Vector3(0.001, 1.1, 0.002) : view === "trackside" ? new THREE.Vector3(0.34, 0.23, 0.42) : new THREE.Vector3(0.62, 0.62, 0.86);
+    const target = view === "trackside" ? new THREE.Vector3(0, 0.022, 0.045) : view === "overview" ? new THREE.Vector3(0, 0.025, 0.01) : new THREE.Vector3(0, 0.025, -0.035);
+    // Overview presents the complete railway board. The matching full lid
+    // continues above the frame, as it would in a close product photograph.
+    const offset = view === "top" ? new THREE.Vector3(0.001, 1.1, 0.002) : view === "trackside" ? new THREE.Vector3(0.34, 0.23, 0.42) : new THREE.Vector3(0.62, 0.76, 0.78);
     this.controls.target.copy(target);
     this.camera.position.copy(offset.multiplyScalar(this.fitScale).add(target));
     this.controls.update();
@@ -364,9 +311,9 @@ export class MiniatureScene {
     this.selection.scale.setScalar(item.scale * (item.kind === "house" ? 1.35 : item.kind === "lamp" ? 0.55 : 1));
   }
 
-  /** Decorative lid only; this does not claim physical fold ergonomics or alter track topology. */
+  /** Open-only presentation; geometry checks do not grant actual Duo fold approval. */
   setHingeAngle(degrees: number | null): void {
-    this.lid.rotation.x = degrees === null || !Number.isFinite(degrees) ? 1.04 : THREE.MathUtils.clamp((180 - degrees) * Math.PI / 180, 0.32, 1.18);
+    this.lid.rotation.x = openCasePose(degrees);
   }
 
   private disposeGroupGeometry(group: THREE.Group): void {
@@ -393,6 +340,7 @@ export class MiniatureScene {
     });
     for (const prefab of Object.values(this.prefabs)) for (const part of prefab) geometries.add(part.geometry);
     for (const material of Object.values(this.palette)) materials.add(material);
+    for (const material of Object.values(this.pondMaterials)) materials.add(material);
     materials.forEach(material => {
       for (const value of Object.values(material)) if (value instanceof THREE.Texture) textures.add(value);
       material.dispose();

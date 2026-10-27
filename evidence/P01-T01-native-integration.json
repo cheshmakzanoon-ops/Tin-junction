@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P01-T01-public-platform-native-integration-637b0dd",
+  "task_id": "P01-T01",
+  "kind": "integration_test",
+  "result": "passed",
+  "tested_commit": "637b0dd348dbef0fe92b23aa32b7b0a5f7761ded",
+  "recorded_at": "2026-10-27T04:09:33.487498+00:00",
+  "source_files": [
+    {
+      "path": "apps/ios/TinJunction/RootView.swift",
+      "sha256": "96326512f7e20f32a23af4645770a0d2c6e0031febe31bb5842203f849f4bb24"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/NativeViewport.swift",
+      "sha256": "85dddc0112d70bf9dd176e89fd74127451daa4135a80a1cb77f26a1ecbfb117f"
+    },
+    {
+      "path": "apps/ios/TinJunction/Platform/PlatformProbe.swift",
+      "sha256": "6b7155aeed6a8dfb32d1c4ec2d40d8ed550aeafe1843d500449b495e20b721e2"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineWebView.swift",
+      "sha256": "f520acd826990eece1255182a0002c3ac2c572a6afd55bdb887b813e9cba021d"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineHostModel.swift",
+      "sha256": "39e9b402ec639c17fda985605b8562b4cee89eada59741a3a8b1c9459841400e"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/PlatformProbeTests.swift",
+      "sha256": "293f28eb26304732b421f02e254f849e90a4b182e4910036d55af964cf0ef6d5"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/PlatformProbeUITests.swift",
+      "sha256": "dbc296c20aa185ce01f8096db020ff99bf963f67326f2269f9670ed6c5e7b243"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/HostSmokeTests.swift",
+      "sha256": "16f439fb32c04c6d013934161385a319f1bcebbdc783791ddd190c7889aff4c9"
+    },
+    {
+      "path": "tools/ios/select-duo.mjs",
+      "sha256": "4c70db96370a42becbf28e75ffc6a84941e1ac9977af703077dae16fd808ce87"
+    },
+    {
+      "path": "tools/ios/select-duo.test.mjs",
+      "sha256": "49b6f8a73f0d7822d9f0c9883779ab2e6dc7926e6fbe69d9f32427dd608b7247"
+    },
+    {
+      "path": "tools/ios/test-simulator.sh",
+      "sha256": "97889f2c39ddf51d4f8cb4d380037b1478abf8297a0b70eaff75de4401a3409f"
+    },
+    {
+      "path": "tools/ios/install-xcodegen.sh",
+      "sha256": "be3de3bc63ac773439f0dc986b8efddb20ca691c77e8517e4f28f7849a05c2f5"
+    },
+    {
+      "path": "apps/ios/project.yml",
+      "sha256": "5804f74775dd61b0c1b9cb72298198935bf39cb40ced8a3a2e8ee2bf1f8169e4"
+    },
+    {
+      "path": ".github/workflows/ios-simulator.yml",
+      "sha256": "a276576c99597830168c96ebaa346adc469a135703c83c9792a50e81d344862f"
+    }
+  ],
+  "commands": [
+    {
+      "command": "node --test tools/ios/select-duo.test.mjs (GitHub Actions run 40446521510, job 122000278157)",
+      "exit_code": 0,
+      "output_path": "evidence/P01-T01-selector-tests.txt"
+    },
+    {
+      "command": "bash tools/ios/test-simulator.sh (GitHub Actions run 40446521510, job 122000278157)",
+      "exit_code": 0,
+      "output_path": "evidence/P01-T01-native-tests.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P01-T01-native-review.md",
+      "sha256": "81944eb4a66257238fa1f31feeefe8bca7b899dc3c952e4c1af3fe3c967d1b5a"
+    },
+    {
+      "path": "evidence/P01-T01-platform-observations.json",
+      "sha256": "0d3167e3a8cbfa2ea08be398edb4641bbcb93175fa0c7717dec6865b2d6938a2"
+    },
+    {
+      "path": "evidence/P01-T01-native-tests.txt",
+      "sha256": "5143234dd6b10022dd04d9494a3a3e9573ca1b9194419167bd9cf02458356ebb"
+    },
+    {
+      "path": "evidence/P01-T01-selector-tests.txt",
+      "sha256": "fda5f843b860dcd8d1b7d8dc9c4eb7edd69353359772eb9c30cbbb79a922bc55"
+    },
+    {
+      "path": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40446521510/artifacts/12709365676",
+      "sha256": "8a358a1eba886141de5eae1879393246cf270c9fdb15e2abafc0d7136814417c"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P01-T01-A1",
+      "evidence": [
+        0,
+        1,
+        "evidence/P01-T01-native-review.md",
+        "evidence/P01-T01-platform-observations.json"
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "Actual simulator build and tests only; no physical-device, final-art, signing or App Store distribution approval.",
+    "All three requested orientations retained identical portrait viewport observations; no actual display rotation or expanded/folded geometry transition is established.",
+    "No observed nil-hinge callback in runtime samples; nil behavior is covered only by synthetic unit fixtures.",
+    "Original large captures remain in Actions artifact 12709365676 with retention through 2026-11-10. Compact observations and exact hashes are committed here."
+  ]
+}

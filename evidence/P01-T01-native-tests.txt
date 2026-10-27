@@ -1,0 +1,55 @@
+Observed excerpt from successful Actions artifact12709365676 xcodebuild.log.
+Tested commit: 637b0dd348dbef0fe92b23aa32b7b0a5f7761ded
+Run40446521510; job122000278157; bash tools/ios/test-simulator.sh exit0.
+Original full log SHA256: 540ca62120cc1e4d8fd20c7d88d78bd3fb292fbe90537cb4425e40ea03a359b6
+
+    /Applications/Xcode_27.1.app/Contents/Developer/usr/bin/xcodebuild test -project apps/ios/TinJunction.xcodeproj -scheme TinJunction -configuration Debug -destination "platform=iOS Simulator,id=4C56FCAC-377C-469C-B415-8ABBC4375CBA" -destination-timeout 120 -derivedDataPath artifacts/ios/DerivedData -resultBundlePath artifacts/ios/TinJunction-20261027T035801-7191.xcresult -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO
+Test Suite 'All tests' started at 2026-10-27 04:02:51.546.
+Test Suite 'TinJunctionTests.xctest' started at 2026-10-27 04:02:51.547.
+Test Suite 'BridgeEnvelopeTests' started at 2026-10-27 04:02:51.547.
+Test Suite 'BridgeEnvelopeTests' passed at 2026-10-27 04:02:52.242.
+Test Suite 'BundleResourcePolicyTests' started at 2026-10-27 04:02:52.243.
+Test Suite 'BundleResourcePolicyTests' passed at 2026-10-27 04:02:52.430.
+Test Suite 'EngineHostModelTests' started at 2026-10-27 04:02:52.431.
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload]' started.
+Test Case '-[TinJunctionTests.EngineHostModelTests testTerminalFailureRejectsLateHandshakeAndWritesUntilExplicitReload]' passed (0.008 seconds).
+Test Suite 'EngineHostModelTests' passed at 2026-10-27 04:02:52.670.
+Test Suite 'LayoutDocumentTests' started at 2026-10-27 04:02:52.671.
+Test Suite 'LayoutDocumentTests' passed at 2026-10-27 04:02:52.709.
+Test Suite 'LayoutStoreTests' started at 2026-10-27 04:02:52.709.
+Test Suite 'LayoutStoreTests' passed at 2026-10-27 04:02:52.764.
+Test Suite 'PlatformProbeTests' started at 2026-10-27 04:02:52.764.
+Test Case '-[TinJunctionTests.PlatformProbeTests testMeasuredGeometryPreservesUnitsAndReservedRectangles]' started.
+Test Case '-[TinJunctionTests.PlatformProbeTests testMeasuredGeometryPreservesUnitsAndReservedRectangles]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.PlatformProbeTests testObservedNilIsNotInventedZeroOrMissingCallback]' started.
+Test Case '-[TinJunctionTests.PlatformProbeTests testObservedNilIsNotInventedZeroOrMissingCallback]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.PlatformProbeTests testRejectedMeasurementsCannotReplaceLastValidObservation]' started.
+Test Case '-[TinJunctionTests.PlatformProbeTests testRejectedMeasurementsCannotReplaceLastValidObservation]' passed (0.003 seconds).
+Test Suite 'PlatformProbeTests' passed at 2026-10-27 04:02:52.770.
+Test Suite 'PlatformStartupTraceTests' started at 2026-10-27 04:02:52.770.
+Test Suite 'PlatformStartupTraceTests' passed at 2026-10-27 04:02:52.778.
+Test Suite 'TinJunctionTests.xctest' passed at 2026-10-27 04:02:52.778.
+	 Executed 52 tests, with 0 failures (0 unexpected) in 0.605 (1.231) seconds
+Test Suite 'All tests' passed at 2026-10-27 04:02:52.786.
+	 Executed 52 tests, with 0 failures (0 unexpected) in 0.605 (1.240) seconds
+Test Suite 'All tests' started at 2026-10-27 04:03:06.420.
+Test Suite 'TinJunctionUITests.xctest' started at 2026-10-27 04:03:06.422.
+Test Suite 'HostSmokeTests' started at 2026-10-27 04:03:06.422.
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' started.
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (26.129 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' started.
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (22.281 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' started.
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (25.281 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' started.
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (56.601 seconds).
+Test Suite 'HostSmokeTests' passed at 2026-10-27 04:05:16.720.
+Test Suite 'PlatformProbeUITests' started at 2026-10-27 04:05:16.729.
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' started.
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (51.838 seconds).
+Test Suite 'PlatformProbeUITests' passed at 2026-10-27 04:06:08.567.
+Test Suite 'TinJunctionUITests.xctest' passed at 2026-10-27 04:06:08.568.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 182.130 (182.146) seconds
+Test Suite 'All tests' passed at 2026-10-27 04:06:08.568.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 182.130 (182.148) seconds
+** TEST SUCCEEDED **

@@ -1,0 +1,23 @@
+Observed GitHub Actions job122000278157 excerpt at commit637b0dd348dbef0fe92b23aa32b7b0a5f7761ded.
+2026-10-27T03:56:24.4828540Z ##[group]Run node --test tools/ios/select-duo.test.mjs
+2026-10-27T03:56:24.4829250Z node --test tools/ios/select-duo.test.mjs
+2026-10-27T03:56:24.4866320Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-27T03:56:24.4867080Z env:
+2026-10-27T03:56:24.4867410Z   DEVELOPER_DIR: /Applications/Xcode_27.1.app/Contents/Developer
+2026-10-27T03:56:24.4867940Z ##[endgroup]
+2026-10-27T03:56:24.6513360Z ✔ selects measured Duo UDID and runtime, not a fabricated product identifier (1.154875ms)
+2026-10-27T03:56:24.6615840Z ✔ refuses another phone as fallback (0.26ms)
+2026-10-27T03:56:24.6729590Z ✔ does not trust an editable simulator name to prove device model (0.089791ms)
+2026-10-27T03:56:24.6831750Z ✔ accepts a renamed actual Duo only by observed device-type identity (0.109208ms)
+2026-10-27T03:56:24.6932080Z ✔ refuses absent or ambiguous device-type metadata (0.099125ms)
+2026-10-27T03:56:24.7033850Z ✔ refuses unavailable runtime or mismatched SDK (0.715042ms)
+2026-10-27T03:56:24.7134360Z ✔ refuses ambiguous device selections (0.084291ms)
+2026-10-27T03:56:24.7234580Z ✔ refuses malformed UDIDs and transitional states (0.090542ms)
+2026-10-27T03:56:24.7335720Z ℹ tests 8
+2026-10-27T03:56:24.7436080Z ℹ suites 0
+2026-10-27T03:56:24.7536700Z ℹ pass 8
+2026-10-27T03:56:24.7547590Z ℹ fail 0
+2026-10-27T03:56:24.7648560Z ℹ cancelled 0
+2026-10-27T03:56:24.7749860Z ℹ skipped 0
+2026-10-27T03:56:24.7850900Z ℹ todo 0
+2026-10-27T03:56:24.7952300Z ℹ duration_ms 79.966625
