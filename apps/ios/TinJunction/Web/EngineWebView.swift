@@ -39,7 +39,7 @@ struct EngineWebView: UIViewRepresentable {
             return view
         }
         if assetRoot != nil {
-            context.coordinator.loadInitialDocument(in: view)
+            context.coordinator.beginInitialDocument(in: view)
         } else {
             host.fail("WebAssets missing. Run npm run bundle:ios before XcodeGen.")
         }
@@ -51,6 +51,7 @@ struct EngineWebView: UIViewRepresentable {
     static func dismantleUIView(_ uiView: WKWebView, coordinator: Coordinator) {
         coordinator.cancelPreparation()
         #if DEBUG
+        coordinator.cancelStartupHold()
         coordinator.startupFault.disarm()
         #endif
         uiView.stopLoading()
@@ -64,10 +65,53 @@ struct EngineWebView: UIViewRepresentable {
         let host: EngineHostModel
         #if DEBUG
         let startupFault = HostStartupFault()
+        private var startupHoldTask: Task<Void, Never>?
+        private var startupHoldToken: UUID?
         private var preparationTask: Task<Void, Never>?
         private var preparationTimeout: Task<Void, Never>?
         #endif
         init(host: EngineHostModel) { self.host = host }
+
+        func beginInitialDocument(in view: WKWebView) {
+            #if DEBUG
+            if host.startupHold.state == .holding { return }
+            if host.startupHold.state == .requested {
+                startupHoldTask?.cancel()
+                // Defer publication until makeUIView has returned. No actual
+                // navigation or readiness timeout begins while the gate holds.
+                startupHoldTask = Task { [weak self, weak view] in
+                    guard let self, let view, !Task.isCancelled,
+                          self.host.isAttached(to: view), self.host.phase != .failed,
+                          self.host.startupHold.state == .requested else { return }
+                    self.startupHoldTask = nil
+                    self.startupHoldToken = self.host.startupHold.arm(
+                        onRelease: { [weak self, weak view] in
+                            guard let self, let view, self.host.isAttached(to: view),
+                                  self.host.phase != .failed else { return }
+                            self.startupHoldToken = nil
+                            self.loadInitialDocument(in: view)
+                        },
+                        onExpiry: { [weak self, weak view] in
+                            guard let self, let view, self.host.isAttached(to: view),
+                                  self.host.phase != .failed else { return }
+                            self.startupHoldToken = nil
+                            self.host.fail("The explicit startup diagnostic expired before navigation. Try loading again.")
+                        })
+                }
+                return
+            }
+            #endif
+            loadInitialDocument(in: view)
+        }
+
+        #if DEBUG
+        func cancelStartupHold() {
+            startupHoldTask?.cancel()
+            startupHoldTask = nil
+            if let token = startupHoldToken { host.startupHold.cancel(token: token) }
+            startupHoldToken = nil
+        }
+        #endif
 
         func loadInitialDocument(in view: WKWebView) {
             #if DEBUG

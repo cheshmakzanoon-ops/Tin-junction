@@ -20,6 +20,7 @@ final class EngineHostModel: ObservableObject {
     @Published private(set) var platformProbeJSON = "{}"
     @Published private(set) var assetProbeJSON = "{}"
     let assetProbeEnabled: Bool
+    let startupHold: HostStartupHold
     private var assetProbePrepared = false
     private var hasObservedHinge = false
     #endif
@@ -57,6 +58,7 @@ final class EngineHostModel: ObservableObject {
         self.store = store
         #if DEBUG
         self.assetProbeEnabled = AssetOriginProbe.isRequested(arguments: launchArguments)
+        self.startupHold = HostStartupHold(arguments: launchArguments)
         #endif
     }
 
@@ -100,6 +102,9 @@ final class EngineHostModel: ObservableObject {
     #endif
 
     private func cancelSession() {
+        #if DEBUG
+        startupHold.cancel()
+        #endif
         loadGeneration += 1
         handshakeTimeoutTask?.cancel()
         handshakeTimeoutTask = nil

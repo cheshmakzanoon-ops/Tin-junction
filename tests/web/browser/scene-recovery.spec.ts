@@ -1,9 +1,6 @@
 import { expect, test } from "@playwright/test";
 import type { Page } from "@playwright/test";
 
-// Context restoration and two software-rendered captures share this total test budget.
-test.setTimeout(60_000);
-
 async function sampleSceneColor(page: Page): Promise<number[]> {
   return page.evaluate(() => new Promise<number[]>((resolve, reject) => {
     requestAnimationFrame(() => {
@@ -28,6 +25,9 @@ async function sampleSceneColor(page: Page): Promise<number[]> {
 }
 
 test("restoring a context also restores generated lighting, not just frame delivery", async ({ page }, testInfo) => {
+  // CI completed the pixel/state assertions at 53.2s, then exhausted its
+  // former 60s total during capture. Keep all three 30s readiness deadlines.
+  test.setTimeout(90_000);
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
   await page.goto("/?capture=1");
@@ -36,7 +36,7 @@ test("restoring a context also restores generated lighting, not just frame deliv
   expect(initial.speed).toBe(0);
   const before = await sampleSceneColor(page);
   expect(before.every(channel => channel > 20 && channel < 250)).toBe(true);
-  await page.screenshot({ path: testInfo.outputPath("lighting-before-loss.png") });
+  await page.screenshot({ path: testInfo.outputPath("lighting-before-loss.png"), timeout: 30_000 });
 
   await page.evaluate(() => {
     const context = document.querySelector<HTMLCanvasElement>("#world")!.getContext("webgl2")!;
@@ -57,5 +57,5 @@ test("restoring a context also restores generated lighting, not just frame deliv
   }
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.trainDistance)).toBe(initial.distance);
   expect(errors).toEqual([]);
-  await page.screenshot({ path: testInfo.outputPath("lighting-after-restore.png") });
+  await page.screenshot({ path: testInfo.outputPath("lighting-after-restore.png"), timeout: 30_000 });
 });

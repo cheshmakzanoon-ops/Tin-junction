@@ -1,0 +1,17 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+Running 2 tests using 1 worker
+
+(node:100892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:100892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:110:1 › name, light and reopen a saved layout with the train stopped (28.6s)
+  ✓  2 [chromium-harness-not-device-proof] › tests/web/browser/scene-recovery.spec.ts:29:1 › restoring a context also restores generated lighting, not just frame delivery (29.6s)
+
+  2 passed (1.0m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

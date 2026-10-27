@@ -1,0 +1,71 @@
+2026-10-27T05:27:59.5312432Z ##[group]Run npm run test:browser
+2026-10-27T05:27:59.5312784Z [36;1mnpm run test:browser[0m
+2026-10-27T05:27:59.5375741Z shell: /usr/bin/bash -e {0}
+2026-10-27T05:27:59.5376016Z ##[endgroup]
+2026-10-27T05:27:59.6396217Z 
+2026-10-27T05:27:59.6397696Z > tin-junction@0.1.0 test:browser
+2026-10-27T05:27:59.6398348Z > playwright test
+2026-10-27T05:27:59.6398644Z 
+2026-10-27T05:28:01.3172830Z 
+2026-10-27T05:28:01.3173505Z Running 28 tests using 1 worker
+2026-10-27T05:28:01.3173838Z 
+2026-10-27T05:28:52.4476332Z   ✓   1 [chromium-harness-not-device-proof] › tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 1100x760 (50.1s)
+2026-10-27T05:29:28.8847021Z   ✓   2 [chromium-harness-not-device-proof] › tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 390x844 (36.4s)
+2026-10-27T05:29:58.9654516Z   ✓   3 [chromium-harness-not-device-proof] › tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 358x300 (30.1s)
+2026-10-27T05:30:33.1574395Z   ✓   4 [chromium-harness-not-device-proof] › tests/web/browser/control-accessibility.spec.ts:33:3 › essential controls stay readable and hittable at 844x390 (34.2s)
+2026-10-27T05:31:01.0563458Z   ✓   5 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after native viewport (27.9s)
+2026-10-27T05:31:32.5493473Z   ✓   6 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after native inactive (31.5s)
+2026-10-27T05:32:06.9423540Z   ✓   7 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after document hidden (34.3s)
+2026-10-27T05:32:55.0119665Z   ✓   8 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:25:3 › an interrupted editor tap cannot place scenery after canvas resize (48.0s)
+2026-10-27T05:33:42.5763617Z   ✓   9 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:100:1 › a fresh touch can place scenery after an interrupted touch is canceled (47.5s)
+2026-10-27T05:34:22.8873598Z   ✓  10 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after drag away and return (40.3s)
+2026-10-27T05:34:51.6993434Z   ✓  11 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after right click (28.8s)
+2026-10-27T05:35:22.2255746Z   ✓  12 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:162:3 › camera input cannot place scenery after middle click (30.5s)
+2026-10-27T05:35:59.9663484Z   ✓  13 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:238:3 › an 80-character railway name leaves controls clear at 1100x760 (37.7s)
+2026-10-27T05:36:28.9262824Z   ✓  14 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:238:3 › an 80-character railway name leaves controls clear at 382x575 (28.9s)
+2026-10-27T05:36:52.2518819Z   ✓  15 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:238:3 › an 80-character railway name leaves controls clear at 358x300 (23.3s)
+2026-10-27T05:37:15.5410106Z   ✓  16 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:238:3 › an 80-character railway name leaves controls clear at 844x390 (23.3s)
+2026-10-27T05:38:14.9905052Z   ✓  17 [chromium-harness-not-device-proof] › tests/web/browser/interaction-quality.spec.ts:353:1 › Save remains readable against every canvas background (59.4s)
+2026-10-27T05:39:07.0802924Z   ✓  18 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:33:1 › drive, brake and safely reverse the actual train controls (52.0s)
+2026-10-27T05:40:04.1201463Z   ✓  19 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:71:1 › place scenery on the board and undo/redo one complete transaction (57.0s)
+2026-10-27T05:41:18.3193194Z   ✘  20 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:110:1 › name, light and reopen a saved layout with the train stopped (1.1m)
+2026-10-27T05:42:17.1473428Z   ✓  21 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:110:1 › name, light and reopen a saved layout with the train stopped (retry #1) (58.0s)
+2026-10-27T05:42:58.7724387Z   ✓  22 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:151:1 › corrupt current generation restores an identified previous save (41.6s)
+2026-10-27T05:43:31.0276926Z   ✓  23 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:212:1 › native bridge queues edits behind a durable acknowledgment and rejects stale sessions (32.2s)
+2026-10-27T05:44:02.8479771Z   ✓  24 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:354:1 › pinch gesture does not commit scenery and focused buttons keep keyboard activation (31.8s)
+2026-10-27T05:44:43.1049226Z   ✓  25 [chromium-harness-not-device-proof] › tests/web/browser/railway.spec.ts:413:1 › portrait controls and name editing stay usable as the viewport shrinks (40.2s)
+2026-10-27T05:45:53.3525200Z   ✘  26 [chromium-harness-not-device-proof] › tests/web/browser/scene-recovery.spec.ts:31:1 › restoring a context also restores generated lighting, not just frame delivery (1.1m)
+2026-10-27T05:46:55.6842102Z   ✓  27 [chromium-harness-not-device-proof] › tests/web/browser/scene-recovery.spec.ts:31:1 › restoring a context also restores generated lighting, not just frame delivery (retry #1) (1.0m)
+2026-10-27T05:47:23.6469626Z   ✓  28 [chromium-harness-not-device-proof] › tests/web/browser/smoke.spec.ts:2:1 › offline bundle renders the operating miniature with no external requests (27.9s)
+2026-10-27T05:47:27.2401713Z ##[error]The operation was canceled.
+2026-10-27T05:47:27.2561989Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-27T05:47:27.2562739Z with:
+2026-10-27T05:47:27.2563296Z   name: browser-diagnostics-d1bfe55800a09fc39f7bed0d31e5fc92e3c57571
+2026-10-27T05:47:27.2564378Z   path: playwright-report/
+test-results/
+dist/web/bundle-manifest.json
+dist/web/build-metafile.json
+
+2026-10-27T05:47:27.2565273Z   if-no-files-found: error
+2026-10-27T05:47:27.2565692Z   retention-days: 14
+2026-10-27T05:47:27.2566116Z   compression-level: 6
+2026-10-27T05:47:27.2566502Z   overwrite: false
+2026-10-27T05:47:27.2566872Z   include-hidden-files: false
+2026-10-27T05:47:27.2567299Z ##[endgroup]
+2026-10-27T05:47:27.5849791Z (node:5158) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-27T05:47:27.5881593Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-27T05:47:27.9131018Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-27T05:47:27.9133768Z The least common ancestor is /home/runner/work/Tin-junction/Tin-junction. This will be the root directory of the artifact
+2026-10-27T05:47:27.9134792Z With the provided path, there will be 30 files uploaded
+2026-10-27T05:47:27.9135698Z Artifact name is valid!
+2026-10-27T05:47:27.9136228Z Root directory input is valid!
+2026-10-27T05:47:27.9144401Z Beginning upload of artifact content to blob storage
+2026-10-27T05:47:28.4410379Z (node:5158) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-27T05:47:28.6465775Z Uploaded bytes 8388608
+2026-10-27T05:47:28.6952479Z Uploaded bytes 10375051
+2026-10-27T05:47:28.7119784Z Finished uploading artifact content to blob storage!
+2026-10-27T05:47:28.7151975Z SHA256 digest of uploaded artifact zip is 85bf5dd5540804a408e5a8732ab1ce8c79f265ea4085e77fa65ee0c298703852
+2026-10-27T05:47:28.7442366Z Finalizing artifact upload
+2026-10-27T05:47:29.1191379Z Artifact browser-diagnostics-d1bfe55800a09fc39f7bed0d31e5fc92e3c57571.zip successfully finalized. Artifact ID 12713485734
+2026-10-27T05:47:29.1194221Z Artifact browser-diagnostics-d1bfe55800a09fc39f7bed0d31e5fc92e3c57571 has been successfully uploaded! Final size is 10375051 bytes. Artifact ID is 12713485734
+2026-10-27T05:47:29.1213575Z Artifact download URL: https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40455394264/artifacts/12713485734

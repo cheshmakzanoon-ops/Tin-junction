@@ -43,6 +43,9 @@ struct RootView: View {
             .background(paper)
 
             #if DEBUG
+            StartupHoldControl(hold: host.startupHold)
+                .foregroundStyle(ink)
+                .background(paper)
             if host.assetProbeEnabled {
                 Text("Bundled asset origin observations")
                     .font(.caption2)
@@ -76,44 +79,56 @@ struct RootView: View {
                         + proxy.reservedRegions(kind: .occlusion).map(\.frame)
                     ).map(NativeViewport.Region.init)
                 )
-                EngineWebView(host: host)
-                    .overlay {
-                        if host.phase == .failed {
-                            VStack(spacing: 16) {
-                                Image(systemName: "tram.fill").font(.largeTitle)
-                                Text("Let's reopen your railway")
-                                    .font(.system(.title2, design: .serif))
-                                Text(host.status).multilineTextAlignment(.center)
-                                Button("Try loading again", action: host.retryLoading)
-                                    .buttonStyle(.borderedProminent)
-                                    .accessibilityIdentifier("host.retry")
+                ZStack {
+                    EngineWebView(host: host)
+                        .allowsHitTesting(host.isReady)
+                        .accessibilityHidden(host.phase == .failed)
+                    if host.phase == .failed {
+                        VStack(spacing: 16) {
+                            Image(systemName: "tram.fill")
+                                .font(.largeTitle)
+                                .accessibilityHidden(true)
+                            Text("Let's reopen your railway")
+                                .font(.system(.title2, design: .serif))
+                            Text(host.status).multilineTextAlignment(.center)
+                            Button(action: host.retryLoading) {
+                                Text("Try loading again")
+                                    .frame(minWidth: 44, minHeight: 44)
+                                    .contentShape(Rectangle())
                             }
-                            .padding(28)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(paper)
-                            .foregroundStyle(ink)
-                            .accessibilityIdentifier("host.recovery")
-                        } else if !host.isReady {
-                            VStack(spacing: 14) {
-                                ProgressView()
-                                    .controlSize(.large)
-                                Text(host.phase == .recovering ? "Restoring your railway view" : "Opening your railway")
-                                    .font(.system(.title3, design: .serif))
-                                Text(host.status)
-                                    .font(.callout)
-                                    .multilineTextAlignment(.center)
-                            }
-                            .padding(28)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .background(paper)
-                            .foregroundStyle(ink)
-                            .accessibilityElement(children: .combine)
-                            .accessibilityIdentifier("host.loading")
+                            .buttonStyle(.borderedProminent)
+                            .foregroundStyle(paper)
+                            .accessibilityIdentifier("host.retry")
                         }
+                        .padding(28)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(paper)
+                        .foregroundStyle(ink)
+                        // A real container keeps this identifier from
+                        // replacing every child's identity, including Retry.
+                        .accessibilityElement(children: .contain)
+                        .accessibilityIdentifier("host.recovery")
+                    } else if !host.isReady {
+                        VStack(spacing: 14) {
+                            ProgressView()
+                                .controlSize(.large)
+                            Text(host.phase == .recovering ? "Restoring your railway view" : "Opening your railway")
+                                .font(.system(.title3, design: .serif))
+                            Text(host.status)
+                                .font(.callout)
+                                .multilineTextAlignment(.center)
+                        }
+                        .padding(28)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(paper)
+                        .foregroundStyle(ink)
+                        .accessibilityElement(children: .combine)
+                        .accessibilityIdentifier("host.loading")
                     }
-                    .onChange(of: viewport, initial: true) { _, newValue in
-                        host.updateViewport(newValue)
-                    }
+                }
+                .onChange(of: viewport, initial: true) { _, newValue in
+                    host.updateViewport(newValue)
+                }
             }
         }
         .tint(ink)
@@ -195,3 +210,30 @@ struct RootView: View {
         }
     }
 }
+
+#if DEBUG
+/// This explicit diagnostic control remains separate from the loading
+/// overlay's combined accessibility element and is absent from Release.
+private struct StartupHoldControl: View {
+    @ObservedObject var hold: HostStartupHold
+
+    var body: some View {
+        if hold.state == .holding {
+            VStack(spacing: 4) {
+                Text("Startup diagnostic: navigation is held")
+                    .font(.caption2)
+                    .accessibilityIdentifier("host.startup.held")
+                Button { hold.release() } label: {
+                    Text("Continue startup")
+                        .frame(minHeight: 44)
+                        .contentShape(Rectangle())
+                }
+                    .buttonStyle(.bordered)
+                    .accessibilityIdentifier("host.startup.release")
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 12)
+        }
+    }
+}
+#endif

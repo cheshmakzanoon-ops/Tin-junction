@@ -182,11 +182,18 @@ export function startAssetOriginProbe(options: AssetProbeOptions): AssetProbeHan
       source = context.createBufferSource(); source.buffer = audioBuffer; source.connect(context.destination);
       await bounded(new Promise<void>(resolve => { source!.onended = () => resolve(); source!.start(); }), "Tone completion", 4000);
       source.disconnect(); source = null;
-      if (!disposed) result("audio", "passed", "Real user tap resumed audio; the bundled PCM source completed playback. Acoustic quality remains a device check.");
+      if (!disposed) {
+        // Publish one valid transition: native validation requires ready to
+        // retain pending audio until its observed outcome is complete.
+        report.stage = "complete";
+        result("audio", "passed", "Real user tap resumed audio; the bundled PCM source completed playback. Acoustic quality remains a device check.");
+      }
     }).catch(error => {
+      if (disposed) return;
       if (context) report.observed.audioState = context.state;
+      report.stage = "complete";
       result("audio", "blocked", detail(error));
-    }).finally(() => { if (!disposed) { report.stage = "complete"; publish(); } });
+    });
   });
 
   try {

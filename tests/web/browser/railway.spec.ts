@@ -52,6 +52,9 @@ test("place scenery on the board and undo/redo one complete transaction", async 
 });
 
 test("name, light and reopen a saved layout with the train stopped", async ({ page }) => {
+  // The observed CI assertions finished at 46.6s; its final software-rendered
+  // capture exhausted the former 60s total. Preserve the behavioral deadlines.
+  test.setTimeout(90_000);
   await openRailway(page);
   await rename(page, "Cedar crossing");
   await page.getByRole("button", { name: "Night", exact: true }).click();
@@ -66,7 +69,7 @@ test("name, light and reopen a saved layout with the train stopped", async ({ pa
   await expect(page.getByRole("button", { name: "Night", exact: true })).toHaveAttribute("aria-pressed", "true");
   const restored = await page.evaluate(() => window.__TIN_DIAGNOSTICS__!);
   expect(restored.revision).toBe(revision); expect(restored.trainSpeed).toBe(0); expect(restored.throttle).toBe(0);
-  await page.screenshot({ path: "test-results/first-railway-night-restored.png" });
+  await page.screenshot({ path: "test-results/first-railway-night-restored.png", timeout: 30_000 });
 });
 
 test("corrupt current generation restores an identified previous save", async ({ page }) => {

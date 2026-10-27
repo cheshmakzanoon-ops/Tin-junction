@@ -19,7 +19,9 @@ jobs:
   quality:
     name: Plan integrity, types, tests and bundled browser smoke
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    # The 28-case software-rendered suite exceeded the previous whole-job
+    # budget after 26 cases. Keep every test and a bounded evidence-upload window.
+    timeout-minutes: 30
     steps:
       - name: Check out exact revision
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4

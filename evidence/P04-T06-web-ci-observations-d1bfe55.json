@@ -1,0 +1,856 @@
+{
+  "formatVersion": 1,
+  "kind": "read-only-failed-ci-review-not-a-passing-gate",
+  "commit": "d1bfe55800a09fc39f7bed0d31e5fc92e3c57571",
+  "runId": 40455394264,
+  "qualityJobId": 122027425210,
+  "runURL": "https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40455394264",
+  "observedJobs": [
+    {
+      "id": 122027424960,
+      "name": "Reproducible Blender export and Khronos validation",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 40455394264,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out exact revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Install pinned Node",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Re-export original fixture and reject malformed source",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Preserve asset validation evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Post Install pinned Node",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9
+        },
+        {
+          "name": "Post Check out exact revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        }
+      ]
+    },
+    {
+      "id": 122027425210,
+      "name": "Plan integrity, types, tests and bundled browser smoke",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "run_id": 40455394264,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Check out exact revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Install pinned Node major",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Install locked dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Validate repository, typecheck, test and build",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Assemble and verify native asset bundle",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Install browser test runtime",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7
+        },
+        {
+          "name": "Run packaged browser harness tests",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "number": 8
+        },
+        {
+          "name": "Capture actual modular track joint geometry",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 9
+        },
+        {
+          "name": "Preserve browser diagnostics",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10
+        },
+        {
+          "name": "Post Install pinned Node major",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 19
+        },
+        {
+          "name": "Post Check out exact revision",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21
+        }
+      ]
+    }
+  ],
+  "observedArtifacts": [
+    {
+      "id": 12713485734,
+      "name": "browser-diagnostics-d1bfe55800a09fc39f7bed0d31e5fc92e3c57571",
+      "size_in_bytes": 10375051,
+      "url": "https://api.github.com/repos/cheshmakzanoon-ops/Tin-junction/actions/artifacts/12713485734",
+      "archive_download_url": "https://api.github.com/repos/cheshmakzanoon-ops/Tin-junction/actions/artifacts/12713485734/zip",
+      "expired": false,
+      "created_at": "2026-10-27T05:47:28Z",
+      "expires_at": "2026-11-10T05:47:27Z",
+      "updated_at": "2026-10-27T05:47:28Z",
+      "digest": "sha256:85bf5dd5540804a408e5a8732ab1ce8c79f265ea4085e77fa65ee0c298703852",
+      "workflow_run": {
+        "id": 40455394264,
+        "repository_id": 1435054425,
+        "head_repository_id": 1435054425,
+        "head_branch": "main",
+        "head_sha": "d1bfe55800a09fc39f7bed0d31e5fc92e3c57571"
+      }
+    },
+    {
+      "id": 12711658716,
+      "name": "asset-validation-d1bfe55800a09fc39f7bed0d31e5fc92e3c57571",
+      "size_in_bytes": 2740,
+      "url": "https://api.github.com/repos/cheshmakzanoon-ops/Tin-junction/actions/artifacts/12711658716",
+      "archive_download_url": "https://api.github.com/repos/cheshmakzanoon-ops/Tin-junction/actions/artifacts/12711658716/zip",
+      "expired": false,
+      "created_at": "2026-10-27T05:28:03Z",
+      "expires_at": "2026-11-10T05:28:03Z",
+      "updated_at": "2026-10-27T05:28:03Z",
+      "digest": "sha256:3660842897206afeb35c46bf468981204b6d843b6e986108647a7f24d4cfa10c",
+      "workflow_run": {
+        "id": 40455394264,
+        "repository_id": 1435054425,
+        "head_repository_id": 1435054425,
+        "head_branch": "main",
+        "head_sha": "d1bfe55800a09fc39f7bed0d31e5fc92e3c57571"
+      }
+    }
+  ],
+  "downloadVerification": {
+    "browserArtifactZipBytes": 10375051,
+    "browserArtifactZipSHA256": "85bf5dd5540804a408e5a8732ab1ce8c79f265ea4085e77fa65ee0c298703852",
+    "matchesGitHubDigest": true,
+    "completeDecodedJobLogSHA256": "7171b792ea0ac59dc7bab7b8e2d4cef3a0f052e30b7bf39bb5270c8839b2ed53",
+    "preservedBrowserLogExcerpt": "P04-T06-web-ci-browser-log-d1bfe55.txt",
+    "preservedBrowserLogExcerptSHA256": "fe65a9608daf3c0b2f5f77894a933d886663c29fd8d2d510a277d0aff015b919",
+    "logExcerptSelection": "Exact contiguous original span from browser-step start through artifact URL, inclusive; no lines filtered or modified. Timestamp-only empty-message lines retain their original trailing space."
+  },
+  "browserStep": {
+    "startedAt": "2026-10-27T05:27:59.5312432Z",
+    "cancelledAt": "2026-10-27T05:47:27.2401713Z",
+    "elapsedSeconds": 1167.7089281,
+    "plannedDistinctTests": 28,
+    "completedAttemptEvents": 28,
+    "distinctTestsWithObservedPass": 26,
+    "firstAttemptTimeouts": 2,
+    "passedRetries": 2,
+    "uncompletedOrUnreportedTests": [
+      "bridge validation, lifecycle pause/resume and resize are observable",
+      "WebGL context loss pauses and restoration resumes the same harness"
+    ],
+    "absenceOfCompletionDoesNotProveWhetherTheNextTestStarted": true
+  },
+  "attempts": [
+    {
+      "reportedOrdinal": 1,
+      "completedAt": "2026-10-27T05:28:52.4476332Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/control-accessibility.spec.ts:33:3",
+      "title": "essential controls stay readable and hittable at 1100x760",
+      "retry": 0,
+      "reportedDuration": "50.1s"
+    },
+    {
+      "reportedOrdinal": 2,
+      "completedAt": "2026-10-27T05:29:28.8847021Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/control-accessibility.spec.ts:33:3",
+      "title": "essential controls stay readable and hittable at 390x844",
+      "retry": 0,
+      "reportedDuration": "36.4s"
+    },
+    {
+      "reportedOrdinal": 3,
+      "completedAt": "2026-10-27T05:29:58.9654516Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/control-accessibility.spec.ts:33:3",
+      "title": "essential controls stay readable and hittable at 358x300",
+      "retry": 0,
+      "reportedDuration": "30.1s"
+    },
+    {
+      "reportedOrdinal": 4,
+      "completedAt": "2026-10-27T05:30:33.1574395Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/control-accessibility.spec.ts:33:3",
+      "title": "essential controls stay readable and hittable at 844x390",
+      "retry": 0,
+      "reportedDuration": "34.2s"
+    },
+    {
+      "reportedOrdinal": 5,
+      "completedAt": "2026-10-27T05:31:01.0563458Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:25:3",
+      "title": "an interrupted editor tap cannot place scenery after native viewport",
+      "retry": 0,
+      "reportedDuration": "27.9s"
+    },
+    {
+      "reportedOrdinal": 6,
+      "completedAt": "2026-10-27T05:31:32.5493473Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:25:3",
+      "title": "an interrupted editor tap cannot place scenery after native inactive",
+      "retry": 0,
+      "reportedDuration": "31.5s"
+    },
+    {
+      "reportedOrdinal": 7,
+      "completedAt": "2026-10-27T05:32:06.9423540Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:25:3",
+      "title": "an interrupted editor tap cannot place scenery after document hidden",
+      "retry": 0,
+      "reportedDuration": "34.3s"
+    },
+    {
+      "reportedOrdinal": 8,
+      "completedAt": "2026-10-27T05:32:55.0119665Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:25:3",
+      "title": "an interrupted editor tap cannot place scenery after canvas resize",
+      "retry": 0,
+      "reportedDuration": "48.0s"
+    },
+    {
+      "reportedOrdinal": 9,
+      "completedAt": "2026-10-27T05:33:42.5763617Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:100:1",
+      "title": "a fresh touch can place scenery after an interrupted touch is canceled",
+      "retry": 0,
+      "reportedDuration": "47.5s"
+    },
+    {
+      "reportedOrdinal": 10,
+      "completedAt": "2026-10-27T05:34:22.8873598Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:162:3",
+      "title": "camera input cannot place scenery after drag away and return",
+      "retry": 0,
+      "reportedDuration": "40.3s"
+    },
+    {
+      "reportedOrdinal": 11,
+      "completedAt": "2026-10-27T05:34:51.6993434Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:162:3",
+      "title": "camera input cannot place scenery after right click",
+      "retry": 0,
+      "reportedDuration": "28.8s"
+    },
+    {
+      "reportedOrdinal": 12,
+      "completedAt": "2026-10-27T05:35:22.2255746Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:162:3",
+      "title": "camera input cannot place scenery after middle click",
+      "retry": 0,
+      "reportedDuration": "30.5s"
+    },
+    {
+      "reportedOrdinal": 13,
+      "completedAt": "2026-10-27T05:35:59.9663484Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:238:3",
+      "title": "an 80-character railway name leaves controls clear at 1100x760",
+      "retry": 0,
+      "reportedDuration": "37.7s"
+    },
+    {
+      "reportedOrdinal": 14,
+      "completedAt": "2026-10-27T05:36:28.9262824Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:238:3",
+      "title": "an 80-character railway name leaves controls clear at 382x575",
+      "retry": 0,
+      "reportedDuration": "28.9s"
+    },
+    {
+      "reportedOrdinal": 15,
+      "completedAt": "2026-10-27T05:36:52.2518819Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:238:3",
+      "title": "an 80-character railway name leaves controls clear at 358x300",
+      "retry": 0,
+      "reportedDuration": "23.3s"
+    },
+    {
+      "reportedOrdinal": 16,
+      "completedAt": "2026-10-27T05:37:15.5410106Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:238:3",
+      "title": "an 80-character railway name leaves controls clear at 844x390",
+      "retry": 0,
+      "reportedDuration": "23.3s"
+    },
+    {
+      "reportedOrdinal": 17,
+      "completedAt": "2026-10-27T05:38:14.9905052Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/interaction-quality.spec.ts:353:1",
+      "title": "Save remains readable against every canvas background",
+      "retry": 0,
+      "reportedDuration": "59.4s"
+    },
+    {
+      "reportedOrdinal": 18,
+      "completedAt": "2026-10-27T05:39:07.0802924Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/railway.spec.ts:33:1",
+      "title": "drive, brake and safely reverse the actual train controls",
+      "retry": 0,
+      "reportedDuration": "52.0s"
+    },
+    {
+      "reportedOrdinal": 19,
+      "completedAt": "2026-10-27T05:40:04.1201463Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/railway.spec.ts:71:1",
+      "title": "place scenery on the board and undo/redo one complete transaction",
+      "retry": 0,
+      "reportedDuration": "57.0s"
+    },
+    {
+      "reportedOrdinal": 20,
+      "completedAt": "2026-10-27T05:41:18.3193194Z",
+      "outcome": "failed",
+      "reportedSource": "tests/web/browser/railway.spec.ts:110:1",
+      "title": "name, light and reopen a saved layout with the train stopped",
+      "retry": 0,
+      "reportedDuration": "1.1m"
+    },
+    {
+      "reportedOrdinal": 21,
+      "completedAt": "2026-10-27T05:42:17.1473428Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/railway.spec.ts:110:1",
+      "title": "name, light and reopen a saved layout with the train stopped",
+      "retry": 1,
+      "reportedDuration": "58.0s"
+    },
+    {
+      "reportedOrdinal": 22,
+      "completedAt": "2026-10-27T05:42:58.7724387Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/railway.spec.ts:151:1",
+      "title": "corrupt current generation restores an identified previous save",
+      "retry": 0,
+      "reportedDuration": "41.6s"
+    },
+    {
+      "reportedOrdinal": 23,
+      "completedAt": "2026-10-27T05:43:31.0276926Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/railway.spec.ts:212:1",
+      "title": "native bridge queues edits behind a durable acknowledgment and rejects stale sessions",
+      "retry": 0,
+      "reportedDuration": "32.2s"
+    },
+    {
+      "reportedOrdinal": 24,
+      "completedAt": "2026-10-27T05:44:02.8479771Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/railway.spec.ts:354:1",
+      "title": "pinch gesture does not commit scenery and focused buttons keep keyboard activation",
+      "retry": 0,
+      "reportedDuration": "31.8s"
+    },
+    {
+      "reportedOrdinal": 25,
+      "completedAt": "2026-10-27T05:44:43.1049226Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/railway.spec.ts:413:1",
+      "title": "portrait controls and name editing stay usable as the viewport shrinks",
+      "retry": 0,
+      "reportedDuration": "40.2s"
+    },
+    {
+      "reportedOrdinal": 26,
+      "completedAt": "2026-10-27T05:45:53.3525200Z",
+      "outcome": "failed",
+      "reportedSource": "tests/web/browser/scene-recovery.spec.ts:31:1",
+      "title": "restoring a context also restores generated lighting, not just frame delivery",
+      "retry": 0,
+      "reportedDuration": "1.1m"
+    },
+    {
+      "reportedOrdinal": 27,
+      "completedAt": "2026-10-27T05:46:55.6842102Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/scene-recovery.spec.ts:31:1",
+      "title": "restoring a context also restores generated lighting, not just frame delivery",
+      "retry": 1,
+      "reportedDuration": "1.0m"
+    },
+    {
+      "reportedOrdinal": 28,
+      "completedAt": "2026-10-27T05:47:23.6469626Z",
+      "outcome": "passed",
+      "reportedSource": "tests/web/browser/smoke.spec.ts:2:1",
+      "title": "offline bundle renders the operating miniature with no external requests",
+      "retry": 0,
+      "reportedDuration": "27.9s"
+    }
+  ],
+  "traceObservations": [
+    {
+      "artifactDirectory": "test-results/railway-name-light-and-reo-7bc7a-yout-with-the-train-stopped-chromium-harness-not-device-proof",
+      "traceZipSHA256": "171bd7e0e2ceb9c2c14427c323473ab2c15fa1c57536565ef98486e4eae6f90f",
+      "testTraceSHA256": "58f9d50f003daff2cf2a3b499d94f9cc30bcf946d8eda50075c449c68e1275f3",
+      "testTraceBytes": 18885,
+      "testStartMonotonicMs": 724477.352,
+      "finalAssertionCompletedOffsetMs": 46595.062,
+      "finalCaptureStartedOffsetMs": 46596.388,
+      "finalCaptureCompletedOffsetMs": 60170.928,
+      "finalCaptureDurationMs": 13574.54,
+      "allRecordedAssertionsHaveSuccessfulAfterEvents": true,
+      "rawEvidenceEvents": [
+        {
+          "type": "before",
+          "callId": "expect@48",
+          "stepId": "expect@48",
+          "startTime": 771072.357,
+          "class": "Test",
+          "method": "expect",
+          "title": "Expect \"toBe\"",
+          "params": {},
+          "stack": [
+            {
+              "file": "/home/runner/work/Tin-junction/Tin-junction/tests/web/browser/railway.spec.ts",
+              "line": 68,
+              "column": 108
+            }
+          ]
+        },
+        {
+          "type": "after",
+          "callId": "expect@48",
+          "endTime": 771072.414,
+          "annotations": []
+        },
+        {
+          "type": "before",
+          "callId": "pw:api@49",
+          "stepId": "pw:api@49",
+          "startTime": 771073.74,
+          "class": "Test",
+          "method": "pw:api",
+          "title": "Screenshot",
+          "params": {
+            "path": "test-results/first-railway-night-restored.png",
+            "mask": "undefined",
+            "timeout": "0",
+            "type": "png"
+          },
+          "stack": [
+            {
+              "file": "/home/runner/work/Tin-junction/Tin-junction/tests/web/browser/railway.spec.ts",
+              "line": 69,
+              "column": 14
+            }
+          ]
+        },
+        {
+          "type": "after",
+          "callId": "pw:api@49",
+          "endTime": 784648.28,
+          "annotations": []
+        },
+        {
+          "type": "error",
+          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+          "stack": []
+        }
+      ]
+    },
+    {
+      "artifactDirectory": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof",
+      "traceZipSHA256": "0e57fdb16c4537e4b5499d9af733b5cd59a1d3d364f63791b5d0696cff4a2354",
+      "testTraceSHA256": "ef142e1eccedcf77f940ef7fc7b7dc112167f91ad39a0b0e2576c04e5a349342",
+      "testTraceBytes": 19874,
+      "testStartMonotonicMs": 1003467.908,
+      "finalAssertionCompletedOffsetMs": 53178.135,
+      "finalCaptureStartedOffsetMs": 53179.063,
+      "finalCaptureCompletedOffsetMs": 62449.2,
+      "finalCaptureDurationMs": 9270.137,
+      "allRecordedAssertionsHaveSuccessfulAfterEvents": true,
+      "rawEvidenceEvents": [
+        {
+          "type": "before",
+          "callId": "expect@44",
+          "stepId": "expect@44",
+          "startTime": 1056645.912,
+          "class": "Test",
+          "method": "expect",
+          "title": "Expect \"toEqual\"",
+          "params": {
+            "expected": "[]"
+          },
+          "stack": [
+            {
+              "file": "/home/runner/work/Tin-junction/Tin-junction/tests/web/browser/scene-recovery.spec.ts",
+              "line": 59,
+              "column": 18
+            }
+          ]
+        },
+        {
+          "type": "after",
+          "callId": "expect@44",
+          "endTime": 1056646.043,
+          "annotations": []
+        },
+        {
+          "type": "before",
+          "callId": "pw:api@45",
+          "stepId": "pw:api@45",
+          "startTime": 1056646.971,
+          "class": "Test",
+          "method": "pw:api",
+          "title": "Screenshot",
+          "params": {
+            "path": "/home/runner/work/Tin-junction/Tin-junction/test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/lighting-after-restore.png",
+            "mask": "undefined",
+            "timeout": "0",
+            "type": "png"
+          },
+          "stack": [
+            {
+              "file": "/home/runner/work/Tin-junction/Tin-junction/tests/web/browser/scene-recovery.spec.ts",
+              "line": 60,
+              "column": 14
+            }
+          ]
+        },
+        {
+          "type": "after",
+          "callId": "pw:api@45",
+          "endTime": 1065917.108,
+          "annotations": []
+        },
+        {
+          "type": "error",
+          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+          "stack": []
+        }
+      ]
+    }
+  ],
+  "artifactInventory": {
+    "entries": [
+      {
+        "path": "test-results/controls-1100x760.png",
+        "bytes": 433102
+      },
+      {
+        "path": "test-results/controls-358x300.png",
+        "bytes": 85179
+      },
+      {
+        "path": "test-results/controls-390x844.png",
+        "bytes": 158787
+      },
+      {
+        "path": "test-results/controls-844x390.png",
+        "bytes": 151086
+      },
+      {
+        "path": "test-results/editor-1100x760.png",
+        "bytes": 590388
+      },
+      {
+        "path": "test-results/editor-358x300.png",
+        "bytes": 30230
+      },
+      {
+        "path": "test-results/editor-390x844.png",
+        "bytes": 144534
+      },
+      {
+        "path": "test-results/editor-844x390.png",
+        "bytes": 171663
+      },
+      {
+        "path": "test-results/first-railway-night-portrait.png",
+        "bytes": 168208
+      },
+      {
+        "path": "test-results/first-railway-night-restored.png",
+        "bytes": 384557
+      },
+      {
+        "path": "test-results/first-railway-overview.png",
+        "bytes": 404624
+      },
+      {
+        "path": "test-results/first-railway-portrait.png",
+        "bytes": 179896
+      },
+      {
+        "path": "test-results/first-railway-scenery-workshop.png",
+        "bytes": 810795
+      },
+      {
+        "path": "test-results/interaction-quality-Save-r-e5912-nst-every-canvas-background-chromium-harness-not-device-proof/save-daylight.png",
+        "bytes": 404624
+      },
+      {
+        "path": "test-results/interaction-quality-Save-r-e5912-nst-every-canvas-background-chromium-harness-not-device-proof/save-evening.png",
+        "bytes": 405658
+      },
+      {
+        "path": "test-results/interaction-quality-Save-r-e5912-nst-every-canvas-background-chromium-harness-not-device-proof/save-night.png",
+        "bytes": 384426
+      },
+      {
+        "path": "test-results/interaction-quality-an-80--12ded-s-controls-clear-at-358x300-chromium-harness-not-device-proof/maximum-name.png",
+        "bytes": 102863
+      },
+      {
+        "path": "test-results/interaction-quality-an-80--3ab0f-s-controls-clear-at-844x390-chromium-harness-not-device-proof/maximum-name.png",
+        "bytes": 203692
+      },
+      {
+        "path": "test-results/interaction-quality-an-80--77d57-s-controls-clear-at-382x575-chromium-harness-not-device-proof/maximum-name.png",
+        "bytes": 189222
+      },
+      {
+        "path": "test-results/interaction-quality-an-80--84bc8--controls-clear-at-1100x760-chromium-harness-not-device-proof/maximum-name.png",
+        "bytes": 617352
+      },
+      {
+        "path": "test-results/railway-name-light-and-reo-7bc7a-yout-with-the-train-stopped-chromium-harness-not-device-proof/error-context.md",
+        "bytes": 2850
+      },
+      {
+        "path": "test-results/railway-name-light-and-reo-7bc7a-yout-with-the-train-stopped-chromium-harness-not-device-proof/trace.zip",
+        "bytes": 1384764
+      },
+      {
+        "path": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/error-context.md",
+        "bytes": 2834
+      },
+      {
+        "path": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/lighting-after-restore.png",
+        "bytes": 403199
+      },
+      {
+        "path": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/lighting-before-loss.png",
+        "bytes": 404624
+      },
+      {
+        "path": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof/trace.zip",
+        "bytes": 1375193
+      },
+      {
+        "path": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof-retry1/lighting-after-restore.png",
+        "bytes": 403199
+      },
+      {
+        "path": "test-results/scene-recovery-restoring-a-e3bfb-ing-not-just-frame-delivery-chromium-harness-not-device-proof-retry1/lighting-before-loss.png",
+        "bytes": 404624
+      },
+      {
+        "path": "dist/web/bundle-manifest.json",
+        "bytes": 753
+      },
+      {
+        "path": "dist/web/build-metafile.json",
+        "bytes": 18150
+      }
+    ],
+    "htmlReportPresent": false,
+    "jointGeometryCapturePresent": false
+  },
+  "artifactBundleManifest": {
+    "provenance": "Exact manifest file preserved by the failed workflow; packaging identity only, not installed-device verification.",
+    "sha256": "842bf896ac97eb45d528928effae82b32a69984d7b30c13c385cf56d878e38cf",
+    "contents": {
+      "formatVersion": 1,
+      "kind": "first-operating-workbench-not-production-art",
+      "bundler": "esbuild",
+      "scriptFormat": "iife",
+      "externalRuntimeDependencies": [],
+      "assetOriginProbe": false,
+      "artifacts": {
+        "index.html": {
+          "bytes": 884,
+          "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+        },
+        "bundle.js": {
+          "bytes": 715818,
+          "sha256": "e1936e606f3fb93e309446b5ae210672fc3e916b1682db1c72547cd6ba5075eb"
+        },
+        "bundle.css": {
+          "bytes": 18493,
+          "sha256": "2951fd778ea783268ebe5221297b6f5db39e33b75315636b756cbb57bd49a9b6"
+        },
+        "bundle.js.LEGAL.txt": {
+          "bytes": 188,
+          "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+        }
+      }
+    }
+  },
+  "testedGitSources": {
+    ".github/workflows/quality.yml": {
+      "sha256": "011b1d025c3def779dc0ceafeb375f4131304bb83e9ba7b016720ce72d75df03",
+      "anchors": [
+        {
+          "line": 22,
+          "text": "timeout-minutes: 20"
+        },
+        {
+          "line": 62,
+          "text": "timeout-minutes: 25"
+        }
+      ]
+    },
+    "playwright.config.ts": {
+      "sha256": "562c3c57fcda59ed920bbc38d77594c6731f0cfa32be884796bf9b73ba52eb99",
+      "anchors": [
+        {
+          "line": 7,
+          "text": "retries: process.env.CI ? 1 : 0,"
+        },
+        {
+          "line": 8,
+          "text": "workers: 1,"
+        },
+        {
+          "line": 14,
+          "text": "trace: \"retain-on-failure\","
+        }
+      ]
+    },
+    "tests/web/browser/railway.spec.ts": {
+      "sha256": "389c1ecf141dbafb9ff840d46468d3e0d9bd7d9c3ea2ba79621b635a9a576099",
+      "anchors": [
+        {
+          "line": 6,
+          "text": "test.setTimeout(60_000);"
+        },
+        {
+          "line": 54,
+          "text": "test(\"name, light and reopen a saved layout with the train stopped\", async ({ page }) => {"
+        }
+      ]
+    },
+    "tests/web/browser/scene-recovery.spec.ts": {
+      "sha256": "0a7f618ada876d3ffc2818f534ef584d5781cc65436029982e4e649cfce20433",
+      "anchors": [
+        {
+          "line": 5,
+          "text": "test.setTimeout(60_000);"
+        },
+        {
+          "line": 30,
+          "text": "test(\"restoring a context also restores generated lighting, not just frame delivery\", async ({ page }, testInfo) => {"
+        }
+      ]
+    },
+    "tests/web/browser/smoke.spec.ts": {
+      "sha256": "4a62ca1c0c78d25a2a03492162dde8b0ac5c71f2e3cc63bbbc50c5800afa0eb1",
+      "anchors": [
+        {
+          "line": 21,
+          "text": "test(\"bridge validation, lifecycle pause/resume and resize are observable\", async ({ page }) => {"
+        },
+        {
+          "line": 39,
+          "text": "test(\"WebGL context loss pauses and restoration resumes the same harness\", async ({ page }) => {"
+        }
+      ]
+    },
+    "tests/fixtures/track/capture-joints.mjs": {
+      "sha256": "7f3d0358899905cadb2b6b8a5fb45a933aa4489dfd068bbfa6a008e5814f5d1c",
+      "anchors": []
+    }
+  },
+  "recommendation": {
+    "status": "proposed-for-fresh-native-and-web-CI-not-executed-by-reviewer",
+    "qualityJobMinutes": 30,
+    "onlyObservedTwoTestTotalsMs": 90000,
+    "capturesInOnlyObservedTwoTestsTimeoutMs": 30000,
+    "preserve": "All assertions, scene quality, action/readiness deadlines, retries, worker count and all 28 tests."
+  }
+}

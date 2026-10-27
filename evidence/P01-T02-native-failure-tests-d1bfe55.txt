@@ -1,0 +1,24 @@
+Actual xcodebuild.log excerpt from run 40455394205, job 122027425126, attempt 1.
+Tested commit d1bfe55800a09fc39f7bed0d31e5fc92e3c57571.
+Only the absolute runner repository prefix was removed. Full log SHA-256: 48f26573f71a38b3d021437ffa1485d61a4f79e33d735c9892776b06ed1fa777.
+
+Test Suite 'All tests' started at 2026-10-27 05:33:46.665.
+	 Executed 7 tests, with 0 failures (0 unexpected) in 1.470 (1.473) seconds
+Test Case '-[TinJunctionTests.BundleSchemeResponseTests testCustomOriginBinaryResponsesCarrySuccessfulStatusAndExactMetadata]' passed (0.001 seconds).
+Test Case '-[TinJunctionTests.BundleSchemeResponseTests testTextEncodingAndResourceBoundsRemainExplicit]' passed (0.000 seconds).
+	 Executed 71 tests, with 0 failures (0 unexpected) in 17.005 (19.980) seconds
+Test Suite 'All tests' passed at 2026-10-27 05:34:06.646.
+	 Executed 71 tests, with 0 failures (0 unexpected) in 17.005 (19.981) seconds
+Test Suite 'All tests' started at 2026-10-27 05:34:29.526.
+apps/ios/TinJunctionUITests/AssetOriginProbeUITests.swift:43: error: -[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch] : XCTAssertEqual failed: ("XCTWaiterResult(rawValue: 2)") is not equal to ("XCTWaiterResult(rawValue: 1)")
+Test Case '-[TinJunctionUITests.AssetOriginProbeUITests testActualBundledOriginAfterWebDataResetAndColdRelaunch]' failed (76.941 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testBundledRendererHandshakes]' passed (22.134 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testHostSurvivesRotationAndForegrounding]' passed (20.750 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeHelpRemainsAccessible]' passed (13.481 seconds).
+Test Case '-[TinJunctionUITests.HostSmokeTests testNativeSaveAndRelaunchRestoresAcknowledgedRailway]' passed (57.437 seconds).
+apps/ios/TinJunctionUITests/HostStartupUITests.swift:12: error: -[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry] : XCTAssertTrue failed - A failed WebGL2 initialization must expose native recovery without a blank wait.
+Test Case '-[TinJunctionUITests.HostStartupUITests testRealRendererInitializationFailureOffersWorkingNativeRetry]' failed (36.354 seconds).
+Test Case '-[TinJunctionUITests.PlatformProbeUITests testObservedPlatformGeometryAcrossSupportedOrientations]' passed (96.179 seconds).
+	 Executed 7 tests, with 2 failures (0 unexpected) in 323.275 (323.382) seconds
+Test Suite 'All tests' failed at 2026-10-27 05:39:52.917.
+	 Executed 7 tests, with 2 failures (0 unexpected) in 323.275 (323.391) seconds

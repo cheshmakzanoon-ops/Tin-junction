@@ -1,0 +1,102 @@
+{
+  "formatVersion": 1,
+  "kind": "prepublication-local-repair-checks-not-native-acceptance",
+  "recordedAt": "2026-10-27T05:53:21.328010+00:00",
+  "baselineCommit": "d1bfe55800a09fc39f7bed0d31e5fc92e3c57571",
+  "command": "npm run check && npm run bundle:ios",
+  "exitCode": 0,
+  "passed": {
+    "projectTests": 108,
+    "iosToolTests": 28,
+    "webUnitTests": 301,
+    "typescript": true,
+    "ordinaryBuildAndNativeAssembly": true,
+    "resourceIdentityAndProbeExclusion": true
+  },
+  "log": {
+    "path": "evidence/P01-T02-startup-repair-local-checks.txt",
+    "bytes": 15570,
+    "sha256": "80e4d70bd35d45c0f4ac9b376c13457137c4d6e9d2aa23b78c338286c70b584a"
+  },
+  "ordinaryBundle": {
+    "formatVersion": 1,
+    "kind": "first-operating-workbench-not-production-art",
+    "bundler": "esbuild",
+    "scriptFormat": "iife",
+    "externalRuntimeDependencies": [],
+    "assetOriginProbe": false,
+    "artifacts": {
+      "index.html": {
+        "bytes": 884,
+        "sha256": "3ea87462f52d212b4024c8242c4189bd6d2d1cc1993546ef3c4264e28a0bd437"
+      },
+      "bundle.js": {
+        "bytes": 715818,
+        "sha256": "e1936e606f3fb93e309446b5ae210672fc3e916b1682db1c72547cd6ba5075eb"
+      },
+      "bundle.css": {
+        "bytes": 18493,
+        "sha256": "2951fd778ea783268ebe5221297b6f5db39e33b75315636b756cbb57bd49a9b6"
+      },
+      "bundle.js.LEGAL.txt": {
+        "bytes": 188,
+        "sha256": "cc7cc7e2f53d5db0235ab2226e85fc6e91655161573b39813b41bb00e5919674"
+      }
+    }
+  },
+  "repairSourceFiles": [
+    {
+      "path": "apps/ios/TinJunction/RootView.swift",
+      "bytes": 12014,
+      "sha256": "67ee416500d53346eb284228d4e77c67482be065f51fb0a86e1b4f84bc910c28"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineHostModel.swift",
+      "bytes": 19963,
+      "sha256": "6ca37b5837904d707203e60527f3d90aaed97d8883bfad6090d2d9a66db7fc6c"
+    },
+    {
+      "path": "apps/ios/TinJunction/Web/EngineWebView.swift",
+      "bytes": 11059,
+      "sha256": "a46cb5948499e2c8d7b53e5e83f122d9f11f5c029ca4544af3639b85dfcb7923"
+    },
+    {
+      "path": "apps/ios/TinJunction/Diagnostics/HostStartupHold.swift",
+      "bytes": 2906,
+      "sha256": "011c36e965f80a68e7a9023d86b4c6bb66301bfcd2eefce483c627f2c991dcc9"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/HostStartupHoldTests.swift",
+      "bytes": 4994,
+      "sha256": "9a9d4399ed2d368fa1a4a22904e27866580720c0bd3863dac6206736d1d2c1d9"
+    },
+    {
+      "path": "apps/ios/TinJunctionTests/HostStartupHoldCoordinatorTests.swift",
+      "bytes": 5783,
+      "sha256": "2355b632ab8778cb7e015fce6372231130075225d1be3be6109669baf27172ca"
+    },
+    {
+      "path": "apps/ios/TinJunctionUITests/HostStartupUITests.swift",
+      "bytes": 6482,
+      "sha256": "6a5e5327869037b159a31f81def8030c268cbf8059ecaea28cff425003f5a685"
+    },
+    {
+      "path": "web/src/diagnostics/assetProbe.ts",
+      "bytes": 16797,
+      "sha256": "5e369571c8695f398d30a2a875fa80dba0b7d9081a92d72262226639680d47e0"
+    }
+  ],
+  "comparison": {
+    "priorBrowserEvidence": "evidence/P04-T06-integrated-local-verification.json",
+    "ordinaryJavaScriptSha256": "e1936e606f3fb93e309446b5ae210672fc3e916b1682db1c72547cd6ba5075eb",
+    "sameOrdinaryJavaScript": true,
+    "newFullBrowserExecution": false
+  },
+  "limitations": [
+    "This is an uncommitted working-tree check, not a future published SHA or task acceptance.",
+    "All eight new Swift unit fixtures and changed native UI/host code require actual compilation and execution in native CI.",
+    "The native diagnostic bundle and two-launch asset probe must run again; ordinary byte identity does not establish native audio completion.",
+    "The prior full browser pass retains its original source identities and is not relabeled as a new execution.",
+    "The separate full web workflow at the baseline exhausted its browser job time budget and remains failed."
+  ]
+}
