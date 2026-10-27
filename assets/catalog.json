@@ -33,8 +33,8 @@
         },
         {
           "path": "web/src/scene/materials.ts",
-          "sha256": "ce819cd61f9ae899089c8f3458b72ae9ee429e8bdb77c70513cba7d75486f400",
-          "bytes": 5892,
+          "sha256": "627438adbe584860fe6947c06dd2ea574ebda8b8656ed2088c7b6ab7a11227da",
+          "bytes": 7944,
           "mediaType": "text/typescript",
           "storage": "git"
         }
@@ -238,8 +238,15 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/scenery.ts",
-          "sha256": "ae7c4385ae0948d21c6a136d61bab7550026e921c6c9dc39498cc1d35789a32e",
-          "bytes": 9953,
+          "sha256": "6a308debc34cb6900d261877b1e1732cd9908faf5bdd6d36e66a8c77df0fbdc6",
+          "bytes": 14014,
+          "mediaType": "text/typescript",
+          "storage": "git"
+        },
+        {
+          "path": "web/src/scene/canopyGeometry.ts",
+          "sha256": "411ff2d521ab1d80db1bafdab73f3eb10bff04fa081410eac937f951363df4ed",
+          "bytes": 4254,
           "mediaType": "text/typescript",
           "storage": "git"
         }
@@ -284,8 +291,8 @@
       "sourceFiles": [
         {
           "path": "web/src/scene/materials.ts",
-          "sha256": "ce819cd61f9ae899089c8f3458b72ae9ee429e8bdb77c70513cba7d75486f400",
-          "bytes": 5892,
+          "sha256": "627438adbe584860fe6947c06dd2ea574ebda8b8656ed2088c7b6ab7a11227da",
+          "bytes": 7944,
           "mediaType": "text/typescript",
           "storage": "git"
         },

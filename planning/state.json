@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T03:28:17.004Z",
+  "updated_at": "2026-10-27T03:39:47.018Z",
   "health": {
     "ci": {
       "status": "running",
@@ -12,7 +12,7 @@
     },
     "incidents": []
   },
-  "last_handoff": "planning/handoffs/2026-10-27-quality-continuation.md",
+  "last_handoff": "planning/handoffs/2026-10-27-turnout-routing.md",
   "tasks": {
     "P00-T01": {
       "status": "done",
@@ -422,20 +422,13 @@
       ]
     },
     "P05-T04": {
-      "status": "in_progress",
-      "claim": {
-        "owner": "submission-track",
-        "started_at": "2026-10-27T03:28:17.004Z",
-        "expires_at": "2026-10-27T11:28:17.004Z",
-        "head_at_claim": "02c0bc82746b8391fbf578cd0bed2b7bef8e1348",
-        "scope": [
-          "web/src/track/",
-          "web/src/simulation/"
-        ]
-      },
+      "status": "done",
+      "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
+      "evidence": [
+        "evidence/P05-T04-turnout-routing-unit.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-turnout-routing.md",
       "history": [
         {
           "at": "2026-10-27T02:51:11.438Z",
@@ -451,24 +444,59 @@
           "at": "2026-10-27T03:28:17.004Z",
           "action": "claim",
           "detail": "submission-track; 8 hours"
+        },
+        {
+          "at": "2026-10-27T03:38:36.939Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-turnout-routing.md"
         }
       ]
     },
     "P05-T05": {
-      "status": "todo",
-      "claim": null,
+      "status": "in_progress",
+      "claim": {
+        "owner": "submission-track",
+        "started_at": "2026-10-27T03:38:37.038Z",
+        "expires_at": "2026-10-27T11:38:37.038Z",
+        "head_at_claim": "e4e5146459d6a3df45594bc5ef5f06a5c244851d",
+        "scope": [
+          "web/src/track/",
+          "web/src/editor/"
+        ]
+      },
       "blockers": [],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T03:38:37.038Z",
+          "action": "claim",
+          "detail": "submission-track; 8 hours"
+        }
+      ]
     },
     "P06-T01": {
-      "status": "todo",
-      "claim": null,
+      "status": "in_progress",
+      "claim": {
+        "owner": "submission-coordinator",
+        "started_at": "2026-10-27T03:39:47.018Z",
+        "expires_at": "2026-10-27T11:39:47.018Z",
+        "head_at_claim": "e4e5146459d6a3df45594bc5ef5f06a5c244851d",
+        "scope": [
+          "web/src/simulation/",
+          "web/src/model/"
+        ]
+      },
       "blockers": [],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T03:39:47.018Z",
+          "action": "claim",
+          "detail": "submission-coordinator; 8 hours"
+        }
+      ]
     },
     "P06-T02": {
       "status": "todo",

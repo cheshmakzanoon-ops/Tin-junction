@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "evidence_id": "P05-T04-turnout-routing-unit",
+  "task_id": "P05-T04",
+  "kind": "unit_test",
+  "result": "passed",
+  "tested_commit": "e4e5146459d6a3df45594bc5ef5f06a5c244851d",
+  "recorded_at": "2026-10-27T03:35:36.472719+00:00",
+  "source_files": [
+    {
+      "path": "web/src/track/turnout.ts",
+      "sha256": "884fdff671b32774a9c473212e9c38836eeb9607b8b8b723d71f50385e18d1d9"
+    },
+    {
+      "path": "web/src/simulation/routedConsist.ts",
+      "sha256": "44cc2a0eeb0103861de2398a87c9bd9c8d7eef88e8d18dcdad9cf409c958278c"
+    },
+    {
+      "path": "web/src/track/centerline.ts",
+      "sha256": "c4b3f1593c7bb5eacad540f8cf797436a11f408cd8a9c585d61a32fb68bb1c83"
+    },
+    {
+      "path": "web/src/track/graph.ts",
+      "sha256": "b623471249aa7b35a28371011d43a9bd62c8f2b56d0d0f59806c2417563440cd"
+    },
+    {
+      "path": "web/src/track/module.ts",
+      "sha256": "5f9cf4200484dc4c30d93ab6f0b06aaae13b3a78f40dbaddfe7989dfc88110ce"
+    },
+    {
+      "path": "web/src/track/README.md",
+      "sha256": "052dee4508151e0f2f3cc01326ee32218cd1f4c961550e2e867cfbe92e08eecd"
+    },
+    {
+      "path": "tests/fixtures/track/turnout-fixtures.ts",
+      "sha256": "02011b0638e216face36e13d65a462e6d05ab3fae6984798ded42cea08e34230"
+    },
+    {
+      "path": "tests/fixtures/track/graph-fixtures.ts",
+      "sha256": "7fc8ea553ddac19e4dcfb8fe050262defcf49b011681ad03178dc8e4a015323f"
+    },
+    {
+      "path": "tests/web/unit/turnout.test.ts",
+      "sha256": "5f6c139b8e99eaef69f679eceec80cc39310926445bbeec8ff63e12d4c385639"
+    },
+    {
+      "path": "tests/web/unit/track-graph.test.ts",
+      "sha256": "a24d3d2cd103532466382bf48fe6069682d778b3934aed8cff95c9c6c9b0ae62"
+    },
+    {
+      "path": "tests/web/unit/track-centerline.test.ts",
+      "sha256": "97f2cadd91bfe473bdf51e624afe20cb5e71788032d42844647d0a8ebf9fa2df"
+    },
+    {
+      "path": "tests/web/unit/track-module.test.ts",
+      "sha256": "4fe2fb3385e1201d1058d2dfbaa4d7b00b7e9a1d7fd7e608f8fc5c13f002af9f"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1775699ab3da2cd30024ccd9d168b16a7bc8ecbece278e4a4d5f86176728c28f"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "d7497a51879fafaef07e2ca3a02597721f011b4512fd79a49cd4d6ae725a7a29"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "3a2272d11ee572fd0b9cae696b74fc6578a9bdc4d06635b39e1746da0d935e41"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "6235e2576f6780c2c0b6c79f4ba8ab84a19a7158effe1d66773e7ca4b49b18b4"
+    }
+  ],
+  "commands": [
+    {
+      "command": "npm run typecheck",
+      "exit_code": 0,
+      "output_path": "evidence/P05-T04-turnout-tests.txt"
+    },
+    {
+      "command": "npm run test:web -- tests/web/unit/turnout.test.ts tests/web/unit/track-graph.test.ts tests/web/unit/track-centerline.test.ts tests/web/unit/track-module.test.ts",
+      "exit_code": 0,
+      "output_path": "evidence/P05-T04-turnout-tests.txt"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/P05-T04-turnout-tests.txt",
+      "sha256": "522e3b4b4e36002096dec821899fa77cc882c895740fb4a54ef4e6503c79d71b"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion_id": "P05-T04-A1",
+      "evidence": [
+        1
+      ]
+    },
+    {
+      "criterion_id": "P05-T04-A2",
+      "evidence": [
+        1
+      ]
+    }
+  ],
+  "reviewed_by": null,
+  "decision_reference": null,
+  "device": null,
+  "limitations": [
+    "17 focused turnout tests and 46 existing track geometry/graph tests passed (63 total). The acceptance scope is the pure topology and one-train route/occupancy kernel.",
+    "A1 covers both routes/directions, full footprint and boundary occupancy, safe trailing approaches, reversal, strict snapshot restore and bounded history. A2 covers deterministic occupied/invalid/stale rejection with unchanged graph and serialized state.",
+    "The current rendered app and Swift/TypeScript layout schema-v1 still use the original oval. This module has not been integrated into the app, its native bridge, or durable layout format.",
+    "No turnout artwork, rigid vehicle/coupler pose integration, traction/braking envelope, signal system, multi-train behavior, browser UI, native simulator, or physical-device verification is established by this record.",
+    "Exact implementation GitHub Actions statuses are tracked separately by the coordinator; this manifest records local committed-source tests."
+  ]
+}

@@ -2,9 +2,9 @@
 
 > Generated. Do not edit by hand. Task counts describe recorded work, not percentage of product quality.
 
-Ledger updated: 2026-10-27T03:28:17.004Z
+Ledger updated: 2026-10-27T03:39:47.018Z
 
-Tasks: 131; done: 14; active: 3; review: 0; blocked: 1; todo: 113.
+Tasks: 131; done: 15; active: 4; review: 0; blocked: 1; todo: 111.
 
 CI snapshot: **running** for 02c0bc82746b8391fbf578cd0bed2b7bef8e1348. This may be stale; inspect current remote checks.
 
@@ -17,8 +17,8 @@ CI snapshot: **running** for 02c0bc82746b8391fbf578cd0bed2b7bef8e1348. This may 
 | [P02](phases/P02-native-application-shell.md) | Swift native application shell | 0/4 | — |
 | [P03](phases/P03-native-web-contract.md) | Secure native-to-web contract | 0/5 | — |
 | [P04](phases/P04-deterministic-model-kernel.md) | Deterministic simulation and physical scale | 5/6 | P04-T06 in_progress |
-| [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 3/5 | P05-T04 in_progress |
-| [P06](phases/P06-first-operating-railway.md) | First operating railway | 0/4 | — |
+| [P05](phases/P05-track-geometry-and-topology.md) | Track geometry and connectivity | 4/5 | P05-T05 in_progress |
+| [P06](phases/P06-first-operating-railway.md) | First operating railway | 0/4 | P06-T01 in_progress |
 | [P07](phases/P07-document-storage-and-recovery.md) | Document persistence and recovery | 0/5 | — |
 | [P08](phases/P08-camera-selection-and-input.md) | Camera, picking and gesture arbitration | 0/4 | — |
 | [P09](phases/P09-track-editor.md) | Creative track-layout editor | 0/5 | — |

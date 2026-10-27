@@ -1,9 +1,10 @@
 import * as THREE from "three";
 import type { LayoutDocument } from "../model/index";
 import { SCENERY_FOOTPRINT } from "../model/index";
-import { box, compactGroup, cylinder, terrainHeight } from "./geometry";
+import { box, compactGroup, cylinder, terrainHeight, visualRandom } from "./geometry";
 import type { Palette } from "./materials";
 import { clockTexture, labelTexture } from "./materials";
+import { createCanopyGeometry, createFirBoughGeometry } from "./canopyGeometry";
 
 type Kind = LayoutDocument["scenery"][number]["kind"];
 export type Prefab = { geometry: THREE.BufferGeometry; material: THREE.Material }[];
@@ -14,45 +15,95 @@ function sphere(group: THREE.Group, radius: number, position: [number, number, n
   group.add(mesh); return mesh;
 }
 
+function branch(group: THREE.Group, start: THREE.Vector3, end: THREE.Vector3, radius: number, material: THREE.Material): void {
+  const direction = end.clone().sub(start);
+  const center = start.clone().add(end).multiplyScalar(0.5);
+  const mesh = cylinder(group, radius * 0.32, radius, direction.length(), [center.x, center.y, center.z], material, 5);
+  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), direction.normalize());
+}
+
+function foliage(group: THREE.Group, seed: number, position: THREE.Vector3, scale: [number, number, number], angle: number, material: THREE.Material, form: "cluster" | "bough" = "cluster"): void {
+  const mesh = new THREE.Mesh(form === "bough" ? createFirBoughGeometry(seed) : createCanopyGeometry(seed), material);
+  mesh.position.copy(position); mesh.scale.set(...scale); mesh.rotation.y = angle;
+  group.add(mesh);
+}
+
 function tree(kind: "fir" | "oak", palette: Palette): THREE.Group {
   const group = new THREE.Group();
-  cylinder(group, 0.0013, 0.0025, 0.052, [0, 0.026, 0], palette.bark, 9);
+  const random = visualRandom(kind === "fir" ? 6539 : 9721);
+  cylinder(group, kind === "fir" ? 0.00028 : 0.0005, kind === "fir" ? 0.0012 : 0.0021, 0.059, [0, 0.0295, 0], palette.bark, 9);
   if (kind === "fir") {
-    for (let level = 0; level < 5; level += 1) {
-      const canopy = new THREE.Mesh(new THREE.ConeGeometry(0.017 - level * 0.0025, 0.024 - level * 0.0025, 14), level % 2 === 0 ? palette.pine : palette.pineLight);
-      canopy.position.set(Math.sin(level * 2.1) * 0.0008, 0.022 + level * 0.0088, 0);
-      canopy.rotation.y = level * 0.93;
-      canopy.scale.set(1, 1, 0.9);
-      group.add(canopy);
+    // Staggered boughs overlap into a conifer silhouette, with irregular edges
+    // and real branch connections instead of smooth stacked cone shells.
+    const boughCounts = [5, 5, 4, 4, 3, 3, 2, 2];
+    for (let level = 0; level < boughCounts.length; level += 1) {
+      const count = boughCounts[level]!, y = 0.013 + level * 0.0062;
+      for (let bough = 0; bough < count; bough += 1) {
+        const angle = bough / count * Math.PI * 2 + level * 2.39 + random() * 0.27;
+        // Author inside the validated 10 mm radius. Building an oversize crown
+        // and relying on footprint scaling would turn its lobes into tall beads.
+        const reach = (0.0078 - level * 0.00074) * (0.94 + random() * 0.12);
+        const direction = new THREE.Vector3(Math.cos(angle), 0, Math.sin(angle));
+        const tip = direction.clone().multiplyScalar(reach * 0.91); tip.y = y - 0.0012;
+        if (level < 6) branch(group, new THREE.Vector3(0, y + 0.001, 0), tip, 0.00045 - level * 0.00004, palette.bark);
+        const center = direction.multiplyScalar(reach * 0.44); center.y = y + (random() - 0.5) * 0.0015;
+        foliage(group, 80 + level * 23 + bough * 73, center,
+          [reach * 0.73, 0.0057 - level * 0.00015, reach * 0.48], -angle,
+          (bough + level * 2) % 7 === 0 ? palette.pineLight : palette.pine, "bough");
+      }
     }
-    for (let branch = 0; branch < 9; branch += 1) {
-      const angle = branch * 2.4;
-      sphere(group, 0.004, [Math.cos(angle) * 0.012, 0.02 + (branch % 3) * 0.009, Math.sin(angle) * 0.012], palette.pine, [1, 0.8, 1]);
-    }
+    const crown = new THREE.Mesh(createFirBoughGeometry(773), palette.pine);
+    crown.scale.set(0.0045, 0.0021, 0.0018); crown.rotation.z = Math.PI / 2;
+    crown.position.y = 0.061; group.add(crown);
   } else {
-    for (let branch = 0; branch < 8; branch += 1) {
-      const angle = branch * 2.4;
-      const reach = branch === 0 ? 0 : 0.013;
-      sphere(group, 0.0125, [Math.cos(angle) * reach, 0.041 + (branch % 3) * 0.007, Math.sin(angle) * reach], branch % 2 === 0 ? palette.leaf : palette.pineLight, [1, 0.9, 1]);
-    }
-    for (const side of [-1, 1]) {
-      const branch = cylinder(group, 0.0008, 0.0012, 0.024, [side * 0.004, 0.031, 0], palette.bark, 8);
-      branch.rotation.z = side * -0.42;
+    for (let limb = 0; limb < 8; limb += 1) {
+      const angle = limb * 2.4, reach = 0.009 + random() * 0.003;
+      const fork = new THREE.Vector3(Math.cos(angle) * reach * 0.65, 0.034 + limb % 3 * 0.006, Math.sin(angle) * reach * 0.65);
+      branch(group, new THREE.Vector3(0, 0.022 + limb % 2 * 0.004, 0), fork, 0.0011, palette.bark);
+      for (let twig = 0; twig < 3; twig += 1) {
+        const direction = angle + (twig - 1) * 0.79;
+        const tip = fork.clone().add(new THREE.Vector3(Math.cos(direction) * 0.0054, 0.007 + random() * 0.006, Math.sin(direction) * 0.0054));
+        branch(group, fork, tip, 0.00055, palette.bark);
+        foliage(group, 147 + limb * 67 + twig * 29, tip,
+          [0.0065 + random() * 0.0017, 0.0065 + random() * 0.002, 0.0065 + random() * 0.0017], direction,
+          (limb + twig) % 3 === 0 ? palette.pineLight : palette.leaf);
+      }
     }
   }
   return compactGroup(group);
+}
+
+/** Closed attic shell, including the formerly open triangular roof ends. */
+export function createGableGeometry(width: number, rise: number, depth: number): THREE.BufferGeometry {
+  if (![width, rise, depth].every(value => Number.isFinite(value) && value > 0)) throw new RangeError("Gable dimensions must be positive");
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute("position", new THREE.Float32BufferAttribute([
+    -width / 2, 0, -depth / 2, width / 2, 0, -depth / 2, 0, rise, -depth / 2,
+    -width / 2, 0, depth / 2, width / 2, 0, depth / 2, 0, rise, depth / 2,
+  ], 3));
+  geometry.setAttribute("uv", new THREE.Float32BufferAttribute([0, 0, 1, 0, 0.5, 1, 0, 0, 1, 0, 0.5, 1], 2));
+  geometry.setIndex([0, 2, 1, 3, 4, 5, 0, 1, 4, 0, 4, 3, 0, 3, 5, 0, 5, 2, 1, 2, 5, 1, 5, 4]);
+  const shell = geometry.toNonIndexed();
+  geometry.dispose(); shell.computeVertexNormals(); shell.computeBoundingSphere();
+  return shell;
 }
 
 function house(palette: Palette): THREE.Group {
   const group = new THREE.Group();
   box(group, [0.043, 0.003, 0.038], [0, 0.0015, 0], palette.rock);
   box(group, [0.038, 0.032, 0.033], [0, 0.019, 0], palette.plaster, 0.0006);
+  const gable = new THREE.Mesh(createGableGeometry(0.038, 0.0183, 0.033), palette.plaster);
+  gable.position.y = 0.0345; group.add(gable);
   for (const side of [-1, 1]) {
     const roof = box(group, [0.0275, 0.0024, 0.043], [side * 0.0114, 0.0446, 0], palette.roof, 0.0004);
     roof.rotation.z = -side * 0.72;
     for (let row = 0; row < 6; row += 1) {
       const rib = cylinder(group, 0.00055, 0.00055, 0.043, [side * (0.003 + row * 0.0037), 0.052 - row * 0.0032, 0], palette.roofDark, 7);
       rib.rotation.x = Math.PI / 2;
+    }
+    for (const end of [-1, 1]) {
+      const fascia = box(group, [0.028, 0.0018, 0.0015], [side * 0.0114, 0.0437, end * 0.0213], palette.darkWood);
+      fascia.rotation.z = -side * 0.72;
     }
     box(group, [0.040, 0.002, 0.0015], [0, 0.031, side * 0.0171], palette.darkWood);
     for (const x of [-0.0115, 0.0115]) {
@@ -143,12 +194,18 @@ export function createStation(palette: Palette): THREE.Group {
   for (let index = 0; index < 26; index += 1) box(group, [0.001, 0.0003, 0.027], [-0.122 + index * 0.0077, 0.0063, -0.115], palette.plasterDark);
   box(group, [0.093, 0.003, 0.039], [-0.037, 0.0075, -0.081], palette.rock);
   box(group, [0.088, 0.035, 0.034], [-0.037, 0.026, -0.081], palette.plaster, 0.0008);
+  const gable = new THREE.Mesh(createGableGeometry(0.034, 0.0162, 0.088), palette.plaster);
+  gable.rotation.y = Math.PI / 2; gable.position.set(-0.037, 0.043, -0.081); group.add(gable);
   for (const side of [-1, 1]) {
     const roof = box(group, [0.104, 0.0025, 0.027], [-0.037, 0.052, -0.081 + side * 0.0115], palette.roof, 0.0005);
     roof.rotation.x = side * 0.61;
     for (let tile = 0; tile < 20; tile += 1) {
       const rib = box(group, [0.0008, 0.0006, 0.028], [-0.087 + tile * 0.0051, 0.0533, -0.081 + side * 0.0115], palette.roofDark);
       rib.rotation.x = side * 0.61;
+    }
+    for (const end of [-1, 1]) {
+      const fascia = box(group, [0.0015, 0.0019, 0.028], [-0.037 + end * 0.0515, 0.051, -0.081 + side * 0.0115], palette.darkWood);
+      fascia.rotation.x = side * 0.61;
     }
   }
   for (const x of [-0.066, -0.037, -0.008]) {

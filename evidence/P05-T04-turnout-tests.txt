@@ -1,0 +1,30 @@
+Tin Junction P05-T04 local verification
+Tested committed source: e4e5146459d6a3df45594bc5ef5f06a5c244851d
+Recorded at: 2026-10-27T03:35:36.472719+00:00
+Environment: Linux, Node v24.22.1
+Working directory: repository root. No browser, native simulator, or physical device was used.
+
+COMMAND: npm run typecheck
+
+> tin-junction@0.1.0 typecheck
+> tsc --noEmit
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+EXIT CODE: 0
+
+COMMAND: npm run test:web -- tests/web/unit/turnout.test.ts tests/web/unit/track-graph.test.ts tests/web/unit/track-centerline.test.ts tests/web/unit/track-module.test.ts
+
+> tin-junction@0.1.0 test:web
+> vitest run tests/web/unit/turnout.test.ts tests/web/unit/track-graph.test.ts tests/web/unit/track-centerline.test.ts tests/web/unit/track-module.test.ts
+
+
+ RUN  v5.0.5 .
+
+
+ Test Files  4 passed (4)
+      Tests  63 passed (63)
+   Start at  20:35:37
+   Duration  586ms (tests 92%, import 4%, transform 3%, worker 1%)
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+EXIT CODE: 0

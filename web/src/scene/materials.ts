@@ -13,29 +13,55 @@ function canvasTexture(width: number, height: number, paint: (context: CanvasRen
   return texture;
 }
 
-function surfaceTexture(kind: "wood" | "grass" | "stone"): THREE.CanvasTexture {
+/** Small original repeatable material swatches. Height/roughness are data, not sRGB. */
+function surfaceTexture(kind: "wood" | "grass" | "stone"): { color: THREE.CanvasTexture; bump: THREE.CanvasTexture; roughness: THREE.CanvasTexture } {
   const random = visualRandom(kind === "wood" ? 4081 : kind === "grass" ? 9211 : 3141);
+  const bumpPixels = new Uint8ClampedArray(256 * 256 * 4);
+  const roughPixels = new Uint8ClampedArray(256 * 256 * 4);
   const texture = canvasTexture(256, 256, context => {
     const pixels = context.createImageData(256, 256);
     for (let y = 0; y < 256; y += 1) {
       for (let x = 0; x < 256; x += 1) {
         const noise = random() - 0.5;
-        const grain = Math.sin(y * 0.32 + Math.sin(x * 0.018) * 4) * 0.7 + Math.sin(y * 1.2 + x * 0.006) * 0.3;
-        const color = kind === "wood" ? [108 + grain * 13 + noise * 9, 66 + grain * 9 + noise * 7, 38 + grain * 7 + noise * 5]
-          : kind === "grass" ? [135 + noise * 36, 148 + noise * 38, 88 + noise * 30]
-            : [139 + noise * 50, 135 + noise * 48, 120 + noise * 45];
+        const u = x / 256 * Math.PI * 2, v = y / 256 * Math.PI * 2;
+        // Periodic broad variation supports the surface instead of coating it
+        // in high-contrast pixel noise. Fine grain remains miniature-sized.
+        const mottling = Math.sin(u * 2 + Math.sin(v * 3)) * 0.5 + Math.cos(v * 3 - Math.sin(u)) * 0.5;
+        const grain = Math.sin(v * 22 + Math.sin(u) * 1.6 + Math.sin(u * 3) * 0.25) * 0.65
+          + Math.sin(v * 63 + Math.sin(u) * 3.1) * 0.20;
+        const color = kind === "wood" ? [91 + grain * 8 + mottling * 5 + noise * 4, 56 + grain * 6 + mottling * 3 + noise * 3, 34 + grain * 4 + mottling * 2 + noise * 2]
+          : kind === "grass" ? [112 + mottling * 2 + noise * 15, 129 + mottling * 2 + noise * 15, 76 + mottling * 1.4 + noise * 11]
+            : [128 + mottling * 12 + noise * 25, 123 + mottling * 11 + noise * 24, 109 + mottling * 10 + noise * 22];
         const offset = (y * 256 + x) * 4;
         pixels.data[offset] = color[0]!;
         pixels.data[offset + 1] = color[1]!;
         pixels.data[offset + 2] = color[2]!;
         pixels.data[offset + 3] = 255;
+        const height = kind === "wood" ? 128 + grain * 35 + noise * 10 : kind === "grass" ? 128 + noise * 65 + mottling * 2 : 128 + noise * 85 + mottling * 8;
+        const roughness = kind === "wood" ? 180 + grain * 13 + noise * 8 : 242 + noise * 20;
+        for (let channel = 0; channel < 3; channel++) {
+          bumpPixels[offset + channel] = height;
+          roughPixels[offset + channel] = roughness;
+        }
+        bumpPixels[offset + 3] = roughPixels[offset + 3] = 255;
       }
     }
     context.putImageData(pixels, 0, 0);
   });
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set(kind === "grass" ? 12 : 2, kind === "grass" ? 8 : 2);
-  return texture;
+  const dataTexture = (values: Uint8ClampedArray): THREE.CanvasTexture => {
+    const result = canvasTexture(256, 256, context => {
+      const pixels = context.createImageData(256, 256);
+      pixels.data.set(values); context.putImageData(pixels, 0, 0);
+    });
+    result.colorSpace = THREE.NoColorSpace;
+    return result;
+  };
+  const bump = dataTexture(bumpPixels), roughness = dataTexture(roughPixels);
+  for (const map of [texture, bump, roughness]) {
+    map.wrapS = map.wrapT = THREE.RepeatWrapping;
+    map.repeat.set(kind === "grass" ? 12 : 2, kind === "grass" ? 8 : 2);
+  }
+  return { color: texture, bump, roughness };
 }
 
 export function labelTexture(title: string, subtitle: string, dark = false): THREE.CanvasTexture {
@@ -94,14 +120,14 @@ export function createPalette() {
   const lampGlass = standard(0xf7dfa8, 0.25, 0.05);
   lampGlass.emissive.set(0xffbc54); lampGlass.emissiveIntensity = 0.18;
   return {
-    walnut: new THREE.MeshStandardMaterial({ map: wood, color: 0xffffff, roughness: 0.47 }),
-    darkWood: new THREE.MeshStandardMaterial({ map: wood, color: 0x86715e, roughness: 0.65 }),
+    walnut: new THREE.MeshStandardMaterial({ map: wood.color, bumpMap: wood.bump, bumpScale: 0.00006, roughnessMap: wood.roughness, color: 0xffffff, roughness: 0.68 }),
+    darkWood: new THREE.MeshStandardMaterial({ map: wood.color, bumpMap: wood.bump, bumpScale: 0.00006, roughnessMap: wood.roughness, color: 0x86715e, roughness: 0.86 }),
     brass: standard(0xc5a55e, 0.29, 0.85),
     darkBrass: standard(0x77613c, 0.45, 0.7),
     felt: standard(0x32493d, 0.98),
     cream: standard(0xd5c9a7, 0.81),
-    grass: new THREE.MeshStandardMaterial({ map: grass, vertexColors: true, roughness: 1 }),
-    ballast: new THREE.MeshStandardMaterial({ map: stone, color: 0xc9c7b4, roughness: 0.98 }),
+    grass: new THREE.MeshStandardMaterial({ map: grass.color, bumpMap: grass.bump, bumpScale: 0.00008, roughnessMap: grass.roughness, vertexColors: true, roughness: 1 }),
+    ballast: new THREE.MeshStandardMaterial({ map: stone.color, bumpMap: stone.bump, bumpScale: 0.00012, roughnessMap: stone.roughness, color: 0xc9c7b4, roughness: 1 }),
     gravel: standard(0xaaa89a, 0.97),
     sleepers: standard(0x5c4939, 0.93),
     steel: standard(0xa7aaa3, 0.29, 0.9),

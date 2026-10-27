@@ -259,7 +259,10 @@ function start(): void {
     if (!lifecycle.running) return;
     const { steps } = clock.advance(timestamp);
     if (loaded && !help.open) model.step(steps);
-    scene.update(model.snapshot());
+    // Rendering only observes live state. Detached serialization is reserved
+    // for saves; cloning the entire scenery document every frame creates
+    // unnecessary allocation and collection pressure on the native host.
+    scene.update(model.state);
     scene.render(lastFrame === 0 ? 0 : Math.min(0.1, (timestamp - lastFrame) / 1000)); lastFrame = timestamp;
     diagnostics.frameCount += 1; diagnostics.initialized = true;
     if (!sentReady) { sentReady = true; post("web.ready", { build: "first-railway", protocolVersion: 1, renderer: "webgl2" }); }
