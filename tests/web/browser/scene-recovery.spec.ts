@@ -1,6 +1,9 @@
 import { expect, test } from "@playwright/test";
 import type { Page } from "@playwright/test";
 
+// Context restoration and two software-rendered captures share this total test budget.
+test.setTimeout(60_000);
+
 async function sampleSceneColor(page: Page): Promise<number[]> {
   return page.evaluate(() => new Promise<number[]>((resolve, reject) => {
     requestAnimationFrame(() => {
@@ -28,7 +31,7 @@ test("restoring a context also restores generated lighting, not just frame deliv
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
   await page.goto("/?capture=1");
-  await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.initialized && window.__TIN_DIAGNOSTICS__.loaded);
+  await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.initialized && window.__TIN_DIAGNOSTICS__.loaded, undefined, { timeout: 30_000 });
   const initial = await page.evaluate(() => ({ distance: window.__TIN_DIAGNOSTICS__!.trainDistance, speed: window.__TIN_DIAGNOSTICS__!.trainSpeed }));
   expect(initial.speed).toBe(0);
   const before = await sampleSceneColor(page);
@@ -42,10 +45,10 @@ test("restoring a context also restores generated lighting, not just frame deliv
     Reflect.set(window, "__lightingTestContext", extension);
     extension.loseContext();
   });
-  await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.contextLosses === 1 && window.__TIN_DIAGNOSTICS__.lifecycle === "paused");
+  await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.contextLosses === 1 && window.__TIN_DIAGNOSTICS__.lifecycle === "paused", undefined, { timeout: 30_000 });
   const frames = await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.frameCount);
   await page.evaluate(() => Reflect.get(window, "__lightingTestContext").restoreContext());
-  await page.waitForFunction(previous => window.__TIN_DIAGNOSTICS__!.frameCount > previous && window.__TIN_DIAGNOSTICS__!.lifecycle === "running", frames);
+  await page.waitForFunction(previous => window.__TIN_DIAGNOSTICS__!.frameCount > previous && window.__TIN_DIAGNOSTICS__!.lifecycle === "running", frames, { timeout: 30_000 });
 
   const after = await sampleSceneColor(page);
   for (let channel = 0; channel < 3; channel++) {

@@ -36,6 +36,38 @@ final class HostSmokeTests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
+        defer { attachScreenshot(app, name: "duo-edit-save-relaunch") }
+
+        let durableMarker = app.staticTexts.matching(
+            NSPredicate(format: "identifier == 'host.saved' OR identifier == 'host.restored'")
+        ).firstMatch
+        XCTAssertTrue(durableMarker.waitForExistence(timeout: 15))
+        let beforeValue = try XCTUnwrap(durableMarker.value as? String)
+        let beforeRevision = try XCTUnwrap(Int(beforeValue.components(separatedBy: ",")[0]
+            .replacingOccurrences(of: "Revision ", with: "")))
+
+        let web = app.webViews["host.webview"]
+        let arrange = web.buttons["Arrange scenery"]
+        XCTAssertTrue(arrange.waitForExistence(timeout: 10))
+        arrange.tap()
+        let nameField = web.textFields["Layout name"]
+        XCTAssertTrue(nameField.waitForExistence(timeout: 5))
+        let originalName = try XCTUnwrap(nameField.value as? String)
+        let uniqueTag = " CI\(UUID().uuidString.prefix(8))"
+        nameField.tap()
+        // Insert through the actual keyboard. Reading back the field avoids
+        // assumptions about where WebKit positions the caret on first tap.
+        nameField.typeText(uniqueTag)
+        let changedName = try XCTUnwrap(nameField.value as? String)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        XCTAssertTrue(changedName.contains(uniqueTag.trimmingCharacters(in: .whitespaces)))
+        XCTAssertNotEqual(changedName, originalName)
+        web.buttons["Close scenery workshop"].tap() // Blurs input and commits its change event.
+        let changedHeading = web.descendants(matching: .any).matching(
+            NSPredicate(format: "label == %@", changedName)
+        ).firstMatch
+        XCTAssertTrue(changedHeading.waitForExistence(timeout: 10))
+
         let save = app.buttons["host.save"]
         XCTAssertTrue(save.waitForExistence(timeout: 5))
         let enabled = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: save)
@@ -47,12 +79,23 @@ final class HostSmokeTests: XCTestCase {
         )
         XCTAssertEqual(XCTWaiter.wait(for: [saved], timeout: 15), .completed,
                        "Native must acknowledge an actual completed document write.")
+        let changedRevisionSaved = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value BEGINSWITH %@", "Revision \(beforeRevision + 1),"),
+            object: durableMarker
+        )
+        XCTAssertEqual(XCTWaiter.wait(for: [changedRevisionSaved], timeout: 15), .completed,
+                       "An earlier autosave cannot satisfy the acknowledgement for this specific edit.")
         attachScreenshot(app, name: "duo-railway-durable-save")
         app.terminate()
         app.launch()
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
         XCTAssertTrue(app.staticTexts["host.restored"].waitForExistence(timeout: 10),
                       "Relaunch must load a validated native save, not silently show a fresh scene.")
+        let restoredHeading = app.webViews["host.webview"].descendants(matching: .any).matching(
+            NSPredicate(format: "label == %@", changedName)
+        ).firstMatch
+        XCTAssertTrue(restoredHeading.waitForExistence(timeout: 10),
+                      "The exact name entered through the real editor must survive app termination.")
         attachScreenshot(app, name: "duo-railway-restored")
     }
 

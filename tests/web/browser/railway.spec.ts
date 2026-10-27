@@ -131,6 +131,17 @@ test("native bridge queues edits behind a durable acknowledgment and rejects sta
   await deliver(page, "native.layout", { sessionId: "native-session-2", document: second.document, recovered: false, checkpoint: second.checkpoint });
   await expect(page.getByRole("region", { name: "Scenery workshop", exact: true })).toBeHidden();
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.mode)).toBe("operate");
+  await page.getByRole("button", { name: "Night", exact: true }).click();
+  await page.getByRole("button", { name: "Save layout", exact: true }).click();
+  await expect.poll(async () => (await checkpoints(page)).length).toBe(3);
+  const third = (await checkpoints(page))[2]!;
+  await deliver(page, "native.saveFailed", { sessionId: "native-session-2", requestId: third.requestId,
+    code: "revision_conflict", message: "The stored revision changed." });
+  await expect(page.getByRole("button", { name: "Save layout", exact: true })).toBeDisabled();
+  await expect(page.getByRole("alert")).toContainText("Saving is paused to protect your saved railway");
+  expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.saveState)).toBe("blocked");
+  await deliver(page, "native.requestCheckpoint", { sessionId: "native-session-2" });
+  expect((await checkpoints(page)).length).toBe(3);
 });
 
 test("pinch gesture does not commit scenery and focused buttons keep keyboard activation", async ({ page, context }) => {
@@ -149,7 +160,7 @@ test("pinch gesture does not commit scenery and focused buttons keep keyboard ac
   expect(await page.evaluate(() => window.__TIN_DIAGNOSTICS__!.sceneryCount)).toBe(before);
 });
 
-test("portrait controls remain usable and render an actual night scene", async ({ page }) => {
+test("portrait controls and name editing stay usable as the viewport shrinks", async ({ page }) => {
   await page.setViewportSize({ width: 430, height: 900 });
   await openRailway(page);
   for (const name of ["Stop train", "Run train", "Arrange scenery", "Overview camera", "Trackside camera", "Overhead camera"]) {
@@ -164,4 +175,24 @@ test("portrait controls remain usable and render an actual night scene", async (
   await page.getByRole("button", { name: "Night", exact: true }).click();
   await expect(page.getByRole("button", { name: "Night", exact: true })).toHaveAttribute("aria-pressed", "true");
   await page.screenshot({ path: "test-results/first-railway-night-portrait.png" });
+
+  await page.setViewportSize({ width: 358, height: 540 });
+  await page.getByRole("button", { name: "Arrange scenery", exact: true }).click();
+  const nameField = page.getByRole("textbox", { name: "Layout name", exact: true });
+  const close = page.getByRole("button", { name: "Close scenery workshop", exact: true });
+  await nameField.click();
+  // Model the smaller web-view geometry while the native software keyboard is open.
+  // The real keyboard/edit/relaunch path is also exercised by the native UI suite.
+  await page.setViewportSize({ width: 358, height: 300 });
+  for (const control of [nameField, close]) {
+    await expect(control).toBeVisible();
+    expect(await control.evaluate(node => {
+      const bounds = node.getBoundingClientRect();
+      return node.contains(document.elementFromPoint(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2));
+    })).toBe(true);
+  }
+  await nameField.fill("Pocket railway");
+  await close.click();
+  await expect(page.getByRole("region", { name: "Scenery workshop", exact: true })).toBeHidden();
+  await expect(page.getByRole("heading", { name: "Pocket railway", exact: true })).toBeVisible();
 });

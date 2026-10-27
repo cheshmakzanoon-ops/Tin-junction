@@ -27,7 +27,7 @@ Choose a scenery kind, then tap a clear board location. Tap the selected kind ag
 
 Space stops the train when focus is on the scene. E toggles Arrange, W sounds the whistle, Escape clears placement/selection or closes Arrange, and Command/Ctrl-Z operates editor undo. Native button keyboard semantics take precedence when a button has focus. Multi-touch gestures cannot commit placement transactions.
 
-The factory scene is recreated only when storage is empty. An unreadable saved layout is retained and reported; it is not silently overwritten by a fresh scene. Restoring a valid document preserves position and wheel travel but resets speed/throttle to zero.
+A new durable factory layout is created only when storage is empty. An unreadable saved layout is retained and reported; it is not silently overwritten by a fresh scene. The browser development harness can display a starter preview when storage cannot be read, with saving blocked and an explicit warning. Restoring a valid document preserves position and wheel travel but resets speed/throttle to zero.
 
 ## Current v1 document
 
@@ -63,7 +63,7 @@ Every message uses `{version:1,id,type,payload}`. Existing lifecycle and actual 
 | Native `native.saveFailed` | `sessionId`, `requestId`, `code`, bounded `message` |
 | Native `native.requestCheckpoint` | `sessionId` |
 
-Ordinary messages remain capped at 64 KiB; document transfers are separately capped at 512 KiB. The web sends one pending save at a time, coalesces later edits, and retries the same request after an acknowledgment timeout. The native host coalesces duplicate in-flight IDs. A saved label requires a matching acknowledgment after successful storage. Session replacement rejects stale messages and clears editor state before restoring a stopped model.
+Ordinary messages remain capped at 64 KiB; document transfers are separately capped at 512 KiB. The web sends one pending save at a time, coalesces later edits, and retries the same request after an acknowledgment timeout. The native host coalesces duplicate in-flight IDs. A saved label requires a matching acknowledgment after successful storage. Corrupt, stale or conflicting saved generations pause saving and disable Save to protect the existing file; ordinary write failures retain an explicit retry. Session replacement rejects stale messages and clears editor state before restoring a stopped model.
 
 Structural edits coalesce for 200 ms. Moving trains checkpoint at a bounded five-second interval, with explicit Save and lifecycle checkpoints as additional triggers. Forced termination can still lose unacknowledged changes; hardware power-loss immunity is not claimed.
 
@@ -71,7 +71,7 @@ The browser store is exclusively an internal development fallback. It uses atomi
 
 ## Verification and provenance
 
-Run `npm run check`, `npm run bundle:ios`, and `npm run test:browser`. Browser tests operate the real controls, place scenery, undo/redo, save/reopen, inject damaged generations, simulate native acknowledgments, exercise pinch/keyboard behavior, inspect portrait controls, and restore a deliberately lost WebGL context. The lighting recovery test compares actual rendered pixel channels so a resumed but incorrectly lit scene fails.
+Run `npm run check`, `npm run bundle:ios`, and `npm run test:browser`. Browser tests operate the real controls, place scenery, undo/redo, save/reopen, inject damaged generations, simulate native acknowledgments, exercise pinch/keyboard behavior, inspect portrait controls and name editing in a reduced viewport, and restore a deliberately lost WebGL context. The lighting recovery test compares actual rendered pixel channels so a resumed but incorrectly lit scene fails.
 
 The native Actions workflow compiles the actual Swift host, exercises document/store/session tests and runs the packaged UI. Its result bundle and exported UI screenshots are retained as artifacts. Source existence and simulator timing are not hardware evidence.
 

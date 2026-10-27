@@ -2,7 +2,7 @@
 
 Read [the current implementation and verification handoff](handoffs/2026-10-27-first-railway.md). The repository now contains a working miniature railway, scenery workbench and native save/recovery integration. [The implemented contract](../docs/architecture/FIRST_WORKBENCH.md) records the precise scope.
 
-P00 and the five deterministic-kernel tasks are accepted against published evidence. P04-T06 remains in progress until the refined implementation passes both required Actions workflows. The first native run compiled and passed all 46 unit tests, but its UI runner stalled during simulator Accessibility initialization before any UI test executed. Preserve that failure record and inspect the fresh run; do not weaken tests.
+P00 and the five deterministic-kernel tasks are accepted against published evidence. P04-T06 remains in progress until the final implementation passes both required Actions workflows. The refined `06378af` native run passed 46 unit and four UI tests with actual exported screenshots. Its web run passed ten browser tests, then failed the compound graphics-recovery test's total budget at screenshot capture. The final checkpoint retains all assertions, fixes that capture budget and adds stronger edited-layout restore and protected-save checks. Inspect its actual run before completing the task; both earlier failures are preserved in the full handoff.
 
 After P04-T06 verification, use `npm run project:next` to resume the original platform/packaged-runtime gates. The fixed oval and procedural art do not complete the later general track graph, production editor, asset or device-validation phases. Native simulator evidence and physical-device evidence remain distinct.
 

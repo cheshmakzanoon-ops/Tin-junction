@@ -6,7 +6,11 @@ import WebKit
 final class EngineHostModel: ObservableObject {
     enum Lifecycle: String { case active, inactive, background }
     enum Phase: Equatable { case loading, restoring, ready, recovering, failed }
-    enum SaveState: Equatable { case unsaved, saving, saved, recovered, failed }
+    enum SaveState: Equatable { case unsaved, saving, saved, recovered, failed, blocked }
+    private static let protectedSaveCodes: Set<String> = [
+        "no_valid_save", "stale_checkpoint", "revision_conflict", "checkpoint_conflict",
+        "different_document", "invalid_stored_generation"
+    ]
 
     @Published private(set) var phase: Phase = .loading
     @Published private(set) var status = "Opening your miniature…"
@@ -36,6 +40,7 @@ final class EngineHostModel: ObservableObject {
     private var restoredLayout: StoredLayout?
     private var pendingSaveCount = 0
     private var pendingRequestIDs: Set<String> = []
+    private var protectedSaveCode: String?
     private var handshakeTimeoutTask: Task<Void, Never>?
     private var deliveryTask: Task<Void, Never>?
     private var restoreTask: Task<Void, Never>?
@@ -83,6 +88,8 @@ final class EngineHostModel: ObservableObject {
         hasRestoredLayout = false
         activeDocumentID = nil
         restoredLayout = nil
+        protectedSaveCode = nil
+        saveState = .unsaved
         acceptedIDs.removeAll(keepingCapacity: true)
         phase = .loading
         status = "Opening your miniature…"
@@ -226,6 +233,10 @@ final class EngineHostModel: ObservableObject {
               case .some(.object(let rawDocument)) = envelope.payload["document"],
               let document = try? LayoutDocument.decode(rawDocument.mapValues(\.foundationValue)),
               document.documentId == activeDocumentID else { return }
+        if let protectedSaveCode {
+            sendSaveFailure(requestID: requestID, code: protectedSaveCode)
+            return
+        }
         // Retransmission while the first write is pending shares its eventual
         // acknowledgement. It cannot consume another queue slot or write twice.
         guard !pendingRequestIDs.contains(requestID) else { return }
@@ -249,6 +260,10 @@ final class EngineHostModel: ObservableObject {
                     self.pendingRequestIDs.remove(requestID)
                 }
             }
+            if let protectedSaveCode = self.protectedSaveCode {
+                self.sendSaveFailure(requestID: requestID, code: protectedSaveCode)
+                return
+            }
             do {
                 let stored = try await self.store.save(document: document, checkpoint: checkpoint, expectedRevision: expectedRevision)
                 guard !Task.isCancelled, self.loadGeneration == generation, self.isBridgeReady else { return }
@@ -263,22 +278,32 @@ final class EngineHostModel: ObservableObject {
                 ])
             } catch {
                 guard !Task.isCancelled, self.loadGeneration == generation else { return }
-                self.saveState = .failed
-                self.saveDescription = "Save failed — your edits are still open"
-                self.sendSaveFailure(requestID: requestID, code: (error as? LayoutStore.Failure)?.rawValue ?? "write_failed")
+                let code = (error as? LayoutStore.Failure)?.rawValue ?? "write_failed"
+                if Self.protectedSaveCodes.contains(code) {
+                    self.protectedSaveCode = code
+                    self.saveState = .blocked
+                    self.saveDescription = "Saved copy protected — edits remain open"
+                } else {
+                    self.saveState = .failed
+                    self.saveDescription = "Save failed — your edits are still open"
+                }
+                self.sendSaveFailure(requestID: requestID, code: code)
             }
         }
     }
 
     private func sendSaveFailure(requestID: String, code: String) {
+        let message = Self.protectedSaveCodes.contains(code)
+            ? "Saving is paused to protect a conflicting or unreadable saved copy. Your current edits remain open. Reopening attempts to load saved data and discards unsaved changes."
+            : "Your railway could not be saved. Your current edits remain open. Try saving again."
         send(type: "native.saveFailed", payload: [
             "sessionId": sessionID, "requestId": requestID, "code": code,
-            "message": "Your railway could not be saved. Your current edits remain open. Try saving again."
+            "message": message
         ])
     }
 
     func requestCheckpoint() {
-        guard isBridgeReady, acceptedLayout else { return }
+        guard isBridgeReady, acceptedLayout, protectedSaveCode == nil else { return }
         send(type: "native.requestCheckpoint", payload: ["sessionId": sessionID])
     }
 

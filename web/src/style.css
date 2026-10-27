@@ -138,9 +138,15 @@ body[data-time="night"] #status { color: #eee8d6; text-shadow: 0 1px 5px #1b2330
   .range-labels { font-size: 6px; } .caption { font-size: 6px; letter-spacing: .08em; margin-top: 10px; }
   .caption span:last-child { max-width: 49%; text-align: right; }
   .editor-panel { top: 95px; bottom: 235px; left: 13px; width: min(257px,calc(100% - 86px)); border-radius: 14px; padding: 15px; }
+  #layout-name { font-size: 16px; }
+  .editor-panel .close-button { width: 44px; height: 44px; flex-shrink: 0; }
   .panel-heading h3 { font-size: 18px; margin-bottom: 13px; }
   .scenery-palette { gap: 5px; } .scenery-palette button { padding: 9px 3px; gap: 6px; }
   .notice { top: 77px; width: max-content; max-width: calc(100% - 25px); font-size: 10px; padding: 10px 13px; }
+}
+@media (max-width: 620px) and (max-height: 500px) {
+  /* Keep naming and dismissal reachable when the native keyboard reduces the web view. */
+  .editor-panel { top: 12px; bottom: 12px; }
 }
 @media (max-height: 550px) and (min-width: 621px) {
   .masthead { top: 15px; } .brand-mark { display: none; } h1 { font-size: 26px; } .layout-heading { display: none; }

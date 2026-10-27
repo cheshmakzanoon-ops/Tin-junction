@@ -5,12 +5,14 @@ private actor HostTestStore: LayoutStoring {
     var initial: StoredLayout?
     let failLoad: Bool
     let failSave: Bool
+    let saveFailure: LayoutStore.Failure?
     private var saveCount = 0
 
-    init(initial: StoredLayout? = nil, failLoad: Bool = false, failSave: Bool = false) {
+    init(initial: StoredLayout? = nil, failLoad: Bool = false, failSave: Bool = false, saveFailure: LayoutStore.Failure? = nil) {
         self.initial = initial
         self.failLoad = failLoad
         self.failSave = failSave
+        self.saveFailure = saveFailure
     }
 
     func load() throws -> StoredLayout? {
@@ -20,6 +22,7 @@ private actor HostTestStore: LayoutStoring {
 
     func save(document: LayoutDocument, checkpoint: Int, expectedRevision: Int?) throws -> StoredLayout {
         saveCount += 1
+        if let saveFailure { throw saveFailure }
         if failSave { throw LayoutStore.Failure.injectedWriteFailure }
         let stored = StoredLayout(document: document, checkpoint: checkpoint, checksum: String(repeating: "a", count: 64), recovered: false)
         initial = stored
@@ -109,7 +112,8 @@ final class EngineHostModelTests: XCTestCase {
     }
 
     func testFailedSavePreservesOpenLayoutAndDoesNotClaimDurability() async throws {
-        let host = EngineHostModel(store: HostTestStore(failSave: true))
+        let store = HostTestStore(failSave: true)
+        let host = EngineHostModel(store: store)
         defer { host.detach() }
         try await start(host)
         try acknowledgeLayout(host)
@@ -119,6 +123,37 @@ final class EngineHostModelTests: XCTestCase {
         XCTAssertTrue(host.isReady, "Save failure must not throw away the open scene.")
         XCTAssertNil(host.durableRevision)
         XCTAssertNil(host.durableCheckpoint)
+        let retry = try checkpoint(host)
+        host.accept(try envelope("retry-write", "layout.checkpoint", retry.payload.mapValues(\.foundationValue)))
+        await host.awaitPendingStorage()
+        let saves = await store.numberOfSaves()
+        XCTAssertEqual(saves, 2, "Ordinary write failures still allow a meaningful retry.")
+    }
+
+    func testProtectedSaveFailuresBlockFurtherWritesAndPreserveOpenEdits() async throws {
+        let protectedFailures: [LayoutStore.Failure] = [
+            .noValidSave, .staleCheckpoint, .revisionConflict,
+            .checkpointConflict, .differentDocument, .invalidStoredGeneration
+        ]
+        for failure in protectedFailures {
+            let store = HostTestStore(saveFailure: failure)
+            let host = EngineHostModel(store: store)
+            defer { host.detach() }
+            try await start(host)
+            try acknowledgeLayout(host)
+            let request = try checkpoint(host)
+            host.accept(request)
+            await host.awaitPendingStorage()
+            XCTAssertEqual(host.saveState, .blocked)
+            XCTAssertTrue(host.isReady, "Protect the stored copy without discarding open edits.")
+            XCTAssertTrue(host.saveDescription.contains("protected"))
+            host.accept(try envelope("retry-protected", "layout.checkpoint", request.payload.mapValues(\.foundationValue)))
+            await host.awaitPendingStorage()
+            let saves = await store.numberOfSaves()
+            XCTAssertEqual(saves, 1, "A protected failure must not invite or perform a blind overwrite retry.")
+            host.loading()
+            XCTAssertEqual(host.saveState, .unsaved, "A new session must re-read storage rather than inherit stale failure state.")
+        }
     }
 
     func testRepeatedInFlightRequestIsCoalescedWithoutFillingSaveQueue() async throws {

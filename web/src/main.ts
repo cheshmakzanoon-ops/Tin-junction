@@ -102,7 +102,7 @@ function start(): void {
     for (const id of ["run", "throttle", "reverse"]) element<HTMLButtonElement | HTMLInputElement>(id).disabled = !loaded || model.mode === "edit";
     element<HTMLButtonElement>("edit").disabled = !loaded;
     element<HTMLButtonElement>("stop").disabled = !loaded;
-    element<HTMLButtonElement>("save").disabled = !loaded;
+    element<HTMLButtonElement>("save").disabled = !loaded || saveBlocked;
     element<HTMLButtonElement>("undo").disabled = !model.canUndo;
     element<HTMLButtonElement>("redo").disabled = !model.canRedo;
     element<HTMLButtonElement>("remove").disabled = selected === null;
@@ -185,7 +185,7 @@ function start(): void {
       const restored = store.load();
       checkpoint = restored.checkpoint;
       if (restored.document) { model = new RailwayModel(restored.document); durableRevision = restored.document.revision; }
-      if (restored.error) { saveBlocked = true; setSaveState("failed", "Changes not saved"); notice(restored.error, true); }
+      if (restored.error) { saveBlocked = true; setSaveState("blocked", "Saving paused"); notice(restored.error, true); }
       else if (restored.recovered) { setSaveState("recovered", "Recovered previous save"); notice("Your previous good save was restored. The most recent changes may be missing.", true); }
       else setSaveState(restored.document ? "saved" : "unsaved", restored.document ? "Saved on this device" : "Your new railway");
     } catch { saveBlocked = true; setSaveState("failed", "Changes not saved"); notice("This browser cannot save local layouts. Your railway can still be explored.", true); }
@@ -226,7 +226,8 @@ function start(): void {
         if (!pending || message.payload.requestId !== pending.requestId) { diagnostics.rejectedMessages += 1; return; }
         clearTimeout(acknowledgmentTimer); pending = null; saveQueued = false;
         if (["no_valid_save", "stale_checkpoint", "revision_conflict", "checkpoint_conflict", "different_document", "invalid_stored_generation"].includes(message.payload.code)) saveBlocked = true;
-        setSaveState("failed", "Changes not saved"); notice(message.payload.message, true);
+        setSaveState(saveBlocked ? "blocked" : "failed", saveBlocked ? "Saving paused" : "Changes not saved");
+        notice(saveBlocked ? "Saving is paused to protect your saved railway. Your current edits remain open." : message.payload.message, true);
         break;
       case "native.requestCheckpoint": saveNow(true); break;
       case "native.lifecycle":

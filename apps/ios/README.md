@@ -2,7 +2,7 @@
 
 This directory hosts the first operating railway defined by [ADR-0006](../../docs/decisions/ADR-0006-first-operating-workbench.md). SwiftUI owns lifecycle, native save status, Help and recovery; the bundled Three.js runtime owns the miniature scene and in-memory railway. Native Application Support is the durable authority for the bounded first-loop layout format. Public Duo geometry/hinge observations remain separate from simulation state.
 
-The app requires Xcode 27.1 and the iOS 27.1 SDK. The authored test suite currently contains **46 unit tests and four UI tests**; inspect the actual `iOS Simulator` workflow for the current implementation SHA before reporting executed results. This development slice does not accept the complete production storage, accessibility, graphics or release phases.
+The app requires Xcode 27.1 and the iOS 27.1 SDK. The authored test suite currently contains **47 unit tests and four UI tests**; inspect the actual `iOS Simulator` workflow for the current implementation SHA before reporting executed results. This development slice does not accept the complete production storage, accessibility, graphics or release phases.
 
 ## Reproduce the native check
 
@@ -50,7 +50,7 @@ After successful `xcodebuild test`, the script exports the tests' genuine attach
 
 The engine announces `web.ready` with the `first-railway` build. Native supplies a fresh session ID through `native.bootstrap`, loads a validated local snapshot, and sends `native.layout` with the persisted checkpoint sequence. Native does not show interactive readiness until `layout.loaded` acknowledges the current session and correct document revision. The restored train has zero speed and throttle.
 
-`layout.checkpoint` carries the session, request ID, checkpoint sequence, expected prior durable revision and validated logical document. Native sends `native.saved` only after successful atomic write and read-back verification. Failed writes produce `native.saveFailed` and leave the open edits intact. Native Save and scene inactivity request a checkpoint; ordinary web transaction/periodic checkpoints provide the main protection before suspension.
+`layout.checkpoint` carries the session, request ID, checkpoint sequence, expected prior durable revision and validated logical document. Native sends `native.saved` only after successful atomic write and read-back verification. Failed writes produce `native.saveFailed` and leave the open edits intact. Ordinary write failures allow retry; stale/conflicting/corrupt saved-state failures block further writes and disable native Save to protect the stored copy. They do not tell the user to repeat a blocked operation. Native Save and scene inactivity request a checkpoint; ordinary web transaction/periodic checkpoints provide the main protection before suspension.
 
 The store uses fixed private filenames under Application Support, never a path supplied by JavaScript. `current.json` contains the complete checksummed generation; `previous.json` retains its known-good predecessor. Corrupt primary data falls back to the verified previous generation with an explicit recovery notice. If both are invalid, loading fails visibly and neither is replaced with a factory layout. A later successful save after recovery preserves the damaged primary in `damaged-current.json`.
 

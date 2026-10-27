@@ -25,12 +25,12 @@ struct RootView: View {
                 }
                 Spacer(minLength: 0)
                 Button(action: host.requestCheckpoint) {
-                    Image(systemName: host.saveState == .failed ? "arrow.clockwise" : "square.and.arrow.down")
+                    Image(systemName: host.saveState == .blocked ? "lock.fill" : host.saveState == .failed ? "arrow.clockwise" : "square.and.arrow.down")
                         .frame(minWidth: 44, minHeight: 44)
                 }
-                .accessibilityLabel(host.saveState == .failed ? "Retry saving railway" : "Save railway")
+                .accessibilityLabel(host.saveState == .blocked ? "Saving paused to protect your saved railway" : host.saveState == .failed ? "Retry saving railway" : "Save railway")
                 .accessibilityIdentifier("host.save")
-                .disabled(!host.isReady || host.saveState == .saving)
+                .disabled(!host.isReady || host.saveState == .saving || host.saveState == .blocked)
                 Button { showingHelp = true } label: {
                     Image(systemName: "questionmark.circle").frame(minWidth: 44, minHeight: 44)
                 }
@@ -106,6 +106,9 @@ struct RootView: View {
                         Text("Layouts are stored privately on this iPhone. The app keeps the previous verified save for recovery. A restored train always starts stopped.")
                         if host.saveState == .recovered {
                             Text("A previous save was recovered. Changes made after that save may be missing; the damaged file has been retained.")
+                        }
+                        if host.saveState == .blocked {
+                            Text("Saving is paused to avoid overwriting conflicting or unreadable saved data. Your current edits are still open. Reopening attempts to load saved data and discards unsaved changes.")
                         }
                     }
                     Section("Development edition") {

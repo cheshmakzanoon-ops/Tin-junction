@@ -2,7 +2,7 @@
   "name": "tin-junction",
   "version": "0.1.0",
   "private": true,
-  "description": "Agent-ready engineering plan and diagnostic harness for Tin Junction",
+  "description": "Offline miniature railway workbench with a SwiftUI host and bundled Three.js engine",
   "type": "module",
   "engines": {
     "node": ">=24.0.0 <25"

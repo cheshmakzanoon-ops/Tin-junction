@@ -4,6 +4,8 @@
 
 First playable checkpoint: `299619d6924d2c631c8f58d3eeb5f0e779066cbe` on `main`.
 
+Refined scene, interaction suite and provenance checkpoint: `06378af5861875a13a38c361effa9c64304a10cb`. Its [native run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40433242622) passed all 46 unit and four UI tests, and exported genuine [simulator captures](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40433242622/artifacts/12704080071). Its [web run](https://github.com/cheshmakzanoon-ops/Tin-junction/actions/runs/40433242567) passed repository/type/bundle/unit checks and ten browser tests; the compound lighting recovery test passed its pixel/state assertions on the first attempt, then exceeded the 30-second total test budget while taking the final screenshot. Its retry also timed out; the required job remains failed. The final checkpoint gives that compound test the same 60-second total budget as the interaction suite, retaining its pixel tolerance, state assertions and bounded condition waits. It also adds protected-save UI and stronger edited-layout native verification; record the subsequent implementation's actual result before completing P04-T06.
+
 The bounded workbench in [ADR-0006](../../docs/decisions/ADR-0006-first-operating-workbench.md) replaces the original calibration scene with a working railway. [The implemented contract](../../docs/architecture/FIRST_WORKBENCH.md) is the exact behavior/schema reference.
 
 ## Delivered
@@ -26,6 +28,8 @@ The final local `npm run check`, `npm run bundle:ios` and integrated `npm run te
 ## Review-driven repairs
 
 Real checks exposed and repaired undersized curve compatibility, terrain hidden by lining, case framing on portrait screens, serialized-key-order corruption, same-revision structural saves, duplicate native save flooding, stale-session editor state, pinch-to-place ambiguity, focused-button Space handling, backwards clock timestamps and lost environment lighting after context restoration. Night floating text now has a separate readable palette.
+
+The final audit also found contradictory retry instructions for protected saves. Corrupt/stale/conflicting generations now pause saving in both interfaces, while ordinary write failures keep their retry. The focused actual browser acknowledgment/protection regression passed after this repair. A concrete 358 × 300 keyboard-sized viewport reproduced a collapsed name editor; the compact layout now keeps the input and Close control reachable, with an actual hit-target/edit/close regression passing. The stronger native reopen test changes a name through real WebKit controls, waits for that revision's acknowledgment, and verifies the exact name after termination/relaunch; it cannot pass from an older factory save. The authored native suite is now 47 unit and four UI tests, awaiting execution on the next published revision.
 
 ## Current boundaries
 
