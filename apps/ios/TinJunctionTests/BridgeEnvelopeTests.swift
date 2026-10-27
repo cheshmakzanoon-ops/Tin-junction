@@ -83,4 +83,42 @@ final class BridgeEnvelopeTests: XCTestCase {
         XCTAssertFalse(NativeViewport(width: 0, height: 600, pixelRatio: 3, reservedRegions: []).isValid)
         XCTAssertFalse(NativeViewport(width: .nan, height: 600, pixelRatio: 3, reservedRegions: []).isValid)
     }
+
+    func testFirstRailwayReadyAndStrictLayoutHandshake() throws {
+        var value = ready()
+        value["payload"] = ["build": "first-railway", "protocolVersion": 1, "renderer": "webgl2"]
+        XCTAssertNoThrow(try BridgeEnvelope.decode(value))
+        value["type"] = "layout.loaded"
+        value["payload"] = ["sessionId": "native-session", "documentId": "my-railway", "revision": 0]
+        XCTAssertNoThrow(try BridgeEnvelope.decode(value))
+        value["payload"] = ["sessionId": "native-session", "documentId": "my-railway", "revision": true]
+        XCTAssertThrowsError(try BridgeEnvelope.decode(value))
+        value["payload"] = ["sessionId": "native-session", "documentId": "my-railway", "revision": 0, "path": "../file"]
+        XCTAssertThrowsError(try BridgeEnvelope.decode(value))
+    }
+
+    func testSnapshotValidatesDocumentAndExpectedRevision() throws {
+        var payload: [String: Any] = [
+            "sessionId": "native-session", "requestId": "save-1", "expectedRevision": NSNull(),
+            "checkpoint": 1, "document": try LayoutFixtures.document().bridgeObject()
+        ]
+        var value: [String: Any] = ["version": 1, "id": "checkpoint-1", "type": "layout.checkpoint", "payload": payload]
+        XCTAssertNoThrow(try BridgeEnvelope.decode(value))
+        payload["expectedRevision"] = true
+        value["payload"] = payload
+        XCTAssertThrowsError(try BridgeEnvelope.decode(value))
+        payload["expectedRevision"] = NSNull()
+        var document = try LayoutFixtures.document().bridgeObject()
+        document["schemaVersion"] = 2
+        payload["document"] = document
+        value["payload"] = payload
+        XCTAssertThrowsError(try BridgeEnvelope.decode(value))
+    }
+
+    func testDocumentChannelDoesNotIncreaseDiagnosticLimit() {
+        let oversized: [String: Any] = ["version": 1, "id": "metrics-1", "type": "engine.metrics", "payload": ["detail": String(repeating: "x", count: 70_000)]]
+        XCTAssertThrowsError(try BridgeEnvelope.decode(oversized))
+        XCTAssertEqual(BridgeEnvelope.maximumBytes, 65_536)
+        XCTAssertEqual(BridgeEnvelope.maximumCheckpointBytes, 524_288)
+    }
 }

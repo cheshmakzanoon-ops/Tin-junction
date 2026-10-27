@@ -15,6 +15,13 @@ describe("fixed-step infrastructure", () => {
     clock.reset();
     expect(clock.advance(100_000).steps).toBe(0);
   });
+  it("does not count elapsed time twice after a reversed timestamp", () => {
+    const clock = new FixedStepClock();
+    expect(clock.advance(1000).steps).toBe(0);
+    expect(clock.advance(1000 + 1000 / 60).steps).toBe(1);
+    expect(clock.advance(1000).steps).toBe(0);
+    expect(clock.advance(1000 + 2000 / 60).steps).toBe(1);
+  });
   it("rejects invalid configuration and tolerates invalid timestamps", () => {
     expect(() => new FixedStepClock(0)).toThrow();
     expect(() => new FixedStepClock(1 / 60, 0)).toThrow();

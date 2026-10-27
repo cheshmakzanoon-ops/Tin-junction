@@ -266,3 +266,58 @@ Manual gate: none; planning estimate: 1–3 focused sessions; planning estimate,
 ### Handoff requirement
 
 Record tested implementation SHA, changed scope, acceptance evidence, commands/results, unrun checks, blockers and the next exact task. Use [the handoff template](../../templates/HANDOFF.md). Update state through the project CLI, regenerate views, and push the metadata checkpoint.
+
+## P04-T06 — Integrate the first operating-loop development workbench
+
+Dependencies: P00-T04
+
+Manual gate: none; planning estimate: 1–3 focused sessions; planning estimate, not a delivery promise. Estimates are not deadlines or completion claims.
+
+### Read first
+
+- [docs/decisions/ADR-0006-first-operating-workbench.md](../../docs/decisions/ADR-0006-first-operating-workbench.md)
+- [docs/architecture/SIMULATION_AND_TRACKS.md](../../docs/architecture/SIMULATION_AND_TRACKS.md)
+- [docs/architecture/PERSISTENCE_AND_EDITOR.md](../../docs/architecture/PERSISTENCE_AND_EDITOR.md)
+- [docs/architecture/BRIDGE_PROTOCOL.md](../../docs/architecture/BRIDGE_PROTOCOL.md)
+
+### Owned scope
+
+- `web/src/`
+- `apps/ios/`
+- `tests/web/`
+- `docs/decisions/`
+- `evidence/`
+
+### Deliverables
+
+- Playable fixed-loop native development slice with original procedural miniature art
+- Validated save/recovery, scenery editing and reproducible runtime evidence
+
+### Implementation sequence
+
+1. Integrate a deterministic analytic oval and a three-vehicle consist behind the existing native host.
+2. Implement operating controls, camera views, lighting and bounded scenery transactions.
+3. Implement strict native/browser document transport and atomic last-known-good persistence.
+4. Exercise operate/edit/undo/save/reopen and malformed-input behavior in automated checks.
+5. Capture actual web/native runtime evidence and record explicit remaining production gates.
+
+### Acceptance criteria
+
+- **P04-T06-A1** — The packaged first-loop scene operates, edits, undoes and restores a durably acknowledged snapshot with automated web/native evidence.
+  - Accepted evidence: integration_test.
+- **P04-T06-A2** — Deterministic model, invalid commands, malformed/stale saves and recovery tests pass; prototype limits and remaining original roadmap gates are recorded.
+  - Accepted evidence: unit_test, repository_validation.
+
+### Verification
+
+- Run npm run check and the packaged browser suite.
+- Run the unchanged required native simulator workflow including storage/host tests.
+- Inspect actual runtime captures; identify procedural development art and hardware exclusions.
+
+### Failure cases and cautions
+
+- This bounded oval must not be represented as a completed general track graph or production graphics.
+
+### Handoff requirement
+
+Record tested implementation SHA, changed scope, acceptance evidence, commands/results, unrun checks, blockers and the next exact task. Use [the handoff template](../../templates/HANDOFF.md). Update state through the project CLI, regenerate views, and push the metadata checkpoint.

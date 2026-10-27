@@ -27,8 +27,44 @@ final class HostSmokeTests: XCTestCase {
         XCUIDevice.shared.press(.home)
         app.activate()
         XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 15))
-        // Host survival only: not fold poses, thermal behavior, persistence,
-        // haptic response, or the eventual simulation's pause policy.
+        // Host survival only: physical fold poses, thermals and haptics still
+        // require hardware. Durable restoration is covered separately below.
+    }
+
+    func testNativeSaveAndRelaunchRestoresAcknowledgedRailway() throws {
+        continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launch()
+        XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
+        let save = app.buttons["host.save"]
+        XCTAssertTrue(save.waitForExistence(timeout: 5))
+        let enabled = XCTNSPredicateExpectation(predicate: NSPredicate(format: "enabled == true"), object: save)
+        XCTAssertEqual(XCTWaiter.wait(for: [enabled], timeout: 10), .completed)
+        save.tap()
+        let saved = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "label CONTAINS[c] 'saved on this iPhone'"),
+            object: app.staticTexts["host.ready"]
+        )
+        XCTAssertEqual(XCTWaiter.wait(for: [saved], timeout: 15), .completed,
+                       "Native must acknowledge an actual completed document write.")
+        attachScreenshot(app, name: "duo-railway-durable-save")
+        app.terminate()
+        app.launch()
+        XCTAssertTrue(app.staticTexts["host.ready"].waitForExistence(timeout: 30))
+        XCTAssertTrue(app.staticTexts["host.restored"].waitForExistence(timeout: 10),
+                      "Relaunch must load a validated native save, not silently show a fresh scene.")
+        attachScreenshot(app, name: "duo-railway-restored")
+    }
+
+    func testNativeHelpRemainsAccessible() throws {
+        let app = XCUIApplication()
+        app.launch()
+        XCTAssertTrue(app.buttons["host.help"].waitForExistence(timeout: 15))
+        app.buttons["host.help"].tap()
+        XCTAssertTrue(app.navigationBars["Railway guide"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Save status"].exists)
+        app.buttons["Done"].tap()
+        XCTAssertTrue(app.staticTexts["host.title"].exists)
     }
 
     private func attachScreenshot(_ app: XCUIApplication, name: String) {

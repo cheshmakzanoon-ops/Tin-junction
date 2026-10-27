@@ -410,6 +410,20 @@ export function runCLI(args = process.argv.slice(2), root = DEFAULT_ROOT) {
     writeAtomic(root, 'planning/state.json', json(state)); render(root, roadmap, state); return 'Initialized task ledger.';
   }
   const { roadmap, state } = loadProject(root);
+  if (command === 'sync') {
+    const definitions = tasksOf(roadmap);
+    const ids = new Set(definitions.map(task => task.id));
+    if (Object.keys(state.tasks).some(taskId => !ids.has(taskId))) throw new Error('sync cannot remove recorded tasks or their history.');
+    const defaults = initialState(roadmap).tasks;
+    const added = definitions.filter(task => !state.tasks[task.id]);
+    for (const task of added) state.tasks[task.id] = defaults[task.id];
+    state.updated_at = new Date().toISOString();
+    const verdict = validateProject(root, roadmap, state, { checkGenerated: false });
+    if (verdict.errors.length) throw new Error(verdict.errors.join('\n'));
+    writeAtomic(root, 'planning/state.json', json(state));
+    render(root, roadmap, state);
+    return `Registered ${added.length} new task definitions as todo; existing progress and gates preserved.`;
+  }
   if (command === 'next') {
     const selected = selectNext(roadmap, state);
     return parsed.values.json ? json(selected) : `${selected.action.toUpperCase()}: ${selected.task ? `${selected.task.id} — ${selected.task.title}` : ''}\n${selected.reason}\nRead: ${selected.task?.phase_path ?? 'planning/HANDOFF.md'}\nCI snapshot: ${state.health.ci.status}; verify the current remote main before editing.`;

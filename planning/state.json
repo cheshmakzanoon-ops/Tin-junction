@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-10-27T00:56:37.897Z",
+  "updated_at": "2026-10-27T01:04:43.838Z",
   "health": {
     "ci": {
       "status": "passed",
@@ -78,12 +78,25 @@
       ]
     },
     "P00-T04": {
-      "status": "todo",
+      "status": "done",
       "claim": null,
       "blockers": [],
-      "evidence": [],
-      "last_handoff": null,
-      "history": []
+      "evidence": [
+        "evidence/P00-T04-foundation.json"
+      ],
+      "last_handoff": "planning/handoffs/2026-10-27-foundation-verification.md",
+      "history": [
+        {
+          "at": "2026-10-27T01:03:43.564Z",
+          "action": "claim",
+          "detail": "milestone-coordinator; 4 hours"
+        },
+        {
+          "at": "2026-10-27T01:03:43.628Z",
+          "action": "complete",
+          "detail": "planning/handoffs/2026-10-27-foundation-verification.md"
+        }
+      ]
     },
     "P01-T01": {
       "status": "todo",
@@ -198,12 +211,28 @@
       "history": []
     },
     "P04-T01": {
-      "status": "todo",
-      "claim": null,
+      "status": "in_progress",
+      "claim": {
+        "owner": "railway-model",
+        "started_at": "2026-10-27T01:03:43.718Z",
+        "expires_at": "2026-10-27T05:03:43.718Z",
+        "head_at_claim": "4dc7b7fc672f9f55c23ca4f74ff2efa9cbff2938",
+        "scope": [
+          "web/src/model/",
+          "docs/decisions/",
+          "tests/fixtures/model/"
+        ]
+      },
       "blockers": [],
       "evidence": [],
       "last_handoff": null,
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-27T01:03:43.718Z",
+          "action": "claim",
+          "detail": "railway-model; 4 hours"
+        }
+      ]
     },
     "P04-T02": {
       "status": "todo",
@@ -1092,6 +1121,32 @@
       "evidence": [],
       "last_handoff": null,
       "history": []
+    },
+    "P04-T06": {
+      "status": "in_progress",
+      "claim": {
+        "owner": "milestone-coordinator",
+        "started_at": "2026-10-27T01:04:43.838Z",
+        "expires_at": "2026-10-27T05:04:43.838Z",
+        "head_at_claim": "4dc7b7fc672f9f55c23ca4f74ff2efa9cbff2938",
+        "scope": [
+          "web/src/",
+          "apps/ios/",
+          "tests/web/",
+          "docs/decisions/",
+          "evidence/"
+        ]
+      },
+      "blockers": [],
+      "evidence": [],
+      "last_handoff": null,
+      "history": [
+        {
+          "at": "2026-10-27T01:04:43.838Z",
+          "action": "claim",
+          "detail": "milestone-coordinator; 4 hours"
+        }
+      ]
     }
   }
 }

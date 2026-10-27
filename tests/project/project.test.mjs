@@ -218,3 +218,22 @@ test('generated views are deterministic and do not invent product completion', (
   assert.match(a.get('planning/STATUS.md'), /not percentage of product quality/);
   assert.match(a.get('planning/NEXT_TASK.md'), /P00-T01/);
 });
+
+test('sync registers only new todo tasks and preserves claims, blockers and owner gates', t => {
+  const root = fixture(t), r = roadmap(), s = initialState(r, NOW);
+  s.last_handoff = 'planning/handoff.md';
+  transition(root, r, s, 'claim', 'P00-T01', { owner: 'worker', head: COMMIT }, NOW);
+  transition(root, r, s, 'block', 'P00-T03', { owner: 'owner', reason: 'Approval unavailable' }, NOW);
+  writeFileSync(path.join(root, 'planning/state.json'), JSON.stringify(s));
+  r.phases[0].tasks.push(task('P00-T04', ['P00-T02'], 'owner'));
+  writeFileSync(path.join(root, 'planning/roadmap.json'), JSON.stringify(r));
+  assert.match(runCLI(['sync'], root), /Registered 1 new/);
+  const synced = loadProject(root).state;
+  assert.deepEqual(synced.tasks['P00-T01'], s.tasks['P00-T01']);
+  assert.deepEqual(synced.tasks['P00-T03'], s.tasks['P00-T03']);
+  assert.equal(synced.tasks['P00-T04'].status, 'todo');
+  assert.throws(() => transition(root, r, synced, 'claim', 'P00-T04', { owner: 'worker', head: COMMIT }), /not ready/);
+  r.phases[0].tasks.pop();
+  writeFileSync(path.join(root, 'planning/roadmap.json'), JSON.stringify(r));
+  assert.throws(() => runCLI(['sync'], root), /cannot remove/);
+});

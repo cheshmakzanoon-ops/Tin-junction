@@ -2,39 +2,39 @@
 
 > Generated from roadmap.json and state.json. Run `npm run project:next` for a live lease check.
 
-Action: **implement**
+Action: **resume**
 
-First ordered task whose dependencies are complete and whose state is unclaimed.
+Resume the claimed task with its current owner; do not duplicate its work.
 
 CI snapshot: **passed**. Always check GitHub Actions for the current remote main commit.
 
-## P00-T04 — Verify and publish the initial repository handoff
+## P04-T01 — Ratify miniature units and coordinate conventions
 
-Phase: [planning/phases/P00-repository-foundation.md](phases/P00-repository-foundation.md)
+Phase: [planning/phases/P04-deterministic-model-kernel.md](phases/P04-deterministic-model-kernel.md)
 
-Dependencies: P00-T03
+Dependencies: P00-T04
 
 Manual gate: none
 
 ### Required reading
 
-- [docs/agents/HANDOFF_PROTOCOL.md](../docs/agents/HANDOFF_PROTOCOL.md)
-- [docs/agents/TASK_EVIDENCE.md](../docs/agents/TASK_EVIDENCE.md)
-- [docs/operations/IOS_CI.md](../docs/operations/IOS_CI.md)
+- [docs/architecture/SIMULATION_AND_TRACKS.md](../docs/architecture/SIMULATION_AND_TRACKS.md)
+- [docs/graphics/ART_DIRECTION.md](../docs/graphics/ART_DIRECTION.md)
+- [docs/architecture/SYSTEM_ARCHITECTURE.md](../docs/architecture/SYSTEM_ARCHITECTURE.md)
 
 ### First actions
 
-1. Run every available setup check and preserve actual output summaries.
-2. Record any checks unavailable in the current environment rather than guessing outcomes.
-3. Associate evidence with the tested implementation commit and source digests.
-4. Publish the setup changes and confirm the intended remote main head.
-5. Regenerate status and identify the first uncompleted platform task.
-6. Record next actions, current CI state and owner-only release blockers.
+1. Use right-handed coordinates, Y up and XZ ground.
+2. Adopt one world unit as one physical miniature meter.
+3. Evaluate the proposed HO 1:87, 16.5 mm gauge and 0.8 by 0.5 m baseboard.
+4. Define locomotive forward axis, wheel pivots and angle units.
+5. Separate prototype-scale labels from simulation/render transforms.
+6. Render and numerically check a ruler, gauge and known-radius fixture.
 
 ### Acceptance
 
-- **P00-T04-A1**: The setup evidence records actual commands/results and distinguishes local, browser, simulator and device validation. (repository_validation)
-- **P00-T04-A2**: Remote setup and a durable handoff are published; only satisfied setup tasks are marked done. (repository_validation)
+- **P04-T01-A1**: All geometry fixtures agree on units, axes and gauge within specified numeric tolerances. (unit_test)
+- **P04-T01-A2**: The scale ADR records actual chosen dimensions without presenting them as device measurements. (repository_validation)
 
 ## Blocked work
 

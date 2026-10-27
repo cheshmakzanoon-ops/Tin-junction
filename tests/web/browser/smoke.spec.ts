@@ -1,12 +1,13 @@
 import { expect, test } from "@playwright/test";
 
-test("offline bundle renders the explicit diagnostic scene", async ({ page }) => {
+test("offline bundle renders the operating miniature with no external requests", async ({ page }) => {
   const errors: string[] = [];
   const external: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   page.on("request", (request) => { if (!request.url().startsWith("http://127.0.0.1:4173/") && !request.url().startsWith("data:")) external.push(request.url()); });
   await page.goto("/?capture=1");
-  await expect(page.getByText("Engineering harness · not production artwork")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Tin Junction.", exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Run train", exact: true })).toBeVisible();
   await page.waitForFunction(() => window.__TIN_DIAGNOSTICS__?.initialized === true);
   const info = await page.evaluate(() => window.__TIN_DIAGNOSTICS__!);
   expect(info.renderer).toBe("webgl2");
@@ -14,7 +15,7 @@ test("offline bundle renders the explicit diagnostic scene", async ({ page }) =>
   expect(info.drawingBufferWidth * info.drawingBufferHeight).toBeLessThanOrEqual(2_000_000);
   expect(errors).toEqual([]);
   expect(external).toEqual([]);
-  await page.screenshot({ path: "test-results/engineering-harness.png" });
+  await page.screenshot({ path: "test-results/first-railway-overview.png" });
 });
 
 test("bridge validation, lifecycle pause/resume and resize are observable", async ({ page }) => {

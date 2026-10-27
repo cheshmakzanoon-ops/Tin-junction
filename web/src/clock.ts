@@ -11,6 +11,7 @@ export class FixedStepClock {
   advance(timestampMilliseconds: number): { steps: number; alpha: number } {
     if (!Number.isFinite(timestampMilliseconds)) return { steps: 0, alpha: 0 };
     if (this.previous === null) { this.previous = timestampMilliseconds; return { steps: 0, alpha: 0 }; }
+    if (timestampMilliseconds < this.previous) return { steps: 0, alpha: Math.min(1, this.accumulator / this.stepSeconds) };
     const elapsed = Math.max(0, (timestampMilliseconds - this.previous) / 1000);
     this.previous = timestampMilliseconds;
     this.accumulator += Math.min(elapsed, this.stepSeconds * this.maxSteps);

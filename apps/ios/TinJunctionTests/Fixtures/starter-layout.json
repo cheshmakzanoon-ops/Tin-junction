@@ -1,0 +1,258 @@
+{
+  "format": "tin-junction-layout",
+  "schemaVersion": 1,
+  "documentId": "layout-13528a2",
+  "revision": 0,
+  "name": "Alpine afternoon",
+  "seed": 20261026,
+  "track": {
+    "kind": "oval",
+    "straightLength": 0.34,
+    "radius": 0.145
+  },
+  "train": {
+    "distance": 0.16,
+    "speed": 0,
+    "throttle": 0,
+    "direction": 1,
+    "wheelTravel": 0
+  },
+  "scenery": [
+    {
+      "id": "village-house-west",
+      "kind": "house",
+      "x": -0.09,
+      "z": 0.025,
+      "scale": 0.9,
+      "rotation": 1.5707963267948966
+    },
+    {
+      "id": "village-house-center",
+      "kind": "house",
+      "x": 0,
+      "z": 0.04,
+      "scale": 1.05,
+      "rotation": -1.5707963267948966
+    },
+    {
+      "id": "village-house-east",
+      "kind": "house",
+      "x": 0.09,
+      "z": 0.02,
+      "scale": 0.85,
+      "rotation": 1.5707963267948966
+    },
+    {
+      "id": "village-oak",
+      "kind": "oak",
+      "x": -0.02,
+      "z": -0.005,
+      "scale": 0.85,
+      "rotation": 0.3
+    },
+    {
+      "id": "village-bench",
+      "kind": "bench",
+      "x": 0.055,
+      "z": -0.027,
+      "scale": 0.8,
+      "rotation": 0
+    },
+    {
+      "id": "village-lamp-west",
+      "kind": "lamp",
+      "x": -0.08,
+      "z": -0.03,
+      "scale": 1,
+      "rotation": 0
+    },
+    {
+      "id": "village-lamp-east",
+      "kind": "lamp",
+      "x": 0.105,
+      "z": -0.03,
+      "scale": 1,
+      "rotation": 0
+    },
+    {
+      "id": "forest-1",
+      "kind": "fir",
+      "x": -0.25,
+      "z": -0.02,
+      "scale": 1.0822583850170486,
+      "rotation": 0.7307931793035386
+    },
+    {
+      "id": "forest-2",
+      "kind": "fir",
+      "x": -0.23,
+      "z": 0.015,
+      "scale": 1.1034363572183066,
+      "rotation": 1.5452243534595635
+    },
+    {
+      "id": "forest-3",
+      "kind": "fir",
+      "x": -0.2,
+      "z": -0.015,
+      "scale": 0.938397482461296,
+      "rotation": 5.190254639556073
+    },
+    {
+      "id": "forest-4",
+      "kind": "fir",
+      "x": -0.18,
+      "z": 0.045,
+      "scale": 1.0079278855165468,
+      "rotation": 4.41538035333178
+    },
+    {
+      "id": "forest-5",
+      "kind": "fir",
+      "x": -0.22,
+      "z": 0.065,
+      "scale": 0.7834097767411731,
+      "rotation": 5.199132265756267
+    },
+    {
+      "id": "forest-6",
+      "kind": "fir",
+      "x": -0.145,
+      "z": 0.07,
+      "scale": 1.1082046375307255,
+      "rotation": 5.78500050147419
+    },
+    {
+      "id": "forest-7",
+      "kind": "fir",
+      "x": 0.17,
+      "z": -0.04,
+      "scale": 1.0942934406269342,
+      "rotation": 4.9077953589304135
+    },
+    {
+      "id": "forest-8",
+      "kind": "fir",
+      "x": 0.205,
+      "z": -0.025,
+      "scale": 0.8649044673121534,
+      "rotation": 3.118502155046417
+    },
+    {
+      "id": "forest-9",
+      "kind": "fir",
+      "x": 0.245,
+      "z": -0.035,
+      "scale": 0.9800745685631409,
+      "rotation": 1.9823401296347543
+    },
+    {
+      "id": "forest-10",
+      "kind": "fir",
+      "x": 0.27,
+      "z": -0.01,
+      "scale": 0.7882724807644262,
+      "rotation": 1.2621378788916156
+    },
+    {
+      "id": "forest-11",
+      "kind": "fir",
+      "x": -0.3,
+      "z": -0.19,
+      "scale": 1.0345314953872002,
+      "rotation": 4.2177496868441064
+    },
+    {
+      "id": "forest-12",
+      "kind": "fir",
+      "x": -0.26,
+      "z": -0.205,
+      "scale": 0.7948367929598317,
+      "rotation": 5.1755734637290285
+    },
+    {
+      "id": "forest-13",
+      "kind": "fir",
+      "x": -0.34,
+      "z": -0.16,
+      "scale": 1.0075125301536172,
+      "rotation": 6.222194185351692
+    },
+    {
+      "id": "forest-14",
+      "kind": "fir",
+      "x": 0.3,
+      "z": -0.19,
+      "scale": 0.7964464302803389,
+      "rotation": 2.106502931685266
+    },
+    {
+      "id": "forest-15",
+      "kind": "fir",
+      "x": 0.26,
+      "z": -0.205,
+      "scale": 1.1199162002932281,
+      "rotation": 2.036687075460334
+    },
+    {
+      "id": "forest-16",
+      "kind": "fir",
+      "x": -0.3,
+      "z": 0.19,
+      "scale": 1.0745104847056792,
+      "rotation": 4.001941247956393
+    },
+    {
+      "id": "forest-17",
+      "kind": "fir",
+      "x": -0.26,
+      "z": 0.205,
+      "scale": 1.008180752133485,
+      "rotation": 2.0382960527435534
+    },
+    {
+      "id": "forest-18",
+      "kind": "fir",
+      "x": 0.3,
+      "z": 0.19,
+      "scale": 0.8915031056664884,
+      "rotation": 1.1217465228224033
+    },
+    {
+      "id": "forest-19",
+      "kind": "fir",
+      "x": 0.26,
+      "z": 0.205,
+      "scale": 0.7375418154336512,
+      "rotation": 0.2777205378665748
+    },
+    {
+      "id": "forest-20",
+      "kind": "fir",
+      "x": 0.34,
+      "z": 0.16,
+      "scale": 0.7644777411525138,
+      "rotation": 4.407880822294781
+    },
+    {
+      "id": "rock-west",
+      "kind": "rock",
+      "x": -0.283,
+      "z": 0.012,
+      "scale": 0.7,
+      "rotation": 0.5
+    },
+    {
+      "id": "rock-east",
+      "kind": "rock",
+      "x": 0.28,
+      "z": 0.035,
+      "scale": 0.65,
+      "rotation": -0.8
+    }
+  ],
+  "environment": {
+    "timeOfDay": "day"
+  },
+  "tick": 0
+}

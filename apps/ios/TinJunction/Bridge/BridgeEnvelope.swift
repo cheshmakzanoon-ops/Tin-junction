@@ -22,11 +22,29 @@ indirect enum BridgeJSON: Decodable, Equatable, Sendable {
         if case .string(let value) = self { return value }
         return nil
     }
+
+    var integer: Int? {
+        guard case .number(let value) = self, value.isFinite,
+              value >= 0, value <= Double(LayoutDocument.maximumInteger), value.rounded() == value else { return nil }
+        return Int(value)
+    }
+
+    var foundationValue: Any {
+        switch self {
+        case .null: return NSNull()
+        case .boolean(let value): return value
+        case .number(let value): return value
+        case .string(let value): return value
+        case .array(let values): return values.map(\.foundationValue)
+        case .object(let values): return values.mapValues(\.foundationValue)
+        }
+    }
 }
 
 struct BridgeEnvelope: Decodable, Equatable, Sendable {
     static let maximumBytes = 65_536
-    static let allowedTypes: Set<String> = ["web.ready", "engine.error", "engine.metrics"]
+    static let maximumCheckpointBytes = 524_288
+    static let allowedTypes: Set<String> = ["web.ready", "engine.error", "engine.metrics", "layout.loaded", "layout.checkpoint"]
 
     let version: Int
     let id: String
@@ -36,6 +54,7 @@ struct BridgeEnvelope: Decodable, Equatable, Sendable {
     enum Rejection: Error, Equatable {
         case invalidJSON, tooLarge, unexpectedFields, unsupportedVersion
         case invalidIdentifier, unsupportedType, invalidReadyPayload, invalidErrorPayload
+        case invalidLayoutPayload
     }
 
     static func decode(_ body: Any) throws -> BridgeEnvelope {
@@ -46,7 +65,8 @@ struct BridgeEnvelope: Decodable, Equatable, Sendable {
             throw Rejection.unexpectedFields
         }
         let data = try JSONSerialization.data(withJSONObject: object)
-        guard data.count <= maximumBytes else { throw Rejection.tooLarge }
+        let limit = object["type"] as? String == "layout.checkpoint" ? maximumCheckpointBytes : maximumBytes
+        guard data.count <= limit else { throw Rejection.tooLarge }
         let envelope = try JSONDecoder().decode(BridgeEnvelope.self, from: data)
         guard envelope.version == 1 else { throw Rejection.unsupportedVersion }
         let allowed = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._:-")
@@ -56,7 +76,7 @@ struct BridgeEnvelope: Decodable, Equatable, Sendable {
         }
         guard allowedTypes.contains(envelope.type) else { throw Rejection.unsupportedType }
         if envelope.type == "web.ready" {
-            guard envelope.payload["build"] == .string("engineering-harness"),
+            guard [BridgeJSON.string("engineering-harness"), .string("first-railway")].contains(envelope.payload["build"] ?? .null),
                   envelope.payload["protocolVersion"] == .number(1),
                   envelope.payload["renderer"] == .string("webgl2") else {
                 throw Rejection.invalidReadyPayload
@@ -74,6 +94,21 @@ struct BridgeEnvelope: Decodable, Equatable, Sendable {
                     throw Rejection.invalidErrorPayload
                 }
             }
+        }
+        if envelope.type == "layout.loaded" {
+            guard Set(envelope.payload.keys) == ["sessionId", "documentId", "revision"],
+                  let sessionID = envelope.payload["sessionId"]?.string, LayoutDocument.isIdentifier(sessionID),
+                  let documentID = envelope.payload["documentId"]?.string, LayoutDocument.isIdentifier(documentID),
+                  envelope.payload["revision"]?.integer != nil else { throw Rejection.invalidLayoutPayload }
+        }
+        if envelope.type == "layout.checkpoint" {
+            guard Set(envelope.payload.keys) == ["sessionId", "requestId", "expectedRevision", "checkpoint", "document"],
+                  let sessionID = envelope.payload["sessionId"]?.string, LayoutDocument.isIdentifier(sessionID),
+                  let requestID = envelope.payload["requestId"]?.string, LayoutDocument.isIdentifier(requestID),
+                  envelope.payload["checkpoint"]?.integer != nil,
+                  envelope.payload["expectedRevision"] == .null || envelope.payload["expectedRevision"]?.integer != nil,
+                  case .some(.object(let document)) = envelope.payload["document"] else { throw Rejection.invalidLayoutPayload }
+            _ = try LayoutDocument.decode(document.mapValues(\.foundationValue))
         }
         return envelope
     }

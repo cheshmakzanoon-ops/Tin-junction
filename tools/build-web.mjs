@@ -47,7 +47,7 @@ for (const filename of runtimeFiles) {
 }
 const manifest = {
   formatVersion: 1,
-  kind: "engineering-harness-not-production-art",
+  kind: "first-operating-workbench-not-production-art",
   bundler: "esbuild",
   scriptFormat: "iife",
   externalRuntimeDependencies: [],
@@ -67,7 +67,7 @@ if (process.argv.includes("--ios")) {
   await verify(target, true);
   console.log("Bundled offline IIFE resources for the Swift WebView; native runtime verification remains required.");
 } else {
-  console.log("Built dist/web. This engineering harness is not the finished railway or Duo performance evidence.");
+  console.log("Built the offline operating workbench. Procedural art and browser captures are not final art or physical-device performance evidence.");
 }
 await verify(output);
 }

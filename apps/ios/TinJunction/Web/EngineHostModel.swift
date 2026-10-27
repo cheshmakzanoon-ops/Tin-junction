@@ -5,11 +5,22 @@ import WebKit
 @MainActor
 final class EngineHostModel: ObservableObject {
     enum Lifecycle: String { case active, inactive, background }
-    @Published private(set) var status = "Loading bundled renderer…"
+    enum Phase: Equatable { case loading, restoring, ready, recovering, failed }
+    enum SaveState: Equatable { case unsaved, saving, saved, recovered, failed }
+
+    @Published private(set) var phase: Phase = .loading
+    @Published private(set) var status = "Opening your miniature…"
     @Published private(set) var isReady = false
     @Published private(set) var hingeDescription = "awaiting system context"
+    @Published private(set) var saveState: SaveState = .unsaved
+    @Published private(set) var saveDescription = "Not saved yet"
+    @Published private(set) var durableRevision: Int?
+    @Published private(set) var durableCheckpoint: Int?
+    @Published private(set) var hasRestoredLayout = false
     private(set) var isBridgeReady = false
+    private(set) var sessionID = UUID().uuidString
 
+    private let store: any LayoutStoring
     private weak var webView: WKWebView?
     private var lifecycle: Lifecycle = .inactive
     private var viewport: NativeViewport?
@@ -19,50 +30,85 @@ final class EngineHostModel: ObservableObject {
     private var processRecoveryAttempts = 0
     private var acceptedIDs: [String] = []
     private var recoveringRenderer = false
+    private var acceptedLayout = false
+    private var restorePrepared = false
+    private var activeDocumentID: String?
+    private var restoredLayout: StoredLayout?
+    private var pendingSaveCount = 0
+    private var pendingRequestIDs: Set<String> = []
     private var handshakeTimeoutTask: Task<Void, Never>?
     private var deliveryTask: Task<Void, Never>?
+    private var restoreTask: Task<Void, Never>?
+    private var saveTask: Task<Void, Never>?
+
+    init(store: any LayoutStoring = LayoutStore()) { self.store = store }
 
     func attach(_ webView: WKWebView) { self.webView = webView }
+
+    /// Used by orderly teardown and deterministic host tests. Acknowledgements
+    /// still originate exclusively from completed store operations.
+    func awaitPendingStorage() async {
+        if let restoreTask { await restoreTask.value }
+        if let saveTask { await saveTask.value }
+    }
+
     func detach() {
+        cancelSession()
+        isReady = false
+        webView = nil
+    }
+
+    private func cancelSession() {
         loadGeneration += 1
         handshakeTimeoutTask?.cancel()
         handshakeTimeoutTask = nil
         deliveryTask?.cancel()
         deliveryTask = nil
+        restoreTask?.cancel()
+        restoreTask = nil
+        saveTask?.cancel()
+        saveTask = nil
+        pendingSaveCount = 0
+        pendingRequestIDs.removeAll(keepingCapacity: true)
         isBridgeReady = false
-        webView = nil
+        acceptedLayout = false
+        restorePrepared = false
     }
 
     func loading() {
-        loadGeneration += 1
-        handshakeTimeoutTask?.cancel()
-        deliveryTask?.cancel()
-        deliveryTask = nil
-        isBridgeReady = false
+        cancelSession()
+        sessionID = UUID().uuidString
         recoveringRenderer = false
         isReady = false
+        hasRestoredLayout = false
+        activeDocumentID = nil
+        restoredLayout = nil
         acceptedIDs.removeAll(keepingCapacity: true)
-        status = "Loading bundled renderer…"
+        phase = .loading
+        status = "Opening your miniature…"
         let generation = loadGeneration
         handshakeTimeoutTask = Task { [weak self] in
             do { try await Task.sleep(for: .seconds(20)) }
             catch { return }
             guard let self, !Task.isCancelled, self.loadGeneration == generation,
-                  !self.isBridgeReady else { return }
-            self.fail("Renderer handshake timed out. Inspect bundled scripts, CSP and WebKit diagnostics.")
+                  !self.isReady else { return }
+            self.fail("The railway took too long to open. Try loading it again. Your saved layout is retained.")
         }
     }
 
     func fail(_ description: String) {
-        loadGeneration += 1
-        handshakeTimeoutTask?.cancel()
-        handshakeTimeoutTask = nil
-        deliveryTask?.cancel()
-        deliveryTask = nil
-        isBridgeReady = false
+        cancelSession()
         recoveringRenderer = false
         isReady = false
+        phase = .failed
         status = String(description.prefix(240))
+    }
+
+    func retryLoading() {
+        guard let webView else { return }
+        processRecoveryAttempts = 0
+        loading()
+        webView.load(URLRequest(url: BundleResourcePolicy.entryURL))
     }
 
     func accept(_ envelope: BridgeEnvelope) {
@@ -72,50 +118,174 @@ final class EngineHostModel: ObservableObject {
         switch envelope.type {
         case "web.ready":
             guard !isBridgeReady else { return }
-            handshakeTimeoutTask?.cancel()
-            handshakeTimeoutTask = nil
             isBridgeReady = true
             recoveringRenderer = false
-            isReady = true
-            status = "Bundled WebGL2 bridge ready — harness, not game"
+            isReady = false
+            phase = .restoring
+            status = "Opening your saved railway…"
             #if DEBUG
             let debug = true
             #else
             let debug = false
             #endif
-            send(type: "native.bootstrap", payload: ["host": "ios", "debug": debug])
+            send(type: "native.bootstrap", payload: ["host": "ios", "debug": debug, "sessionId": sessionID])
             sendLifecycle()
             sendViewport()
+            restoreSavedLayout()
+        case "layout.loaded":
+            acceptLoadedLayout(envelope)
+        case "layout.checkpoint":
+            acceptCheckpoint(envelope)
         case "engine.error":
             let code = envelope.payload["code"]?.string ?? "invalid_error"
             if envelope.payload["recoverable"] == .boolean(true), isBridgeReady {
-                // The JavaScript receiver survives a WebGL context loss. Keep
-                // lifecycle/viewport transport alive while visible readiness waits
-                // for a new rendered-frame metrics event after restoration.
                 recoveringRenderer = true
                 isReady = false
-                status = "Renderer recovering: \(code)"
+                phase = .recovering
+                status = "Restoring the railway view (\(code))…"
             } else {
-                fail("Renderer error: " + (envelope.payload["message"]?.string ?? code))
+                fail("The railway view could not open: " + (envelope.payload["message"]?.string ?? code))
             }
         case "engine.metrics":
-            if isBridgeReady, recoveringRenderer,
+            if isBridgeReady, acceptedLayout, recoveringRenderer,
                case .some(.number(let frames)) = envelope.payload["frames"], frames > 0,
                envelope.payload["evidenceKind"] == .string("diagnostic-only") {
                 recoveringRenderer = false
                 isReady = true
-                status = "Bundled WebGL2 renderer recovered — harness, not game"
+                phase = .ready
+                status = "The railway view has recovered."
             }
-            // Reserved for bounded, explicitly versioned diagnostics. No telemetry,
-            // filesystem, engine-command, or arbitrary script authority is granted.
-            break
-        default: break // Decoding rejects unsupported types before this point.
+        default: break
         }
+    }
+
+    private func restoreSavedLayout() {
+        let generation = loadGeneration
+        restoreTask?.cancel()
+        restoreTask = Task { [weak self] in
+            guard let self else { return }
+            do {
+                let stored = try await self.store.load()
+                guard !Task.isCancelled, self.loadGeneration == generation, self.isBridgeReady else { return }
+                self.restoredLayout = stored
+                self.hasRestoredLayout = stored != nil
+                self.activeDocumentID = stored?.document.documentId
+                self.durableRevision = stored?.document.revision
+                self.durableCheckpoint = stored?.checkpoint
+                if let stored {
+                    self.saveState = stored.recovered ? .recovered : .saved
+                    self.saveDescription = stored.recovered ? "Recovered previous save" : "Last saved on this iPhone"
+                } else {
+                    self.saveState = .unsaved
+                    self.saveDescription = "Not saved yet"
+                }
+                let document: Any
+                if let stored { document = try stored.document.stoppedForRestore().bridgeObject() }
+                else { document = NSNull() }
+                self.restorePrepared = true
+                self.send(type: "native.layout", payload: [
+                    "sessionId": self.sessionID, "document": document,
+                    "checkpoint": stored?.checkpoint ?? 0, "recovered": stored?.recovered ?? false
+                ])
+            } catch {
+                guard !Task.isCancelled, self.loadGeneration == generation else { return }
+                self.fail("Your saved railway could not be read. Its files have been preserved. Try again; the app will not replace it with a new layout.")
+            }
+        }
+    }
+
+    private func acceptLoadedLayout(_ envelope: BridgeEnvelope) {
+        guard isBridgeReady, restorePrepared, !acceptedLayout,
+              envelope.payload["sessionId"]?.string == sessionID,
+              let documentID = envelope.payload["documentId"]?.string,
+              let revision = envelope.payload["revision"]?.integer else { return }
+        if let restoredLayout {
+            guard documentID == restoredLayout.document.documentId, revision == restoredLayout.document.revision else {
+                fail("The railway did not accept the saved layout. Your saved files have been preserved.")
+                return
+            }
+        } else {
+            guard revision == 0 else { return }
+        }
+        activeDocumentID = documentID
+        acceptedLayout = true
+        handshakeTimeoutTask?.cancel()
+        handshakeTimeoutTask = nil
+        isReady = !recoveringRenderer
+        phase = recoveringRenderer ? .recovering : .ready
+        status = restoredLayout?.recovered == true
+            ? "A previous verified save was restored. Your most recent changes may be missing."
+            : "Your miniature railway is ready."
+    }
+
+    private func acceptCheckpoint(_ envelope: BridgeEnvelope) {
+        guard isBridgeReady, acceptedLayout,
+              envelope.payload["sessionId"]?.string == sessionID,
+              let requestID = envelope.payload["requestId"]?.string,
+              let checkpoint = envelope.payload["checkpoint"]?.integer,
+              case .some(.object(let rawDocument)) = envelope.payload["document"],
+              let document = try? LayoutDocument.decode(rawDocument.mapValues(\.foundationValue)),
+              document.documentId == activeDocumentID else { return }
+        // Retransmission while the first write is pending shares its eventual
+        // acknowledgement. It cannot consume another queue slot or write twice.
+        guard !pendingRequestIDs.contains(requestID) else { return }
+        guard pendingSaveCount < 8 else {
+            sendSaveFailure(requestID: requestID, code: "save_queue_full")
+            return
+        }
+        let expectedRevision = envelope.payload["expectedRevision"]?.integer
+        let generation = loadGeneration
+        let predecessor = saveTask
+        pendingSaveCount += 1
+        pendingRequestIDs.insert(requestID)
+        saveState = .saving
+        saveDescription = "Saving…"
+        saveTask = Task { [weak self] in
+            if let predecessor { await predecessor.value }
+            guard let self, !Task.isCancelled, self.loadGeneration == generation, self.isBridgeReady else { return }
+            defer {
+                if self.loadGeneration == generation {
+                    self.pendingSaveCount = max(self.pendingSaveCount - 1, 0)
+                    self.pendingRequestIDs.remove(requestID)
+                }
+            }
+            do {
+                let stored = try await self.store.save(document: document, checkpoint: checkpoint, expectedRevision: expectedRevision)
+                guard !Task.isCancelled, self.loadGeneration == generation, self.isBridgeReady else { return }
+                self.durableRevision = stored.document.revision
+                self.durableCheckpoint = stored.checkpoint
+                self.saveState = self.pendingSaveCount > 1 ? .saving : .saved
+                self.saveDescription = self.pendingSaveCount > 1 ? "Saving…" : "Last saved on this iPhone"
+                self.send(type: "native.saved", payload: [
+                    "sessionId": self.sessionID, "requestId": requestID,
+                    "documentId": stored.document.documentId, "revision": stored.document.revision,
+                    "checkpoint": stored.checkpoint, "checksum": stored.checksum
+                ])
+            } catch {
+                guard !Task.isCancelled, self.loadGeneration == generation else { return }
+                self.saveState = .failed
+                self.saveDescription = "Save failed — your edits are still open"
+                self.sendSaveFailure(requestID: requestID, code: (error as? LayoutStore.Failure)?.rawValue ?? "write_failed")
+            }
+        }
+    }
+
+    private func sendSaveFailure(requestID: String, code: String) {
+        send(type: "native.saveFailed", payload: [
+            "sessionId": sessionID, "requestId": requestID, "code": code,
+            "message": "Your railway could not be saved. Your current edits remain open. Try saving again."
+        ])
+    }
+
+    func requestCheckpoint() {
+        guard isBridgeReady, acceptedLayout else { return }
+        send(type: "native.requestCheckpoint", payload: ["sessionId": sessionID])
     }
 
     func updateLifecycle(_ value: Lifecycle) {
         lifecycle = value
         sendLifecycle()
+        if value != .active { requestCheckpoint() }
     }
 
     func updateViewport(_ value: NativeViewport) {
@@ -139,20 +309,17 @@ final class EngineHostModel: ObservableObject {
 
     func contentProcessTerminated() {
         loading()
-        // One bounded reload is useful for the harness. Production recovery must
-        // restore a native persisted snapshot and prove the last acknowledged save.
         guard processRecoveryAttempts == 0, let webView else {
-            fail("Web content process stopped again. Relaunch and inspect diagnostics.")
+            fail("The railway view stopped again. Try loading it again. The last acknowledged save is retained.")
             return
         }
         processRecoveryAttempts += 1
-        status = "Web content process stopped; attempting one clean reload…"
+        phase = .recovering
+        status = "Restoring the last saved railway after the view stopped…"
         webView.load(URLRequest(url: BundleResourcePolicy.entryURL))
     }
 
-    private func sendLifecycle() {
-        send(type: "native.lifecycle", payload: ["state": lifecycle.rawValue])
-    }
+    private func sendLifecycle() { send(type: "native.lifecycle", payload: ["state": lifecycle.rawValue]) }
 
     private func sendViewport() {
         guard let viewport else { return }
@@ -166,10 +333,6 @@ final class EngineHostModel: ObservableObject {
             "version": 1, "id": "native-\(nextMessageID)", "type": type, "payload": payload
         ]
         let generation = loadGeneration
-        // The program is constant. Data is passed through WebKit arguments, never
-        // interpolated into evaluated JavaScript source.
-        // Chain the actor-isolated tasks explicitly: independently launched Tasks
-        // do not promise FIFO delivery of bootstrap, lifecycle and viewport.
         let predecessor = deliveryTask
         deliveryTask = Task { @MainActor [weak self, weak webView] in
             if let predecessor { await predecessor.value }
@@ -187,7 +350,7 @@ final class EngineHostModel: ObservableObject {
                 )
             } catch {
                 guard self.loadGeneration == generation, !Task.isCancelled else { return }
-                self.fail("Native bridge delivery failed: \(error.localizedDescription)")
+                self.fail("The connection to the railway view stopped. Try loading again; your saved layout is retained.")
             }
         }
     }
